@@ -1,0 +1,281 @@
+program sncMdsEventPut
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% #define DATA_SERVER    "172.17.100.200:8300"
+%% #define IKSTAR_SERVER  "172.17.250.100:8005"
+
+%% int dtypeLong = DTYPE_LONG;
+%% int dtypeEvent = DTYPE_EVENT;
+%% int status1 = 0;
+%% int status2 = 0;
+%% int status3 = 0;
+%% int status4 = 0;
+%% int tstat, estat, len;
+%% int null = 0;
+%% char buf[50];
+%% int socket;
+%% int idesc;
+
+int shotNumber;
+assign shotNumber to "MDS_SHOT_NUMBER";
+monitor shotNumber;
+
+ss mdsEventHALPHA {
+	state init {
+		when (TRUE){
+			printf("Init state HALPHA Watchdog \n");
+		}state HALPHA_EventPut
+	}
+	state HALPHA_EventPut {
+        	when (delay(10.0)) {
+			%% int idesc = descr(&dtypeLong, &tstat, &null);
+		    	%% socket = MdsConnect(DATA_SERVER); 
+     			%% if (socket == -1 )
+            		%% {
+            		%%  	fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+            		%% } else {
+			%%	 printf("MDSplus >>> Wait for MDS Event..HALPHA. OK\n");
+			%%	 sprintf(buf, "TCL(\"wfevent HALPHA\")");
+			%%	 status1 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status1) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event HALPHA : %s.\n", MdsGetMsg(status1));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+			%%	 	socket = MdsConnect(IKSTAR_SERVER);
+			%%		if (socket == -1 )
+			%%		{
+			%%			fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+			%%		} else {
+			%%			sprintf(buf, "TCL(\"setevent HALPHA\")");
+			%%			status1 = MdsValue(buf, &idesc, &null, &len);
+			%%			if( !statusOk(status1) )
+			%%			{
+			%%				fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status1));
+			%%			}
+			%%			printf("MDSplus >>> Send MDS Event..HALPHA. OK. shotNu:%d \n",pVar->shotNumber);
+			%%			MdsDisconnect(IKSTAR_SERVER);
+			%%		}
+			%%	}
+			%% }
+		} state HALPHA_EventPut 
+	}
+}
+
+ss mdsEventMC {
+        state init {
+                when (TRUE){
+                        printf("Init state MC Watchdog \n");
+                }state MC_EventPut
+        }
+        state MC_EventPut {
+                when (delay(10.0)) {
+                        %% int idesc = descr(&dtypeLong, &tstat, &null);
+                        %% socket = MdsConnect(DATA_SERVER);
+                        %% if (socket == -1 )
+                        %% {
+                        %%      fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+                        %% } else {
+                        %%       printf("MDSplus >>> Wait for MDS Event..MC. OK\n");
+                        %%       sprintf(buf, "TCL(\"wfevent MC\")");
+                        %%       status1 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status1) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event MC : %s.\n", MdsGetMsg(status1));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+                        %%              socket = MdsConnect(IKSTAR_SERVER);
+                        %%              if (socket == -1 )
+                        %%              {
+                        %%                      fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+                        %%              } else {
+                        %%                      sprintf(buf, "TCL(\"setevent MC\")");
+                        %%                      status1 = MdsValue(buf, &idesc, &null, &len);
+                        %%                      if( !statusOk(status1) )
+                        %%                      {
+                        %%                              fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status1));
+                        %%                      }
+                        %%                      printf("MDSplus >>> Send MDS Event..MC. OK. shotNu:%d \n",pVar->shotNumber);
+                        %%                      MdsDisconnect(IKSTAR_SERVER);
+                        %%              }
+                        %%      }
+                        %% }
+                } state MC_EventPut
+        }
+}
+
+ss mdsEventMMWI {
+        state init {
+                when (TRUE){
+                        printf("Init state MMWI Watchdog \n");
+                }state MMWI_EventPut
+        }
+        state MMWI_EventPut {
+                when (delay(10.0)) {
+                        %% int idesc = descr(&dtypeLong, &tstat, &null);
+                        %% socket = MdsConnect(DATA_SERVER);
+                        %% if (socket == -1 )
+                        %% {
+                        %%      fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+                        %% } else {
+                        %%       printf("MDSplus >>> Wait for MDS Event..MMWI. OK\n");
+                        %%       sprintf(buf, "TCL(\"wfevent MMWI\")");
+                        %%       status1 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status1) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event MMWI : %s.\n", MdsGetMsg(status1));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+                        %%              socket = MdsConnect(IKSTAR_SERVER);
+                        %%              if (socket == -1 )
+                        %%              {
+                        %%                      fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+                        %%              } else {
+                        %%                      sprintf(buf, "TCL(\"setevent MMWI\")");
+                        %%                      status1 = MdsValue(buf, &idesc, &null, &len);
+                        %%                      if( !statusOk(status1) )
+                        %%                      {
+                        %%                              fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status1));
+                        %%                      }
+                        %%                      printf("MDSplus >>> Send MDS Event..MMWI. OK. shotNu:%d \n",pVar->shotNumber);
+                        %%                      MdsDisconnect(IKSTAR_SERVER);
+                        %%              }
+                        %%      }
+                        %% }
+                } state MMWI_EventPut
+        }
+}
+
+ss mdsEventECEHR {
+        state init {
+                when (TRUE){
+                        printf("Init state ECEHR Watchdog \n");
+                }state ECEHR_EventPut
+        }
+        state ECEHR_EventPut {
+                when (delay(10.0)) {
+                        %% int idesc = descr(&dtypeLong, &tstat, &null);
+                        %% socket = MdsConnect(DATA_SERVER);
+                        %% if (socket == -1 )
+                        %% {
+                        %%      fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+                        %% } else {
+                        %%       printf("MDSplus >>> Wait for MDS Event..ECEHR. OK\n");
+                        %%       sprintf(buf, "TCL(\"wfevent ECEHR\")");
+                        %%       status2 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status2) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event ECEHR: %s.\n", MdsGetMsg(status2));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+                        %%              socket = MdsConnect(IKSTAR_SERVER);
+                        %%              if (socket == -1 )
+                        %%              {
+                        %%                      fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+                        %%              } else {
+                        %%                      sprintf(buf, "TCL(\"setevent ECEHR\")");
+                        %%                      status2 = MdsValue(buf, &idesc, &null, &len);
+                        %%                      if( !statusOk(status2) )
+                        %%                      {
+                        %%                              fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status2));
+                        %%                      }
+                        %%                      printf("MDSplus >>> Send MDS Event..ECEHR. OK. shotNu:%d \n",pVar->shotNumber);
+                        %%                      MdsDisconnect(IKSTAR_SERVER);
+                        %%              }
+                        %%      }
+                        %% }
+                } state ECEHR_EventPut
+        }
+}
+ss mdsEventDDS1A {
+        state init {
+                when (TRUE){
+                        printf("Init state DDS1A Watchdog \n");
+                }state DDS1A_EventPut
+        }
+        state DDS1A_EventPut {
+                when (delay(10.0)) {
+                        %% int idesc = descr(&dtypeLong, &tstat, &null);
+                        %% socket = MdsConnect(DATA_SERVER);
+                        %% if (socket == -1 )
+                        %% {
+                        %%      fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+                        %% } else {
+                        %%       printf("MDSplus >>> Wait for MDS Event..DDS1A. OK\n");
+                        %%       sprintf(buf, "TCL(\"wfevent DDS1A\")");
+                        %%       status3 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status3) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event DDS1A: %s.\n", MdsGetMsg(status3));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+                        %%              socket = MdsConnect(IKSTAR_SERVER);
+                        %%              if (socket == -1 )
+                        %%              {
+                        %%                      fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+                        %%              } else {
+                        %%                      sprintf(buf, "TCL(\"setevent DDS1A\")");
+                        %%                      status3 = MdsValue(buf, &idesc, &null, &len);
+                        %%                      if( !statusOk(status3) )
+                        %%                      {
+                        %%                              fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status3));
+                        %%                      }
+                        %%                      printf("MDSplus >>> Send MDS Event..DDS1A. OK. shotNu:%d \n",pVar->shotNumber);
+                        %%                      MdsDisconnect(IKSTAR_SERVER);
+                        %%              }
+                        %%      }
+                        %% }
+                } state DDS1A_EventPut
+        }
+}
+ss mdsEventDDS1B {
+        state init {
+                when (TRUE){
+                        printf("Init state DDS1B Watchdog \n");
+                }state DDS1B_EventPut
+        }
+        state DDS1B_EventPut {
+                when (delay(10.0)) {
+                        %% int idesc = descr(&dtypeLong, &tstat, &null);
+                        %% socket = MdsConnect(DATA_SERVER);
+                        %% if (socket == -1 )
+                        %% {
+                        %%      fprintf(stderr,"Error connecting to mdsip server(%s).\n", DATA_SERVER);
+                        %% } else {
+                        %%       printf("MDSplus >>> Wait for MDS Event..DDS1B. OK\n");
+                        %%       sprintf(buf, "TCL(\"wfevent DDS1B\")");
+                        %%       status4 = MdsValue(buf, &idesc, &null, &len);
+                        %%       if( !statusOk(status4) )
+                        %%       {
+                        %%              fprintf(stderr,"Error TCL command : wait for event DDS1B: %s.\n", MdsGetMsg(status4));
+                        %%       } else {
+                        %%              MdsDisconnect(DATA_SERVER);
+                        %%              socket = MdsConnect(IKSTAR_SERVER);
+                        %%              if (socket == -1 )
+                        %%              {
+                        %%                      fprintf(stderr,"Error connecting to mdsip server(%s).\n", IKSTAR_SERVER);
+                        %%              } else {
+                        %%                      sprintf(buf, "TCL(\"setevent DDS1B\")");
+                        %%                      status4 = MdsValue(buf, &idesc, &null, &len);
+                        %%                      if( !statusOk(status4) )
+                        %%                      {
+                        %%                              fprintf(stderr,"Error TCL command : set event  %s.\n", MdsGetMsg(status4));
+                        %%                      }
+                        %%                      printf("MDSplus >>> Send MDS Event..DDS1B. OK. shotNu:%d \n",pVar->shotNumber);
+                        %%                      MdsDisconnect(IKSTAR_SERVER);
+                        %%              }
+                        %%      }
+                        %% }
+                } state DDS1B_EventPut
+        }
+}

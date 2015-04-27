@@ -1,0 +1,1029 @@
+<ui version="4.0" >
+ <class>panel_up</class>
+ <widget class="QWidget" name="panel_up" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>85</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <property name="styleSheet" >
+   <string/>
+  </property>
+  <widget class="CALabel" name="caLabel_4" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>45</y>
+     <width>82</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_MODE_KSTAR</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::IfNotZero</enum>
+   </property>
+   <property name="truelabel" >
+    <string>KSTAR</string>
+   </property>
+   <property name="falselabel" >
+    <string>KSTAR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>460</x>
+     <y>17</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Local Next Shot</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic" >
+   <property name="geometry" >
+    <rect>
+     <x>1106</x>
+     <y>17</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="pvname" >
+    <string>LH1_MAIN_HeartBeat</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>17</y>
+     <width>160</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Operation Mode</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>351</x>
+     <y>17</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>KSTAR Next Shot</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_2" >
+   <property name="geometry" >
+    <rect>
+     <x>1136</x>
+     <y>17</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="pvname" >
+    <string>LH1_DAQ_HeartBeat</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>1176</x>
+     <y>17</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="resources/resources.qrc" >:/new/prefix1/images/kstar.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>582</x>
+     <y>17</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>KSTAR  Interlock</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_5" >
+   <property name="geometry" >
+    <rect>
+     <x>602</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>L1</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_L1_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>L1</string>
+   </property>
+   <property name="falselabel" >
+    <string>L1</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_6" >
+   <property name="geometry" >
+    <rect>
+     <x>633</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>L2</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_L2_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>L2</string>
+   </property>
+   <property name="falselabel" >
+    <string>L2</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_7" >
+   <property name="geometry" >
+    <rect>
+     <x>664</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>L3</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_L3_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>L3</string>
+   </property>
+   <property name="falselabel" >
+    <string>L3</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_8" >
+   <property name="geometry" >
+    <rect>
+     <x>695</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>L4</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_L4_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>L4</string>
+   </property>
+   <property name="falselabel" >
+    <string>L4</string>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="caPushButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>946</x>
+     <y>9</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet" >
+    <string/>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::PulseButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_EMG_CMD</string>
+   </property>
+   <property name="truelabel" >
+    <string>EMG</string>
+   </property>
+   <property name="falselabel" >
+    <string>EMG</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="selTColor" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unselTColor" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_9" >
+   <property name="geometry" >
+    <rect>
+     <x>84</x>
+     <y>45</y>
+     <width>82</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_MODE_DUMMY</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::IfNotZero</enum>
+   </property>
+   <property name="truelabel" >
+    <string>DUMMY</string>
+   </property>
+   <property name="falselabel" >
+    <string>DUMMY</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_10" >
+   <property name="geometry" >
+    <rect>
+     <x>865</x>
+     <y>46</y>
+     <width>70</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text" >
+    <string>SAFETY</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_SKEY_STAT</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>SAFETY</string>
+   </property>
+   <property name="falselabel" >
+    <string>SAFETY</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>243</x>
+     <y>17</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>P/S Ctrl. Mode</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_11" >
+   <property name="geometry" >
+    <rect>
+     <x>268</x>
+     <y>45</y>
+     <width>71</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_OM_EPICS_STAT</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>EPICS</string>
+   </property>
+   <property name="falselabel" >
+    <string>PLC</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_12" >
+   <property name="geometry" >
+    <rect>
+     <x>828</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>W/C</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_CL_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>W/C</string>
+   </property>
+   <property name="falselabel" >
+    <string>W/C</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_13" >
+   <property name="geometry" >
+    <rect>
+     <x>766</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>KLY</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_KLY_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>KLY</string>
+   </property>
+   <property name="falselabel" >
+    <string>KLY</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>715</x>
+     <y>17</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>LHCD  Interlock</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_14" >
+   <property name="geometry" >
+    <rect>
+     <x>797</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>T/L</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_TL_STAT</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>T/L</string>
+   </property>
+   <property name="falselabel" >
+    <string>T/L</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_15" >
+   <property name="geometry" >
+    <rect>
+     <x>735</x>
+     <y>45</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color: rgb(255,255,255);</string>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+   <property name="text" >
+    <string>P/S</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_P_S</string>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>P/S</string>
+   </property>
+   <property name="falselabel" >
+    <string>P/S</string>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="caPushButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>1022</x>
+     <y>9</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet" >
+    <string/>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::PulseButton</enum>
+   </property>
+   <property name="pvlist" stdset="0" >
+    <stringlist>
+     <string>LH1_RFK_RESET_CMD</string>
+     <string>LH1_RFANT_RESET_CMD</string>
+    </stringlist>
+   </property>
+   <property name="pvname" >
+    <string>LH1_PS_RESET_ECMD</string>
+   </property>
+   <property name="truelabel" >
+    <string>RESET</string>
+   </property>
+   <property name="falselabel" >
+    <string>RESET</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_16" >
+   <property name="geometry" >
+    <rect>
+     <x>865</x>
+     <y>10</y>
+     <width>70</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text" >
+    <string>SAFETY</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_INT_EMG_STAT</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>EMG</string>
+   </property>
+   <property name="falselabel" >
+    <string>EMG</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_3" >
+   <property name="geometry" >
+    <rect>
+     <x>480</x>
+     <y>45</y>
+     <width>111</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>LH1_DAQ_RD_STATUS</string>
+   </property>
+   <property name="blinkvalue" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_2" >
+   <property name="geometry" >
+    <rect>
+     <x>480</x>
+     <y>45</y>
+     <width>111</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet" >
+    <string/>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_DAQ_RD_LOCALSHOT</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Int</enum>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_3" >
+   <property name="geometry" >
+    <rect>
+     <x>1100</x>
+     <y>60</y>
+     <width>170</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>LHCD_SYS_TIME</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_4" >
+   <property name="geometry" >
+    <rect>
+     <x>361</x>
+     <y>45</y>
+     <width>111</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>CCS_SHOTSEQ_START</string>
+   </property>
+   <property name="blinkvalue" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_17" >
+   <property name="geometry" >
+    <rect>
+     <x>361</x>
+     <y>45</y>
+     <width>111</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet" >
+    <string/>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LH1_DAQ_AO_KSTARSHOT</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Int</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>175</x>
+     <y>17</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>LTU Mode</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_18" >
+   <property name="geometry" >
+    <rect>
+     <x>175</x>
+     <y>45</y>
+     <width>71</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="pvname" >
+    <string>LHCD_LTU_SET_FREE_RUN</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::TrueFalse</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>LOCAL</string>
+   </property>
+   <property name="falselabel" >
+    <string>KSTAR</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources/resources.qrc" />
+ </resources>
+ <connections/>
+</ui>

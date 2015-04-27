@@ -1,0 +1,44 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>615</width>
+    <height>583</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAMultiplot" name="caMultiplot" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>90</y>
+     <width>541</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>TEST_sinA</string>
+   </property>
+   <property name="timeline" stdset="0" >
+    <number>8001</number>
+   </property>
+   <property name="periodicdata" stdset="0" >
+    <enum>CAMultiplot::PointOne</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

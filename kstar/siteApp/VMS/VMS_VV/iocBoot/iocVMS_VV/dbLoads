@@ -1,0 +1,20 @@
+cd ${TOP}
+
+## Load record instances
+dbLoadTemplate("db/VMS_VV_BI_READ.template")
+dbLoadTemplate("db/VMS_VV_BO_SW_WRITE.template")
+dbLoadTemplate("db/dbLoadVVPGP307.template")
+dbLoadTemplate("db/dbLoadVVPTPG262.template")
+dbLoadTemplate("db/dbLoadVVPTMP.template")
+dbLoadTemplate("db/VMS_VV_TMP_RSS.template")
+dbLoadTemplate("db/dbLoadVVPCRP.template")
+dbLoadTemplate("db/VMS_VV_CRP_Rxx.template")
+dbLoadTemplate("db/dbLoadVVPMBP.template")
+dbLoadRecords("db/dbSysMon.db", "SYS=VMS_VV")
+
+# HEART BEAT #
+dbLoadRecords("db/VMS_VV_HEART.db")
+
+
+##
+dbLoadTemplate("db/VMS_VV_GAUGE_OUT.template")

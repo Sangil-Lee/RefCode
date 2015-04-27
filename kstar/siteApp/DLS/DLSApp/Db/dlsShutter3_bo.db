@@ -1,0 +1,24 @@
+record(bo, "$(REC)")
+{
+        field(DESC, "Power and Shutter Control")
+	field(DTYP, "cFP20x0 NI compactFieldPoint")
+        field(OUT, "@nicFP20x0Ctrl3 write $(CHAN)")
+	field(SCAN, "Passive")
+#	field(PINI, "YES")
+	field(VAL, "0")
+        field(ZNAM, "0")
+        field(ONAM, "1")
+	field(ZSV, "MAJOR")
+        field(OSV, "NO_ALARM")
+}
+# Do not work
+#record(bi, "$(REC)_READ")
+#{
+#        field(DESC, "Power and Shutter Status")
+#        field(DTYP, "cFP20x0 NI compactFieldPoint")
+#        field(INP, "@nicFP20x0Ctrl3 read $(CHAN)")
+#        field(SCAN, "I/O Intr")
+#        field(PINI, "YES")
+#        field(ZNAM, "0")
+#        field(ONAM, "1")
+#}

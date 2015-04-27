@@ -1,0 +1,106 @@
+program sncVVSSeq 
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+int daqStop;
+int ccsMDSTree;
+int trendRun;
+
+double startT0;
+double stopT1;
+double ltuT0;
+double ltuT1;
+
+assign opMode to "VVS_OP_MODE";
+assign status to "VVS_STATUS";
+assign sysArming to "VVS_SYS_ARMING";
+assign autoRun to "VVS_AUTO_RUN";
+assign daqStop to "VVS_DAQ_STOP";
+assign trendRun to "VVS_TREND_RUN";
+assign ccsMDSTree to "CCS_SHOTSEQ_MDSTREE_CREATE";
+
+assign startT0 to "VVS_START_T0_SEC1";
+assign stopT1 to "VVS_STOP_T1_SEC1";
+assign ltuT0 to "QDS_LTU_P6_SEC0_T0";
+assign ltuT1 to "QDS_LTU_P6_SEC0_T1";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+monitor daqStop;
+monitor trendRun;
+monitor ccsMDSTree;
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+monitor ltuT1;
+
+
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+evflag ltuT0f;
+sync ltuT0 ltuT0f;
+
+evflag ltuT1f;
+sync ltuT1 ltuT1f;
+
+evflag ccsMDSTreef;
+sync ccsMDSTree ccsMDSTreef;
+ss setPreSeq {
+	state setPre {
+		 when (efTestAndClear(ccsMDSTreef)) {
+			if(autoRun == 1 && opMode == 1 && status == 4 && ccsMDSTree == 1){
+				trendRun = 0;
+				pvPut(trendRun,SYNC);
+				daqStop = 1;
+				pvPut(daqStop,SYNC);
+			}
+		}state setPre 
+	}
+}
+ss setT0Seq {
+	state setT0 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT0 
+	}
+}
+ss setT1Seq {
+	state setTltu0 {
+		 when (efTestAndClear(ltuT0f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+			}
+		}state setTltu0 
+	}
+}
+ss setT2Seq {
+	state setTltu1 {
+		 when (efTestAndClear(ltuT1f)) {
+			if(opMode == 1 && status == 1){
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setTltu1 
+	}
+}

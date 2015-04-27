@@ -1,0 +1,217 @@
+# filename : .kstarrc
+#
+# ***************************************************************************
+#
+# Copyright(C) 2007, NFRI, All rights reserved.
+# Proprietary information, National Fusion Research Institute(NFRI)
+#
+# ***************************************************************************
+#
+# ***** HIGH LEVEL DESCRIPTION **********************************************
+#
+# This is the c shell resource file for development and running system.
+# It defines environment variables and aliases.
+#
+# This should be included in login shell resource file (.bashrc) such as
+#   source .kstarrc
+#
+# **** REVISION HISTORY *****************************************************
+#
+# Revision 1  2007-09-06
+# Author: Sangil Lee, Sulhee Baek
+# Initial Revision
+#
+# Revision 1.1  2007-11-50
+# Author: Sulhee Baek
+# PATH modification
+# ---------------------------------------------------------------------------
+
+##########################################################
+# common
+##########################################################
+
+#----------------------
+# alias
+#----------------------
+
+#alias ls='ls -F --show-control-chars --color=tty'
+alias ls='ls -F --show-control-chars --color=auto'
+alias l='ls -l'
+alias ll='ls -al'
+alias lc='ls *.h *.cpp *.fi *.f90 *.f *.link'
+alias llc='ls -al *.h *.cpp *.fi *.f90 *.f *.link'
+alias lt='ls -ltr *.h *.cpp *.fi *.f90 *.f *.link'
+alias lst='ls -ltr'
+alias dir='ls -lF'
+#alias dir/w='ls -CF'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias rf='rm -f'
+
+alias tart='tar tvzf'
+alias tarx='tar xvzf'
+alias tarc='tar cvzf'
+alias fnd='find . -name'
+
+alias vo='vi ~/.bashrc'
+alias so='source ~/.bashrc'
+alias vp='vi ~/.bash_profile'
+alias sp='source ~/.bash_profile'
+
+alias psg='ps -edf | grep'
+alias psall='ps -edf'
+alias myip='/sbin/ifconfig -a'
+
+alias xt='xterm -fg white -bg black &'
+alias xts='xterm &'
+alias xtbig='xterm -fg white -bg black -fn 10x20 &'
+alias xtb='xterm -fg white -bg black -fn 7x14 &'
+alias xtbb='xterm -fg white -bg black -fn 8x16 &'
+alias xtbbb='xterm -fg white -bg black -fn 10x20 &'
+alias xty='xterm -fg white -bg yellow &'
+alias han='hanterm &'
+
+#----------------------
+# set variables
+#----------------------
+
+export HISTSIZE=100
+
+##########################################################
+# run environment
+##########################################################
+
+#----------------------
+# EPICS environment variables
+#----------------------
+export EPICS_PATH=/usr/local/epics
+export HOST_ARCH=linux-x86
+#----------------------
+# for qtEdm
+export EPICS_TOP=${EPICS_BASE}
+export EPICS_HOST_TYPE=Linux
+#----------------------
+export EPICS_HOST_ARCH=${HOST_ARCH}
+export EPICS_BASE=${EPICS_PATH}/base
+export EPICS_EXTENSIONS=${EPICS_PATH}/extensions
+export EPICS_SITE=${EPICS_PATH}/siteLib
+export EPICS_BASE_BIN=${EPICS_BASE}/bin/${HOST_ARCH}
+export EPICS_BASE_LIB=${EPICS_BASE}/lib/${HOST_ARCH}
+export EPICS_EXTENSIONS_BIN=${EPICS_EXTENSIONS}/bin/${HOST_ARCH}
+export EPICS_EXTENSIONS_LIB=${EPICS_EXTENSIONS}/lib/${HOST_ARCH}
+export EPICS_SITE_BIN=${EPICS_SITE}/bin/${HOST_ARCH}
+export EPICS_SITE_LIB=${EPICS_SITE}/lib/${HOST_ARCH}
+export SEQ_VERSION=seq-2.0.7
+export EPICS_SEQ_PATH=${EPICS_PATH}/src/${SEQ_VERSION}
+export EPICS_SEQ_BIN=${EPICS_SEQ_PATH}/bin/${HOST_ARCH}
+export EPICS_SEQ_LIB=${EPICS_SEQ_PATH}/lib/${HOST_ARCH}
+export EPICS_ASYNDRIVER=asynDriver-1a2
+export EPICS_ASYNDRIVER_PATH=${EPICS_PATH}/${EPICS_ASYNDRIVER}
+export EPICS_ASYNDRIVER_LIB=${EPICS_ASYNDRIVER_PATH}/lib/${HOST_ARCH}
+export EPICS_ASYNDRIVER_INCLUDE=${EPICS_ASYNDRIVER_PATH}/include
+export EPICS_IPAC=ipac-2.6
+export EPICS_IPAC_PATH=${EPICS_PATH}/${EPICS_IPAC}
+export TOP_IV_TOOLS_DIR=${EPICS_PATH}
+export EDMPVOBJECTS=${EPICS_EXTENSIONS}/ext_pref/edm
+export EDMOBJECTS=${EPICS_EXTENSIONS}/ext_pref/edm
+export EDMHELPFILES=${EPICS_EXTENSIONS}/src/edm/helpFiles
+export EDMFILES=${EPICS_EXTENSIONS}/ext_pref/edm
+
+
+##########################################################
+# development environment
+##########################################################
+# export WORKDIR=$HOME/work/
+export OPISRC=/usr/local/opisrc
+export OPI=/usr/local/opi
+
+#----------------------
+# environment variables
+#----------------------
+# for QT
+#export QT_HOME=/usr/local/Trolltech/Qt-4.3.2
+export QT_HOME=/opt/qtsdk-2009.03/qt
+export QWT_HOME=/usr/local/qwt
+
+LD_LIBRARY_PATH=/lib:/usr/lib
+LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${TOP_IV_TOOLS_DIR}/lib:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_BASE_LIB}:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_EXTENSIONS_LIB}:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_SITE_LIB}:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_SEQ_LIB}:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_ASYNDRIVER_LIB}:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${QT_HOME}/lib:${QWT_HOME}/lib:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${QT_HOME}/plugins/designer:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${OPI}/lib:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_EXTENSIONS}/src/qtEdm:${LD_LIBRARY_PATH}
+LD_LIBRARY_PATH=${EPICS_EXTENSIONS}/src/qtEdm/util:${LD_LIBRARY_PATH}
+
+#set path = ( $path \
+#             $EPICS_BASE_BIN $EPICS_EXTENSIONS_BIN $EPICS_SITE_BIN \
+#             $EPICS_SEQ_BIN )
+#set path = ( $path $TOP_IV_TOOLS_DIR/bin )
+
+PATH=${QT_HOME}/bin:${PATH}
+PATH=${EPICS_BASE_BIN}:${PATH}
+PATH=${EPICS_EXTENSIONS_BIN}:${PATH}
+PATH=${EPICS_SITE_BIN}:${PATH}
+PATH=${EPICS_SEQ_BIN}:${PATH}
+PATH=${TOP_IV_TOOLS_DIR}/bin:${PATH}
+PATH=${OPI}/bin:${PATH}
+
+##########################################################
+# for java CLASSPATH
+##########################################################
+#JAVA_HOME=/usr/local/jdk1.6.0
+JAVA_HOME=/usr/java/jre
+ANT_HOME=/usr/local/ant
+CAJ_HOME=$HOME/caj
+PATH=${JAVA_HOME}/bin:${PATH}
+
+
+LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/i386:$JAVA_HOME/jre/lib/i386/ns610:$JAVA_HOME/jre/lib/i386/ns610-gcc32:$JAVA_HOME/jre/lib/i386/ns4:${LD_LIBRARY_PATH}
+CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/htmlconverter.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/sa-jdi.jar:$JAVA_HOME/lib/jconsole.jar:$HOME/jca/O.core/jca.jar:./
+CLASSPATH=$CAJ_HOME/caj-1.1.3.jar:$CAJ_HOME/jca-2.3.1.jar:$CLASSPATH
+
+
+
+# new JDBC driver
+#CLASSPATH=$JAVA_HOME/lib/JDBC/mysql-connector-java-3.2.0-alpha-bin.jar:$CLASSPATH
+#CLASSPATH=.:$CLASSPATH
+#export CLASSPATH
+#export XERCESCROOT=/usr/local/xerces-c-src_2_7_0
+export PATH
+export LD_LIBRARY_PATH
+export CLASSPATH
+
+export EPICS_DISPLAY_PATH=/usr/local/opi/adl
+export EPICS_DISPLAY_PATH=$EPICS_DISPLAY_PATH:/usr/local/opi/images
+export EPICS_CA_ADDR_LIST=""
+# export EPICS_CA_ADDR_LIST=172.17.100.199
+# export EPICS_CA_ADDR_LIST="127.0.0.1"
+# DB#2 commissioning 
+# export EPICS_CA_ADDR_LIST="172.17.100.199 172.17.101.163"
+export EPICS_CA_AUTO_ADDR_LIST=yes
+# export EPICS_CA_AUTO_ADDR_LIST=no
+#export EPICS_CA_MAX_ARRAY_BYTES=6553600
+
+
+#####################################################
+## MDSplus
+#####################################################
+export PATH=/usr/local/mdsplus/bin:\
+$PATH
+export MDSPLUS_DIR=/usr/local/mdsplus
+export LD_LIBRARY_PATH=/usr/local/mdsplus/lib:$LD_LIBRARY_PATH
+
+export dds1r_path=/media/data3/dds1r
+export dds1lr_path=/media/data3/dds1lr
+export dds1la_path=/media/data3/dds1la
+
+
+##########################################################
+# end
+##########################################################

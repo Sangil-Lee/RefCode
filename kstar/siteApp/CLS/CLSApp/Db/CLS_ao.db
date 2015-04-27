@@ -1,0 +1,32 @@
+record(calcout, "$(PV_NAME)_CALC") {
+  field(CALC, "A")
+  field(INPA, "$(PV_NAME)_IN CPP")
+  field(INPB, "CLS_REMOTE CPP")
+  field(OUT, "$(PV_NAME)")
+  field(FLNK, "$(PV_NAME)")
+}
+
+record(ao, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 $(TAG) S 1")
+  field(EGU, "$(UNIT)")
+  field(HOPR, "$(HOPR)")
+  field(LOPR, "$(LOPR)")
+  field(LINR, "LINEAR")
+  field(ASLO, "$(ASLO)")
+
+}
+
+
+record(ai, "$(PV_NAME)_IN") {
+  field(DESC, "$(DESC)")
+  field(DTYP, "EtherIP")
+  field(INP, "@plc1 $(TAG) S 1")
+  field(EGU, "$(UNIT)")
+  field(HOPR, "$(HOPR)")
+  field(LOPR, "$(LOPR)")
+  field(LINR, "LINEAR")
+  field(ASLO, "$(ASLO)")
+  field(SCAN, "I/O Intr")
+}

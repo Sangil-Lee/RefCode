@@ -1,0 +1,61 @@
+# ---------------------------------------------
+# KSTAR Heating Control
+# ---------------------------------------------
+
+record (bo, "$(SYS)_KSTAR_OPR_MODE") {
+  field(DESC, "KSTAR Operation Mode")
+  field(ZNAM, "DUMMY OPR")
+  field(ONAM, "KSTAR OPR")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+record (calcout, "$(SYS)_KSTAR_OPR_MODE_CALC") {
+  field(DESC, "KSTAR Operation Mode Calc")
+  field(SCAN, "Passive")
+  field(CALC, "(A && B) ? 1 : 0")
+  field(INPA, "NB1_INJECT_KSTAR_MODE CPP")
+  field(INPB, "$(ISMODE) CPP")
+  field(OUT , "$(SYS)_KSTAR_OPR_MODE PP")
+}
+
+record (bo, "$(SYS)_KSTAR_OPR_PER") {
+  field(DESC, "Heating Permission Command")
+  field(ZNAM, "NO")
+  field(ONAM, "YES")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+record (bo, "$(SYS)_KSTAR_OPR_RDY") {
+  field(DESC, "Heating Ready Command")
+  field(ZNAM, "NOT READY")
+  field(ONAM, "READY")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+record (bo, "$(SYS)_KSTAR_OPR_RDY_LAMP") {
+  field(DESC, "Heating Ready Status")
+  field(ZNAM, "NOT READY")
+  field(ONAM, "READY")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+#record (bo, "$(SYS)_KSTAR_OPR_UPLOAD") {
+#  field(DESC, "Heating Setting Upload")
+#  field(ZNAM, "0")
+#  field(ONAM, "1")
+#}
+
+record (ao, "$(SYS)_KSTAR_OPR_PULSEON") {
+  field(DESC, "Heating Setting for Pulse On")
+  field(PREC, "4")
+}
+
+record (ao, "$(SYS)_KSTAR_OPR_PULSE_START") {
+  field(DESC, "Heating Pulse Start")
+  field(PREC, "4")
+}
+

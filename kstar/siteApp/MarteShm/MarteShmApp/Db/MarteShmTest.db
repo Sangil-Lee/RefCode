@@ -1,0 +1,22 @@
+record (calc, "MARTE_SHM_SIM_CNT")
+{
+	field (DESC , "incresing count by 1")
+	field (SCAN , ".1 second")
+	field (CALC , "(A + 1) % B")
+	field (INPA , "MARTE_SHM_SIM_CNT")
+	field (INPB , "100")
+}
+
+record (calcout, "MARTE_SHM_SIM_WR_01")
+{
+	field (DESC , "sine curve")
+	field (SCAN , ".1 second")
+	field (CALC , "SIN (A / B * D * C / 180.0)")
+	#field (CALC , "D");
+	field (OUT  , "MARTE_SHM_WR_01")
+	field (INPA , "360.0")		# 
+	field (INPB , "100.0")		# 
+	field (INPC , "3.141592")	# PI
+	field (INPD , "MARTE_SHM_SIM_CNT")
+}
+

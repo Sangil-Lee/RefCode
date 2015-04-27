@@ -1,0 +1,45 @@
+record(ai, "TMS_IOC2_INTERLOCK")
+{
+	field(DESC, "TMS_IOC2_INTERLOCK")
+	field(SCAN, "Passive")
+	field(LINR, "LINEAR")
+	field(INP, "1")
+	field(LOPR, "0")
+	field(HOPR, "65535")
+	field(EGUL, "0")
+	field(EGUF, "65535")
+}
+record(bi, "TMS_IOC2_HEART_BEAT")
+{
+    	field(DESC, "TMS_IOC2_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(INP, "TMS_IOC2_HEART_BEAT_CALC.VAL NPP NMS")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(calc, "TMS_IOC2_HEART_BEAT_CALC")
+{
+    	field(DESC, "TMS_IOC2_HEART_BEAT")
+	field(SCAN, "1 second")
+    	field(INPA, "TMS_IOC2_HEART_BEAT.VAL NPP NMS")
+	field(CALC, "A=0?1:0")
+	field(FLNK, "TMS_IOC2_HEART_BEAT")
+}
+record(calcout, "TMS_INTER_HEART_BEAT_IOC1")
+{
+    	field(DESC, "TMS_INTER_HEART_BEAT")
+	field(SCAN, "1 second")
+    	field(INPA, "TMS_INTERLOCK_HEART_BEAT")
+	field(CALC, "A=0?1:0")
+	field(OUT, "TMS_INTERLOCK_HEART_BEAT PP")
+}
+record(bo, "TMS_IOC2_HEART_BEAT")
+{
+    	field(DESC, "TMS_IOC2_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(DOL, "TMS_IOC1_HEART_BEAT CPP")
+	field(OMSL, "closed_loop")
+	field(OUT, "TMS_INTERLOCK_HEART_BEAT PP")
+}

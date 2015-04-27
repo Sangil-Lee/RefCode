@@ -1,0 +1,203 @@
+program sncFILD
+
+%{
+#include "kutil.h"
+#define FILD_POSITION_CNT	5
+}%
+
+int cur_pos;
+assign cur_pos to "FILD_CUR_POS";
+monitor cur_pos;
+
+int cmd_pos;
+assign cmd_pos to "FILD_CMD_POS";
+monitor cmd_pos;
+
+int cmd_auto_start;
+assign cmd_auto_start to "FILD_CMD_AUTO_START";
+monitor cmd_auto_start;
+
+int set_pos[5];
+assign set_pos[0] to "FILD_SET_POS1";
+assign set_pos[1] to "FILD_SET_POS2";
+assign set_pos[2] to "FILD_SET_POS3";
+assign set_pos[3] to "FILD_SET_POS4";
+assign set_pos[4] to "FILD_SET_POS5";
+monitor set_pos;
+
+int cmd_valve_open;
+assign cmd_valve_open to "FILD_CMD_VALVE_OPEN";
+monitor cmd_valve_open;
+
+int cmd_valve_close;
+assign cmd_valve_close to "FILD_CMD_VALVE_CLOSE";
+monitor cmd_valve_close;
+
+int cmd_jog_in;
+assign cmd_jog_in to "FILD_CMD_JOG_IN";
+monitor cmd_jog_in;
+
+int cmd_jog_out;
+assign cmd_jog_out to "FILD_CMD_JOG_OUT";
+monitor cmd_jog_out;
+
+/* previous value */
+int old_cmd_pos;
+int old_set_pos[5];
+int old_cmd_valve_open;
+int old_cmd_valve_close;
+int old_cmd_jog_in;
+int old_cmd_jog_out;
+int old_cmd_auto_hand;
+int old_set_auto_hand;
+
+int auto_hand;
+assign auto_hand to "FILD_AUTO_HAND";
+monitor auto_hand;
+
+int cmd_auto_hand;
+assign cmd_auto_hand to "FILD_CMD_AUTO_HAND";
+monitor cmd_auto_hand;
+
+int set_auto_hand;
+assign set_auto_hand to "FILD_SET_AUTO_HAND";
+monitor set_auto_hand;
+
+int i;
+int j;
+
+ss setPosition {
+    state init {
+		when (1) {
+			old_cmd_pos			= cmd_pos;
+			old_cmd_valve_open  = cmd_valve_open;
+			old_cmd_valve_close = cmd_valve_close;
+			old_cmd_jog_in		= cmd_jog_in;
+			old_cmd_jog_out		= cmd_jog_out;
+			old_cmd_auto_hand	= cmd_auto_hand;
+			old_set_auto_hand	= set_auto_hand;
+
+			for (i = 0; i < FILD_POSITION_CNT; i++) {
+				old_set_pos[i] = set_pos[i];
+			}
+		} state run
+	}
+	state run {
+		when (delay(.1)) {
+			kuDebug (kuDEL, "[sncFILD::pos] ...\n");
+
+			%% // ------------------------------------------------------------------
+			%% // set position
+			%% // ------------------------------------------------------------------
+
+			for (i = 0; i < FILD_POSITION_CNT; i++) {
+				%% // check whether new position was selected
+				if ( (1 == set_pos[i]) && (set_pos[i] != old_set_pos[i]) ) {
+					cmd_pos = i + 1;
+
+					for (j = 0; j < FILD_POSITION_CNT; j++) {
+						if (i != j) {
+							if (1 == set_pos[j]) {
+								set_pos[j] = 0;
+								pvPut (set_pos[j]);
+							}
+						}
+					}
+					break;
+				}
+			}
+
+			%% // ------------------------------------------------------------------
+			%% // request writing new position to PLC
+			%% //  1) set new position
+			%% //  2) generate pulse to notify that new position was requested to PLC
+			%% // ------------------------------------------------------------------
+
+			if ( (cmd_pos > 0) && (cmd_pos != old_cmd_pos) ) {
+				pvPut (cmd_pos);
+
+				cmd_auto_start = 1;
+				pvPut (cmd_auto_start);
+
+				%% // TODO: optimize (don't use sleep or decrease sleep time)
+				epicsThreadSleep(0.5);
+
+				cmd_auto_start = 0;
+				pvPut (cmd_auto_start);
+
+				kuDebug (kuMON, "[sncFILD::pos] cmd_pos (%d -> %d)\n", old_cmd_pos, cmd_pos);
+			}
+
+			%% // ------------------------------------------------------------------
+			%% // clear set position
+			%% // ------------------------------------------------------------------
+
+			for (i = 0; i < FILD_POSITION_CNT; i++) {
+				if (1 == set_pos[i]) {
+					if ( (i + 1 == cur_pos) && (cur_pos == cmd_pos) ) {
+						kuDebug (kuMON, "[sncFILD::pos] set_pos (%d) : reset\n", i + 1);
+
+						set_pos[i] = 0;
+						pvPut (set_pos[i]);
+					}
+				}
+			}
+
+			%% // ------------------------------------------------------------------
+			%% // request writing command for Auto/Hand to PLC
+			%% // ------------------------------------------------------------------
+
+			if (set_auto_hand != old_set_auto_hand) {
+				kuDebug (kuMON, "[sncFILD::pos] auto/hand : cur(%d) set(%d) cmd(%d)\n",
+					auto_hand, set_auto_hand, cmd_auto_hand);
+
+				cmd_auto_hand = (1 == auto_hand) ? 0 : 1;
+				pvPut (cmd_auto_hand);
+
+				kuDebug (kuMON, "[sncFILD::pos] auto/hand cmd(%d -> %d)\n", auto_hand, cmd_auto_hand);
+			}
+
+			if (set_auto_hand != auto_hand) {
+				kuDebug (kuMON, "[sncFILD::pos] auto/hand set(%d -> %d)\n", set_auto_hand, auto_hand);
+
+				set_auto_hand = auto_hand;
+				pvPut (set_auto_hand);
+			}
+
+			%% // ------------------------------------------------------------------
+			%% // gate value open / close
+			%% // ------------------------------------------------------------------
+
+			if ( (cmd_valve_open == 1) && (cmd_valve_open != old_cmd_valve_open) ) {
+				if (1) { cmd_valve_close = 0; pvPut (cmd_valve_close); }
+				%% //if (cmd_valve_close == 1) { cmd_valve_close = 0; pvPut (cmd_valve_close); }
+
+				kuDebug (kuMON, "[sncFILD::pos] gate valve open \n");
+			}
+			else if ( (cmd_valve_close == 1) && (cmd_valve_close != old_cmd_valve_close) ) {
+				if (1) { cmd_valve_open = 0; pvPut (cmd_valve_open); }
+				%% //if (cmd_valve_open == 1) { cmd_valve_open = 0; pvPut (cmd_valve_open); }
+
+				kuDebug (kuMON, "[sncFILD::pos] gate valve close \n");
+			}
+
+			%% // ------------------------------------------------------------------
+			%% // jog in / out
+			%% // ------------------------------------------------------------------
+
+			if ( (cmd_jog_in == 1) && (cmd_jog_in != old_cmd_jog_in) ) {
+				if (1) { cmd_jog_out = 0; pvPut (cmd_jog_out); }
+				%% //if (cmd_jog_out == 1) { cmd_jog_out = 0; pvPut (cmd_jog_out); }
+
+				kuDebug (kuMON, "[sncFILD::pos] jog in\n");
+			}
+			else if ( (cmd_jog_out == 1) && (cmd_jog_out != old_cmd_jog_out) ) {
+				if (1) { cmd_jog_in = 0; pvPut (cmd_jog_in); }
+				%% //if (cmd_jog_in == 1) { cmd_jog_in = 0; pvPut (cmd_jog_in); }
+
+				kuDebug (kuMON, "[sncFILD::pos] jog out\n");
+			}
+		} state init
+	}
+}
+

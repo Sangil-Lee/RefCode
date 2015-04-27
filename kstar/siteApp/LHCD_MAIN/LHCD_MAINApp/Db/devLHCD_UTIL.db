@@ -1,0 +1,73 @@
+#record(bi, "$(P)_MODE_DUMMY")
+#{
+#    field(DESC, "Heart")
+#    field(SCAN, "1 second")
+#    field(OSV, "NO_ALARM")
+#    field(ZSV, "MAJOR")
+#}
+#record(bi, "$(P)_MODE_KSTAR")
+#{
+#    field(DESC, "Heart")
+#    field(SCAN, "1 second")
+#    field(OSV, "NO_ALARM")
+#    field(ZSV, "MAJOR")
+#}
+record(ao, "$(P)_RF_ON_TIME")
+{
+    field(DESC, "RF On Time")
+    field(PREC, "3")
+    field(PINI, "YES")
+}
+record(ao, "$(P)_RF_PULSE_WIDTH")
+{
+    field(DESC, "RF Pulse Width")
+    field(PREC, "3")
+    field(PINI, "YES")
+}
+record(ao, "$(P)_RF_FEED_ON")
+{
+    field(DESC, " RF Feddback on time")
+    field(PREC, "3")
+    field(PINI, "YES")
+}
+record(bo, "$(P)_RF_AUTO_SET")
+{
+    field(DESC, "RF Auto time set")
+    field(ONAM, "ON")
+    field(ZNAM, "OFF")
+}
+record(bo, "$(P)_POW_AUTO_SET")
+{
+    field(DESC, "RF Auto time set")
+    field(ONAM, "ON")
+    field(ZNAM, "OFF")
+}
+record(stringout, "$(P)_VME_FLT_MSG")
+{
+    field(DESC, "LH1 Fault Msg.")
+}
+record(ao, "$(P)_PARM_RF_POW")
+{
+	field(DESC, "Param RF pow.")
+	field(SCAN, "Passive")
+	field(PREC, "0")
+}
+record(ao, "$(P)_PARM_RF_VGAIN")
+{
+	field(DESC, "Param RF pow.")
+	field(SCAN, "Passive")
+	field(PREC, "2")
+}
+record(bo, "$(P)_RF_DC_SET")
+{
+	field(DESC, "RF Ctrl. Set")
+	field(SCAN, "Passive")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+
+record(ao, "$(P)_RF_DAQDURA_CMD")
+{
+    field(DESC, "DAQ DURA SET")
+    field(PREC, "3")
+}

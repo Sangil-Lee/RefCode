@@ -1,0 +1,99 @@
+#record(ai, "CWF_WATER_TEMP") {
+#   field(DESC, "CWF Inlet Water Temp.")
+#   field(EGU, "degC")
+#   field(VAL, "100")
+#   field(PINI, "YES")
+#}
+# move from PMS to CWF 
+#record(ai, "CWF_WATER_TEMP") {
+#  field(DESC, "CWF Inlet Water Temp.")
+#  field(EGU, "degC")
+#  field(SCAN, "I/O Intr")
+#  field(DTYP, "EtherIP")
+#  field(INP, "@CWF_PLC CWF_WATER_TEMP S 1")
+#}
+
+
+
+record(ai, "PMS_TEMP_HIHI") {
+   field(DESC, "PMS HIHI TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "50")
+   field(PREC, "3")
+   field(PINI, "YES")
+}
+
+record(ai, "PMS_TEMP_HIGH") {
+   field(DESC, "PMS HIGH TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "30")
+   field(PREC, "3")
+   field(PINI, "YES") 
+}
+
+record(ai, "PMS_TEMP_LOW") {
+   field(DESC, "PMS LOW TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "-250")
+   field(PREC, "3")
+   field(PINI, "YES")
+}
+
+record(ai, "PMS_TEMP_LOLO") {
+   field(DESC, "PMS LOLO TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "-500")
+   field(PREC, "3")
+   field(PINI, "YES") 
+}
+
+record(mbbi, "PMS_NB_ALL_MAX_INTERLOCK")
+{
+        field(DESC, "PMS_NB_ALL_MAX_I_LOCK")
+        field(SCAN, "Passive")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(ZRST, "Nomal_LE200")
+        field(ONST, "DoNot_Op_GT200")
+        field(TWST, "NBI_OFF_GT300")
+        field(THST, "Error")
+        field(ZRSV, "NO_ALARM")
+        field(ONSV, "MINOR")
+        field(TWSV, "MAJOR")
+        field(THSV, "MAJOR")
+}
+
+record(mbbi, "PMS_ALL_MAX_INTERLOCK")
+{
+        field(DESC, "PMS_ALL_MAX_I_LOCK")
+        field(SCAN, "Passive")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(ZRST, "Nomal_LE200")
+        field(ONST, "DoNot_Op_GT200")
+        field(TWST, "PF_LandingGT300")
+        field(THST, "Error")
+        field(ZRSV, "NO_ALARM")
+        field(ONSV, "MINOR")
+        field(TWSV, "MAJOR")
+        field(THSV, "MAJOR")
+}
+
+record(bi, "PMS_IVCC_COIL_MAX_INTERLOCK") {
+  field(DESC, "PMS_IVCC_COIL_MAX_INT")
+  field(ZNAM, "Normal_LE80")
+  field(ONAM, "IVCC_Off_GT80")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+}
+record(bi, "PMS_IVCC_CABLE_MAX_INTERLOCK") {
+  field(DESC, "PMS_IVCC_CAB_MAX_INT")
+  field(ZNAM, "Normal_LE60")
+  field(ONAM, "IVCC_Off_GT60")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+}

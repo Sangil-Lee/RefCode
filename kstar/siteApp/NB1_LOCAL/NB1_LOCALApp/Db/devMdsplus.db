@@ -1,0 +1,49 @@
+record(bo, "NB1_SOFT_TRIG")
+{
+    field(DESC, "Soft Trig")
+    field(DTYP, "BO_Etos")
+    field(OUT, "#L0 A0 @0")
+}
+record(calcout, "NB1_SOFT_TRIG_CALC")
+{
+    field(DESC, "Soft Trig CALC")
+    field(SCAN, ".1 second")
+    field(CALC, "A")
+#    field(INPA, "NB1_DTACQ_SoftTrig")
+    field(INPA, "TEST_BO")
+    field(OUT, "NB1_SOFT_TRIG.VAL NMP PP")
+}
+record(bo, "TEST_BO")
+{
+
+}
+record(ao, "NB1_MDS_T0")
+{
+    field(DESC, "MDS T0")
+    field(DTYP, "AO_Etos")
+    field(PREC, "0")
+    field(OUT, "#L0 A0 @2")
+}
+record(ao, "NB1_MDS_T1")
+{
+    field(DESC, "MDS T1")
+    field(DTYP, "AO_Etos")
+    field(PREC, "0")
+    field(OUT, "#L0 A0 @3")
+}
+record(calcout, "NB1_MDS_T0_CALC")
+{
+    field(DESC, "MDS T0 Calc")
+    field(SCAN, ".1 second")
+    field(CALC, "A")
+    field(INPA, NB1_DTACQ_T0")
+    field(OUT, "NB1_MDS_T0.VAL NMP PP")
+}
+#record(calcout, "NB1_MDS_T1_CALC")
+#{
+#    field(DESC, "MDS T1 Calc")
+#    field(SCAN, ".1 second")
+#    field(CALC, "A")
+#    field(INPA, NB1_DTACQ_T0")
+#    field(OUT, "NB1_MDS_T0.VAL NMP PP")
+#}

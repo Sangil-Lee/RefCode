@@ -1,0 +1,37 @@
+####### Compiler, tools and options
+CC            = gcc
+CXX           = g++
+CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT
+CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT
+INCPATH       = 
+LINK          = g++
+LFLAGS        = -L/usr/local/lib
+LIBS          = -lboost_thread -lboost_iostreams -lboost_serialization -lboost_system
+DEL_FILE      = rm -f
+
+####### Files
+SOURCES       = chatClient.cpp 
+OBJECTS       = chatClient.o
+TARGET        = chatClient
+
+####### Implicit rules
+.SUFFIXES: .o .c .cpp
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o "$@" "$<"
+
+.c.o:
+	$(CC) -c $(CFLAGS) $(INCPATH) -o "$@" "$<"
+
+####### Build rules
+$(TARGET):  $(OBJECTS)  
+	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
+	$(DEL_FILE) $(OBJECTS)
+
+clean: 
+	-$(DEL_FILE) $(OBJECTS)
+	-$(DEL_FILE) *~ core *.core
+
+####### Compile
+$(OBJECTS): chatClient.cpp chatMessage.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $(OBJECTS) chatClient.cpp

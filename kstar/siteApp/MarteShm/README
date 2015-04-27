@@ -1,0 +1,105 @@
+########################################################################
+# The MarteShm is an implementation of EPICS IOC interfacing with MARTe.
+# It is interfacing through shared memory.
+#
+# 2013.04.28 yunsw@nfri.re.kr	Initial revision
+########################################################################
+
+###################################################
+# How to use the MarteShm
+###################################################
+
+1. MarteShm for EPICS IOC
+
+ 1) Set the EPICS_BASE with your environment for EPICS
+ 	# vi $(MARTESHM_ROOT)/configure/RELEASE
+	...
+	EPICS_BASE=/opt/codac-4.0/epics/base		// ex) /home/user/epics/base3.14.12
+	...
+	
+ 2) Compile the EPICS IOC
+ 	# cd $(MARTESHM_ROOT)
+	# make
+
+ 3) If there is any problem regarding EPICS, please replace $(MARTESHM_ROOT)/configure with your's.
+    For your information, this example was implemented based on ITER CODAC Core System
+
+ 4) Executes the MarteShm IOC
+ 	# cd $(MARTESHM_ROOT)/iocBoot/iocMarteShm
+	# ./st.cmd
+
+2. MARTe
+
+ 1) Check whether all GAMs and drivers includes SharedMemoryDrv are compiled
+
+ 2) If you want to use MARTe-sharedmem-epics.sh included in the MarteShm,
+    please set the CODE_DIRECTORY with your environment for MARTe
+ 	# vi MARTe-sharedmem-epics.sh
+	CODE_DIRECTORY=yours_marte_root_directory
+ 
+ 3) Executes MARTe.ex with MARTe-sharedmem-epics.cfg
+    (ex)
+ 	# MARTe-sharedmem-epics.sh MARTe-sharedmem-epics.cfg
+ 
+###################################################
+# List of files
+###################################################
+
+configure	: EPICS configurations
+	RELEASE					: Containes EPICS_BASE. Please set with your environment.
+	...
+
+iocBoot
+	iocMarteShm		: EPICS IOC
+		Makefile
+		README
+		st.cmd				: startup script
+	Makefile
+
+Makefile
+
+MarteShmApp
+	Db
+		Makefile
+		MarteShm.db			: Database for EPICS PVs related to the shared memory device support
+		MarteShm.template	: Substitute for MarteShm.db
+		MarteShmSetup.db	: Database for an EPICS PV to set the writing period of waveform generator
+		MarteShmTest.db		: Not used. Writing PVs are changed by sncMarteShm.stt
+
+	Makefile
+
+	src
+		Makefile
+		MarteShmMain.cpp	: Main of EPICS application
+		sncMarteShm.dbd		: Registrar for sncMarteShm.stt
+		sncMarteShm.stt		: Generating sine curve and counter and wring the values of EPICS PVs
+
+MarteShmLib
+	devMarteShm.c			: Device support routine for shared memory interface with MARTe
+	drvMarteShm.c			: Driver support routine for shared memory interface with MARTe
+	drvMarteShm.h
+	Makefile
+	MarteShmLib.dbd
+	MarteShmType.h			: Type definition
+	MarteShmUtil.cpp		: Functions for shared memory and debug
+	MarteShmUtil.dbd
+	MarteShmUtil.h
+
+MarteShmOPI		: CSS (Control System Studio) OPI
+	images
+		epics.png			: Image file for EPICS logo
+		marte.png			: Image file for MARTe logo
+	MarteShm.opi			: OPI for the MarteShm IOC
+	MarteShmWithTabe.opi	: OPI for test with table
+	scripts
+		MarteShm-Table-Value-Script-Debug.py
+		MarteShm-Table-Value-Script.py	: Script for displaying contents of table in the OPI
+
+MarteConfig
+	MARTe-sharedmem-epics.cfg	: MARTe configuration file using shared memroy
+	MARTe-sharedmem-epics.sh	: Shell script to execute a MARTe application with an input configuration
+	run-shm-interface			: Shell script to execute a MARTe application with the MARTe-sharedmem-epics.cfg
+
+###################################################
+# End of file
+###################################################

@@ -1,0 +1,120 @@
+program sncSIFConvert
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include "epicsThread.h"
+%% #include "ATSIFIO.h" 
+
+
+char *pfileSifName;
+char *pfileTxtName;
+string tmpStr1;
+string tmpStr2;
+
+string workPath;
+assign workPath to "VSS_SIF_WORK_PATH";
+monitor workPath;
+
+string outPath;
+assign outPath to "VSS_SIF_OUT_PATH";
+monitor outPath;
+
+int shotNumber;
+assign shotNumber to "VSS_SIF_SHOT_NUMBER";
+monitor shotNumber;
+
+int shotSNumber;
+assign shotSNumber to "VSS_SIF_SHOT_START_NUMBER";
+monitor shotSNumber;
+
+int shotENumber;
+assign shotENumber to "VSS_SIF_SHOT_END_NUMBER";
+monitor shotENumber;
+
+float blipTime;
+assign blipTime to "VSS_SIF_BLIP_TIME";
+monitor blipTime;
+
+float daqTime;
+assign daqTime to "VSS_SIF_DAQ_TIME";
+monitor daqTime;
+
+float ccsBlipTime;
+assign ccsBlipTime to "CCS_BLIP_TIME";
+monitor ccsBlipTime;
+
+float hDaqTime;
+assign hDaqTime to "VBS_LTU_P7_SEC0_T0";
+monitor hDaqTime;
+
+int storeMode;
+assign storeMode to "VSS_SIF_MODE";
+monitor storeMode;
+
+int autoRunSelect;
+assign autoRunSelect to "VSS_SIF_AUTO_RUN";
+monitor autoRunSelect;
+
+int ccsShotNumber;
+assign ccsShotNumber to "CCS_SHOT_NUMBER";
+monitor ccsShotNumber;
+
+int cssCTUshotStart;
+assign cssCTUshotStart to "CCS_CTU_shotStart";
+monitor cssCTUshotStart;
+evflag fcssCTUshotStart;
+sync cssCTUshotStart fcssCTUshotStart;
+
+int convertStart;
+assign convertStart to "VSS_SIF_CONVERT_START";
+monitor convertStart;
+evflag fconvertStart;
+sync convertStart fconvertStart;
+
+int stat;
+int i;
+
+ss SIF {
+    state init{
+		    when (TRUE){
+		    }state Convert_SIF
+	  }
+    state Convert_SIF{
+		  when (efTestAndClear(fconvertStart)){
+        if(convertStart==1 && autoRunSelect == 0){
+            for(i=shotSNumber; i<=shotENumber; i++)
+            {
+              shotNumber=i;
+              pvPut(shotNumber,SYNC);
+%%            sprintf(pVar->tmpStr1, "%shr_%d.sif",pVar->workPath, pVar->shotNumber);
+%%            pVar->stat=mdsplus_Tree_create(pVar->storeMode,pVar->shotNumber);
+%%            sprintf(pVar->tmpStr2, "%s%d.txt",pVar->outPath, pVar->shotNumber);
+%%            
+%%            pVar->stat=mdsplus_data_put_sif(pVar->tmpStr1, pVar->shotNumber, pVar->storeMode, pVar->blipTime, pVar->daqTime);
+%%            printf("Local Data Store SIFFile function status :%d , 0 - OK, other value - Not good!!\n",pVar->stat);
+%%            epicsThreadSleep(2.);
+            }
+            convertStart = 0;
+            pvPut(convertStart);
+        }
+      } state Convert_SIF
+		  when (efTestAndClear(fcssCTUshotStart)){
+        if(storeMode == 1 && autoRunSelect ==1){
+              shotNumber=ccsShotNumber;
+              pvPut(shotNumber,SYNC);
+              blipTime = ccsBlipTime;
+              pvPut(blipTime,SYNC);
+              daqTime = hDaqTime;
+              pvPut(daqTime,SYNC);
+%%            epicsThreadSleep(120.);
+%%            sprintf(pVar->tmpStr1, "%shr_%d.sif",pVar->workPath, pVar->shotNumber);
+%%            sprintf(pVar->tmpStr2, "%s%d.txt",pVar->outPath, pVar->shotNumber);
+%%            
+%%            pVar->stat=mdsplus_data_put_sif(pVar->tmpStr1, pVar->shotNumber, pVar->storeMode, pVar->blipTime, pVar->daqTime);
+%%            printf("Remote Data Store SIFFile function status :%d , 0 - OK, other value - Not good!!\n",pVar->stat);
+%%
+        }
+      } state Convert_SIF
+    }
+}

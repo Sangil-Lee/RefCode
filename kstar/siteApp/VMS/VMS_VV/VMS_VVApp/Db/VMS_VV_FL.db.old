@@ -1,0 +1,77 @@
+record(bo, VMS_VV_RGA_FL_ON) {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, VMS_VV_RGA_FL_1) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @2")
+  field(FLNK, "VMS_VV_RGA_IN0")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, VMS_VV_RGA_FL_0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @3")
+  field(FLNK, "VMS_VV_RGA_IN0")
+  field(ZNAM, "ON")
+  field(ONAM, "OFF")
+}
+
+record(ai, VMS_VV_RGA_FL) {
+  field(DTYP, "SRSRGA")
+  field(EGU, "mA")
+  field(INP, "#L11 A0 @9")
+#  field(SCAN, "10 second")
+}
+
+record(bo, VMS_VV_RGA_MR0) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#L11 A0 @6")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+record(bo, VMS_VV_RGA_IE_ON) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#L11 A0 @4")
+  field(FLNK, "VMS_VV_RGA_IN0")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, VMS_VV_RGA_CDEM_ON) {
+  field(FLNK, "VMS_VV_RGA_CDEM_CALC")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(calc, VMS_VV_RGA_CDEM_CALC) {
+  field(FLNK, "VMS_VV_RGA_CDEM") 
+  field(INPA, "VMS_VV_RGA_CDEM_ON") 
+}
+
+
+record(ao, VMS_VV_RGA_CDEM) {
+  field(DTYP, "SRSRGA")
+  field(DOL, "VMS_VV_RGA_CDEM_CALC")
+  field(OUT, "#L11 A0 @5")
+  field(OMSL, "closed_loop")
+}
+
+record(ai, VMS_VV_RGA_IE) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @10")
+  field(EGU, "eV")
+}
+
+record(bi, VMS_VV_RGA_IN0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @0")
+}
+

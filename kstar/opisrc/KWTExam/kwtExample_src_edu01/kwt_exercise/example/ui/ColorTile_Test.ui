@@ -1,0 +1,442 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>507</width>
+    <height>508</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAColorTileButton" name="CAColorTileButton" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>201</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>TEST_TILE_COLOR1</string>
+   </property>
+  </widget>
+  <widget class="CAColorTileButton" name="CAColorTileButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>230</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>TEST_TILE_COLOR2</string>
+   </property>
+  </widget>
+  <widget class="CAColorTileButton" name="CAColorTileButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>259</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>TEST_TILE_COLOR3</string>
+   </property>
+  </widget>
+  <widget class="CASlider" name="CASlider" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>74</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="minimum" >
+    <number>0</number>
+   </property>
+   <property name="maximum" >
+    <number>100</number>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="pvname" >
+    <string>TEST_TILE_COLOR2</string>
+   </property>
+   <property name="tracking" stdset="0" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAProgressBar" name="CAPogressBar" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>240</y>
+     <width>171</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimum" >
+    <number>0</number>
+   </property>
+   <property name="maximum" >
+    <number>100</number>
+   </property>
+   <property name="pvname" >
+    <string>TEST_TILE_COLOR2</string>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>90</y>
+     <width>121</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="ColorBarScaleWidget" name="ColorBarScaleWidget" >
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="titlename" stdset="0" >
+     <string/>
+    </property>
+    <property name="barwidth" stdset="0" >
+     <number>20</number>
+    </property>
+    <property name="align" >
+     <enum>ColorBarScaleWidget::Left</enum>
+    </property>
+    <property name="showcolorbar" stdset="0" >
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="ColorBarScaleWidget" name="ColorBarScaleWidget_2" />
+  </widget>
+  <widget class="QSpinBox" name="spinBox" >
+   <property name="geometry" >
+    <rect>
+     <x>330</x>
+     <y>30</y>
+     <width>51</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum" >
+    <number>200</number>
+   </property>
+   <property name="value" >
+    <number>20</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>400</x>
+     <y>30</y>
+     <width>51</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="maximum" >
+    <number>2000</number>
+   </property>
+   <property name="value" >
+    <number>200</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>54</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CASlider</class>
+   <extends>QSlider</extends>
+   <header>caSlider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>caProgressBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ColorBarScaleWidget</class>
+   <extends>QwtScaleWidget</extends>
+   <header>colorBarScaleWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorTileButton</class>
+   <extends>QPushButton</extends>
+   <header>caColorTilebutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>CAColorTileButton</sender>
+   <signal>GetColorFromColorMapBar(QString,double)</signal>
+   <receiver>ColorBarScaleWidget</receiver>
+   <slot>ExtractColorCode(QString,double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>198</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>352</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBarScaleWidget</sender>
+   <signal>SendColorCode(QString,QString)</signal>
+   <receiver>CAColorTileButton</receiver>
+   <slot>GetColorCode(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>352</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>211</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorTileButton_2</sender>
+   <signal>GetColorFromColorMapBar(QString,double)</signal>
+   <receiver>ColorBarScaleWidget</receiver>
+   <slot>ExtractColorCode(QString,double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>212</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>352</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBarScaleWidget</sender>
+   <signal>SendColorCode(QString,QString)</signal>
+   <receiver>CAColorTileButton_2</receiver>
+   <slot>GetColorCode(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>352</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>216</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorTileButton_3</sender>
+   <signal>GetColorFromColorMapBar(QString,double)</signal>
+   <receiver>ColorBarScaleWidget</receiver>
+   <slot>ExtractColorCode(QString,double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>259</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>352</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBarScaleWidget</sender>
+   <signal>SendColorCode(QString,QString)</signal>
+   <receiver>CAColorTileButton_3</receiver>
+   <slot>GetColorCode(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>352</x>
+     <y>354</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>267</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ColorBarScaleWidget</receiver>
+   <slot>SetMinValue_Slot(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>355</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>318</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ColorBarScaleWidget</receiver>
+   <slot>SetMaxValue_Slot(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>421</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>341</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBarScaleWidget</sender>
+   <signal>SetMinValue_Sig(int)</signal>
+   <receiver>ColorBarScaleWidget_2</receiver>
+   <slot>SetMinValue_Slot(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>336</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>427</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ColorBarScaleWidget</sender>
+   <signal>SetMaxValue_Sig(int)</signal>
+   <receiver>ColorBarScaleWidget_2</receiver>
+   <slot>SetMaxValue_Slot(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>332</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>378</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAPogressBar</receiver>
+   <slot>setMinimum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>340</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>168</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAPogressBar</receiver>
+   <slot>setMaximum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>442</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>189</x>
+     <y>157</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CASlider</receiver>
+   <slot>SetMinimum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>349</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>91</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CASlider</receiver>
+   <slot>SetMaximum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>444</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>84</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CASlider</sender>
+   <signal>TrackingValue(QString)</signal>
+   <receiver>label</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>99</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>101</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,2478 @@
+program sncLongTermSeq
+
+option +r;
+option -c;
+
+%{
+
+#define     ABNORMAL                   0
+#define     STOP                       1
+#define     OPERATION                  2
+
+#define     SCAN_INTERVAL              2.
+
+
+#define     PCS_LOCKSERVER_STATUS_NOTDEFINE       0
+#define     PCS_LOCKSERVER_STATUS_IDLE            1
+#define     PCS_LOCKSERVER_STATUS_FIRSTLOCKOUT    2
+#define     PCS_LOCKSERVER_STATUS_FINALLOCKOUT    3
+#define     PCS_LOCKSERVER_STATUS_UNLOCKED        4
+#define     PCS_LOCKSERVER_STATUS_DURINGSHOT      5
+#define     PCS_LOCKSERVER_STATUS_ABORTED         6
+#define     PCS_LOCKSERVER_STATUS_WRITINGFILE     7
+#define     PCS_LOCKSERVER_STATUS_SETUPDONE     8
+
+
+#define     TF_ON                      1
+#define     TF_OFF                     0
+#define     PF_ON                      1
+#define     PF_OFF                     0
+#define     GDC_ON                     1
+#define     GDC_OFF                    0
+#define     RFD_ON                     1
+#define     RFD_OFF                    0
+
+
+#define     FILTERSCOPE_NOT_DEFINED       0
+#define     FILTERSCOPE_PRETRIG_WAITING  1
+#define     FILTERSCOPE_TRIG_WAITING     2
+#define     FILTERSCOPE_ACQUIRING_DATA    3
+
+#define     FILTERSCOPE_NOT_DEFINED_STRING       "Unknown/In Paused"
+#define     FILTERSCOPE_PRETRIG_WAITING_STRING  "Waiting on PreTrigg"
+#define     FILTERSCOPE_TRIG_WAITING_STRING     "Waiting on Trigg"
+#define     FILTERSCOPE_ACQUIRING_DATA_STRING    "Acquiring Data"
+
+#define DATA_PUT		(0x0001<<4)
+
+/* not used, remove 2013. 7.31 ********************
+#define ICSHEALTHCOUNT     46
+
+#include <string.h>
+
+static void runMMM(char *runmmm, const int shotnum)
+{
+	char	mmmcmd[24];
+	sprintf(mmmcmd,"RUNMMM,%d",shotnum);
+	strcpy(runmmm, mmmcmd);
+}
+*/
+
+}%
+
+
+/*leesi++*/
+int ics_health_count;
+
+
+int        lcsst_control_ccs;
+assign     lcsst_control_ccs              to        "CCS_LCSST_CCS";
+monitor    lcsst_control_ccs;
+int        lcsst_control_tms_cryo;
+assign     lcsst_control_tms_cryo         to        "CCS_LCSST_TMS_CRYO";
+monitor    lcsst_control_tms_cryo;
+int        lcsst_control_tms_mech;
+assign     lcsst_control_tms_mech         to        "CCS_LCSST_TMS_MECH";
+monitor    lcsst_control_tms_mech;
+int        lcsst_control_pcs;
+assign     lcsst_control_pcs              to        "CCS_LCSST_PCS";
+monitor    lcsst_control_pcs;
+int        lcsst_control_mps_pf1;
+assign     lcsst_control_mps_pf1          to        "CCS_LCSST_MPS_PF1";
+monitor    lcsst_control_mps_pf1;
+int        lcsst_control_mps_pf2;
+assign     lcsst_control_mps_pf2          to        "CCS_LCSST_MPS_PF2";
+monitor    lcsst_control_mps_pf2;
+int        lcsst_control_mps_pf3u;
+assign     lcsst_control_mps_pf3u          to        "CCS_LCSST_MPS_PF3U";
+monitor    lcsst_control_mps_pf3u;
+int        lcsst_control_mps_pf4u;
+assign     lcsst_control_mps_pf4u          to        "CCS_LCSST_MPS_PF4U";
+monitor    lcsst_control_mps_pf4u;
+int        lcsst_control_mps_pf5u;
+assign     lcsst_control_mps_pf5u          to        "CCS_LCSST_MPS_PF5U";
+monitor    lcsst_control_mps_pf5u;
+int        lcsst_control_mps_pf6u;
+assign     lcsst_control_mps_pf6u          to        "CCS_LCSST_MPS_PF6U";
+monitor    lcsst_control_mps_pf6u;
+
+int        lcsst_control_mps_pf3l;
+assign     lcsst_control_mps_pf3l          to        "CCS_LCSST_MPS_PF3L";
+monitor    lcsst_control_mps_pf3l;
+int        lcsst_control_mps_pf4l;
+assign     lcsst_control_mps_pf4l          to        "CCS_LCSST_MPS_PF4L";
+monitor    lcsst_control_mps_pf4l;
+int        lcsst_control_mps_pf5l;
+assign     lcsst_control_mps_pf5l          to        "CCS_LCSST_MPS_PF5L";
+monitor    lcsst_control_mps_pf5l;
+int        lcsst_control_mps_pf6l;
+assign     lcsst_control_mps_pf6l          to        "CCS_LCSST_MPS_PF6L";
+monitor    lcsst_control_mps_pf6l;
+
+int        lcsst_control_mps_pf7;
+assign     lcsst_control_mps_pf7          to        "CCS_LCSST_MPS_PF7";
+monitor    lcsst_control_mps_pf7;
+int        lcsst_control_mps_tf;
+assign     lcsst_control_mps_tf           to        "CCS_LCSST_MPS_TF";
+monitor    lcsst_control_mps_tf;
+
+int        lcsst_control_mps_ivc;
+assign     lcsst_control_mps_ivc          to        "CCS_LCSST_MPS_IVC";
+monitor    lcsst_control_mps_ivc;
+
+int        lcsst_control_mps_rmp;
+assign     lcsst_control_mps_rmp          to        "CCS_LCSST_MPS_RMP";
+monitor    lcsst_control_mps_rmp;
+
+
+
+int        lcsst_control_ech;
+assign     lcsst_control_ech              to        "CCS_LCSST_ECH";
+monitor    lcsst_control_ech;
+int        lcsst_control_ich;
+assign     lcsst_control_ich              to        "CCS_LCSST_ICH";
+monitor    lcsst_control_ich;
+int        lcsst_control_nbi1;
+assign     lcsst_control_nbi1              to        "CCS_LCSST_NBI1";
+monitor    lcsst_control_nbi1;
+int        nbi1_dtacq_state;
+assign     nbi1_dtacq_state              to        "NB1_DTACQ_State";
+monitor    nbi1_dtacq_state;
+int        lcsst_control_eccd;
+assign     lcsst_control_eccd              to        "CCS_LCSST_ECCD";
+monitor    lcsst_control_eccd;
+int        lcsst_control_lhcd;
+assign     lcsst_control_lhcd              to        "CCS_LCSST_LHCD";
+monitor    lcsst_control_lhcd;
+
+
+
+
+int        lcsst_control_vms_vv;
+assign     lcsst_control_vms_vv           to        "CCS_LCSST_VMS_VV";
+monitor    lcsst_control_vms_vv;
+int        lcsst_control_vms_cr;
+assign     lcsst_control_vms_cr           to        "CCS_LCSST_VMS_CR";
+monitor    lcsst_control_vms_cr;
+int        lcsst_control_cls_helium;
+assign     lcsst_control_cls_helium       to        "CCS_LCSST_CLS_HELIUM";
+monitor    lcsst_control_cls_helium;
+int        lcsst_control_cls_vacuum;
+assign     lcsst_control_cls_vacuum       to        "CCS_LCSST_CLS_VACUUM";
+monitor    lcsst_control_cls_vacuum;
+int        lcsst_control_fuel;
+assign     lcsst_control_fuel             to        "CCS_LCSST_FUEL";
+monitor    lcsst_control_fuel;
+int        lcsst_control_smbi;
+assign     lcsst_control_smbi             to        "CCS_LCSST_SMBI";
+monitor    lcsst_control_smbi;
+int        lcsst_control_dls;
+assign     lcsst_control_dls              to        "CCS_LCSST_DLS";
+monitor    lcsst_control_dls;
+int        lcsst_control_hrs;
+assign     lcsst_control_hrs              to        "CCS_LCSST_HRS";
+monitor    lcsst_control_hrs;
+int        lcsst_control_hds_helium;
+assign     lcsst_control_hds_helium       to        "CCS_LCSST_HDS_HELIUM";
+monitor    lcsst_control_hds_helium;
+int        lcsst_control_hds_vacuum;
+assign     lcsst_control_hds_vacuum       to        "CCS_LCSST_HDS_VACUUM";
+monitor    lcsst_control_hds_vacuum;
+int        lcsst_control_interlock;
+assign     lcsst_control_interlock        to        "CCS_LCSST_SIS";
+monitor    lcsst_control_interlock;
+/*++leesi*/
+int        lcsst_opst_control;
+assign     lcsst_opst_control				to        "CCS_OPST_CONTROL";
+monitor    lcsst_opst_control;
+
+
+int        lcsst_control_gcds;
+assign     lcsst_control_gcds				to        "CCS_LCSST_GCDS";
+monitor    lcsst_control_gcds;
+
+
+int        lcsst_control_data;
+assign     lcsst_control_data				to        "CCS_LCSST_DATA";
+monitor    lcsst_control_data;
+
+int        lcsst_control_pms;
+assign     lcsst_control_pms				to        "CCS_LCSST_PMS";
+monitor    lcsst_control_pms;
+
+
+
+int        lcsst_control_ics;
+assign     lcsst_control_ics				to        "CCS_LCSST_ICS";
+monitor    lcsst_control_ics;
+
+
+/*--leesi*/
+int        heartbeat_ccs;
+assign     heartbeat_ccs                  to        "CCS_HEARTBEAT";
+monitor    heartbeat_ccs;
+evflag     ef_heartbeat_ccs;
+sync       heartbeat_ccs                  ef_heartbeat_ccs;
+
+int        heartbeat_tms_cryo;
+assign     heartbeat_tms_cryo             to        "TMS_IOC1_HEART_BEAT";
+monitor    heartbeat_tms_cryo;
+evflag     ef_heartbeat_tms_cryo;
+sync       heartbeat_tms_cryo             ef_heartbeat_tms_cryo;
+
+int        heartbeat_tms_mech;
+assign     heartbeat_tms_mech             to        "TMS_IOC2_HEART_BEAT";
+monitor    heartbeat_tms_mech;
+evflag     ef_heartbeat_tms_mech;
+sync       heartbeat_tms_mech             ef_heartbeat_tms_mech;
+
+int        heartbeat_pcs;
+assign     heartbeat_pcs                  to        "PCS_LTU_HeartBeat";
+monitor    heartbeat_pcs;
+evflag     ef_heartbeat_pcs;
+sync       heartbeat_pcs                  ef_heartbeat_pcs;
+
+int        pcs_lockserver_status;
+assign     pcs_lockserver_status          to        "PCS_LS_STATUS";
+monitor    pcs_lockserver_status;
+
+int        heartbeat_mps_pf1;
+assign     heartbeat_mps_pf1              to        "MPS_PF1_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf1;
+evflag     ef_heartbeat_mps_pf1;
+sync       heartbeat_mps_pf1              ef_heartbeat_mps_pf1;
+
+int        heartbeat_mps_pf2; 
+assign     heartbeat_mps_pf2              to        "MPS_PF2_heartbeat_1s_bit";            
+monitor    heartbeat_mps_pf2;
+evflag     ef_heartbeat_mps_pf2;
+sync       heartbeat_mps_pf2              ef_heartbeat_mps_pf2;
+
+int        heartbeat_mps_pf3u;
+assign     heartbeat_mps_pf3u              to        "MPS_PF3U_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf3u;
+evflag     ef_heartbeat_mps_pf3u;
+sync       heartbeat_mps_pf3u              ef_heartbeat_mps_pf3u;
+
+int        heartbeat_mps_pf3l;
+assign     heartbeat_mps_pf3l              to        "MPS_PF3L_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf3l;
+evflag     ef_heartbeat_mps_pf3l;
+sync       heartbeat_mps_pf3l              ef_heartbeat_mps_pf3l;
+
+int        heartbeat_mps_pf4u;
+assign     heartbeat_mps_pf4u              to        "MPS_PF4U_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf4u;
+evflag     ef_heartbeat_mps_pf4u;
+sync       heartbeat_mps_pf4u              ef_heartbeat_mps_pf4u;
+
+int        heartbeat_mps_pf4l;
+assign     heartbeat_mps_pf4l              to        "MPS_PF4L_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf4l;
+evflag     ef_heartbeat_mps_pf4l;
+sync       heartbeat_mps_pf4l              ef_heartbeat_mps_pf4l;
+
+int        heartbeat_mps_pf5u;
+assign     heartbeat_mps_pf5u              to        "MPS_PF5U_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf5u;
+evflag     ef_heartbeat_mps_pf5u;
+sync       heartbeat_mps_pf5u              ef_heartbeat_mps_pf5u;
+
+int        heartbeat_mps_pf5l;
+assign     heartbeat_mps_pf5l              to        "MPS_PF5L_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf5l;
+evflag     ef_heartbeat_mps_pf5l;
+sync       heartbeat_mps_pf5l              ef_heartbeat_mps_pf5l;
+
+int        heartbeat_mps_pf6u;
+assign     heartbeat_mps_pf6u              to        "MPS_PF6U_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf6u;
+evflag     ef_heartbeat_mps_pf6u;
+sync       heartbeat_mps_pf6u              ef_heartbeat_mps_pf6u;
+
+int        heartbeat_mps_pf6l;
+assign     heartbeat_mps_pf6l              to        "MPS_PF6L_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf6l;
+evflag     ef_heartbeat_mps_pf6l;
+sync       heartbeat_mps_pf6l              ef_heartbeat_mps_pf6l;
+
+int        heartbeat_mps_pf7;
+assign     heartbeat_mps_pf7              to        "MPS_PF7_heartbeat_1s_bit";
+monitor    heartbeat_mps_pf7;
+evflag     ef_heartbeat_mps_pf7;
+sync       heartbeat_mps_pf7              ef_heartbeat_mps_pf7;
+
+int        heartbeat_mps_tf;
+assign     heartbeat_mps_tf               to        "MPS_TF_heartbeat_1s_bit";
+monitor    heartbeat_mps_tf;
+evflag     ef_heartbeat_mps_tf;
+sync       heartbeat_mps_tf               ef_heartbeat_mps_tf;
+
+int        heartbeat_mps_ivc;
+assign     heartbeat_mps_ivc              to        "IVC_heartbeat_to_sis";
+monitor    heartbeat_mps_ivc;
+evflag     ef_heartbeat_mps_ivc;
+sync       heartbeat_mps_ivc              ef_heartbeat_mps_ivc;
+
+int        heartbeat_mps_rmp;
+assign     heartbeat_mps_rmp              to        "RMP_HEARTBEAT";
+monitor    heartbeat_mps_rmp;
+evflag     ef_heartbeat_mps_rmp;
+sync       heartbeat_mps_rmp              ef_heartbeat_mps_rmp;
+
+
+
+int        heartbeat_ech;
+assign     heartbeat_ech                  to         "ECH_LTU_HeartBeat";
+monitor    heartbeat_ech;
+evflag     ef_heartbeat_ech;
+sync       heartbeat_ech                  ef_heartbeat_ech;
+
+int        heartbeat_ich;
+assign     heartbeat_ich                  to         "icrf:iocheart";
+monitor    heartbeat_ich;
+evflag     ef_heartbeat_ich;
+sync       heartbeat_ich                  ef_heartbeat_ich;
+
+int        heartbeat_nbi1;
+assign     heartbeat_nbi1                  to         "NBI1A_LTU_HeartBeat";
+monitor    heartbeat_nbi1;
+evflag     ef_heartbeat_nbi1;
+sync       heartbeat_nbi1                  ef_heartbeat_nbi1;
+
+int        heartbeat_eccd;
+assign     heartbeat_eccd                  to         "EC1A_LTU_HeartBeat";
+monitor    heartbeat_eccd;
+evflag     ef_heartbeat_eccd;
+sync       heartbeat_eccd                  ef_heartbeat_eccd;
+
+int        heartbeat_lhcd;
+assign     heartbeat_lhcd                  to         "LHCD_LTU_HeartBeat";
+monitor    heartbeat_lhcd;
+evflag     ef_heartbeat_lhcd;
+sync       heartbeat_lhcd                  ef_heartbeat_lhcd;
+
+
+
+
+int        heartbeat_vms_vv;
+assign     heartbeat_vms_vv               to         "VMS_VV_HEART_BEAT";
+monitor    heartbeat_vms_vv;
+evflag     ef_heartbeat_vms_vv;
+sync       heartbeat_vms_vv               ef_heartbeat_vms_vv;
+
+int        heartbeat_vms_cr;
+assign     heartbeat_vms_cr               to         "VMS_CR_HEART_BEAT";
+monitor    heartbeat_vms_cr;
+evflag     ef_heartbeat_vms_cr;
+sync       heartbeat_vms_cr               ef_heartbeat_vms_cr;
+
+int        heartbeat_cls_helium;
+assign     heartbeat_cls_helium           to         "CLS_HCS_HEART_BEAT";
+monitor    heartbeat_cls_helium;
+evflag     ef_heartbeat_cls_helium;
+sync       heartbeat_cls_helium          ef_heartbeat_cls_helium;
+
+int        heartbeat_cls_vacuum;
+assign     heartbeat_cls_vacuum           to         "CLS_VPS_HEART_BEAT";
+monitor    heartbeat_cls_vacuum;
+evflag     ef_heartbeat_cls_vacuum;
+sync       heartbeat_cls_vacuum           ef_heartbeat_cls_vacuum;
+
+int        heartbeat_fuel;
+assign     heartbeat_fuel                 to         "FUEL_HEART_BEAT";
+monitor    heartbeat_fuel;
+evflag     ef_heartbeat_fuel;
+sync       heartbeat_fuel                 ef_heartbeat_fuel;
+
+int        heartbeat_smbi;
+assign     heartbeat_smbi                 to         "SMBI_LTU_HeartBeat";
+monitor    heartbeat_smbi;
+evflag     ef_heartbeat_smbi;
+sync       heartbeat_smbi                 ef_heartbeat_smbi;
+
+
+int        heartbeat_dls;
+assign     heartbeat_dls                  to         "DLS_IOC_HEART_BEAT";
+monitor    heartbeat_dls;
+evflag     ef_heartbeat_dls;
+sync       heartbeat_dls                  ef_heartbeat_dls;
+
+int        heartbeat_hrs;
+assign     heartbeat_hrs                  to         "HRS_CNT";
+monitor    heartbeat_hrs;
+evflag     ef_heartbeat_hrs;
+sync       heartbeat_hrs                  ef_heartbeat_hrs;
+
+int        heartbeat_hds_helium;
+assign     heartbeat_hds_helium           to         "HDS_HCS_HEART_BEAT";
+monitor    heartbeat_hds_helium;
+evflag     ef_heartbeat_hds_helium;
+sync       heartbeat_hds_helium           ef_heartbeat_hds_helium;
+
+int        heartbeat_hds_vacuum;
+assign     heartbeat_hds_vacuum           to         "HDS_VPS_HEART_BEAT";
+monitor    heartbeat_hds_vacuum;
+evflag     ef_heartbeat_hds_vacuum;
+sync       heartbeat_hds_vacuum           ef_heartbeat_hds_vacuum;
+
+
+int        heartbeat_interlock;
+assign     heartbeat_interlock            to          "CCS_INTL_HEARTBEAT";
+monitor    heartbeat_interlock;
+evflag     ef_heartbeat_interlock;
+sync       heartbeat_interlock            ef_heartbeat_interlock;
+
+
+int        heartbeat_gcds;
+assign     heartbeat_gcds            to          "GCDS_HEARTBEAT";
+monitor    heartbeat_gcds;
+evflag     ef_heartbeat_gcds;
+sync       heartbeat_gcds            ef_heartbeat_gcds;
+
+int        data_put;
+assign     data_put            to          "MDS_CAL_DATA_PUT";
+monitor    data_put;
+
+int        heartbeat_ics;
+assign     heartbeat_ics            to          "ICS_HEARTBEAT";
+monitor    heartbeat_ics;
+evflag     ef_heartbeat_ics;
+sync       heartbeat_ics            ef_heartbeat_ics;
+
+
+int        heartbeat_pms;
+assign     heartbeat_pms            to          "PMS_HEART_BEAT";
+monitor    heartbeat_pms;
+evflag     ef_heartbeat_pms;
+sync       heartbeat_pms            ef_heartbeat_pms;
+
+
+
+/****************************************
+*****************************************/
+
+
+int        filterScope_status;
+assign     filterScope_status   to  "CCS_FS_STATUS";
+monitor    filterScope_status;
+evflag     ef_filterScope_status;
+sync       filterScope_status     ef_filterScope_status;
+
+string     filterScope_status_string;
+assign     filterScope_status_string    to "CCS_FS_STATUS_STRING";
+
+/**************************************
+**************************************/
+
+int        pf_OnOff_monitor[2];
+assign     pf_OnOff_monitor      to    {"MPS_PF_lo_run_stop_mmi",    /* local operation */
+                                        "MPS_PF_re_run_stop_mmi"     /* remote operation */ };
+monitor    pf_OnOff_monitor;
+
+int        pf_OnOff_indicator[2];
+assign     pf_OnOff_indicator    to    {"CCS_PF_MPS_ONOFF",  "CCS_DURING_SHOT" };
+monitor    pf_OnOff_indicator;
+
+
+int        tf_OnOff_monitor[2];
+assign     tf_OnOff_monitor      to    {"MPS_TF_lo_run_stop_mmi",    /* local operation */
+                                        "MPS_TF_re_run_stop_mmi"     /* remote operation */ };
+monitor    tf_OnOff_monitor;
+
+int        tf_OnOff_indicator;
+assign     tf_OnOff_indicator    to    "CCS_TF_MPS_ONOFF";
+monitor    tf_OnOff_indicator;
+
+
+/************************************
+*************************************/
+
+
+int         icrf_rf_select;
+assign      icrf_rf_select        to   "ICRF_RF_SELECT";
+monitor icrf_rf_select;
+
+int   ccs_icwc_onoff;
+assign ccs_icwc_onoff to "CCS_ICWC_ONOFF";
+
+
+int         gdc_discharge_status;
+assign      gdc_discharge_status        to   "CCS_GDC_ONOFF";
+
+
+/*++leesi - temporary*/
+int         gdc_discharge_condtion;
+assign      gdc_discharge_condtion        to   "DCLN_OP_PREP";
+monitor		gdc_discharge_condtion;
+
+int         dds1_status;
+assign      dds1_status          to    "DDS1A_STATUS";
+monitor     dds1_status;
+evflag      ef_dds1_status;
+sync        dds1_status       ef_dds1_status;
+
+
+int         perform_summary;
+assign      perform_summary          to    "CCS_PERFORM_SHOT_SUMMARY";
+monitor     perform_summary;
+
+/*
+string        strRCom;
+assign        strRCom to "DATA_ANAL_RCOMMANDER";
+monitor       strRCom;
+
+int         shot_number_latch;
+assign      shot_number_latch        to "CCS_SHOT_NUMBER_LATCH";
+monitor     shot_number_latch;
+*/
+
+int         ccs_blip_time;
+assign      ccs_blip_time      to "CCS_BLIP_TIME";
+monitor     ccs_blip_time;
+evflag      ef_ccs_blip_time;
+sync        ccs_blip_time       ef_ccs_blip_time;
+
+int         ccs_tss_confirm;
+assign      ccs_tss_confirm      to "CCS_TSS_CONFIRM";
+
+
+
+
+ss lcsMonitor_ccs
+{
+      state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_ccs = STOP;
+			  else
+				  lcsst_control_ccs = ABNORMAL;
+              pvPut(lcsst_control_ccs);
+          }
+
+          when(lcsst_control_ccs != ABNORMAL && lcsst_control_ccs != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_ccs = STOP;
+			  else
+				  lcsst_control_ccs = ABNORMAL;
+               pvPut(lcsst_control_ccs);
+          } state fault
+
+          when(efTestAndClear(ef_heartbeat_ccs)) {} state operation
+      }
+
+
+      state operation {
+          option -e;
+          option +t;
+          entry {
+              lcsst_control_ccs = OPERATION;
+              pvPut(lcsst_control_ccs);
+          }
+
+          when(lcsst_control_ccs != OPERATION) {
+               lcsst_control_ccs = OPERATION;
+               pvPut(lcsst_control_ccs);
+          } state operation
+
+          when(efTestAndClear(ef_heartbeat_ccs)) {} state operation
+
+          when(delay(SCAN_INTERVAL)) {} state fault
+      }
+
+}
+
+ss lcsMonitor_tmsCryo
+{
+
+    state fault {
+        option -e;
+        option +t;
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_tms_cryo = STOP;
+			else
+				lcsst_control_tms_cryo = ABNORMAL;
+            pvPut(lcsst_control_tms_cryo);
+        }
+
+        when(lcsst_control_tms_cryo != ABNORMAL && 
+				lcsst_control_tms_cryo != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_tms_cryo = STOP;
+			else
+				lcsst_control_tms_cryo = ABNORMAL;
+             pvPut(lcsst_control_tms_cryo);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_tms_cryo)) {} state operation
+
+    }
+
+    state operation {
+        option -e;
+        option +t;
+        entry {
+            lcsst_control_tms_cryo = OPERATION;
+            pvPut(lcsst_control_tms_cryo);
+        }
+
+        when(lcsst_control_tms_cryo != OPERATION) {
+             lcsst_control_tms_cryo = OPERATION;
+             pvPut(lcsst_control_tms_cryo);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_tms_cryo)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_tmsMech
+{
+
+    state fault {
+        option -e;
+        option +t;
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_tms_mech = STOP;
+			else
+				lcsst_control_tms_mech = ABNORMAL;
+            pvPut(lcsst_control_tms_mech);
+        }
+
+        when(lcsst_control_tms_mech != ABNORMAL &&
+				lcsst_control_tms_mech != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_tms_mech = STOP;
+			else
+				lcsst_control_tms_mech = ABNORMAL;
+             pvPut(lcsst_control_tms_mech);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_tms_mech)) {} state operation
+    }
+
+
+    state operation {
+        option -e;
+        option +t;
+        entry {
+            lcsst_control_tms_mech = OPERATION;
+            pvPut(lcsst_control_tms_mech);
+        }
+
+        when(lcsst_control_tms_mech != OPERATION) {
+             lcsst_control_tms_mech = OPERATION;
+             pvPut(lcsst_control_tms_mech);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_tms_mech)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss locsMonitor_pcs
+{
+    state fault {
+        entry {
+            lcsst_control_pcs = ABNORMAL; /* 0 */
+            pvPut(lcsst_control_pcs);
+        }
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_DURINGSHOT) {} state real_time
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_IDLE ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_FIRSTLOCKOUT ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_FINALLOCKOUT ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_UNLOCKED ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_WRITINGFILE) {} state operation
+
+    }
+
+    state operation {
+        entry {
+            lcsst_control_pcs = OPERATION; /* 2 */
+            pvPut(lcsst_control_pcs);
+        }
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_DURINGSHOT) {} state real_time
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_NOTDEFINE ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_ABORTED) {} state fault
+
+
+    }
+
+
+    state real_time {
+        entry {
+            lcsst_control_pcs = 3 /* real time */;
+            pvPut(lcsst_control_pcs);
+        }
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_NOTDEFINE ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_ABORTED) {} state fault
+
+        when(pcs_lockserver_status == PCS_LOCKSERVER_STATUS_IDLE ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_FIRSTLOCKOUT ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_FINALLOCKOUT ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_UNLOCKED ||
+             pcs_lockserver_status == PCS_LOCKSERVER_STATUS_WRITINGFILE) {} state operation
+    }
+}
+
+
+ss lcsMonitor_mpsPF1
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf1 = ABNORMAL;
+			else
+				lcsst_control_mps_pf1 = STOP;
+            pvPut(lcsst_control_mps_pf1);
+        }
+
+        when(lcsst_control_mps_pf1 != ABNORMAL &&
+				lcsst_control_mps_pf1 != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf1 = ABNORMAL;
+			else
+				lcsst_control_mps_pf1 = STOP;
+             pvPut(lcsst_control_mps_pf1);
+        } state fault
+  
+        when(efTestAndClear(ef_heartbeat_mps_pf1)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf1 = OPERATION;
+            pvPut(lcsst_control_mps_pf1);
+        }
+
+        when(lcsst_control_mps_pf1 != OPERATION) {
+             lcsst_control_mps_pf1 = OPERATION;
+             pvPut(lcsst_control_mps_pf1);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf1)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+
+ss lcsMonitor_mpsPF2
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf2 = ABNORMAL;
+			else
+				lcsst_control_mps_pf2 = STOP;
+            pvPut(lcsst_control_mps_pf2);
+        }
+
+       when(lcsst_control_mps_pf2 != ABNORMAL &&
+			lcsst_control_mps_pf2 != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf2 = ABNORMAL;
+			else
+				lcsst_control_mps_pf2 = STOP;
+            pvPut(lcsst_control_mps_pf2);
+       } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf2)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf2 = OPERATION;
+            pvPut(lcsst_control_mps_pf2);
+        }
+
+        when(lcsst_control_mps_pf2 != OPERATION) {
+             lcsst_control_mps_pf2 = OPERATION;
+             pvPut(lcsst_control_mps_pf2);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf2)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_mpsPF3U
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf3u = ABNORMAL;
+			else
+				lcsst_control_mps_pf3u = STOP;
+            pvPut(lcsst_control_mps_pf3u);
+        }
+
+        when(lcsst_control_mps_pf3u != ABNORMAL &&
+			lcsst_control_mps_pf3u != STOP ) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf3u = ABNORMAL;
+			else
+				lcsst_control_mps_pf3u = STOP;
+            pvPut(lcsst_control_mps_pf3u);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf3u)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+ 
+        entry {
+            lcsst_control_mps_pf3u = OPERATION;
+            pvPut(lcsst_control_mps_pf3u);
+        }
+
+        when(lcsst_control_mps_pf3u != OPERATION) {
+             lcsst_control_mps_pf3u = OPERATION;
+             pvPut(lcsst_control_mps_pf3u);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf3u)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+}
+
+ss lcsMonitor_mpsPF3L
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf3l = ABNORMAL;
+			else
+				lcsst_control_mps_pf3l = STOP;
+            pvPut(lcsst_control_mps_pf3l);
+        }
+
+        when(lcsst_control_mps_pf3l != ABNORMAL &&
+			lcsst_control_mps_pf3l != STOP ) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf3l = ABNORMAL;
+			else
+				lcsst_control_mps_pf3l = STOP;
+            pvPut(lcsst_control_mps_pf3l);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf3l)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+ 
+        entry {
+            lcsst_control_mps_pf3l = OPERATION;
+            pvPut(lcsst_control_mps_pf3l);
+        }
+
+        when(lcsst_control_mps_pf3l != OPERATION) {
+             lcsst_control_mps_pf3l = OPERATION;
+             pvPut(lcsst_control_mps_pf3l);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf3l)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+}
+
+
+ss lcsMonitor_mpsPF4U
+{
+
+    state fault {
+        option -e;
+        option +t; 
+
+        entry {
+           if ( lcsst_opst_control == 4 ){
+               lcsst_control_mps_pf4u = ABNORMAL;
+			   %%printf("PF4U abnormal in entry!\n");
+    		} else {
+				lcsst_control_mps_pf4u = STOP;
+				%%printf("PF4U stop in  entry!\n");
+			}
+            pvPut(lcsst_control_mps_pf4u);
+        }
+
+        when(lcsst_control_mps_pf4u != ABNORMAL &&
+				lcsst_control_mps_pf4u != STOP) {
+			if ( lcsst_opst_control == 4 ){
+				lcsst_control_mps_pf4u = ABNORMAL;
+				%%printf("PF4U abnormal in check state!\n");
+			} else {
+				lcsst_control_mps_pf4u = STOP;
+				%%printf("PF4U stop in check state\n");
+			}
+             pvPut(lcsst_control_mps_pf4u);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf4u)) {
+			%%printf("PF4U goto operation.\n");
+			} state operation
+
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf4u = OPERATION;
+            pvPut(lcsst_control_mps_pf4u);
+        }
+
+        when(lcsst_control_mps_pf4u != OPERATION) {
+             lcsst_control_mps_pf4u = OPERATION;
+             pvPut(lcsst_control_mps_pf4u);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf4u)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) { 
+			%%printf("PF4U abnormal.. in delay\n");
+			} state fault
+    }
+}
+
+ss lcsMonitor_mpsPF4L
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf4l = ABNORMAL;
+			else
+				lcsst_control_mps_pf4l = STOP;
+            pvPut(lcsst_control_mps_pf4l);
+        }
+
+        when(lcsst_control_mps_pf4l != ABNORMAL &&
+				lcsst_control_mps_pf4l != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf4l = ABNORMAL;
+			else
+				lcsst_control_mps_pf4l = STOP;
+             pvPut(lcsst_control_mps_pf4l);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf4l)) {} state operation
+
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf4l = OPERATION;
+            pvPut(lcsst_control_mps_pf4l);
+        }
+
+        when(lcsst_control_mps_pf4l != OPERATION) {
+             lcsst_control_mps_pf4l = OPERATION;
+             pvPut(lcsst_control_mps_pf4l);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf4l)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsPF5U
+{
+    state fault {
+        option -e;
+        option +t;
+  
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf5u = ABNORMAL;
+			else
+				lcsst_control_mps_pf5u = STOP;
+            pvPut(lcsst_control_mps_pf5u);
+        }
+
+        when(lcsst_control_mps_pf5u != ABNORMAL &&
+			lcsst_control_mps_pf5u != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf5u = ABNORMAL;
+			else
+				lcsst_control_mps_pf5u = STOP;
+             pvPut(lcsst_control_mps_pf5u);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf5u)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf5u = OPERATION;
+            pvPut(lcsst_control_mps_pf5u);
+        }
+
+        when(lcsst_control_mps_pf5u != OPERATION) {
+             lcsst_control_mps_pf5u = OPERATION;
+             pvPut(lcsst_control_mps_pf5u);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf5u)) {} state operation
+   
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsPF5L
+{
+    state fault {
+        option -e;
+        option +t;
+  
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf5l = ABNORMAL;
+			else
+				lcsst_control_mps_pf5l = STOP;
+            pvPut(lcsst_control_mps_pf5l);
+        }
+
+        when(lcsst_control_mps_pf5l != ABNORMAL &&
+			lcsst_control_mps_pf5l != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf5l = ABNORMAL;
+			else
+				lcsst_control_mps_pf5l = STOP;
+             pvPut(lcsst_control_mps_pf5l);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf5l)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf5l = OPERATION;
+            pvPut(lcsst_control_mps_pf5l);
+        }
+
+        when(lcsst_control_mps_pf5l != OPERATION) {
+             lcsst_control_mps_pf5l = OPERATION;
+             pvPut(lcsst_control_mps_pf5l);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf5l)) {} state operation
+   
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsPF6U
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf6u = ABNORMAL;
+			else
+				lcsst_control_mps_pf6u = STOP;
+            pvPut(lcsst_control_mps_pf6u);
+        }
+
+        when(lcsst_control_mps_pf6u != ABNORMAL &&
+			lcsst_control_mps_pf6u != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf6u = ABNORMAL;
+			else
+				lcsst_control_mps_pf6u = STOP;
+             pvPut(lcsst_control_mps_pf6u);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf6u)) {} state operation
+
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf6u = OPERATION;
+            pvPut(lcsst_control_mps_pf6u);
+        }
+
+        when(lcsst_control_mps_pf6u != OPERATION) {
+             lcsst_control_mps_pf6u = OPERATION;
+             pvPut(lcsst_control_mps_pf6u);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf6u)) {} state operation
+
+        when(delay(2.0)) {} state fault
+    }
+}
+ss lcsMonitor_mpsPF6L
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf6l = ABNORMAL;
+			else
+				lcsst_control_mps_pf6l = STOP;
+            pvPut(lcsst_control_mps_pf6l);
+        }
+
+        when(lcsst_control_mps_pf6l != ABNORMAL &&
+			lcsst_control_mps_pf6l != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf6l = ABNORMAL;
+			else
+				lcsst_control_mps_pf6l = STOP;
+             pvPut(lcsst_control_mps_pf6l);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf6l)) {} state operation
+
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf6l = OPERATION;
+            pvPut(lcsst_control_mps_pf6l);
+        }
+
+        when(lcsst_control_mps_pf6l != OPERATION) {
+             lcsst_control_mps_pf6l = OPERATION;
+             pvPut(lcsst_control_mps_pf6l);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf6l)) {} state operation
+
+        when(delay(2.0)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsPF7
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf7 = ABNORMAL;
+			else
+				lcsst_control_mps_pf7 = STOP;
+            pvPut(lcsst_control_mps_pf7);
+        }
+
+        when(lcsst_control_mps_pf7 != ABNORMAL &&
+			lcsst_control_mps_pf7 != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_pf7 = ABNORMAL;
+			else
+				lcsst_control_mps_pf7 = STOP;
+             pvPut(lcsst_control_mps_pf7);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_pf7)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_pf7 = OPERATION;
+            pvPut(lcsst_control_mps_pf7);
+        }
+
+        when(lcsst_control_mps_pf7 != OPERATION ) {
+             lcsst_control_mps_pf7 = OPERATION;
+             pvPut(lcsst_control_mps_pf7);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_pf7)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsTF
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_tf = ABNORMAL;
+			else
+				lcsst_control_mps_tf = STOP;
+            pvPut(lcsst_control_mps_tf);
+        }
+
+        when(lcsst_control_mps_tf != ABNORMAL &&
+			lcsst_control_mps_tf != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_tf = ABNORMAL;
+			else
+				lcsst_control_mps_tf = STOP;
+             pvPut(lcsst_control_mps_tf);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_tf)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+  
+        entry {
+            lcsst_control_mps_tf = OPERATION;
+            pvPut(lcsst_control_mps_tf);
+        }
+
+        when(lcsst_control_mps_tf != OPERATION) {
+             lcsst_control_mps_tf = OPERATION;
+             pvPut(lcsst_control_mps_tf);
+        }  state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_tf)) {} state operation
+
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsIVC
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_ivc = ABNORMAL;
+			else
+				lcsst_control_mps_ivc = STOP;
+            pvPut(lcsst_control_mps_ivc);
+        }
+
+        when(lcsst_control_mps_ivc != ABNORMAL &&
+			lcsst_control_mps_ivc != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_ivc = ABNORMAL;
+			else
+				lcsst_control_mps_ivc = STOP;
+             pvPut(lcsst_control_mps_ivc);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_ivc)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_ivc = OPERATION;
+            pvPut(lcsst_control_mps_ivc);
+        }
+
+        when(lcsst_control_mps_ivc != OPERATION ) {
+             lcsst_control_mps_ivc = OPERATION;
+             pvPut(lcsst_control_mps_ivc);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_ivc)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_mpsRMP
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_rmp = ABNORMAL;
+			else
+				lcsst_control_mps_rmp = STOP;
+            pvPut(lcsst_control_mps_rmp);
+        }
+
+        when(lcsst_control_mps_rmp != ABNORMAL &&
+			lcsst_control_mps_rmp != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_mps_rmp = ABNORMAL;
+			else
+				lcsst_control_mps_rmp = STOP;
+             pvPut(lcsst_control_mps_rmp);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_mps_rmp)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_mps_rmp = OPERATION;
+            pvPut(lcsst_control_mps_rmp);
+        }
+
+        when(lcsst_control_mps_rmp != OPERATION ) {
+             lcsst_control_mps_rmp = OPERATION;
+             pvPut(lcsst_control_mps_rmp);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_mps_rmp)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_ech
+{
+
+    state fault
+    {
+        option -e;
+        option +t;
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_ech = ABNORMAL;
+			else
+				lcsst_control_ech = STOP;
+            pvPut(lcsst_control_ech);
+        }
+
+        when (lcsst_control_ech != ABNORMAL &&
+			lcsst_control_ech != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_ech = ABNORMAL;
+			else
+				lcsst_control_ech = STOP;
+			pvPut(lcsst_control_ech);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_ech)) {} state operation
+    }
+
+
+    state operation
+    {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_ech = OPERATION;
+            pvPut(lcsst_control_ech);
+        }
+
+        when(lcsst_control_ech != OPERATION) {
+             lcsst_control_ech = OPERATION;
+             pvPut(lcsst_control_ech);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_ech)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+
+}
+
+
+
+ss lcsMonitor_ich
+{
+
+    state fault
+    {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_ich = ABNORMAL;
+			else
+				lcsst_control_ich = STOP;
+            pvPut(lcsst_control_ich);
+        }
+
+       when(lcsst_control_ich != ABNORMAL && 
+			lcsst_control_ich != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_ich = ABNORMAL;
+			else
+				lcsst_control_ich = STOP;
+            pvPut(lcsst_control_ich);
+       } state fault
+
+       when(efTestAndClear(ef_heartbeat_ich)) {} state operation
+    }
+
+    state operation
+    {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_ich = OPERATION;
+            pvPut(lcsst_control_ich);
+        }
+
+       when(lcsst_control_ich != OPERATION) {
+            lcsst_control_ich = OPERATION;
+            pvPut(lcsst_control_ich);
+       } state operation
+
+       when(efTestAndClear(ef_heartbeat_ich)) {} state operation
+
+       when(delay(SCAN_INTERVAL)) {} state fault
+
+    }
+}
+
+ss lcsMonitor_nbi1
+{
+
+    state fault
+    {
+        option -e;
+/*        option +t; */
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_nbi1 = ABNORMAL;
+			else
+				lcsst_control_nbi1 = STOP;
+            pvPut(lcsst_control_nbi1);
+        }
+
+       when(efTestAndClear(ef_heartbeat_nbi1)) {
+		   printf("goto nbi1 operation state\n");
+		   
+		   } state operation
+    }
+
+    state operation
+    {
+        option -e;
+
+        entry 
+        {
+            if( nbi1_dtacq_state == 0 ) {
+                lcsst_control_nbi1 = STOP;
+            }
+	        else if(nbi1_dtacq_state == 1)
+            {
+                lcsst_control_nbi1 = OPERATION;
+            }
+            else { 
+                printf("check NB1_DTACQ_State value! it's wrong.\n" ); 
+                lcsst_control_nbi1 = ABNORMAL;
+            }
+
+            pvPut(lcsst_control_nbi1);
+        }
+
+       when(efTestAndClear(ef_heartbeat_nbi1)) {} state operation
+
+       when(delay(SCAN_INTERVAL)) {} state fault
+
+    }
+
+}
+
+ss lcsMonitor_eccd
+{
+
+    state fault
+    {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_eccd = ABNORMAL;
+			else
+				lcsst_control_eccd = STOP;
+            pvPut(lcsst_control_eccd);
+        }
+
+       when(lcsst_control_eccd != ABNORMAL && 
+			lcsst_control_eccd != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_eccd = ABNORMAL;
+			else
+				lcsst_control_eccd = STOP;
+            pvPut(lcsst_control_eccd);
+       } state fault
+
+       when(efTestAndClear(ef_heartbeat_eccd)) {} state operation
+    }
+
+    state operation
+    {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_eccd = OPERATION;
+            pvPut(lcsst_control_eccd);
+        }
+
+       when(lcsst_control_eccd != OPERATION) {
+            lcsst_control_eccd = OPERATION;
+            pvPut(lcsst_control_eccd);
+       } state operation
+
+       when(efTestAndClear(ef_heartbeat_eccd)) {} state operation
+
+       when(delay(SCAN_INTERVAL)) {} state fault
+
+    }
+}
+
+ss lcsMonitor_lhcd
+{
+
+    state fault
+    {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_lhcd = ABNORMAL;
+			else
+				lcsst_control_lhcd = STOP;
+            pvPut(lcsst_control_lhcd);
+        }
+
+       when(lcsst_control_lhcd != ABNORMAL && 
+			lcsst_control_lhcd != STOP) {
+			if ( lcsst_opst_control == 4 )
+				lcsst_control_lhcd = ABNORMAL;
+			else
+				lcsst_control_lhcd = STOP;
+            pvPut(lcsst_control_lhcd);
+       } state fault
+
+       when(efTestAndClear(ef_heartbeat_lhcd)) {} state operation
+    }
+
+    state operation
+    {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_lhcd = OPERATION;
+            pvPut(lcsst_control_lhcd);
+        }
+
+       when(lcsst_control_lhcd != OPERATION) {
+            lcsst_control_lhcd = OPERATION;
+            pvPut(lcsst_control_lhcd);
+       } state operation
+
+       when(efTestAndClear(ef_heartbeat_lhcd)) {} state operation
+
+       when(delay(SCAN_INTERVAL)) {} state fault
+
+    }
+}
+
+ss lcsMonitor_vmsVV
+{
+
+    state fault {
+        option -e;
+        option +t;
+  
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_vms_vv = STOP;
+			else
+				lcsst_control_vms_vv = ABNORMAL;
+            pvPut(lcsst_control_vms_vv);
+        }
+
+       when(lcsst_control_vms_vv != ABNORMAL &&
+			lcsst_control_vms_vv != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_vms_vv = STOP;
+			else
+				lcsst_control_vms_vv = ABNORMAL;
+            pvPut(lcsst_control_vms_vv);
+       } state fault
+
+       when(efTestAndClear(ef_heartbeat_vms_vv)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_vms_vv = OPERATION;
+            pvPut(lcsst_control_vms_vv);
+        }
+
+        when(lcsst_control_vms_vv != OPERATION) {
+             lcsst_control_vms_vv = OPERATION;
+             pvPut(lcsst_control_vms_vv);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_vms_vv)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_vmsCR
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_vms_cr = STOP;
+			else
+				lcsst_control_vms_cr = ABNORMAL;
+            pvPut(lcsst_control_vms_cr);
+        }
+
+        when(lcsst_control_vms_cr != ABNORMAL &&
+			lcsst_control_vms_cr != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_vms_cr = STOP;
+			else
+				lcsst_control_vms_cr = ABNORMAL;
+             pvPut(lcsst_control_vms_cr);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_vms_cr)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_vms_cr = OPERATION;
+            pvPut(lcsst_control_vms_cr);
+        }
+
+        when(lcsst_control_vms_cr != OPERATION) {
+             lcsst_control_vms_cr = OPERATION;
+             pvPut(lcsst_control_vms_cr);
+        } state operation 
+
+        when(efTestAndClear(ef_heartbeat_vms_cr)) {} state operation 
+    }
+}
+
+
+ss lcsMonitor_clsHelium
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_cls_helium = STOP;
+			else
+				lcsst_control_cls_helium = ABNORMAL;
+            pvPut(lcsst_control_cls_helium);
+        }
+
+        when(lcsst_control_cls_helium != ABNORMAL && 
+			lcsst_control_cls_helium != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_cls_helium = STOP;
+			else
+				lcsst_control_cls_helium = ABNORMAL;
+             pvPut(lcsst_control_cls_helium);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_cls_helium)) {} state operation 
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_cls_helium = OPERATION;
+            pvPut(lcsst_control_cls_helium);
+        }
+
+        when(lcsst_control_cls_helium != OPERATION) {
+             lcsst_control_cls_helium = OPERATION;
+             pvPut(lcsst_control_cls_helium);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_cls_helium)) {} state operation
+
+        when(delay(2.0)) {} state fault
+    }
+}
+
+
+
+ss lcsMonitor_clsVacuum
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_cls_vacuum = STOP;
+			else
+				lcsst_control_cls_vacuum = ABNORMAL;
+            pvPut(lcsst_control_cls_vacuum);
+        }
+
+        when(lcsst_control_cls_vacuum != ABNORMAL && 
+			lcsst_control_cls_vacuum != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_cls_vacuum = STOP;
+			else
+				lcsst_control_cls_vacuum = ABNORMAL;
+             pvPut(lcsst_control_cls_vacuum);
+        } state fault
+
+  
+        when(efTestAndClear(ef_heartbeat_cls_vacuum)) {} state operation
+    }
+
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_cls_vacuum = OPERATION;
+            pvPut(lcsst_control_cls_vacuum);
+        }
+
+        when(lcsst_control_cls_vacuum != OPERATION) {
+             lcsst_control_cls_vacuum = OPERATION;
+             pvPut(lcsst_control_cls_vacuum);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_cls_vacuum)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_fuel 
+{
+
+    state fault {
+        option -e;
+        option +t;
+ 
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_fuel = STOP;
+			else
+				lcsst_control_fuel = ABNORMAL;
+            pvPut(lcsst_control_fuel);
+        }
+
+        when(lcsst_control_fuel != ABNORMAL && 
+			lcsst_control_fuel != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_fuel = STOP;
+			else
+				lcsst_control_fuel = ABNORMAL;
+             pvPut(lcsst_control_fuel);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_fuel)) {} state operation
+    }
+
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_fuel = OPERATION;
+            pvPut(lcsst_control_fuel);
+        }
+
+        when(lcsst_control_fuel != OPERATION) {
+             lcsst_control_fuel = OPERATION;
+             pvPut(lcsst_control_fuel);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_fuel)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+      
+    }
+}
+
+ss lcsMonitor_smbi 
+{
+
+    state fault {
+        option -e;
+        option +t;
+ 
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_smbi = STOP;
+			else
+				lcsst_control_smbi = ABNORMAL;
+            pvPut(lcsst_control_smbi);
+        }
+
+        when(lcsst_control_smbi != ABNORMAL && 
+			lcsst_control_smbi != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_smbi = STOP;
+			else
+				lcsst_control_smbi = ABNORMAL;
+             pvPut(lcsst_control_smbi);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_smbi)) {} state operation
+    }
+
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_smbi = OPERATION;
+            pvPut(lcsst_control_smbi);
+        }
+
+        when(lcsst_control_smbi != OPERATION) {
+             lcsst_control_smbi = OPERATION;
+             pvPut(lcsst_control_smbi);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_smbi)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+      
+    }
+}
+
+
+
+ss lcsMonitor_dls
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_dls = STOP;
+			else
+				lcsst_control_dls = ABNORMAL;
+            pvPut(lcsst_control_dls);
+        }
+ 
+        when(lcsst_control_dls != ABNORMAL && lcsst_control_dls != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_dls = STOP;
+			else
+				lcsst_control_dls = ABNORMAL;
+             pvPut(lcsst_control_dls);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_dls)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_dls = OPERATION;
+            pvPut(lcsst_control_dls);
+        }
+
+        when(lcsst_control_dls != OPERATION) {
+             lcsst_control_dls = OPERATION;
+             pvPut(lcsst_control_dls);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_dls)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+
+ss lcsMonitor_hrs
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hrs = STOP;
+			else
+				lcsst_control_hrs = ABNORMAL;
+            pvPut(lcsst_control_hrs);
+        }
+
+        when(lcsst_control_hrs != ABNORMAL && lcsst_control_hrs != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hrs = STOP;
+			else
+				lcsst_control_hrs = ABNORMAL;
+             pvPut(lcsst_control_hrs);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_hrs)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_hrs = OPERATION;
+            pvPut(lcsst_control_hrs);
+        }
+
+        when(lcsst_control_hrs != OPERATION) {
+             lcsst_control_hrs = OPERATION;
+             pvPut(lcsst_control_hrs);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_hrs)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_hds_helium
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hds_helium = STOP;
+			else
+				lcsst_control_hds_helium = ABNORMAL;
+            pvPut(lcsst_control_hds_helium);
+        }
+
+        when(lcsst_control_hds_helium != ABNORMAL && lcsst_control_hds_helium !=STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hds_helium = STOP;
+			else
+				lcsst_control_hds_helium = ABNORMAL;
+             pvPut(lcsst_control_hds_helium);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_hds_helium)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_hds_helium = OPERATION;
+            pvPut(lcsst_control_hds_helium);
+        }
+
+        when(lcsst_control_hds_helium != OPERATION) {
+             lcsst_control_hds_helium = OPERATION;
+             pvPut(lcsst_control_hds_helium);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_hds_helium)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_hds_vacuum
+{
+
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hds_vacuum = STOP;
+			else
+				lcsst_control_hds_vacuum = ABNORMAL;
+            pvPut(lcsst_control_hds_vacuum);
+        }
+
+        when(lcsst_control_hds_vacuum != ABNORMAL && lcsst_control_hds_vacuum != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_hds_vacuum = STOP;
+			else
+				lcsst_control_hds_vacuum = ABNORMAL;
+             pvPut(lcsst_control_hds_vacuum);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_hds_vacuum)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_hds_vacuum = OPERATION;
+            pvPut(lcsst_control_hds_vacuum);
+        }
+
+        when(lcsst_control_hds_vacuum != OPERATION) {
+             lcsst_control_hds_vacuum = OPERATION;
+             pvPut(lcsst_control_hds_vacuum);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_hds_vacuum)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+
+ss lcsMonitor_interlock
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_interlock = STOP;
+			else
+				lcsst_control_interlock = ABNORMAL;
+            pvPut(lcsst_control_interlock);
+        }
+
+        when(lcsst_control_interlock != ABNORMAL && lcsst_control_interlock != STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_interlock = STOP;
+			else
+				lcsst_control_interlock = ABNORMAL;
+             pvPut(lcsst_control_interlock);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_interlock)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_interlock = OPERATION;
+            pvPut(lcsst_control_interlock);
+        }
+
+        when(lcsst_control_interlock != OPERATION) {
+             lcsst_control_interlock = OPERATION;
+             pvPut(lcsst_control_interlock);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_interlock)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss lcsMonitor_gcds
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_gcds = STOP;
+			else
+				lcsst_control_gcds = ABNORMAL;
+            pvPut(lcsst_control_gcds);
+        }
+
+        when(lcsst_control_gcds != ABNORMAL && lcsst_control_gcds !=STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_gcds = STOP;
+			else
+				lcsst_control_gcds = ABNORMAL;
+             pvPut(lcsst_control_gcds);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_gcds)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_gcds = OPERATION;
+            pvPut(lcsst_control_gcds);
+        }
+
+        when(lcsst_control_gcds != OPERATION) {
+             lcsst_control_gcds = OPERATION;
+             pvPut(lcsst_control_gcds);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_gcds)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+ss lcsMonitor_data
+{
+ 
+    state dds1_status_monitor
+    {
+       entry {
+		 if ( lcsst_opst_control == 0 ) {
+			lcsst_control_data = STOP;
+			printf("put data STOP\n");
+		}
+		else {
+			lcsst_control_data = ABNORMAL;
+			printf("put data ABNORMAL \n");
+		}
+            pvPut(lcsst_control_data);
+        
+        }
+        
+        when(efTestAndClear(ef_dds1_status)) {
+/*	     printf("dds1_status: 0x%x\n", dds1_status); */
+	     
+%%       if( pVar->dds1_status == 1 ) {
+
+/*          printf("data put finished!\n"); */
+          data_put = perform_summary = lcsst_control_data = 1;
+          pvPut(lcsst_control_data);
+          pvPut(perform_summary);
+          pvPut(data_put);
+/*          pvGet(dds1_shot_number); */
+/*        %%runMMM(pVar->strRCom,pVar->shot_number_latch);   2013. 7. 31 not used. informed from SL Lee
+          pvPut(strRCom); */
+%%      } 
+%%  	else if (  pVar->dds1_status == 5 ) {
+
+/*          printf("data put start!\n"); */
+          data_put = perform_summary = lcsst_control_data = 0;
+          pvPut(lcsst_control_data);
+          pvPut(perform_summary);
+          pvPut(data_put);
+%%     }
+%%     else {
+		lcsst_control_data = 2;
+		pvPut(lcsst_control_data);
+%%    }
+
+     } state dds1_status_monitor
+   }
+
+}
+
+
+ss lcsMonitor_pms
+{
+    state fault {
+        option -e;
+        option +t;
+
+        entry {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_pms = STOP;
+			else
+				lcsst_control_pms = ABNORMAL;
+            pvPut(lcsst_control_pms);
+        }
+
+        when(lcsst_control_pms != ABNORMAL && lcsst_control_pms !=STOP) {
+			if ( lcsst_opst_control == 0 )
+				lcsst_control_pms = STOP;
+			else
+				lcsst_control_pms = ABNORMAL;
+             pvPut(lcsst_control_pms);
+        } state fault
+
+        when(efTestAndClear(ef_heartbeat_pms)) {} state operation
+    }
+
+    state operation {
+        option -e;
+        option +t;
+
+        entry {
+            lcsst_control_pms = OPERATION;
+            pvPut(lcsst_control_pms);
+        }
+
+        when(lcsst_control_pms != OPERATION) {
+             lcsst_control_pms = OPERATION;
+             pvPut(lcsst_control_pms);
+        } state operation
+
+        when(efTestAndClear(ef_heartbeat_pms)) {} state operation
+
+        when(delay(SCAN_INTERVAL)) {} state fault
+    }
+}
+
+
+ss filterScopeMonitoring
+{
+    state init
+    {
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_filterScope_status)) {} state checkStatus
+    }
+
+    state checkStatus
+    {
+        when(TRUE) {
+            if(filterScope_status == FILTERSCOPE_NOT_DEFINED) {
+                %% strcpy(pVar->filterScope_status_string, FILTERSCOPE_NOT_DEFINED_STRING);
+            }
+
+            if(filterScope_status == FILTERSCOPE_PRETRIG_WAITING) {
+                %% strcpy(pVar->filterScope_status_string, FILTERSCOPE_PRETRIG_WAITING_STRING);
+            }
+
+            if(filterScope_status == FILTERSCOPE_TRIG_WAITING) {
+                %% strcpy(pVar->filterScope_status_string, FILTERSCOPE_TRIG_WAITING_STRING);
+            }
+
+            if(filterScope_status == FILTERSCOPE_ACQUIRING_DATA) {
+                %% strcpy(pVar->filterScope_status_string, FILTERSCOPE_ACQUIRING_DATA_STRING);
+            }
+
+            pvPut(filterScope_status_string);
+        } state monitoring
+    }
+}
+
+
+ss pfMPSMonitoring
+{
+    state pfOff
+    {
+        entry {
+            pf_OnOff_indicator[0] = PF_OFF;
+            pf_OnOff_indicator[1] = PF_OFF;
+            pvPut(pf_OnOff_indicator[0]);
+            pvPut(pf_OnOff_indicator[1]);
+        }
+
+        when(pf_OnOff_monitor[0] || pf_OnOff_monitor[1]) {} state pfOn
+    }
+
+    state pfOn
+    {
+        entry {
+            pf_OnOff_indicator[0] = PF_ON;
+            pf_OnOff_indicator[1] = PF_ON;
+            pvPut(pf_OnOff_indicator[0]);
+            pvPut(pf_OnOff_indicator[1]);
+        }
+
+        when(!pf_OnOff_monitor[0] && !pf_OnOff_monitor[1]) {} state pfOff
+    }
+}
+
+ss tfMPSMonitoring
+{
+    state tfOff
+    {
+        entry {
+            tf_OnOff_indicator = PF_OFF;   /*  0 */
+            pvPut(tf_OnOff_indicator);
+        }
+
+        when(tf_OnOff_monitor[0] || tf_OnOff_monitor[1]) {} state tfOn
+    }
+
+    state tfOn
+    {
+        entry {
+            tf_OnOff_indicator = PF_ON;  /* 1 */
+            pvPut(tf_OnOff_indicator);
+        }
+
+        when(!tf_OnOff_monitor[0] && !tf_OnOff_monitor[1]) {} state tfOff
+    }
+}
+
+
+ss icrh_rf_on
+{
+    state rfoff
+    {
+        entry {
+            ccs_icwc_onoff = 0;
+            pvPut(ccs_icwc_onoff);
+        }
+        when(icrf_rf_select == 1) {} state rfon
+    }
+
+    state rfon
+    {
+        entry {
+            ccs_icwc_onoff = 1;
+            pvPut(ccs_icwc_onoff);
+        }
+        when( icrf_rf_select != 1) {} state rfoff
+    }
+}
+
+
+/*++leesi*/
+ss gdc_onoff
+{
+    state gdcoff
+    {
+        entry {
+            gdc_discharge_status = 0;
+            pvPut(gdc_discharge_status);
+        }
+        when(gdc_discharge_condtion==1) {} state gdcon
+    }
+
+    state gdcon
+    {
+        entry {
+            gdc_discharge_status = 1;
+            pvPut(gdc_discharge_status);
+        }
+        when(gdc_discharge_condtion==0) {} state gdcoff
+    }
+}
+
+ss blip_change_monitor
+{
+    state blip_monitor
+    {
+        entry {
+            ccs_tss_confirm = 0;
+            pvPut(ccs_tss_confirm);
+        }
+        when(efTestAndClear(ef_ccs_blip_time)) {
+        	ccs_tss_confirm = 0;
+        	pvPut(ccs_tss_confirm);
+
+        } state blip_monitor
+    }
+}
+
+
+
+

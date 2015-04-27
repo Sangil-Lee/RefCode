@@ -1,0 +1,12 @@
+record(ai, "$(PV_NAME)_AI") {
+  field(DESC, "$(DESC)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@$(PLC) $(TAG) S 1")
+  field(EGU, "$(UNIT)")
+}
+record(calc, "$(PV_NAME)") {
+  field(SCAN, ".1 second")
+  field(CALC, "A*0.1")
+  field(INPA, "$(PV_NAME)_AI.VAL")
+}

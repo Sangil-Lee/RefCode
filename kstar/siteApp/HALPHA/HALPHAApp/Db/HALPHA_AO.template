@@ -1,0 +1,17 @@
+file db/HALPHA_AO.db {
+        pattern { PV,                    DS,                      MODE,      ACT}
+                {"HALPHA_setT0",          "MDSplus model tree write","master","time_t0"},
+                {"HALPHA_setT1",          "MDSplus model tree write","master","time_t1"},
+                {"HALPHA_setOpMode",      "MDSplus model tree write","master","set_mode"},
+                {"HALPHA_createShot",     "MDSplus model tree write","master","create_shot"},
+                {"HALPHA_shotNumber",     "MDSplus model tree write","master","shot_num"},
+                {"HALPHA_writeTree",      "MDSplus model tree write","master","tree_write"},
+                {"HALPHA_readTree",       "MDSplus model tree write","master","tree_read"},
+                {"HALPHA_masterCHgain",   "Analog output",           "master","ch_gain"},
+                {"HALPHA_sampleRate",     "Analog output",           "master","smpl_rate"},
+                {"HALPHA_master_chBitMask","Analog output",          "master","ch_onoff"},
+                {"HALPHA_chUsedNum",      "Analog output",           "master","ch_useNum"},
+                {"HALPHA_sendTree",       "Analog output",           "master","raw2ascii"},
+                {"HALPHA_blipTime",       "MDSplus model tree write","master","blip_time"},
+                {"HALPHA_ECE_CALMODE",    "ECE Calibration Mode",    "master","ece_calMode"},
+}

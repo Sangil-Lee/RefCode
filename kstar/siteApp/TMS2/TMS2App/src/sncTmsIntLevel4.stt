@@ -1,0 +1,137 @@
+program sncTmsIntLevel4
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <math.h>
+
+unsigned long tmsIntLevel;
+assign tmsIntLevel to "TMS_INTERLOCK_LEVEL_4";
+monitor tmsIntLevel;
+
+int intUse;
+assign intUse to "TMS_INTERLOCK_USE";
+monitor intUse;
+
+int intUseTemp;
+assign intUseTemp to "TMS_TEMP_INTERLOCK_ACTIVE";
+monitor intUseTemp;
+
+int intUseDisp;
+assign intUseDisp to "TMS_DISP_INTERLOCK_ACTIVE";
+monitor intUseDisp;
+
+float tfctMax;
+assign tfctMax to "TMS_TFC_TOUT_MAX";
+monitor tfctMax;
+
+float tfbtMax;
+assign tfbtMax to "TMS_TFBUS_TINT_THR_MAX";
+monitor tfbtMax;
+
+float pfct15Max;
+assign pfct15Max to "TMS_PFC15_TOUT_MAX";
+monitor pfct15Max;
+
+float pfct67Max;
+assign pfct67Max to "TMS_PFC67_TOUT_MAX";
+monitor pfct67Max;
+
+float pfbtMax;
+assign pfbtMax to "TMS_PFB_TOUT_MAX";
+monitor pfbtMax;
+
+float radDisMax;
+assign radDisMax to "TMS_RADIAL_DIS_MAX";
+monitor radDisMax;
+
+float verDisMax;
+assign verDisMax to "TMS_VERTICAL_DIS_MAX";
+monitor verDisMax;
+
+float shrDisMax;
+assign shrDisMax to "TMS_SHEAR_DIS_MAX";
+monitor shrDisMax;
+
+float setTFCTVal;
+assign setTFCTVal to "TMS_INTERLOCK_L4_TFCT_SET";
+monitor setTFCTVal;
+
+float setTFBTVal;
+assign setTFBTVal to "TMS_INTERLOCK_L4_TFBT_SET";
+monitor setTFBTVal;
+
+float setPFC15Val;
+assign setPFC15Val to "TMS_INTERLOCK_L4_PFCT15_SET";
+monitor setPFC15Val;
+
+float setPFC67Val;
+assign setPFC67Val to "TMS_INTERLOCK_L4_PFCT67_SET";
+monitor setPFC67Val;
+
+float setPFBVal;
+assign setPFBVal to "TMS_INTERLOCK_L4_PFBT_SET";
+monitor setPFBVal;
+
+float setRadDisVal;
+assign setRadDisVal to "TMS_INTERLOCK_L4_RAD_DIS_SET";
+monitor setRadDisVal;
+
+float setVerDisVal;
+assign setVerDisVal to "TMS_INTERLOCK_L4_VER_DIS_SET";
+monitor setVerDisVal;
+
+float setShrDisVal;
+assign setShrDisVal to "TMS_INTERLOCK_L4_SHR_DIS_SET";
+monitor setShrDisVal;
+
+ss tmsInterlock4{
+	state tms_interlock_level4{
+        	when (delay(0.1) && intUse==1){
+			if(intUse==1 && intUseTemp ==1 && intUseDisp==1){
+				if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal) || (pfct15Max>setPFC15Val) || (pfct67Max>setPFC67Val) || (pfbtMax>setPFBVal) || (fabs(radDisMax)>setRadDisVal) || (fabs(verDisMax)>setVerDisVal) || (fabs(shrDisMax)>setShrDisVal)){
+                     			tmsIntLevel=0;
+                     			pvPut(tmsIntLevel);
+				}
+                		if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal) && (pfct15Max<=setPFC15Val) && (pfct67Max<=setPFC67Val) && (pfbtMax<=setPFBVal) && (fabs(radDisMax)<=setRadDisVal) && (fabs(verDisMax)<=setVerDisVal) && (fabs(shrDisMax)<=setShrDisVal)){
+                     			tmsIntLevel=1;
+                     			pvPut(tmsIntLevel);
+                		}
+			}
+			if(intUse==1 && intUseTemp ==1 && intUseDisp==0){
+			if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal) || (pfct15Max>setPFC15Val) || (pfct67Max>setPFC67Val) || (pfbtMax>setPFBVal)){
+                     			tmsIntLevel=0;
+                     			pvPut(tmsIntLevel);
+			}
+               		if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal) && (pfct15Max<=setPFC15Val) && (pfct67Max<=setPFC67Val) && (pfbtMax<=setPFBVal)){
+                     			tmsIntLevel=1;
+                     			pvPut(tmsIntLevel);
+                	}
+			}
+			if(intUse==1 && intUseTemp ==0 && intUseDisp==1){
+				if((fabs(radDisMax)>setRadDisVal) || (fabs(verDisMax)>setVerDisVal) || (fabs(shrDisMax)>setShrDisVal)){
+                     			tmsIntLevel=0;
+                     			pvPut(tmsIntLevel);
+				}
+                		if((fabs(radDisMax)<=setRadDisVal) && (fabs(verDisMax)<=setVerDisVal) && (fabs(shrDisMax)<=setShrDisVal)){
+                     			tmsIntLevel=1;
+                     			pvPut(tmsIntLevel);
+                		}
+			}
+			if(intUse==1 && intUseTemp ==0 && intUseDisp==0){
+                     			tmsIntLevel=1;
+                     			pvPut(tmsIntLevel);
+                	}
+		} state tms_interlock_level4
+                when (intUse==0){
+                } state tms_Bypass_interlock_level4
+        }
+        state tms_Bypass_interlock_level4{
+                when (delay(0.1)){
+                                if(tmsIntLevel==0){
+                                        tmsIntLevel=1;
+                                        pvPut(tmsIntLevel);
+                                }
+                } state tms_interlock_level4
+        }
+}
+

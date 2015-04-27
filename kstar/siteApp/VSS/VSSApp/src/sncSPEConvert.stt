@@ -1,0 +1,120 @@
+program sncSPEConvert
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include "epicsThread.h"
+%% #include "PiSPE.h" 
+
+
+
+string tmpStr1;
+string tmpStr2;
+
+string workPath;
+assign workPath to "VSS_SPE_WORK_PATH";
+monitor workPath;
+
+string outPath;
+assign outPath to "VSS_SPE_OUT_PATH";
+monitor outPath;
+
+int shotNumber;
+assign shotNumber to "VSS_SPE_SHOT_NUMBER";
+monitor shotNumber;
+
+int shotSNumber;
+assign shotSNumber to "VSS_SPE_SHOT_START_NUMBER";
+monitor shotSNumber;
+
+int shotENumber;
+assign shotENumber to "VSS_SPE_SHOT_END_NUMBER";
+monitor shotENumber;
+
+float blipTime;
+assign blipTime to "VSS_SPE_BLIP_TIME";
+monitor blipTime;
+
+float ccsBlipTime;
+assign ccsBlipTime to "CCS_BLIP_TIME";
+monitor ccsBlipTime;
+
+float hDaqTime;
+assign hDaqTime to "VBS_LTU_P7_SEC0_T0";
+monitor hDaqTime;
+
+float daqTime;
+assign daqTime to "VSS_SPE_DAQ_TIME";
+monitor daqTime;
+
+int storeMode;
+assign storeMode to "VSS_SPE_MODE";
+monitor storeMode;
+
+int autoRunSelect;
+assign autoRunSelect to "VSS_SPE_AUTO_RUN";
+monitor autoRunSelect;
+
+int ccsShotNumber;
+assign ccsShotNumber to "CCS_SHOT_NUMBER";
+monitor ccsShotNumber;
+
+int cssCTUshotStart;
+assign cssCTUshotStart to "CCS_CTU_shotStart";
+monitor cssCTUshotStart;
+evflag fcssCTUshotStart;
+sync cssCTUshotStart fcssCTUshotStart;
+
+int convertStart;
+assign convertStart to "VSS_SPE_CONVERT_START";
+monitor convertStart;
+evflag fconvertStart;
+sync convertStart fconvertStart;
+
+int stat;
+int i;
+
+ss SPE {
+    state init{
+		    when (TRUE){
+		    }state Convert_SPE
+	  }
+    state Convert_SPE{
+		  when (efTestAndClear(fconvertStart)){
+        if(convertStart==1 && autoRunSelect == 0){
+            for(i=shotSNumber; i<=shotENumber; i++)
+            {
+              shotNumber=i;
+              pvPut(shotNumber,SYNC);
+%% /*  OK.. Test complated !!!     system("01CanNobody.mp3");  */
+%%            sprintf(pVar->tmpStr1, "%ssv%d.spe",pVar->workPath, pVar->shotNumber);
+%%           pVar->stat=mdsplus_Tree_create(pVar->storeMode,pVar->shotNumber);
+%%           sprintf(pVar->tmpStr2, "%s%d.txt",pVar->outPath, pVar->shotNumber);
+%%           
+%%           pVar->stat=mdsplus_data_put_spe(pVar->tmpStr1, pVar->shotNumber, pVar->storeMode, pVar->blipTime, pVar->daqTime);
+%%           printf("processSPEFile function status :%d , 0 - OK, other value - Not good!!\n",pVar->stat);
+%%           epicsThreadSleep(2.);
+            }
+            convertStart=0;
+            pvPut(convertStart);
+        }
+      } state Convert_SPE
+      when (efTestAndClear(fcssCTUshotStart)){
+        if(storeMode == 1 && autoRunSelect == 1){
+              shotNumber=ccsShotNumber;
+              pvPut(shotNumber,SYNC);
+              blipTime = ccsBlipTime;
+              pvPut(blipTime,SYNC);
+              daqTime = hDaqTime;
+              pvPut(daqTime,SYNC);
+%%            epicsThreadSleep(140.);
+%%            sprintf(pVar->tmpStr1, "%ssv%d.spe",pVar->workPath, pVar->shotNumber);
+%%            sprintf(pVar->tmpStr2, "%s%d.txt",pVar->outPath, pVar->shotNumber);
+%%            
+%%            pVar->stat=mdsplus_data_put_spe(pVar->tmpStr1, pVar->shotNumber, pVar->storeMode, pVar->blipTime, pVar->daqTime);
+%%            printf("processSPEFile function status :%d , 0 - OK, other value - Not good!!\n",pVar->stat);
+%% 
+        }
+      } state Convert_SPE
+    }
+}

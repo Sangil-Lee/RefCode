@@ -1,0 +1,46 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI_VME.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC	INPB}
+{NB1_P1VME_RTN_G1R    NB1_P1VME_RTN_G1R    "Count"    plc1    "VME Tag"    1000    0    1001    1000    0    0    3			1}
+{NB1_P1VME_RTN_G3R    NB1_P1VME_RTN_G3R    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		1}
+{NB1_P1VME_RTN_ARCR    NB1_P1VME_RTN_ARCR    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		1}
+{NB1_P1VME_RTN_FILAR    NB1_P1VME_RTN_FILAR    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0	1}
+
+{NB1_P1VME_RTN_G1S    NB1_P1VME_RTN_G1S    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_G3S    NB1_P1VME_RTN_G3S    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_ARCS    NB1_P1VME_RTN_ARCS    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_FILAS    NB1_P1VME_RTN_FILAS    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0	10}
+
+{NB1_P1VME_RTN_G1E    NB1_P1VME_RTN_G1E    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_G3E    NB1_P1VME_RTN_G3E    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_ARCE    NB1_P1VME_RTN_ARCE    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0		10}
+{NB1_P1VME_RTN_FILAE    NB1_P1VME_RTN_FILAE    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0	10}
+
+#{NB1_P1VME_AO_FLT    NB1_P1VME_AO_FLT    "Count"    plc1    "VME Tag"    1000000    0    1000000    1000000    0    0    0	10}
+
+# PS 2012.07.03
+{NB1_P2VME_RTN_G1SEC		NB1_P2VME_RTN_G1SEC		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    3    1}
+{NB1_P2VME_RTN_G3SEC		NB1_P2VME_RTN_G3SEC		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    3    1}
+{NB1_P2VME_RTN_ARCSEC	NB1_P2VME_RTN_ARCSEC	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    3    1}
+{NB1_P2VME_RTN_FILASEC	NB1_P2VME_RTN_FILASEC	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    3    1}
+{NB1_P2VME_RTN_PARCTIME	NB1_P2VME_RTN_PARCTIME	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCDEL_A	NB1_P2VME_RTN_ARCDEL	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+#{NB1_P2VME_RTN_ARCFREQ	NB1_P2VME_RTN_ARCFREQ	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCFREQ_A	NB1_P2VME_RTN_ARCFREQ	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCDUTY	NB1_P2VME_RTN_ARCDUTY	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCMTIMES	NB1_P2VME_RTN_ARCMTIMES	"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    3    1}
+{NB1_P2VME_RTN_G1S		NB1_P2VME_RTN_G1S		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_G1E		NB1_P2VME_RTN_G1E		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_G3S		NB1_P2VME_RTN_G3S		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_G3E		NB1_P2VME_RTN_G3E		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCS		NB1_P2VME_RTN_ARCS		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_ARCE		NB1_P2VME_RTN_ARCE		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_FILAS		NB1_P2VME_RTN_FILAS		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+{NB1_P2VME_RTN_FILAE		NB1_P2VME_RTN_FILAE		"Count"    plc2    "VME Tag"    1000000    0    1000000    1000000    0    0    0    1}
+
+#{NB1_P2VME_STA_FLT		NB1_P2VME_STA_FLT		"Count"		plc2    "VME FLT Code"	1    -1    1    1    -1    -1    0  1}
+}

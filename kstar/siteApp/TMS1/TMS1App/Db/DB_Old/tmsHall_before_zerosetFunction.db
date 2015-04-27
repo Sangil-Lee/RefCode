@@ -1,0 +1,35 @@
+record(ai, "$(REC)_RVAL")
+{
+        field(DESC, "$(DESC)")
+        field(DTYP, "PXISCXI Raw Reading")
+        field(INP, "@$(TASK) $(CHAN)")
+        field(SCAN, "I/O Intr")
+        field(PREC, "8")
+        field(EGU, "V")
+	field(MDEL, "0.")
+	field(ADEL, "0.")
+	field(FLNK, "$(REC) PP NMS")
+}
+record(calc, "$(REC)")
+{
+        field(DESC, "tmsHallsensor $(DESC)")
+        field(SCAN, ".1 second")
+        field(CALC, "(A*1.E+3-B*1.E-3)*C*0.1")
+        field(INPA, "$(REC)_RVAL NPP NMS")
+	field(INPB, "$(OFFSET)")
+	field(INPC, "$(MSEN)")
+        field(EGU, "T")
+	field(MDEL, "0.")
+	field(ADEL, "0.")
+        field(PREC, "8")
+}
+#record(ai, "$(REC)_RVAL")
+#{
+#        field(DESC, "$(DESC)")
+#        field(SCAN, "Passive")
+#        field(PREC, "8")
+#        field(EGU, "V")
+#	field(MDEL, "0.")
+#	field(ADEL, "0.")
+#	field(FLNK, "$(REC) PP NMS")
+#}

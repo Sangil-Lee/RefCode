@@ -1,0 +1,79 @@
+program sncECEHRCalMode 
+option -c;
+option +r;
+
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+long opMode;
+long status;
+long sysArming;
+long sysRun;
+double shotNumber;
+
+double startLTU;
+
+long calModeRun;
+double startCalShot;
+double stopCalShot;
+
+
+assign opMode to "ECEHR_OP_MODE";
+assign status to "ECEHR_STATUS";
+assign shotNumber to "ECEHR_CREATE_LOCAL_TREE";
+assign sysArming to "ECEHR_SYS_ARMING";
+assign sysRun to "ECEHR_SYS_RUN";
+
+assign startLTU to "ECEHR_LTU_SOFT_START";
+
+assign startCalShot to "ECEHR_CAL_START_NUMBER";
+assign stopCalShot to "ECEHR_CAL_STOP_NUMBER";
+assign calModeRun to "ECEHR_CAL_MODE_START";
+
+monitor opMode;
+monitor status;
+monitor shotNumber;
+monitor sysArming;
+monitor sysRun;
+
+monitor startLTU;
+
+monitor startCalShot;
+monitor stopCalShot;
+monitor calModeRun;
+
+ss setCalSeq {
+	state init {
+        when (TRUE) {
+            printf("sncECE Cal Mode : Startup delay over\n");
+%% 		epicsThreadSleep(1);
+        } state calModeSeq
+    	}
+	state calModeSeq {
+		 when (delay(2.0)) {
+			if(opMode == 2 && status == 1 && calModeRun == 1) {
+				if(startCalShot <= stopCalShot){
+					shotNumber = startCalShot;
+					pvPut(shotNumber,SYNC);
+					startCalShot = startCalShot + 1;
+					pvPut(startCalShot,SYNC);
+%% 					epicsThreadSleep(1.);
+				        sysArming = 1;
+					pvPut(sysArming,SYNC);
+%% 					epicsThreadSleep(12.);
+					sysRun = 1;
+					pvPut(sysRun,SYNC);
+%% 					epicsThreadSleep(6.);
+					startLTU = 1;
+					pvPut(startLTU,SYNC);
+				}
+				if(startCalShot > stopCalShot){
+					calModeRun = 0;
+					pvPut(calModeRun,SYNC);
+				}
+			}
+		} state calModeSeq 
+	}
+}

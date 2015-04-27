@@ -1,0 +1,20 @@
+record(ao,"$(PV_NAME)")
+{
+field(SCAN,"Passive")
+field(FLNK,"$(PV_ACT) PP NMS")
+#field(VAL,"7")
+}
+record(dfanout,"$(PV_ACT)")
+{
+field(SCAN,"Passive")
+field(DOL,"$(PV_NAME)")
+field(OMSL,"closed_loop")
+field(OUTA,"$(ACT1) PP")
+field(OUTB,"$(ACT3) PP")
+field(OUTC,"$(ACT4) PP")
+field(OUTD,"$(ACT5) PP")
+field(OUTE,"$(ACT6) PP")
+field(OUTF,"$(ACT7) PP")
+field(OUTG,"$(ACT8) PP")
+field(OUTH,"$(ACT9) PP")
+}

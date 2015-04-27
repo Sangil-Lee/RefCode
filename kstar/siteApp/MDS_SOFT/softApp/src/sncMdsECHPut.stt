@@ -1,0 +1,126 @@
+program sncMdsECHPut
+option -c;
+%% /* ECH High Sampling Data (Wave Form Data) Store !!   SNL - sncECHDaqSeq.stt at Remote Mode    */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% int dtypeFloat = DTYPE_FLOAT;
+%% int dtypeLong = DTYPE_LONG;
+%% int i;
+   int j;
+   int shotNumber;
+   double oldShotNumber;
+   int mdsPutStart;
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% char buf[50];
+%% char buf1[50];
+%% int socket;
+/* int idesc = descr(&dtypeLong, &tstat, &null); */
+%% int idesc;
+int heartBeat;
+
+float nuData[6];
+string mdsIp;
+string mdsTree;
+
+string treeNuNode[6];
+
+%% /* old pv before 2011 operationf assign nuData to {"ECH_SAMPLE_COUNT","ECH_SAMPLING_RATE","ECH_WRE02_CALC","ECH_WRD16_CALC","ECH_WRE11","ECH_LTU_T0_p0"};  */
+assign nuData to {"ECH_SAMPLE_COUNT","ECH_SAMPLING_RATE","ECH_ECMD_VME_TTOTAL","ECH_POWER","ECH_LTU_T0_p0"};
+
+assign treeNuNode to {"ECH_NI_DAQ_NO_BUF","ECH_NI_DAQ_SAM_RATE","ECH_NI_DAQ_TCPS","ECH_NI_DAQ_PRF","ECH_NI_DAQ_T1"};
+
+assign shotNumber to "ECH_SHOT_NUMBER";
+assign mdsPutStart to "ECH_DAQ_MDSPUT_SNL_FUNC";
+
+assign mdsIp to "ECH_MDS_SERVER_NAME";
+assign mdsTree to "ECH_MDS_TREE_NAME";
+
+assign heartBeat to "SOFT_SNL_ECH_MDSPUT_HEARTBEAT";
+
+monitor nuData;
+monitor treeNuNode;
+
+monitor shotNumber;
+monitor mdsPutStart;
+
+monitor mdsIp;
+monitor mdsTree;
+
+monitor heartBeat;
+
+ss mdsDataPut {
+	state data_put {
+        	when (mdsPutStart==1) {
+			%% idesc = descr(&dtypeLong, &tstat, &null);
+			%% printf("No Buff : %f  and Sam Rate : %f \n",nuData[0], nuData[1]);
+		    %% socket = MdsConnect(mdsIp); 
+     		%% if (socket == -1 )
+            %%		{
+            %%		fprintf(stderr,"Error connecting to mdsip server(%s).\n", mdsIp);
+            %%		}
+     		%%	if (socket != -1)
+		    %% 	{
+		    %%		fprintf(stdout,"\nMDSplus >>> MdsConnect(\"%s\")... OK\n", mdsIp);
+		    %%		status = MdsOpen(mdsTree, &shotNumber);
+		    %%         fprintf(stdout,"MdsOpen Tree open\n");
+     		%%		if ( !statusOk(status) )
+        	%%			{
+        	%%			fprintf(stderr,"Error TCL command: %s.\n",MdsGetMsg(status));
+        	%%			}
+/* Data Put loop Start */
+			 %%	 for(i=0; i<5; i++) {
+		     %%     	sprintf(buf, "\%s", treeNuNode[i]); printf("%s: %d\n", buf, strlen(buf));
+		     %%     	sprintf(buf1, "FS_FLOAT(%f)", nuData[i] );printf("%s: %f\n", buf1, nuData[i]);
+		     %%  		status = MdsPut(buf, buf1, &null);  /*  MdsPut  !!  */
+     		 %%			if ( !statusOk(status) )
+        	 %%				{
+        	 %%				fprintf(stderr,"Error Mds Put 1 :  %s.\n",MdsGetMsg(status));
+        	 %%				}
+		 %%			epicsThreadSleep(.50);
+			 %%		}
+				/*  Test MdsPut Function !!! */	
+                /*	status = MdsPut("\\PF_PS2:GOOD", "BUILD_WITH_UNIT(3,'m/s')", &null); Put the data, unit But Not Reading */
+		     	/*	status = MdsPut("\\PF_PS3L:GOOD", "XD(FS_FLOAT(3.1))", &null);  Put the data and unit But Not Reading  */
+                /*	status = MdsPut("\\PF_PS3U:GOOD", "FS_FLOAT(3.1)", &null);  OK Numeric Data Put TDI OK!! */ 
+                /*	status = MdsPut("\\PF_PS1:GOOD", "XD(COMPILE('BUILD_WITH_UNIT($1,'m/s')'))", sampleCnt, &null);  */
+				/* Numeric OK but BUILD_WITH_UNIT(1,'m/s') Printed  Bad!! Do Not Read at TDI*/
+                /*	status = MdsPut("\\PF_PS2:GOOD", "XD(BUILD_WITH_UNIT(1,'m/s'))", &null); */ 
+ 				/* Numeric OK but BUILD_WITH_UNIT(1,'m/s') Printed */
+                /* 	status = MdsPut("\\PF_PS1:GOOD", "XD(COMPILE('11.1'))", &null);  OK but Read not at TDI  */
+                /* 	status = MdsPut("\\PF_PS1:GOOD", "$1", sampleCnt, &null);   Bad !!  but Read not at TDI  */
+                /* 	status = MdsPut("\\PF_PS2:GOOD", "'112.1'", &null);    Not Atcion */
+                /* 	status = MdsPut("\\PF_PS2:GOOD", "VAL($1)", sampleCnt, &null);    */
+              	/*  status = MdsPut("\\PF_PS1:LOCATION", "'Ion Statration'", &null);    String Put  Text OK */   
+			 
+			 %%		status = MdsClose(mdsTree, &shotNumber);
+    		 %%		fprintf(stdout, "\nMDSplus >>> Create new tree(\"%d\")... OK\n", shotNumber);
+    		 %%		sprintf(buf, "Create new tree(\"%d\").OK", shotNumber);
+		     %%		}
+				mdsPutStart=0;
+				pvPut(mdsPutStart);
+		} state data_put
+	}
+}
+ss mdsPutHeartBeat {
+	state snlHeartBeat {
+        	when (delay(1.)) {
+				if(heartBeat == 0){
+					heartBeat = 1;
+					pvPut(heartBeat);
+				} else {
+				 	heartBeat = 0;
+					pvPut(heartBeat);
+				}
+			} state snlHeartBeat
+	}
+}

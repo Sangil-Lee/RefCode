@@ -1,0 +1,160 @@
+program sncDlsProctect
+option +r;
+option -c;
+%% #include <string.h>
+
+int i;
+int checkShut;
+
+string tmpStr1;
+string tmpStr2;
+
+int dataCount;
+char *pfileName;
+int shutter[16];
+int shutterStatus[16];
+
+assign shutter to {"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", ""};
+assign shutterStatus to {"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", ""};
+monitor shutter;
+monitor shutterStatus;
+
+%% /* shutter valve state     */
+%% /* Val = 0 - shutter Close */
+%% /* Val = 1 - shutter Open  */ 
+%% /* Diag Requirement : All shutter close 1.1sec before the RF/DC discharge cleaning Run */ 
+%% /* Diag Requirement : All shutter open after the RF/DC discharge cleaning Stop */ 
+
+unsigned int gdcOP;
+assign gdcOP to "DCLN_OP_PREP";
+monitor gdcOP;
+evflag fgdcOP;
+sync gdcOP fgdcOP;
+
+unsigned int gdcAF;
+assign gdcAF to "DCLN_APORT_FWRD";
+monitor gdcAF;
+evflag fgdcAF;
+sync gdcAF fgdcAF;
+
+unsigned int gdcAB;
+assign gdcAB to "DCLN_APORT_BWRD";
+monitor gdcAB;
+evflag fgdcAB;
+sync gdcAB fgdcAB;
+
+unsigned int gdcIF;
+assign gdcIF to "DCLN_IPORT_FWRD";
+monitor gdcIF;
+evflag fgdcIF;
+sync gdcIF fgdcIF;
+
+unsigned int gdcIB;
+assign gdcIB to "DCLN_IPORT_BWRD";
+monitor gdcIB;
+evflag fgdcIB;
+sync gdcIB fgdcIB;
+
+
+unsigned int icrfMode;
+assign icrfMode to "ICRF_RF_SELECT";
+monitor icrfMode;
+evflag ficrfMode;
+sync icrfMode ficrfMode;
+
+int allShStatus;
+assign allShStatus to "DLS_ALL_SHUTTER_STATUS";
+monitor allShStatus;
+
+int wcMode;
+assign wcMode to "CCS_WC_STATUS";
+monitor wcMode;
+
+int wcAuto;
+assign wcAuto to "DLS_WC_AUTO_CTRL";
+monitor wcAuto;
+evflag fwcAuto;
+sync wcAuto fwcAuto;
+
+ss dlsProtect{
+	state init{
+		when (TRUE){
+			pfileName = macValueGet("FNAME");
+			%% epicsThreadId threadId;
+			%% FILE *pfile;
+			%% pfile = fopen (pVar->pfileName, "r");
+			%% if(!pfile) { 
+				%% printf("error in fopen\n");
+				%% threadId = epicsThreadGetIdSelf();
+				%% printf("threadID : %x\n",threadId);
+				%% seqStop(threadId);
+			%% }
+			dataCount =0;
+			%% fscanf(pfile, "%s", pVar->tmpStr1);
+			pvAssign (shutter[dataCount], tmpStr1);
+			pvAssign (shutterStatus[dataCount], tmpStr1);
+			dataCount =1;
+			%% fscanf(pfile, "%s", pVar->tmpStr1);
+			pvAssign (shutter[dataCount], tmpStr1);
+			%% sprintf(pVar->tmpStr2, "%s_READ", pVar->tmpStr1);
+			pvAssign (shutterStatus[dataCount], tmpStr2);
+			dataCount =2;
+			%% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+				pvAssign (shutter[dataCount], tmpStr1);
+				%% sprintf(pVar->tmpStr2, "%s_STATUS", pVar->tmpStr1);
+				pvAssign (shutterStatus[dataCount], tmpStr2);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+				dataCount++;
+				%%}
+				%% fclose(pfile);
+				printf("Data count number is %d\n",dataCount);
+		}state dls_protection	
+	}
+	state dls_protection{
+		when (efTestAndClear(fgdcOP) || efTestAndClear(ficrfMode) || efTestAndClear(fwcAuto)){
+			if(gdcOP==0 && icrfMode==0){
+				if(wcAuto == 1){
+					for (i = 1; i < dataCount; i++){
+						if(shutter[i]==0){
+							%%/* 1 = Open */
+							%%/*	shutter[i] = 1;  */
+							%%/*    pvPut(shutter[i],SYNC);  */
+						}
+					}
+				%%/*	allShStatus = 0;   */
+				%%/*	pvPut(allShStatus,SYNC);  */
+				}
+				wcMode = 0;
+				pvPut(wcMode,SYNC);
+			}
+			if(gdcOP==1 || icrfMode==1){
+				if(wcAuto == 1){
+					for (i = 1; i < dataCount; i++){
+						if(shutter[i]==1){
+							%%/* 0 = Close */
+								shutter[i] = 0;
+							pvPut(shutter[i],SYNC);
+						}
+					}
+					checkShut = 0;
+					for (i = 0; i < dataCount; i++){
+						if(shutterStatus[i]!=0){
+							checkShut += 1;
+						}
+					}
+					if(checkShut != 0){
+						allShStatus = 0;
+						pvPut(allShStatus,SYNC);
+					} else if (checkShut ==0){
+						allShStatus = 1;
+						pvPut(allShStatus,SYNC);
+					}
+				}
+				wcMode = 1;
+				pvPut(wcMode,SYNC);
+			}
+		} state dls_protection
+	}
+}

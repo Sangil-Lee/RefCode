@@ -1,0 +1,7 @@
+include MarteShmUtil.dbd
+
+device(ao,         GPIB_IO, MarteShmAo,         "MarteShm")
+device(ai,         GPIB_IO, MarteShmAi,         "MarteShm")
+
+driver(drvMarteShm)
+registrar(MarteShmLibRegister)

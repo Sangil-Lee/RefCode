@@ -1,0 +1,13 @@
+record(dfanout, "TMS_TASK124_RATE_PUT_IOC2")
+{
+        field(FLNK,  "TMS_TASK1234_RATE_APPLY_IOC2")
+        field(OUTA, "TMS_Dev1_SAMPL_RATE_IOC2")
+        field(OUTB, "TMS_Dev2_SAMPL_RATE_IOC2")
+        field(OUTD, "TMS_Dev4_SAMPL_RATE_IOC2")
+}
+record(fanout, "TMS_TASK1234_RATE_APPLY_IOC2")
+{
+        field(LNK1, "TMS_Dev1_SAMPL_RATE_IOC2")
+        field(LNK2, "TMS_Dev2_SAMPL_RATE_IOC2")
+        field(LNK4, "TMS_Dev4_SAMPL_RATE_IOC2")
+}

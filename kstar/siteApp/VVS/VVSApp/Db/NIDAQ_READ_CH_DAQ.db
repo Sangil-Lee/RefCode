@@ -1,0 +1,20 @@
+record(ai, "$(PVNAME)")
+{
+  field(DESC, "Strain Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NIDAQ RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) value")
+  field(PREC, "6")
+  field(EGU, "Micro Epsilon")
+}
+record(calcout, "$(PVNAME)_TO_TMS")
+{
+        field(DESC, "Strain data forward to TMS")
+        field(SCAN, "Passive")
+        field(INPA, "$(PVNAME) CPP NMS")
+        field(CALC, "A")
+  	field(PREC, "6")
+        field(OUT, "$(TMSPV) PP")
+}
+
+

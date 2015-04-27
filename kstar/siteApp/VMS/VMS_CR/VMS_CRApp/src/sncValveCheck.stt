@@ -1,0 +1,161 @@
+program valveCheck
+option +r;
+option -e;
+
+%%#include <stdio.h>
+%%#include <stdlib.h>
+%%#include <string.h>
+
+%%#define TIMEOUT    1.5
+
+%%#define ACTIVATE   1
+%%#define DEACTIVATE 0
+%%#define ENABLE     1
+%%#define DISABLE    0
+%%#define OPEN       1
+%%#define TRANSITION -1
+%%#define CLOSE      0
+%%#define NOTDEF     0
+%%#define POS_CLOSE  1
+%%#define POS_OPEN   1
+%%#define NORMAL     0
+%%#define FAIL       1
+
+%%#define MAX_RETRY  3
+
+
+evflag efvalvePositionClose;
+evflag efvalvePositionOpen;
+
+short valvePositionClose;
+short valvePositionOpen;
+short valveSet;
+short valveRead;
+short valveCommand;
+short valveChkCommand;
+short valveErrCnt;
+short valveRetryCnt;
+short valveFail;
+
+assign valvePositionClose to "{SYS}:{SUB}:{CTRL}:{INST}CL";
+assign valvePositionOpen  to "{SYS}:{SUB}:{CTRL}:{INST}OP";
+assign valveSet           to "{SYS}:{SUB}:{CTRL}:{INST}";
+assign valveRead          to "{SYS}:{SUB}:{CTRL}:{INST}:READ";
+assign valveCommand       to "{SYS}:{SUB}:{CTRL}:{INST}:CMD";
+assign valveChkCommand    to "{SYS}:{SUB}:{CTRL}:{INST}:CHKCMD";
+assign valveErrCnt        to "{SYS}:{SUB}:{CTRL}:{INST}:ERRCNT";
+assign valveRetryCnt      to "{SYS}:{SUB}:{CTRL}:{INST}:RTYCNT";
+assign valveFail          to "{SYS}:{SUB}:{CTRL}:{INST}:FAIL";
+
+monitor valvePositionClose;
+monitor valvePositionOpen;
+monitor valveSet;
+monitor valveRead;
+monitor valveCommand;
+monitor valveChkCommand;
+
+sync valvePositionClose efvalvePositionClose;
+sync valvePositionOpen  efvalvePositionOpen;
+
+short position;
+float timeout;
+char  *timeout_macro;
+
+%{
+    void positionCheck(short *close, short *open, short *position)
+    {
+        if(*close) *position = CLOSE;
+        if(*open)  *position = OPEN;
+        if(*close == *open) *position = TRANSITION;
+    }
+}%
+
+ss valveCheck {
+    state init {
+        entry {
+            timeout_macro = macValueGet("TIMEOUT");
+            if(timeout_macro) sscanf(timeout_macro, "%f", &timeout);
+            valveRetryCnt    = 0;
+            valveRetryCnt = 0;
+            valveSet     = valveRead;
+            valveCommand = valveRead;
+            pvPut(valveRetryCnt);
+            pvPut(valveSet);
+            pvPut(valveCommand);
+            %%    positionCheck(&pVar->valvePositionClose,
+            %%                  &pVar->valvePositionOpen,
+            %%                  &pVar->position);
+        }
+
+        when(valveChkCommand == DEACTIVATE) {} state deactivate 
+    }
+
+    state deactivate {
+        entry {}
+        when(valveChkCommand == ACTIVATE) {} state activate   
+    }
+
+    state activate {
+        entry {
+            valveRetryCnt = 0; pvPut(valveRetryCnt);
+            if(valveFail != NORMAL) {
+                valveFail = NORMAL;
+                pvPut(valveFail);
+            }
+        }
+        when(valveChkCommand == DEACTIVATE) {} state deactivate
+        when(valveCommand != valveSet) {}      state set
+        when(valveCommand != position) {}      state settle
+        when(efTestAndClear(efvalvePositionClose) ||
+             efTestAndClear(efvalvePositionOpen)) {} state check
+    }
+
+    state set {
+       entry {
+           valveSet = valveCommand;
+           pvPut(valveSet);
+       }
+       when(delay(timeout)) {} state check
+
+    }
+
+    state check {
+        entry {
+            %%    positionCheck(&pVar->valvePositionClose,
+            %%                  &pVar->valvePositionOpen,
+            %%                  &pVar->position);
+        }
+        when(valveChkCommand == DEACTIVATE) {} state deactivate
+        when(valveRetryCnt>=MAX_RETRY) {} state fail
+        when(valveCommand != position) {} state settle
+        when(valveCommand == position) {} state activate
+    }
+
+    state settle {
+        entry {
+            if(valveSet) valveSet = CLOSE;
+            else         valveSet = OPEN;
+            if(valveCommand != valveSet) {
+                 valveRetryCnt++; pvPut(valveRetryCnt);
+            }
+            pvPut(valveSet);
+        }
+        
+        when(delay(timeout)) {} state check
+    }
+
+    state fail {
+        entry {
+            valveErrCnt++; pvPut(valveErrCnt);
+            valveFail = FAIL; pvPut(valveFail);
+        }
+        when(1) {
+            valveChkCommand = DEACTIVATE;
+            pvPut(valveChkCommand);
+        } state deactivate
+    }
+
+
+}
+
+

@@ -1,0 +1,2530 @@
+#!../../bin/linux-x86/pxi
+## You may have to change pxi to something else
+## everywhere it appears in this file
+< envPaths
+epicsEnvSet(ARCH,"linux-x86")
+epicsEnvSet(IOC,"iocpxi")
+epicsEnvSet(TOP,"/home/kstar/epics/pxiApp")
+epicsEnvSet(SNCSEQ,"/usr/local/epics/siteLib")
+epicsEnvSet(EPICS_BASE,"/usr/local/epics/base")
+cd /home/kstar/epics/pxiApp
+## Register all support components
+dbLoadDatabase("dbd/pxi.dbd")
+pxi_registerRecordDeviceDriver(pdbbase)
+## Compact Field Point init
+drvGenericSerialConfigure "nicFP20x0Ctrl1" "172.17.101.22:6341" 0 0
+drvcFP20x0_init "nicFP20x0Ctrl1" 3. 3. 5. 2000
+epicsThreadSleep(5.)
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+< initDriverPXIDev1.cmd
+createPXITask("Dev1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai7")
+< initDriverPXIDev2.cmd
+createPXITask("Dev2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai7")
+< initDriverPXIDev3.cmd
+createPXITask("Dev3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai7")
+< initDriverPXIDev4.cmd
+createPXITask("Dev4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai7")
+< initDriverPXIDev5.cmd
+createPXITask("Dev5")
+createPXIHallChannel("Dev5", "SC5Mod1/ai0")
+createPXIHallChannel("Dev5", "SC5Mod1/ai1")
+createPXIHallChannel("Dev5", "SC5Mod1/ai2")
+createPXIHallChannel("Dev5", "SC5Mod1/ai3")
+createPXIHallChannel("Dev5", "SC5Mod1/ai4")
+createPXIHallChannel("Dev5", "SC5Mod2/ai0")
+createPXIHallChannel("Dev5", "SC5Mod2/ai1")
+createPXIHallChannel("Dev5", "SC5Mod2/ai2")
+createPXIHallChannel("Dev5", "SC5Mod2/ai3")
+createPXIHallChannel("Dev5", "SC5Mod2/ai4")
+< initDriverPXIDev6.cmd
+createPXITask("Dev6")
+createPXIRelayChannel("Dev6",	"/Dev6/ch0",	"/Dev6/com0",	"Dev6/k0",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch1",	"/Dev6/com1",	"Dev6/k1",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch2",	"/Dev6/com2",	"Dev6/k2",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch3",	"/Dev6/com3",	"Dev6/k3",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch4",	"/Dev6/com4",	"Dev6/k4",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch5",	"/Dev6/com5",	"Dev6/k5",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch6",	"/Dev6/com6",	"Dev6/k6",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch7",	"/Dev6/com7",	"Dev6/k7",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch8",	"/Dev6/com8",	"Dev6/k8",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch9",	"/Dev6/com9",	"Dev6/k9",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch10",	"/Dev6/com10",	"Dev6/k10",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch11",	"/Dev6/com11",	"Dev6/k11",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch12",	"/Dev6/com12",	"Dev6/k12",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch13",	"/Dev6/com13",	"Dev6/k13",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch14",	"/Dev6/com14",	"Dev6/k14",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch15",	"/Dev6/com15",	"Dev6/k15",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch16",	"/Dev6/com16",	"Dev6/k16",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch17",	"/Dev6/com17",	"Dev6/k17",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch18",	"/Dev6/com18",	"Dev6/k18",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch19",	"/Dev6/com19",	"Dev6/k19",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch20",	"/Dev6/com20",	"Dev6/k20",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch21",	"/Dev6/com21",	"Dev6/k21",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch22",	"/Dev6/com22",	"Dev6/k22",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch23",	"/Dev6/com23",	"Dev6/k23",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch24",	"/Dev6/com24",	"Dev6/k24",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch25",	"/Dev6/com25",	"Dev6/k25",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch26",	"/Dev6/com26",	"Dev6/k26",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch27",	"/Dev6/com27",	"Dev6/k27",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch28",	"/Dev6/com28",	"Dev6/k28",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch29",	"/Dev6/com29",	"Dev6/k29",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch30",	"/Dev6/com30",	"Dev6/k30",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch31",	"/Dev6/com31",	"Dev6/k31",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch32",	"/Dev6/com32",	"Dev6/k32",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch33",	"/Dev6/com33",	"Dev6/k33",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch34",	"/Dev6/com34",	"Dev6/k34",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch35",	"/Dev6/com35",	"Dev6/k35",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+task launching: Dev1_ctrl thread for Dev1 task
+task launching: Dev2_ctrl thread for Dev2 task
+task launching: Dev3_ctrl thread for Dev3 task
+task launching: Dev4_ctrl thread for Dev4 task
+task launching: Dev5_ctrl thread for Dev5 task
+task launching: Dev6_ctrl thread for Dev6 task
+createPXIRelayChannel("Dev6",	"/Dev6/ch36",	"/Dev6/com36",	"Dev6/k36",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch37",	"/Dev6/com37",	"Dev6/k37",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch38",	"/Dev6/com38",	"Dev6/k38",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch39",	"/Dev6/com39",	"Dev6/k39",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch40",	"/Dev6/com40",	"Dev6/k40",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch41",	"/Dev6/com41",	"Dev6/k41",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch42",	"/Dev6/com42",	"Dev6/k42",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch43",	"/Dev6/com43",	"Dev6/k43",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch44",	"/Dev6/com44",	"Dev6/k44",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch45",	"/Dev6/com45",	"Dev6/k45",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch46",	"/Dev6/com46",	"Dev6/k46",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch47",	"/Dev6/com47",	"Dev6/k47",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch48",	"/Dev6/com48",	"Dev6/k48",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch49",	"/Dev6/com49",	"Dev6/k49",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch50",	"/Dev6/com50",	"Dev6/k50",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch51",	"/Dev6/com51",	"Dev6/k51",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch52",	"/Dev6/com52",	"Dev6/k52",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch53",	"/Dev6/com53",	"Dev6/k53",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch54",	"/Dev6/com54",	"Dev6/k54",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch55",	"/Dev6/com55",	"Dev6/k55",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch56",	"/Dev6/com56",	"Dev6/k56",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch57",	"/Dev6/com57",	"Dev6/k57",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch58",	"/Dev6/com58",	"Dev6/k58",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch59",	"/Dev6/com59",	"Dev6/k59",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch60",	"/Dev6/com60",	"Dev6/k60",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch61",	"/Dev6/com61",	"Dev6/k61",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch62",	"/Dev6/com62",	"Dev6/k62",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch63",	"/Dev6/com63",	"Dev6/k63",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch64",	"/Dev6/com64",	"Dev6/k64",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch65",	"/Dev6/com65",	"Dev6/k65",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch66",	"/Dev6/com66",	"Dev6/k66",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch67",	"/Dev6/com67",	"Dev6/k67",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch68",	"/Dev6/com68",	"Dev6/k68",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch69",	"/Dev6/com69",	"Dev6/k69",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch70",	"/Dev6/com70",	"Dev6/k70",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch71",	"/Dev6/com71",	"Dev6/k71",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch72",	"/Dev6/com72",	"Dev6/k72",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch80",	"/Dev6/com80",	"Dev6/k80",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch81",	"/Dev6/com81",	"Dev6/k81",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch82",	"/Dev6/com82",	"Dev6/k82",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch83",	"/Dev6/com83",	"Dev6/k83",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch84",	"/Dev6/com84",	"Dev6/k84",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch85",	"/Dev6/com85",	"Dev6/k85",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch86",	"/Dev6/com86",	"Dev6/k86",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch87",	"/Dev6/com87",	"Dev6/k87",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch88",	"/Dev6/com88",	"Dev6/k88",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch89",	"/Dev6/com89",	"Dev6/k89",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch90",	"/Dev6/com90",	"Dev6/k90",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch91",	"/Dev6/com91",	"Dev6/k91",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch92",	"/Dev6/com92",	"Dev6/k92",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch93",	"/Dev6/com93",	"Dev6/k93",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch94",	"/Dev6/com94",	"Dev6/k94",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch95",	"/Dev6/com95",	"Dev6/k95",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev6",	"/Dev6/ch96",	"/Dev6/com96",	"Dev6/k96",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+< initDriverPXIDev7.cmd
+createPXITask("Dev7")
+createPXIRelayChannel("Dev7",	"/Dev7/ch0",	"/Dev7/com0",	"Dev7/k0",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch1",	"/Dev7/com1",	"Dev7/k1",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch2",	"/Dev7/com2",	"Dev7/k2",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch3",	"/Dev7/com3",	"Dev7/k3",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch4",	"/Dev7/com4",	"Dev7/k4",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch5",	"/Dev7/com5",	"Dev7/k5",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch6",	"/Dev7/com6",	"Dev7/k6",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch7",	"/Dev7/com7",	"Dev7/k7",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch8",	"/Dev7/com8",	"Dev7/k8",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch9",	"/Dev7/com9",	"Dev7/k9",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch10",	"/Dev7/com10",	"Dev7/k10",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch11",	"/Dev7/com11",	"Dev7/k11",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch12",	"/Dev7/com12",	"Dev7/k12",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch13",	"/Dev7/com13",	"Dev7/k13",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch14",	"/Dev7/com14",	"Dev7/k14",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch15",	"/Dev7/com15",	"Dev7/k15",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch16",	"/Dev7/com16",	"Dev7/k16",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch17",	"/Dev7/com17",	"Dev7/k17",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch18",	"/Dev7/com18",	"Dev7/k18",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch19",	"/Dev7/com19",	"Dev7/k19",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch20",	"/Dev7/com20",	"Dev7/k20",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch21",	"/Dev7/com21",	"Dev7/k21",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch22",	"/Dev7/com22",	"Dev7/k22",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch23",	"/Dev7/com23",	"Dev7/k23",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch24",	"/Dev7/com24",	"Dev7/k24",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch25",	"/Dev7/com25",	"Dev7/k25",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch26",	"/Dev7/com26",	"Dev7/k26",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch27",	"/Dev7/com27",	"Dev7/k27",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch28",	"/Dev7/com28",	"Dev7/k28",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch29",	"/Dev7/com29",	"Dev7/k29",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch30",	"/Dev7/com30",	"Dev7/k30",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch31",	"/Dev7/com31",	"Dev7/k31",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch32",	"/Dev7/com32",	"Dev7/k32",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch33",	"/Dev7/com33",	"Dev7/k33",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch34",	"/Dev7/com34",	"Dev7/k34",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch35",	"/Dev7/com35",	"Dev7/k35",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch36",	"/Dev7/com36",	"Dev7/k36",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch37",	"/Dev7/com37",	"Dev7/k37",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch38",	"/Dev7/com38",	"Dev7/k38",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch39",	"/Dev7/com39",	"Dev7/k39",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch40",	"/Dev7/com40",	"Dev7/k40",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch41",	"/Dev7/com41",	"Dev7/k41",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch42",	"/Dev7/com42",	"Dev7/k42",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch43",	"/Dev7/com43",	"Dev7/k43",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch44",	"/Dev7/com44",	"Dev7/k44",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch45",	"/Dev7/com45",	"Dev7/k45",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch46",	"/Dev7/com46",	"Dev7/k46",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch47",	"/Dev7/com47",	"Dev7/k47",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch48",	"/Dev7/com48",	"Dev7/k48",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch49",	"/Dev7/com49",	"Dev7/k49",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch50",	"/Dev7/com50",	"Dev7/k50",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch51",	"/Dev7/com51",	"Dev7/k51",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch52",	"/Dev7/com52",	"Dev7/k52",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch53",	"/Dev7/com53",	"Dev7/k53",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch54",	"/Dev7/com54",	"Dev7/k54",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch55",	"/Dev7/com55",	"Dev7/k55",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch56",	"/Dev7/com56",	"Dev7/k56",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch57",	"/Dev7/com57",	"Dev7/k57",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch58",	"/Dev7/com58",	"Dev7/k58",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch59",	"/Dev7/com59",	"Dev7/k59",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch60",	"/Dev7/com60",	"Dev7/k60",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch61",	"/Dev7/com61",	"Dev7/k61",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch62",	"/Dev7/com62",	"Dev7/k62",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch63",	"/Dev7/com63",	"Dev7/k63",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch64",	"/Dev7/com64",	"Dev7/k64",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch65",	"/Dev7/com65",	"Dev7/k65",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch66",	"/Dev7/com66",	"Dev7/k66",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch67",	"/Dev7/com67",	"Dev7/k67",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch68",	"/Dev7/com68",	"Dev7/k68",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch69",	"/Dev7/com69",	"Dev7/k69",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch70",	"/Dev7/com70",	"Dev7/k70",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch71",	"/Dev7/com71",	"Dev7/k71",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch72",	"/Dev7/com72",	"Dev7/k72",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch80",	"/Dev7/com80",	"Dev7/k80",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch81",	"/Dev7/com81",	"Dev7/k81",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch82",	"/Dev7/com82",	"Dev7/k82",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch83",	"/Dev7/com83",	"Dev7/k83",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch84",	"/Dev7/com84",	"Dev7/k84",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch85",	"/Dev7/com85",	"Dev7/k85",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch86",	"/Dev7/com86",	"Dev7/k86",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch87",	"/Dev7/com87",	"Dev7/k87",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch88",	"/Dev7/com88",	"Dev7/k88",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch89",	"/Dev7/com89",	"Dev7/k89",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch90",	"/Dev7/com90",	"Dev7/k90",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch91",	"/Dev7/com91",	"Dev7/k91",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch92",	"/Dev7/com92",	"Dev7/k92",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch93",	"/Dev7/com93",	"Dev7/k93",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch94",	"/Dev7/com94",	"Dev7/k94",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch95",	"/Dev7/com95",	"Dev7/k95",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev7",	"/Dev7/ch96",	"/Dev7/com96",	"Dev7/k96",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+< initDriverPXIDev8.cmd
+createPXITask("Dev8")
+createPXIRelayChannel("Dev8",	"/Dev8/ch0",	"/Dev8/com0",	"Dev8/k0",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch1",	"/Dev8/com1",	"Dev8/k1",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch2",	"/Dev8/com2",	"Dev8/k2",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch3",	"/Dev8/com3",	"Dev8/k3",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch4",	"/Dev8/com4",	"Dev8/k4",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch5",	"/Dev8/com5",	"Dev8/k5",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch6",	"/Dev8/com6",	"Dev8/k6",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch7",	"/Dev8/com7",	"Dev8/k7",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch8",	"/Dev8/com8",	"Dev8/k8",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch9",	"/Dev8/com9",	"Dev8/k9",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch10",	"/Dev8/com10",	"Dev8/k10",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch11",	"/Dev8/com11",	"Dev8/k11",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch12",	"/Dev8/com12",	"Dev8/k12",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch13",	"/Dev8/com13",	"Dev8/k13",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch14",	"/Dev8/com14",	"Dev8/k14",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch15",	"/Dev8/com15",	"Dev8/k15",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch16",	"/Dev8/com16",	"Dev8/k16",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch17",	"/Dev8/com17",	"Dev8/k17",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch18",	"/Dev8/com18",	"Dev8/k18",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch19",	"/Dev8/com19",	"Dev8/k19",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch20",	"/Dev8/com20",	"Dev8/k20",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch21",	"/Dev8/com21",	"Dev8/k21",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch22",	"/Dev8/com22",	"Dev8/k22",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch23",	"/Dev8/com23",	"Dev8/k23",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch24",	"/Dev8/com24",	"Dev8/k24",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch25",	"/Dev8/com25",	"Dev8/k25",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch26",	"/Dev8/com26",	"Dev8/k26",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch27",	"/Dev8/com27",	"Dev8/k27",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch28",	"/Dev8/com28",	"Dev8/k28",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch29",	"/Dev8/com29",	"Dev8/k29",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch30",	"/Dev8/com30",	"Dev8/k30",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch31",	"/Dev8/com31",	"Dev8/k31",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch32",	"/Dev8/com32",	"Dev8/k32",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch33",	"/Dev8/com33",	"Dev8/k33",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch34",	"/Dev8/com34",	"Dev8/k34",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch35",	"/Dev8/com35",	"Dev8/k35",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch36",	"/Dev8/com36",	"Dev8/k36",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch37",	"/Dev8/com37",	"Dev8/k37",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch38",	"/Dev8/com38",	"Dev8/k38",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch39",	"/Dev8/com39",	"Dev8/k39",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch40",	"/Dev8/com40",	"Dev8/k40",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch41",	"/Dev8/com41",	"Dev8/k41",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch42",	"/Dev8/com42",	"Dev8/k42",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch43",	"/Dev8/com43",	"Dev8/k43",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch44",	"/Dev8/com44",	"Dev8/k44",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch45",	"/Dev8/com45",	"Dev8/k45",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch46",	"/Dev8/com46",	"Dev8/k46",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch47",	"/Dev8/com47",	"Dev8/k47",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch48",	"/Dev8/com48",	"Dev8/k48",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch49",	"/Dev8/com49",	"Dev8/k49",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch50",	"/Dev8/com50",	"Dev8/k50",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch51",	"/Dev8/com51",	"Dev8/k51",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch52",	"/Dev8/com52",	"Dev8/k52",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch53",	"/Dev8/com53",	"Dev8/k53",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch54",	"/Dev8/com54",	"Dev8/k54",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch55",	"/Dev8/com55",	"Dev8/k55",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch56",	"/Dev8/com56",	"Dev8/k56",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch57",	"/Dev8/com57",	"Dev8/k57",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch58",	"/Dev8/com58",	"Dev8/k58",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch59",	"/Dev8/com59",	"Dev8/k59",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch60",	"/Dev8/com60",	"Dev8/k60",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch61",	"/Dev8/com61",	"Dev8/k61",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch62",	"/Dev8/com62",	"Dev8/k62",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch63",	"/Dev8/com63",	"Dev8/k63",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch64",	"/Dev8/com64",	"Dev8/k64",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch65",	"/Dev8/com65",	"Dev8/k65",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch66",	"/Dev8/com66",	"Dev8/k66",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch67",	"/Dev8/com67",	"Dev8/k67",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch68",	"/Dev8/com68",	"Dev8/k68",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch69",	"/Dev8/com69",	"Dev8/k69",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch70",	"/Dev8/com70",	"Dev8/k70",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch71",	"/Dev8/com71",	"Dev8/k71",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch72",	"/Dev8/com72",	"Dev8/k72",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch80",	"/Dev8/com80",	"Dev8/k80",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch81",	"/Dev8/com81",	"Dev8/k81",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch82",	"/Dev8/com82",	"Dev8/k82",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch83",	"/Dev8/com83",	"Dev8/k83",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch84",	"/Dev8/com84",	"Dev8/k84",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch85",	"/Dev8/com85",	"Dev8/k85",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch86",	"/Dev8/com86",	"Dev8/k86",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch87",	"/Dev8/com87",	"Dev8/k87",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch88",	"/Dev8/com88",	"Dev8/k88",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev8",	"/Dev8/ch89",	"/Dev8/com89",	"Dev8/k89",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+< initDriverPXIDev9.cmd
+createPXITask("Dev9")
+createPXIRelayChannel("Dev9",	"/Dev9/ch0",	"/Dev9/com0",	"Dev9/k0",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch1",	"/Dev9/com1",	"Dev9/k1",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch2",	"/Dev9/com2",	"Dev9/k2",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch3",	"/Dev9/com3",	"Dev9/k3",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch4",	"/Dev9/com4",	"Dev9/k4",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch5",	"/Dev9/com5",	"Dev9/k5",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch6",	"/Dev9/com6",	"Dev9/k6",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch7",	"/Dev9/com7",	"Dev9/k7",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch8",	"/Dev9/com8",	"Dev9/k8",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch9",	"/Dev9/com9",	"Dev9/k9",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch10",	"/Dev9/com10",	"Dev9/k10",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch11",	"/Dev9/com11",	"Dev9/k11",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch12",	"/Dev9/com12",	"Dev9/k12",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch13",	"/Dev9/com13",	"Dev9/k13",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch14",	"/Dev9/com14",	"Dev9/k14",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch15",	"/Dev9/com15",	"Dev9/k15",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch16",	"/Dev9/com16",	"Dev9/k16",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch17",	"/Dev9/com17",	"Dev9/k17",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch18",	"/Dev9/com18",	"Dev9/k18",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch19",	"/Dev9/com19",	"Dev9/k19",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch20",	"/Dev9/com20",	"Dev9/k20",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch21",	"/Dev9/com21",	"Dev9/k21",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch22",	"/Dev9/com22",	"Dev9/k22",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch23",	"/Dev9/com23",	"Dev9/k23",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch24",	"/Dev9/com24",	"Dev9/k24",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch25",	"/Dev9/com25",	"Dev9/k25",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch26",	"/Dev9/com26",	"Dev9/k26",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch27",	"/Dev9/com27",	"Dev9/k27",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch28",	"/Dev9/com28",	"Dev9/k28",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch29",	"/Dev9/com29",	"Dev9/k29",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch30",	"/Dev9/com30",	"Dev9/k30",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch31",	"/Dev9/com31",	"Dev9/k31",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch32",	"/Dev9/com32",	"Dev9/k32",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch33",	"/Dev9/com33",	"Dev9/k33",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch34",	"/Dev9/com34",	"Dev9/k34",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch35",	"/Dev9/com35",	"Dev9/k35",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch36",	"/Dev9/com36",	"Dev9/k36",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch37",	"/Dev9/com37",	"Dev9/k37",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch38",	"/Dev9/com38",	"Dev9/k38",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch39",	"/Dev9/com39",	"Dev9/k39",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch40",	"/Dev9/com40",	"Dev9/k40",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch41",	"/Dev9/com41",	"Dev9/k41",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch42",	"/Dev9/com42",	"Dev9/k42",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch43",	"/Dev9/com43",	"Dev9/k43",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch44",	"/Dev9/com44",	"Dev9/k44",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch45",	"/Dev9/com45",	"Dev9/k45",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch46",	"/Dev9/com46",	"Dev9/k46",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch47",	"/Dev9/com47",	"Dev9/k47",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch48",	"/Dev9/com48",	"Dev9/k48",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch49",	"/Dev9/com49",	"Dev9/k49",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch50",	"/Dev9/com50",	"Dev9/k50",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch51",	"/Dev9/com51",	"Dev9/k51",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch52",	"/Dev9/com52",	"Dev9/k52",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch53",	"/Dev9/com53",	"Dev9/k53",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch54",	"/Dev9/com54",	"Dev9/k54",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch55",	"/Dev9/com55",	"Dev9/k55",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch56",	"/Dev9/com56",	"Dev9/k56",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch57",	"/Dev9/com57",	"Dev9/k57",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch58",	"/Dev9/com58",	"Dev9/k58",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch59",	"/Dev9/com59",	"Dev9/k59",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch60",	"/Dev9/com60",	"Dev9/k60",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch61",	"/Dev9/com61",	"Dev9/k61",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch62",	"/Dev9/com62",	"Dev9/k62",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch63",	"/Dev9/com63",	"Dev9/k63",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch64",	"/Dev9/com64",	"Dev9/k64",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch65",	"/Dev9/com65",	"Dev9/k65",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch66",	"/Dev9/com66",	"Dev9/k66",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch67",	"/Dev9/com67",	"Dev9/k67",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+createPXIRelayChannel("Dev9",	"/Dev9/ch68",	"/Dev9/com68",	"Dev9/k68",	"2569/100-SPST")
+find_topologyType: 2569/100-SPST, ConfigTopologyType :2569/100-SPST, (index: 10)
+epicsThreadSleep(5.)
+task launching: Dev7_ctrl thread for Dev7 task
+task launching: Dev8_ctrl thread for Dev8 task
+task launching: Dev9_ctrl thread for Dev9 task
+cd /home/kstar/epics/pxiApp
+## Load record instances
+#dbLoadRecords("db/dbExample1.db","user=khkimHost")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=1,scan=1 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=2,scan=2 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=3,scan=5 second")
+#dbLoadRecords("db/dbSubExample.db","user=khkimHost")
+#dbLoadRecords("db/dbPXISCXICernox.db")
+dbLoadTemplate("db/dbPXISCXICernox.template")
+dbLoadRecords("db/dbFanout.db")
+dbLoadRecords("db/tmsInterlock.db")
+dbLoadRecords("db/tmsTimeStamp.db","IOCNAME=IOC1")
+#dbLoadTemplate("db/tmsCSStruct.template")
+#dbLoadTemplate("db/tmsPFBusLine.template")
+#dbLoadTemplate("db/tmsPFCccs.template")
+#dbLoadTemplate("db/tmsPFStruct.template")
+dbLoadTemplate("db/tmsCernoxAll.template")
+dbLoadTemplate("db/tmsCernoxAllRaw.template")
+#dbLoadRecords("db/tmsMainValue.db")
+#dbLoadRecords("db/tmsPT100.db")
+dbLoadTemplate("db/tmsMainCDCTLevel.template")
+dbLoadTemplate("db/tmsMaxValue.template")
+dbLoadTemplate("db/tmsMainMaxValue.template")
+dbLoadTemplate("db/tmsHall.template")
+dbLoadTemplate("db/tmsPT100.template")
+dbLoadTemplate("db/tmsRelay.template")
+## Set this to see messages from mySub
+#var mySubDebug 1
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+loadCernoxList cernoxList
+cernoxData 3 are read
+#cd ${TOP}/cernoxData/TFStructure
+#loadCernoxList("TFStructure.txt")
+#cd ${TOP}/cernoxData/HeLine
+#loadCernoxList("HeLine.txt")
+#cd ${TOP}/cernoxData/AddSensor
+#loadCernoxList("AddSensor.txt")
+#cd ${TOP}/cernoxData/AllSensor_20070423
+#loadCernoxList("AllCernoxSensor.txt")
+cd /home/kstar/epics/pxiApp/cernoxData/AllSensor_20071123
+loadCernoxList("AllCernoxSensor_update_20071123.txt")
+cernoxData 448 are read
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+iocInit()
+Starting iocInit
+############################################################################
+###  EPICS IOC CORE built on Jan 13 2007
+###  EPICS R3.14.8.2 $R3-14-8-2$ $2006/01/06 15:55:13$
+############################################################################
+Ignoring 721 extra characters from 172.17.101.22:6341.
+drvcFP20x0 (check module): AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) 
+DAQmx Error: 
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+fail to start task Dev1
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+fail to start task Dev2
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+fail to start task Dev3
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+fail to start task Dev4
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+fail to start task Dev5
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+DAQmx Error: Task specified is invalid or does not exist.
+Status Code: -200088
+drvPXISCXI: measured clock speed 1.9974 GHz

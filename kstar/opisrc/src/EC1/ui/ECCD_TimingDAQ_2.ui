@@ -1,0 +1,2514 @@
+<ui version="4.0" >
+ <class>ECCDTIMINGDAQ_2</class>
+ <widget class="QWidget" name="ECCDTIMINGDAQ_2" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1077</width>
+    <height>757</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame_15" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>951</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbDAQCM1_1" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>140</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>T0 (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="textInteractionFlags" >
+     <set>Qt::LinksAccessibleByMouse</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleDAQC1_1" >
+    <property name="geometry" >
+     <rect>
+      <x>100</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_6254_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_T0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbDAQCM1_2" >
+    <property name="geometry" >
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>140</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>T1 (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleDAQC1_2" >
+    <property name="geometry" >
+     <rect>
+      <x>250</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_6254_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbDAQCM_4" >
+    <property name="geometry" >
+     <rect>
+      <x>560</x>
+      <y>14</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Local Shot Number</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleDAQC_1" >
+    <property name="geometry" >
+     <rect>
+      <x>710</x>
+      <y>10</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_AO_LOCALSHOT</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_AO_LOCALSHOT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbDAQCM" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>DAQ(SCXI 6254)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpDAQC1_1" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_RD_T0</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpDAQC1_2" >
+    <property name="geometry" >
+     <rect>
+      <x>180</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_RD_T1</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbDAQCM1_3" >
+    <property name="geometry" >
+     <rect>
+      <x>330</x>
+      <y>40</y>
+      <width>140</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Sample Rate [Hz]</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpDAQC1_3" >
+    <property name="geometry" >
+     <rect>
+      <x>330</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_RD_RATE</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleDAQC1_3" >
+    <property name="geometry" >
+     <rect>
+      <x>400</x>
+      <y>55</y>
+      <width>70</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_6254_RATE</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_6254_RATE</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_1" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VAPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VAPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_3" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>VBPS</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_14" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IBPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_2" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_IAPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IAPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_3" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VBPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_4" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>IBPS</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_12" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IAPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_13" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VBPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_4" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_IBPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IBPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_12" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_IAPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IAPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_11" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VAPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VAPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_11" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VAPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8" >
+    <property name="geometry" >
+     <rect>
+      <x>130</x>
+      <y>90</y>
+      <width>40</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>a</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_2" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IAPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_2" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>IAPS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_1" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>VAPS</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_4" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IBPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9" >
+    <property name="geometry" >
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>50</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>b</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_14" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_IBPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_IBPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_3" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VBPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VBPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_1" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VAPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_13" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VBPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VBPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_21" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VCPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_32" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>260</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_ICPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_ICPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_31" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>230</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VCPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_22" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_ICPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_ICPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_28" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>290</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_OCAPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_43" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>OCAPS</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_21" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>230</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VCPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VCPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_36" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>290</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_OCAPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_31" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>230</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_VCPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_VCPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11" >
+    <property name="geometry" >
+     <rect>
+      <x>760</x>
+      <y>90</y>
+      <width>50</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>b</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_32" >
+    <property name="geometry" >
+     <rect>
+      <x>245</x>
+      <y>260</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_ICPS_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10" >
+    <property name="geometry" >
+     <rect>
+      <x>590</x>
+      <y>90</y>
+      <width>40</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>a</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_22" >
+    <property name="geometry" >
+     <rect>
+      <x>60</x>
+      <y>260</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_ICPS_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_22" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>ICPS</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_43" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>290</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_OCAPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_OCAPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_21" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>VCPS</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_53" >
+    <property name="geometry" >
+     <rect>
+      <x>335</x>
+      <y>290</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_OCAPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_OCAPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>64</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Scaling</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_41" >
+    <property name="geometry" >
+     <rect>
+      <x>460</x>
+      <y>170</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Vrf_fwd2</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_25" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF2_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_23" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFFWD1_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD1_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_34" >
+    <property name="geometry" >
+     <rect>
+      <x>790</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFREF1_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF1_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_38" >
+    <property name="geometry" >
+     <rect>
+      <x>700</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD2_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_34" >
+    <property name="geometry" >
+     <rect>
+      <x>700</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF1_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_52" >
+    <property name="geometry" >
+     <rect>
+      <x>790</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFREF2_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF2_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_41" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFFWD2_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD2_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_42" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFREF2_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF2_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_27" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD2_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_24" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFREF1_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF1_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_24" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>140</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF1_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_42" >
+    <property name="geometry" >
+     <rect>
+      <x>460</x>
+      <y>200</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>vrf_rev2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_24" >
+    <property name="geometry" >
+     <rect>
+      <x>460</x>
+      <y>140</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Vrf_rev1</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_33" >
+    <property name="geometry" >
+     <rect>
+      <x>700</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD1_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbScail_23" >
+    <property name="geometry" >
+     <rect>
+      <x>460</x>
+      <y>110</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Vrf_fwd1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_33" >
+    <property name="geometry" >
+     <rect>
+      <x>790</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFFWD1_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD1_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_37" >
+    <property name="geometry" >
+     <rect>
+      <x>700</x>
+      <y>200</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFREF2_OFFSET</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpScail_23" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>110</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD1_GAIN</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleScail_51" >
+    <property name="geometry" >
+     <rect>
+      <x>790</x>
+      <y>170</y>
+      <width>85</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_DAQ_RFFWD2_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_RFFWD2_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_55" >
+    <property name="geometry" >
+     <rect>
+      <x>590</x>
+      <y>60</y>
+      <width>260</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>⃥ec1_Vaps= ( ⃥ ec1_Vaps:foo -      ) X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12" >
+    <property name="geometry" >
+     <rect>
+      <x>820</x>
+      <y>60</y>
+      <width>20</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>a</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14" >
+    <property name="geometry" >
+     <rect>
+      <x>780</x>
+      <y>60</y>
+      <width>20</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>118</red>
+          <green>116</green>
+          <blue>113</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>b</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="CAPbfaIntl_DIS_2" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>10</y>
+      <width>91</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>DAQ-START</string>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_CMD_STOP</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ-START</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ-START</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>220</red>
+      <green>220</green>
+      <blue>220</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="CAPbfaIntl_DIS_3" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>60</y>
+      <width>91</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>DAQ-STOP</string>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_DAQ_CMD_ABORT</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ-STOP</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ-STOP</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>220</red>
+      <green>220</green>
+      <blue>220</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,104 @@
+record(bi, "DLS_IOC_HEART_BEAT")
+{
+    	field(DESC, "DLS_IOC_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(INP, "DLS_IOC_HEART_BEAT_CALC.VAL NPP NMS")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(calc, "DLS_IOC_HEART_BEAT_CALC")
+{
+    	field(DESC, "DLS_IOC_HEART_BEAT")
+	field(SCAN, "1 second")
+    	field(INPA, "DLS_IOC_HEART_BEAT.VAL NPP NMS")
+	field(CALC, "A=0?1:0")
+	field(FLNK, "DLS_IOC_HEART_BEAT")
+}
+record(bi, "DLS_TV01_MODE")
+{
+    	field(DESC, "DLS_VISIBLE_TV_MODE")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(bi, "DLS_TV02_MODE")
+{
+    	field(DESC, "DLS_HALPHA_TV_MODE")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(bi, "DLS_TV03_MODE")
+{
+    	field(DESC, "DLS_HALPHA_TV_MODE")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(mbbi, "DLS_MON_ALL_SHUTTER_STATUS")
+{
+        field(DESC, "DLS_ALL_SHUT_MON")
+        field(SCAN, "Passive")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(ZRST, "allClosed")
+        field(ONST, "allOpenen")
+        field(TWST, "someOpen")
+        field(THST, "shutterEror")
+        field(ZRSV, "NO_ALARM")
+        field(ONSV, "MINOR")
+        field(TWSV, "MAJOR")
+        field(THSV, "MAJOR")
+}
+record(bo, "DLS_ALL_SHUTTER_STATUS")
+{
+    	field(DESC, "DLS_ProtFrom_GDC")
+	field(SCAN, "Passive")
+	field(ZNAM, "SomeOpen")
+	field(ONAM, "AllClosed")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(bo, "DLS_ECH_AUTO_CTRL")
+{
+    	field(DESC, "WC_AUTO_CTRL")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(VAL, "0")
+	field(ZNAM, "Disable")
+	field(ONAM, "Enable")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(bo, "DLS_WC_AUTO_CTRL")
+{
+    	field(DESC, "WC_AUTO_CTRL")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(VAL, "0")
+	field(ZNAM, "Disable")
+	field(ONAM, "Enable")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(bo, "ICS_WC_STATUS")
+{
+    	field(DESC, "GDC_WC_STATUS")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(VAL, "0")
+	field(ZNAM, "Not WC Mode")
+	field(ONAM, "WC Mode")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}

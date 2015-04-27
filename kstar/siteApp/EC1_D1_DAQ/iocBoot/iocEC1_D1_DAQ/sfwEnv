@@ -1,0 +1,34 @@
+### Standard Frame Work configuration. ##################
+# replace XXX to your system name
+# like DDS1, ER, TS, RMP, etc. ...
+
+#### sequence related PVs ########
+#epicsEnvSet("SYS_OP_MODE","XXX_OP_MODE")
+#epicsEnvSet("SYS_ARMING","XXX_SYS_ARMING")
+#epicsEnvSet("SYS_RUN","XXX_SYS_RUN")
+#epicsEnvSet("SYS_SHOT_NUMBER","XXX_CCS_SHOT_NUMBER")
+#epicsEnvSet("SYS_BLIP_TIME","XXX_CCS_BLIP_TIME")
+
+##### Common CA ADDR list ##############
+## CCS, CCS Host, TSS, localhost
+epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.200 172.17.101.201 172.17.101.210 127.0.0.1")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "no")
+
+## MDS plus environment ###########
+#epicsEnvSet("MDS_LOCAL_IP_PORT","172.17.121.251:8000")
+#epicsEnvSet("MDS_LOCAL_TREE_NAME","eccd1")
+#epicsEnvSet("MDS_LOCAL_EVENT_IP","172.17.121.251:8000")
+epicsEnvSet("MDS_LOCAL_IP_PORT","127.0.0.1:8000")
+epicsEnvSet("MDS_LOCAL_TREE_NAME","eccd1")
+epicsEnvSet("MDS_LOCAL_EVENT_IP","127.0.0.1:8000")
+
+epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.100.202:8000")
+epicsEnvSet("MDS_REMOTE_TREE_NAME","heating")
+epicsEnvSet("MDS_REMOTE_EVENT_IP","172.17.100.200:8300")
+
+epicsEnvSet("MDS_CAL_IP_PORT","127.0.0.1:8000")
+epicsEnvSet("MDS_CAL_TREE_NAME","eccd1")
+epicsEnvSet("MDS_CAL_EVENT_IP","127.0.0.1:8000")
+
+epicsEnvSet("MDS_EVENT_ARG","EC1_POL")
+

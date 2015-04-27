@@ -1,0 +1,8 @@
+include "rfmRecord.dbd"
+#-- RFM
+#
+device(rfm, VME_IO, devRfm, "RFM")
+driver(drvVmivme5565)
+
+#
+registrar(drvVmivme5565Registrar)

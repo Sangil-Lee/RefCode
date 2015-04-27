@@ -1,0 +1,37 @@
+file db/dbvalveCheck.vdb
+{
+pattern
+# system        control              port name    channel   sym4one
+#       sub-system     instanc               mocule   sym4zero    description
+  { SYS,   SUB,   CTRL,  INST,           PORT, MOD, CH,  ZNAM, ONAM, DESC }
+  { VAC,   VVSL,    RL,     GV, NICFP20x0CTRL1,   0, 00, CLOSE, OPEN, "VVSL Roughline GateValvle"}
+  { VAC,   VVSL,   TBP,    FGV, NICFP20x0CTRL1,   0, 01, CLOSE, OPEN, "VVSL TMP Booster FwdValve"}
+  { VAC,   VVSL,   CBP,    FGV, NICFP20x0CTRL1,   0, 02, CLOSE, OPEN, "VVSL CRP Booster FwdValve"}
+  { VAC,   VVSL, RL2BP,     GV, NICFP20x0CTRL1,   0, 03, CLOSE, OPEN, "VVSL Rough to Booster Valve"}
+
+  { VAC,   CRYO,    RL,     GV, NICFP20x0CTRL1,   0, 06, CLOSE, OPEN, "Cryo Roughline GateValve"}
+  { VAC,   CRYO,   TBP,    FGV, NICFP20x0CTRL1,   0, 07, CLOSE, OPEN, "Cryo TMP Booster FwdValve"}
+  { VAC,   CRYO,  CBP1,    FGV, NICFP20x0CTRL1,   0, 08, CLOSE, OPEN, "Cryo CMP Booster1 FwdValve"}
+  { VAC,   CRYO,  CBP2,    FGV, NICFP20x0CTRL1,   0, 09, CLOSE, OPEN, "Cryo CMP Booster2 FwdValve"}
+  { VAC,   CRYO, RL2BP,     GV, NICFP20x0CTRL1,   0, 10, CLOSE, OPEN, "Cryo Rough to Booster Valve"}
+
+  { VAC,   CRYO,  TMP1,    FGV, NICFP20x0CTRL0,   0, 00, CLOSE, OPEN, "Cryo TMP1 FwdValve"}
+  { VAC,   CRYO,  TMP1,    BGV, NICFP20x0CTRL0,   0, 01, CLOSE, OPEN, "Cryo TMP1 BwdValve"}
+  { VAC,   CRYO,  TMP2,    FGV, NICFP20x0CTRL0,   0, 02, CLOSE, OPEN, "Cryo TMP2 FwdValve"}
+  { VAC,   CRYO,  TMP2,    BGV, NICFP20x0CTRL0,   0, 03, CLOSE, OPEN, "Cryo TMP2 BwdValve"}
+  { VAC,   CRYO,  TMP3,    FGV, NICFP20x0CTRL0,   0, 04, CLOSE, OPEN, "Cryo TMP3 FwdValve"}
+  { VAC,   CRYO,  TMP3,    BGV, NICFP20x0CTRL0,   0, 05, CLOSE, OPEN, "Cryo TMP3 BwdValve"}
+  { VAC,   CRYO,  TMP4,    FGV, NICFP20x0CTRL0,   0, 06, CLOSE, OPEN, "Cryo TMP4 FwdValve"}
+  { VAC,   CRYO,  TMP4,    BGV, NICFP20x0CTRL0,   0, 07, CLOSE, OPEN, "Cryo TMP4 BwdValve"}
+  { VAC,   CRYO,  CRP1,    FGV, NICFP20x0CTRL0,   0, 08, CLOSE, OPEN, "Cryo CRP1 FwdValve"}
+  { VAC,   CRYO,  CRP1,    BGV, NICFP20x0CTRL0,   0, 09, CLOSE, OPEN, "Cryo CRP1 BwdValve"}
+  { VAC,   CRYO,  CRP2,    FGV, NICFP20x0CTRL0,   0, 10, CLOSE, OPEN, "Cryo CRP2 FwdValve"}
+  { VAC,   CRYO,  CRP2,    BGV, NICFP20x0CTRL0,   0, 11, CLOSE, OPEN, "Cryo CRP2 BwdValve"}
+
+  { VAC,   CRYO,  CRP1,     RV, NICFP20x0CTRL0,   1, 08, CLOSE, OPEN, "Cryo CRP1 Rough Valve"}
+
+  { VAC,   CRYO,  CRP2,     RV, NICFP20x0CTRL0,   1, 11, CLOSE, OPEN, "Cryo CRP2 Rough Valve"}
+
+  { VAC,   COMM,    RL,     GV, NICFP20x0CTRL0,   1, 12, CLOSE, OPEN, "VVSL and Cryo Roughline GV"}
+  { VAC,   DIAG,    RP,    FGV, NICFP20x0CTRL0,   1, 13, CLOSE, OPEN, "Diag Rough pump FwdValve"}
+}

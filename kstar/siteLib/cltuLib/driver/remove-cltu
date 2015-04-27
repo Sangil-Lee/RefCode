@@ -1,0 +1,20 @@
+#!/bin/sh
+
+module="cltu_driver"
+device="cltu"
+
+CLTU_ROOT=/dev/tss
+
+#echo
+#echo Remove CLTU Device Driver Kernel Module
+
+# Remove kernel module
+echo rmmod $module
+/sbin/rmmod $module || exit 1
+
+# echo rm $CLTU_ROOT/${device}
+
+# Remove cltu from /dev
+rm -rf $CLTU_ROOT
+
+#echo

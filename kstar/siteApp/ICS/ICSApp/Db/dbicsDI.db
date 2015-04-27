@@ -1,0 +1,20 @@
+record(bi, "$(REC)_RVAL")
+{
+	field(DESC, "$(DESC)")
+	field(DTYP, "cFP20x0 NI compactFieldPoint")
+	field(INP, "@$(SYSMON) read $(CH)")
+	field(SCAN, "I/O Intr")
+	field(FLNK, "$(REC)")
+	field(PINI, "YES")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+
+record(calc, "$(REC)")
+{
+	field(DESC, "$(DESC)")
+	field(SCAN, "Passive")
+	field(CALC, "(B>0)?!A:A")
+	field(INPA, "$(REC)_RVAL NPP NMS")
+	field(INPB, "$(INIT)")
+}

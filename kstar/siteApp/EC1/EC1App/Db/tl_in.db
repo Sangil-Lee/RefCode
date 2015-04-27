@@ -1,0 +1,1989 @@
+record(ai, "EC1_CCPS_STS_VOLT") {
+   field(DESC, "현재 전류치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_CCPS_STS_VOLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "60")
+   field(LOW, "-0.1")
+   field(HIGH, "60")
+   field(LOLO, "-0.1") 
+   field(HIHI, "60")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_CCPS_STS_AMP") {
+   field(DESC, "현재 전압치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_CCPS_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "20")
+   field(LOW, "-0.1")
+   field(HIGH, "20")
+   field(LOLO, "-0.1") 
+   field(HIHI, "20")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_CCPS_STS_FLT") {
+   field(DESC, "CCPS FAULT")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_CCPS_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.1")
+   field(LOW, "-0.1")
+   field(HIGH, "0.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_CCPS_STS_MODE") {
+   field(DESC, "CCPS MODE STATUS") 
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_CCPS_STS_MODE S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_CCPSDIS") {
+   field(DESC, "CCPS EN/DIS STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_CCPSDIS S 1")
+   field(ZNAM, "DISALBE")
+   field(ONAM, "ENABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(ai, "EC1_HPS_STS_VOLT") {
+   field(DESC, "현재 전압치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_STS_VOLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "130.1")
+   field(LOW, "-0.1")
+   field(HIGH, "130.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "130.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_HPS_STS_AMP") {
+   field(DESC, "현재 전류치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "20")
+   field(LOW, "-0.1")
+   field(HIGH, "20")
+   field(LOLO, "-0.1") 
+   field(HIHI, "20")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_HPSDIS") {
+   field(DESC, "CCPS EN/DIS STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_HPSDIS S 1")
+   field(ZNAM, "DISALBE")
+   field(ONAM, "ENABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(ai, "EC1_HPS_STS_FLT") {
+   field(DESC, "HPS FAULT")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.1")
+   field(LOW, "-0.1")
+   field(HIGH, "0.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP1_STS_AMP") {
+   field(DESC, "펌프 현재 AMP")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP1_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "1.51")
+   field(LOW, "-0.1")
+   field(HIGH, "1.51")
+   field(LOLO, "-0.1") 
+   field(HIHI, "1.51")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP2_STS_AMP") {
+   field(DESC, "펌프 현재 AMP")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP2_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "1.51")
+   field(LOW, "-0.1")
+   field(HIGH, "1.51")
+   field(LOLO, "-0.1") 
+   field(HIHI, "1.51")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP3_STS_AMP") {
+   field(DESC, "펌프 현재 AMP")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP3_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "1.51")
+   field(LOW, "-0.1")
+   field(HIGH, "1.51")
+   field(LOLO, "-0.1") 
+   field(HIHI, "1.51")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP4_STS_AMP") {
+   field(DESC, "펌프 현재 AMP")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP4_STS_AMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "1.51")
+   field(LOW, "-0.1")
+   field(HIGH, "1.51")
+   field(LOLO, "-0.1") 
+   field(HIHI, "1.51")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP1_STS_OPR") {
+   field(DESC, "현재 상태 정보")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP1_STS_OPR S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+#   field(HHSV, "MAJOR")
+#   field(HSV, "MINOR")
+#   field(LSV, "MINOR")
+#   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP2_STS_OPR") {
+   field(DESC, "현재 상태 정보")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP2_STS_OPR S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+#   field(HHSV, "MAJOR")
+#   field(HSV, "MINOR")
+#   field(LSV, "MINOR")
+#   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP3_STS_OPR") {
+   field(DESC, "현재 상태 정보")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP3_STS_OPR S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+#   field(HHSV, "MAJOR")
+#   field(HSV, "MINOR")
+#   field(LSV, "MINOR")
+#   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP4_STS_OPR") {
+   field(DESC, "현재 상태 정보")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP4_STS_OPR S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+#   field(HHSV, "MAJOR")
+#   field(HSV, "MINOR")
+#   field(LSV, "MINOR")
+#   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP1_STS_RPM") {
+   field(DESC, "현재 스피드")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP1_STS_RPM S 1")
+   field(LOPR, "40")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "100")
+   field(LOLO, "40") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP1_STS_TEMP") {
+   field(DESC, "현재 온도값")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP1_STS_TEMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "35.1")
+   field(LOW, "-0.1")
+   field(HIGH, "35.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "35.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_TMP2_STS_RPM") {
+   field(DESC, "현재 스피드")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP2_STS_RPM S 1")
+   field(LOPR, "40")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "100")
+   field(LOLO, "40") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP2_STS_TEMP") {
+   field(DESC, "현재 온도값")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP2_STS_TEMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "35.1")
+   field(LOW, "-0.1")
+   field(HIGH, "35.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "35.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_TMP3_STS_RPM") {
+   field(DESC, "현재 스피드")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP3_STS_RPM S 1")
+   field(LOPR, "40")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "100")
+   field(LOLO, "40") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP3_STS_TEMP") {
+   field(DESC, "현재 온도값")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP3_STS_TEMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "35.1")
+   field(LOW, "-0.1")
+   field(HIGH, "35.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "35.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_TMP4_STS_RPM") {
+   field(DESC, "현재 스피드")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP4_STS_RPM S 1")
+   field(LOPR, "55")
+   field(HOPR, "100")
+   field(LOW, "55")
+   field(HIGH, "100")
+   field(LOLO, "55") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_TMP4_STS_TEMP") {
+   field(DESC, "현재 온도값")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_TMP4_STS_TEMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "35.1")
+   field(LOW, "-0.1")
+   field(HIGH, "35.1")
+   field(LOLO, "-0.1") 
+   field(HIHI, "35.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_MPS_STS_AMP") {
+   field(DESC, "현재 전류치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_AMP S 1")
+   field(LOPR, "1.49")
+   field(HOPR, "100")
+   field(LOW, "1.49")
+   field(HIGH, "100")
+   field(LOLO, "1.49") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MPS_STS_LEVEL") {
+   field(DESC, "현재 상태치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_LEVEL S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MPS_STS_RATE") {
+   field(DESC, "현재 전류비율")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_RATE S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MPS_STS_FLT") {
+   field(DESC, "에러코드")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_GMPS1_STS_AMP") {
+   field(DESC, "현재 전류치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS1_STS_AMP S 1")
+   field(LOPR, "-11")
+   field(HOPR, "11")
+   field(LOW, "-11")
+   field(HIGH, "11")
+   field(LOLO, "-11") 
+   field(HIHI, "11")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS1_STS_LEVEL") {
+   field(DESC, "현재 상태치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS1_STS_LEVEL S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS1_STS_RATE") {
+   field(DESC, "현재전류비율")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS1_STS_RATE S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS1_STS_FLT") {
+   field(DESC, "에러코드")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS1_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_GMPS2_STS_AMP") {
+   field(DESC, "현재 전류치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_AMP S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS2_STS_LEVEL") {
+   field(DESC, "현재 상태치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_LEVEL S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS2_STS_RATE") {
+   field(DESC, "EC1_MPS_STS_RATE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_RATE S 1")
+   field(LOPR, "0")
+   field(HOPR, "100")
+   field(LOW, "40")
+   field(HIGH, "60")
+   field(LOLO, "20") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS2_STS_FLT") {
+   field(DESC, "에러코드")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI2_STS_NO1") {
+   field(DESC, "1번 GAUGE 상태")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI2_STS_NO1 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI2_STS_NO2") {
+   field(DESC, "2번 GAUGE 상태")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI2_STS_NO2 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VACION1_STS_FLT") {
+   field(DESC, "1번 ION PUMP ERROR 상태")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_VACION1_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VACION2_STS_FLT") {
+   field(DESC, "2번 ION PUMP ERROR 상태")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_VACION2_STS_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_SCM_STS_TEMP") {
+   field(DESC, "SCM LHe temperature ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SCM_STS_TEMP S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "-0.1")
+   field(HIGH, "100")
+   field(LOLO, "-0.1") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_INT_VAC_FLT") {
+   field(DESC, "Vacuum fault")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_INT_VAC_FLT S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(ai, "EC1_SWT_WGD_STS") {
+   field(DESC, "No Description")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SWT_WGD_STS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "-0.1")
+   field(HIGH, "100")
+   field(LOLO, "-0.1") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_LANCH_SHT_STS") {
+   field(DESC, "No Description")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_LANCH_SHT_STS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "-0.1")
+   field(HIGH, "100")
+   field(LOLO, "-0.1") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_MPS_STS_OK") {
+   field(DESC, "MPS ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_GMPS1_STS_OK") {
+   field(DESC, "GMPS1 ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS1_STS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_GMPS2_STS_OK") {
+   field(DESC, "GMPS2 ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_CCPS_STS_OK") {
+   field(DESC, "CCPS ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_CCPS_STS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_HPS_STS_OK") {
+   field(DESC, "HPS ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_STS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_HPS_BYPASS_OK") {
+   field(DESC, "HPS ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_BYPASS_OK S 1")
+   field(ZNAM, "FAULT")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+
+record(ai, "EC1_HPS_ECMD_AMP") {
+   field(DESC, "HPS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_ECMD_AMP S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_SCM_STS_OK") {
+   field(DESC, "SuperConducting Monitoring")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SCM_STS_OK S 1")
+   field(ZNAM, "Fault")
+   field(ONAM, "Ok")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(ai, "EC1_MAXI_STS_NO1") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO1 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI_STS_NO2") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO2 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI_STS_NO3") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO3 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI_STS_NO4") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO4 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI_STS_NO5") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO5 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_MAXI_STS_NO6") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_MAXI_STS_NO6 S 1")
+   field(LOPR, "-1")
+   field(HOPR, "0.001")
+   field(LOW, "-1")
+   field(HIGH, "0.001")
+   field(LOLO, "-1") 
+   field(HIHI, "0.001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VACION1_STS_AMP") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_VACION1_STS_AMP S 1")
+   field(LOPR, "0")
+   field(HOPR, "0.00001")
+   field(LOW, "0")
+   field(HIGH, "0.00001")
+   field(LOLO, "0") 
+   field(HIHI, "0.00001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VACION2_STS_AMP") {
+   field(DESC, "")
+#   field(SCAN, "I/O Intr")
+#   field(DTYP, "EtherIP")
+#   field(INP, "@$(PLC) EC1_VACION2_STS_AMP S 1")
+   field(LOPR, "0")
+   field(HOPR, "0.00001")
+   field(LOW, "0")
+   field(HIGH, "0.00001")
+   field(LOLO, "0") 
+   field(HIHI, "0.00001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VAC_GTV_MOUS") {
+   field(DESC, "MOU CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_MOUS S 1")
+} 
+
+record(ai, "EC1_VAC_GTV_DUMS") {
+   field(DESC, "MOU CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_DUMS S 1")
+} 
+
+record(ai, "EC1_VAC_GTV_TES") {
+   field(DESC, "PUMP OUT TEE CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_TES S 1")
+} 
+
+record(ai, "EC1_VAC_GTV_MBS") {
+   field(DESC, "MITER BEND CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_MBS S 1")
+}
+
+record(bi, "EC1_VAC_MB_GAG") {
+   field(DESC, "Vacuum gauge #1 status (Mite")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_MB_GAG S 1")
+   field(ZNAM, "CLOSE")
+   field(ONAM, "OPEN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_VAC_TEE_GAG") {
+   field(DESC, "Vacuum gauge #2 status (Pump")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_TEE_GAG S 1")
+   field(ZNAM, "CLOSE")
+   field(ONAM, "OPEN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_VAC_MMB_GAG") {
+   field(DESC, "Vacuum gauge #3 status (Midd")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_MMB_GAG S 1")
+   field(ZNAM, "CLOSE")
+   field(ONAM, "OPEN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_VAC_DUM_GAG") {
+   field(DESC, "Vacuum gauge #4 status (Dumm")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_DUM_GAG S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_VAC_MOU_GAG") {
+   field(DESC, "Vacuum gauge #5 status (MOU)")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_MOU_GAG S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_VAC_MOU_PUM") {
+   field(DESC, "Vacuum gauge #6 status (MOU ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_MOU_PUM S 1")
+   field(ZNAM, "BAD")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_VAC_DUM_PUM") {
+   field(DESC, "Vacuum gauge #7 status (Dumm")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_DUM_PUM S 1")
+   field(ZNAM, "BAD")
+   field(ONAM, "OK")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+} 
+
+record(bi, "EC1_TLPLC_STAT_MBDIS") {
+   field(DESC, "MITER EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_MBDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_TEEDIS") {
+   field(DESC, "PUMP OUT TEE EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_TEEDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_MMBDIS") {
+   field(DESC, "MITER BEND EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_MMBDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_DUMDIS") {
+   field(DESC, "DUMMY LOAD EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_DUMDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_TLPLC_STAT_MOUDIS") {
+   field(DESC, "MOU EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_MOUDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_MOUPDIS") {
+   field(DESC, "MOU PUMP EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_MOUPDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_DUMPDIS") {
+   field(DESC, "DUMMY LOAD PUMP EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_DUMPDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(ai, "EC1_VAC_GTV_RFS") {
+   field(DESC, "RF OPEN/CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_RFS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "-0.1")
+   field(HIGH, "100")
+   field(LOLO, "-0.1") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_MPS_STS_CUR") {
+   field(DESC, "현재 상태치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_MPS_STS_CUR S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "113")
+   field(LOW, "-0.1")
+   field(HIGH, "113")
+   field(LOLO, "-0.1") 
+   field(HIHI, "113")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_GMPS2_STS_CUR") {
+   field(DESC, "현재 상태치")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GMPS2_STS_CUR S 1")
+   field(LOPR, "-11")
+   field(HOPR, "11")
+   field(LOW, "-11")
+   field(HIGH, "11")
+   field(LOLO, "-11") 
+   field(HIHI, "11")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_MODE_LOCAL") {
+   field(DESC, "TL PLC LOCAL STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_MODE_LOCAL S 1")
+   field(ZNAM, "PLC")
+   field(ONAM, "PLC")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_TLPLC_MODE_REMOTE") {
+   field(DESC, "TL PLC REMOTE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_MODE_REMOTE S 1")
+   field(ZNAM, "EPICS")
+   field(ONAM, "EPICS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_TOR_LIM_FW") {
+   field(DESC, "TOROIDAL LIMIT 1")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_LIM_FW S 1")
+   field(ZNAM, "CW")
+   field(ONAM, "CCW")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+
+}
+
+record(bi, "EC1_TOR_LIM_BW") {
+   field(DESC, "TOROIDAL LIMIT 2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_LIM_BW S 1")
+   field(ZNAM, "CCW")
+   field(ONAM, "CCW")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+
+}
+
+record(bi, "EC1_POL_LIM_FW") {
+   field(DESC, "POLOIDAL LIMIT 1")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_LIM_FW S 1")
+   field(ZNAM, "UP")
+   field(ONAM, "UP")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+
+}
+
+record(bi, "EC1_POL_LIM_BW") {
+   field(DESC, "POLOIDAL LIMIT 2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_LIM_BW S 1")
+   field(ZNAM, "DOWN")
+   field(ONAM, "DOWN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+
+}
+
+record(bi, "EC1_TOR_RUN_STS") {
+   field(DESC, "TOROIDAL RUN STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_RUN_STS S 1")
+   field(ZNAM, "Ready")
+   field(ONAM, "Moving")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_POL_RUN_STS") {
+   field(DESC, "POLOIDAL RUN STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_RUN_STS S 1")
+   field(ZNAM, "Ready")
+   field(ONAM, "Moving")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_SHU_OP_STS") {
+   field(DESC, "SHUTTER OPEN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SHU_OP_STS S 1")
+   field(ZNAM, "Open")
+   field(ONAM, "Open")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_SHU_CL_STS") {
+   field(DESC, "SHUTTER CLOSE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SHU_CL_STS S 1")
+   field(ZNAM, "Close")
+   field(ONAM, "Close")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_DC_MOT_MODE") {
+   field(DESC, "REMOTE MODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_DC_MOT_MODE S 1")
+}
+
+record(ai, "EC1_TOR_ANG_RTN") {
+   field(DESC, "TOROIDAL ANGLE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_ANG_RTN S 1")
+   field(LOPR, "-10.1")
+   field(HOPR, "20.1")
+   field(LOW, "-10.1")
+   field(HIGH, "20.1")
+   field(LOLO, "-10.1") 
+   field(HIHI, "20.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_POL_ANG_RTN") {
+   field(DESC, "POLOIDAL ANGLE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_ANG_RTN S 1")
+   field(LOPR, "-75.1")
+   field(HOPR, "-44.9")
+   field(LOW, "-75.1")
+   field(HIGH, "-44.9")
+   field(LOLO, "-75.1") 
+   field(HIHI, "-44.9")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_TOR_ENC_RTN") {
+   field(DESC, "TOROIDAL ENCODER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_ENC_RTN S 1")
+}
+
+record(ai, "EC1_POL_ENC_RTN") {
+   field(DESC, "POLOIDAL ENCODER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_ENC_RTN S 1")
+}
+
+record(ai, "EC1_TOR_SP_RTN") {
+   field(DESC, "TOROIDAL SPEED")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TOR_SP_RTN S 1")
+   field(LOPR, "0")
+   field(HOPR, "5.1")
+   field(LOW, "0")
+   field(HIGH, "5.1")
+   field(LOLO, "0") 
+   field(HIHI, "5.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_POL_SP_RTN") {
+   field(DESC, "POLOIDAL SPEED")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_SP_RTN S 1")
+   field(LOPR, "0")
+   field(HOPR, "5.1")
+   field(LOW, "0")
+   field(HIGH, "5.1")
+   field(LOLO, "0") 
+   field(HIHI, "5.1")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(bi, "EC1_PHI1_STS_OK") {
+   field(DESC, "PHI1 READY STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI1_STS_OK S 1")
+   field(ZNAM, "READY")
+   field(ONAM, "MOVING")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+}
+
+record(ai, "EC1_PHI1_MOTOR_RUN") {
+   field(DESC, "POLOIDAL SPEED")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI1_MOTOR_RUN S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_PHI1_STS_DEG") {
+   field(DESC, "DEGREE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI1_STS_DEG S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_PHI1_STS_VEL") {
+   field(DESC, "PHI1 VEL")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI1_STS_VEL S 1")
+}
+
+record(bi, "EC1_PHI2_STS_OK") {
+   field(DESC, "PHI1 READY STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI2_STS_OK S 1")
+   field(ZNAM, "READY")
+   field(ONAM, "MOVING")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+}
+
+record(ai, "EC1_PHI2_MOTOR_RUN") {
+   field(DESC, "POLOIDAL SPEED")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI2_MOTOR_RUN S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_PHI2_STS_DEG") {
+   field(DESC, "DEGREE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI2_STS_DEG S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_PHI2_STS_VEL") {
+   field(DESC, "PHI2 VEL")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PHI2_STS_VEL S 1")
+}
+
+record(bi, "EC1_POL_EXT_STS") {
+   field(DESC, "POLOIDAL STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_POL_EXT_STS S 1")
+   field(ZNAM, "ENABLE")
+   field(ONAM, "DISABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(ai, "EC1_HPS_STS_PCURR") {
+   field(DESC, "HPS CURRENT LIMIT")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_STS_PCURR S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(bi, "EC1_HPS_VOLT_BYPASS_ESET") {
+   field(DESC, "POLOIDAL STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_VOLT_BYPASS_ESET S 1")
+   field(ZNAM, "ENABLE")
+   field(ONAM, "DISABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_HPS_READY_OK") {
+   field(DESC, "POLOIDAL STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_READY_OK S 1")
+   field(ZNAM, "ENABLE")
+   field(ONAM, "DISABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_HPS_ECMD_START") {
+   field(DESC, "HPS START STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_ECMD_START S 1")
+   field(ZNAM, "ENABLE")
+   field(ONAM, "DISABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_CLC") {
+   field(DESC, "CCR load chamber flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_CLC S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_CLM") {
+   field(DESC, "CCR load MIRROR flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_CLM S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_TML") {
+   field(DESC, "TRANSMISSION LINE flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_TML S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_PRL") {
+   field(DESC, "PRE-LOAD flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_PRL S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_VPD") {
+   field(DESC, "VIEWING PORT D/L flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_VPD S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_SWD") {
+   field(DESC, "SUBWINDOW D/L flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_SWD S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_MMR") {
+   field(DESC, "MOU MIRROR flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_MMR S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_REF") {
+   field(DESC, "REFLECTOR flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_REF S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_MCB") {
+   field(DESC, "MOU CHAMBER flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_MCB S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_DCBR") {
+   field(DESC, "DC BREAK flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_DCBR S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_BTUN") {
+   field(DESC, "BEAM TUNNEL flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_BTUN S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_MNR") {
+   field(DESC, "MIRROR & RADIATOR flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_MNR S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_CB1") {
+   field(DESC, "CBAMBER1 flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_CB1 S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_BSM") {
+   field(DESC, "BELLOWS flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_BSM S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_OWIN") {
+   field(DESC, "OUTPUT WINDOW flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_OWIN S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_CAV") {
+   field(DESC, "CAVITY flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_CAV S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_COL") {
+   field(DESC, "CAVITY flow")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_COL S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_MIG") {
+   field(DESC, "MIG BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_MIG S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_MCB") {
+   field(DESC, "MOU CHAMBER BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_MCB S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_RAD") {
+   field(DESC, "RADIATOR BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_RAD S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_MIRR") {
+   field(DESC, "MIRROR BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_MIRR S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_CB2") {
+   field(DESC, "CHAMBER2 BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_CB2 S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_CB1") {
+   field(DESC, "CHAMBER1 BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_CB1 S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_BFLW_COMP") {
+   field(DESC, "COMPRESSOR BALL FLOW METER")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_BFLW_COMP S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_TLPLC_STAT_GUNDIS") {
+   field(DESC, "GUN OIL TANK EN/DIS STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_GUNDIS S 1")
+   field(ZNAM, "DISALBE")
+   field(ONAM, "ENABLE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_GUN_OIL_OK") {
+   field(DESC, "GUN OIL TANK ALARM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_GUN_OIL_OK S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(ai, "EC1_HPS_USTEP_CTUACC") {
+   field(DESC, "HPS CURRENT LIMIT")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_HPS_USTEP_CTU.ACC S 1")
+   field(LOPR, "0")
+   field(HOPR, "10001")
+   field(LOW, "0")
+   field(HIGH, "10001")
+   field(LOLO, "0") 
+   field(HIHI, "10001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+}
+
+record(ai, "EC1_TMP5_STS_OPR") {
+   field(DESC, "현재 상태 정보")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TMP5_STS_OPR S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "")
+   field(HIGH, "")
+   field(LOLO, "") 
+   field(HIHI, "")
+#   field(HHSV, "MAJOR")
+#   field(HSV, "MINOR")
+#   field(LSV, "MINOR")
+#   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_VAC_GTV_DUMS2") {
+   field(DESC, "MOU CLOSE STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_VAC_GTV_DUMS2 S 1")
+} 
+
+record(ai, "EC1_SWT2_WGD_STS") {
+   field(DESC, "No Description")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_SWT2_WGD_STS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "100")
+   field(LOW, "-0.1")
+   field(HIGH, "100")
+   field(LOLO, "-0.1") 
+   field(HIHI, "100")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_DGAUGE_SEN1_OK") {
+   field(DESC, "Vacuum gauge #8 status (Dum2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_DGAUGE_SEN1_OK S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_DGAUGE_SEN2_OK") {
+   field(DESC, "Vacuum gauge #8 status (Dum2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_DGAUGE_SEN2_OK S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_TLPLC_STAT_DUM2DIS") {
+   field(DESC, "DUMMY LOAD PUMP EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_TLPLC_STAT_DUM2DIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "BAD")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_WCS_FLW_PRL2") {
+   field(DESC, "PRE-LOAD flow #2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_PRL2 S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_WCS_FLW_DUM2") {
+   field(DESC, "Dummy #2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_WCS_FLW_DUM2 S 1")
+   field(ZNAM, "DISABLE")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}

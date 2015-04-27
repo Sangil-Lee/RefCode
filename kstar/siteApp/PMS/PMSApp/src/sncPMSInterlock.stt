@@ -1,0 +1,98 @@
+program PMS_Interlock
+option +r;
+
+int interlockAll;
+int interlockNB;
+int interlockCoil;
+int interlockCable;
+
+double maxAll;
+double maxNb;
+double maxCoil;
+double maxCable;
+
+assign interlockAll to "PMS_ALL_MAX_INTERLOCK";
+assign interlockNB to "PMS_NB_ALL_MAX_INTERLOCK";
+assign interlockCoil to "PMS_IVCC_COIL_MAX_INTERLOCK";
+assign interlockCable to "PMS_IVCC_CABLE_MAX_INTERLOCK";
+
+assign maxAll to "PMS_ALL_MAX";
+assign maxNb to "PMS_NB_ALL_MAX";
+assign maxCoil to "PMS_IVCC_COIL_MAX";
+assign maxCable to "PMS_IVCC_CABLE_MAX";
+
+monitor interlockAll;
+monitor interlockNB;
+monitor interlockCoil;
+monitor interlockCable;
+
+monitor maxAll;
+monitor maxNb;
+monitor maxCoil;
+monitor maxCable;
+
+ss PMS_IntAll {
+     state PMS_ALL {
+        when (delay(0.1)) {
+		if(maxAll < 200) {
+			interlockAll=0;
+			pvPut(interlockAll);
+		}
+		if(maxAll >= 200 && maxAll <300) {
+			interlockAll=1;
+                        pvPut(interlockAll);
+		}
+		if(maxAll>= 300) {
+			interlockAll=2;
+                        pvPut(interlockAll);		
+		}
+        } state PMS_ALL
+     }
+}
+ss PMS_IntNB {
+     state PMS_NB {
+        when (delay(0.1)) {
+		if(maxNb < 200) {
+			interlockNB=0;
+			pvPut(interlockNB);
+		}
+		if(maxNb >=200 && maxNb <300) {
+			interlockNB=1;
+                        pvPut(interlockNB);
+		}
+		if(maxNb>= 300) {
+			interlockNB=2;
+                        pvPut(interlockNB);		
+		}
+        } state PMS_NB
+     }
+}
+ss PMS_IntCoil {
+     state PMS_COIL {
+        when (delay(0.1)) {
+		if(maxCoil < 80) {
+			interlockCoil=0;
+			pvPut(interlockCoil);
+		}
+		if(maxCoil>= 80) {
+			interlockCoil=1;
+                        pvPut(interlockCoil);		
+		}
+        } state PMS_COIL
+     }
+}
+ss PMS_IntCable {
+     state PMS_CABLE {
+        when (delay(0.1)) {
+		if(maxCable < 60) {
+			interlockCable=0;
+			pvPut(interlockCable);
+		} 
+		if(maxCable>= 60) {
+			interlockCable=1;
+                        pvPut(interlockCable);		
+		}
+        } state PMS_CABLE
+     }
+}
+

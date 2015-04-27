@@ -1,0 +1,641 @@
+program sncSoftInterlockCheck
+
+option +r;
+option -c;
+
+%{
+#define        INTERLOCK_TF_HEARTBEAT_BIT  0
+#define        INTERLOCK_TF_LEVEL1_BIT     1
+#define        INTERLOCK_TF_LEVEL2_BIT     2
+#define	       INTERLOCK_TF_LEVEL4_BIT     3
+
+#define        INTERLOCK_PF1_HEARTBEAT_BIT 4
+#define        INTERLOCK_PF1_LEVEL3_BIT    5
+#define        INTERLOCK_PF1_LEVEL4_BIT    6
+
+#define        INTERLOCK_PF2_HEARTBEAT_BIT 7
+#define        INTERLOCK_PF2_LEVEL3_BIT    8
+#define        INTERLOCK_PF2_LEVEL4_BIT    9
+
+#define        INTERLOCK_PF3U_HEARTBEAT_BIT 10
+#define        INTERLOCK_PF3U_LEVEL3_BIT    11
+#define        INTERLOCK_PF3U_LEVEL4_BIT    12
+
+#define        INTERLOCK_PF4U_HEARTBEAT_BIT 0
+#define        INTERLOCK_PF4U_LEVEL3_BIT    1
+#define        INTERLOCK_PF4U_LEVEL4_BIT    2
+
+#define        INTERLOCK_PF5U_HEARTBEAT_BIT 3
+#define        INTERLOCK_PF5U_LEVEL3_BIT    4
+#define        INTERLOCK_PF5U_LEVEL4_BIT    5
+
+#define        INTERLOCK_PF6U_HEARTBEAT_BIT 6
+#define        INTERLOCK_PF6U_LEVEL3_BIT    7
+#define        INTERLOCK_PF6U_LEVEL4_BIT    8
+
+#define        INTERLOCK_PF7_HEARTBEAT_BIT 9
+#define        INTERLOCK_PF7_LEVEL3_BIT    10
+#define        INTERLOCK_PF7_LEVEL4_BIT    11
+
+#define        INTERLOCK_TF_LEVEL1_MASK    (0x00000001 << INTERLOCK_TF_LEVEL1_BIT)
+#define        INTERLOCK_TF_LEVEL2_MASK    (0x00000001 << INTERLOCK_TF_LEVEL2_BIT)
+#define        INTERLOCK_TF_LEVEL4_MASK    (0x00000001 << INTERLOCK_TF_LEVEL4_BIT)
+
+#define        INTERLOCK_PF1_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF1_LEVEL3_BIT)
+#define        INTERLOCK_PF1_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF1_LEVEL4_BIT)
+
+#define        INTERLOCK_PF2_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF2_LEVEL3_BIT)
+#define        INTERLOCK_PF2_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF2_LEVEL4_BIT)
+
+#define        INTERLOCK_PF3U_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF3U_LEVEL3_BIT)
+#define        INTERLOCK_PF3U_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF3U_LEVEL4_BIT)
+
+#define        INTERLOCK_PF4U_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF4U_LEVEL3_BIT)
+#define        INTERLOCK_PF4U_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF4U_LEVEL4_BIT)
+
+#define        INTERLOCK_PF5U_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF5U_LEVEL3_BIT)
+#define        INTERLOCK_PF5U_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF5U_LEVEL4_BIT)
+
+#define        INTERLOCK_PF6U_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF6U_LEVEL3_BIT)
+#define        INTERLOCK_PF6U_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF6U_LEVEL4_BIT)
+
+#define        INTERLOCK_PF7_LEVEL3_MASK   (0x00000001 << INTERLOCK_PF7_LEVEL3_BIT)
+#define        INTERLOCK_PF7_LEVEL4_MASK   (0x00000001 << INTERLOCK_PF7_LEVEL4_BIT)
+
+#define        INTERLOCK_NORMAL         0
+#define        INTERLOCK_LEVEL1         1
+#define        INTERLOCK_LEVEL2         2
+#define        INTERLOCK_LEVEL3         3
+#define        INTERLOCK_LEVEL4         4
+#define        INTERLOCK_WARNING        5
+
+#define        LCSST_ABNORMAL           0
+#define        LCSST_STOP               1
+#define        LCSST_OPERATION          2
+
+#define        STATUS_NORMAL            0
+#define        STATUS_FAULT             1
+
+#define        CWF_STATUS_NORMAL        0
+#define        CWF_STATUS_WARNING       1
+#define        CWF_STATUS_FAULT         2
+
+#define        SCAN_INTERVAL            .2
+
+#define        GEP_154KV_INTERRUPT_BIT   14
+#define        GEP_229KV_INTERRUPT_BIT   15
+#define        GEP_154KV_INTERRUPT_MASK  (0x00000001 << GEP_154KV_INTERRUPT_BIT)
+#define        GEP_229KV_INTERRUPT_MASK  (0x00000001 << GEP_229KV_INTERRUPT_BIT)
+
+#define        CWF_HEARTBEAT_BIT          0
+#define        CWF_HEARTBEAT_MASK         (0x00000001 << CWF_HEARTBEAT_BIT)
+#define        AIR_PRESSURE_LOW_BIT       1
+#define        AIR_PRESSURE_LOW_MASK      (0x00000001 << AIR_PRESSURE_LOW_BIT)
+#define        ROOM_PRESSURE_FAULT_BIT    2
+#define        ROOM_PRESSURE_FAULT_MASK   (0x00000001 << ROOM_PRESSURE_FAULT_BIT)
+#define        CWF_FAULT_BIT              3
+#define        CWF_WARNING_BIT            4
+#define        CWF_FAULT_MASK             (0x00000001 << CWF_FAULT_BIT)
+#define        CWF_WARNING_MASK           (0x00000001 << CWF_WARNING_BIT)
+}%
+
+unsigned int eip_interlock_mps_1;
+assign       eip_interlock_mps_1     to "CCS_EIP_INTL_MPS_1";
+monitor      eip_interlock_mps_1;
+unsigned int eip_interlock_mps_2;
+assign       eip_interlock_mps_2     to  "CCS_EIP_INTL_MPS_2";
+monitor      eip_interlock_mps_2;
+
+unsigned int eip_interlock_154kv_vs;
+assign       eip_interlock_154kv_vs  to "CCS_EIP_INTL_154_VS";
+monitor      eip_interlock_154kv_vs;
+unsigned int eip_interlock_229kv_vs;
+assign       eip_interlock_229kv_vs  to "CCS_EIP_INTL_229_VS";
+monitor      eip_interlock_229kv_vs;
+unsigned int eip_interlock_154kv_interrupt;
+assign       eip_interlock_154kv_interrupt   to     "CCS_EIP_INTL_154_INTERRUPT";
+monitor      eip_interlock_154kv_interrupt;
+unsigned int eip_interlock_229kv_interrupt;
+assign       eip_interlock_229kv_interrupt   to     "CCS_EIP_INTL_229_INTERRUPT";
+monitor      eip_interlock_229kv_interrupt;
+unsigned int eip_interlock_gep;
+assign       eip_interlock_gep       to "CCS_EIP_INTL_GEP";
+monitor      eip_interlock_gep;
+
+unsigned int status_154kv_vs;
+assign       status_154kv_vs         to "CCS_STATUS_154_VS";
+monitor      status_154kv_vs;
+unsigned int status_229kv_vs;
+assign       status_229kv_vs         to "CCS_STATUS_229_VS";
+monitor      status_229kv_vs;
+unsigned int status_154kv_interrupt;
+assign       status_154kv_interrupt  to "CCS_STATUS_154_INTERRUPT";
+monitor      status_154kv_interrupt;
+unsigned int status_229kv_interrupt;
+assign       status_229kv_interrupt  to "CCS_STATUS_229_INTERRUPT";
+monitor      status_229kv_interrupt;
+
+unsigned int eip_interlock_cwf;
+assign       eip_interlock_cwf       to "CCS_EIP_INTL_CWF";
+monitor      eip_interlock_cwf;
+
+unsigned int interlock_status_cwf;
+assign       interlock_status_cwf    to  "CCS_STATUS_CWF";
+monitor      interlock_status_cwf;
+
+/*++leesi*/
+int			lcsst_opst_control;
+assign		lcsst_opst_control			to        "CCS_OPST_CONTROL";
+monitor		lcsst_opst_control;
+
+unsigned int interlock_status_boron;
+assign       interlock_status_boron    to  "CCS_LCSST_BORON";
+monitor      interlock_status_boron;
+
+unsigned int eip_interlock_boron;
+assign       eip_interlock_boron       to "CCS_EIP_INTL_BORON_ST";
+monitor      eip_interlock_boron;
+evflag		ef_heartbeat_boron;
+sync		eip_interlock_boron        ef_heartbeat_boron;
+
+unsigned int interlock_status_psi;
+assign       interlock_status_psi    to  "CCS_LCSST_PSI";
+monitor      interlock_status_psi;
+
+unsigned int eip_interlock_psi;
+assign       eip_interlock_psi       to "CCS_EIP_INTL_PSI_ST";
+monitor      eip_interlock_psi;
+evflag		ef_heartbeat_psi;
+sync		eip_interlock_psi        ef_heartbeat_psi;
+
+/*--leesi*/
+
+unsigned int status_air_pressure;
+assign       status_air_pressure     to  "CCS_STATUS_AIR_PRESSURE";
+monitor      status_air_pressure;
+
+unsigned int status_room_pressure;
+assign       status_room_pressure    to  "CCS_STATUS_ROOM_PRESSURE";
+monitor      status_room_pressure;
+
+/* not used!  by woong    2010.6.11 
+int          pcs_fault_ip_error;
+assign       pcs_fault_ip_error      to  "CCS_PCS_FAULT_IP_ERROR";
+monitor      pcs_fault_ip_error;
+*/
+
+int          pcs_fault_ne_error;
+assign       pcs_fault_ne_error      to  "CCS_PCS_FAULT_NE_ERROR";
+monitor      pcs_fault_ne_error;
+
+int          ech_emg_stop;
+assign       ech_emg_stop            to  "ECH_RE01";
+monitor      ech_emg_stop;
+
+int          icrh_emg_stop;
+assign       icrh_emg_stop           to "icrf:lowrf:off";
+monitor      icrh_emg_stop;
+
+int         nbi1_stop;
+assign      nbi1_stop    to "CCS_INTL_NBI1_STOP";
+
+/*********************************************************************/
+/*  use closed_loop, instead of using SNL code.    2013. 5. 30  ************
+int        pms_ivcc_high;
+assign     pms_ivcc_high            to          "PMS_IVCC_ALL_MAX_HIGH";
+monitor    pms_ivcc_high;
+evflag     ef_pms_ivcc_high;
+sync       pms_ivcc_high            ef_pms_ivcc_high;
+int        sms_ivcc_high;
+assign     sms_ivcc_high            to          "CCS_PMS_IVCC_ALL_MAX_HIGH";
+
+int        pms_ivcc_hihi;
+assign     pms_ivcc_hihi            to          "PMS_IVCC_ALL_MAX_HIHI";
+monitor    pms_ivcc_hihi;
+evflag     ef_pms_ivcc_hihi;
+sync       pms_ivcc_hihi            ef_pms_ivcc_hihi;
+int        sms_ivcc_hihi;
+assign     sms_ivcc_hihi            to          "CCS_PMS_IVCC_ALL_MAX_HIHI";
+
+int        pms_NB_G_MAX_ALARM;
+assign     pms_NB_G_MAX_ALARM            to          "PMS_NB_G_MAX_ALARM";
+monitor    pms_NB_G_MAX_ALARM;
+evflag     ef_pms_NB_G_MAX_ALARM;
+sync       pms_NB_G_MAX_ALARM            ef_pms_NB_G_MAX_ALARM;
+int        ccs_NB_G_MAX_ALARM;
+assign     ccs_NB_G_MAX_ALARM            to          "CCS_PMS_NB_G_MAX_ALARM";
+**************************************************/
+
+/* deliver NBI neutron alarm to sis. 2011. 5. 2 request by jshong */
+/* use closed_loop, instead of using SNL code.    2013. 5. 30  ******
+int        nb1_P1VME_RTN_HVON;
+assign     nb1_P1VME_RTN_HVON            to          "NB1_P1VME_RTN_HVON";
+monitor    nb1_P1VME_RTN_HVON;
+evflag     ef_nb1_P1VME_RTN_HVON;
+sync       nb1_P1VME_RTN_HVON            ef_nb1_P1VME_RTN_HVON;
+int        ccs_NB1_P1VME_RTN_HVON;
+assign     ccs_NB1_P1VME_RTN_HVON            to          "CCS_NB1_P1VME_RTN_HVON";
+
+int        nb1_P1FIL_RTN_TSTOP;
+assign     nb1_P1FIL_RTN_TSTOP            to          "NB1_P1FIL_RTN_TSTOP";
+monitor    nb1_P1FIL_RTN_TSTOP;
+evflag     ef_nb1_P1FIL_RTN_TSTOP;
+sync       nb1_P1FIL_RTN_TSTOP            ef_nb1_P1FIL_RTN_TSTOP;
+int        ccs_NB1_P1FIL_RTN_TSTOP;
+assign     ccs_NB1_P1FIL_RTN_TSTOP            to          "CCS_NB1_P1FIL_RTN_TSTOP";
+**********************************************/
+
+
+
+int         intl_fault_notify;
+assign      intl_fault_notify    to "CCS_EIP_NOTIFY_FAULT";
+
+
+ss interlockSoftCheck_cwf
+{
+
+    state monitoring
+    {
+        when(!(~eip_interlock_cwf & (CWF_FAULT_MASK | CWF_WARNING_MASK))) {} state normal_state
+
+        when(~eip_interlock_cwf & (CWF_FAULT_MASK | CWF_WARNING_MASK)) {} state interlock_state
+    }
+
+    state normal_state
+    {
+        entry {
+            interlock_status_cwf = CWF_STATUS_NORMAL;
+            pvPut(interlock_status_cwf);
+        }
+
+        when(delay(SCAN_INTERVAL)) {} state monitoring
+    }
+
+    state interlock_state
+    {
+        entry {
+            if(~eip_interlock_cwf & CWF_WARNING_MASK) interlock_status_cwf = CWF_STATUS_WARNING;
+            if(~eip_interlock_cwf & CWF_FAULT_MASK)   interlock_status_cwf = CWF_STATUS_FAULT;
+
+            pvPut(interlock_status_cwf);
+        }
+
+        when(delay(SCAN_INTERVAL)) {} state monitoring
+    }
+}
+/*++leesi*/
+ss interlockSoftCheck_boron
+{
+    state init
+    {
+        when(TRUE) 
+		{
+			if (lcsst_opst_control == 0)
+				interlock_status_boron = LCSST_STOP;
+			else
+				interlock_status_boron = LCSST_ABNORMAL;
+			pvPut(interlock_status_boron);
+		} state monitoring
+    }
+
+    state monitoring
+    {
+        when( efTestAndClear(ef_heartbeat_boron) )
+		{
+			if( eip_interlock_boron == 0)
+			{
+				/*
+				if (lcsst_opst_control == 0)
+					interlock_status_boron = LCSST_STOP;
+				else
+					interlock_status_boron = LCSST_ABNORMAL;
+				*/
+				interlock_status_boron = LCSST_STOP;
+			}
+			else
+			{
+					interlock_status_boron = LCSST_OPERATION;
+			}
+			pvPut(interlock_status_boron);
+
+		} state monitoring
+    }
+}
+
+ss interlockSoftCheck_psi
+{
+    state init
+    {
+        when(TRUE) 
+		{
+			/*
+			if (lcsst_opst_control == 0)
+				interlock_status_psi = LCSST_STOP;
+			else
+				interlock_status_psi = LCSST_ABNORMAL;
+			*/
+			interlock_status_psi = LCSST_ABNORMAL;
+			pvPut(interlock_status_psi);
+		} state monitoring
+    }
+
+    state monitoring
+    {
+        when( efTestAndClear(ef_heartbeat_psi) )
+		{
+			if( eip_interlock_psi == 0)
+			{
+				/*
+				if (lcsst_opst_control == 0)
+					interlock_status_psi = LCSST_STOP;
+				else
+				*/
+					interlock_status_psi = LCSST_ABNORMAL;
+			}
+			else
+			{
+					interlock_status_psi = LCSST_OPERATION;
+			}
+			pvPut(interlock_status_psi);
+
+		} state monitoring
+    }
+}
+/*--leesi*/
+
+ss interlockSoftCheck_airPressure
+{
+    state fault_state
+    {
+        entry {
+            status_air_pressure = STATUS_FAULT;
+            pvPut(status_air_pressure);
+        }
+  
+        when(!(~eip_interlock_cwf & AIR_PRESSURE_LOW_MASK)) {} state normal_state
+    }
+
+    state normal_state
+    {
+        entry {
+            status_air_pressure = STATUS_NORMAL;
+            pvPut(status_air_pressure);
+        }
+
+        when(~eip_interlock_cwf & AIR_PRESSURE_LOW_MASK) {} state fault_state
+    }
+}
+
+ss interlockSoftCheck_roomPressure
+{
+    state fault_state
+    {
+        entry {
+            status_room_pressure = STATUS_FAULT;
+            pvPut(status_room_pressure);
+        }
+
+        when(!(~eip_interlock_cwf & ROOM_PRESSURE_FAULT_MASK)) {} state normal_state
+    }
+
+    state normal_state
+    {
+        entry {
+            status_room_pressure = STATUS_NORMAL;
+            pvPut(status_room_pressure);
+        }
+
+        when(~eip_interlock_cwf & ROOM_PRESSURE_FAULT_MASK) {} state fault_state
+  
+    }
+}
+
+ss interlockSoftCheck_154kvVS
+{
+    state normal
+    {
+        entry {
+            status_154kv_vs = STATUS_NORMAL;
+            pvPut(status_154kv_vs);
+        }
+      
+        when(eip_interlock_154kv_vs) {} state fault
+    }
+
+    state fault
+    {
+        entry {
+            status_154kv_vs = STATUS_FAULT;
+            pvPut(status_154kv_vs);
+        }
+
+        when(!eip_interlock_154kv_vs) {} state normal
+    }
+}
+
+ss interlockSoftCheck_229kvVS
+{
+
+    state normal
+    {
+        entry {
+            status_229kv_vs = STATUS_NORMAL;
+            pvPut(status_229kv_vs);
+        }
+
+        when(eip_interlock_229kv_vs) {} state fault
+    }
+
+    state fault
+    {
+        entry {
+            status_229kv_vs = STATUS_FAULT;
+            pvPut(status_229kv_vs);
+        }
+
+        when(!eip_interlock_229kv_vs) {} state normal
+    }
+}
+
+ss interlockSoftCheck_154kVInterrupt
+{
+    state normal
+    {
+        entry {
+            status_154kv_interrupt = STATUS_NORMAL;
+            pvPut(status_154kv_interrupt);
+        }
+
+        when(eip_interlock_154kv_interrupt) {} state fault
+    }
+
+    state fault
+    {
+        entry {
+            status_154kv_interrupt = STATUS_FAULT;
+            pvPut(status_154kv_interrupt);
+        }
+
+        when(!eip_interlock_154kv_interrupt) {} state normal
+    }
+}
+
+ss interlockSoftCheck_229kVInterrupt
+{
+    state normal
+    {
+        entry {
+            status_229kv_interrupt = STATUS_NORMAL;
+            pvPut(status_229kv_interrupt);
+        }
+
+        when(eip_interlock_229kv_interrupt) {} state fault
+    }
+
+    state fault
+    {
+        entry {
+            status_229kv_interrupt = STATUS_FAULT;
+            pvPut(status_229kv_interrupt);
+        }
+
+        when(!eip_interlock_229kv_interrupt) {} state normal
+    }
+}
+
+/*
+ss softInterlock_Heating
+{
+    state monitoring
+    {
+        entry {
+            icrh_emg_stop = 0;
+            pvPut(icrh_emg_stop);
+        }
+
+        when(pcs_fault_ne_error) 
+        {
+            icrh_emg_stop = 1;
+            pvPut(icrh_emg_stop);
+
+            nbi1_stop = 0;  
+            pvPut(nbi1_stop);
+
+        } state fault
+    }
+
+    state fault
+    {
+        when(delay(.5)) {
+	     nbi1_stop = 1; 
+            pvPut(nbi1_stop);
+            
+           } state normal
+    }
+
+    state normal {
+        when(!pcs_fault_ne_error) {        
+	}state monitoring
+    }
+    
+}
+*/
+
+/*  use closed_loop, instead of using SNL code.    2013. 5. 30  ***************
+ss softInterlock_PMS_IVCC_HIGH
+{
+    state normal
+    {
+       option -e;
+       option +t;
+       
+        entry {
+            sms_ivcc_high = pms_ivcc_high;
+             pvPut(sms_ivcc_high);
+        }
+         when(efTestAndClear(ef_pms_ivcc_high)) {
+              sms_ivcc_high = pms_ivcc_high;
+              pvPut(sms_ivcc_high);
+        } state normal
+    }
+}
+
+ss softInterlock_PMS_IVCC_HIHI
+{
+    state normal
+    {
+       option -e;
+       option +t;
+       
+        entry {
+            sms_ivcc_hihi = pms_ivcc_hihi;
+             pvPut(sms_ivcc_hihi);
+        }
+         when(efTestAndClear(ef_pms_ivcc_hihi)) {
+              sms_ivcc_hihi = pms_ivcc_hihi;
+              pvPut(sms_ivcc_hihi);
+        } state normal
+    }
+}
+
+ss softInterlock_NB_G_MAX_ALARM
+{
+    state normal
+    {
+       option -e;
+       option +t;
+       
+        entry {
+            ccs_NB_G_MAX_ALARM = pms_NB_G_MAX_ALARM;
+             pvPut(ccs_NB_G_MAX_ALARM);
+        }
+         when(efTestAndClear(ef_pms_NB_G_MAX_ALARM)) {
+              ccs_NB_G_MAX_ALARM = pms_NB_G_MAX_ALARM;
+              pvPut(ccs_NB_G_MAX_ALARM);
+        } state normal
+    }
+}
+*****************************/
+
+/* deliver NBI neutron alarm to sis. 2011. 5. 2 request by jshong */
+/* use closed_loop, instead of using SNL code.    2013. 5. 30  *****************
+ss softInterlock_NB1_P1VME_RTN_HVON
+{
+    state normal
+    {
+       option -e;
+       option +t;
+       
+        entry {
+            ccs_NB1_P1VME_RTN_HVON = nb1_P1VME_RTN_HVON;
+             pvPut(ccs_NB1_P1VME_RTN_HVON);
+        }
+         when(efTestAndClear(ef_nb1_P1VME_RTN_HVON)) {
+              ccs_NB1_P1VME_RTN_HVON = nb1_P1VME_RTN_HVON;
+              pvPut(ccs_NB1_P1VME_RTN_HVON);
+        } state normal
+    }
+}
+
+ss softInterlock_NB1_P1FIL_RTN_TSTOP
+{
+    state normal
+    {
+       option -e;
+       option +t;
+       
+        entry {
+            ccs_NB1_P1FIL_RTN_TSTOP = nb1_P1FIL_RTN_TSTOP;
+             pvPut(ccs_NB1_P1FIL_RTN_TSTOP);
+        }
+         when(efTestAndClear(ef_nb1_P1FIL_RTN_TSTOP)) {
+              ccs_NB1_P1FIL_RTN_TSTOP = nb1_P1FIL_RTN_TSTOP;
+              pvPut(ccs_NB1_P1FIL_RTN_TSTOP);
+        } state normal
+    }
+}
+********************************************/
+
+
+
+

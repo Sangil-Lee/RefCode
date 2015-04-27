@@ -1,0 +1,714 @@
+<ui version="4.0" >
+ <class>panel_graph</class>
+ <widget class="QWidget" name="panel_graph" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1078</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>HV&amp; RF Graph</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>1011</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid violet;
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CAMultiplot" name="caMultiplot" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>52</y>
+      <width>971</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="propertiesDocument" stdset="0" >
+     <string>KLYSTRON RF CONTROLLER</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_FWD_POW</string>
+    </property>
+    <property name="pvname1" >
+     <string>LH1_RFK_REV_POW</string>
+    </property>
+    <property name="pvname2" >
+     <string>LH1_RFK_VSWR_CAL</string>
+    </property>
+    <property name="pvname3" >
+     <string>LH1_RFK_PHASE_CAL</string>
+    </property>
+    <property name="plotTitle" stdset="0" >
+     <string>KLYSTRON RF CONTROLLER</string>
+    </property>
+    <property name="logScale" stdset="0" >
+     <bool>false</bool>
+    </property>
+    <property name="periodicdata" stdset="0" >
+     <enum>CAMultiplot::OneSec</enum>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor" >
+    <property name="geometry" >
+     <rect>
+      <x>80</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_2" >
+    <property name="geometry" >
+     <rect>
+      <x>300</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_3" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_4" >
+    <property name="geometry" >
+     <rect>
+      <x>740</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>30</y>
+      <width>62</width>
+      <height>17</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>10</y>
+      <width>62</width>
+      <height>17</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>846</x>
+      <y>30</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Y Range Max :</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2" >
+    <property name="geometry" >
+     <rect>
+      <x>846</x>
+      <y>10</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Y Range Min :</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>420</y>
+     <width>1011</width>
+     <height>420</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid violet;
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CAMultiplot" name="caMultiplot_2" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>971</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_TPOW</string>
+    </property>
+    <property name="pvname1" >
+     <string>LH1_RFANT_REV_TPOW</string>
+    </property>
+    <property name="pvname2" >
+     <string>LH1_RFANT_VSWR_TPOW</string>
+    </property>
+    <property name="pvname3" >
+     <string>LH1_RFANT_LHCD_POW</string>
+    </property>
+    <property name="pvname5" >
+     <string/>
+    </property>
+    <property name="pvname6" >
+     <string/>
+    </property>
+    <property name="pvname7" >
+     <string/>
+    </property>
+    <property name="pvname8" >
+     <string/>
+    </property>
+    <property name="plotTitle" stdset="0" >
+     <string>ANTENNA RF CONTROLLER</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckRev" >
+    <property name="geometry" >
+     <rect>
+      <x>80</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckRev_2" >
+    <property name="geometry" >
+     <rect>
+      <x>300</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckRev_3" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckRev_4" >
+    <property name="geometry" >
+     <rect>
+      <x>740</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3" >
+    <property name="geometry" >
+     <rect>
+      <x>846</x>
+      <y>30</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Y Range Max :</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_3" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>10</y>
+      <width>62</width>
+      <height>17</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4" >
+    <property name="geometry" >
+     <rect>
+      <x>846</x>
+      <y>10</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Y Range Min :</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_4" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>30</y>
+      <width>62</width>
+      <height>17</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QFrame</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>caColorCheckFor</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>190</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>caColorCheckFor_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>410</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>caColorCheckFor_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>630</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>caColorCheckFor_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>850</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>190</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>410</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>630</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>850</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>caColorCheckRev</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>190</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>caColorCheckRev_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>410</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>caColorCheckRev_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>630</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>caColorCheckRev_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>850</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckRev</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>190</x>
+     <y>789</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckRev_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>410</x>
+     <y>789</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckRev_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>630</x>
+     <y>789</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckRev_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>850</x>
+     <y>789</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>setYRangeMax(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>990</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_2</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>setYRangeMin(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>990</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_2</sender>
+   <signal>editingFinished()</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>setYRange()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>990</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>editingFinished()</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>setYRange()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>990</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>535</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_3</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>setYRangeMin(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1002</x>
+     <y>438</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>939</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_3</sender>
+   <signal>editingFinished()</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>setYRange()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1011</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>931</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_4</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>setYRangeMax(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>970</x>
+     <y>462</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>970</x>
+     <y>474</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_4</sender>
+   <signal>editingFinished()</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>setYRange()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>990</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>990</x>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

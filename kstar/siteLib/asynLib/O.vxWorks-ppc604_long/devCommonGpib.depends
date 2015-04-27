@@ -1,0 +1,12 @@
+# DO NOT EDIT: This file created by mkmf.pl,v 1.5 2002/03/25 21:33:24 jba Exp $ 
+
+devCommonGpib.o : ../../asynLib/asynDriver/asynDriver.h \
+  ../../asynLib/asynGpib/asynGpibDriver.h \
+  ../../asynLib/devGpib/devSupportGpib.h \
+  ../../asynLib/devGpib/devCommonGpib.h
+
+#Depend files must be targets to avoid 'No rule to make target ...' errors
+../../asynLib/asynDriver/asynDriver.h :
+../../asynLib/asynGpib/asynGpibDriver.h :
+../../asynLib/devGpib/devSupportGpib.h :
+../../asynLib/devGpib/devCommonGpib.h :

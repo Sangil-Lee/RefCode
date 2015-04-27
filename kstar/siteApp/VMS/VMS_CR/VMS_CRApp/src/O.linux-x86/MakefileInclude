@@ -1,0 +1,121 @@
+#Do not modify this file.
+#This file is created during the build.
+
+ifneq ($(strip $(VMS_CR_SRCS_$(OS_CLASS))),)
+VMS_CR_SRCS+=$(subst -nil-,,$(VMS_CR_SRCS_$(OS_CLASS)))
+else
+ifdef VMS_CR_SRCS_DEFAULT
+VMS_CR_SRCS+=$(VMS_CR_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_RCS_$(OS_CLASS))),)
+VMS_CR_RCS+=$(subst -nil-,,$(VMS_CR_RCS_$(OS_CLASS)))
+else
+ifdef VMS_CR_RCS_DEFAULT
+VMS_CR_RCS+=$(VMS_CR_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_OBJS_$(OS_CLASS))),)
+VMS_CR_OBJS+=$(subst -nil-,,$(VMS_CR_OBJS_$(OS_CLASS)))
+else
+ifdef VMS_CR_OBJS_DEFAULT
+VMS_CR_OBJS+=$(VMS_CR_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_LDFLAGS_$(OS_CLASS))),)
+VMS_CR_LDFLAGS+=$(subst -nil-,,$(VMS_CR_LDFLAGS_$(OS_CLASS)))
+else
+ifdef VMS_CR_LDFLAGS_DEFAULT
+VMS_CR_LDFLAGS+=$(VMS_CR_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_OBJLIBS_$(OS_CLASS))),)
+VMS_CR_OBJLIBS+=$(subst -nil-,,$(VMS_CR_OBJLIBS_$(OS_CLASS)))
+else
+ifdef VMS_CR_OBJLIBS_DEFAULT
+VMS_CR_OBJLIBS+=$(VMS_CR_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_LDOBJS_$(OS_CLASS))),)
+VMS_CR_LDOBJS+=$(subst -nil-,,$(VMS_CR_LDOBJS_$(OS_CLASS)))
+else
+ifdef VMS_CR_LDOBJS_DEFAULT
+VMS_CR_LDOBJS+=$(VMS_CR_LDOBJS_DEFAULT)
+endif
+endif
+VMS_CR_LDLIBS+=$(VMS_CR_LIBS)
+ifneq ($(strip $(VMS_CR_LIBS_$(OS_CLASS))),)
+VMS_CR_LDLIBS+=$(subst -nil-,,$(VMS_CR_LIBS_$(OS_CLASS)))
+else
+ifdef VMS_CR_LIBS_DEFAULT
+VMS_CR_LDLIBS+=$(VMS_CR_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(VMS_CR_SYS_LIBS_$(OS_CLASS))),)
+VMS_CR_SYS_LIBS+=$(subst -nil-,,$(VMS_CR_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef VMS_CR_SYS_LIBS_DEFAULT
+VMS_CR_SYS_LIBS+=$(VMS_CR_SYS_LIBS_DEFAULT)
+endif
+endif
+VMS_CR_OBJS+=$(addsuffix $(OBJ),$(basename $(VMS_CR_SRCS)))
+
+ifeq ($(filter VMS_CR,$(TESTPROD) $(PROD)),VMS_CR)
+ifeq (,$(strip $(VMS_CR_OBJS) $(PRODUCT_OBJS)))
+VMS_CR_OBJS+=VMS_CR$(OBJ)
+endif
+VMS_CR_RESS+=$(addsuffix $(RES),$(basename $(VMS_CR_RCS)))
+VMS_CR_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(VMS_CR_OBJS)))
+VMS_CR_DEPLIBS=$(foreach lib, $(VMS_CR_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+VMS_CR$(EXE): $(VMS_CR_OBJSNAME) $(VMS_CR_RESS) $(VMS_CR_DEPLIBS)
+endif
+
+ifeq ($(filter VMS_CR,$(LIBRARY)),VMS_CR)
+ifneq ($(filter VMS_CR,$(LOADABLE_LIBRARY)),VMS_CR)
+ifneq (,$(strip $(VMS_CR_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += VMS_CR
+endif
+VMS_CR_RESS+=$(addsuffix $(RES),$(basename $(VMS_CR_RCS)))
+VMS_CR_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(VMS_CR_OBJS)))
+VMS_CR_DEPLIBS=$(foreach lib, $(VMS_CR_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+VMS_CR_DLL_DEPLIBS=$(foreach lib, $(VMS_CR_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)VMS_CR$(LIB_SUFFIX):$(VMS_CR_OBJSNAME) $(VMS_CR_RESS)
+$(LIB_PREFIX)VMS_CR$(LIB_SUFFIX):$(VMS_CR_DEPLIBS)
+$(LIB_PREFIX)VMS_CR$(SHRLIB_SUFFIX):$(VMS_CR_OBJSNAME) $(VMS_CR_RESS)
+$(LIB_PREFIX)VMS_CR$(SHRLIB_SUFFIX):$(VMS_CR_DEPLIBS)
+$(LIB_PREFIX)VMS_CR$(SHRLIB_SUFFIX):$(VMS_CR_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter VMS_CR,$(LOADABLE_LIBRARY)),VMS_CR)
+ifneq (,$(strip $(VMS_CR_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += VMS_CR
+endif
+VMS_CR_RESS+=$(addsuffix $(RES),$(basename $(VMS_CR_RCS)))
+VMS_CR_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(VMS_CR_OBJS)))
+VMS_CR_DEPLIBS=$(foreach lib, $(VMS_CR_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+VMS_CR_DLL_DEPLIBS=$(foreach lib, $(VMS_CR_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)VMS_CR$(LOADABLE_SHRLIB_SUFFIX):$(VMS_CR_OBJSNAME) $(VMS_CR_RESS)
+$(LOADABLE_SHRLIB_PREFIX)VMS_CR$(LOADABLE_SHRLIB_SUFFIX):$(VMS_CR_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)VMS_CR$(LOADABLE_SHRLIB_SUFFIX):$(VMS_CR_DLL_DEPLIBS)
+endif
+

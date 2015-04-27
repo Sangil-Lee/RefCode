@@ -1,0 +1,47 @@
+record(ao, "$(PV_NAME)") {
+  field(DTYP, "S7plc")
+  field(OUT, "@HCS_PLC/$(BYTE) T=FLOAT")
+  field(DOL, "$(PV_NAME)_CALC.VAL")
+  field(OMSL, "closed_loop")
+  field(EGU, "g/sec")
+#  field(HHSV, "NO_ALARM")
+#  field(LLSV, "NO_ALARM")
+#  field(HSV, "NO_ALARM")
+#  field(LSV, "NO_ALARM")
+}
+
+record(calc, "$(PV_NAME)_CALC") {
+  field(PINI, "YES")
+  field(FLNK, "$(PV_NAME)")
+  field(CALC, "1000*A*B*sqrt(2*D*100*E/(1-C^4))")
+  field(INPA, "$(C_0)")
+  field(INPB, "$(AREA)")
+  field(INPC, "$(BETA)")
+  field(INPD, "$(PV_NAME)_DEN.VAL")
+  field(INPE, "$(PV_NAME)_DP CPP")
+  field(INPF, "HDS_HCS_R_REMOTE CPP")
+  field(EGU, "g/sec")
+}
+
+record(calc, "$(PV_NAME)_DP") {
+  field(CALC, "(A>0)?A:0")
+  field(INPA, "$(DP_TAG) CPP")
+}
+
+record(sub, "$(PV_NAME)_DEN") {
+  field(SCAN, "Passive")
+  field(INPA, "$(PV_NAME)_PRS_PA")
+  field(INPB, "$(T_TAG) CPP")
+  field(INAM, "hepSubInit")
+  field(SNAM, "hepSubProcess")
+  field(FLNK, "$(PV_NAME)_CALC")
+  field(EGU, "kg/m^3")
+}
+
+record(calc, "$(PV_NAME)_PRS_PA") {
+  field(FLNK, "$(PV_NAME)_DEN")
+  field(CALC, "A*100000")
+  field(SCAN, "2 second")
+  field(INPA, "$(P_TAG) CA")
+  field(EGU, "Pa")
+}

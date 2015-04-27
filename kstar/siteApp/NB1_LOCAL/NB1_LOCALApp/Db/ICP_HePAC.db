@@ -1,0 +1,87 @@
+record(calc, "ICP_HE_FLW_RD_CALC")
+{
+    field(PINI, "YES")
+    field(CALC, "B*A*C")
+    field(INPA, "93e-6") # m^2
+    field(INPB, "ICP_HE_DEN CPP")
+    field(INPC, "ICP_HE_FLW_V CPP")
+    field(EGU, "g/sec")
+}
+record(calc, "ICP_HE_FLW_V")
+{
+    field(PINI, "YES")
+    field(CALC, "sqrt(B*((2*D)/C*A*E))")
+    field(INPA, "ICP_HE_DEN CPP")
+    field(INPB, "ICP_HE_DP_PA CPP")
+    field(INPC, "1") # f
+    field(INPD, "1") # Dh
+    field(INPE, "1") # L
+}
+record(sub, "ICP_HE_DEN")
+{
+    field(SCAN, "Passive")
+    field(INPA, "ICP_HE_SUP_AI_PA CPP")
+    field(INPB, "ICP_CEN_RD_01 CPP")
+    field(INAM, "hepSubInit")
+    field(SNAM, "hepSubProcess")
+    field(FLNK, "ICP_HE_FLW_RD_CALC")
+    field(EGU, "kg/m^3")
+}
+## Delta Pressure
+record(calc, "ICP_HE_DP")
+{
+    field(CALC, "A-B")
+    field(INPA, "ICP_PRS_SUP_AI CPP")
+    field(INPB, "ICP_PRS_RET_AI CPP")
+    field(EGU, "bar")
+}
+record(calc, "ICP_HE_DP1")
+{
+    field(CALC, "(A>0)?A:0")
+    field(INPA, "ICP_HE_DP CPP")
+}
+record(calc, "ICP_HE_DP_PA")
+{
+    field(CALC, "(A*10^5)")
+    field(INPA, "ICP_HE_DP1 CPP")
+    field(EGU, "Pa")
+}
+record(calc, "ICP_HE_SUP_AI_C")
+{
+    field(CALC, "(A>0)?A:0")
+    field(INPA, "ICP_PRS_SUP_AI.VAL")
+}
+record(calc, "ICP_HE_SUP_AI_PA")
+{
+    field(CALC, "(A*10^5)+10^5")
+    field(INPA, "ICP_HE_SUP_AI_C CPP")
+    field(EGU, "Pa")
+}
+record(ai, "ICP_PRS_SUP_AI")
+{
+    field(DESC, "supply")
+    field(FLNK, "ICP_HE_SUP_AI_C")
+    field(SCAN, "1 second")
+    field(DTYP, "EtherIP")
+    field(INP, "@plc2 LTM_PRS2_AI S 1")
+    field(EGU, "bar")
+    field(PREC, "2")
+}
+record(ai, "ICP_PRS_RET_AI")
+{
+    field(DESC, "return")
+    field(SCAN, "1 second")
+    field(DTYP, "EtherIP")
+    field(INP, "@plc2 LTM_PRS3_AI S 1")
+    field(EGU, "bar")
+    field(PREC, "2")
+}
+record(ai, "ICP_PRS_DEW_AI")
+{
+    field(DESC, "dewar")
+    field(SCAN, "1 second")
+    field(DTYP, "EtherIP")
+    field(INP, "@plc2 LTM_PRS1_AI S 1")
+    field(EGU, "bar")
+    field(PREC, "2")
+}

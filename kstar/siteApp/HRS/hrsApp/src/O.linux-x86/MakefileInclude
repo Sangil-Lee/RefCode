@@ -1,0 +1,240 @@
+#Do not modify this file.
+#This file is created during the build.
+
+ifneq ($(strip $(s7plcApp_SRCS_$(OS_CLASS))),)
+s7plcApp_SRCS+=$(subst -nil-,,$(s7plcApp_SRCS_$(OS_CLASS)))
+else
+ifdef s7plcApp_SRCS_DEFAULT
+s7plcApp_SRCS+=$(s7plcApp_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_RCS_$(OS_CLASS))),)
+s7plcApp_RCS+=$(subst -nil-,,$(s7plcApp_RCS_$(OS_CLASS)))
+else
+ifdef s7plcApp_RCS_DEFAULT
+s7plcApp_RCS+=$(s7plcApp_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_OBJS_$(OS_CLASS))),)
+s7plcApp_OBJS+=$(subst -nil-,,$(s7plcApp_OBJS_$(OS_CLASS)))
+else
+ifdef s7plcApp_OBJS_DEFAULT
+s7plcApp_OBJS+=$(s7plcApp_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_LDFLAGS_$(OS_CLASS))),)
+s7plcApp_LDFLAGS+=$(subst -nil-,,$(s7plcApp_LDFLAGS_$(OS_CLASS)))
+else
+ifdef s7plcApp_LDFLAGS_DEFAULT
+s7plcApp_LDFLAGS+=$(s7plcApp_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_OBJLIBS_$(OS_CLASS))),)
+s7plcApp_OBJLIBS+=$(subst -nil-,,$(s7plcApp_OBJLIBS_$(OS_CLASS)))
+else
+ifdef s7plcApp_OBJLIBS_DEFAULT
+s7plcApp_OBJLIBS+=$(s7plcApp_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_LDOBJS_$(OS_CLASS))),)
+s7plcApp_LDOBJS+=$(subst -nil-,,$(s7plcApp_LDOBJS_$(OS_CLASS)))
+else
+ifdef s7plcApp_LDOBJS_DEFAULT
+s7plcApp_LDOBJS+=$(s7plcApp_LDOBJS_DEFAULT)
+endif
+endif
+s7plcApp_LDLIBS+=$(s7plcApp_LIBS)
+ifneq ($(strip $(s7plcApp_LIBS_$(OS_CLASS))),)
+s7plcApp_LDLIBS+=$(subst -nil-,,$(s7plcApp_LIBS_$(OS_CLASS)))
+else
+ifdef s7plcApp_LIBS_DEFAULT
+s7plcApp_LDLIBS+=$(s7plcApp_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plcApp_SYS_LIBS_$(OS_CLASS))),)
+s7plcApp_SYS_LIBS+=$(subst -nil-,,$(s7plcApp_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef s7plcApp_SYS_LIBS_DEFAULT
+s7plcApp_SYS_LIBS+=$(s7plcApp_SYS_LIBS_DEFAULT)
+endif
+endif
+s7plcApp_OBJS+=$(addsuffix $(OBJ),$(basename $(s7plcApp_SRCS)))
+
+ifeq ($(filter s7plcApp,$(TESTPROD) $(PROD)),s7plcApp)
+ifeq (,$(strip $(s7plcApp_OBJS) $(PRODUCT_OBJS)))
+s7plcApp_OBJS+=s7plcApp$(OBJ)
+endif
+s7plcApp_RESS+=$(addsuffix $(RES),$(basename $(s7plcApp_RCS)))
+s7plcApp_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plcApp_OBJS)))
+s7plcApp_DEPLIBS=$(foreach lib, $(s7plcApp_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plcApp$(EXE): $(s7plcApp_OBJSNAME) $(s7plcApp_RESS) $(s7plcApp_DEPLIBS)
+endif
+
+ifeq ($(filter s7plcApp,$(LIBRARY)),s7plcApp)
+ifneq ($(filter s7plcApp,$(LOADABLE_LIBRARY)),s7plcApp)
+ifneq (,$(strip $(s7plcApp_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += s7plcApp
+endif
+s7plcApp_RESS+=$(addsuffix $(RES),$(basename $(s7plcApp_RCS)))
+s7plcApp_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plcApp_OBJS)))
+s7plcApp_DEPLIBS=$(foreach lib, $(s7plcApp_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plcApp_DLL_DEPLIBS=$(foreach lib, $(s7plcApp_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)s7plcApp$(LIB_SUFFIX):$(s7plcApp_OBJSNAME) $(s7plcApp_RESS)
+$(LIB_PREFIX)s7plcApp$(LIB_SUFFIX):$(s7plcApp_DEPLIBS)
+$(LIB_PREFIX)s7plcApp$(SHRLIB_SUFFIX):$(s7plcApp_OBJSNAME) $(s7plcApp_RESS)
+$(LIB_PREFIX)s7plcApp$(SHRLIB_SUFFIX):$(s7plcApp_DEPLIBS)
+$(LIB_PREFIX)s7plcApp$(SHRLIB_SUFFIX):$(s7plcApp_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter s7plcApp,$(LOADABLE_LIBRARY)),s7plcApp)
+ifneq (,$(strip $(s7plcApp_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += s7plcApp
+endif
+s7plcApp_RESS+=$(addsuffix $(RES),$(basename $(s7plcApp_RCS)))
+s7plcApp_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plcApp_OBJS)))
+s7plcApp_DEPLIBS=$(foreach lib, $(s7plcApp_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plcApp_DLL_DEPLIBS=$(foreach lib, $(s7plcApp_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)s7plcApp$(LOADABLE_SHRLIB_SUFFIX):$(s7plcApp_OBJSNAME) $(s7plcApp_RESS)
+$(LOADABLE_SHRLIB_PREFIX)s7plcApp$(LOADABLE_SHRLIB_SUFFIX):$(s7plcApp_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)s7plcApp$(LOADABLE_SHRLIB_SUFFIX):$(s7plcApp_DLL_DEPLIBS)
+endif
+
+
+ifneq ($(strip $(s7plc_SRCS_$(OS_CLASS))),)
+s7plc_SRCS+=$(subst -nil-,,$(s7plc_SRCS_$(OS_CLASS)))
+else
+ifdef s7plc_SRCS_DEFAULT
+s7plc_SRCS+=$(s7plc_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_RCS_$(OS_CLASS))),)
+s7plc_RCS+=$(subst -nil-,,$(s7plc_RCS_$(OS_CLASS)))
+else
+ifdef s7plc_RCS_DEFAULT
+s7plc_RCS+=$(s7plc_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_OBJS_$(OS_CLASS))),)
+s7plc_OBJS+=$(subst -nil-,,$(s7plc_OBJS_$(OS_CLASS)))
+else
+ifdef s7plc_OBJS_DEFAULT
+s7plc_OBJS+=$(s7plc_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_LDFLAGS_$(OS_CLASS))),)
+s7plc_LDFLAGS+=$(subst -nil-,,$(s7plc_LDFLAGS_$(OS_CLASS)))
+else
+ifdef s7plc_LDFLAGS_DEFAULT
+s7plc_LDFLAGS+=$(s7plc_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_OBJLIBS_$(OS_CLASS))),)
+s7plc_OBJLIBS+=$(subst -nil-,,$(s7plc_OBJLIBS_$(OS_CLASS)))
+else
+ifdef s7plc_OBJLIBS_DEFAULT
+s7plc_OBJLIBS+=$(s7plc_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_LDOBJS_$(OS_CLASS))),)
+s7plc_LDOBJS+=$(subst -nil-,,$(s7plc_LDOBJS_$(OS_CLASS)))
+else
+ifdef s7plc_LDOBJS_DEFAULT
+s7plc_LDOBJS+=$(s7plc_LDOBJS_DEFAULT)
+endif
+endif
+s7plc_LDLIBS+=$(s7plc_LIBS)
+ifneq ($(strip $(s7plc_LIBS_$(OS_CLASS))),)
+s7plc_LDLIBS+=$(subst -nil-,,$(s7plc_LIBS_$(OS_CLASS)))
+else
+ifdef s7plc_LIBS_DEFAULT
+s7plc_LDLIBS+=$(s7plc_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(s7plc_SYS_LIBS_$(OS_CLASS))),)
+s7plc_SYS_LIBS+=$(subst -nil-,,$(s7plc_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef s7plc_SYS_LIBS_DEFAULT
+s7plc_SYS_LIBS+=$(s7plc_SYS_LIBS_DEFAULT)
+endif
+endif
+s7plc_OBJS+=$(addsuffix $(OBJ),$(basename $(s7plc_SRCS)))
+
+ifeq ($(filter s7plc,$(TESTPROD) $(PROD)),s7plc)
+ifeq (,$(strip $(s7plc_OBJS) $(PRODUCT_OBJS)))
+s7plc_OBJS+=s7plc$(OBJ)
+endif
+s7plc_RESS+=$(addsuffix $(RES),$(basename $(s7plc_RCS)))
+s7plc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plc_OBJS)))
+s7plc_DEPLIBS=$(foreach lib, $(s7plc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plc$(EXE): $(s7plc_OBJSNAME) $(s7plc_RESS) $(s7plc_DEPLIBS)
+endif
+
+ifeq ($(filter s7plc,$(LIBRARY)),s7plc)
+ifneq ($(filter s7plc,$(LOADABLE_LIBRARY)),s7plc)
+ifneq (,$(strip $(s7plc_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += s7plc
+endif
+s7plc_RESS+=$(addsuffix $(RES),$(basename $(s7plc_RCS)))
+s7plc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plc_OBJS)))
+s7plc_DEPLIBS=$(foreach lib, $(s7plc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plc_DLL_DEPLIBS=$(foreach lib, $(s7plc_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)s7plc$(LIB_SUFFIX):$(s7plc_OBJSNAME) $(s7plc_RESS)
+$(LIB_PREFIX)s7plc$(LIB_SUFFIX):$(s7plc_DEPLIBS)
+$(LIB_PREFIX)s7plc$(SHRLIB_SUFFIX):$(s7plc_OBJSNAME) $(s7plc_RESS)
+$(LIB_PREFIX)s7plc$(SHRLIB_SUFFIX):$(s7plc_DEPLIBS)
+$(LIB_PREFIX)s7plc$(SHRLIB_SUFFIX):$(s7plc_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter s7plc,$(LOADABLE_LIBRARY)),s7plc)
+ifneq (,$(strip $(s7plc_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += s7plc
+endif
+s7plc_RESS+=$(addsuffix $(RES),$(basename $(s7plc_RCS)))
+s7plc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(s7plc_OBJS)))
+s7plc_DEPLIBS=$(foreach lib, $(s7plc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+s7plc_DLL_DEPLIBS=$(foreach lib, $(s7plc_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)s7plc$(LOADABLE_SHRLIB_SUFFIX):$(s7plc_OBJSNAME) $(s7plc_RESS)
+$(LOADABLE_SHRLIB_PREFIX)s7plc$(LOADABLE_SHRLIB_SUFFIX):$(s7plc_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)s7plc$(LOADABLE_SHRLIB_SUFFIX):$(s7plc_DLL_DEPLIBS)
+endif
+

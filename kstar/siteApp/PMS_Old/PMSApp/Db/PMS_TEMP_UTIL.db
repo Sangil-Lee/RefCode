@@ -1,0 +1,54 @@
+#record(ai, "CWF_WATER_TEMP") {
+#   field(DESC, "CWF Inlet Water Temp.")
+#   field(EGU, "degC")
+#   field(VAL, "100")
+#   field(PINI, "YES")
+#}
+
+record(ai, "CWF_WATER_TEMP") {
+  field(DESC, "CWF Inlet Water Temp.")
+  field(EGU, "degC")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@CWF_PLC CWF_WATER_TEMP S 1")
+}
+
+
+
+record(ai, "PMS_TEMP_HIHI") {
+   field(DESC, "PMS HIHI TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "50")
+   field(PINI, "YES")
+}
+
+record(ai, "PMS_TEMP_HIGH") {
+   field(DESC, "PMS HIGH TEMP SETTING VALUE")
+   field(EGU, "degC")
+   field(VAL, "30")
+   field(PINI, "YES") 
+}
+
+
+record(ai, "PMS_NB_G_MAX_HIHI") {
+  field(DESC, "PMS_NB_G_MAX_HIHI")
+  field(VAL, "500")
+  field(EGU, "degC")
+}
+
+
+record(ai, "PMS_NB_G_MAX_NORMAL") {
+  field(DESC, "PMS_NB_G_MAX_NORMAL")
+  field(VAL, "200")
+  field(EGU, "degC")
+  }
+
+
+record(bo, "PMS_NB_G_MAX_ALARM") {
+  field(DESC, "PMS_NB_G_MAX_ALRAM")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+}
+

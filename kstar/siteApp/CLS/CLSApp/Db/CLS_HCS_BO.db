@@ -1,0 +1,25 @@
+record(ao, "$(PV_NAME)_OUT") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 $(TAG) S 1")
+  field(OMSL, "closed_loop")
+  field(DOL, "$(PV_NAME)")
+}
+
+record(bo, "$(PV_NAME)") {
+  field(SCAN, "Passive")
+  field(OMSL, "supervisory")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+  field(FLNK, "$(PV_NAME)_OUT")
+}
+
+record(calcout, "$(PV_NAME)_IN") {
+  field(CALC, "A?1:0")
+  field(INPA, "$(PV_NAME_INP) CPP")
+  field(INPB, "CLS_REMOTE CPP")
+  field(OUT, "$(PV_NAME)")
+  field(FLNK, "$(PV_NAME)")
+}
+

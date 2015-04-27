@@ -1,0 +1,53 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>678</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAMultiwaveplot" name="CAMultiwaveplot" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>631</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>TEST_sinA_WF</string>
+   </property>
+   <property name="pvname1" >
+    <string>TEST_sinB_WF</string>
+   </property>
+   <property name="pvname2" >
+    <string>TEST_sinC_WF</string>
+   </property>
+   <property name="reqElement" stdset="0" >
+    <number>512</number>
+   </property>
+   <property name="refreshTime" >
+    <number>1000</number>
+   </property>
+   <property name="type" >
+    <enum>CAMultiwaveplot::CAPendIO</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiwaveplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiwaveplot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

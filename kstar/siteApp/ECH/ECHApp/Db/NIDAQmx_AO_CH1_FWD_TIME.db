@@ -1,0 +1,17 @@
+record(ao, "ECH_AO_PATTERN_TIME_CH1_$(PV_NAME)") {
+  field(DESC, "$(DSR)")
+  field(DTYP, "NIDAQmx AoControl")
+  field(OUT, "@$(STR) $(TASK) $(CH) $(POS)")
+  field(EGU, "sec")
+  field(PINI, "YES")
+  field(VAL, "$(VL)")
+}
+record(calcout, "ECH_AO_PATTERN_FWD_CH1_$(PV_NAME)_TIME") {
+  field(DESC, "$(DSR)")
+  field(EGU, "sec")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_TIME_CH0_$(PV_NAME) CPP")
+  field(CALC, "A")
+#  field(DOPT, "Use CALC")
+  field(OUT, "ECH_AO_PATTERN_TIME_CH1_$(PV_NAME) PP")
+}

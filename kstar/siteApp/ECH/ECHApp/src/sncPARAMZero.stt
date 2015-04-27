@@ -1,0 +1,86 @@
+program sncPARAMZero 
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <sys/types.h>
+%% #include <sys/stat.h>
+%% #include <epicsThread.h>
+
+
+int i;
+int zeroSet;
+int dataCount;
+char *pfileName;
+string tmpStr1;
+float data[481];
+
+assign zeroSet to "ECH_AO_PATTERN_ALL_ZERO_SET";
+
+monitor zeroSet;
+
+evflag zeroSetf;
+sync zeroSet zeroSetf;
+
+assign data to {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+monitor data;
+
+ss AOValueSet{
+	state init{
+		when (TRUE){
+               pfileName = macValueGet("FNAME");
+            %% epicsThreadId threadId;
+            %% FILE *pfile;
+            %% pfile = fopen (pVar->pfileName, "r");
+            %% if(!pfile) { 
+     		%%		printf("error in fopen\n");
+			%% 		threadId = epicsThreadGetIdSelf();
+			%%		seqStop(threadId);
+			%% }
+            dataCount =0;
+            %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+                   	pvAssign (data[dataCount], tmpStr1);
+					printf("connect %d %s\n", dataCount, tmpStr1);
+					dataCount++;
+            %%}
+			%% fclose(pfile);
+			printf("Data count number is %d\n",dataCount);
+		}state Set_AO_Value_SetZero	
+	}
+	state Set_AO_Value_SetZero{
+        	when (efTestAndClear(zeroSetf)){
+				if(zeroSet == 1){
+               		for (i = 0; i < dataCount; i++){
+						data[i] = 0.0;
+						pvPut(data[i],SYNC);
+					}
+					zeroSet = 0;
+					pvPut(zeroSet,SYNC);
+				}
+		} state Set_AO_Value_SetZero
+	}
+}
+

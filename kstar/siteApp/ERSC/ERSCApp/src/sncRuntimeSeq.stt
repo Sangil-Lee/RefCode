@@ -1,0 +1,118 @@
+program sncRuntimeSeq
+
+option +r;
+option -c;
+
+/***********************************************
+    Shot Number
+***********************************************/
+
+int         seq_start;
+assign      seq_start to "CCS_SHOTSEQ_START";
+/*assign    seq_start to "ATCA_SHOTSEQ_START"; */
+monitor     seq_start;
+
+int       ts1_status;
+assign    ts1_status to "TS1_STATUS";
+monitor   ts1_status;
+
+int       ts2_status;
+assign    ts2_status to "TS2_STATUS";
+monitor   ts2_status;
+
+
+int        ts1_opmode;
+assign     ts1_opmode to "TS1_OP_MODE";
+monitor    ts1_opmode;
+
+int       ts1_run;
+assign    ts1_run to "TS1_SYS_RUN";
+monitor   ts1_run;
+
+int       ts1_period;
+assign    ts1_period to "TS1_B0_SET_STOP_TIME";
+monitor   ts1_period;
+
+
+int     tssg_start;
+assign  tssg_start   to "ERSC_START";
+
+int tssg_stop_pulse;
+assign tssg_stop_pulse  to "ERSC_STOP_PULSE";
+
+
+ss SequenceMonitor
+{
+   state wait_seq_start {
+     entry {
+       tssg_start = 0;
+       pvPut(tssg_start);
+     }
+     when(seq_start == 1 && ts1_opmode == 1 ) {
+       %%printf("<SNL>:got shot sequence start!\n");
+       tssg_start = 1;
+       pvPut(tssg_start);
+       epicsThreadSleep(1.);
+     }  state wait_ts1_run
+   }
+
+   state wait_ts1_run {
+     when( ts1_run == 1  && ts1_opmode == 1 ) {}  state wait_ts_stop
+
+     when( seq_start == 0) {
+        %%printf("abnormal sequence stop!\n");
+     } state wait_seq_start
+   }
+
+   state wait_ts_stop {
+     when( ts1_status==6 ) { }  state wait_seq_stop /* wait until data transfer */
+   }
+
+   state wait_seq_stop {
+     when( seq_start == 0 ) { }  state wait_seq_start  /* if sequence stop, then stop laser tirgger output */
+   }
+}
+
+/*
+ss SysRunMonitor
+{
+   state wait_sys_run {
+     when( ts1_run == 1 && ts1_opmode == 2) {} state wait_sys_stop
+   }
+   
+   state wait_sys_stop {
+     when(ts1_run == 0 && ts1_opmode == 2) {
+       tssg_stop_pulse = 1;
+       pvPut(tssg_stop_pulse);
+       epicsThreadSleep(0.5);
+       tssg_stop_pulse = 0;
+       pvPut(tssg_stop_pulse);
+     }  state wait_sys_run
+   }
+
+}
+*/
+
+ss SysRunMonitor
+{
+   state wait_sys_run {
+     when( ts1_run == 1 ) {} state wait_in_progress
+   }
+   
+    state wait_in_progress {
+     when( ts1_status==4 ) { }  state wait_sys_stop /* wait until in progress */
+   }
+   
+   state wait_sys_stop {
+     when( delay(ts1_period) ) {
+       tssg_stop_pulse = 1;
+       pvPut(tssg_stop_pulse);
+       epicsThreadSleep(0.5);
+       tssg_stop_pulse = 0;
+       pvPut(tssg_stop_pulse);
+     }  state wait_sys_run
+   }
+
+}
+
+

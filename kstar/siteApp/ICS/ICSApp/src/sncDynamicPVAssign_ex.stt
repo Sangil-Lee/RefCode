@@ -1,0 +1,44 @@
+int     mcaROILow[MAX_ROIS];
+assign  mcaROILow to {"","","","","","","","","","","","","","","","",
+	...
+		"","","","","","","","","","","","","","","",""};
+monitor mcaROILow; evflag  mcaROILowMon; sync mcaROILow mcaROILowMon;
+...
+
+state init {
+
+	when() {
+		...
+			for (i=0; i<nDetectors; i++) {
+				...
+					for (j=0; j<MAX_SCAS; j++) {
+						k = i*MAX_SCAS + j;
+						sprintf(temp, "%s%s%d.R%iLO", prefix, mca, det, j);
+						pvAssign(mcaROILow[k], temp);
+						pvMonitor(mcaROILow[k]);
+						...
+					}
+			}
+
+		...
+			state monitor_changes {
+				...
+					when(efTestAndClear(mcaROILowMon) ||
+							efTestAndClear(mcaROIHighMon)) {
+						/* Copy ROIs to SCAs */
+						for (i=0; i<nDetectors; i++) {
+							for (j=0; j<MAX_SCAS; j++) {
+								k = i*MAX_SCAS + j;
+								chan = mcaROILow[k];
+								if (chan < 0) chan = 0;
+								dxpSCALow[k] = chan;
+								pvPut(dxpSCALow[k]);
+								...
+							}
+						}
+						...
+
+					}
+			}
+	}
+

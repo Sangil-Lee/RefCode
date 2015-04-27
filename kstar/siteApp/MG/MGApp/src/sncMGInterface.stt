@@ -1,0 +1,150 @@
+program sncMGInterface
+
+option +r;
+option -c;
+
+%{
+#include  <stdio.h>
+#include  <limits.h>
+#include  <stdlib.h>
+#include  <string.h>
+#include  <time.h>
+#include  <unistd.h>
+#include  <errno.h>
+#include  <locale.h>
+
+#include  <cogent.h>
+
+#ifdef HAVE_SYS_TIME_H
+#include        <sys/time.h>
+#endif
+
+int WritePointToMG(const char* name)
+{
+
+	IP_Msg		*hmsg;
+	ST_STATUS	status;
+	PT_stCPOINT	point;
+	IP_Task		*htask;
+
+	char	*ptname = NULL, *ptvalue = NULL, *myname;
+	int security = 0;
+	short	type = PT_TYPE_VOID;
+	setlocale(LC_ALL, "");
+
+	char domain[15];
+	domain[15] = '\0';
+	strcpy(domain, IP_TaskDefaultDomain());
+	if (!(htask = IP_TaskCreateMe (IP_GetChannelID(), myname, domain, NULL, 0)))
+	{
+		fprintf (stderr, "Could not initialize Cascade IPC subsystem\n");
+		exit (1);
+	}
+
+	IP_TaskSetSecurity (htask, security);
+
+	hmsg = IP_MsgCreate(NULL, IP_MsgDefaultSize(), 0);
+
+	memset( &point, 0, sizeof(point));
+
+	point.name = name;
+	point.type = type;
+	point.conf = 100;
+	point.quality = 0xC0;
+
+	UT_ClockGetUTCTime(&point.seconds, &point.nanoseconds);
+
+	switch (point.type)
+	{
+		case PT_TYPE_INT32:
+			point.value.i = strtol(ptvalue, 0, 0);
+			break;
+		case PT_TYPE_REAL:
+			point.value.r = strtod (ptvalue, NULL);
+			break;
+		case PT_TYPE_STRING:
+			point.value.s = ptvalue;
+			break;
+		case PT_TYPE_VOID:
+		default:
+			{
+				/* try to autodetect type of point */
+				char* eos = 0;
+				/* it's a long if conversion goes to end of string */
+				eos = 0;
+				point.value.i = strtol(ptvalue, &eos, 0);
+				if(*eos == '\0')
+				{
+					point.type = PT_TYPE_INT32;
+					break;
+				};
+
+				/* it's a double if conversion goes to end of string */
+				eos = 0;
+				point.value.r = strtod(ptvalue, &eos);
+				if(*eos == '\0')
+				{
+					point.type = PT_TYPE_REAL;
+					break;
+				}
+
+				/* else it's a string */
+				point.type = PT_TYPE_STRING;
+				point.value.s = ptvalue;
+				break;
+			};
+	};
+
+	DH_SetTransmitFormat (PT_FMT_ASCII);
+	if( (status = DH_WritePoint(htask, &point, hmsg, NULL)) != ST_OK)
+		printf("Write Point Failed: %s\n", ST_StatusName(status));
+
+	return 0;
+}
+
+void	SetPVtoMGPoint(int *pVCB)
+{
+	const int count = 11;
+	int i = 0;
+	for(i = 0; i < count; i++)
+	{
+		printf("VCB[%d]:%d\n", i, pVCB[i]);
+	}
+};
+}%
+
+int mps_pf_vcb[11];
+assign mps_pf_vcb[0]	to "MPS_PF1_BI0_01";
+assign mps_pf_vcb[1]	to "MPS_PF2_BI0_01";
+assign mps_pf_vcb[2]	to "MPS_PF3U_BI0_01";
+assign mps_pf_vcb[3]	to "MPS_PF3L_BI0_01";
+assign mps_pf_vcb[4]	to "MPS_PF4U_BI0_01";
+assign mps_pf_vcb[5]	to "MPS_PF4L_BI0_01";
+assign mps_pf_vcb[6]	to "MPS_PF5U_BI0_01";
+assign mps_pf_vcb[7]	to "MPS_PF5L_BI0_01";
+assign mps_pf_vcb[8]	to "MPS_PF6U_BI0_01";
+assign mps_pf_vcb[9]	to "MPS_PF6L_BI0_01";
+assign mps_pf_vcb[10]	to "MPS_PF7_BI0_01";
+
+monitor mps_pf_vcb;
+evflag efMPS_PF_VCB;
+sync mps_pf_vcb efMPS_PF_VCB;
+
+ss KstarToMG
+{
+	state init
+	{
+		when(TRUE) {
+
+		}state KstarDataToMG
+	}
+
+	state KstarDataToMG
+	{
+		when(efTestAndClear(efMPS_PF_VCB))
+		{
+			SetPVtoMGPoint(mps_pf_vcb);
+		}state KstarDataToMG
+	}
+}
+

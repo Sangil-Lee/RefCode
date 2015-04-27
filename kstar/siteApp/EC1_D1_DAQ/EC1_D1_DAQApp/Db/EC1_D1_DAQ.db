@@ -1,0 +1,48 @@
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "NI6220 BoControl")
+  field(OUT, "@daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_AUTO_RUN") {
+  field(DTYP, "NI6220 BoControl")
+  field(OUT, "@auto_run")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_MIN_VOLT") {
+  field(DESC, "NI6220 Minimum Voltage")
+  field(DTYP, "NI6220 AoControl")
+  field(OUT , "@min_volt")
+  field(VAL , "-10")
+  field(PINI, "YES")
+}
+
+record(ao, "$(SYS)_MAX_VOLT") {
+  field(DESC, "NI6220 Maximum Voltage")
+  field(DTYP, "NI6220 AoControl")
+  field(OUT, "@max_volt")
+  field(VAL , "10")
+  field(PINI, "YES")
+}
+
+record(calcout, "$(SYS)_START_T0_SEC1_CALC") {
+  field(DESC, "Calcuration for START_T0_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "EC1B_LTU_P0_SEC0_T0 CPP")
+  field(OUT , "$(SYS)_START_T0_SEC1")
+  field(FLNK, "$(SYS)_START_T0_SEC1")
+}
+
+record(calcout, "$(SYS)_STOP_T1_SEC1_CALC") {
+  field(DESC, "Calcuration for STOP_T1_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "EC1B_LTU_P0_SEC0_T1 CPP")
+  field(OUT , "$(SYS)_STOP_T1_SEC1")
+  field(FLNK, "$(SYS)_STOP_T1_SEC1")
+}
+

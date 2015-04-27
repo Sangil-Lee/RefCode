@@ -1,0 +1,6 @@
+record(ai, "$(PVNAME)") {
+	field(DTYP, "S7plc")
+	field(INP, "@$(PLCNAME)/$(OFFSET) T=$(TYPE)")
+	field(SCAN, "I/O Intr")
+	field(PREC, "3")
+}

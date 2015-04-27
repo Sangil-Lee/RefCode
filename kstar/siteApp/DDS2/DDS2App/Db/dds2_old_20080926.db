@@ -1,0 +1,779 @@
+# 2007. 12. 17  add bo record......
+
+# 2007. 12. 24  remove bo record......
+# + PV: DDS2_getState  add field(PINI, "YES")
+
+
+
+
+record(ai, DDS2_masterGainAi2) {
+  field(DESC, "Analog input")
+  field(DTYP, "M6802 Raw Reading")
+  field(INP, "@master ai2 gain")
+}
+
+record(ai, DDS2_getState) {
+  field(DESC, "Analog input")
+  field(DTYP, "M6802 Raw Reading")
+  field(INP, "@master state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+}
+
+#record(ai, DDS2_myState) {
+#  field(DESC, "Analog input")
+#  field(INP, "getState")
+#}
+
+record(ao, DDS2_setTrigInternal) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master inter_trig")
+}
+
+record(ao, DDS2_setTrigExternal) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master exter_trig")
+}
+
+record(ao, DDS2_setT0) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master time_t0")
+}
+
+record(ao, DDS2_setT1) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master time_t1")
+}
+
+record(ao, DDS2_setInternal) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master internal_clk")
+}
+
+record(ao, DDS2_setExternal) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master external_clk")
+}
+
+record(ao, DDS2_setOpMode) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master set_mode")
+}
+
+record(ao, DDS2_createShot) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master create_shot")
+}
+
+record(ao, DDS2_shotNumber) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master shot_num")
+}
+
+record(ao, DDS2_writeTree) {
+  field(DESC, "MDSplus model tree write")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master tree_write")
+}
+
+record(ao, DDS2_readTree) {
+  field(DESC, "MDSplus model tree read")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master tree_read")
+}
+
+record(ao, DDS2_masterCHgain) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master ch_gain")
+}
+
+record(ao, DDS2_sampleRate) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master smpl_rate")
+}
+
+record(ao, DDS2_ADCstart) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master adc_start")
+}
+
+record(ao, DDS2_ADCstop) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master adc_stop")
+}
+
+record(ao, DDS2_DAQstart) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master daq_start")
+}
+
+record(ao, DDS2_DAQstop) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master daq_stop")
+}
+
+record(ao, DDS2_LocalSave) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master local_save")
+}
+
+record(ao, DDS2_RemoteSave) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master remote_save")
+}
+
+record(ao, DDS2_master_chBitMask) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master ch_onoff")
+}
+
+record(ao, DDS2_Dev2_chBitMask) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@Dev2 ch_onoff")
+}
+
+record(ao, DDS2_Dev3_chBitMask) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@Dev3 ch_onoff")
+}
+
+record(ao, DDS2_chUsedNum) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master ch_useNum")
+}
+
+record(ao, DDS2_dev3Run) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@Dev3 ad_run")
+}
+
+record(ao, DDS2_dev3CHgain) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@Dev3 ch_gain")
+}
+
+record(ao, DDS2_sendTree) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@master raw2ascii")
+}
+
+record(ao, DDS2_dev3Convert) {
+  field(DESC, "Analog output")
+  field(DTYP, "M6802 Control")
+  field(OUT, "@Dev3 raw2ascii")
+}
+
+record(stringout, DDS2_tag_0) {
+  field(DESC, "ch0 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 0")
+}
+
+record(stringout, DDS2_tag_1) {
+  field(DESC, "ch1 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 1")
+}
+
+record(stringout, DDS2_tag_2) {
+  field(DESC, "ch2 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 2")
+}
+
+record(stringout, DDS2_tag_3) {
+  field(DESC, "ch3 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 3")
+}
+
+record(stringout, DDS2_tag_4) {
+  field(DESC, "ch4 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 4")
+}
+
+record(stringout, DDS2_tag_5) {
+  field(DESC, "ch5 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 5")
+}
+
+record(stringout, DDS2_tag_6) {
+  field(DESC, "ch6 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 6")
+}
+
+record(stringout, DDS2_tag_7) {
+  field(DESC, "ch7 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 7")
+}
+
+record(stringout, DDS2_tag_8) {
+  field(DESC, "ch8 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 8")
+}
+
+record(stringout, DDS2_tag_9) {
+  field(DESC, "ch9 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 9")
+}
+
+record(stringout, DDS2_tag_10) {
+  field(DESC, "ch10 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 10")
+}
+
+record(stringout, DDS2_tag_11) {
+  field(DESC, "ch11 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 11")
+}
+
+record(stringout, DDS2_tag_12) {
+  field(DESC, "ch12 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 12")
+}
+
+record(stringout, DDS2_tag_13) {
+  field(DESC, "ch13 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 13")
+}
+
+record(stringout, DDS2_tag_14) {
+  field(DESC, "ch14 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 14")
+}
+
+record(stringout, DDS2_tag_15) {
+  field(DESC, "ch15 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 15")
+}
+
+record(stringout, DDS2_tag_16) {
+  field(DESC, "ch16 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 16")
+}
+
+record(stringout, DDS2_tag_17) {
+  field(DESC, "ch17 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 17")
+}
+
+record(stringout, DDS2_tag_18) {
+  field(DESC, "ch18 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 18")
+}
+
+record(stringout, DDS2_tag_19) {
+  field(DESC, "ch19 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 19")
+}
+
+record(stringout, DDS2_tag_20) {
+  field(DESC, "ch20 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 20")
+}
+
+record(stringout, DDS2_tag_21) {
+  field(DESC, "ch21 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 21")
+}
+
+record(stringout, DDS2_tag_22) {
+  field(DESC, "ch22 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 22")
+}
+
+record(stringout, DDS2_tag_23) {
+  field(DESC, "ch23 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 23")
+}
+
+record(stringout, DDS2_tag_24) {
+  field(DESC, "ch24 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 24")
+}
+
+record(stringout, DDS2_tag_25) {
+  field(DESC, "ch25 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 25")
+}
+
+record(stringout, DDS2_tag_26) {
+  field(DESC, "ch26 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 26")
+}
+
+record(stringout, DDS2_tag_27) {
+  field(DESC, "ch27 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 27")
+}
+
+record(stringout, DDS2_tag_28) {
+  field(DESC, "ch28 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 28")
+}
+
+record(stringout, DDS2_tag_29) {
+  field(DESC, "ch29 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 29")
+}
+
+record(stringout, DDS2_tag_30) {
+  field(DESC, "ch30 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 30")
+}
+
+record(stringout, DDS2_tag_31) {
+  field(DESC, "ch31 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 31")
+}
+
+record(stringout, DDS2_tag_32) {
+  field(DESC, "ch32 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 32")
+}
+
+record(stringout, DDS2_tag_33) {
+  field(DESC, "ch33 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 33")
+}
+
+record(stringout, DDS2_tag_34) {
+  field(DESC, "ch34 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 34")
+}
+
+record(stringout, DDS2_tag_35) {
+  field(DESC, "ch35 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 35")
+}
+
+record(stringout, DDS2_tag_36) {
+  field(DESC, "ch36 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 36")
+}
+
+record(stringout, DDS2_tag_37) {
+  field(DESC, "ch37 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 37")
+}
+
+record(stringout, DDS2_tag_38) {
+  field(DESC, "ch38 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 38")
+}
+
+record(stringout, DDS2_tag_39) {
+  field(DESC, "ch39 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 39")
+}
+
+record(stringout, DDS2_tag_40) {
+  field(DESC, "ch40 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 40")
+}
+
+record(stringout, DDS2_tag_41) {
+  field(DESC, "ch41 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 41")
+}
+
+record(stringout, DDS2_tag_42) {
+  field(DESC, "ch42 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 42")
+}
+
+record(stringout, DDS2_tag_43) {
+  field(DESC, "ch43 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 43")
+}
+
+record(stringout, DDS2_tag_44) {
+  field(DESC, "ch44 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 44")
+}
+
+record(stringout, DDS2_tag_45) {
+  field(DESC, "ch45 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 45")
+}
+
+record(stringout, DDS2_tag_46) {
+  field(DESC, "ch46 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 46")
+}
+
+record(stringout, DDS2_tag_47) {
+  field(DESC, "ch47 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 47")
+}
+
+record(stringout, DDS2_tag_48) {
+  field(DESC, "ch48 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 48")
+}
+
+record(stringout, DDS2_tag_49) {
+  field(DESC, "ch49 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 49")
+}
+
+record(stringout, DDS2_tag_50) {
+  field(DESC, "ch50 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 50")
+}
+
+record(stringout, DDS2_tag_51) {
+  field(DESC, "ch51 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 51")
+}
+
+record(stringout, DDS2_tag_52) {
+  field(DESC, "ch52 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 52")
+}
+
+record(stringout, DDS2_tag_53) {
+  field(DESC, "ch53 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 53")
+}
+
+record(stringout, DDS2_tag_54) {
+  field(DESC, "ch54 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 54")
+}
+
+record(stringout, DDS2_tag_55) {
+  field(DESC, "ch55 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 55")
+}
+
+record(stringout, DDS2_tag_56) {
+  field(DESC, "ch56 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 56")
+}
+
+record(stringout, DDS2_tag_57) {
+  field(DESC, "ch57 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 57")
+}
+
+record(stringout, DDS2_tag_58) {
+  field(DESC, "ch58 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 58")
+}
+
+record(stringout, DDS2_tag_59) {
+  field(DESC, "ch59 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 59")
+}
+
+record(stringout, DDS2_tag_60) {
+  field(DESC, "ch60 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 60")
+}
+
+record(stringout, DDS2_tag_61) {
+  field(DESC, "ch61 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 61")
+}
+
+record(stringout, DDS2_tag_62) {
+  field(DESC, "ch62 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 62")
+}
+
+record(stringout, DDS2_tag_63) {
+  field(DESC, "ch63 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 63")
+}
+
+record(stringout, DDS2_tag_64) {
+  field(DESC, "ch64 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 64")
+}
+
+record(stringout, DDS2_tag_65) {
+  field(DESC, "ch65 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 65")
+}
+
+record(stringout, DDS2_tag_66) {
+  field(DESC, "ch66 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 66")
+}
+
+record(stringout, DDS2_tag_67) {
+  field(DESC, "ch67 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 67")
+}
+
+record(stringout, DDS2_tag_68) {
+  field(DESC, "ch68 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 68")
+}
+
+record(stringout, DDS2_tag_69) {
+  field(DESC, "ch69 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 69")
+}
+
+record(stringout, DDS2_tag_70) {
+  field(DESC, "ch70 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 70")
+}
+
+record(stringout, DDS2_tag_71) {
+  field(DESC, "ch71 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 71")
+}
+
+record(stringout, DDS2_tag_72) {
+  field(DESC, "ch72 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 72")
+}
+
+record(stringout, DDS2_tag_73) {
+  field(DESC, "ch73 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 73")
+}
+
+record(stringout, DDS2_tag_74) {
+  field(DESC, "ch74 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 74")
+}
+
+record(stringout, DDS2_tag_75) {
+  field(DESC, "ch75 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 75")
+}
+
+record(stringout, DDS2_tag_76) {
+  field(DESC, "ch76 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 76")
+}
+
+record(stringout, DDS2_tag_77) {
+  field(DESC, "ch77 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 77")
+}
+
+record(stringout, DDS2_tag_78) {
+  field(DESC, "ch78 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 78")
+}
+
+record(stringout, DDS2_tag_79) {
+  field(DESC, "ch79 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 79")
+}
+
+record(stringout, DDS2_tag_80) {
+  field(DESC, "ch80 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 80")
+}
+
+record(stringout, DDS2_tag_81) {
+  field(DESC, "ch81 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 81")
+}
+
+record(stringout, DDS2_tag_82) {
+  field(DESC, "ch82 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 82")
+}
+
+record(stringout, DDS2_tag_83) {
+  field(DESC, "ch83 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 83")
+}
+
+record(stringout, DDS2_tag_84) {
+  field(DESC, "ch84 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 84")
+}
+
+record(stringout, DDS2_tag_85) {
+  field(DESC, "ch85 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 85")
+}
+
+record(stringout, DDS2_tag_86) {
+  field(DESC, "ch86 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 86")
+}
+
+record(stringout, DDS2_tag_87) {
+  field(DESC, "ch87 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 87")
+}
+
+record(stringout, DDS2_tag_88) {
+  field(DESC, "ch88 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 88")
+}
+
+record(stringout, DDS2_tag_89) {
+  field(DESC, "ch89 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 89")
+}
+
+record(stringout, DDS2_tag_90) {
+  field(DESC, "ch90 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 90")
+}
+
+record(stringout, DDS2_tag_91) {
+  field(DESC, "ch91 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 91")
+}
+
+record(stringout, DDS2_tag_92) {
+  field(DESC, "ch92 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 92")
+}
+
+record(stringout, DDS2_tag_93) {
+  field(DESC, "ch93 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 93")
+}
+
+record(stringout, DDS2_tag_94) {
+  field(DESC, "ch94 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 94")
+}
+
+record(stringout, DDS2_tag_95) {
+  field(DESC, "ch95 tag")
+  field(DTYP, "M6802 String Control")
+  field(OUT, "@master tag 95")
+}
+
+
+record(bi, DDS2_HeartBeat) {
+  field(DESC, "Analog input")
+  field(INP, "DDS2_calcHeartBeat NPP NMS")
+}
+
+
+record(calc, DDS2_calcHeartBeat) {
+  field(SCAN, "1 second")
+  field(FLNK, "DDS2_HeartBeat NPP NMS")
+  field(CALC, "A=0?1:0")
+  field(INPA, "DDS2_HeartBeat")
+}
+

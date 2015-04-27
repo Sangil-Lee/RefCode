@@ -1,0 +1,40 @@
+#!/bin/sh
+# stream-to-elastic-store:
+# streams to ramdisk with no overwrite using rtm-t-stream-disk
+# outputs each file name when done. This should be picked up by a downstream process	
+# eg run-live-mds.
+# the downstream process MUST delete files when done.
+# file overwrite is an error, rtm-t-stream-disk will fail.
+
+# RECYCLE: number of times host buffers are copied before overwrite
+# with default 66 x 1MB HB's, total 660MB, this works well.
+export RECYCLE=9
+
+mount | grep /mnt/disk >/dev/null
+if [ $? -ne 0 ] ; then
+	sudo mkdir -p /mnt/disk
+	sudo mount -t tmpfs none /mnt/disk -o size=1024M
+fi
+
+SLOT=${1:-100}
+shift
+
+HN=$(acqcmd -s $SLOT hostname)
+
+OR=/mnt/disk/$HN
+mkdir -p $OR
+rm -Rf $OR/*
+
+let SUBD=0
+while [ $SUBD -le $RECYCLE ]; do
+	SNAME=$(printf "%06d" $SUBD)
+	mkdir -p $OR/$SNAME
+	let SUBD=$SUBD+1
+done
+
+let DN="$SLOT % 100"
+
+NO_OVERWRITE=1  RTM_DEVNUM=${DN} OUTROOT=${OR} rtm-t-stream-disk $* 2>/tmp/rtm-t-stream-disk.log
+
+acqcmd -b $SLOT setAbort
+

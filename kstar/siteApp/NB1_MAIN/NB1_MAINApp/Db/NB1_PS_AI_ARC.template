@@ -1,0 +1,43 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC}
+{NB1_P1ARC_RTN_INT    NB1_P1ARC_RTN_INT    "Count"    plc1    "ARC Interrupt Time"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_VOLT    NB1_P1ARC_RTN_VOLT    "V"    plc1    "Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_AMP    NB1_P1ARC_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_POW    NB1_P1ARC_RTN_POW    "W"    plc1    "Power Return"    100000    0    100000    100000    0    0    1}
+{NB1_P1ARC_RTN_OVR    NB1_P1ARC_RTN_OVR    "V"    plc1    "Output Over Voltage Ref."    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_OCR    NB1_P1ARC_RTN_OCR    "A"    plc1    "Output Over Current Ref."    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_OPR    NB1_P1ARC_RTN_OPR    "W"    plc1    "Output Over Power Ref."    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_ITNO    NB1_P1ARC_RTN_ITNO    "Count"    plc1    "Number of Interrupt"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_VOUT    NB1_P1ARC_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_IOUT    NB1_P1ARC_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_POUT    NB1_P1ARC_AO_POUT    "W"    plc1    "Output Power Display"    100000    0    100000    100000    0    0    1}
+{NB1_P1ARC_AO_VDC    NB1_P1ARC_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_VAC    NB1_P1ARC_AO_VAC    "V"    plc1    "Input Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_IAC    NB1_P1ARC_AO_IAC    "A"    plc1    "Input Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_AO_FLT    NB1_P1ARC_AO_FLT    "Num"    plc1    "Fault Display"    1    -1    1    1    -1    -1    0}
+{NB1_P1ARC_AO_MAXNI    NB1_P1ARC_AO_MAXNI    "Num"    plc1    "MAXNI Display"    1    -1    1    1    -1    -1    0}
+
+# PS2 2012.07.03
+{NB1_P2ARC_RTN_VCMD		NB1_P2ARC_RTN_VCMD	"Count"    plc2    "Voltage Command"    	100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_ICMD		NB1_P2ARC_RTN_ICMD	"Count"    plc2    "Current Command"    	100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_PCMD_A	NB1_P2ARC_RTN_PCMD	"Count"    plc2    "Power Command"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_OVR		NB1_P2ARC_RTN_OVR	"Count"    plc2    "Output OV Ref."    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_OCR		NB1_P2ARC_RTN_OCR	"Count"    plc2    "Output OC Ref."    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_OPR		NB1_P2ARC_RTN_OPR	"Count"    plc2    "Output Over Power Ref."    	100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_RTN_ITIME	NB1_P2ARC_RTN_ITIME	"Count"    plc2    "ARC Interrupt Time"    	100000    0    100000    100000    0    0    0}
+{NB1_P2ARC_RTN_MAXNI	NB1_P2ARC_RTN_MAXNI	"Count"    plc2    "Number of Interrupt"    	100000    0    100000    100000    0    0    0}
+{NB1_P2ARC_STA_VOUT		NB1_P2ARC_STA_VOUT	"Count"    plc2    "Output Voltage"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_IOUT		NB1_P2ARC_STA_IOUT	"Count"    plc2    "Output Current"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_POUT		NB1_P2ARC_STA_POUT	"Count"    plc2    "Output Power"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_VDC		NB1_P2ARC_STA_VDC	"Count"    plc2    "DC-Link Voltage"    	100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_VAC		NB1_P2ARC_STA_VAC	"Count"    plc2    "Input Voltage"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_IAC		NB1_P2ARC_STA_IAC	"Count"    plc2    "Input Current"    		100000    0    100000    100000    0    0    3}
+{NB1_P2ARC_STA_NICNT	NB1_P2ARC_STA_NICNT	"Count"    plc2    "NI Counts"    		1    -1    1    1    -1    -1    0}
+{NB1_P2ARC_STA_FLT		NB1_P2ARC_STA_FLT	"Count"    plc2    "FLT Code"    		1    -1    1    1    -1    -1    0}
+
+}

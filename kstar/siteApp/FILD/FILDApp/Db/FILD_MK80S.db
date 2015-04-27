@@ -1,0 +1,266 @@
+record(bi, "FILD_VALVE_OPEN") {
+    field(DESC, "GATE Valve Open LS")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A0 @MX0100")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_VALVE_CLOSE") {
+    field(DESC, "GATE Valve Close LS")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A1 @MX0101")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_REMOTE_CTRL") {
+    field(DESC, "Local or Remote Control")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A2 @MX0102")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_EMG_STOP_RELEASE") {
+    field(DESC, "Local Emergency Stop/Normal")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A3 @MX0103")
+    field(ZNAM, "0")	# Stop
+    field(ONAM, "1")	# Normal : Release
+}
+
+record(bi, "FILD_JOG_IN") {
+    field(DESC, "Jog In")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A4 @MX0104")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_JOG_OUT") {
+    field(DESC, "Jog Out")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A5 @MX0105")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_AUTO_HAND") {
+    field(DESC, "Auto or Hand")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A6 @MX0106")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_PROBE_FORWARD") {
+    field(DESC, "Probe Forward")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A7 @MX0107")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bi, "FILD_PROBE_BACKWARD") {
+    field(DESC, "Probe Backward")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A8 @MX0108")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_VALVE_OPEN") {
+    field(DESC, "GATE Valve Open Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A0 @MX0200")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_VALVE_CLOSE") {
+    field(DESC, "GATE Valve Close Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A1 @MX0201")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_JOG_IN") {
+    field(DESC, "Remote Jog In Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A2 @MX0202")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_JOG_OUT") {
+    field(DESC, "Remote Jog Out Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A3 @MX0203")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_AUTO_HAND") {
+    field(DESC, "Auto/Hand Switch Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A4 @MX0204")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_EMG_STOP_RELEASE") {
+    field(DESC, "Emergency Stop Release Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A5 @MX0205")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_CMD_AUTO_START") {
+    field(DESC, "Auto Start Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A6 @MX0206")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+# TODO : TEST
+#record(bo, "FILD_CMD_REMOTE_CTRL") {
+#    field(DESC, "Remote Control")
+#    field(DTYP, "$(DTYPE)")
+#    field(OUT, "#L0 A7 @MX0207")
+#    field(ZNAM, "0")
+#    field(ONAM, "1")
+#}
+
+record(ai, "FILD_CUR_POS") {
+    field(DESC, "Current Position of Probe")
+    field(DTYP, "$(DTYPE)")
+    field(SCAN, "I/O Intr")
+    field(INP, "#L0 A0 @DW0001")
+}
+
+record(ao, "FILD_CMD_POS") {
+    field(DESC, "Position Setpoint Command")
+    field(DTYP, "$(DTYPE)")
+    field(OUT, "#L0 A0 @DW0002")
+}
+
+record(mbbi, "FILD_PLC_STS") {
+	field(DESC, "Status of MASTER-K80S PLC")
+	field(DTYP, "$(DTYPE)")
+	field(SCAN, "I/O Intr")
+	field(INP, "#L0 A0 @status")
+	field(NOBT, "2")
+	field(ZRST, "Connected")
+	field(ONST, "Timeout")
+	field(ZRSV, "NO_ALARM")
+	field(ONSV, "MAJOR")
+	field(PINI, "YES")
+}
+
+##################################################
+# Soft PVs
+##################################################
+record(calc, "FILD_STS_POS1") {
+	field(DESC, "Probe Position #1")
+	field(SCAN, ".5 second")
+	field(FLNK, "FILD_CUR_POS NPP NMS")
+	field(CALC, "A=1?1:0")
+	field(INPA, "FILD_CUR_POS")
+}
+
+record(calc, "FILD_STS_POS2") {
+	field(DESC, "Probe Position #2")
+	field(SCAN, ".5 second")
+	field(FLNK, "FILD_CUR_POS NPP NMS")
+	field(CALC, "A=2?1:0")
+	field(INPA, "FILD_CUR_POS")
+}
+
+record(calc, "FILD_STS_POS3") {
+	field(DESC, "Probe Position #3")
+	field(SCAN, ".5 second")
+	field(FLNK, "FILD_CUR_POS NPP NMS")
+	field(CALC, "A=3?1:0")
+	field(INPA, "FILD_CUR_POS")
+}
+
+record(calc, "FILD_STS_POS4") {
+	field(DESC, "Probe Position #4")
+	field(SCAN, ".5 second")
+	field(FLNK, "FILD_CUR_POS NPP NMS")
+	field(CALC, "A=4?1:0")
+	field(INPA, "FILD_CUR_POS")
+}
+
+record(calc, "FILD_STS_POS5") {
+	field(DESC, "Probe Position #5")
+	field(SCAN, ".5 second")
+	field(FLNK, "FILD_CUR_POS NPP NMS")
+	field(CALC, "A=5?1:0")
+	field(INPA, "FILD_CUR_POS")
+}
+
+record(bo, "FILD_SET_POS1") {
+    field(DESC, "Set postion 1")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_SET_POS2") {
+    field(DESC, "Set postion 2")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_SET_POS3") {
+    field(DESC, "Set postion 3")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_SET_POS4") {
+    field(DESC, "Set postion 4")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_SET_POS5") {
+    field(DESC, "Set postion 5")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(bo, "FILD_SET_AUTO_HAND") {
+    field(DESC, "Set Auto/Hand")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+# Test PLC mode
+record(bo, "FILD_TEST_PLC_ENABLE") {
+    field(DESC, "Enable Test PLC mode")
+    field(DTYP, "Soft Channel")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+# End of file

@@ -1,0 +1,20 @@
+record(waveform, "MC_DAQ_AI00")
+{
+	field(DESC, "VXI DAQ Wave 00")
+	field(DTYP, "VXI1564a Wave Reading")
+	field(INP, "@Dev1 Dev1/ai0 0 waveform")
+ 	field(SCAN, "I/O Intr")
+	field(FLNK, "MC_DAQ_AI00_EFA PP NMS")
+	field(NELM, "10000")
+	field(FTVL, "DOUBLE")
+}
+
+#record(waveform, "$(PV_NAME)")
+#{
+#	field(DESC, "$(DSC)")
+#	field(DTYP, "vxi1564a Wave Reading")
+#    	field(INP, "@$(TASK) $(CHNAME) $(CHNU) waveform")
+#    	field(SCAN, "I/O Intr")
+#	field(NELM, "10000")
+#	field(FTVL, "DOUBLE")
+#}

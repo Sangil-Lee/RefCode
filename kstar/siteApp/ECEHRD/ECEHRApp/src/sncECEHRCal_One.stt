@@ -1,0 +1,137 @@
+program sncECEHRCal
+
+option +r;
+option -c;
+
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% int status = 0;
+%% int null = 0;
+%% int tstat;
+%% int len;
+%% char buf2[128];
+%% int dtypeLong = DTYPE_LONG; 
+%% int idesc;
+
+%% #define ACQ196               "acq196_425"
+%% #define A425_1               "a425_1"
+%% #define A425_2               "a425_2"
+%% #define A425_3               "a425_3"
+
+long ltuShotStart;
+
+long calStart;
+long calStartNumber;
+long calCurrentNumber;
+long calStopNumber;
+
+assign ltuShotStart to "ECEHR_LTU_shotStart";
+
+assign calStart to "ECEHR_CAL_MODE_START";
+assign calStartNumber to "ECEHR_CAL_START_NUMBER";
+assign calCurrentNumber to "ECEHR_CAL_CURRENT_NUMBER";
+assign calStopNumber to "ECEHR_CAL_STOP_NUMBER";
+
+monitor ltuShotStart;
+
+monitor calStart;
+monitor calStartNumber;
+monitor calCurrentNumber;
+monitor calStopNumber;
+
+ss ss1 {
+    state init {
+	when (TRUE) {
+	    printf("sncECE CAL: Startup delay over\n");
+	} state eceSetArm
+    }
+    state eceSetArm {
+	when (delay(0.1)) {
+		if(calStart == 1){
+			if(calCurrentNumber < calStartNumber){
+				calCurrentNumber = calStartNumber;
+                        	pvPut(calCurrentNumber,SYNC);
+				printf("I am here : currentShot 111 : %d \n",calCurrentNumber);
+			}
+			if (calCurrentNumber >= calStartNumber) {
+				calCurrentNumber = calCurrentNumber + 1;
+                        	pvPut(calCurrentNumber,SYNC);
+				printf("I am here : currentShot 2222 :  %d\n", calCurrentNumber);
+			}
+	   		%% epicsThreadSleep(1.);
+			%%     int idesc = descr(&dtypeLong, &tstat, &null);
+                        %%     sprintf(buf2, "TCL(\"set current %s %d\")",ACQ196,pVar->calCurrentNumber);
+                        %%     status = MdsValue(buf2, &idesc, &null, &len);
+                        %%     printf("MDSplus ACQ196 Current Status : %d\n",status);
+                        %%     if ( !statusOk(status) ){
+                        %%             printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                        %%     }
+                        %%     else printf(" Set Current Shot Number ACQ196 successed %d\n", pVar->calCurrentNumber);
+
+                        %%     sprintf(buf2, "TCL(\"set current %s %d\")",A425_1,pVar->calCurrentNumber);
+                        %%     status = MdsValue(buf2, &idesc, &null, &len);
+                        %%     printf("MDSplus A425_1 Current Status : %d\n",status);
+                        %%     if ( !statusOk(status) ){
+                        %%             printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                        %%     }
+                        %%     else printf(" Set Current Shot Number A425_1 successed %d\n", pVar->calCurrentNumber);
+
+                        %%     sprintf(buf2, "TCL(\"set current %s %d\")",A425_2,pVar->calCurrentNumber);
+                        %%     status = MdsValue(buf2, &idesc, &null, &len);
+                        %%     printf("MDSplus A425_2 Current Status : %d\n",status);
+                        %%     if ( !statusOk(status) ){
+                        %%             printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                        %%     }
+                        %%     else printf(" Set Current Shot Number A425_2 successed %d\n", pVar->calCurrentNumber);
+
+                        %%     sprintf(buf2, "TCL(\"set current %s %d\")",A425_3,pVar->calCurrentNumber);
+                        %%     status = MdsValue(buf2, &idesc, &null, &len);
+                        %%     printf("MDSplus A425_3 Current Status : %d\n",status);
+                        %%     if ( !statusOk(status) ){
+                        %%             printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                        %%     }
+                        %%     else printf(" Set Current Shot Number A425_3 successed %d\n", pVar->calCurrentNumber);
+			system("/home/dt100/bin/acq196_425_newshot");
+			printf("sncECECAL : set Create Tree done\n");
+			system("/usr/local/bin/acqcmd -s 100 set.route d0 in lemo out fpga");
+			system("/usr/local/bin/acqcmd -b 100 setExternalClock DI0 2");
+			printf("sncECECAL Clock External In 1MHz : N=2 Local Sample Rate 500kHz \n");
+			system("/usr/local/bin/acqcmd -b 100 set.channelBlockMask 111");
+			system("/usr/local/bin/acqcmd -s 100 set.route d3 in lemo out fpga");
+			system("/usr/local/bin/acqcmd -b 100 set.trig DI3 rising");
+			system("/usr/local/bin/acqcmd -b 100 setMode SOFT_CONTINUOUS 1024");
+			system("/usr/local/bin/acqcmd -b 100 setArm");
+			printf("sncECECAL : set Arming done\n");
+	   		%% epicsThreadSleep(1.);
+			if(ltuShotStart == 0) {
+				ltuShotStart=1;
+				pvPut(ltuShotStart,SYNC);	
+			} else {
+				ltuShotStart=0;
+                                pvPut(ltuShotStart,SYNC);
+			}
+			%% /*	system("export rtmt_path=/home/dt100/TEST/KSTAR/bin/rtmt");  */
+			%% /*	system("export PATH=/home/dt100/TEST/KSTAR/bin:$PATH");      */
+			%% /*	system("source /home/dt100/TEST/KSTAR/setup.env");           */
+			printf("sncECECAL : set Stream done\n");
+			system("/home/dt100/TEST/KSTAR/bin/kstarECE");
+			printf("sncECECAL : end of Stream done\n");
+	   		printf("sncECECAL : during data acquisition \n");
+	   		%% epicsThreadSleep(11.);
+			system("/usr/local/bin/acqcmd -b 100 setAbort");
+	    		printf("sncECECAL Test : set Aborting done\n");
+	   		%% epicsThreadSleep(25.);
+			if(calCurrentNumber > calStopNumber) {
+				calStart = 0;
+				pvPut(calStart,SYNC);
+				printf("sncECECAL : end of shot done\n");
+			}
+		}
+	} state eceSetArm 
+    }
+}

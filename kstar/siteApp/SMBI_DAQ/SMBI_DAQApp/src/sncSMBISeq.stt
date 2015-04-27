@@ -1,0 +1,57 @@
+program sncSMBISeq
+
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+
+double startT0;
+double stopT1;
+double ltuT0;
+double ltuT1;
+
+assign opMode to "SMBI_DAQ_OP_MODE";
+assign status to "SMBI_DAQ_STATUS";
+assign sysArming to "SMBI_DAQ_SYS_ARMING";
+assign autoRun to "SMBI_DAQ_AUTO_RUN";
+
+assign startT0 to "SMBI_DAQ_START_T0_SEC1";
+assign stopT1 to "SMBI_DAQ_STOP_T1_SEC1";
+assign ltuT0 to "SMBI_LTU_T0_p0";
+assign ltuT1 to "SMBI_LTU_T1_p0";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+
+
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+ss setT0T1Seq {
+	state setT0T1 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT0T1 
+	}
+}

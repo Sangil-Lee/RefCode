@@ -1,0 +1,60 @@
+record(ai, "$(SYS)_$(SUB)_$(CTRL)_P0") {
+  field(DESC, "$(CTRL) Gauge0 pressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) prs 0")
+  field(PREC, "2")
+  field(EGU, "mBar")
+  field(HHSV, "$(HHSV)")
+  field(HSV, "$(HSV)")
+  field(HIHI, "5e-4")
+  field(HIGH, "1e-4")
+}
+
+record(ai, "$(SYS)_$(SUB)_$(CTRL)_P1") {
+  field(DESC, "$(CTRL) Gauge1 pressure")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) prs 1")
+  field(PREC, "2")
+  field(EGU, "mBar")
+  field(HHSV, "$(HHSV)")
+  field(HSV, "$(HSV)")
+  field(HIHI, "5e-4")
+  field(HIGH, "1e-4")
+}
+
+
+record(stringin, "$(SYS)_$(SUB)_$(CTRL)_GST0") {
+  field(DESC, "$(CTRL) Gauge0 Status")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) gst 0")
+}
+
+record(stringin, "$(SYS)_$(SUB)_$(CTRL)_GST1") {
+  field(DESC, "$(CTRL) Gauge1 Status")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) gst 1")
+}
+
+record(stringin, "$(SYS)_$(SUB)_$(CTRL)_VER") {
+  field(DESC, "$(CTRL) Firmware version")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) firmware 0")
+}
+
+record(stringin, "$(SYS)_$(SUB)_$(CTRL)_UNIT") {
+  field(DESC, "$(CTRL) Unit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "TPG262 DualGauge")
+  field(INP, "@$(PORT) unit 0")
+}

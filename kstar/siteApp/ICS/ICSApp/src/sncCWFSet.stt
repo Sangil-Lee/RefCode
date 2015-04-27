@@ -1,0 +1,75 @@
+program sncCWFSet
+option +r;
+option -c;
+
+/*
+CWF_TMON_COMP_ROOM
+CWF_THERMOHYD1_ALARM
+CWF_THERMOHYD1_STATE
+CWF_THERMOHYD2_ALARM
+CWF_THERMOHYD2_STATE
+ICS_TMON_COMP_ROOM
+ICS_THERMOHYD1_STATE
+ICS_THERMOHYD1_ALARM
+ICS_THERMOHYD2_STATE
+ICS_THERMOHYD2_ALARM
+*/
+
+double  dICSTEMP;
+assign  dICSTEMP to "ICS_TMON_COMP_ROOM";
+monitor dICSTEMP;
+evflag	efICSTEMP;
+sync	dICSTEMP efICSTEMP;
+
+double  dCWFTEMP;
+assign  dCWFTEMP to "CWF_TMON_COMP_ROOM";
+monitor dCWFTEMP;
+
+int		nICSENV[4];
+assign	nICSENV to {"ICS_THERMOHYD1_STATE","ICS_THERMOHYD1_ALARM","ICS_THERMOHYD2_STATE","ICS_THERMOHYD2_ALARM"};
+monitor nICSENV;
+
+evflag	efICSENV;
+sync	nICSENV efICSENV;
+
+int		nCWFENV[4];
+assign	nCWFENV to {"CWF_THERMOHYD1_STATE","CWF_THERMOHYD1_ALARM","CWF_THERMOHYD2_STATE","CWF_THERMOHYD2_ALARM"};
+
+ss ICS_CWF_SetENV
+{
+	state init
+	{
+		when(TRUE)
+		{
+			pvGet(dICSTEMP); dCWFTEMP=dICSTEMP; pvPut(dCWFTEMP);
+			pvGet(nICSENV[0]); nCWFENV[0]=nICSENV[0]; pvPut(nCWFENV[0]);
+			pvGet(nICSENV[1]); nCWFENV[1]=nICSENV[1]; pvPut(nCWFENV[1]);
+			pvGet(nICSENV[2]); nCWFENV[2]=nICSENV[2]; pvPut(nCWFENV[2]);
+			pvGet(nICSENV[3]); nCWFENV[3]=nICSENV[3]; pvPut(nCWFENV[3]);
+
+		} state CWFSetEnv
+	}
+	state CWFSetEnv
+	{
+		when(delay(2.))
+		{
+			/*printf("Data Called\n");*/
+			/*pvGet(dICSTEMP); dCWFTEMP=dICSTEMP; pvPut(dCWFTEMP);*/
+			dCWFTEMP=dICSTEMP; pvPut(dCWFTEMP);
+		} state CWFSetEnv
+
+		when(delay(2.))
+		{
+			/*
+			pvGet(nICSENV[0]); nCWFENV[0]=nICSENV[0]; pvPut(nCWFENV[0]);
+			pvGet(nICSENV[1]); nCWFENV[1]=nICSENV[1]; pvPut(nCWFENV[1]);
+			pvGet(nICSENV[2]); nCWFENV[2]=nICSENV[2]; pvPut(nCWFENV[2]);
+			pvGet(nICSENV[3]); nCWFENV[3]=nICSENV[3]; pvPut(nCWFENV[3]);
+			*/
+			nCWFENV[0]=nICSENV[0]; pvPut(nCWFENV[0]);
+			nCWFENV[1]=nICSENV[1]; pvPut(nCWFENV[1]);
+			nCWFENV[2]=nICSENV[2]; pvPut(nCWFENV[2]);
+			nCWFENV[3]=nICSENV[3]; pvPut(nCWFENV[3]);
+		} state CWFSetEnv
+	}
+}

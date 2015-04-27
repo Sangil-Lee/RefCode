@@ -1,0 +1,57 @@
+record(ai, "$(PVNAME)")
+{
+  field(DESC, "Volt Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6122 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) value")
+}
+
+record(ai, "$(PVNAME)_RAW")
+{
+  field(DESC, "Raw Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6122 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) raw_value")
+}
+
+record(bo, "$(PVNAME)_ENABLE")
+{
+  field(DESC, "Enable archiving")
+  field(DTYP, "NI6122 BoControl")
+  field(OUT, "@enable $(DEV) $(CHAN)")
+  field(VAL, "1")
+  field(PINI, "YES")
+  field(ZNAM, "Disable")
+  field(ONAM, "Enable")
+}
+
+record(ao, "$(PVNAME)_RM")
+{
+  field(DESC, "RM")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(PVNAME)_U1")
+{
+  field(DESC, "U1")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(PVNAME)_U2")
+{
+  field(DESC, "U2")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(PVNAME)_TAU")
+{
+  field(DESC, "TAU")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(PVNAME)_DU")
+{
+  field(DESC, "DU")
+  field(DTYP, "Soft Channel")
+}
+

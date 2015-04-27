@@ -1,0 +1,19 @@
+record(bo, "$(PV)" )
+{
+ field(DESC, "$(DS)" )
+ field(DTYP, "M6802 Bo Control")
+ field(SCAN, "Passive")
+ field(OUT, "@$(MODE) $(ACT)" )
+ field(ZNAM, "0")
+ field(ONAM, "1")
+}
+
+record(bo, "$(PV)_STATE" )
+{
+ field(DESC, "$(DS)" )
+ field(SCAN, "Passive")
+# field(DOL, "$(PV)")
+# field(OMSL, "closed_loop")
+ field(ZNAM, "0")
+ field(ONAM, "1")
+}

@@ -1,0 +1,67 @@
+program sncPowParameter
+
+int para_apply;
+assign para_apply to "LH1_POW_AUTO_SET";
+monitor para_apply;
+
+float rf_pow;
+assign rf_pow to "LH1_PARM_RF_POW";
+monitor rf_pow;
+
+float rf_vgain;
+assign rf_vgain to "LH1_PARM_RF_VGAIN";
+
+int rf_dc_set;
+assign rf_dc_set to "LH1_RF_DC_SET";
+
+float ps_vk;
+assign ps_vk to "LH1_PS_VK_EAI";
+
+float ps_vak;
+assign ps_vak to "LH1_PS_VAK_EAI";
+
+int rf_apply;
+assign rf_apply to "LH1_RFK_PREAMP_CMD";
+
+ss PowParameterApply
+{
+	state low
+	{
+	    when(para_apply == 1)
+	    {
+			ps_vk = 70.0;
+			pvPut(ps_vk);
+
+			ps_vak = 58.8;
+			pvPut(ps_vak);
+
+			rf_vgain = (-0.00000003901 * rf_pow * rf_pow * rf_pow) + (0.00003509 * rf_pow * rf_pow) + (-0.01122 * rf_pow) + 2.537;
+			pvPut(rf_vgain);
+
+			rf_dc_set = 1;
+			pvPut(rf_dc_set,SYNC);
+			epicsThreadSleep(0.01);
+			rf_dc_set = 0;
+			pvPut(rf_dc_set,SYNC);
+
+			rf_apply = 1;
+			pvPut(rf_apply,SYNC);
+			epicsThreadSleep(0.01);
+			rf_apply = 0;
+			pvPut(rf_apply,SYNC);
+
+	    } state high
+	    when(delay(1))
+	    {
+	    } state high
+	}
+	state high
+	{
+	    when(para_apply == 0)
+	    {
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low
+	}
+}

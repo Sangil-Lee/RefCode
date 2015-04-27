@@ -1,0 +1,121 @@
+record(bi, "LH1_ALLDAQ_READY")
+{
+    field(DESC, "ALL_DAQ_READY")
+    field(SCAN, "Passive")
+    field(INP, "LH1_ALLDAQ_READY_C.VAL CPP")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+}
+record(calc, "LH1_ALLDAQ_READY_C")
+{
+    field(DESC, "ALL DAQ READY")
+    field(SCAN, "Passive")
+	field(CALC, "(A||B||C)?1:0")
+    field(INPA, "LH1_DAQ_RD_STATUS.VAL CPP NMP")
+	field(INPB, "LH1_RFK_DAQRDY_RTN.VAL CPP NMP")
+	field(INPC, "LH1_RFANT_DAQRDY_RTN.VAL CPP NMP")
+}
+
+record(bo, "LHCD_LTU_SET_KSTAR_FREE")
+{
+	field(DESC, "LTU_SET_KSTAR_MODE")
+	field(SCAN, "Passive")
+	field(DTYP, "EtherIP")
+	field(OMSL,	"supervisory")
+	field(OUT,	"@plc1 LH1_KSTAR_TRIG_STAT S 0.5")
+	field(ZNAM,	"OFF")
+	field(ONAM,	"ON")
+}
+record(calcout, "LHCD_LTU_SET_KSTAR_FREE_C")
+{
+	field(DESC, "PLC")
+	field(SCAN, ".1 second")
+	field(INPA, "LHCD_LTU_SET_FREE_RUN.VAL CPP")
+	field(CALC, "A")
+	field(OUT, "LHCD_LTU_SET_KSTAR_FREE.VAL NMP PP")
+}
+
+
+record(ao, "LH1_RFK_PULSE_VALUE")
+{
+	field(DESC, "RFK PULSE VALUE")
+	field(PREC, "3")
+	field(SCAN, "Passive")
+}
+	
+record(calcout, "LH1_RFK_PULSE_ADDCMD")
+{
+	field(DESC, "PULSE CMD PLUS 0.001")
+	field(SCAN, "Passive")
+	field(CALC, "A+B")
+	field(INPA, "LH1_RFK_PULSE_VALUE.VAL CPP")
+	field(INPB, "0.001")
+	field(OUT,	"LH1_RFK_PULSE_CMD.VAL CPP")
+}
+
+
+
+record(bo, "LH1_KSTAR_OPR_RDY")
+{
+	field(DESC, "LHCD OPERATION READY CMD")
+}
+
+record(calcout, "LH1_KSTAR_OPR_RDY_C")
+{
+	field(DESC, "Auto Ready Status")
+	field(SCAN, "Passive")
+	field(CALC, "(A==0)&&(C==1)?0:B")
+	field(INPA, "CCS_SHOTSEQ_START.VAL CPP")
+	field(INPB, "LH1_KSTAR_OPR_RDY.VAL PP")
+	field(INPC, "LH1_KSTAR_OPR_RDY_LAMP.VAL PP")
+	field(OUT, "LH1_KSTAR_OPR_RDY.VAL NMP PP")
+}
+record(calcout, "LH1_KSTAR_OPR_RDY_C1")
+{
+	field(DESC, "CALC READY VALUE")
+	field(SCAN, "Passive")
+	field(CALC, "(A==1)&&(B==C)?1:0")
+	field(INPA, "LH1_KSTAR_OPR_RDY.VAL CPP")
+	field(INPB, "LH1_KSTAR_OPR_PULSEON.VAL CPP")
+	field(INPC, "LH1_RF_ON_TIME.VAL CPP")
+	field(OUT,	"LH1_KSTAR_OPR_RDY.VAL NMP PP")
+}
+record(bi, "LH1_KSTAR_OPR_RDY_LAMP")
+{
+	field(DESC, "LHCD OPERATION READY")
+	field(SCAN, "Passive")
+	field(ZNAM, "Not Ready")
+	field(ONAM, "Ready")
+	field(ZSV,	"MAJOR")
+	field(OSV,	"NO_ALARM")
+}
+record(calcout, "LH1_KSTAR_OPR_RDY_LAMP_C")
+{
+	field(DESC, "LHCD OPERATION READY CALC")
+	field(SCAN, "Passive")
+	field(CALC, "A")
+	field(INPA, "LH1_KSTAR_OPR_RDY.VAL CPP")
+	field(OUT,	"LH1_KSTAR_OPR_RDY_LAMP.VAL NMP PP")
+}
+record(bi, "LH1_KSTAR_OPR_PER")
+{
+	field(DESC, " LHCD PERMISSION")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(ONAM, "1")
+	field(ZNAM, "0")
+}
+record(bo, "LH1_HVPS_OFF")
+{
+	field(DESC, "HV OFF SEQ")
+	field(ONAM, "HVOFF")
+	field(ZNAM, "Normal")
+	field(OSV,	"MAJOR")
+	field(ZSV,	"NO_ALARM")
+}
+record(ao, "LH1_KSTAR_OPR_PULSEON")
+{
+	field(DESC, "Physics Operator Set Pulse Value")
+	field(SCAN, "Passive")
+	field(PREC, "1")
+}

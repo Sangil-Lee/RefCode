@@ -1,0 +1,418 @@
+program sncMCMasterSet
+option +r;
+option -c;
+%% #include <string.h>
+
+int i; 
+int slotNu; 
+int dataCount;
+string tmpStr1;
+
+int masterFunSelAll;
+
+int valFunAbort;
+int valFunRegupdate;
+int valFunStart;
+int valFunStop;
+char valFunServer;
+char valFunTree;
+
+int selectFunSet[12];
+
+int setAbortFunSet[12];
+int setRegupFunSet[12];
+int setStartFunSet[12];
+int setStopFunSet[12];
+char setServerFunSet[12];
+char setTreeFunSet[12];
+
+assign masterFunSelAll to "MC_MASTER_FUN_SETUP_ALL";
+assign valFunAbort to "MC_MASTER_TASK_ABORT";
+assign valFunRegupdate to "MC_MASTER_TASK_REG_UPDATE";
+assign valFunStart to "MC_MASTER_TASK_START";
+assign valFunStop to "MC_MASTER_TASK_STOP";
+assign valFunServer to "MC_MASTER_SERVER_NAME";
+assign valFunTree to "MC_MASTER_TREE_NAME";
+
+assign selectFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setAbortFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setRegupFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setStartFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setStopFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setServerFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setTreeFunSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+monitor masterFunSelAll;
+evflag flagFunSetAll;
+sync masterFunSelAll flagFunSetAll;
+monitor valFunAbort;
+evflag flagFunAbort;
+sync valFunAbort flagFunAbort;
+monitor valFunRegupdate;
+evflag flagFunRegupdate;
+sync valFunRegupdate flagFunRegupdate;
+monitor valFunStart;
+evflag flagFunStart;
+sync valFunStart flagFunStart;
+monitor valFunStop;
+evflag flagFunStop;
+sync valFunStop flagFunStop;
+
+monitor valFunServer;
+evflag flagFunServer;
+sync valFunServer flagFunServer; 
+monitor valFunTree;
+evflag flagFunTree;
+sync valFunTree flagFunTree;
+
+monitor selectFunSet;
+monitor setAbortFunSet;
+monitor setRegupFunSet;
+monitor setStartFunSet;
+monitor setStopFunSet;
+monitor setServerFunSet;
+monitor setTreeFunSet;
+
+int masterSelectAll;
+int masterUpdate;
+
+float valBlipTime;
+int valTrig;
+int valFilter1;
+int valFilter2;
+int valFilter3;
+int valFilter4;
+int valRange1;
+int valRange2;
+int valRange3;
+int valRange4;
+float valCount;
+float valPrecount;
+double valPeriod;
+unsigned long valShotNum;
+float valStartTime;
+
+assign masterSelectAll to "MC_MASTER_SETUP_SELECT_ALL";
+assign masterUpdate to "MC_MASTER_SETUP_UPDATE";
+
+assign valBlipTime to "MC_MASTER_BLIP_TIME";
+assign valTrig to "MC_MASTER_EX_TRIG_REMOTE";
+assign valFilter1 to "MC_MASTER_FILTER_CH1";
+assign valFilter2 to "MC_MASTER_FILTER_CH2";
+assign valFilter3 to "MC_MASTER_FILTER_CH3";
+assign valFilter4 to "MC_MASTER_FILTER_CH4";
+assign valRange1 to "MC_MASTER_RANGE_CH1";
+assign valRange2 to "MC_MASTER_RANGE_CH2";
+assign valRange3 to "MC_MASTER_RANGE_CH3";
+assign valRange4 to "MC_MASTER_RANGE_CH4";
+assign valCount to "MC_MASTER_SAMPLE_COUNT";
+assign valPrecount to "MC_MASTER_SAMPLE_PRECOUNT";
+assign valPeriod to "MC_MASTER_SAMPLE_PERIOD";
+assign valShotNum to "MC_MASTER_SHOT_NUMBER";
+assign valStartTime to "MC_MASTER_START_TIME";
+
+monitor masterSelectAll;
+evflag masterSelFlag;
+sync masterSelectAll masterSelFlag;
+
+monitor masterUpdate;
+evflag masterFlag;
+sync masterUpdate masterFlag;
+
+monitor valBlipTime;
+monitor valTrig;
+monitor valFilter1;
+monitor valFilter2;
+monitor valFilter3;
+monitor valFilter4;
+monitor valRange1;
+monitor valRange2;
+monitor valRange3;
+monitor valRange4;
+monitor valCount;
+monitor valPrecount;
+monitor valPeriod;
+monitor valShotNum;
+monitor valStartTime;
+
+int selectSet[12];
+float setBlipTime[12];
+int setTrig[12];
+int setFilter1[12];
+int setFilter2[12];
+int setFilter3[12];
+int setFilter4[12];
+int setRange1[12];
+int setRange2[12];
+int setRange3[12];
+int setRange4[12];
+float setSCount[12];
+float setSPrecount[12];
+double setSPeriod[12];
+unsigned long setShotNum[12];
+float setStartTime[12];
+
+assign selectSet to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setBlipTime to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setTrig to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setFilter1 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setFilter2 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setFilter3 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setFilter4 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setRange1 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setRange2 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setRange3 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setRange4 to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setSCount to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setSPrecount to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setSPeriod to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setShotNum to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+assign setStartTime to {"", "", "", "", "", "",
+                	"", "", "", "", "", ""};
+
+monitor selectSet;
+monitor setBlipTime;
+monitor setTrig;
+monitor setFilter1;
+monitor setFilter2;
+monitor setFilter3;
+monitor setFilter4;
+monitor setRange1;
+monitor setRange2;
+monitor setRange3;
+monitor setRange4;
+monitor setSCount;
+monitor setSPrecount;
+monitor setSPeriod;
+monitor setShotNum;
+monitor setStartTime;
+
+ss mcMasteSetup{
+	state init{
+		when (TRUE){
+			slotNu=12;
+                        dataCount =0;
+                	for (i=1; i<=slotNu; i++){
+			%% 	sprintf(pVar->tmpStr1, "MC_MASTER_SELECT_SLOT%d", pVar->i);
+                        	pvAssign (selectSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_BLIP_TIME", pVar->i);
+                        	pvAssign (setBlipTime[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_EX_TRIG_REMOTE", pVar->i);
+                        	pvAssign (setTrig[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_FILTER_CH1", pVar->i);
+                        	pvAssign (setFilter1[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_FILTER_CH2", pVar->i);
+                        	pvAssign (setFilter2[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_FILTER_CH3", pVar->i);
+                        	pvAssign (setFilter3[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_FILTER_CH4", pVar->i);
+                        	pvAssign (setFilter4[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_RANGE_CH1", pVar->i);
+                        	pvAssign (setRange1[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_RANGE_CH2", pVar->i);
+                        	pvAssign (setRange2[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_RANGE_CH3", pVar->i);
+                        	pvAssign (setRange3[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_RANGE_CH4", pVar->i);
+                        	pvAssign (setRange4[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_SAMPLE_COUNT", pVar->i);
+                        	pvAssign (setSCount[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_SAMPLE_PRECOUNT", pVar->i);
+                        	pvAssign (setSPrecount[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_SAMPLE_PERIOD", pVar->i);
+                        	pvAssign (setSPeriod[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_SHOT_NUMBER", pVar->i);
+                        	pvAssign (setShotNum[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_START_TIME", pVar->i);
+                        	pvAssign (setStartTime[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+
+			%% 	sprintf(pVar->tmpStr1, "MC_MASTER_FUN_SELECT_SLOT%d", pVar->i);
+                        	pvAssign (selectFunSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_TASK_ABORT", pVar->i);
+                        	pvAssign (setAbortFunSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_TASK_REG_UPDATE", pVar->i);
+                        	pvAssign (setRegupFunSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_TASK_START", pVar->i);
+                        	pvAssign (setStartFunSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_TASK_STOP", pVar->i);
+                        	pvAssign (setStopFunSet[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_MDS_SERVER_NAME", pVar->i);
+                        	pvAssign (setServerFunSet[dataCount], tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "MC_SLOT%d_MDS_TREE_NAME", pVar->i);
+                        	pvAssign (setTreeFunSet[dataCount], tmpStr1);
+				dataCount++;
+                        }
+			printf("Data count number is %d\n",dataCount);
+		}state mc_set_value	
+	}
+	state mc_set_value{
+        	when (efTest(masterFlag) && masterUpdate==1){
+                	for (i = 0; i < dataCount; i++){
+                        	if(selectSet[i]==1){
+                        		setBlipTime[i]=valBlipTime;
+					pvPut(setBlipTime[i],ASYNC);
+					setTrig[i]=valTrig;
+					pvPut(setTrig[i],ASYNC);
+					setFilter1[i]=valFilter1;
+					pvPut(setFilter1[i],ASYNC);
+					setFilter2[i]=valFilter2;
+					pvPut(setFilter2[i],ASYNC);
+					setFilter3[i]=valFilter3;
+					pvPut(setFilter3[i],ASYNC);
+					setFilter4[i]=valFilter4;
+					pvPut(setFilter4[i],ASYNC);
+					setRange1[i]=valRange1;
+					pvPut(setRange1[i],ASYNC);
+					setRange2[i]=valRange2;
+					pvPut(setRange2[i],ASYNC);
+					setRange3[i]=valRange3;
+					pvPut(setRange3[i],ASYNC);
+					setRange4[i]=valRange4;
+					pvPut(setRange4[i],ASYNC);
+					setSCount[i]=valCount;
+					pvPut(setSCount[i],ASYNC);
+					setSPrecount[i]=valPrecount;
+					pvPut(setSPrecount[i],ASYNC);
+					setSPeriod[i]=valPeriod;
+					pvPut(setSPeriod[i],ASYNC);
+					setShotNum[i]=valShotNum;
+					pvPut(setShotNum[i],ASYNC);
+					setStartTime[i]=valStartTime;
+					pvPut(setStartTime[i],ASYNC);
+                        	}
+                	}
+                        masterUpdate=0;
+                        pvPut(masterUpdate);
+			efClear(masterFlag);
+		} state mc_set_value
+        	when (efTestAndClear(masterSelFlag)){
+                	if(masterSelectAll==1){
+				for (i = 0; i < dataCount; i++){
+                        		selectSet[i]=1;
+					pvPut(selectSet[i],ASYNC);
+                		}
+			} else if (masterSelectAll==0){
+				for (i = 0; i < dataCount; i++){
+                        		selectSet[i]=0;
+					pvPut(selectSet[i],ASYNC);
+                		}
+			}
+		} state mc_set_value
+        	when (efTestAndClear(flagFunSetAll)){
+                	if(masterFunSelAll==1){
+				for (i = 0; i < dataCount; i++){
+                        		selectFunSet[i]=1;
+					pvPut(selectFunSet[i],ASYNC);
+                		}
+			} else if (masterFunSelAll==0){
+				for (i = 0; i < dataCount; i++){
+                        		selectFunSet[i]=0;
+					pvPut(selectFunSet[i],ASYNC);
+                		}
+			}
+		} state mc_set_value
+        	when (efTest(flagFunAbort) && valFunAbort==1){
+                	for (i = 0; i < dataCount; i++){
+                        	if(selectFunSet[i]==1){
+                        		setAbortFunSet[i]=valFunAbort;
+					pvPut(setAbortFunSet[i],ASYNC);
+                        	}
+                	}
+                        valFunAbort=0;
+                        pvPut(valFunAbort);
+			efClear(flagFunAbort);
+		} state mc_set_value
+        	when (efTest(flagFunRegupdate) && valFunRegupdate==1){
+                	for (i = 0; i < dataCount; i++){
+                        	if(selectFunSet[i]==1){
+                        		setRegupFunSet[i]=valFunRegupdate;
+					pvPut(setRegupFunSet[i],ASYNC);
+                        	}
+                	}
+                        valFunRegupdate=0;
+                        pvPut(valFunRegupdate);
+			efClear(flagFunRegupdate);
+		} state mc_set_value
+        	when (efTest(flagFunStart) && valFunStart==1){
+                	for (i = 0; i < dataCount; i++){
+                        	if(selectFunSet[i]==1){
+                        		setStartFunSet[i]=valFunStart;
+					pvPut(setStartFunSet[i],ASYNC);
+                        	}
+                	}
+                        valFunStart=0;
+                        pvPut(valFunStart);
+			efClear(flagFunStart);
+		} state mc_set_value
+        	when (efTest(flagFunStop) && valFunStop==1){
+                	for (i = 0; i < dataCount; i++){
+                        	if(selectFunSet[i]==1){
+                        		setStopFunSet[i]=valFunStop;
+					pvPut(setStopFunSet[i],ASYNC);
+                        	}
+                	}
+                        valFunStop=0;
+                        pvPut(valFunStop);
+			efClear(flagFunStop);
+		} state mc_set_value
+			when (efTestAndClear(flagFunServer)){
+				for (i = 0; i < dataCount; i++){
+					if(selectFunSet[i]==1){
+						setServerFunSet[i]=valFunServer;
+						pvPut(setServerFunSet[i],ASYNC);
+					}
+				}
+		} state mc_set_value
+        	when (efTestAndClear(flagFunTree)){
+				for (i = 0; i < dataCount; i++){
+					if(selectFunSet[i]==1){
+						setTreeFunSet[i]=valFunTree;
+						pvPut(setTreeFunSet[i],ASYNC);
+					}
+				}
+		} state mc_set_value
+	}
+}
+

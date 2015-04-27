@@ -1,0 +1,1363 @@
+
+file {
+	name="/usr/local/epics/siteApp/testIcrfDMApp/2Mtx.adl"
+	version=020503
+}
+display {
+	object {
+		x=5
+		y=49
+		width=835
+		height=600
+	}
+	clr=14
+	bclr=0
+	cmap=""
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=85
+		y=165
+		width=125
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IPA Current"
+	alignment="North"
+}
+text {
+	object {
+		x=365
+		y=165
+		width=125
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Driver Current"
+	alignment="North"
+}
+text {
+	object {
+		x=645
+		y=165
+		width=125
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FPA Current"
+	alignment="North"
+}
+text {
+	object {
+		x=765
+		y=175
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Anode (A)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=560
+		y=190
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:fpa:IA"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=205
+		y=175
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Anode (A)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=0
+		y=190
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:ipa:IA"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+bar {
+	object {
+		x=280
+		y=190
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:driver:IA"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=485
+		y=175
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Anode (A)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=765
+		y=255
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screen (A)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=560
+		y=270
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:fpa:IS"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=485
+		y=255
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screen (A)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=280
+		y=270
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:driver:IS"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+bar {
+	object {
+		x=0
+		y=270
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:ipa:IS"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="off"
+	showScale="off"
+	showBar="normal"
+}
+text {
+	object {
+		x=205
+		y=255
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Screen (A)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=485
+		y=335
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Grid (A)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=280
+		y=350
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:driver:IG"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+bar {
+	object {
+		x=560
+		y=350
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:fpa:IG"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=765
+		y=335
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Grid (A)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=365
+		y=420
+		width=125
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Driver Power"
+	alignment="North"
+}
+text {
+	object {
+		x=645
+		y=420
+		width=125
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FPA Power"
+	alignment="North"
+}
+text {
+	object {
+		x=765
+		y=430
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Forward (MW)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=560
+		y=445
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:fpa:IA"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+bar {
+	object {
+		x=280
+		y=445
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:driver:IA"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=485
+		y=430
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Forward (kW)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=765
+		y=510
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reflected (MW)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=560
+		y=525
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:fpa:IS"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+text {
+	object {
+		x=485
+		y=510
+		width=65
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Reflected (kW)"
+	alignment="NorthEast"
+}
+bar {
+	object {
+		x=280
+		y=525
+		width=270
+		height=60
+	}
+	"dynamic attribute" {
+		clr="alarm"
+	}
+	monitor {
+		chan="icrf:2mw:driver:IS"
+		clr=14
+		bclr=53
+	}
+	override {
+	}
+	label="limits"
+	scaleType="linear"
+	showAlarmLimits="on"
+	showScale="on"
+	showBar="normal"
+}
+"message button" {
+	type="toggle"
+	object {
+		x=40
+		y=355
+		width=60
+		height=30
+	}
+	control {
+		chan="icrf:2mw:operate"
+		clr=14
+		bclr=57
+	}
+	label="Operate"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	type="push"
+	object {
+		x=40
+		y=400
+		width=50
+		height=30
+	}
+	control {
+		chan="icrf:2mw:hvon"
+		clr=14
+		bclr=57
+	}
+	label="HV On"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	type="push"
+	object {
+		x=40
+		y=440
+		width=50
+		height=30
+	}
+	control {
+		chan="icrf:2mw:hvoff"
+		clr=14
+		bclr=57
+	}
+	label="HV Off"
+	press_msg="1"
+	release_msg="0"
+}
+"message button" {
+	type="push"
+	object {
+		x=40
+		y=480
+		width=50
+		height=30
+	}
+	control {
+		chan="icrf:2mw:reset"
+		clr=14
+		bclr=57
+	}
+	label="Reset"
+	press_msg="1"
+	release_msg="0"
+}
+polyline {
+	object {
+		x=0
+		y=35
+		width=832
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(1,36)
+		(831,36)
+	}
+}
+polyline {
+	object {
+		x=468
+		y=426
+		width=203
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(469,427)
+		(670,427)
+	}
+}
+polyline {
+	object {
+		x=740
+		y=424
+		width=88
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(741,426)
+		(827,425)
+	}
+}
+polyline {
+	object {
+		x=280
+		y=425
+		width=88
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(281,427)
+		(367,426)
+	}
+}
+polyline {
+	object {
+		x=475
+		y=170
+		width=194
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(476,171)
+		(668,171)
+	}
+}
+polyline {
+	object {
+		x=185
+		y=170
+		width=194
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(186,171)
+		(378,171)
+	}
+}
+polyline {
+	object {
+		x=745
+		y=170
+		width=88
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(746,172)
+		(832,171)
+	}
+}
+polyline {
+	object {
+		x=0
+		y=170
+		width=99
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(1,172)
+		(98,171)
+	}
+}
+"message button" {
+	type="toggle"
+	object {
+		x=136
+		y=354
+		width=60
+		height=30
+	}
+	control {
+		chan="icrf:2mw:dlready"
+		clr=14
+		bclr=57
+	}
+	label="Dummy"
+	press_msg="1"
+	release_msg="0"
+	pressed_label="Dummy"
+}
+"text update" {
+	object {
+		x=324
+		y=3
+		width=70
+		height=25
+	}
+	monitor {
+		chan="icrf:dm:rfallow"
+		clr=14
+		bclr=55
+	}
+	override {
+	}
+	clrmod="alarm"
+	alignment="West"
+	format="string"
+}
+text {
+	object {
+		x=220
+		y=10
+		width=100
+		height=25
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Dummy Load Status :"
+	alignment="NorthEast"
+}
+	composite {
+		object {
+			x=20
+			y=43
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=124
+					y=43
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:door"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=20
+					y=50
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Door/Ground Stick :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=220
+			y=43
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=324
+					y=43
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:cooling"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=220
+					y=50
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Cooling Status :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=420
+			y=43
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=524
+					y=43
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:waterovt"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=420
+					y=50
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Water Temperature :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=620
+			y=43
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=724
+					y=43
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:filaments"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=620
+					y=50
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Filaments Volts :"
+				alignment="NorthEast"
+			}
+		}
+	}
+"text update" {
+	object {
+		x=524
+		y=3
+		width=70
+		height=25
+	}
+	monitor {
+		chan="icrf:2mw:lowrf"
+		clr=14
+		bclr=55
+	}
+	override {
+	}
+	clrmod="alarm"
+	alignment="West"
+	format="string"
+}
+text {
+	object {
+		x=420
+		y=10
+		width=100
+		height=25
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RF Status :"
+	alignment="NorthEast"
+}
+	composite {
+		object {
+			x=20
+			y=3
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=124
+					y=3
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:rem"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=20
+					y=10
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Remote :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=20
+			y=123
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=124
+					y=123
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:drvcrwb"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=20
+					y=130
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Crowbar :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=220
+			y=123
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=324
+					y=123
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:crwblockout"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=220
+					y=130
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Crowbar Lockout :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=220
+			y=83
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=324
+					y=83
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:ps"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=220
+					y=90
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Bias and Crowbar :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=20
+			y=83
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=124
+					y=83
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:bias"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=20
+					y=90
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Bias Volt. :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=420
+			y=83
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=524
+					y=83
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:hvready"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=420
+					y=90
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="HV Ready :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=620
+			y=83
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=724
+					y=83
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:screen"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=620
+					y=90
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Screen Volt. :"
+				alignment="NorthEast"
+			}
+		}
+	}
+	composite {
+		object {
+			x=620
+			y=3
+			width=174
+			height=32
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=724
+					y=3
+					width=70
+					height=25
+				}
+				monitor {
+					chan="icrf:2mw:vswr"
+					clr=14
+					bclr=55
+				}
+				override {
+				}
+				clrmod="alarm"
+				alignment="West"
+				format="string"
+			}
+			text {
+				object {
+					x=620
+					y=10
+					width=100
+					height=25
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="VSWR :"
+				alignment="NorthEast"
+			}
+		}
+	}

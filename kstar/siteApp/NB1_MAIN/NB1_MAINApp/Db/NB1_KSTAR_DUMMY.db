@@ -1,0 +1,112 @@
+record(calcout, "NB1_BEAM_INJECT_KSTAR_C")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "1 second")
+	field(OUT, "NB1_BEAM_INJECT_KSTAR.VAL NMP PP")
+	field(CALC, "A&B&C&D?1:0")
+	field(INPA, "NB1_VAC_GAV_O08.VAL CPP")
+	field(INPB, "NB1_VAC_GAV_O07.VAL CPP")
+	field(INPC, "NB1_SRV_RTN_CALTOP.VAL CPP")
+	field(INPD, "NB1_OPER_IS1_MODE.VAL CPP")
+}
+record(calcout, "NB1_BEAM_INJECT_DUMMY_C")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "1 second")
+	field(OUT, "NB1_BEAM_INJECT_DUMMY.VAL NMP PP")
+	field(CALC, "A&C&D&(B=0)?1:0")
+	field(INPA, "NB1_VAC_GAV_O08.VAL CPP")
+	field(INPB, "NB1_VAC_GAV_O07.VAL CPP")
+	field(INPC, "NB1_BLS_SRV_O01.VAL CPP")
+	field(INPD, "NB1_OPER_IS1_MODE.VAL CPP")
+}
+record(calcout, "NB1_BEAM2_INJECT_KSTAR_C")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "1 second")
+	field(OUT, "NB1_BEAM2_INJECT_KSTAR.VAL NMP PP")
+	field(CALC, "A&B&C&D?1:0")
+	field(INPA, "NB1_VAC_GAV_O16.VAL CPP")
+	field(INPB, "NB1_VAC_GAV_O07.VAL CPP")
+	field(INPC, "NB1_SRV_RTN_CALTOP.VAL CPP")
+	field(INPD, "NB1_OPER_IS2_MODE.VAL CPP")
+}
+record(calcout, "NB1_BEAM2_INJECT_DUMMY_C")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "1 second")
+	field(OUT, "NB1_BEAM2_INJECT_DUMMY.VAL NMP PP")
+	field(CALC, "A&C&D&(B=0)?1:0")
+	field(INPA, "NB1_VAC_GAV_O16.VAL CPP")
+	field(INPB, "NB1_VAC_GAV_O07.VAL CPP")
+	field(INPC, "NB1_BLS_SRV_O01.VAL CPP")
+	field(INPD, "NB1_OPER_IS2_MODE.VAL CPP")
+}
+record(bi, "NB1_INJECT_KSTAR_MODE")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "Passive")
+	field(INP, "NB1_INJECT_KSTAR_MODE_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+record(bi, "NB1_INJECT_DUMMY_MODE")
+{
+	field(DESC, "KSTAR MODE")
+	field(SCAN, "Passive")
+	field(INP, "NB1_INJECT_DUMMY_MODE_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+record(calc, "NB1_INJECT_KSTAR_MODE_C")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)|((C=0)&(B=1))|((D=0)&(A=1))?1:0")
+	field(INPA, "NB1_INJECT_KSTAR_MODE_C1.VAL CPP")
+	field(INPB, "NB1_INJECT_KSTAR_MODE_C2.VAL CPP")
+	field(INPC, "NB1_OPER_IS1_MODE.VAL CPP")
+	field(INPD, "NB1_OPER_IS2_MODE.VAL CPP")
+}
+record(calc, "NB1_INJECT_DUMMY_MODE_C")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)|((C=0)&(B=1))|((D=0)&(A=1))?1:0")
+	field(INPA, "NB1_INJECT_DUMMY_MODE_C1.VAL CPP")
+	field(INPB, "NB1_INJECT_DUMMY_MODE_C2.VAL CPP")
+	field(INPC, "NB1_OPER_IS1_MODE.VAL CPP")
+	field(INPD, "NB1_OPER_IS2_MODE.VAL CPP")
+}
+record(calc, "NB1_INJECT_KSTAR_MODE_C1")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)?1:0")
+	field(INPA, "NB1_BEAM_INJECT_KSTAR.VAL CPP")
+	field(INPB, "NB1_OPER_IS1_MODE.VAL CPP")
+}
+record(calc, "NB1_INJECT_DUMMY_MODE_C1")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)?1:0")
+	field(INPA, "NB1_BEAM_INJECT_DUMMY.VAL CPP")
+	field(INPB, "NB1_OPER_IS1_MODE.VAL CPP")
+}
+record(calc, "NB1_INJECT_KSTAR_MODE_C2")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)?1:0")
+	field(INPA, "NB1_BEAM2_INJECT_KSTAR.VAL CPP")
+	field(INPB, "NB1_OPER_IS2_MODE.VAL CPP")
+}
+record(calc, "NB1_INJECT_DUMMY_MODE_C2")
+{
+	field(DESC, "inject mode kstar")
+	field(SCAN, "Passive")
+	field(CALC, "(A&B)?1:0")
+	field(INPA, "NB1_BEAM2_INJECT_DUMMY.VAL CPP")
+	field(INPB, "NB1_OPER_IS2_MODE.VAL CPP")
+}

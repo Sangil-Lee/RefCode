@@ -1,0 +1,80 @@
+alias ltr='ls -ltr'
+alias psr='ps -edf'
+
+# SSH
+alias myhost='cat /etc/hosts'
+
+# Current working directory
+export PATH=.:$PATH
+
+# Subversion
+export SVN_EDITOR=vim
+export SVN_PRJ_HOME="${EPICS_PATH}/siteApp/${SITE_APP_NAME}"
+
+alias ss='svn status'
+alias sq='svn status -q'
+alias sup='svn update'
+alias slog='svn log'
+alias sdiff='svn diff'
+alias sdiff2='svn diff -r prev'
+alias sinfo='svn info'
+alias svncls='currdir=`pwd`; cd ${SVN_PRJ_HOME}; svn cleanup ; cd ${currdir}'
+
+# vncserver
+alias startvnc='vncserver -geometry 1800x1000'
+
+################################################################
+
+# EPICS
+alias epics='cd ${EPICS_PATH}'
+alias base='cd ${EPICS_BASE}'
+alias ext='cd ${EPICS_EXTENSIONS}'
+alias slib='cd ${EPICS_PATH}/siteLib'
+alias sapp='cd ${EPICS_PATH}/siteApp'
+
+# SFW
+alias sfw='cd ${EPICS_SITE}/sfwLib/src'
+alias sfwdb='cd ${EPICS_SITE}/sfwLib/Db'
+
+# for IOC Application
+export SITE_APP_NAME=RBA
+export SITE_APP_PATH=${EPICS_PATH}/siteApp/${SITE_APP_NAME}
+
+alias dev='cd ${SITE_APP_PATH}'
+alias dbd='cd ${SITE_APP_PATH}/dbd'
+alias db='cd ${SITE_APP_PATH}/${SITE_APP_NAME}App/Db'
+alias src='cd ${SITE_APP_PATH}/${SITE_APP_NAME}App/src'
+alias cmd='cd ${SITE_APP_PATH}/iocBoot/ioc${SITE_APP_NAME}'
+alias ioc='cd ${SITE_APP_PATH}/iocBoot/ioc${SITE_APP_NAME}'
+alias vcmd='cd ${SITE_APP_PATH}/iocBoot/ioc${SITE_APP_NAME}/st.cmd'
+alias start='cd ${SITE_APP_PATH}/iocBoot/ioc${SITE_APP_NAME}; ./st.cmd'
+alias opi='cd ${SITE_APP_PATH}/opi'
+
+# first example
+alias fstart='cd ${EPICS_PATH}/siteApp/first/iocBoot/iocfirst; st.cmd'
+alias fapp='cd ${EPICS_PATH}/siteApp/first/firstApp'
+alias fdb='cd ${EPICS_PATH}/siteApp/first/firstApp/Db'
+alias fsrc='cd ${EPICS_PATH}/siteApp/first/firstApp/src'
+alias fdbd='cd ${EPICS_PATH}/siteApp/first/dbd'
+alias fai1='camonitor rootHost:aiExample'
+
+# MDSplus
+export MDS_PATH=/usr/local/mdsplus
+alias mds='cd ${MDS_PATH}'
+
+# KWT for Qt Designer
+KWT_DIR=/usr/local/opisrc/kwt
+LD_LIBRARY_PATH=${KWT_DIR}/lib:${LD_LIBRARY_PATH}
+
+# VCDT
+alias myvcdt='java -jar ${EPICS_EXTENSIONS_BIN}/VisualDCT.jar ${SITE_APP_PATH}/dbd/${SITE_APP_NAME}.dbd'
+
+################################################################
+
+# NI Example
+alias niex='cd /usr/local/natinst/nidaqmx/examples/ansi_c/AnalogIn/MeasureVoltage/ContAcq-IntClk-AnlgStart'
+alias niex1='cd /usr/local/natinst/nidaqmx/examples/ansi_c/AnalogIn/MeasureVoltage/Acq-IntClk'
+
+########################################33
+# End of file
+########################################33

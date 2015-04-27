@@ -1,0 +1,24 @@
+record(ai, "$(TMS)")
+{
+    	field(DESC, "$(TMS)_M")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(HIHI, "$(HIHI)")
+	field(LOLO, "$(LOLO)")
+	field(HIGH, "$(HIGH)")
+	field(LOW, "$(LOW)")
+	field(HHSV, "MAJOR")
+ 	field(LLSV, "MAJOR")
+	field(HSV, "MINOR")
+ 	field(LSV, "MINOR")
+}
+record(bi,"TMS_CDCONSTRAINT_TFSURFACE")
+{
+ 	field(DESC, "$(TMS)_M")
+        field(SCAN, "Passive")
+        field(PINI, "YES")
+	field(INP,  "0")
+	field(ZSV,"NO_ALARM")
+	field(OSV,"MAJOR")
+}
+

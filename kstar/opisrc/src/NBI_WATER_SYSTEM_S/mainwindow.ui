@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>539</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NB1-1 W/C SYSTEM</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="CAGraphic" name="caGraphic">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>116</y>
+      <width>220</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::IfZero</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_WAT_FLW_TCALC</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>530</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>NBI-1 WATER COOLING ALARM</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>66</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0,255,0);</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>370</y>
+      <width>170</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>PRESENT FLOW</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>370</y>
+      <width>110</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="pvname">
+     <string>NB1_WAT_FLW_CALC_TOTAL</string>
+    </property>
+    <property name="dmode" stdset="0">
+     <enum>CALabel::RealOne</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>330</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>lpm</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>333</x>
+      <y>330</y>
+      <width>90</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>14400</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_2">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>116</y>
+      <width>220</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_WAT_FLW_TCALC</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>370</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>lpm</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>330</y>
+      <width>170</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>NOMINAL FLOW</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>540</width>
+      <height>423</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/resource.qrc">:/new/prefix1/images/background.png</pixmap>
+    </property>
+   </widget>
+   <widget class="StaticGraphic" name="staticGraphic">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>324</y>
+      <width>520</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode">
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>170</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>313</x>
+      <y>66</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red</string>
+    </property>
+    <property name="text">
+     <string>FAULT</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>label_9</zorder>
+   <zorder>staticGraphic</zorder>
+   <zorder>caGraphic</zorder>
+   <zorder>label</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>caLabel</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_8</zorder>
+   <zorder>caGraphic_2</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_4</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>StaticGraphic</class>
+   <extends>QWidget</extends>
+   <header>staticGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,147 @@
+program pcsGateway
+option +r;	/* re-entrant */
+option -c;	/* start the program without CA connection established */
+option +d;	/* turn on the debug option */
+option +w;	/* turn on the SNL warning messages */
+
+
+%{
+	#include <epicsPrint.h> 
+
+	typedef struct {
+  		int eventNum;
+		int messageNum;
+		char *description;
+	} strMessage;
+        
+	typedef int processor_type_mask;
+
+	extern void get_processor(processor_type_mask*);
+	extern int  pcs_send_message(char *, int, char *, unsigned short, char *);
+
+	processor_type_mask local_processor_type = 0;
+	
+	char *gatewayString = "pcsGateway";
+ 	strMessage pstrCommand[] = {
+		{ 0, 0, "Idle"},
+		{ 1, 1, "Unlock"},
+		{ 2, 4, "First lockout"},
+		{ 3, 5, "Final lockout"},
+		{ 4, 6, "Abort Shot"},
+		{ 5, 7, "Relock"},
+		{ 6, 911, "Lock server shutdown"},
+		{ -1, (int)NULL, (char*)NULL }
+	};
+
+	strMessage pstrStatus[] = {
+		{ 0, 0, "NOT Defined(0)" },
+		{ 1, 1, "Idle(1)" },
+		{ 2, 2, "First lockout(2)" },
+		{ 3, 3, "Final lockout(3)" },
+		{ 4, 4, "Unlocked(4)" },
+		{ 5, 5, "During shot(5)" },
+		{ 6, 6, "Aborted(6)" },
+		{ 7, 7, "Writing Files(7)" },
+		{ 8, 8, "Setup complete(8)" },
+		{ -1, (int)NULL, (char*)NULL }
+	};
+
+}%
+
+string    lockserver_ipAddr;
+int       lockserver_port;
+int       lockserver_message;
+int       pcsStandby;
+int       pcsStatus;
+
+int       message_num;
+
+evflag    ev_pcsStandby;
+evflag    ev_pcsStatus;
+
+
+assign    lockserver_ipAddr to "PCS_LOCKSERVER_ADDR";
+assign    lockserver_port   to "PCS_LOCKSERVER_PORT";
+assign    pcsStandby        to "PCS_STANDBY";
+assign    pcsStatus         to "PCS_LS_STATUS";
+
+monitor   lockserver_ipAddr;
+monitor   lockserver_port;
+monitor pcsStandby;
+monitor pcsStatus;
+
+sync    pcsStandby ev_pcsStandby;
+sync	pcsStatus  ev_pcsStatus;
+
+
+ss pcsGateway
+{
+	state init {
+		entry {
+			%% get_processor( &local_processor_type);
+		}
+
+		when(pvChannelCount() != pvConnectCount()) {
+				epicsPrintf("%s: PV connection is NOT completed...\n",
+			                    gatewayString);
+				epicsPrintf("%s: total channel number: %ld\n",
+				            gatewayString,
+				            pvChannelCount());
+				epicsPrintf("%s: total connected channel: %ld\n",
+				            gatewayString,
+                                            pvConnectCount());
+		} state wait
+
+	}
+
+	state wait {
+		when(pvChannelCount() == pvConnectCount()) {
+			epicsPrintf("%s: PV connection completed...\n",
+                                       gatewayString);
+		} state gateway
+	}
+
+	state gateway {
+
+		when(efTestAndClear(ev_pcsStandby)) {
+			%{
+				pVar->message_num = (pstrCommand + pVar->pcsStandby)->messageNum;
+
+				epicsPrintf("%s: send message to lock server (%s:%d): %s\n",
+				            gatewayString, 
+                                            pVar->lockserver_ipAddr,
+                                            pVar->lockserver_port,
+					    (pstrCommand+pVar->pcsStandby)->description);
+
+				pcs_send_message( (char*) &(pVar->message_num),
+				                  sizeof(pVar->message_num),
+				                  (char*) (pVar->lockserver_ipAddr),
+				                  (unsigned short) (pVar->lockserver_port),
+				                  gatewayString);
+			}%
+		} state gateway
+
+		when(efTestAndClear(ev_pcsStatus)) {
+			%{
+				epicsPrintf("%s: recieve from lockserver (%s): %s\n",
+				            gatewayString,
+				            pVar->lockserver_ipAddr,
+				            (pstrStatus+pVar->pcsStatus)->description);
+			}%
+		} state gateway
+
+
+		when(pvChannelCount() != pvConnectCount()) {
+			epicsPrintf("%s: PV connection lost...\n",
+                                    gatewayString);
+			epicsPrintf("%s: total channel number: %ld\n",
+			            gatewayString,
+                                    pvChannelCount());
+			epicsPrintf("%s: total connected channel: %ld\n",
+			            gatewayString,
+                                    pvConnectCount());
+		} state wait
+
+
+	}
+}

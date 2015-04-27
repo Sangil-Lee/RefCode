@@ -1,0 +1,99 @@
+program sncMdsPut
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% #define MDS_SERVER   "172.17.102.220:8000"
+%% #define TREE_NAME	"r_magnetic"
+
+%% int dtypeFloat = DTYPE_FLOAT;
+%% int dtypeLong = DTYPE_LONG;
+%% int i;
+   int j;
+   int shotNumber;
+   int mdsPutStart;
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% char buf[50];
+%% char buf1[50];
+%% int socket;
+/* int idesc = descr(&dtypeLong, &tstat, &null); */
+%% int idesc;
+int dataDesc;
+int timeDesc;
+int counts;
+
+float wfData[3000];
+float timeWf[3000];
+
+string mdsIp;
+string mdsTree;
+
+string treeSigNode;
+
+assign shotNumber to "MC_DAQ_SHOT_NUMBER";
+assign mdsPutStart to "MC_SLOT1_REMOTE_LOCAL";
+
+assign mdsIp to "MC_SLOT1_MDS_SERVER_NAME";
+assign mdsTree to "MC_SLOT1_MDS_TREE_NAME";
+
+assign treeSigNode to "MC_SLOT1_MDS_NODE_CH00";
+
+monitor wfData;
+monitor treeSigNode;
+
+monitor shotNumber;
+monitor mdsPutStart;
+
+monitor mdsIp;
+monitor mdsTree;
+
+ss mdsDataPut {
+	state data_put {
+        	when (mdsPutStart==1) {
+		%% 	for(j =0; j< 3000 ; j++) {
+        	%%        timeWf[j] = (float)j/100;
+        	%%        wfData[j] = (float)j/100;
+	       	%%    	}
+		
+		%% socket = MdsConnect(mdsIp); 
+     		%% if (socket == -1 )
+            %%		{
+            %%			fprintf(stderr,"Error connecting to mdsip server(%s).\n", mdsIp);
+            %%		}
+     	    %%	if (socket != -1)
+	    %% 	{
+	    %%		fprintf(stdout,"\nMDSplus >>> MdsConnect(\"%s\")... OK\n", mdsIp);
+	    %%		status = MdsOpen(mdsTree, &shotNumber);
+	    %%          fprintf(stdout,"MdsOpen Tree open\n");
+     		%%		if ( !statusOk(status) )
+        	%%			{
+        	%%			fprintf(stderr,"Error TCL command: %s.\n",MdsGetMsg(status));
+        	%%			}
+            	%% 	timeDesc = descr(&dtypeFloat, (void*)timeWf, 3000, &null);
+		%% 	dataDesc = descr(&dtypeFloat, (void*)wfData, 3000, &null);
+		%%      sprintf(buf, "\%s", treeSigNode);
+             	%%	status = MdsPut(buf, "BUILD_SIGNAL($1,,$2)", &dataDesc, &timeDesc, &null);
+     		%%	if ( !statusOk(status) )
+        	%%	{
+        	%%			fprintf(stderr,"Error Mds Put 1 :  %s.\n",MdsGetMsg(status));
+        	%%	}
+		%%	epicsThreadSleep(.50);
+		%%	status = MdsClose(mdsTree, &shotNumber);
+    		%%	fprintf(stdout, "\nMDSplus >>> Create new tree(\"%d\")... OK\n", shotNumber);
+    		%%	sprintf(buf, "Create new tree(\"%d\").OK", shotNumber);
+		%%	}
+			mdsPutStart=0;
+			pvPut(mdsPutStart);
+		} state data_put
+	}
+}
+

@@ -1,0 +1,24 @@
+# assign port and port name
+#epicsEnvSet(GP307CTRL0,    "${IP_vacCRP_asynServer}:${PORT_GP307_CTRL0}")
+#epicsEnvSet(GP307CTRL1,    "${IP_vacCRP_asynServer}:${PORT_GP307_CTRL1}")
+epicsEnvSet(TPG262CTRL0,   "${IP_vacCRP_asynServer}:${PORT_TPG262_CTRL0}")
+epicsEnvSet(TPG262CTRL1,   "${IP_vacCRP_asynServer}:${PORT_TPG262_CTRL1}")
+epicsEnvSet(TPG262CTRL2,   "${IP_vacCRP_asynServer}:${PORT_TPG262_CTRL2}")
+epicsEnvSet(TPG262CTRL3,   "${IP_vacCRP_asynServer}:${PORT_TPG262_CTRL3}")
+epicsEnvSet(TC3213CTRL0,   "${IP_vacCRP_asynServer}:${PORT_TC3213_CTRL0}")
+epicsEnvSet(TC3213CTRL1,   "${IP_vacCRP_asynServer}:${PORT_TC3213_CTRL1}")
+epicsEnvSet(TC3213CTRL2,   "${IP_vacCRP_asynServer}:${PORT_TC3213_CTRL2}")
+epicsEnvSet(TC3213CTRL3,   "${IP_vacCRP_asynServer}:${PORT_TC3213_CTRL3}")
+epicsEnvSet(U2CTRL,        "${IP_vacCRP_asynServer}:${PORT_U2_CTRL}")
+epicsEnvSet(ROUGHINGCTRL0,  "${IP_vacRP_asynServer}:${PORT_ROUGHING_CTRL0}")
+epicsEnvSet(ROUGHINGCTRL1,  "${IP_vacRP_asynServer}:${PORT_ROUGHING_CTRL1}")
+epicsEnvSet(BACKINGCTRL,   "${IP_vacRP_asynServer}:${PORT_BACKING_CTRL}")
+
+
+# driver param.
+#epicsEnvSet(SCANINTV_GP307,   "3.0")
+epicsEnvSet(SCANINTV_TPG262,  "2.0")
+epicsEnvSet(DEVICE_TIMEOUT,   "5.")
+epicsEnvSet(CALLBACK_TIMEOUT, "5.")
+epicsEnvSet (UNIT_TPG262,   "mBar")
+

@@ -1,0 +1,44 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAPopUp" name="CAPopUp" >
+   <property name="windowModality" >
+    <enum>Qt::WindowModal</enum>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>CLS_HCS_R_EPICS_COMM_ERROR_REV</string>
+   </property>
+   <property name="filename" >
+    <string>ABPLCMessage.ui</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPopUp</class>
+   <extends>QWidget</extends>
+   <header>caPopup.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

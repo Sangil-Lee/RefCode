@@ -1,0 +1,79 @@
+program sncTmsHallZero
+option +r;
+option -c; 
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <sys/types.h>
+%% #include <sys/stat.h>
+%% #include <epicsPrint.h>
+
+
+int i;
+int dataCount;
+int zeroSet;
+char *pfileName;
+float dataTemp;
+string tmpStr1;
+string tmpStr2;
+float data[32];
+float zeroData[32];
+
+/* assign zeroSet to "TMS_HALL_ZERO_SETTING"; First Line at File  */
+assign zeroSet to "";
+monitor zeroSet;
+
+/* PV 32 data Assign for Hall */
+assign data to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor data;
+
+assign zeroData to {"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", "",
+                   	"", "", "", "", "", "", "", ""};
+monitor zeroData;
+
+ss tmsHallZeroSet{
+	state init{
+		when (TRUE){
+                        pfileName = macValueGet("FNAME");
+                        %% FILE *pfile;
+                        %% pfile = fopen (pVar->pfileName, "r");
+                        %% if(!pfile) { 
+     			%%	printf("error in fopen TMS Hall Zero\n");
+			%% }
+		%% fscanf(pfile, "%s", pVar->tmpStr1);
+		pvAssign (zeroSet, tmpStr1);           /* First Line at File : Zero Setting Command Status Monitoring PV */
+                dataCount =0;
+                %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+			%%	sprintf(pVar->tmpStr2, "%s_AVAL", pVar->tmpStr1);
+				pvAssign (data[dataCount], tmpStr2);
+			%%	sprintf(pVar->tmpStr2, "%s_ZVAL", pVar->tmpStr1);
+				pvAssign (zeroData[dataCount], tmpStr2);
+				printf("connect %d %s %ld\n", dataCount, tmpStr1, pvConnected(data[dataCount]));
+				dataCount++;
+                        %%}
+			%% fclose(pfile);
+			printf("Data count number is %d %ld\n",dataCount, pvConnectCount());
+		}state tms_Hall_Zero_Setting	
+	}
+	state tms_Hall_Zero_Setting {
+        	 when (delay(1.0)){
+                	if(zeroSet==1){
+				dataTemp=0.0;
+				for (i = 0; i < dataCount; i++){ 
+					printf("Index: %d/%d\n", i, dataCount);
+					dataTemp=data[i];
+					printf("dataTemp %f\n", dataTemp);
+					zeroData[i]=dataTemp;
+					pvPut(zeroData[i],SYNC);
+				}
+			zeroSet=0;
+			pvPut(zeroSet);
+			}
+		} state tms_Hall_Zero_Setting 
+	}
+}
+

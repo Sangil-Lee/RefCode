@@ -1,0 +1,200 @@
+program sncFUELDaqSeq
+option +r;
+option -c;
+%% #include <string.h>
+
+int first_init;
+int first_init2;
+int wave_Event;
+
+int operMode;
+int mdsCreate;
+int mdsDataput;
+
+int ccsShotSeqStart;
+int stateHoldSS;
+int pcsStandby;
+
+int taskCallFunc;
+int taskTrigger;
+
+int taskStart;
+int taskStop;
+int daqStart;
+
+double sampleCount; 
+double sampleRate; 
+double sampleRateTemp; 
+double shotNumber; 
+double oldShotNumber; 
+
+double daqStartTime; 
+int waveFuelData; 
+
+
+assign operMode to "FUEL_OPERATION_MODE";
+assign mdsCreate to "FUEL_MDSPLUS_CREATE_TREE";
+assign mdsDataput to "FUEL_MDSPLUS_DATA_PUT";
+assign taskCallFunc to "FUEL_TASK_CALL_FUNC";
+assign taskTrigger to "FUEL_TASK_TRIGGER_FUNC";
+assign taskStart to "FUEL_TASK_START_FUNC";
+assign taskStop to "FUEL_TASK_STOP_FUNC";
+assign daqStart to "FUEL_DAQ_START";
+assign sampleCount to "FUEL_SAMPLE_COUNT";
+assign sampleRate to "FUEL_SAMPLING_RATE";
+assign shotNumber to "FUEL_SHOT_NUMBER";
+assign daqStartTime to "FUEL_DAQ_START_TIME";
+
+assign waveFuelData to "FUEL_NI_DAQ_AI00_EFA";
+assign ccsShotSeqStart to "CCS_SHOTSEQ_START";
+assign pcsStandby to "PCS_STANDBY";
+
+monitor operMode;
+monitor mdsCreate;
+monitor mdsDataput;
+monitor taskCallFunc;
+monitor taskTrigger;
+monitor taskStart;
+monitor taskStop;
+monitor daqStart;
+monitor sampleCount;
+monitor sampleRate;
+monitor shotNumber;
+monitor daqStartTime;
+monitor ccsShotSeqStart;
+monitor waveFuelData;
+monitor pcsStandby;
+
+evflag fuelWave_Flag;
+evflag fuelCount_Flag;
+sync sampleCount fuelCount_Flag;
+
+/* Not Workking  waveform data event flag sync is not working... So FLNK CALC record  */
+sync waveFuelData fuelWave_Flag;
+
+
+ss fuelDAQseq {
+	state init{
+		when (TRUE){
+				first_init = 0;
+				first_init2 = 0;
+				oldShotNumber =0;
+				wave_Event=0;
+				stateHoldSS=0;
+				sampleRate = 5000; 
+				pvPut(sampleRate, SYNC);  
+		}state fuel_daq_start	
+	}
+	state fuel_daq_start{
+       		when (daqStart == 1 && delay(0.1)){
+                	if (operMode ==0 && daqStart == 1){
+				mdsCreate = 1;
+				pvPut(mdsCreate,SYNC);
+				printf("fuel mds tree create shot: %f\n", shotNumber);
+				%%/*if (first_init == 1 && taskCallFunc == 0){*/
+				if (first_init == 1 ){
+					taskCallFunc=1;
+					pvPut(taskCallFunc, SYNC);
+					taskTrigger=1;
+                                        pvPut(taskTrigger, SYNC);
+                                        taskTrigger=0;            %% /*		*/
+					sampleRateTemp = sampleRate;  
+                                	sampleRate = sampleRateTemp;   
+                                	pvPut(sampleRate, SYNC);         
+					first_init = 0;
+					printf("fuel taskCallFunc: %d...at daq start..\n", taskCallFunc);
+				}
+			}	
+       			else if (daqStart == 1 && operMode == 1){
+				if (first_init == 0){
+					taskTrigger=1;
+					pvPut(taskTrigger, SYNC);
+					taskTrigger=0;
+					sampleRateTemp = sampleRate; 
+                                	sampleRate = sampleRateTemp;
+                                	pvPut(sampleRate, SYNC);     
+					first_init = 1;
+					printf("fuel remote func .....\n");
+				}
+			}
+			else	printf("Not thing daq start state func .....\n");	
+		} state fuel_localRemote_seq
+	}
+	state fuel_localRemote_seq{
+		when (daqStart ==1 && delay(1.0)){
+               		if (operMode ==0 && daqStart == 1){
+					taskStart = 1;
+					pvPut(taskStart,SYNC);
+					printf("fuel Local mode task start! \n");
+                	 }
+               		else if (operMode ==1 && daqStart == 1){
+					taskStart = 1;
+					pvPut(taskStart,SYNC);
+					printf("fuel Remote mode task start! \n");
+                 	}
+			else printf("Not thing localRemote state func .....\n");
+		}state fuel_seq_waveEvent	
+	}
+	state fuel_seq_waveEvent {
+		when ( waveFuelData != wave_Event){
+%% /*		when ( efTestAndClear(fuelWave_Flag)){   Not Working - I don't understand. so. other  */
+				printf("Wave Event Monitor.. OK. \n");
+				first_init2= 1;
+				printf("Wave Event Event:%d, OldEvent:%d OK. \n",waveFuelData,wave_Event);
+				wave_Event = waveFuelData;
+		}state fuel_seq_mdsdataput 
+	}
+	state fuel_seq_mdsdataput{
+		when (first_init2 == 1 && delay(3.0)){
+               		if (operMode==1 && oldShotNumber < shotNumber ){
+					mdsDataput = 1;
+					pvPut(mdsDataput,SYNC);
+					oldShotNumber = shotNumber;
+					printf("fuel Remote Data MDSplus Put! \n");
+                 	}
+               		else if (operMode==0){
+					mdsDataput = 1;
+					pvPut(mdsDataput,SYNC);
+					printf("fuel Local Data MDSplus Put! \n");
+                 	}
+			else printf("Not Thing Action mdsDataPut Func! Please Check the Shot Number new and old shot. \n");
+			daqStart =0;
+			pvPut(daqStart,SYNC);
+			first_init2 =0;
+		}state fuel_daq_start	
+	}
+}
+ss fuelSampleCount {
+	state init {
+		when (TRUE ) {
+				printf("Sample Count Monitor Init OK. \n");
+		}state fuelSampleCount_Mon
+	}
+	state fuelSampleCount_Mon {
+		when ( efTestAndClear(fuelCount_Flag) ){
+			%%/*if (taskCallFunc == 0)*/
+			{
+				taskCallFunc=1;
+				pvPut(taskCallFunc, SYNC);
+				printf("Fuel taskCallFunc: %d...at sample count change..\n", taskCallFunc);
+				printf("Sample Count Monitor & taskCallFunc Action.. OK. \n");
+			}
+		}state fuelSampleCount_Mon
+	}
+}
+ss fuelDaqStart {
+	state daqStartFuel {
+		when (ccsShotSeqStart==1 && operMode==1 && stateHoldSS==0 && delay(0.5)) {  
+			daqStart=1;
+			pvPut(daqStart,SYNC);
+			stateHoldSS==1;
+			}state daqFinishFuel
+		} 
+	state daqFinishFuel {
+		when(ccsShotSeqStart==0 && daqStart==0 && delay(0.5)) { 
+			stateHoldSS=0;
+			}state daqStartFuel
+		}
+}
+
+

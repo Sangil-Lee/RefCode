@@ -1,0 +1,85 @@
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "NI6250 BoControl")
+  field(OUT, "@daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_AUTO_RUN") {
+  field(DTYP, "NI6250 BoControl")
+  field(OUT, "@auto_run")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_INPUT_RANGE") {
+  field(DESC, "NI6250 Input Range")
+#  field(VAL , "0")
+#  field(PINI, "YES")
+}
+
+record(ao, "$(SYS)_MIN_VOLT") {
+  field(DESC, "NI6250 Minimum Voltage")
+  field(DTYP, "NI6250 AoControl")
+  field(OUT , "@min_volt")
+}
+
+record(ao, "$(SYS)_MAX_VOLT") {
+  field(DESC, "NI6250 Maximum Voltage")
+  field(DTYP, "NI6250 AoControl")
+  field(OUT, "@max_volt")
+}
+
+record(ao, "$(SYS)_GAIN") {
+  field(DESC, "NI6250 Gain")
+  field(DTYP, "NI6250 AoControl")
+  field(OUT, "@gain")
+}
+
+record(ao, "$(SYS)_OFFSET") {
+  field(DESC, "NI6250 Offset")
+  field(DTYP, "NI6250 AoControl")
+  field(OUT, "@offset")
+  field(VAL , "0")
+  field(PINI, "YES")
+}
+
+record(ao, "$(SYS)_CUTOFF_FREQ") {
+  field(DESC, "NI6250 Cutoff Frequency for LPF")
+  field(DTYP, "NI6250 AoControl")
+  field(OUT, "@cutoff_freq")
+  field(VAL , "0")
+  field(PINI, "YES")
+}
+
+record(calcout, "$(SYS)_START_T0_SEC1_CALC") {
+  field(DESC, "Calcuration for START_T0_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T0 CPP")
+  field(OUT , "$(SYS)_START_T0_SEC1")
+  field(FLNK, "$(SYS)_START_T0_SEC1")
+}
+
+record(calcout, "$(SYS)_STOP_T1_SEC1_CALC") {
+  field(DESC, "Calcuration for STOP_T1_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T1 CPP")
+  field(OUT , "$(SYS)_STOP_T1_SEC1")
+  field(FLNK, "$(SYS)_STOP_T1_SEC1")
+}
+
+record(calcout, "$(SYS)_CUTOFF_FREQ_CALC") {
+  field(DESC, "Calcuration for CUTOFF_FREQ")
+  field(SCAN, "Passive")
+  field(CALC, "(A=1)? 4 : (A=2) ? 10000 : 0")
+  field(INPA, "$(SYS)_CUTOFF_FREQ_TYPE CPP")
+  field(OUT , "$(SYS)_CUTOFF_FREQ")
+  field(FLNK, "$(SYS)_CUTOFF_FREQ")
+}
+
+record(ao, "$(SYS)_CUTOFF_FREQ_TYPE") {
+  field(DESC, "Calcuration for CUTOFF_FREQ")
+  field(DTYP, "Soft Channel")
+}

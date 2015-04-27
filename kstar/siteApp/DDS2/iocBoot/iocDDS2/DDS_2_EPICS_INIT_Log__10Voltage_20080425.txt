@@ -1,0 +1,362 @@
+INIT: version 2.85 booting
+                Welcome to DENX Embedded Linux Environment
+                Press 'I' to enter interactive startup.
+Building the cache [  OK  ]
+ storage network audio done[  OK  ]
+Setting clock : Sun Jan  1 00:01:27 KST 2006 [  OK  ]
+Setting hostname 172.17.102.62:  [  OK  ]
+Mounting local filesystems:  [  OK  ]
+Enabling swap space:  [  OK  ]
+INIT: Entering runlevel: 3 l
+Entering non-interactive startup
+Bringing up loopback interface:  [  OK  ]
+Bringing up interface eth0:  [  OK  ]
+Bringing up interface eth1:  [  OK  ]
+Starting system logger: [  OK  ]
+Starting kernel logger: [  OK  ]
+Starting portmap: [  OK  ]
+Mounting NFS filesystems:  [  OK  ]
+Mounting other filesystems:  [  OK  ]
+Starting xinetd: [  OK  ]
+DPIO2: DPIO2 Device Driver - Release: 2.4.11
+       Copyright (C) 2005 - VMETRO, Inc.  All rights reserved.
+       Creation Date: Apr 18 2007, Time: 18:19:03
+DPIO2: Register char device driver.
+DPIO2: Dynamical allocated major = 249
+DPIO2: Scan for DPIO2 hardware devices:
+DPIO2: Device #1: DPIO2_66MHz, IRQ handle #20
+major = 249
+mknod /dev/dpio2/manager
+mknod /dev/dpio2/1
+mknod /dev/dpio2/2
+CLTU: CLTU Device Driver - Release: v1.0
+       Copyright (C) 2006 - OLZETEK, Inc.  All rights reserved.
+       Creation Date: Feb 27 2008, Time: 09:22:40
+
+CLTU: Register char device driver.
+CLTU: Allocated major = 240
+mknod /dev/dpio2/3
+major = 240
+mknod /dev/cltu
+Starting ntpd: [  OK  ]
+#!../../bin/linux-ppc/m6802
+epicsEnvSet(IOC_DEBUG,"0")
+## Register all support components
+dbLoadDatabase("../../dbd/m6802.dbd",0,0)
+m6802_registerRecordDeviceDriver(pdbbase)
+macLib: macro TOP is undefined (expanding string cd ${TOP}/iocBoot/${IOC})
+macLib: macro IOC is undefined (expanding string cd ${TOP}/iocBoot/${IOC})
+< initDriverDev1.cmd
+createTask("master", "0x1000")
+>>> Open device /dev/vme_a24a16_user OK.
+
+>>> make_drvConfig(0x1000) : ozInitDevice .... OK
+createChannel("master", "0", "ai0")
+createChannel("master", "1", "ai1")
+createChannel("master", "2", "ai2")
+createChannel("master", "3", "ai3")
+createChannel("master", "4", "ai4")
+createChannel("master", "5", "ai5")
+createChannel("master", "6", "ai6")
+createChannel("master", "7", "ai7")
+createChannel("master", "8", "ai8")
+createChannel("master", "9", "ai9")
+createChannel("master", "10", "ai10")
+createChannel("master", "11", "ai11")
+createChannel("master", "12", "ai12")
+createChannel("master", "13", "ai13")
+createChannel("master", "14", "ai14")
+createChannel("master", "15", "ai15")
+createChannel("master", "16", "ai16")
+createChannel("master", "17", "ai17")
+createChannel("master", "18", "ai18")
+createChannel("master", "19", "ai19")
+createChannel("master", "20", "ai20")
+createChannel("master", "21", "ai21")
+createChannel("master", "22", "ai22")
+createChannel("master", "23", "ai23")
+createChannel("master", "24", "ai24")
+createChannel("master", "25", "ai25")
+createChannel("master", "26", "ai26")
+createChannel("master", "27", "ai27")
+createChannel("master", "28", "ai28")
+createChannel("master", "29", "ai29")
+createChannel("master", "30", "ai30")
+createChannel("master", "31", "ai31")
+< initDriverDev2.cmd
+task launching: master_ctrl thread for master task
+DPIO2: DPIO2 Device Driver - Release: 2.4.11
+       Copyright (C) 2005 - VMETRO, Inc.  All rights reserved.
+       Creation Date: Apr 25 2007, Time: 19:39:55
+DPIO2: Scan PCI for DPIO2 modules. Found 1
+DPIO2: Device #1 (bus 4, device 4) is a DPIO2_66-FB with FPGA code B0103
+Found 1 DPIO2 modules in system
+createTask("Dev2", "0x2000")
+createChannel("Dev2", "0", "ai0")
+createChannel("Dev2", "1", "ai1")
+createChannel("Dev2", "2", "ai2")
+createChannel("Dev2", "3", "ai3")
+createChannel("Dev2", "4", "ai4")
+createChannel("Dev2", "5", "ai5")
+createChannel("Dev2", "6", "ai6")
+createChannel("Dev2", "7", "ai7")
+createChannel("Dev2", "8", "ai8")
+createChannel("Dev2", "9", "ai9")
+createChannel("Dev2", "10", "ai10")
+createChannel("Dev2", "11", "ai11")
+createChannel("Dev2", "12", "ai12")
+createChannel("Dev2", "13", "ai13")
+createChannel("Dev2", "14", "ai14")
+createChannel("Dev2", "15", "ai15")
+createChannel("Dev2", "16", "ai16")
+createChannel("Dev2", "17", "ai17")
+createChannel("Dev2", "18", "ai18")
+createChannel("Dev2", "19", "ai19")
+createChannel("Dev2", "20", "ai20")
+createChannel("Dev2", "21", "ai21")
+createChannel("Dev2", "22", "ai22")
+createChannel("Dev2", "23", "ai23")
+createChannel("Dev2", "24", "ai24")
+createChannel("Dev2", "25", "ai25")
+createChannel("Dev2", "26", "ai26")
+createChannel("Dev2", "27", "ai27")
+createChannel("Dev2", "28", "ai28")
+createChannel("Dev2", "29", "ai29")
+createChannel("Dev2", "30", "ai30")
+createChannel("Dev2", "31", "ai31")
+< initDriverDev3.cmd
+task launching: RING_ctrl thread for master task
+createTask("Dev3", "0x3000")
+createChannel("Dev3", "0", "ai0")
+createChannel("Dev3", "1", "ai1")
+createChannel("Dev3", "2", "ai2")
+createChannel("Dev3", "3", "ai3")
+createChannel("Dev3", "4", "ai4")
+createChannel("Dev3", "5", "ai5")
+createChannel("Dev3", "6", "ai6")
+createChannel("Dev3", "7", "ai7")
+createChannel("Dev3", "8", "ai8")
+createChannel("Dev3", "9", "ai9")
+createChannel("Dev3", "10", "ai10")
+createChannel("Dev3", "11", "ai11")
+createChannel("Dev3", "12", "ai12")
+createChannel("Dev3", "13", "ai13")
+createChannel("Dev3", "14", "ai14")
+createChannel("Dev3", "15", "ai15")
+createChannel("Dev3", "16", "ai16")
+createChannel("Dev3", "17", "ai17")
+createChannel("Dev3", "18", "ai18")
+createChannel("Dev3", "19", "ai19")
+createChannel("Dev3", "20", "ai20")
+createChannel("Dev3", "21", "ai21")
+createChannel("Dev3", "22", "ai22")
+createChannel("Dev3", "23", "ai23")
+createChannel("Dev3", "24", "ai24")
+createChannel("Dev3", "25", "ai25")
+createChannel("Dev3", "26", "ai26")
+createChannel("Dev3", "27", "ai27")
+createChannel("Dev3", "28", "ai28")
+createChannel("Dev3", "29", "ai29")
+createChannel("Dev3", "30", "ai30")
+createChannel("Dev3", "31", "ai31")
+task launching: Dev2_ctrl thread for Dev2 task
+task launching: Dev3_ctrl thread for Dev3 task
+ maxNumPages= 769, PAGE_SIZE= 4096
+ sizeof(DPIO2_DMA)= 28, sizeof(DPIO2_DMA_PAGE)= 8
+macLib: macro TOP is undefined (expanding string cd ${TOP})
+## Load record instances
+dbLoadRecords("../../db/dds2.db","")
+ iPage= 383,  blockSizeInBytes= 4096, pciAddress= 0x3E928000
+ iPage= 767,  blockSizeInBytes= 4096, pciAddress= 0x3EAA8000
+
+>>> FPDPthreadFunc : drvM6802_init_FPDP() ... OK
+dbLoadRecords("../../db/dds2TimeStamp.db","")
+dbLoadRecords("../../db/DDS_SoftPV.vdb", "SYS=DDS2")
+dbLoadRecords("../../db/DDS_SoftPV_INTN.vdb", "SYS=DDS2")
+dbLoadRecords("../../db/DDS2_LTU.db" )
+iocInit()
+Starting iocInit
+############################################################################
+###  EPICS IOC CORE built on Apr 25 2007
+###  EPICS R3.14.8.2 $R3-14-8-2$ $2006/01/06 15:55:13$
+############################################################################
+
+>>> ID:1, 0x1000 initDAQboard : ozSetGlobalReset  ok
+
+>>> ozSetMasterOrSlave : set Master mode
+
+>>> ozSetBoardIDBit : set Board ID : 1
+
+>>> ID:2, 0x2000 initDAQboard : ozSetGlobalReset  ok
+
+>>> ozSetMasterOrSlave : set Slave mode
+
+>>> ozSetBoardIDBit : set Board ID : 2
+
+>>> ID:3, 0x3000 initDAQboard : ozSetGlobalReset  ok
+
+>>> ozSetMasterOrSlave : set Slave mode
+
+>>> ozSetBoardIDBit : set Board ID : 3
+
+>>> drvM6802_init_driver : Board 3 : Termination Enabled
+drvM6802: measureminor : 1
+d one second time is 1008.445000 msec
+IOC_DEBUG : 0
+ .  . iocInit: All initialization complete
+
+epics> db processing: phase II DDS2_tag_19 (master_ctrl)
+db processing: phase II DDS2_tag_20 (master_ctrl)
+db processing: phase II DDS2_tag_32 (master_ctrl)
+db processing: phase II DDS2_tag_33 (master_ctrl)
+db processing: phase II DDS2_tag_64 (master_ctrl)
+db processing: phase II DDS2_tag_65 (master_ctrl)
+db processing: phase II DDS2_tag_66 (master_ctrl)
+db processing: phase II DDS2_tag_67 (master_ctrl)
+db processing: phase II DDS2_tag_68 (master_ctrl)
+db processing: phase II DDS2_tag_69 (master_ctrl)
+db processing: phase II DDS2_tag_70 (master_ctrl)
+db processing: phase II DDS2_tag_71 (master_ctrl)
+db processing: phase II DDS2_tag_72 (master_ctrl)
+db processing: phase II DDS2_tag_73 (master_ctrl)
+db processing: phase II DDS2_tag_74 (master_ctrl)
+db processing: phase II DDS2_tag_75 (master_ctrl)
+db processing: phase II DDS2_tag_76 (master_ctrl)
+db processing: phase II DDS2_tag_77 (master_ctrl)
+errlog = 18 messages were discarded
+db processing: phase I DDS2_master_chBitMask (CAS-client)
+db processing: phase I DDS2_Dev2_chBitMask (CAS-client)
+db processing: phase I DDS2_Dev3_chBitMask (CAS-client)
+db processing: phase I DDS2_sampleRate (CAS-client)
+db processing: phase I DDS2_setT0 (CAS-client)
+db processing: phase I DDS2_setT1 (CAS-client)
+db processing: phase II DDS2_master_chBitMask (master_ctrl)
+control thread (app smapling rate): DDS2_sampleRate (master_ctrl), 2KHz
+db processing: phase II DDS2_sampleRate (master_ctrl)
+control thread (T0): master DDS2_setT0 (master_ctrl), 1.000000 sec
+db processing: phase II DDS2_setT0 (master_ctrl)
+control thread (T1): master DDS2_setT1 (master_ctrl), 3.000000 sec
+db processing: phase II DDS2_setT1 (master_ctrl)
+db processing: phase II DDS2_Dev2_chBitMask (Dev2_ctrl)
+db processing: phase II DDS2_Dev3_chBitMask (Dev3_ctrl)
+db processing: phase I DDS2_setTrigInternal (CAS-client)
+db processing: phase I DDS2_setInternal (CAS-client)
+control thread (T1): master DDS2_setTrigInternal (master_ctrl), 1.000000 sec
+db processing: phase II DDS2_setTrigInternal (master_ctrl)
+
+>>> set_samplingRate : taskStatus 0x1
+
+>>> set_samplingRate : taskStatus 0x1
+
+>>> set_samplingRate : taskStatus 0x1
+control thread (Internal Clk): master DDS2_setInternal (master_ctrl)
+db processing: phase II DDS2_setInternal (master_ctrl)
+db processing: phase I DDS2_shotNumber (CAS-client)
+
+>>> devM6802_set_shotNum : 46
+db processing: phase II DDS2_shotNumber (master_ctrl)
+db processing: phase I DDS2_ADCstart (CAS-client)
+db processing: phase II DDS2_ADCstart (master_ctrl)
+db processing: phase I DDS2_DAQstart (cbLow)
+control thread (DAQ started): master DDS2_DAQstart (master_ctrl)
+db processing: phase II DDS2_DAQstart (master_ctrl)
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+>>> MM_CNTRL_REG_1 : 0x931
+>>> MM_CNTRL_REG_2 : 0x5F70
+db processing: phase I DDS2_DAQstop (cbLow)
+
+FPDP >>> DMA done count= 20
+
+DAQ time is 1890.322000 msec
+control thread (DAQ STOP): master DDS2_DAQstop (master_ctrl)
+db processing: phase II DDS2_DAQstop (master_ctrl)
+ellCount: 29 <end>
+db processing: phase I DDS2_ADCstop (cbLow)
+db processing: phase II DDS2_ADCstop (master_ctrl)
+db processing: phase I DDS2_LocalSave (cbLow)
+
+dma block: 3072KB, dma count: 20, ch: 96
+Now, do channelization
+
+>>> sampleingCnt unsigned long long = 8
+>>> sampleingCnt unsigned int = 4
+>>> sampleingCnt double = 8
+>>> sampleingCnt= 163840   163840.000000l
+
+>>> sampleingCnt ABS = 163840.000000l
+>>> channelization : please wait ...
+ cvTask >>> 0 : meet first channel
+0 1=00  0 2=00  0 3=00  0 4=00
+cvTask >>> Enter converting loop...
+cvTask >>> total sampling count : 163839
+OK
+
+>>> devM6802_set_LocalStorage : dataChannelization() ... DONE
+Now, transfer to local model tree
+
+MDSplus >>> Sample clock: 2KHz, nTimeGap: 500, nSkipCnt:50
+Testl MDS server = 172.17.102.64:8000
+Test tree name = dds2lr
+Test tree name = dds2lr
+
+MDSplus >>> MdsConnect("172.17.102.64:8000")... OK
+
+MDSplus >>> Create new tree("46")... OK
+
+MDSplus >>> MdsOpen("dds2lr", shot: 46)... OK
+. ch0 off . ch1 off . ch2 off . ch3 off . ch4 off . ch5 off . ch6 off . ch7 off . ch8 off . ch9 off . c
+. ch12 off . ch13 off . ch14 off . ch15 off . ch16 off . ch17 off . ch18 off ch19 .ch20 .. ch21 off . c
+. ch25 off . ch26 off . ch27 off . ch28 off . ch29 off . ch30 off . ch31 off ch32 .ch33 .. ch34 off . c
+. ch38 off . ch39 off . ch40 off . ch41 off . ch42 off . ch43 off . ch44 off . ch45 off . ch46 off . ch
+. ch49 off . ch50 off . ch51 off . ch52 off . ch53 off . ch54 off . ch55 off . ch56 off . ch57 off . ch
+. ch60 off . ch61 off . ch62 off . ch63 off ch64 .ch65 .ch66 .ch67 .ch68 .ch69 .ch70 .ch71 .
+ch72 .ch73 .ch74 .ch75 .ch76 .ch77 .ch78 .ch79 .ch80 .ch81 .ch82 .
+ch83 .ch84 .ch85 .ch86 .ch87 .ch88 .ch89 .ch90 .ch91 .ch92 .ch93 .
+ch94 .ch95 .
+Done
+
+MDSplus >>> Data size: 639KB/ch
+MDSplus >>> Tree close ...  OK
+
+>>> devM6802_set_LocalStorage : sendEDtoTreeFromChannelData() ... DONE
+
+cnannelization time is 73027155950.037994 msec
+db processing: phase II DDS2_LocalSave (master_ctrl)
+

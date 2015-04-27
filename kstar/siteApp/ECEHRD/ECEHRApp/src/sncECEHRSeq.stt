@@ -1,0 +1,143 @@
+program sncECEHRSeq 
+option -c;
+option +r;
+
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+long opMode;
+long status;
+long sysArming;
+
+double startT0;
+double stopT1;
+long sampleRate;
+
+long ltuC1;
+double ltuT0;
+double ltuT1;
+double ccsTF;
+double eceTF;
+
+int ccsSeq;
+
+assign ccsSeq to "CCS_SHOTSEQ_START";
+assign ccsTF to "CCS_ITF_MEASURED";
+assign eceTF to "ECEHR_MPS_TF_CURRENT";
+assign opMode to "ECEHR_OP_MODE";
+assign status to "ECEHR_STATUS";
+assign sysArming to "ECEHR_SYS_ARMING";
+
+assign startT0 to "ECEHR_START_T0_SEC1";
+assign stopT1 to "ECEHR_STOP_T1_SEC1";
+assign sampleRate to "ECEHR_SAMPLING_RATE";
+
+assign ltuT0 to "ECEHR_LTU_P0_SEC0_T0";
+assign ltuT1 to "ECEHR_LTU_P0_SEC0_T1";
+assign ltuC1 to "ECEHR_LTU_P1_SEC0_CLOCK";
+
+monitor ccsSeq;
+monitor ccsTF;
+monitor eceTF;
+monitor opMode;
+monitor status;
+monitor sysArming;
+
+monitor startT0;
+monitor stopT1;
+monitor sampleRate;
+
+monitor ltuT0;
+monitor ltuT1;
+monitor ltuC1;
+
+evflag ltuT0f;
+sync ltuT0 ltuT0f;
+evflag ltuT1f;
+sync ltuT1 ltuT1f;
+evflag ltuC1f;
+sync ltuC1 ltuC1f;
+
+evflag ef_ccsSeq;
+sync ccsSeq ef_ccsSeq;
+
+ss setTFSeq {
+	state init {
+        when (TRUE) {
+            printf("sncECE : Startup delay over\n");
+%% 		epicsThreadSleep(3);
+        } state setTF
+    	}
+	state setTF {
+		 when (efTestAndClear(ef_ccsSeq)) {
+			if(opMode == 1 && ccsTF > 100){
+				if(eceTF !=ccsTF) {
+					eceTF = ccsTF;
+					pvPut(eceTF,SYNC);
+				}
+			}
+		} state setTF 
+	}
+}
+ss setT0Seq {
+	state init {
+        when (TRUE) {
+            printf("sncECE : Startup delay over\n");
+%% 		epicsThreadSleep(3);
+        } state setT0
+    	}
+	state setT0 {
+		 when (efTestAndClear(ltuT0f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				if(eceTF !=ccsTF) {
+					eceTF = ccsTF;
+					pvPut(eceTF,SYNC);
+				}
+			}
+		} state setT0
+	}
+}
+ss setT1Seq {
+	state init {
+        when (TRUE) {
+            printf("sncECE : Startup delay over\n");
+%% 		epicsThreadSleep(3);
+        } state setT1
+    	}
+	state setT1 {
+		 when (efTestAndClear(ltuT1f)) {
+			if(opMode == 1 && status == 1){
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+				if(eceTF !=ccsTF) {
+					eceTF = ccsTF;
+					pvPut(eceTF,SYNC);
+				}
+			}
+		} state setT1 
+	}
+}
+ss setC1Seq {
+	state init {
+        when (TRUE) {
+            printf("sncECE : Startup delay over\n");
+%% 		epicsThreadSleep(3);
+        } state setC1
+    	}
+	state setC1 {
+		 when (efTestAndClear(ltuC1f)) {
+			if(opMode == 1 && status == 1){
+				sampleRate = ltuC1;
+				pvPut(sampleRate,SYNC);
+				if(eceTF !=ccsTF) {
+					eceTF = ccsTF;
+					pvPut(eceTF,SYNC);
+				}
+			}
+		} state setC1 
+	}
+}

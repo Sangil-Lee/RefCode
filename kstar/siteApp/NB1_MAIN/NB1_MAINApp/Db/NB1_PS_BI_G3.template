@@ -1,0 +1,21 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_BI.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    ZNAM    ONAM    ZSV    OSV}
+{NB1_P1G3_RTN_RUN    NB1_P1G3_RTN_RUN    plc1    "Power Supply Run"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1G3_RTN_STOP    NB1_P1G3_RTN_STOP    plc1    "Power Supply Stop"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1G3_RTN_EMG    NB1_P1G3_RTN_EMG    plc1    "Emergency"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1G3_RTN_RDY    NB1_P1G3_RTN_RDY    plc1    "Emergency"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1G3_RTN_MANIT    NB1_P1G3_RTN_MANIT    plc1    "Emergency"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1G3_RTN_HVON    NB1_P1G3_RTN_HVON    plc1    "HV ON"    OFF    ON    MAJOR    NO_ALARM}
+
+# PS2 2012.07.03
+{NB1_P2G3_STA_ESTOP	NB1_P2G3_STA_ESTOP	 plc2    "EMG STOP"    	OFF    ON    MAJOR    NO_ALARM}
+{NB1_P2G3_STA_REM	NB1_P2G3_STA_REM	 plc2    "REMOTE/LOCAL" OFF    ON    MAJOR    NO_ALARM}
+{NB1_P2G3_STA_RDY	NB1_P2G3_STA_RDY	 plc2    "READY"    	OFF    ON    MAJOR    NO_ALARM}
+{NB1_P2G3_STA_RUN	NB1_P2G3_STA_RUN	 plc2    "RUN/STOP"    	OFF    ON    MAJOR    NO_ALARM}
+{NB1_P2G3_STA_HVON    NB1_P2G3_STA_HVON    plc2    "HV ON"    OFF    ON    MAJOR    NO_ALARM}
+}

@@ -1,0 +1,47 @@
+record(bo, "ECH_AO_MAKEPATTERN_DEV1")
+{
+  field(DESC, "DeviceMakePattern")
+  field(DTYP, "NIDAQmx BoControl")
+  field(OUT, "@make_pattern Dev1_AO")
+  field(ZNAM, "Normal")
+  field(ONAM, "MakePatternFile")
+}
+record(bo, "ECH_AO_STOREPATTERN_DEV1")
+{
+  field(DESC, "DeviceStorePattern")
+  field(DTYP, "NIDAQmx BoControl")
+  field(OUT, "@store_pattern Dev1_AO")
+  field(ZNAM, "Normal")
+  field(ONAM, "StorePatternFile")
+}
+record(bo, "ECH_AO_DOING_PROGRESS_DEV1")
+{
+  field(DESC, "DeviceDoingProgress")
+  field(DTYP, "NIDAQmx BoControl")
+  field(OUT, "@doing_progress Dev1_AO")
+  field(ZNAM, "Normal")
+  field(ONAM, "Doing_Progress")
+}
+record(bo, "ECH_AO_SELECT_AOMODE_DEV1")
+{
+  field(DESC, "SELECT_AO_MODE")
+  field(DTYP, "NIDAQmx BoControl")
+  field(OUT, "@select_aomode Dev1_AO")
+  field(ZNAM, "PreDefined_AO")
+  field(ONAM, "Real_Time_AO")
+}
+record(bo, "ECH_AO_PATTERN_ALL_ZERO_SET")
+{
+  field(DESC, "AO_Pattern_All_Zero")
+  field(SCAN, "Passive")
+  field(ZNAM, "Normal")
+  field(ONAM, "Doing_Zero")
+}
+
+#record(calcout, "ECH_AO_DOING_PROGRESS_DEV1_CAL") {
+#  field(DESC, "ECH_AO_DOING_PROGRESS_CAL")
+#  field(SCAN, "Passive")
+#  field(INPA, "ECH_LTU_SOFT_START_ER CPP")
+#  field(CALC, "A>0?1:0")
+#  field(OUT, "ECH_AO_DOING_PROGRESS_DEV1 PP")
+#}

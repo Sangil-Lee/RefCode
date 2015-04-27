@@ -1,0 +1,13 @@
+record(bo, "$(REC)")
+{
+        field(DESC, "INTERLOCK CHANNEL")
+	field(DTYP, "PXI BO Control")
+	field(SCAN, "Passive")
+	field(OUT, "@$(TASK) $(CHAN) do8 $(RECTYPE) $(POSNUM)")
+	field(PINI, "YES")
+	field(RVAL, "$(NVAL)")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}

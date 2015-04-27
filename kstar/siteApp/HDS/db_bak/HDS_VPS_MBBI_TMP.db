@@ -1,0 +1,18 @@
+record(mbbi, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(INP, "$(PV_NAME)_IN")
+  field(ONST, "EX ROT SPEED")
+  field(TWST, "POWER PACK ERR")
+  field(SXST, "STRT TIME ERR")
+  field(SVST, "OP FLUID ERR")
+  field(EIST, "TC AND PUMP ERR")
+  field(FTST, "HEAT-COOL ERR")
+  field(FFST, "TC CTRL ERR")
+}
+record(ai, "$(PV_NAME)_IN") {
+  field(DTYP, "EtherIP")
+  field(FLNK, "$(PV_NAME)")
+  field(SCAN, "1 second")
+  field(INP, "@plc0 $(TAG) S 1")
+}
+

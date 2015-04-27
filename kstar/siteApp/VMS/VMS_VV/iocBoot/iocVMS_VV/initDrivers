@@ -1,0 +1,71 @@
+#####################
+# make serial connection via TCP
+#####################
+#
+# GP307 gauge controller
+drvGenericSerialConfigure("GP307CTRL0", "${GP307CTRL0}", 0, 0)
+drvGenericSerialConfigure("GP307CTRL1", "${GP307CTRL1}", 0, 0)
+#
+# TPG262 gauge controller
+drvGenericSerialConfigure("TPG262CTRL0", "${TPG262CTRL0}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL1", "${TPG262CTRL1}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL2", "${TPG262CTRL2}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL3", "${TPG262CTRL3}", 0, 0)
+
+# TC3213 TMP controller
+
+drvGenericSerialConfigure("L0", "${TC3213CTRL0}", 0, 0)
+drvGenericSerialConfigure("L1", "${TC3213CTRL1}", 0, 0)
+drvGenericSerialConfigure("L2", "${TC3213CTRL2}", 0, 0)
+drvGenericSerialConfigure("L3", "${TC3213CTRL3}", 0, 0)
+drvGenericSerialConfigure("L4", "${TC3213CTRL4}", 0, 0)
+drvGenericSerialConfigure("L5", "${TC3213CTRL5}", 0, 0)
+drvGenericSerialConfigure("L6", "${TC3213CTRL6}", 0, 0)
+drvGenericSerialConfigure("L7", "${TC3213CTRL7}", 0, 0)
+#
+# U2 CRP controller
+drvGenericSerialConfigure("L8", "${U2CTRL}", 0, 0)
+
+# MBP Controller
+drvGenericSerialConfigure("L9", "${ROUGHINGCTRL}", 0, 0)
+drvGenericSerialConfigure("L10", "${BACKINGCTRL}", 0, 0)
+
+#
+
+########################################
+# TEST_TPG262 gauge controller(temporal)
+########################################
+
+drvGenericSerialConfigure("TEST_TPG262CTRL0", "${TEST_TPG262CTRL0}", 0, 0)
+drvGenericSerialConfigure("TEST_TPG262CTRL1", "${TEST_TPG262CTRL1}", 0, 0)
+drvGenericSerialConfigure("TEST_TPG262CTRL2", "${TEST_TPG262CTRL2}", 0, 0)
+
+#
+#
+#
+#
+#
+
+#####################
+# GP307
+#####################
+drvGP307_init("GP307CTRL0", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINITV_GP307})
+drvGP307_init("GP307CTRL1", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINITV_GP307})
+
+#####################
+# TPG262
+#####################
+drvTPG262_init("TPG262CTRL0", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINITV_TPG262})
+drvTPG262_init("TPG262CTRL1", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINITV_TPG262})
+##############################################################################################################
+drvTPG262_init("TPG262CTRL2", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${TEST_SCANINITV_TPG262})
+drvTPG262_init("TPG262CTRL3", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${TEST_SCANINITV_TPG262})
+##############################################################################################################
+
+##################### 
+# TEST_TPG262(temporal) 
+##################### 
+drvTPG262_init("TEST_TPG262CTRL0", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${TEST_SCANINITV_TPG262})
+drvTPG262_init("TEST_TPG262CTRL1", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${TEST_SCANINITV_TPG262})
+drvTPG262_init("TEST_TPG262CTRL2", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${TEST_SCANINITV_TPG262})
+

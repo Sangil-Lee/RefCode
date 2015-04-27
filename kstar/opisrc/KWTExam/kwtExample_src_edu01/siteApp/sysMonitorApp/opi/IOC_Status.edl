@@ -1,0 +1,1301 @@
+# MEDM filename = "/ade/epics/iocTop/R3.13.5/TestStand/adl/IOC-Stats.adl"
+# MEDM version = 020306
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 445
+y 182
+w 504
+h 550
+font "helvetica-bold-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 3
+textColor index 0
+ctlFgColor1 index 1
+ctlFgColor2 index 0
+ctlBgColor1 index 1
+ctlBgColor2 index 0
+topShadowColor index 1
+botShadowColor index 11
+orthoLineDraw
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 52
+w 494
+h 411
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 11
+y 391
+w 193
+h 28
+controlPv "$(P):Engineer"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 463
+w 494
+h 47
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1
+y 48
+w 503
+h 0
+lineColor index 14
+fillColor index 14
+numPoints 2
+xPoints {
+  0 1
+  1 504
+}
+yPoints {
+  0 48
+  1 48
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 63
+h 19
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 63
+h 19
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 63
+h 19
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 63
+h 19
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 63
+h 19
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 285
+h 45
+lineColor index 6
+fill
+fillColor index 6
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 170
+y 53
+w 59
+h 39
+controlPv "$(P):Load"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-24.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 64
+w 104
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CPU Load Average"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 386
+y 55
+w 112
+h 34
+controlPv "$(P):CAClnt"
+displayMode "decimal"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-24.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 255
+y 64
+w 76
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CA Clients (#)"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 11
+y 110
+w 220
+h 31
+controlPv "$(P):MemMax"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 96
+w 131
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "Largest Free RAM Block"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 402
+y 96
+w 94
+h 40
+controlPv "$(P):CACnx"
+displayMode "decimal"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-24.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 255
+y 107
+w 107
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CA Connections (#)"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 252
+y 146
+w 100
+h 37
+controlPv "$(P):FDAv"
+displayMode "decimal"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 337
+y 156
+w 92
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "FDs Available (of"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 460
+y 155
+w 32
+h 19
+controlPv "$(P):FDMax"
+displayMode "decimal"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-medium-r-14.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 293
+y 7
+w 89
+h 31
+fgColor index 0
+bgColor index 44
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "Reboot"
+numPvs 4
+numDsps 2
+displayFileName {
+  0 "IOC_Reboot.edl"
+  1 "hardReboot"
+}
+menuLabel {
+  0 "Reboot"
+  1 "Hard Reboot"
+}
+symbols {
+  0 "P=$(P)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 14
+y 9
+w 40
+h 24
+font "helvetica-bold-r-24.0"
+fgColor index 112
+bgColor index 6
+useDisplayBg
+value {
+  "$(P)"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 320
+y 199
+w 165
+h 26
+controlPv "$(P):Access_Cmd"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 255
+y 204
+w 46
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Security:"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 142
+w 68
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Time of Day:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 11
+y 156
+w 226
+h 28
+controlPv "$(P):Time"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 188
+w 59
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Boot Time:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 11
+y 202
+w 226
+h 28
+controlPv "$(P):BootTime"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 491
+y 156
+w 4
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  ")"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 249
+y 52
+w 0
+h 277
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 249
+  1 249
+}
+yPoints {
+  0 52
+  1 329
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 94
+w 495
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 4
+  1 499
+}
+yPoints {
+  0 94
+  1 94
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 140
+w 495
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 4
+  1 499
+}
+yPoints {
+  0 140
+  1 140
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 185
+w 494
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 6
+  1 500
+}
+yPoints {
+  0 185
+  1 185
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 439
+y 511
+w 56
+h 31
+fgColor index 13
+bgColor index 45
+topShadowColor index 8
+botShadowColor index 13
+label "EXIT"
+font "helvetica-medium-r-18.0"
+3d
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 10
+y 481
+w 232
+h 28
+controlPv "$(P):StartupScript1"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 249
+y 481
+w 226
+h 28
+controlPv "$(P):StartupScript2"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 8
+y 465
+w 76
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Startup Script:"
+}
+autoSize
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 516
+w 63
+h 26
+fgColor index 0
+bgColor index 44
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Boot Line"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "IOC_Bootline.edl"
+}
+menuLabel {
+  0 "Boot Line"
+}
+symbols {
+  0 "P=$(P)"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 7
+y 328
+w 494
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 7
+  1 501
+}
+yPoints {
+  0 328
+  1 328
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 345
+w 238
+h 28
+controlPv "$(P):kernel_vers"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 13
+y 345
+w 232
+h 28
+controlPv "$(P):BSP_rev"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 330
+w 72
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "BSP Version:"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 256
+y 330
+w 84
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Kernel Version:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 9
+y 433
+w 357
+h 28
+controlPv "$(P):EPICS_vers"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 9
+y 422
+w 84
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "EPICS Version:"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 420
+w 494
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 4
+  1 498
+}
+yPoints {
+  0 420
+  1 420
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 277
+w 241
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 6
+  1 247
+}
+yPoints {
+  0 277
+  1 277
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 149
+y 293
+w 97
+h 34
+controlPv "$(P):minDataMBuf"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 33
+y 280
+w 158
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "(Sys)   min Cluster %   (Data)"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 13
+y 293
+w 97
+h 34
+controlPv "$(P):minSysMBuf"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 203
+y 391
+w 284
+h 28
+controlPv "$(P):Location"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-14.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 376
+w 53
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Engineer:"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 198
+y 376
+w 74
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "IOC Location:"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 375
+w 496
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 6
+  1 502
+}
+yPoints {
+  0 375
+  1 375
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 410
+y 6
+w 89
+h 31
+fgColor index 0
+bgColor index 44
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "Security"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "IOC_Security.edl"
+}
+menuLabel {
+  0 "Reboot"
+}
+symbols {
+  0 "P=$(P)"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 84
+y 516
+w 63
+h 26
+fgColor index 0
+bgColor index 44
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-12.0"
+buttonLabel "Clusters"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "IOC_Clusters.edl"
+}
+menuLabel {
+  0 "Clusters"
+}
+symbols {
+  0 "P=$(P)"
+}
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 266
+y 280
+w 97
+h 34
+controlPv "$(P):IFIErrs"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 397
+y 281
+w 97
+h 34
+controlPv "$(P):IFOErrs"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 289
+y 266
+w 145
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Input Errs          Output Errs"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 11
+y 246
+w 226
+h 28
+controlPv "$(P):vxUpTime"
+fgColor index 14
+fgAlarm
+bgColor index 3
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 232
+w 50
+h 15
+font "helvetica-medium-r-14.0"
+fgColor index 10
+bgColor index 55
+useDisplayBg
+value {
+  "Up Time:"
+}
+autoSize
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 229
+w 494
+h 0
+lineColor index 134
+fillColor index 1
+numPoints 2
+xPoints {
+  0 6
+  1 500
+}
+yPoints {
+  0 229
+  1 229
+}
+endObjectProperties
+

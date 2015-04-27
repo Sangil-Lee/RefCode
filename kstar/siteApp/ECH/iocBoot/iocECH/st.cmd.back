@@ -1,0 +1,67 @@
+#!../../bin/linux-x86/ech
+
+## You may have to change ech to something else
+## everywhere it appears in this file
+
+< envPaths
+
+epicsEnvSet(IOC_DEBUG,"0")
+
+cd ${TOP}
+
+## Register all support components
+dbLoadDatabase("dbd/ech.dbd")
+ech_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+dbLoadRecords("db/ech.db","user=rootHost")
+#dbLoadRecords("db/dbExample1.db","user=rootHost")
+#dbLoadRecords("db/dbExample2.db","user=rootHost,no=1,scan=1 second")
+#dbLoadRecords("db/dbExample2.db","user=rootHost,no=2,scan=2 second")
+#dbLoadRecords("db/dbExample2.db","user=rootHost,no=3,scan=5 second")
+#dbLoadRecords("db/dbSubExample.db","user=rootHost")
+#dbLoadRecords CLTU DB    20071114   TGLee
+dbLoadRecords("db/dbSysMon.db","SYS=ECH")
+dbLoadRecords("db/ECH_LTU.db")
+
+###############
+# MDSPlus PUT  add by TGLee##
+################
+dbLoadRecords("db/mdsPVNode.db")
+dbLoadTemplate("db/mdsPVNode.template")
+
+################
+#    TPG256
+################
+dbLoadRecords("db/TPG256.db")
+dbLoadTemplate("db/TPG256_AI.template")
+dbLoadTemplate("db/TPG256_SI.template")
+
+################
+#    ESP300
+################
+dbLoadTemplate("db/ESP300_SI.template")
+
+
+dbLoadTemplate("db/ESP300_AI.template")
+dbLoadTemplate("db/ESP300_AO.template")
+dbLoadTemplate("db/ESP300_BI.template")
+dbLoadTemplate("db/ESP300_BO.template")
+dbLoadRecords("db/ESP300_AI_TB.db")
+
+drvGenericSerialConfigure("L0",172.17.101.196:4001, 0, 0)
+drvGenericSerialConfigure("L1",172.17.101.196:4002, 0, 0)
+
+drvTPG256_init("L1", "mBar", 10., 10., 2)
+
+
+
+## Set this to see messages from mySub
+#var mySubDebug 1
+
+cd ${TOP}/iocBoot/${IOC}
+iocInit()
+
+## Start any sequence programs
+seq sncExample,"user=rootHost"
+#seq sncMdsPut

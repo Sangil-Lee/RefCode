@@ -1,0 +1,81 @@
+program sncSXRDAQSeq 
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+int sampleRate;
+
+double startT0;
+double stopT1;
+double ltuT0;
+
+double ltuT0_Temp;
+double deltaTime;
+
+int	ctuStart;
+
+assign opMode to "SXR_AI_OP_MODE";
+assign status to "SXR_AI_STATUS";
+assign sysArming to "SXR_AI_SYS_ARMING";
+assign autoRun to "SXR_AI_AUTO_RUN";
+assign sampleRate to "SXR_AI_SAMPLING_RATE";
+
+assign ctuStart to "CCS_CTU_shotStart";
+
+assign startT0 to "SXR_AI_START_T0_SEC1";
+assign stopT1 to "SXR_AI_STOP_T1_SEC1";
+assign ltuT0 to "FILD_LTU_P3_SEC0_T0";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+monitor sampleRate;
+
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+
+monitor ctuStart;
+
+evflag ctuStartf;
+sync ctuStart ctuStartf;
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+evflag ltuT0f;
+sync ltuT0 ltuT0f;
+
+
+ss setT0Seq {
+	state setT0 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+			}
+		}state setT0 
+	}
+}
+ss setT11Seq {
+	state setT11 {
+		 when (efTestAndClear(ltuT0f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+			}
+		}state setT11 
+	}
+}

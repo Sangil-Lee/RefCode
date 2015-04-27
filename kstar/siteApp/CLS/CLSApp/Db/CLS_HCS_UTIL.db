@@ -1,0 +1,17 @@
+record(calcout, "CLS_HCS_R_EPICS_COMM_ERROR_CALC") {
+  field(CALC, "!A")
+  field(INPA, "CLS_HCS_R_EPICS_COMM_ERROR_REV CPP")
+}
+record(bi, "CLS_HCS_R_EPICS_COMM_ERROR") {
+  field(INP, "CLS_HCS_R_EPICS_COMM_ERROR_CALC CPP")
+  field(ZNAM, "ERROR")
+  field(ONAM, "NORMAL")
+}
+
+record(bi, "EPICS_CONTROL_MODE") {
+  field(DTYP, "EtherIP")
+  field(INP, "@plc1 EPICS_CONTROL_MODE S 1")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+

@@ -1,0 +1,76 @@
+/*
+ * --------------------------------------------------------------------------
+ * KUPA for VBS
+ * --------------------------------------------------------------------------
+ */
+
+program sncKupa
+
+option +r;
+option -c;
+
+%{
+#include "kutil.h"
+#include "kupaLib.h"
+#include "drvNI6250.h"
+}%
+
+int		shot_start;
+assign	shot_start to "VBS_LTU_SOFT_START";
+monitor	shot_start;
+
+evflag	ef_shot_start;
+sync	shot_start	ef_shot_start;
+
+int		shot_num;
+assign	shot_num to "VBS_SHOT_NUM";
+monitor shot_num;
+
+int		op_mode;
+assign	op_mode to "VBS_OP_MODE";
+monitor op_mode;
+
+double	daq_t0;
+assign	daq_t0 to "VBS_LTU_P0_SEC0_T0";
+monitor daq_t0;
+
+double	daq_t1;
+assign	daq_t1 to "VBS_LTU_P0_SEC0_T1";
+monitor daq_t1;
+
+int		sampling_rate;	/* HZ */
+double	delaySec;
+int		bFirstRun;
+
+ss kupa_handle {
+    state init {
+		when (TRUE) {
+			delaySec = 0.0;
+			bFirstRun = 1;
+			sampling_rate = 2;
+
+			kuDebug (kuMON, "[sncKupa::init] ...\n");
+			efClear (ef_shot_start);
+		} state waitShotStart
+	}
+
+	state waitShotStart {
+		when (efTestAndClear (ef_shot_start)) {
+			if (bFirstRun) {
+				kuDebug (kuMON, "[sncKupa.waitShotStart] ignores first event ... \n");
+				bFirstRun = 0;
+			}
+			else if (shot_start) {
+				kuDebug (kuMON, "[sncKupa.waitShotStart] shot(%d) opmode(%d) rate(%d) T0(%.2f) T1(%.2f) delay(%.2f)\n",
+					shot_num, op_mode, sampling_rate, daq_t0, daq_t1, delaySec);
+
+				%%kupaSetLockId (get_master()->lock_mds);
+				kupaSetShotInfo (op_mode, shot_num, sampling_rate, daq_t0, daq_t1 - daq_t0, delaySec);
+				kupaStart ();
+
+				kuDebug (kuMON, "[sncKupa.waitShotStart] after... \n");
+			}
+		} state waitShotStart
+	}
+}
+

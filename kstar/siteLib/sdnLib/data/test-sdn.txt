@@ -1,0 +1,33 @@
+# ----------------------------------------------
+# Absolute path
+# ----------------------------------------------
+
+# . /usr/local/epics/siteLib/sdnLib/data/sdnenvrc
+
+# cd /usr/local/epics/siteLib/sdnLib/testsdn
+# sdn-sub-simple -x /usr/local/epics/siteLib/sdnLib/data/topic_multicast_map.dat topic1_test
+# sdn-pub-simple -x /usr/local/epics/siteLib/sdnLib/data/topic_multicast_map.dat topic1_test
+# // loopback enabled
+# sdn-pub-simple -b 1 -x /usr/local/epics/siteLib/sdnLib/data/topic_multicast_map.dat topic1_test
+
+# cd /usr/local/epics/siteLib/sdnLib/testcps
+# /usr/local/epics/siteLib/bin/linux-x86/test-cps-sub eth0
+# /usr/local/epics/siteLib/bin/linux-x86/test-cps-pub eth0 1
+
+# ----------------------------------------------
+# Relative path
+# ----------------------------------------------
+
+# cd /usr/local/epics/siteLib/sdnLib/testsdn
+# . ../data/sdnenvrc
+
+# cd /usr/local/epics/siteLib/sdnLib/testsdn
+# sdn-sub-simple -x ../data/topic_multicast_map.dat topic1_test
+# sdn-pub-simple -x ../data/topic_multicast_map.dat topic1_test
+# // loopback enabled
+# sdn-pub-simple -b 1 -x ../data/topic_multicast_map.dat topic1_test
+
+# cd /usr/local/epics/siteLib/sdnLib/testcps
+# ../../bin/linux-x86/test-cps-sub eth0
+# ../../bin/linux-x86/test-cps-pub eth0 1
+

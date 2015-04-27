@@ -1,0 +1,28 @@
+include "base.dbd"
+include "timestampRecord.dbd"
+include "asyn.dbd"
+include "drvGenericSerial.dbd"
+include "devGpib.dbd"
+include "drvTPG262.dbd"
+include "devTPG262.dbd"
+include "drvGP307.dbd"
+include "devGP307.dbd"
+include "devSRSRGA.dbd"
+#include "drvnicFP20x0.dbd"
+#include "devnicFP20x0.dbd"
+include "devPumpCRP.dbd"
+include "devPumpTMP.dbd"
+include "devPumpMBP.dbd"
+include "ether_ip.dbd"
+include "sysMon.dbd"
+include "subHealthState.dbd"
+include "subIfDriver.dbd"
+#registrar(crpScanRegistrar)
+#registrar(tmpScanRegistrar)
+#registrar(mbpScanRegistrar)
+#registrar(valveCheckRegistrar)
+#registrar(crpModeSelectorRegistrar)
+#registrar(scenarioRegistrar)
+registrar(SRSRGA_ONRegistrar)
+# Next line was added for pvcrawler system command [shbaek, 2010.01.22]
+registrar(iocshSystemCommand)

@@ -1,0 +1,73 @@
+record(bi, "CCS_PCS_RT_MODE")
+{
+	field(DESC, "PCS RT Mode")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(ZNAM, "Non Real-Time")
+	field(ONAM, "Real-Time")
+}
+
+
+
+record(bo, "CCS_CLEAR_PCS_FAULT_CODE")
+{
+	field(DESC, "PCS fault Clear")
+	field(SCAN, "Passive")
+#	field(PINI, "YES")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+record(bo, "CCS_CLEAR_PCS_FAST_INTL")
+{
+	field(DESC, "pcs fast intl Clear")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+record(bo, "CCS_CLEAR_PCS_FORCE_ABORT")
+{
+	field(DESC, "force abort Clear")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+record(bo, "CCS_CLEAR_PCS_PFC_FAULT")
+{
+	field(DESC, "pfc fault Clear")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+
+record(ao, "CCS_PCS_CHECK_TIME") {
+  field(DESC, "PCS fault check time")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Soft Channel")
+  field(VAL, "16")
+}
+
+record(bo, "CCS_RT_PLASMA_STATUS")
+{
+	field(DESC, "plasma status")
+	field(SCAN, "Passive")
+	field(ZNAM, "off(0)")
+	field(ONAM, "on(1)")
+}
+record(ao, "CCS_PLASMA_STATUS_THRESHOLD")
+{
+	field(DESC, "plasma on limit")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(VAL, "0.2")
+}
+
+record(bo, "CCS_DISRUPTION_EVENT")
+{
+	field(DESC, "disruption status")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+
+

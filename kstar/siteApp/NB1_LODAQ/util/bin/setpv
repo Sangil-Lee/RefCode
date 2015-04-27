@@ -1,0 +1,31 @@
+if 0
+then
+	echo ""
+	echo "--------------------------------------"
+	echo -n "Input NB1_LODAQ_OP_MODE : [1/2/3] (Remote/Local/Calib) : "
+	read val
+	caput NB1_LODAQ_OP_MODE $val
+else
+	caput NB1_LODAQ_OP_MODE 2
+fi
+
+#echo ""
+#echo "--------------------------------------"
+#echo "Input NB1_LODAQ_AUTO_RUN"
+#read val
+#caput NB1_LODAQ_AUTO_RUN 1
+
+while true
+do
+	echo ""
+	echo "--------------------------------------"
+	echo "Input NB1_LODAQ_SYS_ARMING"
+	read val
+	caput NB1_LODAQ_SYS_ARMING 1
+
+	echo ""
+	echo "Input NB1_LODAQ_SYS_RUN"
+	read val
+	caput NB1_LODAQ_SYS_RUN 1
+done
+

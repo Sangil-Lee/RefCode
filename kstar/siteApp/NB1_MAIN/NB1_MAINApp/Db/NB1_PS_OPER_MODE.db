@@ -1,0 +1,93 @@
+record(mbbo, "$(P)_MODE_STATUS")
+{
+    field(DESC, "BEAM")
+	field(ZRST, "N/A")
+	field(ONST, "FILA")
+	field(TWST, "ARC")
+	field(THST, "HIPOT")
+	field(FRST, "BEAM")
+}
+record(calc, "$(P)_FILA_MODE_C")
+{
+    field(DESC, "fila mode")
+	field(FLNK, "$(P)_FILA_MODE NPP NMS")
+	field(CALC, "A=1:1?0")
+	field(INPA, "$(P)_MODE_STATUS.VAL CPP")
+}
+record(bi, "$(P)_FILA_MODE")
+{
+    field(DESC, "FILA mode")
+	field(SCAN, "Passive")
+	field(INP, "$(P)_FILA_MODE_C NPP NMS")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+}
+record(calc, "$(P)_ARC_MODE_C")
+{
+    field(DESC, "fila mode")
+	field(FLNK, "$(P)_ARC_MODE NPP NMS")
+	field(CALC, "A=2:1?0")
+	field(INPA, "$(P)_MODE_STATUS.VAL CPP")
+}
+record(bi, "$(P)_ARC_MODE")
+{
+    field(DESC, "FILA mode")
+	field(SCAN, "Passive")
+	field(INP, "$(P)_ARC_MODE_C NPP NMS")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+}
+record(calc, "$(P)_HIPOT_MODE_C")
+{
+    field(DESC, "fila mode")
+	field(FLNK, "$(P)_HIPOT_MODE NPP NMS")
+	field(CALC, "A=3:1?0")
+	field(INPA, "$(P)_MODE_STATUS.VAL CPP")
+}
+record(bi, "$(P)_HIPOT_MODE")
+{
+    field(DESC, "FILA mode")
+	field(SCAN, "Passive")
+	field(INP, "$(P)_HIPOT_MODE_C NPP NMS")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+}
+record(calc, "$(P)_BEAM_MODE_C")
+{
+    field(DESC, "fila mode")
+	field(FLNK, "$(P)_BEAM_MODE NPP NMS")
+	field(CALC, "A=4:1?0")
+	field(INPA, "$(P)_MODE_STATUS.VAL CPP")
+}
+record(bi, "$(P)_BEAM_MODE")
+{
+    field(DESC, "FILA mode")
+	field(SCAN, "Passive")
+	field(INP, "$(P)_BEAM_MODE_C NPP NMS")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+}
+record(bo, "$(P)_FILA_CMD")
+{
+    field(DESC, "FILA")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+record(bo, "$(P)_ARC_CMD")
+{
+    field(DESC, "ARC")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+record(bo, "$(P)_HIPOT_CMD")
+{
+    field(DESC, "HIPOT")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+record(bo, "$(P)_BEAM_CMD")
+{
+    field(DESC, "BEAM")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}

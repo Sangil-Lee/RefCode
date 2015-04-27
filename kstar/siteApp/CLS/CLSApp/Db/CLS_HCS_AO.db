@@ -1,0 +1,30 @@
+record(calcout, "$(PV_NAME)_IN") {
+  field(FLNK, "$(PV_NAME)")
+  field(CALC, "B")
+  field(INPA, "CLS_REMOTE CPP")
+  field(INPB, "$(PV_NAME_INP) CPP")
+  field(OUT, "$(PV_NAME)")
+}
+
+record(ao, "$(PV_NAME)") {
+  field(SCAN, "Passive")
+  field(EGU, "$(EGU)")
+  field(OMSL, "supervisory")
+  field(OUT, "$(PV_NAME)_C")
+} 
+
+record(calcout, "$(PV_NAME)_C"){
+  field(FLNK, "$(PV_NAME)_O")
+  field(CALC, "A*B")
+  field(INPA, "$(ASLO)")
+  field(INPB, "$(PV_NAME) CPP")
+  field(OUT, "$(PV_NAME)_O")
+}
+
+
+record(ao, "$(PV_NAME)_O") {
+  field(SCAN, "Passive")
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 $(TAG) S 1")
+  field(OMSL, "supervisory")
+}

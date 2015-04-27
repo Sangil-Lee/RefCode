@@ -1,0 +1,52 @@
+record(ao, "$(PV_NAME)_OUT") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc0 $(TAG) S 0.1")
+#  field(MDEL, "-1")
+  field(OMSL, "supervisory")
+}
+#record(ao, "$(PV_NAME)_OUT") {
+#  field(DESC, "EtherIP")
+#  field(SCAN, "Passive")
+#}
+record(calcout, "$(PV_NAME)_CAL") {
+  field(CALC, "A OR 1")
+  field(OUT, "$(PV_NAME)_OUT PP")
+  field(INPA, "$(PV_NAME)")
+#  field(INPB, "$(PV_NAME)_OUT")
+}
+record(bo, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(SCAN, "Passive")
+  field(FLNK, "$(PV_NAME)_CAL")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+  field(MDEL, "1")
+}
+#record(bo, "$(PV_NAME)") {
+#  field(DESC, "$(DESC)")
+#  field(SCAN, "Passive")
+#  field(FLNK, "$(PV_NAME)_C")
+#  field(OMSL, "supervisory")
+#  field(ZNAM, "$(ZNAM)")
+#  field(ONAM, "$(ONAM)")
+#  field(ZSV, "$(ZSV)")
+#  field(OSV, "$(OSV)")
+#}
+#
+#
+#record(bo, "$(PV_NAME)_I") {
+#  field(SCAN, "1 second")
+#  field(PINI, "YES")
+#  field(OMSL, "closed_loop")
+#  field(DOL, "$(PV_NAME_REF) CPP")
+#  field(OUT, "$(PV_NAME) PP")
+#}
+#
+#record(calcout, "$(PV_NAME)_C") {
+#  field(CALC, "A XOR B")
+#  field(OUT, "$(PV_NAME)_OUT PP")
+#  field(INPA, "$(PV_NAME)_I")
+#  field(INPB, "$(PV_NAME)")
+#}

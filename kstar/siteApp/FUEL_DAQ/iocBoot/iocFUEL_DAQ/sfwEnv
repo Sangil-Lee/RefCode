@@ -1,0 +1,33 @@
+### Standard Frame Work configuration. ##################
+# replace XXX to your system name
+# like DDS1, ER, TS, RMP, etc. ...
+
+#### sequence related PVs ########
+#epicsEnvSet("SYS_OP_MODE","XXX_OP_MODE")
+#epicsEnvSet("SYS_ARMING","XXX_SYS_ARMING")
+#epicsEnvSet("SYS_RUN","XXX_SYS_RUN")
+#epicsEnvSet("SYS_SHOT_NUMBER","XXX_CCS_SHOT_NUMBER")
+#epicsEnvSet("SYS_BLIP_TIME","XXX_CCS_BLIP_TIME")
+#epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.101.145:8000")
+#epicsEnvSet("MDS_REMOTE_EVENT_IP","172.17.101.145:8000")
+
+#### NTP related environment ########
+epicsEnvSet("EPICS_TIMEZONE", "KOR::-540:000000:000000")
+epicsEnvSet("EPICS_TS_NTP_INET", "172.17.100.11")
+
+
+## MDS plus environment ###########
+epicsEnvSet("MDS_LOCAL_IP_PORT","172.17.101.145:8000")
+epicsEnvSet("MDS_LOCAL_TREE_NAME","operation")
+epicsEnvSet("MDS_LOCAL_EVENT_IP","172.17.101.145:8000")
+
+epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.100.202:8000")
+epicsEnvSet("MDS_REMOTE_TREE_NAME","operation")
+epicsEnvSet("MDS_REMOTE_EVENT_IP","172.17.100.202:8000")
+
+epicsEnvSet("MDS_CAL_IP_PORT","172.17.101.145:8000")
+epicsEnvSet("MDS_CAL_TREE_NAME","operation")
+epicsEnvSet("MDS_CAL_EVENT_IP","172.17.101.145:8000")
+
+epicsEnvSet("MDS_EVENT_ARG","FUEL_DAQ")
+

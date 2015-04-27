@@ -1,0 +1,503 @@
+Subject: configure a PXI express system with an MXI express in the RBA system
+Updated: 2009.08.15
+
+-------------------------------------------------------------------------------------------------
+
+* Remark
+
+As of 13 Aug. 2009,
+PXI express systems with an MXI express system and an external controller installed Linux is
+incapable of handling PXI express functionality,
+but only calapble of handling traditional PXI functionality.
+The reason is quite simple:
+device drivers of NI can not process hardware description files of PXI express devices.
+
+As a matter of fact,
+a PXI express system in the RBA system can be configured
+as a traditional PXI system
+by using a tricky parameters.
+
+-------------------------------------------------------------------------------------------------
+
+* Hardware and software installed in the PXI system
+
+Hardware:
+  PXIe/PCIe bridge: NI MXI-Express PXIe-PCIe8361
+  PXI controller: PXIe-8360
+  PXI chassis: NI PXIe-1062Q
+  Digitizer: NI PXI-6122
+
+Software:
+  OS: openSUSE 11.0 (kernel 2.6.25)
+  NI driver: NI-DAQmx 8.0.1
+  GPIB driver: NI-488.2  2.5.1
+
+-------------------------------------------------------------------------------------------------
+
+* Prepare hardware description files
+
+* Note
+
+The following hardware description files can be obtained also from the CD:
+  NI PXI platform services, version 2.4.2.
+
+
+# su
+#
+# cd "/windows/C/Program Files/National Instruments/PXI/Hardware Descriptions/Controllers"
+# cp "National Instruments PXI-8360.ini" /usr/local/natinst/nipxi/etc/HardwareDescriptions/controllers/
+# cp "National Instruments PXI-8360 Rev 2.ini" /usr/local/natinst/nipxi/etc/HardwareDescriptions/controllers/
+#
+# cd "../Chassis Descriptions"
+# cp "National Instruments PXIe-1062.ini" /usr/local/natinst/nipxi/etc/HardwareDescriptions/chassis/
+#
+# exit
+
+-------------------------------------------------------------------------------------------------
+
+* Designate the remote PXI express controller
+
+# su
+#
+# cd /usr/local/natinst/nipxi/sbin
+# ./nipxiconfig -l
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  PXI-MXI-Express
+
+Chassis 2 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+Chassis 3 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+
+* Note
+
+The above result may be different from that of fresh systems.
+
+
+# ./nipxiconfig --unidentify-all
+# ./nipxiconfig -l
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+Chassis 2 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+
+# rm temp.ini
+# nidaqmxconfig --export temp.ini
+# cat temp.ini
+﻿
+[DAQmx]
+MajorVersion = 8
+MinorVersion = 0
+
+[DAQmxDevice Dev1]
+ProductType = PXI-6122
+DevSerialNum = 0x1271362
+BusType = PXI
+PXI.ChassisNum = 3086928159
+PXI.SlotNum = 3213867616
+
+[DAQmxDevice Dev2]
+ProductType = PXI-6122
+DevSerialNum = 0x127135C
+BusType = PXI
+PXI.ChassisNum = 3213867528
+PXI.SlotNum = 4960
+
+[DAQmxDevice Dev3]
+ProductType = PXI-6122
+DevSerialNum = 0x134E523
+BusType = PXI
+PXI.ChassisNum = 3213867528
+PXI.SlotNum = 4960
+
+
+# ./nipxiconfig --list-identifiable-controllers
+
+List of identifiable controllers in
+/etc/natinst/nipxi/HardwareDescriptions/controllers
+
+"National Instruments" "NI PXI-8174"
+"National Instruments" "NI PXI-8175"
+"National Instruments" "NI PXI-8176"
+"National Instruments" "NI PXI-8184"
+"National Instruments" "NI PXI-8185"
+"National Instruments" "NI PXI-8186"
+"National Instruments" "NI PXI-8187"
+"National Instruments" "NI PXI-8195"
+"National Instruments" "NI PXI-8196"
+"National Instruments" "NI-8140 RT Series"
+"National Instruments" "PXI-8150 Series"
+"National Instruments" "PXI-8150B Series"
+"National Instruments" "PXI-8170"
+
+Found 13 controller.ini file(s)
+
+* Note
+
+The NI drivers do not properly list MXI files.
+
+
+# ls /etc/natinst/nipxi/HardwareDescriptions/controllers
+
+National Instruments NI-8140 RT.ini  National Instruments NI-8196.ini
+National Instruments NI-8174.ini     National Instruments PXI-8150B.ini
+National Instruments NI-8175.ini     National Instruments PXI-8150.ini
+National Instruments NI-8176.ini     National Instruments PXI-8170.ini
+National Instruments NI-8184.ini     National Instruments PXI-8360.ini
+National Instruments NI-8185.ini     National Instruments PXI-8360 Rev 2.ini
+National Instruments NI-8186.ini     National Instruments PXI-MXI-3.ini
+National Instruments NI-8187.ini     National Instruments PXI-MXI-4.ini
+National Instruments NI-8195.ini     National Instruments PXI-MXI-Express.ini
+
+
+# ./nipxiconfig --identify-controller "/usr/local/natinst/nipxi/etc/HardwareDescriptions/controllers/National Instruments PXI-MXI-Express.ini"
+# ./nipxiconfig -l
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  PXI-MXI-Express
+
+Chassis 2 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+Chassis 3 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+* Note
+
+Chassis 1: remote controller's chassis
+Chassis 2: PXI express chassis
+Chassis 3: PXI chassis
+The chassis 2 and 3 are in one physical chassis.
+
+-------------------------------------------------------------------------------------------------
+
+* Designate the PXI express chassis
+
+# cd /usr/local/natinst/nipxi/sbin
+# ./nipxiconfig --list-identifiable-chassis
+
+List of identifiable chassis in
+/etc/natinst/nipxi/HardwareDescriptions/chassis
+
+"National Instruments" "PXI-1000"   (8 slot)
+"National Instruments" "PXI-1000B"  (8 slot)
+"National Instruments" "PXI-1002"   (4 slot)
+"National Instruments" "PXI-1006"   (18 slot)
+"National Instruments" "PXI-1010"   (8 slot)
+"National Instruments" "PXI-1011"   (4 slot)
+"National Instruments" "PXI-1020"   (8 slot)
+"National Instruments" "PXI-1025"   (8 slot)
+"National Instruments" "PXI-1031"   (4 slot)
+"National Instruments" "PXI-1031DC" (4 slot)
+"National Instruments" "PXI-1036"   (6 slot)
+"National Instruments" "PXI-1036DC" (6 slot)
+"National Instruments" "PXI-1042"   (8 slot)
+"National Instruments" "PXI-1042Q"  (8 slot)
+"National Instruments" "PXI-1044"   (14 slot)
+"National Instruments" "PXI-1045"   (18 slot)
+"National Instruments" "PXI-1050"   (8 slot)
+"National Instruments" "PXI-1052"   (4 slot)
+"National Instruments" "PXI-1056"   (18 slot)
+
+Found 19 chassis.ini file(s)
+IOCRBAMD:/usr/local/natinst/nipxi/sbin # 
+
+* Note
+
+The NI drivers do not properly list PXI express controller files.
+
+
+# ./nipxiconfig --identify-chassis 2 "National Instruments" "PXI-1042Q"
+# ./nipxiconfig -l
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  PXI-MXI-Express
+
+Chassis 2 (PXI-1042Q)
+  Slot 1:  NI PXI-8360
+
+Chassis 3 (Unidentified)
+  Slot 1:  NI PXI-8360
+
+* Note
+
+The PXI-1042Q is almost compatible with the PXI bus of the PXIe-1062Q.
+
+
+# rm temp.ini
+# nidaqmxconfig --export temp.ini
+# cat temp.ini
+﻿
+[DAQmx]
+MajorVersion = 8
+MinorVersion = 0
+
+[DAQmxDevice Dev1]
+ProductType = PXI-6122
+DevSerialNum = 0x1271362
+BusType = PXI
+PXI.ChassisNum = 3087259935
+PXI.SlotNum = 3218402992
+
+[DAQmxDevice Dev2]
+ProductType = PXI-6122
+DevSerialNum = 0x127135C
+BusType = PXI
+PXI.ChassisNum = 3218402904
+PXI.SlotNum = 5024
+
+[DAQmxDevice Dev3]
+ProductType = PXI-6122
+DevSerialNum = 0x134E523
+BusType = PXI
+PXI.ChassisNum = 3218402904
+PXI.SlotNum = 5024
+
+
+# ./nipxiconfig --identify-chassis 3 "National Instruments" "PXI-1042Q"
+# ./nipxiconfig -l
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  PXI-MXI-Express
+
+Chassis 2 (PXI-1042Q)
+  Slot 1:  NI PXI-8360
+
+Chassis 3 (PXI-1042Q)
+  Slot 1:  NI PXI-8360
+  Slot 5:  PXI-6122 (PXI12::12::INSTR)
+  Slot 6:  PXI-6122 (PXI12::11::INSTR)
+  Slot 7:  PXI-6122 (PXI12::10::INSTR)
+
+
+# rm temp.ini
+# nidaqmxconfig --export temp.ini
+# cat temp.ini
+﻿
+[DAQmx]
+MajorVersion = 8
+MinorVersion = 0
+
+[DAQmxDevice Dev1]
+ProductType = PXI-6122
+DevSerialNum = 0x1271362
+BusType = PXI
+PXI.ChassisNum = 3
+PXI.SlotNum = 5
+
+[DAQmxDevice Dev2]
+ProductType = PXI-6122
+DevSerialNum = 0x127135C
+BusType = PXI
+PXI.ChassisNum = 3
+PXI.SlotNum = 6
+
+[DAQmxDevice Dev3]
+ProductType = PXI-6122
+DevSerialNum = 0x134E523
+BusType = PXI
+PXI.ChassisNum = 3
+PXI.SlotNum = 7
+
+
+# ./nipxiconfig --list-identifications all
+
+List of identifications:
+
+Chassis 1 (Unidentified)
+  Slot 1:  PXI-MXI-Express
+
+Chassis 2 (PXI-1042Q)
+  Slot 1:  NI PXI-8360
+
+Chassis 3 (PXI-1042Q)
+  Slot 1:  NI PXI-8360
+  Slot 5:  PXI-6122 (PXI12::12::INSTR)
+  Slot 6:  PXI-6122 (PXI12::11::INSTR)
+  Slot 7:  PXI-6122 (PXI12::10::INSTR)
+
+
+# ./nipxiconfig --list-pxi-buses all
+
+List of PXI buses
+
+PXI Bus 0: Chassis 1 (Unidentified), slot 1 controller - PXI-MXI-Express
+PXI Bus 1
+PXI Bus 16
+PXI Bus 18
+PXI Bus 19
+PXI Bus 17
+PXI Bus 15
+PXI Bus 14
+PXI Bus 13
+PXI Bus 2
+PXI Bus 3
+PXI Bus 4
+PXI Bus 5
+PXI Bus 6
+  PXI6::0::INSTR - NI PXI-8360 bridge to Chassis 2 (PXI-1042Q) on PXI bus 7
+PXI Bus 7: Chassis 2 (PXI-1042Q), slot 1 controller - NI PXI-8360
+PXI Bus 8
+PXI Bus 9
+PXI Bus 10
+PXI Bus 11
+  PXI11::0::INSTR - NI PXI-8360 bridge to Chassis 3 (PXI-1042Q) on PXI bus 12
+PXI Bus 12: Chassis 3 (PXI-1042Q), slot 1 controller - NI PXI-8360
+  PXI12::10::INSTR (PXI-6122), slot 7
+  PXI12::11::INSTR (PXI-6122), slot 6
+  PXI12::12::INSTR (PXI-6122), slot 5
+PXI Bus 20
+PXI Bus 21
+  PXI21::4::INSTR (PCI-GPIB), unknown slot
+
+
+# ./nipxiconfig --list-triggers 1
+
+ERROR: List trigger configuration failed with status -78400
+
+
+# ./nipxiconfig --list-triggers 2
+
+Chassis 2 (PXI-1042Q) PXI Trigger Configuration
+            TriggerBus1
+PXI_Trig0 -     [ ]
+PXI_Trig1 -     [ ]
+PXI_Trig2 -     [ ]
+PXI_Trig3 -     [ ]
+PXI_Trig4 -     [ ]
+PXI_Trig5 -     [ ]
+PXI_Trig6 -     [ ]
+PXI_Trig7 -     [ ]
+
+
+# ./nipxiconfig --list-triggers 3
+
+Chassis 3 (PXI-1042Q) PXI Trigger Configuration
+            TriggerBus1
+PXI_Trig0 -     [ ]
+PXI_Trig1 -     [ ]
+PXI_Trig2 -     [ ]
+PXI_Trig3 -     [ ]
+PXI_Trig4 -     [ ]
+PXI_Trig5 -     [ ]
+PXI_Trig6 -     [ ]
+PXI_Trig7 -     [ ]
+
+-------------------------------------------------------------------------------------------------
+
+* Usage of nipxiconfig
+
+
+NAME
+    nipxiconfig - the National Instruments PXI system configuration tool
+
+SYNOPSIS
+    nipxiconfig [ OPTION [OPTION-ARGS...] ...]
+
+DESCRIPTION
+    nipxiconfig is a command-line tool for configuring PXI chassis
+    identifications, trigger routings, and static trigger reservations
+
+OPTIONS
+    -h, --help
+         Display help for this application.
+
+    --identify-bus-as-chassis <bus> <"Manufacturer"> <"Model">
+         Identify a PXI/PCI bus as a chassis.
+    --identify-bus-as-chassis <bus> <path to chassis.ini file>
+         Identify a PXI/PCI bus as a chassis using the specified
+         chassis.ini file.
+
+    -i, --identify-chassis <chassis number> <"Manufacturer"> <"Model">
+         Identify the specified chassis number.
+    -i, --identify-chassis <chassis number> <path to chassis.ini file>
+         Identify the specified chassis number using the specified
+         chassis.ini file.
+
+    --identify-controller <"Manufacturer"> <"Model">
+         Identify the controller of the PXI system.
+    --identify-controller <path to controller.ini file>
+         Identify the controller of the PXI system using
+         the specified controller.ini file.
+
+    --list-identifiable-chassis
+         Show the list of cached chassis.ini files.
+
+    --list-identifiable-controllers
+         Show the list of cached controller.ini files.
+
+    -l, --list-identifications {brief|all}
+         Show the unidentified and identified chassis in the system.
+         Specify all as a parameter to show slot information for each
+         identified chassis.  By default, all information is shown.
+
+    --list-pxi-buses {brief|all}
+         List the PXI buses in the system and their chassis
+         identifications.
+         Specify all as a parameter to show PXI resources for each
+         PXI bus.  By default, all information is shown.
+
+    --list-triggers {chassis number}
+         List the trigger reservations and routings for the
+         specified chassis.
+
+    --renumber-chassis <old chassis number> <new chassis number>
+         Renumber the specified chassis.
+
+    --reserve-trigger <chassis number> <trigger line number|PXI_Trig#> [trigger bus number]
+         Reserve a trigger line in the specified chassis.
+         Not specifying the trigger bus number reserves the trigger
+         line number across all trigger buses of the chassis.
+
+    --route-trigger <chassis number> <trigger line number|PXI_Trig#> <trigger bus number>
+         Route a trigger line between trigger buses in a chassis.
+         Uses trigger bus number as the source trigger bus as the
+         start of routing away from the source trigger bus.
+
+    --unidentify-all
+         Delete all controller and chassis identifications,
+         trigger reservations, and trigger routing information.
+
+    --unidentify-chassis <chassis number>
+         Remove identification for the specified chassis.
+
+    --unidentify-controller
+         Remove identification for the system controller.
+
+    --unreserve-trigger <chassis number> <trigger line number|PXI_Trig#> [trigger bus number]
+         Remove reservation for a trigger line in the specified chassis.
+         Not specifying the trigger bus number removes all reservations
+         for the specified trigger line number.
+
+    --unroute-trigger <chassis number> <trigger line number|PXI_Trig#>
+         Remove routing information for the specified trigger line.
+
+    -v, --version
+         Display the version of this application.
+
+-------------------------------------------------------------------------------------------------
+
+* Note
+
+What is the "nipxirmiInstallerUtility.sh"?
+
+IOCRBAMD:/usr/local/natinst/nipxi/bin/nipxirmiInstallerUtility.sh 
+
+-------------------------------------------------------------------------------------------------
+

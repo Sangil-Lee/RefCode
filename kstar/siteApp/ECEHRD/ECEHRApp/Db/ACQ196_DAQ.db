@@ -1,0 +1,131 @@
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "ACQ196 BoControl")
+  field(OUT, "@daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_$(DEV)_UNITS") {
+  field(DESC, "ACQ196 Mesure Opt. units")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@daq_units")
+}
+
+record(ao, "$(SYS)_$(DEV)_SAMPLING_MODE") {
+  field(DESC, "ACQ196 Sampling Mode")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@smp_mode")
+}
+
+record(ao, "$(SYS)_$(DEV)_SAMP_PER_CHAN_TO_ACQUIE") {
+  field(DESC, "ACQ196 Sampling ChanToAcquie")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@smp_acquie")
+}
+
+record(ao, "$(SYS)_$(DEV)_TERMINAL_CONFIG") {
+  field(DESC, "ACQ196 Terminal Config")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@trm_cfg")
+}
+
+record(ao, "$(SYS)_$(DEV)_SAMPLE_RATE") {
+  field(DESC, "ACQ196 Terminal Config")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@smp_rate")
+}
+
+record(ao, "$(SYS)_$(DEV)_SAMPLE_TIME") {
+  field(DESC, "ACQ196 Mesure Time")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@smp_time")
+}
+
+record(ao, "$(SYS)_$(DEV)_MINVAL") {
+  field(DESC, "ACQ196 Mesure Min. Voltage")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@min_val")
+}
+
+record(ao, "$(SYS)_$(DEV)_MAXVAL") {
+  field(DESC, "ACQ196 Mesure Max. Voltage")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@max_val")
+}
+
+record(ai, "$(SYS)_$(DEV)_D1_SAMPLE_RATE_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@Dev1 smp_rate_r")
+}
+
+record(ai, "$(SYS)_$(DEV)_D1_SAMPLE_TIME_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@Dev1 smp_time_r")
+}
+
+record(ai, "$(SYS)_$(DEV)_D1_MINVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@Dev1 min_val_r")
+}
+
+record(ai, "$(SYS)_$(DEV)_D1_MAXVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@Dev1 max_val_r")
+}
+#record(ai, "$(SYS)_$(DEV)_D2_SAMPLE_RATE_R") {
+#  field(SCAN, "I/O Intr")
+#  field(PINI, "YES")
+#  field(DTYP, "ACQ196 RawRead_ai")
+#  field(INP, "@Dev2 smp_rate_r")
+#}
+
+#record(ai, "$(SYS)_$(DEV)_D2_SAMPLE_TIME_R") {
+#  field(SCAN, "I/O Intr")
+#  field(PINI, "YES")
+#  field(DTYP, "ACQ196 RawRead_ai")
+#  field(INP, "@Dev2 smp_time_r")
+#}
+
+#record(ai, "$(SYS)_$(DEV)_D2_MINVAL_R") {
+#  field(SCAN, "I/O Intr")
+#  field(PINI, "YES")
+#  field(DTYP, "ACQ196 RawRead_ai")
+#  field(INP, "@Dev2 min_val_r")
+#}
+
+#record(ai, "$(SYS)_$(DEV)_D2_MAXVAL_R") {
+#  field(SCAN, "I/O Intr")
+#  field(PINI, "YES")
+#  field(DTYP, "ACQ196 RawRead_ai")
+#  field(INP, "@Dev2 max_val_r")
+#}
+
+record(ai, "$(SYS)_LTU_T0_SEC") {
+  field(SCAN, "1 second")
+  field(PINI, "YES")
+  field(DTYP, "Soft Channel")
+  field(INP, "FUEL_LTU_P5_SEC0_T0 CPP")
+}
+
+#record(bo, "$(SYS)_LOCAL_START") {
+#  field(DTYP, "ACQ196 BoControl")
+#  field(OUT, "@local_start")
+#  field(ZNAM, "0")
+#  field(ONAM, "1")
+#}
+
+#record(bo, "$(SYS)_AUTO_RUN") {
+#  field(DTYP, "ACQ196 BoControl")
+#  field(OUT, "@auto_run")
+#  field(ZNAM, "0")
+#  field(ONAM, "1")
+#}
+

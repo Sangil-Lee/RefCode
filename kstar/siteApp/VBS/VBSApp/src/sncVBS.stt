@@ -1,0 +1,85 @@
+/*
+ * --------------------------------------------------------------------------
+ * Setting minimum and maximum input voltage according to input range option 
+ * --------------------------------------------------------------------------
+ */
+
+program sncVBS
+
+option +r;
+option -c;
+
+%{
+#include "kutil.h"
+}%
+
+int		input_range;
+assign	input_range to "VBS_INPUT_RANGE";
+monitor	input_range;
+
+evflag	ef_input_range;
+sync	input_range		ef_input_range;
+
+float	min_volt;
+assign	min_volt to "VBS_MIN_VOLT";
+
+float	max_volt;
+assign	max_volt to "VBS_MAX_VOLT";
+
+float	display_gain;
+assign	display_gain to "VBS_GAIN";
+
+int		old_min_volt;
+int		old_max_volt;
+int		old_display_gain;
+
+ss SignalRange {
+    state init {
+		when (TRUE) {
+			kuDebug (kuMON, "[sncVBS::SignalRange.init] ...\n");
+			efClear (ef_input_range);
+		} state waitRangeSetting
+	}
+
+	state waitRangeSetting {
+		when (efTestAndClear (ef_input_range)) {
+			kuDebug (kuMON, "[sncVBS::SignalRange.waitRangeSetting] before : min(%f) max(%f) gain(%f)\n", 
+				min_volt, max_volt, display_gain);
+
+			old_min_volt		= min_volt;
+			old_max_volt		= max_volt;
+			old_display_gain	= display_gain;
+			
+			%% // ------------------------------------------------------------------
+			%% // Refer to SCXI-1125 User Manual
+			%% // ------------------------------------------------------------------
+
+			%% switch (pVar->input_range) {
+			%% 	 case  0 : pVar->max_volt = 0.0025; break;
+			%% 	 case  1 : pVar->max_volt = 0.005; break;
+			%% 	 case  2 : pVar->max_volt = 0.01; break;
+			%% 	 case  3 : pVar->max_volt = 0.02; break;
+			%% 	 case  4 : pVar->max_volt = 0.025; break;
+			%% 	 case  5 : pVar->max_volt = 0.05; break;
+			%% 	 case  6 : pVar->max_volt = 0.125; break;
+			%% 	 case  7 : pVar->max_volt = 0.25; break;
+			%% 	 case  8 : pVar->max_volt = 0.5; break;
+			%% 	 case  9 : pVar->max_volt = 1; break;
+			%% 	 case 10 : pVar->max_volt = 2.5; break;
+			%% 	 case 11 : pVar->max_volt = 5; break;
+			%% }
+			
+			%% // Display gain is used to make 10VPP for OPI display
+			min_volt = max_volt * -1;
+			display_gain = 10 / max_volt;
+
+			pvPut (min_volt);
+			pvPut (max_volt);
+			pvPut (display_gain);
+
+			kuDebug (kuMON, "[sncVBS::SignalRange.waitRangeSetting] after  : min(%f) max(%f) gain(%f)\n", 
+				min_volt, max_volt, display_gain);
+		} state waitRangeSetting
+	}
+}
+

@@ -1,0 +1,95 @@
+program sncMonsvrstatus
+
+option +r;
+option -c;
+
+%{
+#define		CAGATEWAY_SERVER_FAULT		1
+#define		CHANNEL_SERVER_FAULT		2
+#define		DATA_SERVER_FAULT			4
+#define		BACKUP_SERVER_FAULT			8
+#define		WEB_SERVER_FAULT			16
+#define		MCR_TEMP_WARNING			32
+#define		COMP_TEMP_WARNING			64
+#define		MDSPLUS_SERVER_FAULT		128
+#define		CAGATEWAY2_SERVER_FAULT		256
+}%
+
+
+float		mcr_temp;
+assign      mcr_temp	to	"ICS_TMON_OPI_RACK1";
+monitor		mcr_temp;
+
+float		comp_temp;
+assign		comp_temp	to	"ICS_TMON_SERVER_RACK1";
+monitor		comp_temp;
+
+int			server_status;
+assign		server_status	to "CCS_EIP_INTL_SERVER";
+
+evflag		ef_mcr_temp;
+evflag		ef_comp_temp;
+
+sync		mcr_temp	ef_mcr_temp;
+sync		comp_temp	ef_comp_temp;
+
+%{/*
+ss Mcr_Temp
+{
+	state init
+	{
+		when(TRUE)
+		{
+			efClear(ef_mcr_temp);
+		}state statuscheck
+	}
+
+	state statuscheck
+	{
+		when(efTestAndClear(ef_mcr_temp) && mcr_temp < 35.0)
+		{
+			pvGet(server_status);
+			server_status -=  MCR_TEMP_WARNING;
+			pvPut(server_status);
+		}state statuscheck
+
+		when(efTestAndClear(ef_mcr_temp) && mcr_temp >= 35.0)
+		{
+			pvGet(server_status);
+			server_status +=  MCR_TEMP_WARNING;
+			pvPut(server_status);
+		}state statuscheck
+	}
+}
+*/}%
+
+ss Comp_Temp
+{
+	state init
+	{
+		when(TRUE)
+		{
+			efClear(ef_comp_temp);
+		}state statuscheck
+	}
+	state statuscheck
+	{
+		when(efTestAndClear(ef_comp_temp))
+		{
+			pvGet(server_status);
+			%%if( pVar->comp_temp < 27.35)
+			%%{
+				server_status &= ~COMP_TEMP_WARNING;
+				printf("svrstatus:%d\n", server_status);
+			%%}
+			%%else
+			%%{
+				server_status |=  COMP_TEMP_WARNING;
+				printf("svrstatus:%d\n", server_status);
+			%%}
+			%%/*server_status &= ~COMP_TEMP_WARNING;*/
+			%%/*pvPut(server_status);*/
+		}state statuscheck
+
+	}
+}

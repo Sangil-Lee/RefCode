@@ -1,0 +1,16 @@
+record(calcout, "$(P)_POLOSCAN_TRIG")
+{
+    field(DESC, "Poloidal Scan")
+    field(CALC, "A>0?1:0")
+    field(INPA, "CCS_CTU_shotStart CPP")
+    field(OUT, "$(P)_POLOSCAN_RDY CPP")
+}
+record(bo, "$(P)_POLOSCAN_RDY")
+{
+    field(PINI, "YES")
+    field(DESC, "PoloScan")
+    field(DTYP, "BO_PoloScan")
+    field(OUT, "#$(PORT) A$(A) @0")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}

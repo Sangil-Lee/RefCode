@@ -1,0 +1,15 @@
+# By HMT - 2009/06/12
+
+file ./db/ECH_AO.db
+{
+pattern
+{PV_NAME				TAG						PLC		DESC	UNIT	HIGH	LOW}	
+{ECH_ECMD_APS_MODFREQ	ECH_ECMD_APS_MODFREQ	plc2	"APS Mod.Freq"	Hz	500	0}
+{ECH_ECMD_APS_MODSTART	ECH_ECMD_APS_MODSTART	plc2	"APS Mod.Start"	ms	200	0}
+{ECH_ECMD_APS_MODEND	ECH_ECMD_APS_MODEND		plc2	"APS Mod.End"	ms	200	0}
+{ECH_ECMD_TOR_ANGLE		ECH_ECMD_TOR_ANGLE		plc1	"Toroidal Angle"	deg.	25	-25}
+{ECH_ECMD_POL_ANGLE		ECH_ECMD_POL_ANGLE		plc1	"Poloidal Angle"	deg.	-50	-70}
+{ECH_ECMD_POL_EXTANG	ECH_ECMD_POL_EXTANG		plc1	"Poloidal Angle"	deg.	-50	-70}
+{ECH_TOR_SP_EVAL		ECH_TOR_SP_EVAL			plc1	"Toroidal Speed"	Count	5	1}
+{ECH_POL_SP_EVAL		ECH_POL_SP_EVAL			plc1	"Poloidal Speed"	Count	5	1}
+}

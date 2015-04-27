@@ -1,0 +1,63 @@
+# For a KUPA Sample IOC
+
+# ------------------------------------------------
+# Set debug level to display on standard output
+# ------------------------------------------------
+#  -> 0(OFF)  1(FATAL) 2(ERROR) 3(WARN) 4(MON)
+#  -> 5(INFO) 6(DEBUG) 7(TRACE) 8(DATA) 9(ALL)
+# ------------------------------------------------
+
+kuSetPrintLevel (4)
+
+cd ${TOP}
+dbLoadRecords ("db/kupa.db")
+
+# ------------------------------------------------------------------------------
+# Name, Shot# PV, OpMode PV, Run PV, SamplingRate(Hz), StartTime, Duration, Delay(s)
+# ------------------------------------------------------------------------------
+# - If there is no PV, archiving will be handled by user's application
+# - OpMode PV : Remote(1)
+# ------------------------------------------------------------------------------
+
+#kupaInitManager ("KUPA", "KUPA_SHOT_NUM", "KUPA_OP_MODE", "KUPA_SYS_RUN", 1, 0, 1, 2)
+#kupaInitManager ("KUPA", "", "", "", 1, 0, 1, 2)
+kupaInitManager ("KUPA", "KUPA_SHOT_NUM", "KUPA_OP_MODE", "KUPA_SYS_RUN", 1, -1.5, 5.5, 5.0)
+
+# ------------------------------------------------------------------------------
+# Export Type (CSV, MDS, FILE), arg1, arg2, arg3, arg4, arg5, arg6
+# ------------------------------------------------------------------------------
+
+# CSV, FileName, Path, ValueOrder(V : Vertical, H : Horizontal), Format(UNIX, DOS), New/Append,
+kupaAddExport ("CSV", "KUPA1", "/tmp", "H", "UNIX", "New", "")
+
+# MDS, TreeName, MdsAddr(IP:Port), EventName, EventAddr(IP:Port), OpMode(ALL,REMOTE,LOCAL)
+#kupaAddExport ("MDS", "LOCAL"     , "127.0.0.1:8000"     , ""     , ""                   , "LOCAL", "")
+#kupaAddExport ("MDS", "REMOTE"    , "172.17.100.202:8000", "EVENT", "172.17.100.200:8300", "REMOTE", "")
+#kupaAddExport ("MDS", "my_tree"   , "127.0.0.1:8000"     , "EVENT", "127.0.0.1:8000"     , "ALL", "")
+kupaAddExport ("MDS", "my_tree"   , "127.0.0.1:8000"     , "EVENT", "127.0.0.1:8000"     , "LOCAL", "")
+
+# ------------------------------------------------------------------------------
+# PV Name, Tag Name, CA Type(0:DB, 1:CA, 2:Event), Description, Unit
+# ------------------------------------------------------------------------------
+
+kupaAddPV ("rootHost:calcExample1", ""       , 2, "calc1", "V")
+kupaAddPV ("rootHost:aiExample1"  , "MYNODE" , 0, "calc2", "A")
+kupaAddPV ("rootHost:aiExample2"  , "SIGNAL1", 1, "calc2", "A")
+kupaAddPV ("rootHost:calcExample2", ""       , 0, "calc1", "V")
+kupaAddPV ("KUPA_VALUE1"          , ""       , 2, "value", ".")
+kupaAddPV ("KUPA_VALUE2"          , "No PREC", 0, "PREC0", ".")
+kupaAddPV ("KUPA_VALUE3"          , "PREC(3)", 0, "PREC3", ".")
+
+# ------------------------------------------------------------------------------
+# Register a post action to be executed after exporting
+# ------------------------------------------------------------------------------
+
+#kupaAddPostAct ("/usr/local/epics/siteApp/testKupa/iocBoot/iocKupa/autoput.sh ipaddr userid passwd /tmp /root KUPA1-*.csv")
+#kupaAddPostAct ("kupa-autoput.sh")
+
+# ------------------------------------------------------------------------------
+# Starts PV archive manager
+# ------------------------------------------------------------------------------
+
+kupaRunManager ()
+

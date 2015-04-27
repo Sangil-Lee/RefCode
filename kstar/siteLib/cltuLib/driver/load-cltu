@@ -1,0 +1,59 @@
+#!/bin/sh
+
+module="cltu_driver"
+mode="755"
+device="cltu"
+
+CLTU_ROOT=/dev/tss
+
+#echo
+echo Install CLTU Device Driver Kernel Module
+
+# Set user rights
+chmod $mode ./$module.ko
+
+# Instal kernel module
+#echo insmod $module.ko
+/sbin/insmod ./$module.ko || exit 1
+
+# If not, remove old cltu instances from /dev
+rm -rf ${CLTU_ROOT}
+
+# Create cltu directory in /dev
+mkdir $CLTU_ROOT
+
+
+
+# Get major number from cat /proc/devices
+major0=`cat /proc/devices | awk "\\$2==\"$device.0\" {print \\$1}"`
+# echo major0 = $major0
+mknod $CLTU_ROOT/${device}.0 c $major0 1
+
+
+major1=`cat /proc/devices | awk "\\$2==\"$device.1\" {print \\$1}"`
+# echo major1 = $major1
+if [ $major1 ] ; then
+	mknod $CLTU_ROOT/${device}.1 c $major1 1
+fi
+
+major2=`cat /proc/devices | awk "\\$2==\"$device.2\" {print \\$1}"`
+# echo major2 = $major2
+if [ $major2 ] ; then
+	mknod $CLTU_ROOT/${device}.2 c $major2 1
+fi
+
+major3=`cat /proc/devices | awk "\\$2==\"$device.3\" {print \\$1}"`
+# echo major3 = $major3
+if [ $major3 ] ; then
+	mknod $CLTU_ROOT/${device}.3 c $major3 1
+fi
+
+
+# Set group
+#chgrp $group /dev/${device}/manager
+#chgrp $group /dev/${device}/1
+#chgrp $group /dev/${device}/2
+#chgrp $group /dev/${device}/3
+
+# Set user rights
+#chmod $mode /dev/${device}

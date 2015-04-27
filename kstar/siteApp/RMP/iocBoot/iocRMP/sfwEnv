@@ -1,0 +1,32 @@
+### Standard Frame Work configuration.
+
+
+#### NTP related environment ########
+#epicsEnvSet("EPICS_TIMEZONE", "KOR::-540:000000:000000")
+#epicsEnvSet("EPICS_TS_NTP_INET", "172.17.100.11")
+
+##################################################
+# save log message must be ENABLE or DISABLE
+epicsEnvSet("SFW_LOG","ENABLE")
+
+##### Common CA ADDR list ##############
+epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.210 172.17.101.201 172.17.101.200 127.0.0.1")
+#epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.100.193 172.17.100.199")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "no")
+
+## MDS plus environment ###########
+epicsEnvSet("MDS_LOCAL_IP_PORT","172.17.111.119:8000")
+epicsEnvSet("MDS_LOCAL_TREE_NAME","operation")
+epicsEnvSet("MDS_LOCAL_EVENT_IP","none")
+
+epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.100.202:8000")
+#epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.101.119:8000")
+epicsEnvSet("MDS_REMOTE_TREE_NAME","operation")
+epicsEnvSet("MDS_REMOTE_EVENT_IP","172.17.100.200:8300")
+
+epicsEnvSet("MDS_CAL_IP_PORT","172.17.102.123:8000")
+epicsEnvSet("MDS_CAL_TREE_NAME","caltree")
+epicsEnvSet("MDS_CAL_EVENT_IP","calevent")
+
+epicsEnvSet("MDS_EVENT_ARG","RMP")
+

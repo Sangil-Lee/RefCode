@@ -1,0 +1,355 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="windowModality" >
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1074</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QGridLayout" >
+    <item row="0" column="0" colspan="12" >
+     <widget class="QLabel" name="lbTitle" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>19</pointsize>
+       </font>
+      </property>
+      <property name="text" >
+       <string>Shot Result</string>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="12" >
+     <widget class="QFrame" name="frame" >
+      <property name="frameShape" >
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QSplitter" name="splitter_2" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QLabel" name="ilbPCS" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape" >
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="scaledContents" >
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="ilbDAQ" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape" >
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="scaledContents" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="12" >
+     <layout class="QHBoxLayout" >
+      <item>
+       <widget class="QLabel" name="label_3" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>I_tf(kA)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leTf" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>I_p(kA)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leIp" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>>0.1(kA)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leIpPulse" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_7" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>ne(e^19/m^2)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leNe" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_8" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Te(ev)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leTe" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Pressure(mbar)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lePr" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>ECH_P(kW)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leEchP" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0" colspan="12" >
+     <widget class="QTableWidget" name="tw_Shotremark" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" >
+     <spacer>
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType" >
+       <enum>QSizePolicy::Preferred</enum>
+      </property>
+      <property name="sizeHint" >
+       <size>
+        <width>16</width>
+        <height>29</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="4" column="1" >
+     <widget class="QLineEdit" name="leRegenS" />
+    </item>
+    <item row="4" column="2" >
+     <widget class="QLineEdit" name="leRegenE" />
+    </item>
+    <item row="4" column="3" >
+     <widget class="QPushButton" name="pbRGen" >
+      <property name="text" >
+       <string>Re-generation</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4" >
+     <widget class="QPushButton" name="pbRSize" >
+      <property name="text" >
+       <string>ResetWinSize</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5" >
+     <widget class="QPushButton" name="pbAuto" >
+      <property name="text" >
+       <string>Auto</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="6" >
+     <widget class="QSpinBox" name="sbShotNum" >
+      <property name="minimum" >
+       <number>1</number>
+      </property>
+      <property name="maximum" >
+       <number>9999999</number>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="7" >
+     <widget class="QPushButton" name="pbMake" >
+      <property name="text" >
+       <string>Load</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="8" >
+     <widget class="QPushButton" name="pbAdd" >
+      <property name="text" >
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="9" >
+     <widget class="QPushButton" name="pbSave" >
+      <property name="text" >
+       <string>Save</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="10" >
+     <widget class="QPushButton" name="pbDelete" >
+      <property name="text" >
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="11" >
+     <widget class="QPushButton" name="pbClose" >
+      <property name="text" >
+       <string>Close</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

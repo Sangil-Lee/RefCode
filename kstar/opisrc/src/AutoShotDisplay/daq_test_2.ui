@@ -1,0 +1,745 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="pushButton" >
+   <property name="geometry" >
+    <rect>
+     <x>920</x>
+     <y>0</y>
+     <width>80</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Auto</string>
+   </property>
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>1150</x>
+     <y>0</y>
+     <width>80</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ReadShot</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox" >
+   <property name="geometry" >
+    <rect>
+     <x>1050</x>
+     <y>0</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimum" >
+    <number>1</number>
+   </property>
+   <property name="maximum" >
+    <number>1000000</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>540</x>
+     <y>30</y>
+     <width>240</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>AutoShotDisplay</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot_7" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>processed</string>
+   </property>
+   <property name="nodename" >
+    <string>NE_INTER01</string>
+   </property>
+   <property name="nodename1" >
+    <string/>
+   </property>
+   <property name="nodename2" >
+    <string/>
+   </property>
+   <property name="nodename3" >
+    <string/>
+   </property>
+   <property name="nodename4" >
+    <string/>
+   </property>
+   <property name="nodename5" >
+    <string/>
+   </property>
+   <property name="nodename6" >
+    <string/>
+   </property>
+   <property name="baseTime" >
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="CAScreenShot" name="CAScreenShot" >
+   <property name="geometry" >
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="prefix" >
+    <string>pcs_data</string>
+   </property>
+   <property name="pvname" >
+    <string>DEV02_PCSDATA_SCREENSHOT</string>
+   </property>
+  </widget>
+  <widget class="CAQtSignal" name="CAQtSignal" >
+   <property name="geometry" >
+    <rect>
+     <x>199</x>
+     <y>20</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>MDS_SHOT_NUMBER</string>
+   </property>
+  </widget>
+  <widget class="CAQtSignal" name="CAQtSignal_2" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>CCS_LCSST_DATA</string>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>390</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>spectro</string>
+   </property>
+   <property name="nodename" >
+    <string>TOR_HA01</string>
+   </property>
+   <property name="nodename1" >
+    <string>TOR_HA05</string>
+   </property>
+   <property name="nodename2" >
+    <string>TOR_HA10</string>
+   </property>
+   <property name="nodename3" >
+    <string>TOR_HA11</string>
+   </property>
+   <property name="nodename4" >
+    <string>TOR_HA15</string>
+   </property>
+   <property name="nodename5" >
+    <string>TOR_HA20</string>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot_2" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>720</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>electron</string>
+   </property>
+   <property name="nodename" >
+    <string>ECE01</string>
+   </property>
+   <property name="nodename1" >
+    <string>ECE02</string>
+   </property>
+   <property name="nodename2" >
+    <string>ECE03</string>
+   </property>
+   <property name="nodename3" >
+    <string>ECE04</string>
+   </property>
+   <property name="nodename4" >
+    <string>ECE05</string>
+   </property>
+   <property name="nodename5" >
+    <string>ECE06</string>
+   </property>
+   <property name="nodename6" >
+    <string>ECE07</string>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot_3" >
+   <property name="geometry" >
+    <rect>
+     <x>660</x>
+     <y>70</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>operation</string>
+   </property>
+   <property name="nodename" >
+    <string>B_PKR251A</string>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot_4" >
+   <property name="geometry" >
+    <rect>
+     <x>660</x>
+     <y>390</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>spectro</string>
+   </property>
+   <property name="nodename" >
+    <string>POL_HA01</string>
+   </property>
+   <property name="nodename1" >
+    <string>POL_HA03</string>
+   </property>
+   <property name="nodename2" >
+    <string>POL_HA05</string>
+   </property>
+   <property name="nodename3" >
+    <string>POL_HA06</string>
+   </property>
+   <property name="nodename4" >
+    <string>POL_HA08</string>
+   </property>
+   <property name="nodename5" >
+    <string>POL_HA10</string>
+   </property>
+  </widget>
+  <widget class="CAMDSplusplot" name="CAMDSplusplot_5" >
+   <property name="geometry" >
+    <rect>
+     <x>660</x>
+     <y>720</y>
+     <width>625</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="treename" >
+    <string>pcs_kstar</string>
+   </property>
+   <property name="nodename" >
+    <string>PCLV23</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMDSplusplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMDSplusplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAScreenShot</class>
+   <extends>QWidget</extends>
+   <header>caScreenShot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAQtSignal</class>
+   <extends>QWidget</extends>
+   <header>caQtSignal.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot_7</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1062</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>555</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot_7</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1177</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>607</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>CAMDSplusplot_7</receiver>
+   <slot>autoManual(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>919</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>577</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_7</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>213</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>211</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAScreenShot</receiver>
+   <slot>fileNamePostfix(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>299</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>358</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_7</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>124</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>139</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>293</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>289</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>56</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>187</x>
+     <y>431</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1089</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1196</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>615</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_2</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>247</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>238</x>
+     <y>723</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_2</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>142</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>147</x>
+     <y>710</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot_2</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1098</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>605</x>
+     <y>765</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot_2</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1160</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>615</x>
+     <y>750</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot_4</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1115</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1013</x>
+     <y>404</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot_4</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1203</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1191</x>
+     <y>409</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot_5</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1131</x>
+     <y>6</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1075</x>
+     <y>746</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot_5</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1213</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1202</x>
+     <y>710</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>CAMDSplusplot_3</receiver>
+   <slot>shotNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1128</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1127</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMDSplusplot_3</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1218</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1218</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_3</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>256</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_4</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>295</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>725</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_5</receiver>
+   <slot>shotNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>288</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>724</x>
+     <y>732</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_3</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>133</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>683</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_4</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>123</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>701</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAQtSignal_2</sender>
+   <signal>caQtSignal(double)</signal>
+   <receiver>CAMDSplusplot_5</receiver>
+   <slot>readShot()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>150</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>727</x>
+     <y>753</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMDSplusplot_5</sender>
+   <signal>signalShotNumber(QString)</signal>
+   <receiver>label</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>686</x>
+     <y>796</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>623</x>
+     <y>48</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

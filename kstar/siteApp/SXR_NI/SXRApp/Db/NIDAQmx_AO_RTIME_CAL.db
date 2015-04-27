@@ -1,0 +1,24 @@
+record(ao, "ECH_AO_OUTPUT_VALUE_PWR_CH0") {
+  field(DESC, "ECH_AO_OUTPUT_VALUE_PWR_CH0")
+  field(EGU, "kV")
+  field(PINI, "YES")
+  field(VAL, "0")
+}
+record(calcout, "ECH_AO_OUTPUT_VALUE_PWR_CH0_TOVAL") {
+  field(DESC, "ECH_AO_VALUE_PWR_CH0toVAL")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_OUTPUT_VALUE_PWR_CH0 CPP")
+  field(CALC, "A>0?(0.11429*A)+1:0")
+#  field(DOPT, "Use CALC")
+  field(OUT, "ECH_AO_OUTPUT_VALUE_CH0 PP")
+}
+record(calcout, "ECH_AO_OUTPUT_VALUE_FWD_CH1") {
+  field(DESC, "ECH_AO_OUTPUT_VALUE_FWD_CH1")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_OUTPUT_VALUE_CH0 CPP")
+  field(CALC, "A>0?5:0")
+#  field(DOPT, "Use CALC")
+  field(OUT, "ECH_AO_OUTPUT_VALUE_CH1 PP")
+}

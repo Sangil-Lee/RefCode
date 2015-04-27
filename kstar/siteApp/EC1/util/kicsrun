@@ -1,0 +1,112 @@
+#!/bin/bash
+#
+# kicsrun   This starts and stops programs for EC1 MAIN
+#
+
+#PATH=/sbin:/bin:/usr/bin:/usr/sbin
+
+# Source function library.
+. /etc/init.d/functions
+
+# Check that we are root ... so non-root users stop here
+[ `id -u` = 0 ] || exit 1
+
+RETVAL=0
+
+# session_name, program_name, path
+start(){
+    name=$1
+    prog=$2
+    path=$3
+
+    echo -n $"Starting $prog: "
+
+    cd $path
+    daemon screen -d -m -S $name ./$prog
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+stop(){
+    name=$1
+    prog=$2
+
+    echo -n $"Stopping $prog: "
+
+    killproc $prog
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+kstart(){
+    start ioc   st.cmd /usr/local/epics/siteApp/EC1/iocBoot/iocEC1
+    start DG645 DG645  /usr/local/epics/siteApp/EC1/DG645/bin
+    start Etos1 Etos   /usr/local/epics/siteApp/EC1/Etos_Socket/bin
+    start Etos2 Etos2  /usr/local/epics/siteApp/EC1/Etos_Socket2/bin
+}
+
+kstop(){
+    stop ioc   st.cmd
+    stop DG645 DG645
+    stop Etos1 Etos
+    stop Etos2 Etos2
+}
+
+krestart(){
+    kstop
+    kstart
+}
+
+kstatus(){
+    status st.cmd
+    status DG645
+    status Etos
+    status Etos2
+}
+
+kusage(){
+    echo ""
+    echo "------------------------------------------------------"
+    echo " List of screen "
+    echo "------------------------------------------------------"
+    screen -list
+
+    echo "------------------------------------------------------"
+    echo "You can attach a specific screen with session name. "
+    echo ""
+    echo " 1) How to attach the session for EPICS IOC "
+    echo "    # screen -r ioc "
+    echo " 2) How to attach the session for DG645 "
+    echo "    # screen -r DG645 "
+    echo " 3) How to attach the session for Etos "
+    echo "    # screen -r Etos1 "
+    echo " 4) How to attach the session for Etos2 "
+    echo "    # screen -r Etos2 "
+    echo "------------------------------------------------------"
+}
+
+# See how we were called.
+case "$1" in
+    start)
+	kstart
+	kusage
+	;;
+    stop)
+	kstop
+	;;
+    status)
+	kstatus
+	kusage
+	;;
+    restart)
+	krestart
+	;;
+    *)
+	echo $"Usage: $0 {start|stop|status|restart}"
+	kusage
+	RETVAL=1
+esac
+
+exit $RETVAL

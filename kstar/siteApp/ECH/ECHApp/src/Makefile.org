@@ -1,0 +1,109 @@
+TOP=../..
+
+include $(TOP)/configure/CONFIG
+#----------------------------------------
+#  ADD MACRO DEFINITIONS AFTER THIS LINE
+#=============================
+USR_INCLUDES += -I/usr/local/include
+USR_LDFLAGS += -L/usr/local/lib -lnidaqmx
+nidaqmx_DIRS = /usr/local/lib
+#==================================================
+# Build an IOC support library
+LIBRARY_IOC += xxxSupport
+LIBRARY_IOC += posfaSupport
+LIBRARY_IOC += pci6220Support
+LIBRARY_IOC += timestampSupport
+
+# xxxRecord.h will be created from xxxRecord.dbd
+DBDINC += xxxRecord
+DBDINC += timestampRecord
+
+DBD += xxxSupport.dbd
+DBD += posfaSupport.dbd
+DBD += pci6220Support.dbd
+DBD += timestampRecord.dbd
+
+# The following are compiled and added to the Support library
+xxxSupport_SRCS += xxxRecord.c
+xxxSupport_SRCS += devXxxSoft.c
+xxxSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+posfaSupport_SRCS += devPosfaSoft.c
+posfaSupport_SRCS += drvPosfaSoft.c
+posfaSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+pci6220Support_SRCS += devPCI6220Soft.c
+pci6220Support_SRCS += drvPCI6220Soft.c
+pci6220Support_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+timestampSupport_SRCS += timestampRecord.c
+timestampSupport_LIBS += $(EPICS_BASE_IOC_LIBS) 
+
+
+
+#=============================
+# build an ioc application
+
+PROD_IOC = ech
+# ech.dbd will be created and installed
+DBD += ech.dbd
+
+# ech.dbd will be made up from these files:
+ech_DBD += base.dbd
+ech_DBD += xxxSupport.dbd
+ech_DBD += posfaSupport.dbd
+ech_DBD += pci6220Support.dbd
+ech_DBD += timestampRecord.dbd
+ech_DBD += dbSubExample.dbd
+ech_DBD += echHello.dbd
+# Timing System              20071113 TGLee
+ech_DBD += devCLTU.dbd
+ech_DBD += drvCLTU.dbd
+
+
+# <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
+ech_SRCS += ech_registerRecordDeviceDriver.cpp
+ech_SRCS_DEFAULT += echMain.cpp
+ech_SRCS_vxWorks += -nil-
+
+# Add locally compiled object code
+ech_SRCS += dbSubExample.c
+ech_SRCS += echHello.c
+# Timing System                        20071113 TGLee
+ech_SRCS += devCLTU.c
+ech_SRCS += drvCLTU.c
+
+# The following adds support from base/src/vxWorks
+ech_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+
+ech_LIBS += xxxSupport
+ech_LIBS += posfaSupport
+ech_LIBS += pci6220Support
+ech_LIBS += timestampSupport
+
+# NOTE: To build SNL programs, SNCSEQ must be defined
+# in the <top>/configure/RELEASE file
+
+ifneq ($(SNCSEQ),)
+    # This builds sncExample as a component of ech
+    ech_SNCFLAGS += +r
+    ech_DBD += sncExample.dbd
+    ech_SRCS += sncExample.stt
+    ech_LIBS += seq pv
+
+    # The following builds sncProgram as a standalone application
+    PROD_HOST += sncProgram
+    sncProgram_SNCFLAGS += +m
+    sncProgram_SRCS += sncProgram.st
+    sncProgram_LIBS += seq pv
+    sncProgram_LIBS += $(EPICS_BASE_HOST_LIBS)
+endif
+
+ech_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+#===========================
+
+include $(TOP)/configure/RULES
+#----------------------------------------
+#  ADD RULES AFTER THIS LINE
+

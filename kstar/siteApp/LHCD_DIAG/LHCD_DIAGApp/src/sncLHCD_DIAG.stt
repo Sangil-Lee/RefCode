@@ -1,0 +1,24 @@
+program sncLHCD_DIAG
+
+option +r;
+option -c;
+
+%{
+	#include "kutil.h"
+}%
+
+ss test {
+	state init {
+		when (TRUE) {
+			kuDebug (kuMON, "[sncLHCD_DIAG::test.init] ... \n");
+		} state run
+	}
+
+	state run {
+		when (TRUE) {
+			epicsThreadSleep (1.0);
+			kuDebug (kuMON, "[sncLHCD_DIAG::test.run] ... \n");
+		} state run
+	}
+}
+		

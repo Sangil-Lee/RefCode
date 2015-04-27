@@ -1,0 +1,54 @@
+/**
+\mainpage KSTAR sfwTree Reference Manual
+
+\image html kstar.jpg
+
+\section Introduction 소개
+
+<b>KSTAR (Korea Superconducting Tokamak Advanced Research)</b> sfwTree 는
+EPICS 프레임워크 기반의 KSTAR 제어시스템에서 MDSplus에 대한 Segmented arhiving 방식을 사용하기 위한 API를 제공한다.
+
+현재의 KSTAR 진단 시스템들은, shot이 종료된 이후에 취득된 모든 데이터를 일괄적으로 저장하는 방식을 취하고 있어 
+장시간 실험 시 결과 데이터의 조회를 위한 대기 시간이 증가하게 된다. 
+이에 따라, 플라즈마 실험 시간의 증가에 따른 실험 결과 데이터의 대기 시간을 단축하고 네트워크의 부하를 분산하기 위하여 
+shot 도중에 일정 단위 또는 일정 시간의 취득 데이터를 주기적으로 제공할 수 있도록 segmented 저장 방식이 요구 되었다.
+Long pulse 실험 데이터의 측정 및 서비스 성능 향상의 일환으로 Segmented archiving 기능이 개발 되어, 
+2012년에는 1개, 2013년에는 3개의 진단 시스템에 적용하여 평가를 수행하였다.
+
+\image html kstar_sfwtree_arch.jpg
+
+\section Purpose 목적
+
+본 문서는, MDSplus에 대한 Segmented arhiving을 지원하는 sfwTree 라이브러리의 기능을 설명한다.
+
+\section Scope 범위
+
+본 문서에서는, sfwTree 라이브러리에서 제공하는 C/C++ 개발언어로 작성된 
+API 목록과 그 기능 그리고, 예제에 대해 기술한다.
+
+\section Limit 가정 및 제약 사항
+
+ 1. sfwTree 라이브러리는, EPICS와 MDSplus 라이브러리를 기반으로 작성 되었다.
+ 2. C와 C++ 개발언어를 지원한다.
+ 3. 공식적으로는, Linux 시스템만을 지원한다.
+ 4. 1차원 배열만 지원한다.
+ 5. mdsplus-4.0.0 이상의 MDSplus 버전이 필요하다.
+
+\section Reference 참고 문서
+
+ 1. KSTAR 제어시스템 개발 표준안
+ 2. KSTAR EPICS 제어시스템 개발 표준 점검표
+ 3. <A HREF="http://mdsplus.org/index.php?title=Documentation:Users:LongPulseExtensions&open=10334500169904705241151&page=Documentation%2FUsers+Guide%2FLong+Pulse+Extensions">MDSplus Long Pulse Extensions</A>
+
+\section Writer 작성자
+
+NFRI 토카막운전기술부 제어기술팀
+
+\section Copyright 저작권
+
+본 문서에 대한 저작권은 NFRI에 있습니다.
+
+*/
+ 
+/** \defgroup sfwtree  	sfwTree API */
+ 

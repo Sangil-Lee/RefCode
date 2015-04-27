@@ -1,0 +1,36 @@
+### Standard Frame Work configuration. ##################
+#
+# Revision History:
+# first create:  2010-1-24
+#
+# edit 2011. 2. 15 by woong
+#
+### Standard Frame Work configuration. ##################
+
+#### NTP related (need for VxWorks, RTEMS) ########
+#epicsEnvSet("EPICS_TIMEZONE", "KOR::-540:000000:000000")
+#epicsEnvSet("EPICS_TS_NTP_INET", "172.17.100.119")
+
+##################################################
+# save log message must be ENABLE or DISABLE
+epicsEnvSet("SFW_LOG","ENABLE")
+
+##### Common CA ADDR list ##############
+epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.200 172.17.101.210 172.17.101.201 127.0.0.1")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "no")
+
+## MDS plus environment ###########
+epicsEnvSet("MDS_LOCAL_IP_PORT","172.17.101.203:8000")
+epicsEnvSet("MDS_LOCAL_TREE_NAME","magnetic")
+epicsEnvSet("MDS_LOCAL_EVENT_IP","none")
+
+epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.100.202:8000")
+epicsEnvSet("MDS_REMOTE_TREE_NAME","r_magnetic")
+epicsEnvSet("MDS_REMOTE_EVENT_IP","172.17.100.200:8300")
+
+epicsEnvSet("MDS_CAL_IP_PORT","172.17.xxx.xxx:8000")
+epicsEnvSet("MDS_CAL_TREE_NAME","caltree")
+epicsEnvSet("MDS_CAL_EVENT_IP","calevent")
+
+epicsEnvSet("MDS_EVENT_ARG","XXX")
+

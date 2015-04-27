@@ -1,0 +1,99 @@
+program sncTmsIntLevel2
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <math.h>
+
+unsigned long tmsIntLevel;
+assign tmsIntLevel to "TMS_INTERLOCK_LEVEL_2";
+monitor tmsIntLevel;
+
+int intUse;
+assign intUse to "TMS_INTERLOCK_USE";
+monitor intUse;
+
+int intUseTemp;
+assign intUseTemp to "TMS_TEMP_INTERLOCK_ACTIVE";
+monitor intUseTemp;
+
+int intUseDisp;
+assign intUseDisp to "TMS_DISP_INTERLOCK_ACTIVE";
+monitor intUseDisp;
+
+float tfctMax;
+assign tfctMax to "TMS_TFC_TOUT_MAX";
+monitor tfctMax;
+
+float tfbtMax;
+assign tfbtMax to "TMS_TFBUS_TINT_THR_MAX";
+monitor tfbtMax;
+
+float shrDisMax;
+assign shrDisMax to "TMS_SHEAR_DIS_MAX";
+monitor shrDisMax;
+
+float setTFCTVal;
+assign setTFCTVal to "TMS_INTERLOCK_L2_TFCT_SET";
+monitor setTFCTVal;
+
+float setTFBTVal;
+assign setTFBTVal to "TMS_INTERLOCK_L2_TFBT_SET";
+monitor setTFBTVal;
+
+float setShrDisVal;
+assign setShrDisVal to "TMS_INTERLOCK_L2_SHR_DIS_SET";
+monitor setShrDisVal;
+
+ss tmsInterlock2{
+	state tms_interlock_level2{
+        	when (delay(0.1) && intUse==1){
+			if(intUse==1 && intUseTemp ==1 && intUseDisp==1){
+				if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal) || (fabs(shrDisMax)>setShrDisVal)){
+                                           tmsIntLevel=0;
+                                           pvPut(tmsIntLevel);
+				}
+                                if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal) && (fabs(shrDisMax)<=setShrDisVal)){
+                                            tmsIntLevel=1;
+                                            pvPut(tmsIntLevel);
+                                 }
+			}
+			if(intUse==1 && intUseTemp ==1 && intUseDisp==0){
+				if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal)){
+                                           tmsIntLevel=0;
+                                           pvPut(tmsIntLevel);
+				}
+                                if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal)){
+                                            tmsIntLevel=1;
+                                            pvPut(tmsIntLevel);
+                                 }
+			}
+			if(intUse==1 && intUseTemp ==0 && intUseDisp==1){
+				if((fabs(shrDisMax)>setShrDisVal)){
+                                           tmsIntLevel=0;
+                                           pvPut(tmsIntLevel);
+				}
+                                if((fabs(shrDisMax)<=setShrDisVal)){
+                                            tmsIntLevel=1;
+                                            pvPut(tmsIntLevel);
+                                 }
+			}
+			if(intUse==1 && intUseTemp ==0 && intUseDisp==0){
+                                            tmsIntLevel=1;
+                                            pvPut(tmsIntLevel);
+                        }
+
+		} state tms_interlock_level2
+                when (intUse==0){
+                } state tms_Bypass_interlock_level2
+        }
+        state tms_Bypass_interlock_level2{
+                when (delay(0.1)){
+                                if(tmsIntLevel==0){
+                                        tmsIntLevel=1;
+                                        pvPut(tmsIntLevel);
+                                }
+                } state tms_interlock_level2
+        }
+
+}
+

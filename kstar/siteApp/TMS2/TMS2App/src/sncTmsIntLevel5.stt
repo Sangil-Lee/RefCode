@@ -1,0 +1,94 @@
+program sncTmsIntLevel5
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <math.h>
+
+unsigned long tmsIntLevel;
+assign tmsIntLevel to "TMS_INTERLOCK_WARNING";
+
+int intUse;
+assign intUse to "TMS_INTERLOCK_USE";
+monitor intUse;
+
+
+unsigned long tmsRun;
+assign tmsRun to "TMS_INTERLOCK_RUN";
+
+float tfctMax;
+assign tfctMax to "TMS_TFC_TOUT_MAX";
+monitor tfctMax;
+
+float tfbtMax;
+assign tfbtMax to "TMS_TFBUS_TINT_THR_MAX";
+monitor tfbtMax;
+
+float pfct15Max;
+assign pfct15Max to "TMS_PFC15_TOUT_MAX";
+monitor pfct15Max;
+
+float pfct67Max;
+assign pfct67Max to "TMS_PFC67_TOUT_MAX";
+monitor pfct67Max;
+
+float pfbtMax;
+assign pfbtMax to "TMS_PFB_TOUT_MAX";
+monitor pfbtMax;
+
+float radDisMax;
+assign radDisMax to "TMS_RADIAL_DIS_MAX";
+monitor radDisMax;
+
+float verDisMax;
+assign verDisMax to "TMS_VERTICAL_DIS_MAX";
+monitor verDisMax;
+
+float setTFCTVal;
+assign setTFCTVal to "TMS_INTERLOCK_WARRING_TFCT_SET";
+monitor setTFCTVal;
+
+float setTFBTVal;
+assign setTFBTVal to "TMS_INTERLOCK_WARRING_TFBT_SET";
+monitor setTFBTVal;
+
+float setPFC15Val;
+assign setPFC15Val to "TMS_INTERLOCK_WARRING_PFCT15_SET";
+monitor setPFC15Val;
+
+ float setPFC67Val;
+assign setPFC67Val to "TMS_INTERLOCK_WARRING_PFCT67_SET";
+monitor setPFC67Val;
+
+float setPFBVal;
+assign setPFBVal to "TMS_INTERLOCK_WARRING_PFBT_SET";
+monitor setPFBVal;
+
+float setRadDisVal;
+assign setRadDisVal to "TMS_INTERLOCK_WARRING_RAD_DIS_SET";
+monitor setRadDisVal;
+
+float setVerDisVal;
+assign setVerDisVal to "TMS_INTERLOCK_WARRING_VER_DIS_SET";
+monitor setVerDisVal;
+
+ss tmsInterlock5{
+	state init{
+		when (TRUE){
+		tmsRun=1;
+		pvPut(tmsRun);
+		}state tms_interlock_level5
+	}
+	state tms_interlock_level5{
+        	when (delay(0.1) && intUse==1){
+		if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal) || (pfct15Max>setPFC15Val) || (pfct67Max>setPFC67Val) || (pfbtMax>setPFBVal) || (fabs(radDisMax)>setRadDisVal) || (fabs(verDisMax)>setVerDisVal)){
+                     tmsIntLevel=0;
+                     pvPut(tmsIntLevel);
+		}
+                if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal) && (pfct15Max<=setPFC15Val) && (pfct67Max<=setPFC67Val) && (pfbtMax<=setPFBVal) && (fabs(radDisMax)<=setRadDisVal) && (fabs(verDisMax)<=setVerDisVal)){
+                     tmsIntLevel=1;
+                     pvPut(tmsIntLevel);
+                }
+		} state tms_interlock_level5
+	}
+}
+

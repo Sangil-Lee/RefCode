@@ -1,0 +1,429 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1069</width>
+    <height>465</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Antenna FWD RF</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>1011</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid violet;
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CAMultiplot" name="caMultiplot" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>971</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="propertiesDocument" stdset="0" >
+     <string>Antenna forward RF power</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW1</string>
+    </property>
+    <property name="pvname1" >
+     <string>LH1_RFANT_FWD_POW2</string>
+    </property>
+    <property name="pvname2" >
+     <string>LH1_RFANT_FWD_POW3</string>
+    </property>
+    <property name="pvname3" >
+     <string>LH1_RFANT_FWD_POW4</string>
+    </property>
+    <property name="pvname4" >
+     <string>LH1_RFANT_FWD_POW5</string>
+    </property>
+    <property name="pvname5" >
+     <string>LH1_RFANT_FWD_POW6</string>
+    </property>
+    <property name="pvname6" >
+     <string>LH1_RFANT_FWD_POW7</string>
+    </property>
+    <property name="pvname7" >
+     <string>LH1_RFANT_FWD_POW8</string>
+    </property>
+    <property name="plotTitle" stdset="0" >
+     <string>Antenna forward RF power</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor" >
+    <property name="geometry" >
+     <rect>
+      <x>80</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_2" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_3" >
+    <property name="geometry" >
+     <rect>
+      <x>500</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_4" >
+    <property name="geometry" >
+     <rect>
+      <x>710</x>
+      <y>360</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_5" >
+    <property name="geometry" >
+     <rect>
+      <x>80</x>
+      <y>380</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_6" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>380</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_7" >
+    <property name="geometry" >
+     <rect>
+      <x>500</x>
+      <y>380</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckFor_8" >
+    <property name="geometry" >
+     <rect>
+      <x>710</x>
+      <y>380</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QFrame</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>caColorCheckFor</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>172</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>138</x>
+     <y>320</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>caColorCheckFor</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>165</x>
+     <y>348</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>150</x>
+     <y>398</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>caColorCheckFor_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>338</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>340</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>caColorCheckFor_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>545</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>546</x>
+     <y>398</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>caColorCheckFor_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>760</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>760</x>
+     <y>397</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>caColorCheckFor_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>177</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>187</x>
+     <y>421</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>caColorCheckFor_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>366</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>380</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>caColorCheckFor_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>594</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>588</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>caColorCheckFor_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>810</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>800</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>424</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>423</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>615</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>612</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>829</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>824</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>223</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>218</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>457</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>453</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>653</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>647</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckFor_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>865</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>855</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,66 @@
+#include <string.h>
+
+#include <sdn/sdnapi.h>
+#include "includetopics.h"
+
+using namespace std;
+
+/* Create userdata and metadata variables for the topics on which application is publishing*/
+//+P=====================================================================
+<topic-name>_metadata p_metadata_<topic-name>;
+<topic-name>_userdata p_userdata_<topic-name>;
+SdnPublisher<<topic-name>> publisher_<topic-name>;
+//-P=====================================================================
+
+
+/* Create  userdata and metadata for topics on which application is subscribing */
+//+S=====================================================================
+<topic-name>_metadata s_metadata_<topic-name>;
+<topic-name>_userdata s_userdata_<topic-name>;
+SdnSubscriber<<topic-name>> subscriber_<topic-name>;
+//-S=====================================================================
+
+
+int configureSDN()
+{
+    SR_RET sr_ret; 
+
+    //+P=====================================================================
+    sr_ret = publisher_<topic-name>.setPublisher(p_metadata_<topic-name>);
+    if(sr_ret != SR_OK)
+    {
+        SDNMSG(SM_ERR,"thePublisher.setPublisher() failed. sr_ret=%d\n", sr_ret);
+        return (1) ;
+    }
+    //-P=====================================================================
+
+
+    //+S=====================================================================
+    sr_ret = subscriber_<topic-name>.setSubscriber(s_metadata_<topic-name>);
+    if(sr_ret != SR_OK)
+    {
+        SDNMSG(SM_ERR,"theSubscriber.setSubscriber() failed. sr_ret=%d\n", sr_ret);
+        return (1) ;
+    }
+
+    //-S=====================================================================
+    return 0; 
+
+}
+
+int cleanupSDN()
+{
+    /* unregister publisher */
+    //+P=====================================================================
+    publisher_<topic-name>.unsetPublisher();
+    //-P=====================================================================
+
+
+    /* unregister subscriber */
+    //+S=====================================================================
+    subscriber_<topic-name>.unsetSubscriber();
+    //-S=====================================================================
+
+    return 0; 
+
+}

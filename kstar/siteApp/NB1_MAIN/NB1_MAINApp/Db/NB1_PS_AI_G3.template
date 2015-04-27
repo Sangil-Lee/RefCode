@@ -1,0 +1,40 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC}
+{NB1_P1G3_RTN_INT    NB1_P1G3_RTN_INT    "Count"    plc1    "ARC Interrupt Time"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_RTN_VOLT    NB1_P1G3_RTN_VOLT    "V"    plc1    "Voltage Return"    5000    0    3001    3000    0    0    0}
+{NB1_P1G3_RTN_OVR    NB1_P1G3_RTN_OVR    "V"    plc1    "Output Over Voltage"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_RTN_OCR    NB1_P1G3_RTN_OCR    "A"    plc1    "Output Over Current"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_RTN_ITNO    NB1_P1G3_RTN_ITNO    "Count"    plc1    "Number of Interrupt"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_AO_VOUT    NB1_P1G3_AO_VOUT    "V"    plc1    "Output Voltage Display"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_AO_IOUT    NB1_P1G3_AO_IOUT    "A"    plc1    "Output Current Display"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_AO_VAC    NB1_P1G3_AO_VAC    "V"    plc1    "Input Voltage Display"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_AO_IAC    NB1_P1G3_AO_IAC    "A"    plc1    "Input Current Display"    150000    0    150000    150000    0    0    0}
+{NB1_P1G3_AO_FLT    NB1_P1G3_AO_FLT    "Num"    plc1    "Fault Display"    1    -1    1    1    -1    -1    0}
+{NB1_P1G3_AO_MAXNI    NB1_P1G3_AO_MAXNI    "Num"    plc1    "MAXNI Display"    1    -1    1    1    -1    -1    0}
+
+{NB1_P1G2TK_PUMP_TEMP_C    NB1_P1G2TK_PUMP_TEMP    "Num"    plc1    "MAXNI Display"    1    -1    1    1    -1    -1    0}
+{NB1_P1G2_STA_INTTEMP	NB1_P1G2_STA_INTTEMP	"Count"    plc1    "FLT Code"    	    150000    0    150000    150000    0    0    1}
+
+# PS2 2012.07.03
+{NB1_P2G3_RTN_VCMD	NB1_P2G3_RTN_VCMD	"Count"    plc2    "Voltage Command"        150000    0    150000    150000    0    0    3}
+{NB1_P2G3_RTN_OVR	NB1_P2G3_RTN_OVR	"Count"    plc2    "Output OV Reference"    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_RTN_OCR	NB1_P2G3_RTN_OCR	"Count"    plc2    "Output OC Reference"    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_RTN_ITIME	NB1_P2G3_RTN_ITIME	"Count"    plc2    "ARC Interrupt Time"     150000    0    150000    150000    0    0    0}
+{NB1_P2G3_RTN_MAXNI	NB1_P2G3_RTN_MAXNI	"Count"    plc2    "Number of Interrupt"    150000    0    150000    150000    0    0    0}
+{NB1_P2G3_STA_VOUT	NB1_P2G3_STA_VOUT	"Count"    plc2    "Output Voltage"    	    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_STA_IOUT	NB1_P2G3_STA_IOUT	"Count"    plc2    "Output Current"    	    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_STA_VAC	NB1_P2G3_STA_VAC	"Count"    plc2    "Input Voltage"    	    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_STA_IAC	NB1_P2G3_STA_IAC	"Count"    plc2    "Input Current"    	    150000    0    150000    150000    0    0    3}
+{NB1_P2G3_STA_NICNT	NB1_P2G3_STA_NICNT	"Count"    plc2    "NI Counts"				1		  -1	1	 1    -1    -1    0}
+{NB1_P2G3_STA_FLT	NB1_P2G3_STA_FLT	"Count"    plc2    "FLT Code"				1		  -1	1    1    -1    -1    0}
+
+{NB1_P2G2_STA_INTTEMP_C		NB1_P2G2_STA_INTTEMP	"Count"    plc2    "FLT Code"    	    150000    0    150000    150000    0    0    0}
+{NB1_P2G2_STA_TEMP	NB1_P2G2_STA_TEMP	"Count"		plc2	"G2 Tank Temp."	 150000    0    150000    150000    0    0    1}
+
+
+}

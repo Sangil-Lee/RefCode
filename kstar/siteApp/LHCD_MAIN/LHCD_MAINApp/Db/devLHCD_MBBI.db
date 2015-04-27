@@ -1,0 +1,20 @@
+record(calc, "$(PV_NAME)_C1")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "(A&65535)")
+    field(INPA, "$(PV_LINK).RVAL")
+}
+record(calc, "$(PV_NAME)_C2")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "(A>>16)&65535")
+    field(INPA, "$(PV_LINK).RVAL")
+}
+record(mbbiDirect, "$(PV_NAME)_B1")
+{
+    field(INP, "$(PV_NAME)_C1 CPP")
+}
+record(mbbiDirect, "$(PV_NAME)_B2")
+{
+    field(INP, "$(PV_NAME)_C2 CPP")
+}

@@ -1,0 +1,594 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>450</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>111</green>
+        <blue>111</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>111</green>
+        <blue>111</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>111</green>
+        <blue>111</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>111</green>
+        <blue>111</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="font" >
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+    <strikeout>false</strikeout>
+   </font>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="CAGraphic" name="caGraphic" >
+    <property name="geometry" >
+     <rect>
+      <x>26</x>
+      <y>142</y>
+      <width>396</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : CCS_SHOTSEQ_START (no channel)</string>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>-1</number>
+    </property>
+    <property name="blink" >
+     <bool>true</bool>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SHOTSEQ_START</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_4" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>147</y>
+      <width>142</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : CCS_SHOT_NUMBER</string>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="midLineWidth" >
+     <number>0</number>
+    </property>
+    <property name="text" >
+     <string>9000000</string>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SHOT_NUMBER</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="truelabel" >
+     <string>true</string>
+    </property>
+    <property name="falselabel" >
+     <string>false</string>
+    </property>
+    <property name="dbrequest" stdset="0" >
+     <enum>CALabel::DBRGDBL</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_2" >
+    <property name="geometry" >
+     <rect>
+      <x>28</x>
+      <y>148</y>
+      <width>163</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : CCS_SHOTSEQ_START</string>
+    </property>
+    <property name="text" >
+     <string>Current Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SHOTSEQ_START</string>
+    </property>
+    <property name="truelabel" >
+     <string>Current Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>Next Shot</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>29</x>
+      <y>166</y>
+      <width>161</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>106</red>
+          <green>104</green>
+          <blue>100</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Text" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>190</red>
+          <green>190</green>
+          <blue>190</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Shot Time</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>174</y>
+      <width>119</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : ICS_SHOTINFO_SHOTTIME</string>
+    </property>
+    <property name="text" >
+     <string>00:00:00</string>
+    </property>
+    <property name="pvname" >
+     <string>ICS_SHOTINFO_SHOTTIME</string>
+    </property>
+    <property name="dbrequest" stdset="0" >
+     <enum>CALabel::DBRGSTR</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2" >
+    <property name="geometry" >
+     <rect>
+      <x>28</x>
+      <y>194</y>
+      <width>177</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Time To Shot</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_3" >
+    <property name="geometry" >
+     <rect>
+      <x>314</x>
+      <y>202</y>
+      <width>119</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : ICS_SHOTINFO_TIMETOSHOT</string>
+    </property>
+    <property name="text" >
+     <string>00:00:00</string>
+    </property>
+    <property name="pvname" >
+     <string>ICS_SHOTINFO_TIMETOSHOT</string>
+    </property>
+    <property name="dbrequest" stdset="0" >
+     <enum>CALabel::DBRGSTR</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_5" >
+    <property name="geometry" >
+     <rect>
+      <x>31</x>
+      <y>422</y>
+      <width>119</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : ICS_SHOTINFO_SHOW</string>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pvname" >
+     <string>ICS_SHOTINFO_SHOW</string>
+    </property>
+    <property name="truelabel" >
+     <string/>
+    </property>
+    <property name="falselabel" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame" >
+    <property name="geometry" >
+     <rect>
+      <x>26</x>
+      <y>228</y>
+      <width>397</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="CALabel" name="caLabel_7" >
+     <property name="geometry" >
+      <rect>
+       <x>288</x>
+       <y>37</y>
+       <width>119</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="statusTip" >
+      <string>PVname : ICS_SHOTINFO_DT</string>
+     </property>
+     <property name="text" >
+      <string>00:00:00</string>
+     </property>
+     <property name="pvname" >
+      <string>ICS_SHOTINFO_DT</string>
+     </property>
+     <property name="dbrequest" stdset="0" >
+      <enum>CALabel::DBRGSTR</enum>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel_6" >
+     <property name="geometry" >
+      <rect>
+       <x>288</x>
+       <y>6</y>
+       <width>119</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="statusTip" >
+      <string>PVname : ICS_SHOTINFO_IP</string>
+     </property>
+     <property name="text" >
+      <string>000.000</string>
+     </property>
+     <property name="pvname" >
+      <string>ICS_SHOTINFO_IP</string>
+     </property>
+     <property name="dbrequest" stdset="0" >
+      <enum>CALabel::DBRGSTR</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4" >
+     <property name="geometry" >
+      <rect>
+       <x>2</x>
+       <y>29</y>
+       <width>177</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Duration Time</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3" >
+     <property name="geometry" >
+      <rect>
+       <x>2</x>
+       <y>-2</y>
+       <width>194</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Plasma Current</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="CALabel" name="caLabel_8" >
+    <property name="geometry" >
+     <rect>
+      <x>27</x>
+      <y>30</y>
+      <width>392</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CCS_SYS_TIME</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SYS_TIME</string>
+    </property>
+    <property name="dbrequest" stdset="0" >
+     <enum>CALabel::DBRGSTR</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QMenuBar" name="menuBar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>450</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="windowTitle" >
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2" >
+   <property name="windowTitle" >
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>caLabel_5</sender>
+   <signal>valueChangedTrue()</signal>
+   <receiver>frame</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>149</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>222</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caLabel_5</sender>
+   <signal>valueChangedFalse()</signal>
+   <receiver>frame</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>170</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>280</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

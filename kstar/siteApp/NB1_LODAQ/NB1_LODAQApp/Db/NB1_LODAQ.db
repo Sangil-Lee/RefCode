@@ -1,0 +1,177 @@
+#record(ao, "$(SYS)_BEAM_PULSE") {
+#  field(DESC, "NI6254 Beam Pulse Length")
+#  field(DTYP, "NI6254 AoControl")
+#  field(OUT, "@beam_pulse")
+#}
+
+#record(ao, "$(SYS)_INT_STIME") {
+#  field(DESC, "NI6254 Integral start time")
+#  field(DTYP, "NI6254 AoControl")
+#  field(OUT, "@integral_stime")
+#}
+
+record(ao, "NB11_BEAM_PULSE") {
+  field(DESC, "NI6254 Beam Pulse Length for IS #1")
+  field(DTYP, "NI6254 AoControl")
+  field(OUT, "@beam_pulse DT1 1")
+}
+
+record(ao, "NB11_INT_STIME") {
+  field(DESC, "NI6254 Integral start time for IS #1")
+  field(DTYP, "NI6254 AoControl")
+  field(OUT, "@integral_stime DT1 1")
+}
+
+record(ao, "NB12_BEAM_PULSE") {
+  field(DESC, "NI6254 Beam Pulse Length for IS #2")
+  field(DTYP, "NI6254 AoControl")
+  field(OUT, "@beam_pulse DT2 2")
+}
+
+record(ao, "NB12_INT_STIME") {
+  field(DESC, "NI6254 Integral start time for IS #2")
+  field(DTYP, "NI6254 AoControl")
+  field(OUT, "@integral_stime DT2 2")
+}
+
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "NI6254 BoControl")
+  field(OUT, "@daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(calcout, "$(SYS)_SHOT_NUMBER_CALC") {
+  field(DESC, "Calcuration for local shot number")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "NB1_DTACQ_LocalShot CPP")
+  field(OUT, "$(SYS)_SHOT_NUMBER")
+  field(FLNK, "$(SYS)_SHOT_NUMBER")
+}
+
+record(calcout, "$(SYS)_OP_MODE_CALC") {
+  field(DESC, "Calcuration for operation mode")
+  field(SCAN, "Passive")
+  field(CALC, "(A=1)?1:2")
+  field(INPA, "NB1_BEAM_INJECT_KSTAR CPP")
+  field(INPB, "NB1_BEAM_INJECT_DUMMY CPP")
+  field(OUT, "$(SYS)_OP_MODE")
+  field(FLNK, "$(SYS)_OP_MODE")
+  field(PINI, "0")
+}
+
+record(calcout, "$(SYS)_SAMPLING_RATE_CALC") {
+  field(DESC, "Calcuration for sampling rate")
+  field(SCAN, "Passive")
+  field(CALC, "(A=2)?20:(A=3)?50:(A=4)?100:(A=5)?200:(A=6)?500:(A=7)?1000:10")
+  field(INPA, "$(SYS)_SAMPLING_RATE_TYPE CPP")
+  field(OUT, "$(SYS)_SAMPLING_RATE")
+  field(FLNK, "$(SYS)_SAMPLING_RATE")
+}
+
+record(calc, "$(SYS)_SAMPLING_RATE_TYPE") {
+  field(DESC, "$(SYS)_SAMPLING_RATE_TYPE")
+}
+
+record(bo, "$(SYS)_TREND_RUN") {
+  field(DTYP, "NI6254 BoControl")
+  field(OUT, "@trend_run")
+  field(ZNAM, "STOP")
+  field(ONAM, "RUN")
+  field(VAL, "0")
+}
+
+record(bo, "$(SYS)_CALC_RUN") {
+  field(DTYP, "NI6254 BoControl")
+  field(OUT, "@calc_run")
+  field(ZNAM, "STOP")
+  field(ONAM, "RUN")
+  field(VAL, "0")
+}
+
+record(calcout, "$(SYS)_START_T0_SEC1_CALC") {
+  field(DESC, "Calcuration for LTU T0")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "NBI1C_LTU_P2_SEC0_T0 CPP")
+  field(OUT, "$(SYS)_START_T0_SEC1")
+  field(FLNK, "$(SYS)_START_T0_SEC1")
+}
+
+record(bo, "$(SYS)_SNAP_SHOT") {
+  field(DESC, "OPI snap shot enable")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_CURR_SHOT") {
+  field(DESC, "current shot")
+}
+
+record(ao, "$(SYS)_IS1_IFS") {
+  field(DESC, "NBI1 IS1 IFS")
+}
+
+record(ao, "$(SYS)_IS2_IFS") {
+  field(DESC, "NBI1 IS2 IFS")
+}
+
+record(ao, "$(SYS)_IS1_PNB") {
+  field(DESC, "NBI1 IS1 PNB")
+}
+
+record(ao, "$(SYS)_IS2_PNB") {
+  field(DESC, "NBI1 IS2 PNB")
+}
+
+record(ao, "$(SYS)_IS1_IG1") {
+  field(DESC, "NBI1 IS1 IG1")
+}
+
+record(ao, "$(SYS)_IS2_IG1") {
+  field(DESC, "NBI1 IS2 IG1")
+}
+
+record(bo, "$(SYS)_ALM_IS1") {
+  field(DESC, "Calorimetric Alarm for IS1")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+  field(ZSV , "NO_ALARM")
+  field(OSV , "MAJOR")
+}
+
+record(bo, "$(SYS)_ALM_IS2") {
+  field(DESC, "Calorimetric Alarm for IS2")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+  field(ZSV , "NO_ALARM")
+  field(OSV , "MAJOR")
+}
+
+record(bo, "$(SYS)_ALM_COMMON") {
+  field(DESC, "Calorimetric Alarm for Common")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+  field(ZSV , "NO_ALARM")
+  field(OSV , "MAJOR")
+}
+
+record(waveform, "$(SYS)_ALM_IS1_LIST") {
+  field(DESC, "Calorimetric Alarm List for IS1")
+  field(NELM, "30")
+  field(FTVL, "STRING")
+}
+
+record(waveform, "$(SYS)_ALM_IS2_LIST") {
+  field(DESC, "Calorimetric Alarm List for IS2")
+  field(NELM, "30")
+  field(FTVL, "STRING")
+}
+
+record(waveform, "$(SYS)_ALM_COMMON_LIST") {
+  field(DESC, "Calorimetric Alarm List for Common")
+  field(NELM, "30")
+  field(FTVL, "STRING")
+}
+

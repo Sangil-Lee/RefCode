@@ -1,0 +1,101 @@
+program FUEL_ON
+
+/*
+option +r;
+*/
+
+int DC_RUN;
+int DC_STATUS;
+int DC_STOP;
+
+int RF_RUN;
+int RF_STATUS;
+int RF_STOP;
+int PS_MODE;
+int RUN_ACT;
+int REMOTE;
+
+assign DC_RUN to "DCLN_EC_DC_RUN";
+monitor DC_RUN;
+evflag ef_DC_RUN;
+sync DC_RUN ef_DC_RUN;
+
+assign DC_STATUS to "DCLN_E_DC_ON"; 
+monitor DC_STATUS; 
+evflag ef_DC_STATUS;
+sync DC_STATUS ef_DC_STATUS;
+
+
+assign RF_RUN to "DCLN_EC_RF_RUN"; 
+monitor RF_RUN; 
+evflag ef_RF_RUN;
+sync RF_RUN ef_RF_RUN;
+
+assign RF_STATUS to "DCLN_E_RF_ON";
+monitor RF_STATUS;  
+evflag ef_RF_STATUS; 
+sync RF_STATUS ef_RF_STATUS;
+
+
+assign DC_STOP to "DCLN_EC_DC_STOP";
+monitor DC_STOP;
+assign RF_STOP to "DCLN_EC_RF_STOP";
+monitor RF_STOP;
+assign RUN_ACT to "DCLN_EC_DC_RUN_ACT";
+monitor RUN_ACT;
+
+assign PS_MODE to "DCLN_E_PS_MODE";
+monitor PS_MODE;
+evflag ef_PS_MODE;
+sync PS_MODE ef_PS_MODE;
+
+assign REMOTE to "DCLN_REMOTE";
+monitor REMOTE; 
+evflag ef_REMOTE; 
+sync REMOTE ef_REMOTE;
+
+ss FUEL {
+    
+    state MAIN {
+        when( efTestAndClear(ef_DC_RUN) ) { 
+            DC_STOP = (DC_RUN);
+            pvPut(DC_STOP, SYNC);
+        } state MAIN
+
+	when( efTestAndClear(ef_RF_RUN) ) {               
+            RF_STOP = (RF_RUN);
+            pvPut(RF_STOP, SYNC);
+        } state MAIN
+
+        when( efTestAndClear(ef_DC_STATUS) ){
+            DC_RUN = DC_STATUS;
+            pvPut(DC_RUN, SYNC);
+        } state MAIN
+
+        when( efTestAndClear(ef_RF_STATUS) ){
+            RF_RUN = RF_STATUS;                                    
+            pvPut(RF_RUN, SYNC);
+        } state MAIN
+
+
+
+/*        when( efTestAndClear(ef_PS_MODE) || efTestAndClear(ef_REMOTE) ){ */
+        when( delay(1.0)){  
+          if( PS_MODE == 0 && REMOTE == 1) {
+              RUN_ACT = 1; 
+              pvPut(RUN_ACT, SYNC);
+              printf("RUN_ACT Writing to 1!! \n");
+            }
+            else {
+              RUN_ACT = 0; 
+              pvPut(RUN_ACT, SYNC);
+               printf("RUN_ACT Writing to 0!! \n");
+            }
+        } state MAIN
+
+       
+    }
+
+}
+
+

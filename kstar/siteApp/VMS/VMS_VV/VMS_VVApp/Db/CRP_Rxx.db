@@ -1,0 +1,77 @@
+record(mbbiDirect, "$(NAME_RXX)") {
+  field(SCAN, "2 second")
+  field(FLNK, "$(PV_RXX)_B0")
+  field(INP, "$(PV_RXX) CA")
+}
+
+
+record(bi, "$(PV_RXX)_B0") {
+  field(INP, "$(NAME_RXX).B0")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B1")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B1") {
+  field(INP, "$(NAME_RXX).B1")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B2")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B2") {
+  field(INP, "$(NAME_RXX).B2")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B3")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B3") {
+  field(INP, "$(NAME_RXX).B3")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B4")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B4") {
+  field(INP, "$(NAME_RXX).B4")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B5")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B5") {
+  field(INP, "$(NAME_RXX).B5")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B6")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B6") {
+  field(INP, "$(NAME_RXX).B6")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(FLNK, "$(PV_RXX)_B7")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, "$(PV_RXX)_B7") {
+  field(INP, "$(NAME_RXX).B7")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}

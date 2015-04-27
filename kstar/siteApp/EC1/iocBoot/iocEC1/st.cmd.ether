@@ -1,0 +1,66 @@
+#!../../../ether_ip/bin/linux-x86/example
+
+## You may have to change EC1 to something else
+## everywhere it appears in this file
+
+< envPaths
+
+cd ${TOP}
+
+## Register all support components
+##dbLoadDatabase "dbd/EC1.dbd"
+dbLoadDatabase("../ether_ip/dbd/example.dbd")
+example_registerRecordDeviceDriver pdbbase
+
+# Initialize EtherIP driver, define PLCs
+EIP_buffer_limit(50)
+drvEtherIP_init()
+
+EIP_verbosity(5)
+
+drvEtherIP_define_PLC("PSPLC", "172.17.101.223", 0)
+drvEtherIP_define_PLC("TLPLC", "172.17.101.224", 0)
+
+#dbLoadRecords("../../db/nfri_db1.db")
+dbLoadRecords("db/labview.db")
+dbLoadRecords("db/dg645.db")
+dbLoadRecords("db/ps_in.db", "PLC=PSPLC")
+dbLoadRecords("db/ps_out.db", "PLC=PSPLC")
+dbLoadRecords("db/tl_out.db", "PLC=TLPLC")
+dbLoadRecords("db/tl_in.db", "PLC=TLPLC")
+
+
+## Load record instances
+#dbLoadTemplate "db/userHost.substitutions"
+#dbLoadRecords "db/dbSubExample.db", "user=rootHost"
+
+#dbLoadRecords("db/dbSysMon.db","SYS=EC1")
+#dbLoadRecords("db/sysTimeStamp.db","SYS=EC1")
+
+#createTaskCLTU("ECCD1", "/dev/tss/cltu.0", "1", "0", "107") 
+#dbLoadRecords "db/SYS_CLTU.db", "TYPE=LTU, SYS=ECCD1" 
+#dbLoadTemplate "db/ECCD1_CLTU_CFG.template"
+
+
+## Set this to see messages from mySub
+#var mySubDebug 1
+
+## Run this to trace the stages of iocInit
+#traceIocInit
+
+cd ${TOP}/iocBoot/${IOC}
+iocInit
+
+## Start any sequence programs
+#seq sncExample, "user=rootHost"
+
+
+#####################################
+# IRMIS crawler
+dbl > pvlist
+
+cd ${TOP}/pvcrawler
+system("./cmd.exe ")
+cd ${TOP}/iocBoot/${IOC}
+#####################################
+

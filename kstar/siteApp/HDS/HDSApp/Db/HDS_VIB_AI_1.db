@@ -1,0 +1,20 @@
+record(ai, "$(PV_NAME)_RAW") {
+  field(SCAN, "5 second")
+  field(DTYP, "EtherIP")
+  field(INP, "@plc0 $(TAG) S .2")
+  field(FLNK, "$(PV_NAME)")
+}
+
+record(calc, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(CALC,"(A * B) + C")
+  field(INPA, "$(PV_NAME)_RAW")
+  field(INPB, "$(ESLO)")
+  field(INPC, "$(EOFF)")
+  field(EGU, "$(UNIT)")
+  field(LOPR, "$(LOPR)")
+  field(HOPR, "$(HOPR)")
+  field(HIGH, "$(HIGH)")
+  field(HSV, "MINOR")
+}
+

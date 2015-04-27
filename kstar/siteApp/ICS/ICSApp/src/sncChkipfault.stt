@@ -1,0 +1,83 @@
+program sncChkipfault
+
+option +r;
+option -c;
+
+float		mcr_temp;
+assign      mcr_temp	to	"CCS_PCS_FAULT_IP_ERROR";
+monitor		mcr_temp;
+
+int			ipfault_status;
+assign		ipfault_status	to "CCS_EIP_INTL_IPFAULT";
+
+evflag		ef_ipfault;
+
+sync		mcr_temp	ef_ipfault;
+
+ss Mcr_Temp
+{
+	state init
+	{
+		when(TRUE)
+		{
+			efClear(ef_mcr_temp);
+		}state normal
+	}
+
+	state normal
+	{
+		when(efTestAndClear(ef_mcr_temp) && mcr_temp >= 28.0)
+		{
+			pvGet(server_status);
+			server_status +=  MCR_TEMP_WARNING;
+			printf("svrstatus:%d\n", server_status);
+			print_binary (server_status);
+			pvPut(server_status);
+		}state warning
+
+	}
+	state warning
+	{
+		when(efTestAndClear(ef_mcr_temp) && mcr_temp < 28.0)
+		{
+			pvGet(server_status);
+			server_status -=  MCR_TEMP_WARNING;
+			printf("svrstatus:%d\n", server_status);
+			print_binary (server_status);
+			pvPut(server_status);
+		}state normal
+	}
+}
+
+ss Comp_Temp
+{
+	state init
+	{
+		when(TRUE)
+		{
+			efClear(ef_comp_temp);
+		}state normal
+	}
+	state normal
+	{
+		when(efTestAndClear(ef_comp_temp) && comp_temp >= 28.0)
+		{
+			pvGet(server_status);
+			server_status |=  COMP_TEMP_WARNING;
+			printf("svrstatus:%d\n", server_status);
+			print_binary (server_status);
+			pvPut(server_status);
+		}state warning
+	}
+	state warning
+	{
+		when(efTestAndClear(ef_comp_temp) && comp_temp < 28.0)
+		{
+			pvGet(server_status);
+			server_status &= ~COMP_TEMP_WARNING;
+			printf("svrstatus:%d\n", server_status);
+			print_binary (server_status);
+			pvPut(server_status);
+		}state normal
+	}
+}

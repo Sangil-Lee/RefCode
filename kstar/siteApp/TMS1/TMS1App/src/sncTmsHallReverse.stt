@@ -1,0 +1,84 @@
+program sncTmsHallReverse 
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <sys/types.h>
+%% #include <sys/stat.h>
+%% #include <epicsThread.h>
+
+int i;
+int     odReverse;
+assign  odReverse to "TMS_HALL_BYP_REVERSE";
+monitor odReverse;
+evflag  odEventRev;
+sync    odReverse odEventRev;
+
+
+int dataCount;
+int udfCount;
+char *pfileName;
+
+string tmpStr1;
+string tmpStr2;
+
+float data[24];
+float udf[24];
+
+assign udf to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor udf;
+
+
+assign data to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor data;
+
+ss tmsHallRelayReverse{
+	state init{
+		when (TRUE){
+                        pfileName = macValueGet("FNAME");
+                        %% epicsThreadId threadId;
+                        %% FILE *pfile;
+                        %% pfile = fopen (pVar->pfileName, "r");
+                        %% if(!pfile) { 
+     			%%	printf("error in fopen TMS HallReverse\n");
+			%% 	threadId = epicsThreadGetIdSelf();
+			%%	printf("threadID : %x\n",threadId);
+			%%	seqStop(threadId);
+			%% }
+                        dataCount =0;
+                        %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+                        	pvAssign (data[dataCount], tmpStr1);
+			%%	sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+				pvAssign (udf[dataCount], tmpStr2);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+				dataCount++;
+                        %%}
+			%% fclose(pfile);
+			printf("Data count number is %d\n",dataCount);
+			%% epicsThreadSleep(1.0);
+		}state tms_Hall_Reverse	
+	}
+	state tms_Hall_Reverse{
+        	when (efTestAndClear(odEventRev)){
+%% /* Prevent Event Action When I don't know event. So, I check order PV and First PV. Default orderPV =0 and data[0]=0. That's Good Function */
+			if(odReverse == data[0]){
+                		for (i = 0; i < dataCount; i++){
+                        		if(data[i]==0){
+						data[i]=1;
+						pvPut(data[i],SYNC);
+					}
+                        		else{
+						data[i]=0;
+						pvPut(data[i],SYNC);
+					}
+					%% epicsThreadSleep(0.1);
+                		}
+			}
+		} state tms_Hall_Reverse 
+	}
+}
+

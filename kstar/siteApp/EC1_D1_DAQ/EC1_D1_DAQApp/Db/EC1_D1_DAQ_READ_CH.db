@@ -1,0 +1,40 @@
+record(ai, "$(PVNAME)")
+{
+  field(DESC, "Calibration Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6220 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) value")
+}
+
+record(ai, "$(PVNAME)_RAW")
+{
+  field(DESC, "Raw Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6220 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) raw_value")
+}
+
+record(ai, "$(PVNAME)_VOLT")
+{
+  field(DESC, "Volt Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6220 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) volt_value")
+}
+
+record(ao, "$(PVNAME)_GAIN")
+{
+  field(DESC, "Gain")
+  field(DTYP, "NI6220 AoControl")
+  field(OUT, "@gain $(DEV) $(CHAN)")
+  field(VAL , "1")
+  field(PINI, "YES")
+}
+
+record(ao, "$(PVNAME)_OFFSET")
+{
+  field(DESC, "Offset")
+  field(DTYP, "NI6220 AoControl")
+  field(OUT, "@offset $(DEV) $(CHAN)")
+}
+

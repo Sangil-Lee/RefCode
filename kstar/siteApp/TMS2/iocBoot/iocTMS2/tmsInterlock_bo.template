@@ -1,0 +1,12 @@
+file db/tmsInterlock_bo.db {
+        pattern { REC,                          	TASK,           CHAN,       RECTYPE,  POSNUM}
+                {"TMS_Interlock_Heart_Beat",		"Dev5_output",	"Dev5/port4", "bo",   "0"},
+                {"TMS_Interlock_Level_1",			"Dev5_output",	"Dev5/port4", "bo",   "1"},
+                {"TMS_Interlock_Level_2",			"Dev5_output",	"Dev5/port4", "bo",   "2"},
+                {"TMS_Interlock_Level_3",			"Dev5_output",	"Dev5/port4", "bo",   "3"},
+                {"TMS_Interlock_Level_4",			"Dev5_output",	"Dev5/port4", "bo",   "4"},
+                {"TMS_Interlock_Warning",			"Dev5_output",	"Dev5/port4", "bo",   "5"},
+                {"TMS_Interlock_RUN",				"Dev5_output",	"Dev5/port4", "bo",	  "6"},
+                {"TMS_Interlock_TF_CoolDown_Finish","Dev5_output",	"Dev5/port4", "bo",   "7"},
+                {"TMS_Interlock_PF_CoolDown_Finish","Dev5_output",	"Dev5/port6", "bo",	  "0"}
+}

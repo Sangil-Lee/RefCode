@@ -1,0 +1,67 @@
+program sncDlsInterlock
+option +r;
+option -c;
+%% #include <string.h>
+
+int i;
+
+string tmpStr1;
+string tmpStr2;
+
+int dataCount;
+char *pfileName;
+unsigned int shutter[16];
+unsigned int interlock[16];
+
+assign shutter to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor shutter;
+
+
+assign interlock to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor interlock;
+
+unsigned int iocRunStatus;
+assign iocRunStatus to "DLS_IOC_RUN_STATUS_INTL";
+monitor iocRunStatus;
+
+ss tmsDlsInterlock{
+	state init{
+		when (TRUE){
+                   pfileName = macValueGet("FNAME");
+                %% epicsThreadId threadId;
+                %% FILE *pfile;
+                %% pfile = fopen (pVar->pfileName, "r");
+                %% if(!pfile) { 
+     			%% printf("error in fopen\n");
+				%% threadId = epicsThreadGetIdSelf();
+				%% printf("threadID : %x\n",threadId);
+				%% seqStop(threadId);
+			%% }
+               dataCount =0;
+            %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+		            	pvAssign (shutter[dataCount], tmpStr1);
+					%%	sprintf(pVar->tmpStr2, "%s_INTL", pVar->tmpStr1);
+						pvAssign (interlock[dataCount], tmpStr2);
+						printf("connect %d %s\n", dataCount, tmpStr1);
+						dataCount++;
+            %%}
+			%% fclose(pfile);
+			printf("Data count number is %d\n",dataCount);
+			iocRunStatus=1;
+			pvPut(iocRunStatus);
+		}state dls_interlock_interface	
+	}
+	state dls_interlock_interface{
+        	    when (delay(0.1)){
+                	for (i = 0; i < dataCount; i++){
+				if(shutter[i]!=interlock[i]){
+					interlock[i]=shutter[i];
+					pvPut(interlock[i]);
+                        	}
+                	}
+		} state dls_interlock_interface
+	}
+}
+

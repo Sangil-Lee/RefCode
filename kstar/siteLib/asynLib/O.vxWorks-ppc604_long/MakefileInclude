@@ -1,0 +1,121 @@
+#Do not modify this file.
+#This file is created during the build.
+
+ifneq ($(strip $(asyn_SRCS_$(OS_CLASS))),)
+asyn_SRCS+=$(subst -nil-,,$(asyn_SRCS_$(OS_CLASS)))
+else
+ifdef asyn_SRCS_DEFAULT
+asyn_SRCS+=$(asyn_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_RCS_$(OS_CLASS))),)
+asyn_RCS+=$(subst -nil-,,$(asyn_RCS_$(OS_CLASS)))
+else
+ifdef asyn_RCS_DEFAULT
+asyn_RCS+=$(asyn_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_OBJS_$(OS_CLASS))),)
+asyn_OBJS+=$(subst -nil-,,$(asyn_OBJS_$(OS_CLASS)))
+else
+ifdef asyn_OBJS_DEFAULT
+asyn_OBJS+=$(asyn_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_LDFLAGS_$(OS_CLASS))),)
+asyn_LDFLAGS+=$(subst -nil-,,$(asyn_LDFLAGS_$(OS_CLASS)))
+else
+ifdef asyn_LDFLAGS_DEFAULT
+asyn_LDFLAGS+=$(asyn_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_OBJLIBS_$(OS_CLASS))),)
+asyn_OBJLIBS+=$(subst -nil-,,$(asyn_OBJLIBS_$(OS_CLASS)))
+else
+ifdef asyn_OBJLIBS_DEFAULT
+asyn_OBJLIBS+=$(asyn_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_LDOBJS_$(OS_CLASS))),)
+asyn_LDOBJS+=$(subst -nil-,,$(asyn_LDOBJS_$(OS_CLASS)))
+else
+ifdef asyn_LDOBJS_DEFAULT
+asyn_LDOBJS+=$(asyn_LDOBJS_DEFAULT)
+endif
+endif
+asyn_LDLIBS+=$(asyn_LIBS)
+ifneq ($(strip $(asyn_LIBS_$(OS_CLASS))),)
+asyn_LDLIBS+=$(subst -nil-,,$(asyn_LIBS_$(OS_CLASS)))
+else
+ifdef asyn_LIBS_DEFAULT
+asyn_LDLIBS+=$(asyn_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(asyn_SYS_LIBS_$(OS_CLASS))),)
+asyn_SYS_LIBS+=$(subst -nil-,,$(asyn_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef asyn_SYS_LIBS_DEFAULT
+asyn_SYS_LIBS+=$(asyn_SYS_LIBS_DEFAULT)
+endif
+endif
+asyn_OBJS+=$(addsuffix $(OBJ),$(basename $(asyn_SRCS)))
+
+ifeq ($(filter asyn,$(TESTPROD) $(PROD)),asyn)
+ifeq (,$(strip $(asyn_OBJS) $(PRODUCT_OBJS)))
+asyn_OBJS+=asyn$(OBJ)
+endif
+asyn_RESS+=$(addsuffix $(RES),$(basename $(asyn_RCS)))
+asyn_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(asyn_OBJS)))
+asyn_DEPLIBS=$(foreach lib, $(asyn_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+asyn$(EXE): $(asyn_OBJSNAME) $(asyn_RESS) $(asyn_DEPLIBS)
+endif
+
+ifeq ($(filter asyn,$(LIBRARY)),asyn)
+ifneq ($(filter asyn,$(LOADABLE_LIBRARY)),asyn)
+ifneq (,$(strip $(asyn_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += asyn
+endif
+asyn_RESS+=$(addsuffix $(RES),$(basename $(asyn_RCS)))
+asyn_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(asyn_OBJS)))
+asyn_DEPLIBS=$(foreach lib, $(asyn_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+asyn_DLL_DEPLIBS=$(foreach lib, $(asyn_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)asyn$(LIB_SUFFIX):$(asyn_OBJSNAME) $(asyn_RESS)
+$(LIB_PREFIX)asyn$(LIB_SUFFIX):$(asyn_DEPLIBS)
+$(LIB_PREFIX)asyn$(SHRLIB_SUFFIX):$(asyn_OBJSNAME) $(asyn_RESS)
+$(LIB_PREFIX)asyn$(SHRLIB_SUFFIX):$(asyn_DEPLIBS)
+$(LIB_PREFIX)asyn$(SHRLIB_SUFFIX):$(asyn_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter asyn,$(LOADABLE_LIBRARY)),asyn)
+ifneq (,$(strip $(asyn_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += asyn
+endif
+asyn_RESS+=$(addsuffix $(RES),$(basename $(asyn_RCS)))
+asyn_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(asyn_OBJS)))
+asyn_DEPLIBS=$(foreach lib, $(asyn_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+asyn_DLL_DEPLIBS=$(foreach lib, $(asyn_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)asyn$(LOADABLE_SHRLIB_SUFFIX):$(asyn_OBJSNAME) $(asyn_RESS)
+$(LOADABLE_SHRLIB_PREFIX)asyn$(LOADABLE_SHRLIB_SUFFIX):$(asyn_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)asyn$(LOADABLE_SHRLIB_SUFFIX):$(asyn_DLL_DEPLIBS)
+endif
+

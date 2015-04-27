@@ -1,0 +1,11 @@
+record(waveform, "$(PVNAME)")
+{
+  field(DESC, "Calc Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6123 WaveRead")
+  field(INP, "@$(DEV) $(CHAN) wave_calc")
+  field(NELM, "10000")
+  field(FTVL, "DOUBLE")
+}
+
+

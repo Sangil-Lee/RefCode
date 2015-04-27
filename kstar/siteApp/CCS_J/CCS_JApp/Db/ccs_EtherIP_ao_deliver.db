@@ -1,0 +1,8 @@
+record(ao, "$(NAME)")
+{
+        field(DTYP, "EtherIP")
+#        field(OMSL, "supervisory")
+        field(OMSL, "closed_loop")
+        field(DOL, "$(INPUT_LINK) CP")
+        field(OUT, "@$(PLC) $(ADDR) S 0.1")
+}

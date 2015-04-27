@@ -1,0 +1,13 @@
+file db/MC_DAQ_BO.db {
+            pattern {PV_NAME,          		  DSR,		               TASK,	   	  STR }
+                    {"MC_MDS_CREATE_TREE",      "MC_MDS_CREATE_TREE",       "VXI0::40::INSTR",  "create_tree"}
+                    {"MC_SLOT1_DISCON_CLOSE",   "MC_SLOT1_DISCON_CLOSE",    "VXI0::40::INSTR",  "mds_disClose"}
+                    {"MC_SLOT1_CONNECT_OPEN",   "MC_SLOT1_CONNECT_OPEN",    "VXI0::40::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT1_EX_TRIG_REMOTE", "MC_SLOT1_EXTRIG_REMOTE",   "VXI0::40::INSTR",  "task_trigger"}
+                    {"MC_SLOT1_TASK_CALLBACK",  "MC_SLOT1_TASK_CALLBACK" ,  "VXI0::40::INSTR",  "task_call"}
+                    {"MC_SLOT1_TASK_START",     "MC_SLOT1_TASK_START" ,     "VXI0::40::INSTR",  "task_start"}
+                    {"MC_SLOT1_TASK_STOP",      "MC_SLOT1_TASK_STOP" ,      "VXI0::40::INSTR",  "task_stop"}
+                    {"MC_SLOT1_TASK_ABORT",     "MC_SLOT1_TASK_ABORT" ,     "VXI0::40::INSTR",  "task_abort"}
+                    {"MC_SLOT1_TASK_REG_UPDATE","MC_SLOT1_TASK_REGUPDATE",  "VXI0::40::INSTR",  "task_regupdate"}
+                    {"MC_SLOT1_REMOTE_LOCAL",   "MC_SLOT1_REMOTE_LOCAL" ,   "VXI0::40::INSTR",  "operation_mode"}
+}

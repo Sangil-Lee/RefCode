@@ -1,0 +1,1453 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>351</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>TMP2 Control Panel</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>15</y>
+      <width>724</width>
+      <height>297</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pixmap" >
+     <pixmap resource="../ech.qrc" >:/images/ECH_WG_Switch.png</pixmap>
+    </property>
+    <property name="scaledContents" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca203" >
+    <property name="geometry" >
+     <rect>
+      <x>246</x>
+      <y>106</y>
+      <width>120</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (To KSTAR)</string>
+      <string>ON (To KSTAR)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca204" >
+    <property name="geometry" >
+     <rect>
+      <x>246</x>
+      <y>128</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>To KSTAR</string>
+    </property>
+    <property name="falselabel" >
+     <string>To KSTAR</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca205" >
+    <property name="geometry" >
+     <rect>
+      <x>358</x>
+      <y>178</y>
+      <width>120</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1E</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (To Dummy)</string>
+      <string>ON (To Dummy)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca206" >
+    <property name="geometry" >
+     <rect>
+      <x>358</x>
+      <y>202</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>To Dummy</string>
+    </property>
+    <property name="falselabel" >
+     <string>To Dummy</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca106" >
+    <property name="geometry" >
+     <rect>
+      <x>113</x>
+      <y>202</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>To Dummy</string>
+    </property>
+    <property name="falselabel" >
+     <string>To Dummy</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca104" >
+    <property name="geometry" >
+     <rect>
+      <x>15</x>
+      <y>128</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>To KSTAR</string>
+    </property>
+    <property name="falselabel" >
+     <string>To KSTAR</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca103" >
+    <property name="geometry" >
+     <rect>
+      <x>15</x>
+      <y>106</y>
+      <width>120</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (To KSTAR)</string>
+      <string>ON (To KSTAR)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca105" >
+    <property name="geometry" >
+     <rect>
+      <x>113</x>
+      <y>178</y>
+      <width>120</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1E</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (To Dummy)</string>
+      <string>ON (To Dummy)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca304" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>141</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>From Boris</string>
+    </property>
+    <property name="falselabel" >
+     <string>From Boris</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca303" >
+    <property name="geometry" >
+     <rect>
+      <x>610</x>
+      <y>100</y>
+      <width>120</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>OFF (from 110
+GHz gyrotron)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (from 110 GHz gyrotron)</string>
+      <string>ON (from 110 GHz gyrotron)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="ca306" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>221</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>22</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_ESP300_1OR1</string>
+    </property>
+    <property name="truelabel" >
+     <string>From Tom</string>
+    </property>
+    <property name="falselabel" >
+     <string>From Tom</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>211</red>
+      <green>197</green>
+      <blue>179</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>172</red>
+      <green>148</green>
+      <blue>113</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca305" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>179</y>
+      <width>120</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>OFF (from 84
+GHz gyrotron)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap" >
+     <bool>true</bool>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::IfNotZero</enum>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>OFF (from 84 GHz gyrotron)</string>
+      <string>ON (from 84 GHz gyrotron)</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca101" >
+    <property name="geometry" >
+     <rect>
+      <x>142</x>
+      <y>123</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::LeftArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca102" >
+    <property name="geometry" >
+     <rect>
+      <x>158</x>
+      <y>107</y>
+      <width>25</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>30</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::DownArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1E</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca201" >
+    <property name="geometry" >
+     <rect>
+      <x>392</x>
+      <y>123</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::LeftArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca202" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>107</y>
+      <width>25</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>30</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::DownArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1E</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca301" >
+    <property name="geometry" >
+     <rect>
+      <x>534</x>
+      <y>124</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::RightArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1F</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca302" >
+    <property name="geometry" >
+     <rect>
+      <x>550</x>
+      <y>106</y>
+      <width>25</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>30</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::DownArrow</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_RD1E</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ech.qrc" />
+ </resources>
+ <connections/>
+</ui>

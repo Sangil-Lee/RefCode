@@ -1,0 +1,67 @@
+program sncOperationMode
+int kmode;
+assign kmode to "LH1_MODE_KSTAR";
+monitor kmode;
+
+int dmode;
+assign dmode to "LH1_MODE_DUMMY";
+monitor dmode;
+
+int ipflt_dis;
+assign ipflt_dis to "LH1_INT_DIPF_CMD";
+
+int ipflt_en;
+assign ipflt_en to "LH1_INT_EIPF_CMD";
+
+int kindex = 0;
+int dindex = 0;
+
+ss OperationMode
+{
+	state low
+	{
+		when(kmode==1&&dmode==0)
+		{
+			if(kindex == 0){
+				ipflt_en = 1;
+				pvPut(ipflt_en, SYNC);
+
+				epicsThreadSleep(1);
+
+				ipflt_en = 0;
+				pvPut(ipflt_en,	SYNC);
+
+				kindex = 1;
+				dindex = 0;
+			}
+		} state high
+		when(delay(1))
+		{
+		} state high
+	}
+	state high
+	{
+		when(dmode==1&&kmode==0)
+		{
+			if(dindex == 0){
+				ipflt_dis = 1;
+				pvPut(ipflt_dis, SYNC);
+
+				epicsThreadSleep(1);
+
+				ipflt_dis = 0;
+				pvPut(ipflt_dis, SYNC);
+				
+				dindex = 1;
+				kindex = 0;
+			}
+		} state low
+		when(delay(1))
+		{
+		} state low
+	}
+}
+
+
+
+

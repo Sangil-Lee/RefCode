@@ -1,0 +1,18 @@
+record(bo, "HDS_HCS_W_EPICS_COMM_ERROR") {
+  field(SCAN, "Passive")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+  field(DTYP, "S7plc")
+  field(OMSL, "supervisory")
+  field(OUT, "@HCS_PLC/5657 B=9")
+}
+
+record(calcout, "HDS_HCS_W_EPICS_COMM_ERROR_C") {
+  field(CALC, "0")
+  field(SCAN, "5 second")
+  field(OUT, "HDS_HCS_W_EPICS_COMM_ERROR")
+  field(FLNK, "HDS_HCS_W_EPICS_COMM_ERROR")
+}
+

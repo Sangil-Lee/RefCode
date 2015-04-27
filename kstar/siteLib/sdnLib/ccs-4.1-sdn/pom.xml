@@ -1,0 +1,118 @@
+<!--
+ $HeadURL: https://svnpub.iter.org/codac/iter/codac/dev/units/m-sdn/branches/codac-core-4.1/pom.xml $
+ $Id: pom.xml 37934 2013-06-06 13:46:44Z zagara $
+
+ Project       : CODAC Core System
+
+ Description   : Project description file for a CODAC Core System module
+
+ Authors       : Anze Zagar
+ 
+ Copyright (c) : 2010-2013 ITER Organization,
+                 CS 90 046
+                 13067 St. Paul-lez-Durance Cedex
+                 France
+
+ This file is part of ITER CODAC software.
+ For the terms and conditions of redistribution or use of this software
+ refer to the file ITER-LICENSE.TXT located in the top level directory
+ of the distribution package.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.iter.codac.units</groupId>
+    <artifactId>sdn</artifactId>
+    <packaging>codac</packaging>
+<!--    <version>1.0a2</version>  -->
+    <name>CODAC Core System sdn module</name>
+    <description>CODAC Core System sdn module</description>
+    <url>http://www.iter.org/</url>
+ 
+    <!-- project properties -->
+    <properties>
+        <unit.type>module</unit.type>
+    </properties>
+
+    <!-- parent pom.xml -->
+    <parent>
+        <groupId>org.iter.codac.units</groupId>
+        <artifactId>maven-iter-settings</artifactId>
+        <version>4.1.0</version>
+    </parent>
+
+    <!-- unit owner and developers -->
+    <developers>
+        <developer>
+            <id>mahajak</id>
+            <roles>
+                <role>unit owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>kimh12</id>
+            <roles>
+                <role>unit owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>leee4</id>
+            <roles>
+                <role>unit owner</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <!-- configuration of how the project is built -->
+    <build>
+        <!-- default phase is compile -->
+        <defaultGoal>compile</defaultGoal>
+        <!-- this command is executed if you just write 'mvn' -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-iter-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <packaging>
+                        <package>
+                            <include type="file" source="lib/libsdn.so" target="lib/" />
+                            <include type="config" source="-" target="env.d/${artifactId}" rpmeval="true"><![CDATA[SDN_TOPIC_DIRECTORY=%{codac_root}/apps/include
+SDN_CONFIG_DIRECTORY=%{codac_conf}/sdn
+SDN_LOG_DIRECTORY=%{codac_rt}/sdn]]></include>
+                        </package>
+                        <package name="devel">
+                            <include type="file" source="lib/libsdn.a" target="lib/" />
+                            <include type="file" source="main/c++/include/sdn_common" target="include/sdn_common" />
+                            <include type="file" source="main/c++/include/sdn" target="include/sdn" />
+                            <include type="script" scriptType="user" file="sdn-tune-services.sh" />
+                            <include type="config" source="main/c++/sdd/topic_multicast_map.dat.template" target="sdn/topic_multicast_map.dat" />
+                        </package>
+                        <package name="test">
+                            <include type="file" source="test" target="tests/sdn" />
+                        </package>
+                        <package name="doc">
+                            <include type="doxygen">
+                                <input>main/c++/include/sdn_common</input>
+                                <input>main/c++/include/sdn</input>
+                                <input>main/c++/sdn-api</input>
+                                <input>main/c++/examples/Readme.1st</input>
+                                <imagepath>images/</imagepath>
+                                <properties>
+                                    <!-- <FILE_PATTERNS>*.cpp *.h *.template</FILE_PATTERNS> -->
+                                    <HIDE_UNDOC_CLASSES>NO</HIDE_UNDOC_CLASSES>
+                                    <EXTRACT_ALL>NO</EXTRACT_ALL>
+                                    <EXTRACT_PRIVATE>NO</EXTRACT_PRIVATE>
+                                    <SOURCE_BROWSER>YES</SOURCE_BROWSER>
+                                </properties>
+                            </include>
+                        </package>
+                        <package name="monitor">
+                            <include type="program" name="sdn-monitor" />
+                            <include type="config" source="main/c++/sdn-monitor/topic_configurations_example.xml" target="sdn/topic_configurations.xml" />
+                        </package>
+                    </packaging>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

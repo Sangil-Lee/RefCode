@@ -1,0 +1,52 @@
+#!../../bin/linux-x86/pxi
+
+## You may have to change pxi to something else
+## everywhere it appears in this file
+
+< envPaths
+
+cd ${TOP}
+
+## Register all support components
+dbLoadDatabase("dbd/pxi.dbd")
+pxi_registerRecordDeviceDriver(pdbbase)
+
+createPXITask("task1")
+createPXITask("task2")
+createPXITask("task3")
+
+createPXICernoxChannel("task2", "SC1Mod1/ai0")
+createPXICernoxChannel("task2", "SC1Mod1/ai1")
+createPXICernoxChannel("task2", "SC1Mod1/ai2")
+createPXICernoxChannel("task2", "SC1Mod1/ai3")
+createPXICernoxChannel("task2", "SC1Mod1/ai4")
+createPXICernoxChannel("task2", "SC1Mod1/ai5")
+createPXICernoxChannel("task2", "SC1Mod1/ai6")
+createPXICernoxChannel("task2", "SC1Mod1/ai7")
+
+createPXICernoxChannel("task3", "SC2Mod2/ai0")
+createPXICernoxChannel("task3", "SC2Mod2/ai1")
+createPXICernoxChannel("task3", "SC2Mod2/ai2")
+createPXICernoxChannel("task3", "SC2Mod2/ai3")
+createPXICernoxChannel("task3", "SC2Mod2/ai4")
+
+
+cd ${TOP}
+## Load record instances
+dbLoadRecords("db/dbExample1.db","user=khkimHost")
+dbLoadRecords("db/dbExample2.db","user=khkimHost,no=1,scan=1 second")
+dbLoadRecords("db/dbExample2.db","user=khkimHost,no=2,scan=2 second")
+dbLoadRecords("db/dbExample2.db","user=khkimHost,no=3,scan=5 second")
+dbLoadRecords("db/dbSubExample.db","user=khkimHost")
+dbLoadRecords("db/dbPXISCXICernox.db")
+
+## Set this to see messages from mySub
+#var mySubDebug 1
+
+cd ${TOP}/iocBoot/${IOC}
+loadCernoxList cernoxList
+
+iocInit()
+
+## Start any sequence programs
+#seq sncExample,"user=khkimHost"

@@ -1,0 +1,99 @@
+record(bo, CCS_INTL_ECH_STOP) {
+  field(DESC, "ECH Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S16 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_ICRH_STOP) {
+  field(DESC, "ICRH Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S17 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_NBI1_STOP) {
+  field(DESC, "NBI1 Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S18 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_ECCD_STOP) {
+  field(DESC, "ECCD Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S19 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_LHCD_STOP) {
+  field(DESC, "LHCD Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S20 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_HEATING_STOP) {
+  field(DESC, "All Heating Stop")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+#  field(OMSL, "closed_loop")
+#  field(DOL, "CCS_PCS_FAULT_FAST_INTL CP")
+  field(OUT, "#C1 S21 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(bo, CCS_INTL_HEATING_RESET) {
+  field(DESC, "Heating Stop Reset")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Vmic2534")
+  field(OMSL, "supervisory")
+  field(OUT, "#C1 S22 @")
+  field(ZNAM, "Low(0)")
+  field(ONAM, "High(1)")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}

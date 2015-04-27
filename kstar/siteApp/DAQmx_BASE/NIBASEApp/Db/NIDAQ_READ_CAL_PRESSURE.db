@@ -1,0 +1,32 @@
+record(calc, "FUEL_DAQ_READ_DATA_CH00_CAL") {
+  field(DESC, "B_PKR251A pressure")
+  field(SCAN, "Passive")
+  field(CALC, "2.4*10.^(1.667*A-11.33)")
+  field(INPA, "FUEL_DAQ_READ_DATA_CH00 CPP NMS")
+  field(EGU, "mbar")
+  field(PREC, "6")
+}
+record(calc, "FUEL_DAQ_READ_DATA_CH01_CAL") {
+  field(DESC, "B_IMR265 pressure")
+  field(SCAN, "Passive")
+  field(CALC, "2.4*10.^(A-7.5)")
+  field(INPA, "FUEL_DAQ_READ_DATA_CH01 CPP NMS")
+  field(EGU, "mbar")
+  field(PREC, "6")
+}
+record(calc, "FUEL_DAQ_READ_DATA_CH02_CAL") {
+  field(DESC, "F_IMR265 pressure")
+  field(SCAN, "Passive")
+  field(CALC, "2.4*10.^(A-7.5)")
+  field(INPA, "FUEL_DAQ_READ_DATA_CH02 CPP NMS")
+  field(EGU, "mbar")
+  field(PREC, "6")
+}
+record(calc, "FUEL_DAQ_READ_DATA_CH03_CAL") {
+  field(DESC, "B_IG307 pressure")
+  field(SCAN, "Passive")
+  field(CALC, "10.^(A-11.)/0.46")
+  field(INPA, "FUEL_DAQ_READ_DATA_CH03 CPP NMS")
+  field(EGU, "mbar")
+  field(PREC, "6")
+}

@@ -1,0 +1,42 @@
+record(ao, MC_DAQ_CCS_SHOT_NUMBER) {
+  field(DESC, "MC_DAQ_SHOT_NUMBER")
+  field(SCAN, "Passive")
+  field(DOL, "CCS_SHOT_NUMBER CPP NMS")
+  field(OMSL, "closed_loop")
+  field(OUT, "MC_DAQ_SHOT_NUMBER PP")
+}
+
+record(ao, MC_DAQ_MID_BLIP_TIME) {
+  field(DESC, "MC_DAQ_MID_BLIP_TIME")
+  field(SCAN, "Passive")
+  field(DOL, "MPS1_LTU_T0_p0 CPP NMS")
+  field(OMSL, "closed_loop")
+  field(OUT, "MC_DAQ_BLIP_TIME PP")
+}
+
+record(ao, MC_DAQ_MID_DAQ_START_TIME) {
+  field(DESC, "MC_DAQ_MID_DAQ_STARTIME")
+  field(SCAN, "Passive")
+  field(DOL, "MC_LTU_T0_p2 CPP NMS")
+  field(OMSL, "closed_loop")
+  field(OUT, "MC_DAQ_START_TIME PP")
+}
+
+record(ao, MC_DAQ_MID_SAMPLING_RATE) {
+  field(DESC, "MC_DAQ_MID_SAMPLING_RATE")
+  field(SCAN, "Passive")
+  field(DOL, "MC_LTU_Clock_p2 CPP NMS")
+  field(OMSL, "closed_loop")
+  field(OUT, "MC_DAQ_SAMPLING_RATE PP")
+}
+
+record(dfanout, MC_DAQ_LR_MID_SWICHING) {
+  field(DESC, "MC_DAQ_LR_MID_SWICHING")
+  field(SCAN, "Passive")
+  field(DOL, "MC_DAQ_OPERATION_MODE CPP NMS")
+  field(OMSL, "closed_loop")
+  field(OUTA, "MC_DAQ_MID_BLIP_TIME.DISV PP")
+  field(OUTB, "MC_DAQ_CCS_SHOT_NUMBER.DISV PP")
+  field(OUTC, "MC_DAQ_MID_DAQ_START_TIME.DISV PP")
+  field(OUTD, "MC_DAQ_MID_SAMPLING_RATE.DISV PP")
+}

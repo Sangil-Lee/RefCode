@@ -1,0 +1,516 @@
+program HDSHCS_ON
+option +r;
+
+int MODE;
+int REMOTE;
+int SELECT[3];
+int READ_BI[8];
+int PV_BI[4];
+
+double READ_AI[20];
+double WRITE_AO[20];
+double PV_AI[7];
+double PV_AO[7];
+double PV_Q2_AL;
+
+assign MODE to "HDS_HCS_R_MODE";
+monitor MODE;
+evflag ef_MODE;
+sync MODE ef_MODE;
+
+assign SELECT to {
+        "HDS_HCS_R_B1_SENSOR_SEL",
+        "HDS_HCS_R_B2_SENSOR_SEL",
+        "HDS_HCS_R_B3_SENSOR_SEL" 
+	};
+monitor SELECT;
+evflag ef_SELECT;
+sync SELECT ef_SELECT;
+
+assign READ_BI to {
+        "HDS_HCS_R_P5_AL_HH_BIT",
+        "HDS_HCS_R_P5_AL_LEVEL1_BIT",
+ 	"HDS_HCS_R_P28_AL_HH_BIT",
+        "HDS_HCS_R_P28_AL_LEVEL1_BIT",
+	"HDS_HCS_R_P51_AL_HH_BIT",
+        "HDS_HCS_R_P51_AL_LEVEL1_BIT",
+	"HDS_HCS_R_P52_AL_HH_BIT",
+        "HDS_HCS_R_P52_AL_LEVEL1_BIT"
+        }; 
+monitor READ_BI;
+evflag ef_READ_BI;
+sync READ_BI ef_READ_BI;
+
+assign PV_BI to {
+        "HDS_HCS_R_Q2_AL_BIT",
+        "HDS_HCS_R_Q8_AL_BIT",
+	"HDS_HCS_R_Q12_AL_BIT",
+	"HDS_HCS_R_Q13_AL_BIT"
+	};
+monitor PV_BI;
+
+assign READ_AI to { 
+        "HDS_HCS_R_P5_AL_HH",
+	"HDS_HCS_R_P10_AL_HH",
+	"HDS_HCS_R_P5_AL_LEVEL1",
+	"HDS_HCS_R_P10_AL_LEVEL1",
+	"HDS_HCS_R_P26_AL_HH",
+	"HDS_HCS_R_P27_AL_HH",
+	"HDS_HCS_R_P26_AL_LEVEL1",
+	"HDS_HCS_R_P27_AL_LEVEL1",
+	"HDS_HCS_R_P64_AL_HH",
+	"HDS_HCS_R_P69_AL_HH",
+	"HDS_HCS_R_P64_AL_LEVEL1",
+	"HDS_HCS_R_P69_AL_LEVEL1",
+	"HDS_HCS_R_P5_AL_HH", 
+        "HDS_HCS_R_P5_AL_LEVEL1",
+	"HDS_HCS_R_P28_AL_HH",
+        "HDS_HCS_R_P28_AL_LEVEL1",
+	"HDS_HCS_R_P51_AL_HH",
+        "HDS_HCS_R_P51_AL_LEVEL1",
+	"HDS_HCS_R_P52_AL_HH",
+        "HDS_HCS_R_P52_AL_LEVEL1"
+	};
+monitor READ_AI;
+evflag ef_READ_AI;
+sync READ_AI ef_READ_AI;
+
+assign PV_AI to {
+        "HDS_HCS_R_B1_P_LIMIT",
+	"HDS_HCS_R_B2_P_LIMIT",
+	"HDS_HCS_R_B3_P_LIMIT",
+        "HDS_HCS_R_Q2_AL",
+	"HDS_HCS_R_Q8_AL",
+	"HDS_HCS_R_Q12_AL",
+	"HDS_HCS_R_Q13_AL"
+        };
+monitor PV_AI;
+
+assign WRITE_AO to {  
+        "HDS_HCS_W_P5_AL_HH", 
+        "HDS_HCS_W_P10_AL_HH", 
+        "HDS_HCS_W_P5_AL_LEVEL1", 
+        "HDS_HCS_W_P10_AL_LEVEL1", 
+        "HDS_HCS_W_P26_AL_HH", 
+        "HDS_HCS_W_P27_AL_HH", 
+        "HDS_HCS_W_P26_AL_LEVEL1", 
+        "HDS_HCS_W_P27_AL_LEVEL1", 
+        "HDS_HCS_W_P64_AL_HH", 
+        "HDS_HCS_W_P69_AL_HH", 
+        "HDS_HCS_W_P64_AL_LEVEL1", 
+        "HDS_HCS_W_P69_AL_LEVEL1",
+        "HDS_HCS_W_P5_AL_HH",
+        "HDS_HCS_W_P5_AL_LEVEL1",
+        "HDS_HCS_W_P28_AL_HH",
+        "HDS_HCS_W_P28_AL_LEVEL1",
+        "HDS_HCS_W_P51_AL_HH",
+        "HDS_HCS_W_P51_AL_LEVEL1",
+        "HDS_HCS_W_P52_AL_HH",
+        "HDS_HCS_W_P52_AL_LEVEL1"
+        }; 
+monitor WRITE_AO;
+
+assign PV_AO to {
+        "HDS_HCS_W_B1_P_LIMIT",
+        "HDS_HCS_W_B2_P_LIMIT",
+        "HDS_HCS_W_B3_P_LIMIT", 
+        "HDS_HCS_W_B3_P_LIMIT",
+	"HDS_HCS_W_Q8_AL",
+        "HDS_HCS_W_Q12_AL",
+        "HDS_HCS_W_Q13_AL"
+        }; 
+monitor PV_AO;
+evflag ef_PV_AO; 
+sync PV_AO ef_PV_AO;
+
+
+assign PV_Q2_AL to "HDS_HCS_W_Q2_AL";
+monitor PV_Q2_AL;
+evflag ef_PV_Q2_AL;
+sync PV_Q2_AL ef_PV_Q2_AL;
+
+
+assign REMOTE to "HDS_HCS_R_REMOTE";
+monitor REMOTE;
+evflag ef_REMOTE;
+sync REMOTE ef_REMOTE;
+
+ss HDS_HCS {
+    
+     state MAIN   {
+      when ( efTestAndClear(ef_READ_AI) || efTestAndClear(ef_REMOTE) ) {
+      } state STATE1
+      when ( efTestAndClear(ef_PV_AO) ) {
+             printf("ef_PV_AO \n");
+      } state STATE2
+      when ( efTestAndClear(ef_MODE) || efTestAndClear(ef_SELECT) ) {
+      } state STATE3
+      when ( efTestAndClear(ef_PV_Q2_AL) ) {
+             printf("ef_PV_Q2_AL \n");
+      } state STATE4
+    }
+     
+     state STATE1 {
+       when( delay(0.1) ){
+	      printf("STATE1 \n"); 
+              if ( (MODE == 0) && (SELECT[0] == 0) ){
+	            PV_AI[0] = READ_AI[0];
+	            pvPut(PV_AI[0]);
+                    PV_AO[0] = READ_AI[0]; 
+                    pvPut(PV_AO[0]);
+              } 
+              if ( (MODE == 0) && (SELECT[0] == 1) ){
+                    PV_AI[0] = READ_AI[1];
+                    pvPut(PV_AI[0]);
+		    PV_AO[0] = READ_AI[1];
+                    pvPut(PV_AO[0]);
+              }              
+              if ( (MODE == 1) && (SELECT[0] == 0) ){
+                    PV_AI[0] = READ_AI[2];
+                    pvPut(PV_AI[0]);
+		    PV_AO[0] = READ_AI[2];
+                    pvPut(PV_AO[0]);
+              }
+              if ( (MODE == 1) && (SELECT[0] == 1) ){
+                    PV_AI[0] = READ_AI[3];
+                    pvPut(PV_AI[0]);
+		    PV_AO[0] = READ_AI[3];
+                    pvPut(PV_AO[0]);
+              }
+              if ( (MODE == 0) && (SELECT[1] == 0) ){
+                    PV_AI[1] = READ_AI[4];
+                    pvPut(PV_AI[1]);
+		    PV_AO[1] = READ_AI[4];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 0) && (SELECT[1] == 1) ){
+                    PV_AI[1] = READ_AI[5];
+                    pvPut(PV_AI[1]);
+		    PV_AO[1] = READ_AI[5];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 1) && (SELECT[1] == 0) ){
+                    PV_AI[1] = READ_AI[6];
+                    pvPut(PV_AI[1]);
+		    PV_AO[1] = READ_AI[6];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 1) && (SELECT[1] == 1) ){
+                    PV_AI[1] = READ_AI[7];
+                    pvPut(PV_AI[1]);
+		    PV_AO[1] = READ_AI[7];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 0) && (SELECT[2] == 0) ){
+                    PV_AI[2] = READ_AI[8];
+                    pvPut(PV_AI[2]);
+		    PV_AO[2] = READ_AI[8];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 0) && (SELECT[2] == 1) ){
+                    PV_AI[2] = READ_AI[9];
+                    pvPut(PV_AI[2]);
+		    PV_AO[2] = READ_AI[9];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 1) && (SELECT[2] == 0) ){
+                    PV_AI[2] = READ_AI[10];
+                    pvPut(PV_AI[2]);
+		    PV_AO[2] = READ_AI[10];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 1) && (SELECT[2] == 1) ){
+                    PV_AI[2] = READ_AI[11];
+                    pvPut(PV_AI[2]);
+		    PV_AO[2] = READ_AI[11];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 0) ){      
+	            PV_AI[3] = READ_AI[12];
+                    pvPut(PV_AI[3]);
+                    PV_AI[4] = READ_AI[14];
+                    pvPut(PV_AI[4]);
+                    PV_AI[5] = READ_AI[16];
+                    pvPut(PV_AI[5]);
+                    PV_AI[6] = READ_AI[18];
+                    pvPut(PV_AI[6]);
+                   
+                    PV_Q2_AL = READ_AI[12];
+                    pvPut(PV_Q2_AL); 
+                    PV_AO[4] = READ_AI[14];
+                    pvPut(PV_AO[4]); 
+                    PV_AO[5] = READ_AI[16];
+                    pvPut(PV_AO[5]); 
+                    PV_AO[6] = READ_AI[18];
+                    pvPut(PV_AO[6]);
+                    
+                    PV_BI[0] = READ_BI[0]; 
+                    pvPut(PV_BI[0]); 
+                    PV_BI[1] = READ_BI[2]; 
+                    pvPut(PV_BI[1]); 
+                    PV_BI[2] = READ_BI[4]; 
+                    pvPut(PV_BI[2]); 
+                    PV_BI[3] = READ_BI[6]; 
+                    pvPut(PV_BI[3]);
+              }
+	      if ( (MODE == 1) ){    
+                    PV_AI[3] = READ_AI[13];
+                    pvPut(PV_AI[3]);
+                    PV_AI[4] = READ_AI[15];
+                    pvPut(PV_AI[4]);
+                    PV_AI[5] = READ_AI[17];
+                    pvPut(PV_AI[5]);
+                    PV_AI[6] = READ_AI[19];
+                    pvPut(PV_AI[6]);
+
+                    PV_Q2_AL = READ_AI[13];
+                    pvPut(PV_Q2_AL);
+                    PV_AO[4] = READ_AI[15];
+                    pvPut(PV_AO[4]); 
+                    PV_AO[5] = READ_AI[17];
+                    pvPut(PV_AO[5]); 
+                    PV_AO[6] = READ_AI[19];
+                    pvPut(PV_AO[6]); 
+
+		    PV_BI[0] = READ_BI[1];
+                    pvPut(PV_BI[0]);
+                    PV_BI[1] = READ_BI[3];
+                    pvPut(PV_BI[1]);
+                    PV_BI[2] = READ_BI[5];
+                    pvPut(PV_BI[2]);
+                    PV_BI[3] = READ_BI[7];
+                    pvPut(PV_BI[3]);
+
+              } 
+          
+          } state MAIN
+    }
+
+
+
+        state STATE2 {
+            when(delay(0.1)) {
+              printf("STATE2 \n");
+
+              if ( (MODE == 0) && (SELECT[0] == 0) ){
+                    WRITE_AO[0] = PV_AO[0];
+ 	            pvPut(WRITE_AO[0]);
+ 	      }  
+              if ( (MODE == 0) && (SELECT[0] == 1) ){
+                    WRITE_AO[1] = PV_AO[0];
+                    pvPut(WRITE_AO[1]);
+              }      
+              if ( (MODE == 1) && (SELECT[0] == 0) ){
+                    WRITE_AO[2] = PV_AO[0];
+                    pvPut(WRITE_AO[2]);
+              } 
+              if ( (MODE == 1) && (SELECT[0] == 1) ){
+                    WRITE_AO[3] = PV_AO[0];
+                    pvPut(WRITE_AO[3]);
+	      } 
+              if ( (MODE == 0) && (SELECT[1] == 0) ){
+                    WRITE_AO[4] = PV_AO[1];
+                    pvPut(WRITE_AO[4]);
+              } 
+              if ( (MODE == 0) && (SELECT[1] == 1) ){
+                    WRITE_AO[5] = PV_AO[1];
+                    pvPut(WRITE_AO[5]);
+              } 
+              if ( (MODE == 1) && (SELECT[1] == 0) ){
+                    WRITE_AO[6] = PV_AO[1];
+                    pvPut(WRITE_AO[6]);
+              } 
+              if ( (MODE == 1) && (SELECT[1] == 1) ){
+                    WRITE_AO[7] = PV_AO[1];
+                    pvPut(WRITE_AO[7]);
+              } 
+              if ( (MODE == 0) && (SELECT[2] == 0) ){
+                    WRITE_AO[8] = PV_AO[2];
+                    pvPut(WRITE_AO[8]);
+              } 
+              if ( (MODE == 0) && (SELECT[2] == 1) ){
+                    WRITE_AO[9] = PV_AO[2];
+                    pvPut(WRITE_AO[9]);
+              } 
+              if ( (MODE == 1) && (SELECT[2] == 0) ){
+                    WRITE_AO[10] = PV_AO[2];
+                    pvPut(WRITE_AO[10]);
+              } 
+              if ( (MODE == 1) && (SELECT[2] == 1) ){
+                    WRITE_AO[11] = PV_AO[2];
+                    pvPut(WRITE_AO[11]);
+              } 
+              if ( (MODE == 0) ){
+                    WRITE_AO[14] = PV_AO[4];
+                    WRITE_AO[16] = PV_AO[5];
+                    WRITE_AO[18] = PV_AO[6];
+                    pvPut(WRITE_AO[14]);
+                    pvPut(WRITE_AO[16]);
+                    pvPut(WRITE_AO[18]);
+              }
+              if ( (MODE == 1) ){
+	            WRITE_AO[15] = PV_AO[4];
+	            WRITE_AO[17] = PV_AO[5];
+	            WRITE_AO[19] = PV_AO[6];
+                    pvPut(WRITE_AO[15]);
+                    pvPut(WRITE_AO[17]);
+                    pvPut(WRITE_AO[19]);
+
+              }
+          } state MAIN
+    }
+  state STATE3 {
+       when( delay(0.1) ){
+               printf("STATE3 \n");
+
+              if ( (MODE == 0) && (SELECT[0] == 0) ){
+	            PV_AI[0] = READ_AI[0];
+                    pvPut(PV_AI[0]);
+	            PV_AO[0] = READ_AI[0];;
+		    pvPut(PV_AO[0]);
+              } 
+              if ( (MODE == 0) && (SELECT[0] == 1) ){
+                    PV_AI[0] = READ_AI[1];
+                    pvPut(PV_AI[0]);
+                    PV_AO[0] = READ_AI[1];;
+                    pvPut(PV_AO[0]);
+              }              
+              if ( (MODE == 1) && (SELECT[0] == 0) ){
+                    PV_AI[0] = READ_AI[2];
+                    pvPut(PV_AI[0]);
+                    PV_AO[0] = READ_AI[2];
+                    pvPut(PV_AO[0]); 
+              }
+              if ( (MODE == 1) && (SELECT[0] == 1) ){
+                    PV_AI[0] = READ_AI[3];
+                    pvPut(PV_AI[0]);
+                    PV_AO[0] = READ_AI[3];
+                    pvPut(PV_AO[0]);
+              }
+              if ( (MODE == 0) && (SELECT[1] == 0) ){
+                    PV_AI[1] = READ_AI[4];
+                    pvPut(PV_AI[1]);
+                    PV_AO[1] = READ_AI[4];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 0) && (SELECT[1] == 1) ){
+                    PV_AI[1] = READ_AI[5];
+                    pvPut(PV_AI[1]);
+                    PV_AO[1] = READ_AI[5];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 1) && (SELECT[1] == 0) ){
+                    PV_AI[1] = READ_AI[6];
+                    pvPut(PV_AI[1]);
+                    PV_AO[1] = READ_AI[6];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 1) && (SELECT[1] == 1) ){
+                    PV_AI[1] = READ_AI[7];
+                    pvPut(PV_AI[1]);
+                    PV_AO[1] = READ_AI[7];
+                    pvPut(PV_AO[1]);
+              }
+              if ( (MODE == 0) && (SELECT[2] == 0) ){
+                    PV_AI[2] = READ_AI[8];
+                    pvPut(PV_AI[2]);
+                    PV_AO[2] = READ_AI[8];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 0) && (SELECT[2] == 1) ){
+                    PV_AI[2] = READ_AI[9];
+                    pvPut(PV_AI[2]);
+                    PV_AO[2] = READ_AI[9];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 1) && (SELECT[2] == 0) ){
+                    PV_AI[2] = READ_AI[10];
+                    pvPut(PV_AI[2]);
+                    PV_AO[2] = READ_AI[10];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 1) && (SELECT[2] == 1) ){
+                    PV_AI[2] = READ_AI[11];
+                    pvPut(PV_AI[2]);
+                    PV_AO[2] = READ_AI[11];
+                    pvPut(PV_AO[2]);
+              }
+              if ( (MODE == 0) ){    
+                    PV_AI[3] = READ_AI[12];
+                    PV_AI[4] = READ_AI[14];
+                    PV_AI[5] = READ_AI[16];
+                    PV_AI[6] = READ_AI[18];
+                    pvPut(PV_AI[3]);
+	            pvPut(PV_AI[4]);
+		    pvPut(PV_AI[5]);
+                    pvPut(PV_AI[6]);
+		    
+                    PV_Q2_AL = READ_AI[12];
+		    pvPut(PV_Q2_AL); 
+                    PV_AO[4] = READ_AI[14];
+                    PV_AO[5] = READ_AI[16];
+                    PV_AO[6] = READ_AI[18];
+                    pvPut(PV_AO[4]);
+                    pvPut(PV_AO[5]);
+                    pvPut(PV_AO[6]);	                   
+                    
+                    PV_BI[0] = READ_BI[0]; 
+                    PV_BI[1] = READ_BI[2]; 
+                    PV_BI[2] = READ_BI[4]; 
+                    PV_BI[3] = READ_BI[6]; 
+                    pvPut(PV_BI[0]);
+                    pvPut(PV_BI[1]);
+                    pvPut(PV_BI[2]);
+                    pvPut(PV_BI[3]);
+              }
+	      if ( (MODE == 1) ){    
+                    PV_AI[3] = READ_AI[13];
+                    PV_AI[4] = READ_AI[15];
+                    PV_AI[5] = READ_AI[17];
+                    PV_AI[6] = READ_AI[19];
+                    pvPut(PV_AI[3]);
+                    pvPut(PV_AI[4]);
+                    pvPut(PV_AI[5]);
+                    pvPut(PV_AI[6]);
+                    
+                    PV_Q2_AL = READ_AI[13]; 
+                    pvPut(PV_Q2_AL);
+                    PV_AO[4] = READ_AI[15];
+                    PV_AO[5] = READ_AI[17];
+                    PV_AO[6] = READ_AI[19];
+                    pvPut(PV_AO[4]);
+                    pvPut(PV_AO[5]);
+                    pvPut(PV_AO[6]);
+                      
+                    PV_BI[0] = READ_BI[1];
+                    PV_BI[1] = READ_BI[3];
+                    PV_BI[2] = READ_BI[5];
+                    PV_BI[3] = READ_BI[7];
+                    pvPut(PV_BI[0]);
+                    pvPut(PV_BI[1]);
+                    pvPut(PV_BI[2]);
+                    pvPut(PV_BI[3]);                 
+              }        
+          } state MAIN
+    }
+
+
+       state STATE4 {
+            when(delay(0.1)) {
+              printf("STATE4 \n");
+ 
+              if ( (MODE == 0) ){
+                    WRITE_AO[12] = PV_Q2_AL;
+                    pvPut(WRITE_AO[12]);
+              }
+              if ( (MODE == 1) ){
+                    WRITE_AO[13] = PV_Q2_AL;
+                    pvPut(WRITE_AO[13]);
+ 
+              }
+          } state MAIN
+    } 
+
+}
+
+

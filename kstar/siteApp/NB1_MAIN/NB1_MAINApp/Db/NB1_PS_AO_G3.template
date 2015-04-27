@@ -1,0 +1,21 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AO.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    HOPR    LOPR    DRVH    DRVL    PREC}
+{NB1_P1G3_ECMD_INT    NB1_P1G3_ECMD_INT    plc1    "ARC Interrupt Time"    100000    0    100000    0    0}
+{NB1_P1G3_ECMD_VOLT    NB1_P1G3_ECMD_VOLT    plc1    "Voltage Command"    100000    0    100000    0    0}
+{NB1_P1G3_ECMD_OVR    NB1_P1G3_ECMD_OVR    plc1    "Output Over Voltage Command"    100000    0    100000    0    0}
+{NB1_P1G3_ECMD_OCR    NB1_P1G3_ECMD_OCR    plc1    "Output Over Current Command"    100000    0    100000    0    0}
+{NB1_P1G3_ECMD_ITNO    NB1_P1G3_ECMD_ITNO    plc1    "Number Of Interrupt"    100000    0    100000    0    0}
+
+# PS2 2012.07.03
+{NB1_P2G3_ECMD_VCMD		NB1_P2G3_ECMD_VCMD	plc2    "Voltage Command"    	100000    0    100000    0    3}
+{NB1_P2G3_ECMD_OVR		NB1_P2G3_ECMD_OVR	plc2    "Output OV Reference"   100000    0    100000    0    3}
+{NB1_P2G3_ECMD_OCR		NB1_P2G3_ECMD_OCR	plc2    "Output OC Reference"   100000    0    100000    0    3}
+{NB1_P2G3_ECMD_ITIME	NB1_P2G3_ECMD_ITIME	plc2    "ARC Interrupt Time"    100000    0    100000    0    0}
+{NB1_P2G3_ECMD_MAXNI	NB1_P2G3_ECMD_MAXNI	plc2    "Number Of Interrupt"   100000    0    100000    0    0}
+
+}

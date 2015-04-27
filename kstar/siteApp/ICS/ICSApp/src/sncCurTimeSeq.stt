@@ -1,0 +1,81 @@
+program sncCurTimeSeq
+option +r;
+option -c;
+
+%{
+#include <string.h>
+}%
+
+%{
+#if 0
+	/*++leesi comment*/
+int setNextTimeShot(char *strShotTime)
+{
+	epicsTimeStamp curTS;
+	epicsTimeGetCurrent(&curTS);
+	int modcount = curTS.secPastEpoch%60;
+	curTS.secPastEpoch -= modcount;
+	curTS.secPastEpoch += (16*60);
+
+	epicsTimeToStrftime(strShotTime, 12, "%H:%M:%S", &curTS);
+	return 0;
+}
+#endif
+}%
+
+string	strICSCurTime;
+assign	strICSCurTime	to "{SYS}_CURTIME";
+string	strICSCurDate;
+assign	strICSCurDate	to "{SYS}_CURDATE";
+
+/*++leesi comment
+int  intSEQStart;
+assign  intSEQStart to "CCS_SHOTSEQ_START";
+monitor intSEQStart;
+string  strICSShotTime;
+assign  strICSShotTime to "{SYS}_SHOTINFO_SHOTTIME";
+monitor strICSShotTime;
+
+ss ICS_SetNextTimeShot
+{
+	state init
+	{
+		when(TRUE)
+		{
+			intSEQStart = 0;
+			pvPut(intSEQStart);
+		} state ShotSEQStart
+	}
+	state ShotSEQStop
+	{
+		when(intSEQStart == 1)
+		{
+		} state ShotSEQStart
+	}
+	state ShotSEQStart
+	{
+		when(intSEQStart == 0)
+		{
+			%%setNextTimeShot(pVar->strICSShotTime);
+			pvPut(strICSShotTime);
+		} state ShotSEQStop
+	}
+}
+*/
+
+ss ICS_Time
+{
+	state get_time 
+	{
+		when(delay(.5)) 
+		{
+			%% epicsTimeStamp   epics_curtime;
+			%% epicsTimeGetCurrent(&epics_curtime);
+			%%epicsTimeToStrftime(pVar->strICSCurTime, 12, "%H:%M:%S", &epics_curtime);
+			%%epicsTimeToStrftime(pVar->strICSCurDate, 12, "%Y/%m/%d", &epics_curtime);
+			pvPut(strICSCurTime);
+			pvPut(strICSCurDate);
+		} state get_time
+	}
+}
+

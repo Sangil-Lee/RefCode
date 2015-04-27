@@ -1,0 +1,12 @@
+file db/MC_DAQ_BO.db {
+            pattern {PV_NAME,          		  DSR,		               TASK,	   	  STR }
+                    {"MC_SLOT5_DISCON_CLOSE",   "MC_SLOT5_DISCON_CLOSE",    "VXI0::80::INSTR",  "mds_disClose"}
+                    {"MC_SLOT5_CONNECT_OPEN",   "MC_SLOT5_CONNECT_OPEN",    "VXI0::80::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT5_EX_TRIG_REMOTE", "MC_SLOT5_EXTRIG_REMOTE",   "VXI0::80::INSTR",  "task_trigger"}
+                    {"MC_SLOT5_TASK_CALLBACK",  "MC_SLOT5_TASK_CALLBACK" ,  "VXI0::80::INSTR",  "task_call"}
+                    {"MC_SLOT5_TASK_START",     "MC_SLOT5_TASK_START" ,     "VXI0::80::INSTR",  "task_start"}
+                    {"MC_SLOT5_TASK_STOP",      "MC_SLOT5_TASK_STOP" ,      "VXI0::80::INSTR",  "task_stop"}
+                    {"MC_SLOT5_TASK_ABORT",     "MC_SLOT5_TASK_ABORT" ,     "VXI0::80::INSTR",  "task_abort"}
+                    {"MC_SLOT5_TASK_REG_UPDATE","MC_SLOT5_TASK_REGUPDATE",  "VXI0::80::INSTR",  "task_regupdate"}
+                    {"MC_SLOT5_REMOTE_LOCAL",   "MC_SLOT5_REMOTE_LOCAL" ,   "VXI0::80::INSTR",  "operation_mode"}
+}

@@ -1,0 +1,1381 @@
+program sncDiagnosticCheck
+
+option +r;
+option -c;
+
+%{
+
+#define     ACTIVATE                   1
+#define     DEACTIVATE                 0
+
+#define     ABNORMAL                   0
+#define     STOP                       1
+#define     OPERATION                  2
+
+#define     SCAN_INTERVAL              2.
+
+}%
+
+
+int        lcsst_opst_control;
+assign     lcsst_opst_control				to        "CCS_OPST_CONTROL";
+monitor    lcsst_opst_control;
+
+
+int        lcsst_control_dds1a;
+assign     lcsst_control_dds1a             to        "CCS_LCSST_DDS1A";
+monitor    lcsst_control_dds1a;
+
+int        heartbeat_dds1a;
+assign     heartbeat_dds1a                 to         "DDS1A_HEARTBEAT";
+monitor    heartbeat_dds1a;
+evflag     ef_heartbeat_dds1a;
+sync       heartbeat_dds1a                 ef_heartbeat_dds1a;
+int          esd_RC;
+assign      esd_RC    to       "ESD_RC";
+monitor     esd_RC;
+int          esd_VCM;
+assign      esd_VCM    to       "ESD_VCM";
+monitor     esd_VCM;
+int          esd_MP;
+assign      esd_MP    to       "ESD_MP";
+monitor     esd_MP;
+int          esd_FL;
+assign      esd_FL    to       "ESD_FL";
+monitor     esd_FL;
+int          esd_DL;
+assign      esd_DL    to       "ESD_DL";
+monitor     esd_DL;
+int          esd_SL;
+assign      esd_SL    to       "ESD_SL";
+monitor     esd_SL;
+int          esd_LV;
+assign      esd_LV    to       "ESD_LV";
+monitor     esd_LV;
+int          esd_HCM;
+assign      esd_HCM    to       "ESD_HCM";
+monitor     esd_HCM;
+int          esd_LM;
+assign      esd_LM    to       "ESD_LM";
+monitor     esd_LM;
+
+
+int        lcsst_control_dds1b;
+assign     lcsst_control_dds1b             to        "CCS_LCSST_DDS1B";
+monitor    lcsst_control_dds1b;
+
+int        heartbeat_dds1b;
+assign     heartbeat_dds1b                 to         "DDS1B_HEARTBEAT";
+monitor    heartbeat_dds1b;
+evflag     ef_heartbeat_dds1b;
+sync       heartbeat_dds1b                 ef_heartbeat_dds1b;
+
+/**********************************************************/
+
+int        lcsst_control_halpha;
+assign     lcsst_control_halpha             to        "CCS_LCSST_HALPHA";
+monitor    lcsst_control_halpha;
+
+int        heartbeat_halpha;
+assign     heartbeat_halpha                 to         "HALPHAD_HEARTBEAT";
+monitor    heartbeat_halpha;
+evflag     ef_heartbeat_halpha;
+sync       heartbeat_halpha                 ef_heartbeat_halpha;
+
+int          esd_HA;
+assign      esd_HA    to       "ESD_HA";
+monitor     esd_HA;
+
+/**********************************************************/
+
+int        lcsst_control_sxr;
+assign     lcsst_control_sxr				to        "CCS_LCSST_SXR";
+monitor    lcsst_control_sxr;
+/*
+int        heartbeat_sxr;
+assign     heartbeat_sxr            to          "SXR_HEARTBEAT";
+monitor    heartbeat_sxr;
+evflag     ef_heartbeat_sxr;
+sync       heartbeat_sxr            ef_heartbeat_sxr;
+*/
+int          esd_SXR;
+assign      esd_SXR    to       "ESD_SX";
+monitor     esd_SXR;
+
+/**********************************************************/
+
+int        lcsst_control_rba;
+assign     lcsst_control_rba				to        "CCS_LCSST_RBA";
+monitor    lcsst_control_rba;
+
+int        heartbeat_rba;
+assign     heartbeat_rba            to          "RBA_HEARTBEAT";
+monitor    heartbeat_rba;
+evflag     ef_heartbeat_rba;
+sync       heartbeat_rba            ef_heartbeat_rba;
+
+int          esd_RBA;
+assign      esd_RBA    to       "ESD_RBA";
+monitor     esd_RBA;
+
+
+/**********************************************************/
+
+int        lcsst_control_xics;
+assign     lcsst_control_xics				to        "CCS_LCSST_XICS";
+monitor    lcsst_control_xics;
+
+int          esd_RXICS;
+assign      esd_RXICS    to       "ESD_RXICS";
+monitor     esd_RXICS;
+int          esd_TXICS;
+assign      esd_TXICS    to       "ESD_TXICS";
+monitor     esd_TXICS;
+
+
+
+/**********************************************************/
+
+int        lcsst_control_frlpa;
+assign     lcsst_control_frlpa				to        "CCS_LCSST_FRLPA";
+monitor    lcsst_control_frlpa;
+
+int          esd_RLP;
+assign      esd_RLP    to       "ESD_RLP";
+monitor     esd_RLP;
+int          esd_FEP;
+assign      esd_FEP    to       "ESD_FEP";
+monitor     esd_FEP;
+
+
+/**********************************************************/
+
+int        lcsst_control_er;
+assign     lcsst_control_er					to        "CCS_LCSST_ER";
+monitor    lcsst_control_er;
+
+int        heartbeat_er;
+assign     heartbeat_er            to          "ER_HEARTBEAT";
+monitor    heartbeat_er;
+evflag     ef_heartbeat_er;
+sync       heartbeat_er            ef_heartbeat_er;
+
+int          esd_REF;
+assign      esd_REF    to       "ESD_REF";
+monitor     esd_REF;
+
+/**********************************************************/
+
+int        lcsst_control_ts1;
+assign     lcsst_control_ts1				to        "CCS_LCSST_TS1";
+monitor    lcsst_control_ts1;
+
+int        heartbeat_ts1;
+assign     heartbeat_ts1            to          "TS1_HEARTBEAT";
+monitor    heartbeat_ts1;
+evflag     ef_heartbeat_ts1;
+sync       heartbeat_ts1            ef_heartbeat_ts1;
+
+
+int        lcsst_control_ts2;
+assign     lcsst_control_ts2				to        "CCS_LCSST_TS2";
+monitor    lcsst_control_ts2;
+
+int        heartbeat_ts2;
+assign     heartbeat_ts2            to          "TS2_HEARTBEAT";
+monitor    heartbeat_ts2;
+evflag     ef_heartbeat_ts2;
+sync       heartbeat_ts2            ef_heartbeat_ts2;
+
+
+
+int          esd_TS;
+assign      esd_TS    to       "ESD_TS";
+monitor     esd_TS;
+
+/**********************************************************/
+
+int        lcsst_control_ecei;
+assign     lcsst_control_ecei				to        "CCS_LCSST_ECEI";
+monitor    lcsst_control_ecei;
+
+int        heartbeat_ecei;
+assign     heartbeat_ecei            to          "ECEI_LTU_HeartBeat";
+monitor    heartbeat_ecei;
+evflag     ef_heartbeat_ecei;
+sync       heartbeat_ecei            ef_heartbeat_ecei;
+
+int          esd_ECEI;
+assign      esd_ECEI    to       "ESD_ECEI";
+monitor     esd_ECEI;
+
+/**********************************************************/
+
+int        lcsst_control_ces;
+assign     lcsst_control_ces				to        "CCS_LCSST_CES";
+monitor    lcsst_control_ces;
+/*
+int        heartbeat_ces;
+assign     heartbeat_ces            to          "CES_HEARTBEAT";
+monitor    heartbeat_ces;
+evflag     ef_heartbeat_ces;
+sync       heartbeat_ces            ef_heartbeat_ces;
+*/
+int          esd_CES;
+assign      esd_CES    to       "ESD_CES";
+monitor     esd_CES;
+
+/**********************************************************/
+
+int        lcsst_control_hxr;
+assign     lcsst_control_hxr				to        "CCS_LCSST_HXR";
+monitor    lcsst_control_hxr;
+
+int        heartbeat_hxr;
+assign     heartbeat_hxr            to          "HXR_LTU_HeartBeat";
+monitor    heartbeat_hxr;
+evflag     ef_heartbeat_hxr;
+sync       heartbeat_hxr            ef_heartbeat_hxr;
+
+int          esd_HXR;
+assign      esd_HXR    to       "ESD_HXR";
+monitor     esd_HXR;
+
+/**********************************************************/
+
+int        lcsst_control_mc;
+assign     lcsst_control_mc				to        "CCS_LCSST_MC";
+monitor    lcsst_control_mc;
+
+int        heartbeat_mc;
+assign     heartbeat_mc            to          "MC_HEARTBEAT";
+monitor    heartbeat_mc;
+evflag     ef_heartbeat_mc;
+sync       heartbeat_mc            ef_heartbeat_mc;
+
+int        lcsst_control_mc2;
+assign     lcsst_control_mc2				to        "CCS_LCSST_MC2";
+monitor    lcsst_control_mc2;
+
+int        heartbeat_mc2;
+assign     heartbeat_mc2            to          "MCWIN_HEARTBEAT";
+monitor    heartbeat_mc2;
+evflag     ef_heartbeat_mc2;
+sync       heartbeat_mc2            ef_heartbeat_mc2;
+
+
+int          esd_MC;
+assign      esd_MC    to       "ESD_MC";
+monitor     esd_MC;
+
+/**********************************************************/
+
+int        lcsst_control_mmwi;
+assign     lcsst_control_mmwi				to        "CCS_LCSST_MMWI";
+monitor    lcsst_control_mmwi;
+
+int        heartbeat_mmwi;
+assign     heartbeat_mmwi            to          "MMWI_HEARTBEAT";
+monitor    heartbeat_mmwi;
+evflag     ef_heartbeat_mmwi;
+sync       heartbeat_mmwi            ef_heartbeat_mmwi;
+
+int          esd_MMWI;
+assign      esd_MMWI    to       "ESD_MMWI";
+monitor     esd_MMWI;
+
+/**********************************************************/
+
+int        lcsst_control_ecehr;
+assign     lcsst_control_ecehr				to        "CCS_LCSST_ECE-HR";
+monitor    lcsst_control_ecehr;
+
+int        heartbeat_ecehr;
+assign     heartbeat_ecehr            to          "ECEHR_HEARTBEAT";
+monitor    heartbeat_ecehr;
+evflag     ef_heartbeat_ecehr;
+sync       heartbeat_ecehr            ef_heartbeat_ecehr;
+
+int          esd_ECE;
+assign      esd_ECE    to       "ESD_ECE";
+monitor     esd_ECE;
+
+/**********************************************************/
+
+int        lcsst_control_vss;
+assign     lcsst_control_vss				to        "CCS_LCSST_VSS";
+monitor    lcsst_control_vss;
+
+int          esd_VS;
+assign      esd_VS    to       "ESD_VS";
+monitor     esd_VS;
+
+/**********************************************************/
+
+int        lcsst_control_vfs;
+assign     lcsst_control_vfs				to        "CCS_LCSST_VFS";
+monitor    lcsst_control_vfs;
+
+int          esd_FS;
+assign      esd_FS    to       "ESD_FS";
+monitor     esd_FS;
+
+/**********************************************************/
+
+int        lcsst_control_irvb;
+assign     lcsst_control_irvb				to        "CCS_LCSST_IRVB";
+monitor    lcsst_control_irvb;
+
+int          esd_IRVB;
+assign      esd_IRVB    to       "ESD_IRVB";
+monitor     esd_IRVB;
+
+/**********************************************************/
+int        lcsst_control_irtv;
+assign     lcsst_control_irtv				to        "CCS_LCSST_IRTV";
+monitor    lcsst_control_irtv;
+
+int          esd_IRTVS1;
+assign      esd_IRTVS1    to       "ESD_IRTVS1";
+monitor     esd_IRTVS1;
+
+/**********************************************************/
+
+/**********************************************************/
+int        lcsst_control_vbs;
+assign     lcsst_control_vbs				to        "CCS_LCSST_VBS";
+monitor    lcsst_control_vbs;
+
+int          esd_VBS;
+assign      esd_VBS    to       "ESD_VBS";
+monitor     esd_VBS;
+/**********************************************************/
+
+/**********************************************************/
+int        lcsst_control_nms;
+assign     lcsst_control_nms				to        "CCS_LCSST_NMS";
+monitor    lcsst_control_nms;
+
+int          esd_NMS;
+assign      esd_NMS    to       "ESD_NMS";
+monitor     esd_NMS;
+/**********************************************************/
+int        lcsst_control_bes;
+assign     lcsst_control_bes				to        "CCS_LCSST_BES";
+monitor    lcsst_control_bes;
+
+int          esd_BES;
+assign      esd_BES    to       "ESD_BES";
+monitor     esd_BES;
+/**********************************************************/
+int        lcsst_control_irtvd1;
+assign     lcsst_control_irtvd1				to        "CCS_LCSST_IRTVD1";
+monitor    lcsst_control_irtvd1;
+
+int          esd_IRTVD1;
+assign      esd_IRTVD1    to       "ESD_IRTVD1";
+monitor     esd_IRTVD1;
+/**********************************************************/
+
+
+
+
+
+ss lcsMonitor_dds1a
+{
+
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_dds1a = STOP;
+			} else{
+		              lcsst_control_dds1a = ABNORMAL;
+              	}
+			pvPut(lcsst_control_dds1a);
+          }
+
+         when( esd_RC == DEACTIVATE &&
+                   esd_VCM == DEACTIVATE &&
+                   esd_MP == DEACTIVATE &&
+                   esd_FL == DEACTIVATE &&
+                   esd_DL == DEACTIVATE &&
+                   esd_SL == DEACTIVATE &&
+                   esd_LV == DEACTIVATE &&
+                   esd_LM == DEACTIVATE &&
+                   esd_HCM == DEACTIVATE &&
+                   esd_RLP == DEACTIVATE &&
+                   esd_FEP == DEACTIVATE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_dds1a)) {} state operation
+
+    }
+
+
+    state operation {
+          option -e;
+          option +t; 
+
+          entry {
+              lcsst_control_dds1a = OPERATION;
+              pvPut(lcsst_control_dds1a);
+          }
+
+         when( esd_RC == DEACTIVATE &&
+                   esd_VCM == DEACTIVATE &&
+                   esd_MP == DEACTIVATE &&
+                   esd_FL == DEACTIVATE &&
+                   esd_DL == DEACTIVATE &&
+                   esd_SL == DEACTIVATE &&
+                   esd_LV == DEACTIVATE &&
+                   esd_LM == DEACTIVATE &&
+                   esd_HCM == DEACTIVATE &&
+                   esd_RLP == DEACTIVATE &&
+                   esd_FEP == DEACTIVATE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_dds1a)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+     state stop {
+          option -e;
+          option +t; 
+
+          entry {
+              lcsst_control_dds1a = STOP;
+              pvPut(lcsst_control_dds1a);
+          }
+
+          when( esd_RC == ACTIVATE ||
+                   esd_VCM == ACTIVATE ||
+                   esd_MP == ACTIVATE ||
+                   esd_FL == ACTIVATE ||
+                   esd_DL == ACTIVATE ||
+                   esd_SL == ACTIVATE ||
+                   esd_LV == ACTIVATE ||
+                   esd_LM == ACTIVATE ||
+                   esd_HCM == ACTIVATE ||
+                   esd_RLP == ACTIVATE ||
+                   esd_FEP == ACTIVATE ) {} state operation
+
+     }
+}
+
+ss lcsMonitor_dds1b
+{
+
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_dds1b = STOP;
+			} else{
+		              lcsst_control_dds1b = ABNORMAL;
+              	}
+			pvPut(lcsst_control_dds1b);
+          }
+
+           when( esd_RC == DEACTIVATE &&
+                   esd_VCM == DEACTIVATE &&
+                   esd_MP == DEACTIVATE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_dds1b)) {} state operation
+
+    }
+
+
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_dds1b = OPERATION;
+              pvPut(lcsst_control_dds1b);
+          }
+          
+           when( esd_RC == DEACTIVATE &&
+                   esd_VCM == DEACTIVATE &&
+                   esd_MP == DEACTIVATE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_dds1b)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_dds1b = STOP;
+              pvPut(lcsst_control_dds1b);
+          }
+          
+          when( esd_RC == ACTIVATE ||
+                   esd_VCM == ACTIVATE ||
+                   esd_MP == ACTIVATE  ) {} state operation
+     }
+}
+
+ss lcsMonitor_halpha
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_halpha = STOP;
+			} else{
+		              lcsst_control_halpha = ABNORMAL;
+              	}
+			pvPut(lcsst_control_halpha);
+          }
+
+           when( !esd_HA ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_halpha)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_halpha = OPERATION;
+              pvPut(lcsst_control_halpha);
+          }
+          
+           when( !esd_HA ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_halpha)) {} state operation
+
+         when(delay(4.)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_halpha = STOP;
+              pvPut(lcsst_control_halpha);
+          }
+          
+          when( esd_HA ) {} state operation
+     }
+}
+
+ss lcsMonitor_rba
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_rba = STOP;
+			} else{
+		              lcsst_control_rba = ABNORMAL;
+              	}
+			pvPut(lcsst_control_rba);
+          }
+
+           when( !esd_RBA ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_rba)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_rba = OPERATION;
+              pvPut(lcsst_control_rba);
+          }
+          
+           when( !esd_RBA ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_rba)) {} state operation
+
+         when(delay(4.)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_rba = STOP;
+              pvPut(lcsst_control_rba);
+          }
+          
+          when( esd_RBA ) {} state operation
+     }
+}
+
+ss lcsMonitor_xics
+{
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_xics = OPERATION;
+              pvPut(lcsst_control_xics);
+          }
+          
+           when( esd_RXICS == DEACTIVATE &&
+                    esd_TXICS == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_xics = STOP;
+              pvPut(lcsst_control_xics);
+          }
+          
+          when( esd_RXICS == ACTIVATE ||
+                    esd_TXICS == ACTIVATE  ) {} state operation
+     }
+
+}
+
+ss lcsMonitor_frlpa
+{
+   state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_frlpa = OPERATION;
+              pvPut(lcsst_control_frlpa);
+          }
+          
+           when( esd_RLP == DEACTIVATE &&
+                    esd_FEP == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_frlpa = STOP;
+              pvPut(lcsst_control_frlpa);
+          }
+          
+          when( esd_RLP == ACTIVATE ||
+                    esd_FEP == ACTIVATE  ) {} state operation
+     }
+
+}
+
+ss lcsMonitor_er
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_er = STOP;
+			} else{
+		              lcsst_control_er = ABNORMAL;
+              	}
+			pvPut(lcsst_control_er);
+          }
+
+           when( !esd_REF ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_er)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_er = OPERATION;
+              pvPut(lcsst_control_er);
+          }
+          
+           when( !esd_REF ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_er)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_er = STOP;
+              pvPut(lcsst_control_er);
+          }
+          
+          when( esd_REF ) {} state operation
+     }
+}
+
+
+ss lcsMonitor_ts1
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_ts1 = STOP;
+			} else{
+		              lcsst_control_ts1 = ABNORMAL;
+              	}
+			pvPut(lcsst_control_ts1);
+          }
+
+           when( !esd_TS ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ts1)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_ts1 = OPERATION;
+              pvPut(lcsst_control_ts1);
+          }
+          
+           when( !esd_TS ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ts1)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_ts1 = STOP;
+              pvPut(lcsst_control_ts1);
+          }
+          
+          when( esd_TS ) {} state operation
+     }
+}
+
+ss lcsMonitor_ts2
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_ts2 = STOP;
+			} else{
+		              lcsst_control_ts2 = ABNORMAL;
+              	}
+			pvPut(lcsst_control_ts2);
+          }
+
+           when( !esd_TS ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ts2)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_ts2 = OPERATION;
+              pvPut(lcsst_control_ts2);
+          }
+          
+           when( !esd_TS ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ts2)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_ts2 = STOP;
+              pvPut(lcsst_control_ts2);
+          }
+          
+          when( esd_TS ) {} state operation
+     }
+}
+
+ss lcsMonitor_ecei
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_ecei = STOP;
+			} else{
+		              lcsst_control_ecei = ABNORMAL;
+              	}
+			pvPut(lcsst_control_ecei);
+          }
+
+           when( !esd_ECEI ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ecei)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_ecei = OPERATION;
+              pvPut(lcsst_control_ecei);
+          }
+          
+           when( !esd_ECEI ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ecei)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_ecei = STOP;
+              pvPut(lcsst_control_ecei);
+          }
+          
+          when( esd_ECEI ) {} state operation
+     }
+}
+
+ss lcsMonitor_ces
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_ces = OPERATION;
+              pvPut(lcsst_control_ces);
+          }
+          
+           when( esd_CES == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_ces = STOP;
+              pvPut(lcsst_control_ces);
+          }
+          
+          when( esd_CES == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_hxr
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_hxr = STOP;
+			} else{
+		              lcsst_control_hxr = ABNORMAL;
+              	}
+			pvPut(lcsst_control_hxr);
+          }
+
+           when( !esd_HXR ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_hxr)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_hxr = OPERATION;
+              pvPut(lcsst_control_hxr);
+          }
+          
+           when( !esd_HXR ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_hxr)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_hxr = STOP;
+              pvPut(lcsst_control_hxr);
+          }
+          
+          when( esd_HXR ) {} state operation
+     }
+}
+
+ss lcsMonitor_mc
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_mc = STOP;
+			} else{
+		              lcsst_control_mc = ABNORMAL;
+              	}
+			pvPut(lcsst_control_mc);
+          }
+
+           when( !esd_MC ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mc)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_mc = OPERATION;
+              pvPut(lcsst_control_mc);
+          }
+          
+           when( !esd_MC ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mc)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_mc = STOP;
+              pvPut(lcsst_control_mc);
+          }
+          
+          when( esd_MC ) {} state operation
+     }
+}
+
+ss lcsMonitor_mc2
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_mc2 = STOP;
+			} else{
+		              lcsst_control_mc2 = ABNORMAL;
+              	}
+			pvPut(lcsst_control_mc2);
+          }
+
+           when( !esd_MC ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mc2)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_mc2 = OPERATION;
+              pvPut(lcsst_control_mc2);
+          }
+          
+           when( !esd_MC ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mc2)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_mc2 = STOP;
+              pvPut(lcsst_control_mc2);
+          }
+          
+          when( esd_MC ) {} state operation
+     }
+}
+
+ss lcsMonitor_mmwi
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_mmwi = STOP;
+			} else{
+		              lcsst_control_mmwi = ABNORMAL;
+              	}
+			pvPut(lcsst_control_mmwi);
+          }
+
+           when( !esd_MMWI ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mmwi)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_mmwi = OPERATION;
+              pvPut(lcsst_control_mmwi);
+          }
+          
+           when( !esd_MMWI ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_mmwi)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_mmwi = STOP;
+              pvPut(lcsst_control_mmwi);
+          }
+          
+          when( esd_MMWI ) {} state operation
+     }
+}
+
+ss lcsMonitor_ecehr
+{
+    state fault {
+          option -e;
+          option +t;
+          entry {
+			if ( lcsst_opst_control == 0 ) {
+		              lcsst_control_ecehr = STOP;
+			} else{
+		              lcsst_control_ecehr = ABNORMAL;
+              	}
+			pvPut(lcsst_control_ecehr);
+          }
+
+           when( !esd_ECE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ecehr)) {} state operation
+
+    }
+    
+    state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_ecehr = OPERATION;
+              pvPut(lcsst_control_ecehr);
+          }
+          
+           when( !esd_ECE ) {} state stop
+
+         when(efTestAndClear(ef_heartbeat_ecehr)) {} state operation
+
+         when(delay(SCAN_INTERVAL)) {} state fault
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_ecehr = STOP;
+              pvPut(lcsst_control_ecehr);
+          }
+          
+          when( esd_ECE ) {} state operation
+     }
+}
+
+ss lcsMonitor_vss
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_vss = OPERATION;
+              pvPut(lcsst_control_vss);
+          }
+          
+           when( esd_VS == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_vss = STOP;
+              pvPut(lcsst_control_vss);
+          }
+          
+          when( esd_VS == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_vfs
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_vfs = OPERATION;
+              pvPut(lcsst_control_vfs);
+          }
+          
+           when( esd_FS == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_vfs = STOP;
+              pvPut(lcsst_control_vfs);
+          }
+          
+          when( esd_FS == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_irvb
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_irvb = OPERATION;
+              pvPut(lcsst_control_irvb);
+          }
+          
+           when( esd_IRVB == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_irvb = STOP;
+              pvPut(lcsst_control_irvb);
+          }
+          
+          when( esd_IRVB == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_irtv
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_irtv = OPERATION;
+              pvPut(lcsst_control_irtv);
+          }
+          
+           when( esd_IRTVS1 == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_irtv = STOP;
+              pvPut(lcsst_control_irtv);
+          }
+          
+          when( esd_IRTVS1 == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_vbs
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_vbs = OPERATION;
+              pvPut(lcsst_control_vbs);
+          }
+          
+           when( esd_VBS == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_vbs = STOP;
+              pvPut(lcsst_control_vbs);
+          }
+          
+          when( esd_VBS == ACTIVATE ) {} state operation
+     }
+    
+}
+
+ss lcsMonitor_nms
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_nms = OPERATION;
+              pvPut(lcsst_control_nms);
+          }
+          
+           when( esd_NMS == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_nms = STOP;
+              pvPut(lcsst_control_nms);
+          }
+          when( esd_NMS == ACTIVATE ) {} state operation
+     }
+}
+
+ss lcsMonitor_sxr
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_sxr = OPERATION;
+              pvPut(lcsst_control_sxr);
+          }
+          
+           when( esd_SXR == DEACTIVATE ) {} state stop
+
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_sxr = STOP;
+              pvPut(lcsst_control_sxr);
+          }
+          when( esd_SXR == ACTIVATE ) {} state operation
+     }
+}
+
+ss lcsMonitor_bes
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_bes = OPERATION;
+              pvPut(lcsst_control_bes);
+          }
+           when( esd_BES == DEACTIVATE ) {} state stop
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_bes = STOP;
+              pvPut(lcsst_control_bes);
+          }
+          when( esd_BES == ACTIVATE ) {} state operation
+     }
+}
+
+ss lcsMonitor_irtvd1
+{
+     state operation {
+          option -e;
+          option +t;
+
+          entry {
+              lcsst_control_irtvd1 = OPERATION;
+              pvPut(lcsst_control_irtvd1);
+          }
+           when( esd_IRTVD1 == DEACTIVATE ) {} state stop
+    }
+
+    state stop {
+          option -e;
+          option +t; 
+          entry {
+              lcsst_control_irtvd1 = STOP;
+              pvPut(lcsst_control_irtvd1);
+          }
+          when( esd_IRTVD1 == ACTIVATE ) {} state operation
+     }
+}
+
+
+

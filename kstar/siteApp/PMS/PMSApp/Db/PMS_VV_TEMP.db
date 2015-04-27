@@ -1,0 +1,17 @@
+record(calc, "$(PV_OPI)") {
+  field(CALC, "A")
+  field(INPA, "$(PV_TEMP) CPP NMS")
+  field(EGU, "$(UNIT)")
+#  field(HIHI, "60")
+#  field(HIGH, "50")
+}
+
+record(ai, "$(PV_TEMP)") {
+  field(SCAN, "I/O Intr")
+#  field(SCAN, ".5 second")
+  field(DTYP, "EtherIP")
+  field(INP, "@$(PLC) $(TAG) S .1")
+  field(DESC, "$(DESC)")
+}
+
+

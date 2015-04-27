@@ -1,0 +1,10 @@
+record(bi, "$(REC)_READ")
+{
+        field(DESC, "DIG Shutter Status")
+	field(DTYP, "cFP20x0 NI compactFieldPoint")
+        field(INP, "@nicFP20x0Ctrl2 read $(CHAN)")
+	field(SCAN, "I/O Intr")
+	field(PINI, "YES")
+        field(ZNAM, "$(ZST)")
+        field(ONAM, "$(OST)")
+}

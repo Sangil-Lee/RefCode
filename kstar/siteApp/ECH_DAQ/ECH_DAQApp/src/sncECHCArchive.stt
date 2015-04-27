@@ -1,0 +1,97 @@
+program sncECHCArchive 
+/* option +r; */
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+%% #include "kupaLib.h"
+%% #include "kutil.h"
+%% #include "sfwDriver.h"
+
+int ctuStart;
+int ltuStart;
+int opMode;
+int autoRun;
+int shotNumber;
+int shotLocalNumber;
+int sysRun;
+
+double startT0;
+double stopT1;
+
+assign ctuStart to "CCS_CTU_shotStart";
+assign ltuStart to "ECH_LTU_SOFT_START";
+assign opMode to "ECH_OP_MODE";
+
+
+assign sysRun to "ECH_SYS_RUN";
+assign autoRun to "ECH_AUTO_RUN";
+assign shotLocalNumber to "ECH_CREATE_LOCAL_TREE";
+assign shotNumber to "ECH_SHOT_NUMBER";
+
+assign startT0 to "ECH_START_T0_SEC1";
+assign stopT1 to "ECH_STOP_T1_SEC1";
+
+monitor ctuStart;
+monitor ltuStart;
+monitor opMode;
+monitor sysRun;
+monitor autoRun;
+monitor shotNumber;
+monitor shotLocalNumber;
+
+monitor startT0;
+monitor stopT1;  /* extendTime 15sec, because NIDAQ need time to write in mdsplus and then */
+
+int		sampling_rate = 10; /* Hz */
+double  delaySec = 0.0;
+
+evflag ctuStartf;
+sync ctuStart ctuStartf;
+
+evflag ltuStartf;
+sync ltuStart ltuStartf;
+
+ss storeCAdata {
+	state init {
+		when (TRUE) {
+			printf("ECH CA data archiving : getValue() snl start ...\n");
+			efClear(ctuStartf);
+		} state startCAstore
+	}
+	state startCAstore {
+		 when (efTestAndClear(ctuStartf)) {
+			 if(autoRun == 1 && opMode == 1 && sysRun == 1){
+				kuDebug (kuMON, "[storeCAdata.startCAstore]	shot(%d) opmode(%d) rate(%d) T0(%.2f) T1(%.2f) extendTime(0sec) delay(%.2f) \n",
+														shotNumber, opMode, sampling_rate, startT0, stopT1, delaySec);
+				%%kupaSetLockId (get_master()->lock_mds);
+				kupaSetShotInfo (opMode, shotNumber, sampling_rate, startT0 - 16.0, stopT1 - startT0, startT0);
+				kupaStart ();
+
+				kuDebug (kuMON, "storeCAdata.startCAstore] after .. \n");
+			}
+		}state startCAstore
+	}
+}
+ss storeCALocaldata {
+	state init {
+		when (TRUE) {
+			printf("ECH CA Local data archiving : getValue() snl start ...\n");
+			efClear(ltuStartf);
+		} state startCALocalStore
+	}
+	state startCALocalStore {
+		 when (efTestAndClear(ltuStartf)) {
+			 if(ltuStart == 1 && autoRun == 0 && opMode == 2 && sysRun == 1){
+				kuDebug (kuMON, "[storeCALocaldata.startCALocalStore]	shot(%d) opmode(%d) rate(%d) T0(%.2f) T1(%.2f) extendTime(0sec) delay(%.2f) \n",
+														shotLocalNumber, opMode, sampling_rate, startT0, stopT1, delaySec);
+				%%kupaSetLockId (get_master()->lock_mds);
+				kupaSetShotInfo (opMode, shotLocalNumber, sampling_rate, startT0, stopT1 - startT0, startT0);
+				kupaStart ();
+
+				kuDebug (kuMON, "storeCALocaldata.startCALocalStore] after .. \n");
+			}
+		}state startCALocalStore
+	}
+}

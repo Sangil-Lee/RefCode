@@ -1,0 +1,16 @@
+#-- VMIC 2534
+#driver(drvVmic2534)
+
+device(bi,VME_IO,devBiVmic2534,"Vmic2534")
+device(bo,VME_IO,devBoVmic2534,"Vmic2534")
+device(mbbi,VME_IO,devMbbiVmic2534,"Vmic2534")
+device(mbbo,VME_IO,devMbboVmic2534,"Vmic2534")
+
+# New device support (testing)
+device(mbbiDirect,VME_IO,devMbbiDirectVmic2534,"Vmic2534")
+device(mbboDirect,VME_IO,devMbboDirectVmic2534,"Vmic2534")
+#device(vmeCard,   VME_IO,devCardVmi2534,       "VME VMIC-2534")
+
+
+driver(drvVmic2534)
+

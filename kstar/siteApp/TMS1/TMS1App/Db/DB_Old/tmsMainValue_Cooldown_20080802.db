@@ -1,0 +1,91 @@
+record(ai, "$(PV)_T_MAX")
+{
+	field(DESC, "$(PV)_T max")
+	field(SCAN, "Passive")
+	field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+	field(EGU, "K")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+record(stringin, "$(PV)_T_MAX_PV")
+{
+	field(VAL, "")
+	field(DESC, "$(PV)_T max pv")
+}
+record(ai, "$(PV)_T_MIN")
+{
+        field(DESC, "$(PV)_T min")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "K")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+record(stringin, "$(PV)_T_MIN_PV")
+{
+        field(VAL, "")
+        field(DESC, "$(PV)_T min pv")
+}
+record(ai, "$(PV)_T_AVR")
+{
+        field(DESC, "$(PV)_T avg")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "K")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+
+##### DT1 is Temperature difference (D-B) or (D-C) for Cool-down stages #######
+record(calc, $(PV)_MAX_DT1) {
+  field(SCAN, "1 second")
+  field(CALC, "A<3?(D-B):(D-C)")
+  field(INPA, "TMS_CCS_OPST_CW_STAGE CPP NMS")
+  field(INPB, "$(IN1) NPP NMS")
+  field(INPC, "$(IN2) NPP NMS")
+  field(INPD, "$(PV)_T_MAX.VAL CPP NMS")
+  field(HIHI, "$(HIHI1)")
+  field(LOLO, "$(LOLO1)")
+  field(HIGH, "$(HIGH1)")
+  field(LOW, "$(LOW1)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(PREC, "2")
+  field(EGU, "K")
+}
+##### DT2 is Temperature difference (D-C) for Experiment stages #######
+record(calc, $(PV)_MAX_DT2) {
+  field(SCAN, "1 second")
+  field(CALC, "A>3?(D-C):0")
+  field(INPA, "TMS_CCS_OPST_CW_STAGE CPP NMS")
+  field(INPB, "$(IN1) NPP NMS")
+  field(INPC, "$(IN2) NPP NMS")
+  field(INPD, "$(PV)_T_MAX.VAL CPP NMS")
+  field(HIHI, "$(HIHI2)")
+  field(LOLO, "$(LOLO2)")
+  field(HIGH, "$(HIGH2)")
+  field(LOW, "$(LOW2)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(PREC, "2")
+  field(EGU, "K")
+}
+record(calc, $(PV)_MAX) {
+  field(SCAN, "1 second")
+  field(CALC, "A")
+  field(INPA, "$(PV)_T_MAX.VAL CPP NMS")
+  field(INPB, "$(PV)_MAX_DT1.VAL NPP MS")
+  field(INPC, "$(PV)_MAX_DT2.VAL NPP MS")
+  field(PREC, "2")
+  field(EGU, "K")
+}

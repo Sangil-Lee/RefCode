@@ -1,0 +1,26 @@
+record(ai, "ECH_SHOT_NUMBER")
+{
+	field(DESC, "CCS_SHOT_NUMBER")
+	field(SCAN, "Passive")
+	field(INP, "0")
+	field(PINI, "YES")
+}
+record(ai, "ECH_DATA_MDS_PUT")
+{
+    field(DESC, "CCS_CREATE_SHOT")
+    field(SCAN, "Passive")
+    field(INP, "0")
+	field(PINI, "YES")
+}
+record(stringin, "ECH_ERROR_MSG") 
+{
+  field(DESC, "Test MdsData Put")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+}
+record(stringin, "$(PVNAME)")
+{
+  field(DESC, "$(ES)")
+  field(SCAN, "Passive")
+  field(VAL,  "$(NODE)")
+}

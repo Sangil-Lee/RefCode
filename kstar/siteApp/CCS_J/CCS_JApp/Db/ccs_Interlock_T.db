@@ -1,0 +1,21 @@
+# 2013. 7. 15
+#
+
+record(calcout, "CCS_INTL_PRO_NBI_ARMOR") {
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A==2)?((B==1)?1:0):0")
+    field(INPA, "PMS_NB_ALL_MAX_INTERLOCK CPP")
+    field(INPB, "CCS_SHOTSEQ_START CPP")    
+    field(OUT,  "CCS_SET_PCS_FORCE_ABORT")
+}
+
+record(calcout, "CCS_INTL_PRO_PFC_FAULT") {
+    field(SCAN, "Passive")
+    field(DTYP, "Soft Channel")
+    field(CALC, "(A==2)?((B==1)?1:0):0")
+    field(INPA, "PMS_ALL_MAX_INTERLOCK CPP")    
+    field(INPB, "CCS_SHOTSEQ_START CPP")
+    field(OUT,  "CCS_SET_PCS_PFC_FAULT")
+}
+

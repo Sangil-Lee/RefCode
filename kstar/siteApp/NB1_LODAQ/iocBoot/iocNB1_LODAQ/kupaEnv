@@ -1,0 +1,48 @@
+# For NB1_LODAQ
+
+# ------------------------------------------------
+# Set debug level to display on standard output
+# ------------------------------------------------
+#  -> 0(OFF)  1(FATAL) 2(ERROR) 3(WARN) 4(MON)
+#  -> 5(INFO) 6(DEBUG) 7(TRACE) 8(DATA) 9(ALL)
+# ------------------------------------------------
+
+kuSetPrintLevel (4)
+
+# ------------------------------------------------------------
+# Name, Shot# PV, OpMode PV, Run PV, SamplingRate(Hz), StartTime, Duration, Delay(s)
+# ------------------------------------------------------------
+# - If there is no PV, archiving will be handled by user's application
+# ------------------------------------------------------------
+
+# only one value
+kupaInitManager ("NB1_LODAQ", "", "", "", 1, 0, 1, 0)
+#kupaInitManager ("NB1_LODAQ", "NB1_LODAQ_SHOT_NUMBER", "NB1_LODAQ_OP_MODE", "NB1_LODAQ_SYS_RUN", 1, 0, 1, 0)
+
+# ------------------------------------------------------------
+# Export Type (CSV, MDS, FILE), arg1, arg2, arg3, arg4, arg5, arg6
+# ------------------------------------------------------------
+
+# CSV, FileName, Path, ValueOrder(V : Vertical, H : Horizontal), Format(UNIX, DOS), New/Append,
+kupaAddExport ("CSV", "NB1_LODAQ", "/root/csv", "H", "UNIX", "New"   , "")
+kupaAddExport ("CSV", "NB1_LODAQ", "/root/csv", "V", "UNIX", "Append", "")
+
+# ------------------------------------------------------------
+# PV Name, Tag Name, CA Type (0 : internal, 1:get, 2:monitor), Description, Unit
+# ------------------------------------------------------------
+
+cd ${TOP}/iocBoot/${IOC}
+< kupaAddPVEnv
+
+# ------------------------------------------------------------
+# Register a post action to be executed after exporting
+# ------------------------------------------------------------
+
+#kupaAddPostAct ("")
+
+# ------------------------------------------------------------
+# Starts PV archive manager
+# ------------------------------------------------------------
+
+kupaRunManager ()
+

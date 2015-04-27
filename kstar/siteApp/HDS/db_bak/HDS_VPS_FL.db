@@ -1,0 +1,69 @@
+record(bi, HDS_VPS_RGA_IN0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @0")
+} 
+
+
+record(bo, HDS_VPS_RGA_FL_ON) {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, HDS_VPS_RGA_FL_1) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @2")
+}
+
+record(bi, HDS_VPS_RGA_FL_0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @3")
+}
+
+record(ai, HDS_VPS_RGA_FL) {
+  field(DTYP, "SRSRGA")
+  field(EGU, "mA")
+  field(INP, "#L11 A0 @9")
+}
+
+record(bo, HDS_VPS_RGA_MR0) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#L11 A0 @6")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+
+record(bo, HDS_VPS_RGA_CDEM_ON) {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+
+}
+
+record(bi, HDS_VPS_RGA_CDEM_1) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @4")
+}
+
+record(bi, HDS_VPS_RGA_CDEM_0) {
+  field(DTYP, "SRSRGA") 
+  field(INP, "#L11 A0 @5")
+} 
+
+
+record(ai, HDS_VPS_RGA_IE) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @10")
+  field(EGU, "eV")
+}
+
+
+record(ai, HDS_VPS_RGA_CDEM) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L11 A0 @11")
+  field(EGU, "V")
+}
+

@@ -1,0 +1,99 @@
+file db/MC_DAQ_BO.db {
+            pattern {PV_NAME,          		  DSR,		               TASK,	   	  STR }
+                    {"MC_MDS_CREATE_TREE",      "MC_MDS_CREATE_TREE",       "VXI0::40::INSTR",  "create_tree"}
+#                    {"MC_MDS_CONNECT_OPEN",     "MC_MDS_CONNECT_OPEN",      "VXI0::40::INSTR",  "mds_conOpen"}
+#                    {"MC_MDS_DISCONNECT_CLOSE", "MC_MDS_DISCON_CLOSE",      "VXI0::40::INSTR",  "mds_disClose"}
+                    {"MC_SLOT1_DISCON_CLOSE",   "MC_SLOT1_DISCON_CLOSE",    "VXI0::40::INSTR",  "mds_disClose"}
+                    {"MC_SLOT2_DISCON_CLOSE",   "MC_SLOT2_DISCON_CLOSE",    "VXI0::48::INSTR",  "mds_disClose"}
+                    {"MC_SLOT3_DISCON_CLOSE",   "MC_SLOT3_DISCON_CLOSE",    "VXI0::64::INSTR",  "mds_disClose"}
+                    {"MC_SLOT4_DISCON_CLOSE",   "MC_SLOT4_DISCON_CLOSE",    "VXI0::72::INSTR",  "mds_disClose"}
+                    {"MC_SLOT5_DISCON_CLOSE",   "MC_SLOT5_DISCON_CLOSE",    "VXI0::80::INSTR",  "mds_disClose"}
+                    {"MC_SLOT6_DISCON_CLOSE",   "MC_SLOT6_DISCON_CLOSE",    "VXI0::82::INSTR",  "mds_disClose"}
+                    {"MC_SLOT7_DISCON_CLOSE",   "MC_SLOT7_DISCON_CLOSE",    "VXI0::88::INSTR",  "mds_disClose"}
+                    {"MC_SLOT8_DISCON_CLOSE",   "MC_SLOT8_DISCON_CLOSE",    "VXI0::96::INSTR",  "mds_disClose"}
+                    {"MC_SLOT9_DISCON_CLOSE",   "MC_SLOT9_DISCON_CLOSE",    "VXI0::128::INSTR", "mds_disClose"}
+                    {"MC_SLOT10_DISCON_CLOSE",   "MC_SLOT10_DISCON_CLOSE",  "VXI0::130::INSTR", "mds_disClose"}
+                    {"MC_SLOT11_DISCON_CLOSE",   "MC_SLOT11_DISCON_CLOSE",  "VXI0::132::INSTR", "mds_disClose"}
+                    {"MC_SLOT1_CONNECT_OPEN",   "MC_SLOT1_CONNECT_OPEN",    "VXI0::40::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT2_CONNECT_OPEN",   "MC_SLOT2_CONNECT_OPEN",    "VXI0::48::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT3_CONNECT_OPEN",   "MC_SLOT3_CONNECT_OPEN",    "VXI0::64::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT4_CONNECT_OPEN",   "MC_SLOT4_CONNECT_OPEN",    "VXI0::72::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT5_CONNECT_OPEN",   "MC_SLOT5_CONNECT_OPEN",    "VXI0::80::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT6_CONNECT_OPEN",   "MC_SLOT6_CONNECT_OPEN",    "VXI0::82::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT7_CONNECT_OPEN",   "MC_SLOT7_CONNECT_OPEN",    "VXI0::88::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT8_CONNECT_OPEN",   "MC_SLOT8_CONNECT_OPEN",    "VXI0::96::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT9_CONNECT_OPEN",   "MC_SLOT9_CONNECT_OPEN",    "VXI0::128::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT10_CONNECT_OPEN",   "MC_SLOT10_CONNECT_OPEN",    "VXI0::130::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT11_CONNECT_OPEN",   "MC_SLOT11_CONNECT_OPEN",    "VXI0::132::INSTR",  "mds_conOpen"}
+                    {"MC_SLOT1_EX_TRIG_REMOTE", "MC_SLOT1_EXTRIG_REMOTE",   "VXI0::40::INSTR",  "task_trigger"}
+                    {"MC_SLOT1_TASK_CALLBACK",  "MC_SLOT1_TASK_CALLBACK" ,  "VXI0::40::INSTR",  "task_call"}
+                    {"MC_SLOT1_TASK_START",     "MC_SLOT1_TASK_START" ,     "VXI0::40::INSTR",  "task_start"}
+                    {"MC_SLOT1_TASK_STOP",      "MC_SLOT1_TASK_STOP" ,      "VXI0::40::INSTR",  "task_stop"}
+                    {"MC_SLOT1_TASK_ABORT",     "MC_SLOT1_TASK_ABORT" ,     "VXI0::40::INSTR",  "task_abort"}
+                    {"MC_SLOT1_TASK_REG_UPDATE","MC_SLOT1_TASK_REGUPDATE",  "VXI0::40::INSTR",  "task_regupdate"}
+                    {"MC_SLOT1_REMOTE_LOCAL",   "MC_SLOT1_REMOTE_LOCAL" ,   "VXI0::40::INSTR",  "operation_mode"}
+#                   {"MC_SLOT1_SAMPLE_TYPE",    "MC_SLOT1_SAMPLE_TYPE" ,    "VXI0::40::INSTR",  "trig_type"} Not used
+                    {"MC_SLOT2_EX_TRIG_REMOTE", "MC_SLOT2_EXTRIG_REMOTE",   "VXI0::48::INSTR",  "task_trigger"}
+                    {"MC_SLOT2_TASK_CALLBACK",  "MC_SLOT2_TASK_CALLBACK" ,  "VXI0::48::INSTR",  "task_call"}
+                    {"MC_SLOT2_TASK_START",     "MC_SLOT2_TASK_START" ,     "VXI0::48::INSTR",  "task_start"}
+                    {"MC_SLOT2_TASK_STOP",      "MC_SLOT2_TASK_STOP" ,      "VXI0::48::INSTR",  "task_stop"}
+                    {"MC_SLOT2_TASK_ABORT",     "MC_SLOT2_TASK_ABORT" ,     "VXI0::48::INSTR",  "task_abort"}
+                    {"MC_SLOT2_TASK_REG_UPDATE","MC_SLOT2_TASK_REGUPDATE",  "VXI0::48::INSTR",  "task_regupdate"}
+                    {"MC_SLOT2_REMOTE_LOCAL",   "MC_SLOT2_REMOTE_LOCAL" ,   "VXI0::48::INSTR",  "operation_mode"}
+                    {"MC_SLOT3_EX_TRIG_REMOTE", "MC_SLOT3_EXTRIG_REMOTE",   "VXI0::64::INSTR",  "task_trigger"}
+                    {"MC_SLOT3_TASK_CALLBACK",  "MC_SLOT3_TASK_CALLBACK" ,  "VXI0::64::INSTR",  "task_call"}
+                    {"MC_SLOT3_TASK_START",     "MC_SLOT3_TASK_START" ,     "VXI0::64::INSTR",  "task_start"}
+                    {"MC_SLOT3_TASK_STOP",      "MC_SLOT3_TASK_STOP" ,      "VXI0::64::INSTR",  "task_stop"}
+                    {"MC_SLOT3_TASK_ABORT",     "MC_SLOT3_TASK_ABORT" ,     "VXI0::64::INSTR",  "task_abort"}
+                    {"MC_SLOT3_TASK_REG_UPDATE","MC_SLOT3_TASK_REGUPDATE",  "VXI0::64::INSTR",  "task_regupdate"}
+                    {"MC_SLOT3_REMOTE_LOCAL",   "MC_SLOT3_REMOTE_LOCAL" ,   "VXI0::64::INSTR",  "operation_mode"}
+                    {"MC_SLOT4_EX_TRIG_REMOTE", "MC_SLOT4_EXTRIG_REMOTE",   "VXI0::72::INSTR",  "task_trigger"}
+                    {"MC_SLOT4_TASK_CALLBACK",  "MC_SLOT4_TASK_CALLBACK" ,  "VXI0::72::INSTR",  "task_call"}
+                    {"MC_SLOT4_TASK_START",     "MC_SLOT4_TASK_START" ,     "VXI0::72::INSTR",  "task_start"}
+                    {"MC_SLOT4_TASK_STOP",      "MC_SLOT4_TASK_STOP" ,      "VXI0::72::INSTR",  "task_stop"}
+                    {"MC_SLOT4_TASK_ABORT",     "MC_SLOT4_TASK_ABORT" ,     "VXI0::72::INSTR",  "task_abort"}
+                    {"MC_SLOT4_TASK_REG_UPDATE","MC_SLOT4_TASK_REGUPDATE",  "VXI0::72::INSTR",  "task_regupdate"}
+                    {"MC_SLOT4_REMOTE_LOCAL",   "MC_SLOT4_REMOTE_LOCAL" ,   "VXI0::72::INSTR",  "operation_mode"}
+                    {"MC_SLOT5_EX_TRIG_REMOTE", "MC_SLOT5_EXTRIG_REMOTE",   "VXI0::80::INSTR",  "task_trigger"}
+                    {"MC_SLOT5_TASK_CALLBACK",  "MC_SLOT5_TASK_CALLBACK" ,  "VXI0::80::INSTR",  "task_call"}
+                    {"MC_SLOT5_TASK_START",     "MC_SLOT5_TASK_START" ,     "VXI0::80::INSTR",  "task_start"}
+                    {"MC_SLOT5_TASK_STOP",      "MC_SLOT5_TASK_STOP" ,      "VXI0::80::INSTR",  "task_stop"}
+                    {"MC_SLOT5_TASK_ABORT",     "MC_SLOT5_TASK_ABORT" ,     "VXI0::80::INSTR",  "task_abort"}
+                    {"MC_SLOT5_TASK_REG_UPDATE","MC_SLOT5_TASK_REGUPDATE",  "VXI0::80::INSTR",  "task_regupdate"}
+                    {"MC_SLOT5_REMOTE_LOCAL",   "MC_SLOT5_REMOTE_LOCAL" ,   "VXI0::80::INSTR",  "operation_mode"}
+                    {"MC_SLOT6_EX_TRIG_REMOTE", "MC_SLOT6_EXTRIG_REMOTE",   "VXI0::82::INSTR",  "task_trigger"}
+                    {"MC_SLOT6_TASK_CALLBACK",  "MC_SLOT6_TASK_CALLBACK" ,  "VXI0::82::INSTR",  "task_call"}
+                    {"MC_SLOT6_TASK_START",     "MC_SLOT6_TASK_START" ,     "VXI0::82::INSTR",  "task_start"}
+                    {"MC_SLOT6_TASK_STOP",      "MC_SLOT6_TASK_STOP" ,      "VXI0::82::INSTR",  "task_stop"}
+                    {"MC_SLOT6_TASK_ABORT",     "MC_SLOT6_TASK_ABORT" ,     "VXI0::82::INSTR",  "task_abort"}
+                    {"MC_SLOT6_TASK_REG_UPDATE","MC_SLOT6_TASK_REGUPDATE",  "VXI0::82::INSTR",  "task_regupdate"}
+                    {"MC_SLOT6_REMOTE_LOCAL",   "MC_SLOT6_REMOTE_LOCAL" ,   "VXI0::82::INSTR",  "operation_mode"}
+                    {"MC_SLOT7_EX_TRIG_REMOTE", "MC_SLOT7_EXTRIG_REMOTE",   "VXI0::88::INSTR",  "task_trigger"}
+                    {"MC_SLOT7_TASK_CALLBACK",  "MC_SLOT7_TASK_CALLBACK" ,  "VXI0::88::INSTR",  "task_call"}
+                    {"MC_SLOT7_TASK_START",     "MC_SLOT7_TASK_START" ,     "VXI0::88::INSTR",  "task_start"}
+                    {"MC_SLOT7_TASK_STOP",      "MC_SLOT7_TASK_STOP" ,      "VXI0::88::INSTR",  "task_stop"}
+                    {"MC_SLOT7_TASK_ABORT",     "MC_SLOT7_TASK_ABORT" ,     "VXI0::88::INSTR",  "task_abort"}
+                    {"MC_SLOT7_TASK_REG_UPDATE","MC_SLOT7_TASK_REGUPDATE",  "VXI0::88::INSTR",  "task_regupdate"}
+                    {"MC_SLOT7_REMOTE_LOCAL",   "MC_SLOT7_REMOTE_LOCAL" ,   "VXI0::88::INSTR",  "operation_mode"}
+                    {"MC_SLOT8_EX_TRIG_REMOTE", "MC_SLOT8_EXTRIG_REMOTE",   "VXI0::96::INSTR",  "task_trigger"}
+                    {"MC_SLOT8_TASK_CALLBACK",  "MC_SLOT8_TASK_CALLBACK" ,  "VXI0::96::INSTR",  "task_call"}
+                    {"MC_SLOT8_TASK_START",     "MC_SLOT8_TASK_START" ,     "VXI0::96::INSTR",  "task_start"}
+                    {"MC_SLOT8_TASK_STOP",      "MC_SLOT8_TASK_STOP" ,      "VXI0::96::INSTR",  "task_stop"}
+                    {"MC_SLOT8_TASK_ABORT",     "MC_SLOT8_TASK_ABORT" ,     "VXI0::96::INSTR",  "task_abort"}
+                    {"MC_SLOT8_TASK_REG_UPDATE","MC_SLOT8_TASK_REGUPDATE",  "VXI0::96::INSTR",  "task_regupdate"}
+                    {"MC_SLOT8_REMOTE_LOCAL",   "MC_SLOT8_REMOTE_LOCAL" ,   "VXI0::96::INSTR",  "operation_mode"}
+                    {"MC_SLOT9_EX_TRIG_REMOTE", "MC_SLOT9_EXTRIG_REMOTE",   "VXI0::128::INSTR",  "task_trigger"}
+                    {"MC_SLOT9_TASK_CALLBACK",  "MC_SLOT9_TASK_CALLBACK" ,  "VXI0::128::INSTR",  "task_call"}
+                    {"MC_SLOT9_TASK_START",     "MC_SLOT9_TASK_START" ,     "VXI0::128::INSTR",  "task_start"}
+                    {"MC_SLOT9_TASK_STOP",      "MC_SLOT9_TASK_STOP" ,      "VXI0::128::INSTR",  "task_stop"}
+                    {"MC_SLOT9_TASK_ABORT",     "MC_SLOT9_TASK_ABORT" ,     "VXI0::128::INSTR",  "task_abort"}
+                    {"MC_SLOT9_TASK_REG_UPDATE","MC_SLOT9_TASK_REGUPDATE",  "VXI0::128::INSTR",  "task_regupdate"}
+                    {"MC_SLOT9_REMOTE_LOCAL",   "MC_SLOT9_REMOTE_LOCAL" ,   "VXI0::128::INSTR",  "operation_mode"}
+                    {"MC_SLOT10_EX_TRIG_REMOTE", "MC_SLOT10_EXTRIG_REMOTE",   "VXI0::130::INSTR",  "task_trigger"}
+                    {"MC_SLOT10_TASK_CALLBACK",  "MC_SLOT10_TASK_CALLBACK" ,  "VXI0::130::INSTR",  "task_call"}
+                    {"MC_SLOT10_TASK_START",     "MC_SLOT10_TASK_START" ,     "VXI0::130::INSTR",  "task_start"}
+                    {"MC_SLOT10_TASK_STOP",      "MC_SLOT10_TASK_STOP" ,      "VXI0::130::INSTR",  "task_stop"}
+                    {"MC_SLOT10_TASK_ABORT",     "MC_SLOT10_TASK_ABORT" ,     "VXI0::130::INSTR",  "task_abort"}
+                    {"MC_SLOT10_TASK_REG_UPDATE","MC_SLOT10_TASK_REGUPDATE",  "VXI0::130::INSTR",  "task_regupdate"}
+                    {"MC_SLOT10_REMOTE_LOCAL",   "MC_SLOT10_REMOTE_LOCAL" ,   "VXI0::130::INSTR",  "operation_mode"}
+}

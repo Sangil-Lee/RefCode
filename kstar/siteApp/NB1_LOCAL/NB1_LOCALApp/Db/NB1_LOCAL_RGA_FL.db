@@ -1,0 +1,82 @@
+record(bi, $(SYS)_RGA_IN0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @0")
+} 
+
+
+record(bo, $(SYS)_RGA_FL_ON) {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+}
+
+record(bi, $(SYS)_RGA_FL_1) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @2")
+}
+
+record(bi, $(SYS)_RGA_FL_0) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @3")
+}
+
+record(ai, $(SYS)_RGA_FL) {
+  field(DTYP, "SRSRGA")
+  field(EGU, "mA")
+  field(INP, "#$(LINK) A0 @9")
+}
+
+record(bo, $(SYS)_RGA_MR0) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#$(LINK) A0 @6")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+
+record(bo, $(SYS)_RGA_CDEM_ON) {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+
+}
+
+record(bi, $(SYS)_RGA_CDEM_1) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @4")
+}
+
+record(bi, $(SYS)_RGA_CDEM_0) {
+  field(DTYP, "SRSRGA") 
+  field(INP, "#$(LINK) A0 @5")
+} 
+
+
+record(ai, $(SYS)_RGA_IE) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @10")
+  field(EGU, "eV")
+}
+
+
+record(ai, $(SYS)_RGA_CDEM) {
+  field(DTYP, "SRSRGA")
+  field(INP, "#$(LINK) A0 @11")
+  field(EGU, "V")
+}
+
+record(bo, $(SYS)_RGA_DG_STOP) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#$(LINK) A0 @26")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+record(bo, $(SYS)_RGA_DG_START) {
+  field(DTYP, "SRSRGA")
+  field(OUT, "#$(LINK) A0 @27")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}

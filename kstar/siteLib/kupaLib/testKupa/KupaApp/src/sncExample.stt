@@ -1,0 +1,50 @@
+/**
+ * \file	sncExample.stt
+ * \ingroup kupa
+ * \brief   kupa 구현을 위한 SNL 예제
+ * \example sncExample.stt
+ * 
+ * 본 파일은, kupa 라이브러리를 이용한 PV Archiving 구현을 위한 SNL 예제를 제공한다.
+ */
+
+program sncExample
+double v;
+assign v to "{user}:aiExample";
+monitor v;
+
+%%#include "kutil.h"
+%%#include "kupaLib.h"
+
+ss ss1 {
+    state init {
+	when (delay(10)) {
+	    printf("sncExample: Startup delay over\n");
+	} state low
+    }
+    state low {
+	when (v > 5.0) {
+	    printf("sncExample: Changing to high\n");
+	} state high
+    }
+    state high {
+	when (v <= 5.0) {
+	    printf("sncExample: Changing to low\n");
+	} state low
+    }
+}
+
+ss ss2 {
+	state init {
+		when (delay(5)) {
+			printf("sncExample: getValue() test ...\n");
+		} state getValue
+	}
+	state getValue {
+		when (delay(.5)) {
+			kuDebug (kuDEBUG, "kupaGetValue (rootHost:aiExample1)   = %f\n", kupaGetValue ("rootHost:aiExample1"));
+			kuDebug (kuDEBUG, "kupaGetValue (rootHost:aiExample2)   = %f\n", kupaGetValue ("rootHost:aiExample2"));
+			kuDebug (kuDEBUG, "kupaGetValue (rootHost:calcExample1) = %f\n", kupaGetValue ("rootHost:calcExample1"));
+			kuDebug (kuDEBUG, "kupaGetValue (rootHost:calcExample2) = %f\n", kupaGetValue ("rootHost:calcExample2"));
+		} state getValue
+	}
+}

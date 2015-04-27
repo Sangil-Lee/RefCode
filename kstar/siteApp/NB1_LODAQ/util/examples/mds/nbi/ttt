@@ -1,0 +1,3 @@
+gcc -c -I /usr/local/mdsplus/include mdstest-nbi.c
+gcc -o mdstest-nbi -L/usr/local/mdsplus/lib mdstest-nbi.o -lMdsLib -lMdsShr -lc
+\rm mdstest-nbi.o

@@ -1,0 +1,42 @@
+program sncTmsHeartRun
+option +r;
+option -c;
+%% #include <string.h>
+
+
+unsigned long tmsHeartBeat;
+assign tmsHeartBeat to "TMS_Interlock_Heart_Beat";
+monitor tmsHeartBeat;
+
+unsigned long tmsInterlockRun;
+assign tmsInterlockRun to "TMS_Interlock_RUN";
+
+unsigned int tmsIoc1;
+assign tmsIoc1 to "TMS_IOC1_HEART_BEAT.UDF";
+monitor tmsIoc1;
+unsigned int tmsIoc2;
+assign tmsIoc2 to "TMS_IOC2_HEART_BEAT.UDF";
+monitor tmsIoc2;
+
+ss tmsHeartBeat{
+	state tms_heart_beat{
+        	when (delay(1.)){
+				if(tmsIoc1==0 & tmsIoc2==0){
+					tmsInterlockRun=1;
+				  	 if(tmsHeartBeat==0){
+						 tmsHeartBeat=1;
+						}
+					   if(tmsHeartBeat==1){
+						 tmsHeartBeat=0;
+						}
+				  pvPut(tmsInterlockRun);
+				  pvPut(tmsHeartBeat);
+				}
+				else tmsInterlockRun=0;
+				pvPut(tmsInterlockRun);
+				return;
+		} state tms_heart_beat
+	}
+				
+}
+

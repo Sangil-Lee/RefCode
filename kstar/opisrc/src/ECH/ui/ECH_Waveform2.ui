@@ -1,0 +1,942 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QPushButton" name="pushButton" >
+       <property name="text" >
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox" >
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI08</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI09</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI12</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI13</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI14</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ECH_NI_DAQ_AI15</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_2" >
+       <item>
+        <property name="text" >
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>5</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_3" >
+       <item>
+        <property name="text" >
+         <string>Red</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Green</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Blue</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>#b3ff8a</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>#c4e2ff</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_4" >
+       <item>
+        <property name="text" >
+         <string>Steps</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Lines</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Dots</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Sticks</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="CAUITime" name="CAUITime" >
+     <property name="timeset" stdset="0" >
+      <enum>CAUITime::Event</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="CAMultiwaveplot" name="CAMultiwaveplot" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="pvname" >
+        <string>ECH_NI_DAQ_AI08</string>
+       </property>
+       <property name="pvname1" >
+        <string>ECH_NI_DAQ_AI09</string>
+       </property>
+       <property name="pvname2" >
+        <string>ECH_NI_DAQ_AI10</string>
+       </property>
+       <property name="pvname3" >
+        <string>ECH_NI_DAQ_AI11</string>
+       </property>
+       <property name="pvname4" >
+        <string>ECH_NI_DAQ_AI12</string>
+       </property>
+       <property name="pvname5" >
+        <string>ECH_NI_DAQ_AI13</string>
+       </property>
+       <property name="pvname6" >
+        <string>ECH_NI_DAQ_AI14</string>
+       </property>
+       <property name="pvname7" >
+        <string>ECH_NI_DAQ_AI15</string>
+       </property>
+       <property name="canvasColor" stdset="0" >
+        <color>
+         <red>249</red>
+         <green>249</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="majLinecolor" stdset="0" >
+        <color>
+         <red>255</red>
+         <green>0</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="xTitle" stdset="0" >
+        <string>Time</string>
+       </property>
+       <property name="yTitle" stdset="0" >
+        <string>ECH Waveform AI08~AI15</string>
+       </property>
+       <property name="reqElement" stdset="0" >
+        <number>10000</number>
+       </property>
+       <property name="updateTime" >
+        <number>500</number>
+       </property>
+       <property name="refreshTime" >
+        <number>500</number>
+       </property>
+       <property name="bufferPage" >
+        <number>2</number>
+       </property>
+       <property name="type" >
+        <enum>CAMultiwaveplot::CAPendIO</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI08</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_2" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI09</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_3" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI10</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_4" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI11</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_5" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI12</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_6" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI13</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_7" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI14</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0" >
+        <widget class="CAColorCheckBox" name="CAColorCheckBox_8" >
+         <property name="text" >
+          <string>ECH_NI_DAQ_AI15</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_5" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>180</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH08</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_6" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH09</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_7" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>ECH_MDS_NODE_CH10</string>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH10</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_8" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>ECH_MDS_NODE_CH11</string>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH11</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_9" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>ECH_MDS_NODE_CH12</string>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH12</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_10" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH13</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_11" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH14</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0" >
+        <widget class="CALineEdit" name="caLineEdit_12" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>ECH_MDS_NODE_CH15</string>
+         </property>
+         <property name="dbrequest" stdset="0" >
+          <enum>CALineEdit::DBRGSTR</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMultiwaveplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiwaveplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>281</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>277</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>472</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>353</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_3</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penColor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>688</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>425</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_4</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penStyle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>911</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>515</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>userUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>104</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>126</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>205</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>320</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>465</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>890</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>573</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>CAColorCheckBox</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>984</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>CAColorCheckBox_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>923</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>CAColorCheckBox_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>304</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>907</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>CAColorCheckBox_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>924</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>CAColorCheckBox_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>358</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>911</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>CAColorCheckBox_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>925</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>CAColorCheckBox_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>446</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>919</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>CAColorCheckBox_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>573</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>943</x>
+     <y>530</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

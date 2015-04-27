@@ -1,0 +1,148 @@
+record(stringin,"ECH_DG535_READ_DL") {
+       field(DTYP,"DG535")
+	   field(INP,"#$(PORT) A$(A) @0")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(ai,"ECH_DG535_READ_ES_BYTE") {
+       field(DTYP,"DG535") 
+       field(INP,"#$(PORT) A$(A) @1") 
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(bi,"ECH_DG535_READ_ES_0") {
+       field(DTYP,"DG535")  
+       field(INP,"#$(PORT) A$(A) @2")
+	   field(ZNAM,"OFF")
+	   field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_1")
+}                 
+record(bi,"ECH_DG535_READ_ES_1") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @3")               
+	   field(ZNAM,"OFF")
+       field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_2")
+}                  
+record(bi,"ECH_DG535_READ_ES_2") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @4")               
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_3")
+}                  
+record(bi,"ECH_DG535_READ_ES_3") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @5")               
+	   field(ZNAM,"OFF")
+       field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_4")
+}                  
+record(bi,"ECH_DG535_READ_ES_4") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @6")               
+       field(ZNAM,"OFF")
+	   field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_5")
+}                  
+record(bi,"ECH_DG535_READ_ES_5") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @7")               
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")
+	   field(FLNK,"ECH_DG535_READ_ES_6")
+}                  
+record(bi,"ECH_DG535_READ_ES_6") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @8")               
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")
+}                  
+record(bi,"ECH_DG535_READ_TZ_4") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @9")               
+       field(ZNAM,"50 Ohm Load")
+	   field(ONAM,"High-Z")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}                  
+record(bi,"ECH_DG535_READ_TZ_7") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @10")               
+	   field(ZNAM,"50 Ohm Load")
+       field(ONAM,"High-Z")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}                  
+record(mbbi,"ECH_DG535_READ_OM_4") {
+       field(DTYP,"DG535")   
+       field(INP,"#$(PORT) A$(A) @11")          
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(mbbi,"ECH_DG535_READ_OM_7") {
+       field(DTYP,"DG535")    
+       field(INP,"#$(PORT) A$(A) @12")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+} 
+record(bi,"ECH_DG535_READ_OP_4") {
+       field(DTYP,"DG535")    
+       field(INP,"#$(PORT) A$(A) @13")
+       field(ZNAM,"Inverted")
+       field(ONAM,"Normal")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(bi,"ECH_DG535_READ_OP_7") {
+       field(DTYP,"DG535")     
+       field(INP,"#$(PORT) A$(A) @14")           
+       field(ZNAM,"Inverted")
+       field(ONAM,"Normal")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(mbbi,"ECH_DG535_READ_TM") {
+       field(DTYP,"DG535")    
+       field(INP,"#$(PORT) A$(A) @15")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(ai,"ECH_DG535_READ_TR_0") { 
+       field(DTYP,"DG535")     
+       field(INP,"#$(PORT) A$(A) @16")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(ai,"ECH_DG535_READ_TR_1") { 
+       field(DTYP,"DG535")     
+       field(INP,"#$(PORT) A$(A) @17")
+	   field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(ai,"ECH_DG535_READ_DT_2_SEC") {
+       field(DTYP,"DG535")
+       field(INP,"#$(PORT) A$(A) @18")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(calc,"ECH_DG535_READ_DT_2") {
+       field(CALC,"A*1E6")
+       field(INPA,"ECH_DG535_READ_DT_2_SEC PP")
+}
+record(ai,"ECH_DG535_READ_DT_3_SEC") {
+       field(DTYP,"DG535")
+       field(INP,"#$(PORT) A$(A) @19")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(calc,"ECH_DG535_READ_DT_3") {
+       field(CALC,"A*1E6")
+       field(INPA,"ECH_DG535_READ_DT_3_SEC PP")
+}
+record(ai,"ECH_DG535_READ_DT_5_SEC") {
+       field(DTYP,"DG535")
+       field(INP,"#$(PORT) A$(A) @20")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(calc,"ECH_DG535_READ_DT_5") {
+       field(CALC,"A*1E6")
+       field(INPA,"ECH_DG535_READ_DT_5_SEC PP")
+}
+record(ai,"ECH_DG535_READ_DT_6_SEC") {
+       field(DTYP,"DG535")
+       field(INP,"#$(PORT) A$(A) @21")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(calc,"ECH_DG535_READ_DT_6") {
+       field(CALC,"A*1E6")
+       field(INPA,"ECH_DG535_READ_DT_6_SEC PP")
+}
+

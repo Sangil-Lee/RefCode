@@ -1,0 +1,51 @@
+program sncAutoArm
+int kmode;
+assign kmode to "NB1_INJECT_KSTAR_MODE";
+monitor kmode;
+
+int dmode;
+assign dmode to "NB1_INJECT_DUMMY_MODE";
+monitor dmode;
+
+int ccsrdy;
+assign ccsrdy to "CCS_SHOTSEQ_START";
+monitor ccsrdy;
+
+int setarm1;
+assign setarm1 to "NB1_DTACQ1_setArm";
+int setarm2;
+assign setarm2 to "NB1_DTACQ2_setArm";
+
+int index = 0;
+
+ss ss1
+{
+	state low
+	{
+	    when(kmode == 1 && dmode == 0 && ccsrdy == 1)
+	    {
+            if(index == 0)
+            {
+                index = 1;
+                setarm1 = 1;
+                pvPut(setarm1, SYNC);
+
+                setarm2 = 1;
+                pvPut(setarm2, SYNC);
+            }
+	    } state high
+	    when(delay(1)) 
+	    {
+	    } state high
+	}
+    state high
+    {
+        when(kmode == 1 && dmode == 0 && ccsrdy == 0)
+        {
+            index = 0;
+        } state low
+        when(delay(1))
+        {
+        } state low
+    }
+}

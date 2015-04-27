@@ -1,0 +1,29 @@
+record(ai, "$(PV_NAME)_SAMPLE_RATE_READ")
+{
+	field(DESC, "$(PV_NAME)_SAMPLE_RATE")
+	field(DTYP, "VXI1564a Read")
+	field(INP, "@$(TASK) rateRead")
+	field(SCAN, "I/O Intr")
+	field(PREC, "7")
+}
+record(ai, "$(PV_NAME)_SAMPLE_COUNT_READ")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_COUNT")
+	field(DTYP, "VXI1564a Read")
+	field(INP, "@$(TASK) dataCount")
+	field(SCAN, "I/O Intr")
+}
+record(ai, "$(PV_NAME)_SAMPLE_PRECOUNT_READ")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_PRECOUNT")
+	field(DTYP, "VXI1564a Read")
+	field(INP, "@$(TASK) dataPreCount")
+	field(SCAN, "I/O Intr")
+}
+record(ai, "$(PV_NAME)_OPER_MODE_READ")
+{
+	field(DESC,"$(PV_NAME)_OPER_MODE")
+	field(DTYP, "VXI1564a Read")
+	field(INP, "@$(TASK) operMode")
+	field(SCAN, "I/O Intr")
+}

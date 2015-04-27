@@ -1,0 +1,38 @@
+#
+#
+file db/ccs_PF1TestSoftPVs_BI.db
+{
+    pattern
+        {                         NAME,                DESC,            DEVICE,             ZRST,          ONST }
+        {      "CCS_SHOTSEQ_ST_SETTSS",     "Set TSS State",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {  "CCS_SHOTSEQ_ST_MPSSTANDBY",       "MPS Standby",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {  "CCS_SHOTSEQ_ST_PCSSTANDBY",       "PCS Standby",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {      "CCS_SHOTSEQ_ST_MPSRUN",           "MPS Run",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {   "CCS_SHOTSEQ_ST_SHOTSTART",        "Shot Start",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {  "CCS_SHOTSEQ_ST_DURINGSHOT",       "During Shot",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {   "CCS_SHOTSEQ_ST_ENDOFSHOT",       "End of Shot",    "Soft Channel",         "ST OFF",       "ST ON" },
+        {     "CCS_SHOTSEQ_ST_MPSSTOP",          "MPS Stop",    "Soft Channel",         "ST OFF",       "ST ON" },
+        { "CCS_SHOTSEQ_ST_TERMINATION",       "Termination",    "Soft Channel",         "ST OFF",       "ST ON" },
+#
+#
+        {          "CCS_SHOTSEQ_START",        "TEST Start",    "Soft Channel",          "STOP",        "START" },
+        {         "CCS_SHOTSEQ_CANCEL",       "TEST Cancel",    "Soft Channel",         "Normal",       "Cancel"},
+        { "CCS_SHOTSEQ_MDSTREE_CREATE",       "MDS TREE Cr",    "Soft Channel",       "Completed",      "Create"},
+#
+#
+#
+        { "CCS_DURING_SHOT",        "During Shot",    "Soft Channel",             "OFF",          "ON" },
+#
+#  move to CCS_T 2013. 7. 11
+#        { "CCS_TF_MPS_ONOFF",    "TF MPS Status",   "Soft Channel",            "OFF",          "ON" },
+#       { "CCS_PF_MPS_ONOFF",    "PF MPS Status",   "Soft Channel",            "OFF",          "ON" },
+#        { "CCS_GDC_ONOFF",       "GDC Status",   "Soft Channel",               "OFF",          "ON" },
+#        { "CCS_ICWC_ONOFF",      "ICRH Wall cleaning",   "Soft Channel",       "OFF",          "ON" },
+#        { "CCS_WC_STATUS",       "Wall cleaning status",   "Soft Channel",     "NotWCMode",          "WCMode" },
+#
+#        {            "CCS_DDS1_STATUS",        "DDS1 Status",   "Soft Channel",      "Not Ready",       "Ready" },
+#        {            "CCS_DDS2_STATUS",        "DDS2 Status",   "Soft Channel",      "Not Ready",       "Ready" },
+#
+#
+        {   "CCS_PERFORM_SHOT_SUMMARY",    "DO Shot Summary",   "Soft Channel",       "Complete",      "Perform"},
+}

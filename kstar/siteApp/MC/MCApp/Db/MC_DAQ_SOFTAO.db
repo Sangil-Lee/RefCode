@@ -1,0 +1,39 @@
+record(ao, "MC_SLOT1_MASTER_RANGE")
+{
+	field(DESC,"MC_SLOT1_MASTER_GAIN")
+	field(SCAN, "Passive")
+	field(FLNK, "MC_SLOT1_MASTER_PUT_RANGE PP NMS")
+	field(PINI,"YES")
+	field(VAL,"7")
+}
+
+record(dfanout, "MC_SLOT1_MASTER_PUT_RANGE")
+{
+  	field(DESC, "MC_SLOT1_MASTER_PUT_RANGE")
+  	field(SCAN, "Passive")
+        field(DOL,  "MC_SLOT1_MASTER_RANGE")
+        field(OMSL, "closed_loop")
+        field(OUTA, "MC_SLOT1_RANGE_CH1 PP")
+        field(OUTB, "MC_SLOT1_RANGE_CH2 PP")
+        field(OUTC, "MC_SLOT1_RANGE_CH3 PP")
+        field(OUTD, "MC_SLOT1_RANGE_CH4 PP")
+}
+record(ao, "MC_SLOT1_MASTER_FILTER")
+{
+	field(DESC,"MC_SLOT1_MASTER_FILTER")
+	field(SCAN, "Passive")
+	field(FLNK, "MC_SLOT1_MASTER_PUT_FILTER PP NMS")
+	field(PINI,"YES")
+	field(VAL,"7")
+}
+record(dfanout, "MC_SLOT1_MASTER_PUT_FILTER")
+{
+  	field(DESC, "MC_SLOT1_MASTER_PUT_FILTER")
+  	field(SCAN, "Passive")
+        field(DOL,  "MC_SLOT1_MASTER_FILTER")
+        field(OMSL, "closed_loop")
+        field(OUTA, "MC_SLOT1_FILTER_CH1 PP")
+        field(OUTB, "MC_SLOT1_FILTER_CH2 PP")
+        field(OUTC, "MC_SLOT1_FILTER_CH3 PP")
+        field(OUTD, "MC_SLOT1_FILTER_CH4 PP")
+}

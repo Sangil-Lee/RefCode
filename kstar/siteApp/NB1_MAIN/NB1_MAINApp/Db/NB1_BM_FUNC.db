@@ -1,0 +1,80 @@
+record(calc, "NB1_BM1_RTN_FUNC")
+{
+    field(DESC, "Bending Func Intc.")
+    field(SCAN, ".1 second")
+    field(CALC, "((A*A)*B)+(C*A)+D") # Final 2nd polynomial fitting on May 18, 2011 by Y.S. Bae
+#    field(CALC, "B*LN(A)+C")
+    field(INPA,"NB1_P1G1_RTN_VOLT.VAL")
+    field(INPB,"-0.0087") 
+    field(INPC,"3.925")
+    field(INPD,"140")
+}
+record(calc, "NB1_BM1_RTN_UVFUNC")
+{
+    field(DESC, "Bending Func Intc.")
+    field(SCAN, "Passive")
+    field(CALC, "(B*A)+C")
+    field(INPA,"NB1_BM1_SET_IOUT_AI.VAL CPP")
+    field(INPB,"0.0294") 
+    field(INPC,"-0.1177")
+}
+record(calcout, "NB1_BM1_OUT_UVSET")
+{
+	field(DESC, "Bending UV Set")
+	field(SCAN, "Passive")
+	field(CALC, "A-(A*B)")
+	field(INPA, "NB1_BM1_RTN_UVFUNC.VAL CPP")
+	field(INPB, "0.25")
+	field(OUT, "NB1_BM1_SET_VOUT_UNDER_AO.VAL NMP PP")
+}
+record(calc, "NB1_BM1_CALC_PER")
+{
+    field(DESC, "Bending Func Intc.")
+    field(SCAN, ".1 second")
+    field(CALC, "(A*B)")
+    field(INPA, "NB1_BM1_IOUT_AI.VAL")
+    field(INPB, "0.02")
+}
+record(calc, "NB1_BM1_CALC_INT")
+{
+    field(DESC, "Bending Func Intc.")
+    field(SCAN, ".1 second")
+    field(CALC, "(A) > (B+C) || (A) < (B-C) ? 1:0")
+    field(INPA, "NB1_BM1_RTN_FUNC.VAL")
+    field(INPB, "NB1_BM1_IOUT_AI.VAL")
+    field(INPC, "NB1_BM1_CALC_PER.VAL")
+    field(INPD, "0.02")
+#    field(OUT, "NB1_P1BM_RTN_BMINT")
+}
+record(bo, "NB1_BM1_DEF_MODE")
+{
+    field(DESC, "Deflecting Mode")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+    field(ZSV, "MAJOR")
+    field(OSV, "NO_ALARM")
+}
+#record(bo, "NB1_TEST_BO")
+#{
+#    field(DESC, "Deflecting Mode")
+#    field(ZNAM, "OFF")
+#    field(ONAM, "ON")
+#    field(ZSV, "MAJOR")
+#    field(OSV, "NO_ALARM")
+#}
+# record(calcout, "NB1_BM1_SET_AUTO_IOUT")
+# {
+#    field(DESC, "Auto IOUT")
+#    field(CALC, "A")
+#    field(SCAN, "2 second")
+#    field(INPA, "NB1_BM1_RTN_FUNC")
+#    field(OUT, "NB1_BM1_SET_IOUT_AO PP")
+#}
+record(calcout, "NB1_BM1_SET_AUTO_UI")
+{
+    field(DESC, "Auto UI")
+    field(CALC, "A")
+    field(SCAN, "2 second")
+    field(INPA, "NB1_BM1_RTN_FUNC")
+    field(OUT, "NB1_BM1_SET_IOUT_UNDER_AO PP")
+}

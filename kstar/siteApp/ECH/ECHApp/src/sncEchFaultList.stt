@@ -1,0 +1,129 @@
+program sncEchFaultList
+option +r;
+option -c;
+
+double cps;
+assign cps to "ECH_CPS_FLT_RTN";
+monitor cps;
+
+double aps;
+assign aps to "ECH_APS_FLT_RTN";
+monitor aps;
+
+double vme;
+assign vme to "ECH_VME_FLT_RTN";
+monitor vme;
+
+string cpsFault;
+string apsFault;
+string vmeFault;
+
+assign cpsFault to "ECH_CPS_FAULT.VAL";
+assign apsFault to "ECH_APS_FAULT.VAL";
+assign vmeFault to "ECH_VME_FAULT.VAL";
+
+ss EchFaultList
+{
+	state CpsFaultList
+	{
+		when(cps != 0)
+		{
+			if(cps == 10) sprintf(cpsFault, "Fuse Fault");
+			if(cps == 11) sprintf(cpsFault, "VCB Fault");
+			if(cps == 12) sprintf(cpsFault, "Precharge MC Fault");
+			if(cps == 13) sprintf(cpsFault, "Input DC1 link over voltage");
+			if(cps == 14) sprintf(cpsFault, "Input DC2 link over voltage");
+			if(cps == 15) sprintf(cpsFault, "Input DC3 link over voltage");
+			if(cps == 16) sprintf(cpsFault, "Inverter over current");
+			if(cps == 17) sprintf(cpsFault, "Output over voltage");
+			if(cps == 18) sprintf(cpsFault, "Output over current");
+			if(cps == 19) sprintf(cpsFault, "Output over load");
+			if(cps == 20) sprintf(cpsFault, "Inverter IGBT fault");
+			if(cps == 21) sprintf(cpsFault, "Input DC precharge timeover");
+			if(cps == 22) sprintf(cpsFault, "Into fault");
+			if(cps == 23) sprintf(cpsFault, "External Interrupt fault");
+			if(cps == 24) sprintf(cpsFault, "Pulse over current");
+			if(cps == 25) sprintf(cpsFault, "PCT over current detect");
+			if(cps == 26) sprintf(cpsFault, "HVS Drive over current");
+			if(cps == 27) sprintf(cpsFault, "Output under voltage");
+			if(cps == 28) sprintf(cpsFault, "VME interrupt");
+			if(cps == 29) sprintf(cpsFault, "VME crowbar on");
+			if(cps == 30) sprintf(cpsFault, "CPS panel door open");
+			if(cps == 50) sprintf(cpsFault, "Communication error");
+			pvPut(cpsFault,SYNC);
+			epicsThreadSleep(1);
+		} state ApsFaultList
+		when(cps==0)
+		{
+			sprintf(cpsFault, "No Error");
+			pvPut(cpsFault,SYNC);
+			epicsThreadSleep(1);
+		} state ApsFaultList
+	}
+	state ApsFaultList
+	{
+		when(aps != 0)
+		{
+			if(aps == 10) sprintf(apsFault, "APS panel door open");
+			if(aps == 11) sprintf(apsFault, "External interrupt 1");
+			if(aps == 12) sprintf(apsFault, "External interrupt 2");
+			if(aps == 13) sprintf(apsFault, "External interrupt 3");
+			if(aps == 20) sprintf(apsFault, "Inverter IGBT fault");
+			if(aps == 21) sprintf(apsFault, "M1 fault");
+			if(aps == 22) sprintf(apsFault, "M2 fault");
+			if(aps == 23) sprintf(apsFault, "M3 fault");
+			if(aps == 24) sprintf(apsFault, "Pulse over current");
+			if(aps == 25) sprintf(apsFault, "Output over voltage");
+			if(aps == 26) sprintf(apsFault, "Output over current");
+			if(aps == 27) sprintf(apsFault, "APS tank TNR fault");
+			if(aps == 28) sprintf(apsFault, "DC P/S output O.C");
+			if(aps == 29) sprintf(apsFault, "HVS drive over current");
+			if(aps == 30) sprintf(apsFault, "VME interrupt");
+			if(aps == 50) sprintf(apsFault, "Communication error");
+			if(aps == 51) sprintf(apsFault, "Communication EMG.");
+			if(aps == 52) sprintf(apsFault, "Communication slow");
+			if(aps == 53) sprintf(apsFault, "EMG. button fault");
+			pvPut(apsFault,SYNC);
+			epicsThreadSleep(1);
+		} state VmeFaultList
+		when(aps==0)
+		{
+			sprintf(apsFault, "No Error");
+			pvPut(apsFault,SYNC);
+			epicsThreadSleep(1);
+		} state VmeFaultList
+	}
+	state VmeFaultList
+	{
+		when(vme != 0)
+		{
+			if(vme == 1) sprintf(vmeFault, "Sequence error");
+			if(vme == 2) sprintf(vmeFault, "PLC EMG. VCB off");
+			if(vme == 3) sprintf(vmeFault, "KBODY");
+			if(vme == 4) sprintf(vmeFault, "Body over current");
+			if(vme == 5) sprintf(vmeFault, "EMG. switch");
+			if(vme == 6) sprintf(vmeFault, "CPS trip");
+			if(vme == 7) sprintf(vmeFault, "Crowbar on");
+			if(vme == 8) sprintf(vmeFault, "RF reflection");
+			if(vme == 10) sprintf(vmeFault, "PLC slow interlock");
+			if(vme == 11) sprintf(vmeFault, "Window arc #1");
+			if(vme == 12) sprintf(vmeFault, "Window arc #2");
+			if(vme == 13) sprintf(vmeFault, "M/B arc #1");
+			if(vme == 14) sprintf(vmeFault, "M/B arc #2");
+			if(vme == 15) sprintf(vmeFault, "Gyrotron vac-ion #1");
+			if(vme == 16) sprintf(vmeFault, "Gyrotron vac-ion #2");
+			if(vme == 17) sprintf(vmeFault, "RF forward");
+			if(vme == 18) sprintf(vmeFault, "APS trip");
+			if(vme == 19) sprintf(vmeFault, "Crowbar lamp fault");
+			if(vme == 20) sprintf(vmeFault, "KSTAR EMG.");
+			pvPut(vmeFault,SYNC);
+			epicsThreadSleep(1);
+		} state CpsFaultList
+		when(vme==0)
+		{
+			sprintf(vmeFault, "No Error");
+			pvPut(vmeFault,SYNC);
+			epicsThreadSleep(1);
+		} state CpsFaultList
+	}
+}

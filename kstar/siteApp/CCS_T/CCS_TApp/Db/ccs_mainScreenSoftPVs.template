@@ -1,0 +1,210 @@
+#
+#
+file db/ccs_mainScreenSoftPVs_BI.db
+{
+    pattern
+        { NAME,                          DESC,                      DEVICE,             ZRST,       ONST      }
+#
+#       Display the operation status.....
+#
+#       {"CCS_OPST_MAINTAIN",           "KSTAR maintain.",         "Soft Channel",     "DeActivate", "Activate"},
+#       {"CCS_OPST_VACPUMP",            "Op. status for Vac.",     "Soft Channel",     "DeActivate", "Activate" },
+#       {"CCS_OPST_COOLDN",             "Cooldown Stage",          "Soft Channel",     "DeActivate", "Activate" },
+#       {"CCS_OPST_COOLDN1ST",          "cooldown status 1st",     "Soft Channel",     "DeActivate", "Activate" },
+#       {"CCS_OPST_COOLDN2ND",          "cooldown status 2nd",     "Soft Channel",     "DeActivate", "Activate" },
+#       {"CCS_OPST_COOLDN3RD",          "cooldown status 3rd",     "Soft Channel",     "DeActivate", "Activate" },
+#       {"CCS_OPST_EXPERIMENTAL",       "Experiment Stats",        "Soft Channel",     "DeActivate", "Activate" },
+#
+#        Display the shutter status.....
+#
+        # Shutter Status for Illuminator
+        #
+#        {"CCS_LCSSHUT_DIAG_ILLUM_S1",    "shutter Illum. S1",      "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_ILLUM_S2",    "shutter Illum. S2",      "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_ILLUM_S3",    "shutter Illum. S3",      "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_ILLUM_S4",    "shutter Illum. S4",      "Soft Channel",     "Close",    "Open"     },
+        #
+        # Shutter Status for Visible Spectrometer
+        #
+#        {"CCS_LCSSHUT_DIAG_VSPEC_S1",    "shutter vspec. S1",      "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_VSPEC_S2",    "shutter vspec. S2",      "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_VSPEC_S3",    "shutter vspec. S3",      "Soft Channel",     "Close",    "Open"     },
+        #
+        # Shutter Status for H-Alpha Monitor
+        #
+#        {"CCS_LCSSHUT_DIAG_HAMON_S1",    "shutter Ha S1",          "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_HAMON_S2",    "shutter Ha S2",          "Soft Channel",     "Close",    "Open"     },
+        #
+        # Shutter Status for Vislble TV
+        #
+#        {"CCS_LCSSHUT_DIAG_TV_S1",       "shutter TV S1",          "Soft Channel",     "Close",    "Open"     },
+#        {"CCS_LCSSHUT_DIAG_TV_S2",       "shutter TV S2",          "Soft Channel",     "Close",    "Open"     },
+        #
+        # Shutter Status for Milli-meter Wave
+        #
+#        {"CCS_LCSSHUT_DIAG_MMW_S1",      "shutter MMW S1",         "Soft Channel",     "Close",    "Open"     },
+
+
+        {"CCS_STATUS_AIR_PRESSURE",      "Air Pressure",           "Soft Channel",     "Normal",    "Fault"   },
+        {"CCS_STATUS_ROOM_PRESSURE",     "Room Pressure",          "Soft Channel",     "Normal",    "Fault"   },
+
+        {"CCS_STATUS_154_VS",            "154kV VS",               "Soft Channel",     "Normal",   "Voltage Sag" },
+        {"CCS_STATUS_229_VS",            "22.9kV VS",              "Soft Channel",     "Normal",   "Voltage Sag" },
+
+        {"CCS_STATUS_154_INTERRUPT",     "154kV Blackout",         "Soft Channel",     "Normal",   "Blackout" },
+        {"CCS_STATUS_229_INTERRUPT",     "22.9kV Blackout",        "Soft Channel",     "Normal",   "Blackout" },
+
+        {"CCS_INTL_NORMAL",              "KSTAR INTL St.",         "Soft Channel",     "DeActivate", "Activate" },
+
+# move from CCS_J for the stable operation to rebooting of CCS_J.  2013. 7. 11
+        { "CCS_TF_MPS_ONOFF",    "TF MPS Status",         "Soft Channel",        "OFF",          "ON" },
+        { "CCS_PF_MPS_ONOFF",    "PF MPS Status",         "Soft Channel",        "OFF",          "ON" },
+        { "CCS_GDC_ONOFF",       "GDC Status",            "Soft Channel",        "OFF",          "ON" },
+        { "CCS_ICWC_ONOFF",      "ICRH Wall cleaning",    "Soft Channel",        "OFF",          "ON" },
+        { "CCS_WC_STATUS",       "Wall cleaning status",  "Soft Channel",        "NotWCMode",    "WCMode" }
+
+}
+
+##
+#
+file db/ccs_mainScreenSoftPVs_MBBI.db
+{
+    pattern
+        { NAME,   DESC,   DEVICE,    ZRST,   ONST,    TWST, THST, FRST, FVST, SXST, SVST, EIST }
+#
+#       KSTAR Operation Status Control
+        { "CCS_OPST_CONTROL", "KSTAR OP Ctrl", "Soft Channel", "Maintain", "VAC. Pump", "Cooldown", "Charge-up", "Experiment", "Warm-up", "", "", "" },
+        { "CCS_OPST_CW_STAGE", "CDN Stage", "Soft Channel", "None", "1st Stage", "2nd Stage", "3rd Stage", "Complete", "", "", "", "" },
+#
+#       Display Interlock Status
+#       
+        { "CCS_INTLST_LEVEL", "Intl. Level", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+#
+#       Display the intlock Status of Local Contorl System
+#
+        { "CCS_LCSINTL_PSI", "PSI intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_CCS", "CCS intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_ELECT", "GEP intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_CHILL", "CWF intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_VMS", "VMS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_QDS", "QDS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_TMS", "TMS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_HRS", "HRS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS", "MPS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_CLS_HELIUM", "CLS HE Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_CLS_VACUUM", "CLS VAC Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_ECH", "ECH Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_DLS", "DLS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_GDS", "GDS Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_ICH", "ICH Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_HDS_HELIUM", "HDS HE Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_HDS_VACUUM", "HDS VAC Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_NBI1", "NBI1 Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+#        { "CCS_LCSINTL_NBI2", "NBI2 Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_LHCD", "LHCD Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_ECCD", "ECCD Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_INTL", "INTL Intl. L",  "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_CWF", "CWF Intl. L",  "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_SIS", "SIS intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_PMS", "PMS intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+
+        { "CCS_LCSINTL_MPS_TF", "TF Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF1", "PF1 Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF2", "PF2 Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF3U", "PF3U Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF3L", "PF3L Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },        
+        { "CCS_LCSINTL_MPS_PF4U", "PF4U Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF4L", "PF4L Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF5U", "PF5U Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF5L", "PF5L Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF6U", "PF6U Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF6L", "PF6L Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_PF7", "PF7 Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+        { "CCS_LCSINTL_MPS_IVC", "IVC Intl. L", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", "" },
+#        { "CCS_LCSINTL_RESERVED_17", "Reserved 17", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", ""},
+#        { "CCS_LCSINTL_RESERVED_18", "Reserved 18", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", ""},
+#        { "CCS_LCSINTL_RESERVED_19", "Reserved 19", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", ""},
+#        { "CCS_LCSINTL_RESERVED_20", "Reserved 20", "Soft Channel", "Normal", "L1", "L2", "L3", "L4", "Warning", "", "", ""},
+#
+#       Display the status of Local Control System
+#
+        { "CCS_LCSST_CCS", "CCS st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_TMS_CRYO", "TMS CRYO st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_TMS_MECH", "TMS Mech st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_PCS",      "PCS st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF1", "MPS PF1 st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF2", "MPS PF2 st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF3U", "MPS PF3U st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF3L", "MPS PF3L st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF4U", "MPS PF4U st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF4L", "MPS PF4L st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF5U", "MPS PF5U st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF5L", "MPS PF5L st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },        
+        { "CCS_LCSST_MPS_PF6U", "MPS PF6U st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF6L", "MPS PF6L st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_PF7", "MPS PF7 st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_TF",  "MPS TF st.",  "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_IVC",  "MPS IVC st.",  "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MPS_RMP",  "MPS RMP st.",  "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+
+        { "CCS_LCSST_ECH",  "ECH st.",  "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ICH",  "ICH st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_NBI1",  "NBI1 st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+#        { "CCS_LCSST_NBI2",  "NBI2 st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_LHCD",  "LHCD st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ECCD",  "ECCD st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        
+        { "CCS_LCSST_VMS_VV", "VMS VV st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_VMS_CR", "VMS CR st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_CLS_HELIUM", "CLS HE st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_CLS_VACUUM", "CLS VAC st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_FUEL", "Fuel St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_DLS", "DLS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_HRS", "HRS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_HDS_HELIUM", "HDS HE St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_HDS_VACUUM", "HDS VAC St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_INTL", "INTL St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_SIS", "INTL St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ICS", "ICS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_PSI", "PSI St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_DATA", "DATA St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_GCDS", "GCDS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_FBM", "FBM St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_BORON", "BORON St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_PMS", "PMS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_SMBI", "SMBI St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MG", "MG St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },        
+
+        { "CCS_LCSST_DDS1A", "DDS1A st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_DDS1B", "DDS1B st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_HALPHA", "HALPHA st.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ER", "ER St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_FRLPA", "FRLPA St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_XICS", "XICS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_RBA", "RBA St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_SXR", "SXR St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_TS1", "TS1 St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_TS2", "TS2 St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ECEI", "ECEI St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_ECE-HR", "ECE-HR St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_CES", "CES St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_HXR", "HXR St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MC", "MC St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MC2", "MC2 St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_MMWI", "MMWI St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_VSS", "VSS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_VFS", "VFS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_IRVB", "IRVB St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_IRTV", "IRTV St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_NMS", "NMS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_VBS", "VBS St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_BES", "BES St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        { "CCS_LCSST_IRTVD1", "IRTV-D1 St.", "Soft Channel", "Abnormal", "Stop", "Operation", "", "", "", "", "", "" },
+        
+
+        { "CCS_STATUS_CWF", "CWF St.", "Soft Channel", "Normal", "Warning", "Fault", "", "", "", "", "", "" }
+}
+
+
+
+

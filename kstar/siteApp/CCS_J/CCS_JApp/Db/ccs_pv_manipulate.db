@@ -1,0 +1,26 @@
+#record(longin, "CCS_SHOT_NUMBER_LATCH") {
+#  field(DESC, "KSTAR latched Shot number")
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#  field(DTYP, "Soft Channel")
+#}
+
+#record(ai, "CCS_BLIP_TIME") {
+#  field(DESC, "KSTAR blip time")
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#  field(DTYP, "Soft Channel")
+#  field(VAL, "16")
+#}
+
+record(bi, "CCS_TSS_CONFIRM") {
+	field(DESC, "Blip confirmed by CCS")
+	field(DTYP, "Soft Channel")
+	field(ZNAM, "Not confirmed (0)")
+	field(ONAM, "Confirmed(1)")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	
+}
+
+

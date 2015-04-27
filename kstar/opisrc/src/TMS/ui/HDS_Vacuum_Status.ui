@@ -1,0 +1,2889 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../tms.qrc" >:/images/HDS_Vacuum_Status.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic" >
+   <property name="geometry" >
+    <rect>
+     <x>181</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV1_OP</string>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>5</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Periodic</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_2" >
+   <property name="geometry" >
+    <rect>
+     <x>167</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP1_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV1</string>
+     <string>HDS_VPS_R_GV1_OP</string>
+     <string>HDS_VPS_R_GV1_CL</string>
+     <string>HDS_VPS_W_GV1_ON</string>
+     <string>HDS_VPS_R_O_TMP1_ON</string>
+     <string>HDS_VPS_R_TMP1_ON</string>
+     <string>HDS_VPS_W_TMP1_ON</string>
+     <string>HDS_VPS_R_TMP1_AMP</string>
+     <string>HDS_VPS_R_TMP1_ROT</string>
+     <string>HDS_VPS_R_TMP1_STANDBY</string>
+     <string>HDS_VPS_R_TMP1_FAULT</string>
+     <string>HDS_VPS_R_TMP1_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_3" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP2_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV2</string>
+     <string>HDS_VPS_R_GV2_OP</string>
+     <string>HDS_VPS_R_GV2_CL</string>
+     <string>HDS_VPS_W_GV2_ON</string>
+     <string>HDS_VPS_R_O_TMP2_ON</string>
+     <string>HDS_VPS_R_TMP2_ON</string>
+     <string>HDS_VPS_W_TMP2_ON</string>
+     <string>HDS_VPS_R_TMP2_AMP</string>
+     <string>HDS_VPS_R_TMP2_ROT</string>
+     <string>HDS_VPS_R_TMP2_STANDBY</string>
+     <string>HDS_VPS_R_TMP2_FAULT</string>
+     <string>HDS_VPS_R_TMP2_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_4" >
+   <property name="geometry" >
+    <rect>
+     <x>297</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV2_OP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_5" >
+   <property name="geometry" >
+    <rect>
+     <x>398</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP3_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV3</string>
+     <string>HDS_VPS_R_GV3_OP</string>
+     <string>HDS_VPS_R_GV3_CL</string>
+     <string>HDS_VPS_W_GV3_ON</string>
+     <string>HDS_VPS_R_O_TMP3_ON</string>
+     <string>HDS_VPS_R_TMP3_ON</string>
+     <string>HDS_VPS_W_TMP3_ON</string>
+     <string>HDS_VPS_R_TMP3_AMP</string>
+     <string>HDS_VPS_R_TMP3_ROT</string>
+     <string>HDS_VPS_R_TMP3_STANDBY</string>
+     <string>HDS_VPS_R_TMP3_FAULT</string>
+     <string>HDS_VPS_R_TMP3_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_6" >
+   <property name="geometry" >
+    <rect>
+     <x>411</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV3_OP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_7" >
+   <property name="geometry" >
+    <rect>
+     <x>513</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP4_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV4</string>
+     <string>HDS_VPS_R_GV4_OP</string>
+     <string>HDS_VPS_R_GV4_CL</string>
+     <string>HDS_VPS_W_GV4_ON</string>
+     <string>HDS_VPS_R_O_TMP4_ON</string>
+     <string>HDS_VPS_R_TMP4_ON</string>
+     <string>HDS_VPS_W_TMP4_ON</string>
+     <string>HDS_VPS_R_TMP4_AMP</string>
+     <string>HDS_VPS_R_TMP4_ROT</string>
+     <string>HDS_VPS_R_TMP4_STANDBY</string>
+     <string>HDS_VPS_R_TMP4_FAULT</string>
+     <string>HDS_VPS_R_TMP4_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_8" >
+   <property name="geometry" >
+    <rect>
+     <x>527</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV4_OP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_9" >
+   <property name="geometry" >
+    <rect>
+     <x>628</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP5_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV5</string>
+     <string>HDS_VPS_R_GV5_OP</string>
+     <string>HDS_VPS_R_GV5_CL</string>
+     <string>HDS_VPS_W_GV5_ON</string>
+     <string>HDS_VPS_R_O_TMP5_ON</string>
+     <string>HDS_VPS_R_TMP5_ON</string>
+     <string>HDS_VPS_W_TMP5_ON</string>
+     <string>HDS_VPS_R_TMP5_AMP</string>
+     <string>HDS_VPS_R_TMP5_ROT</string>
+     <string>HDS_VPS_R_TMP5_STANDBY</string>
+     <string>HDS_VPS_R_TMP5_FAULT</string>
+     <string>HDS_VPS_R_TMP5_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_10" >
+   <property name="geometry" >
+    <rect>
+     <x>641</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV5_OP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_11" >
+   <property name="geometry" >
+    <rect>
+     <x>758</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV6_OP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_12" >
+   <property name="geometry" >
+    <rect>
+     <x>743</x>
+     <y>351</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP6_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_TMP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV6</string>
+     <string>HDS_VPS_R_GV6_OP</string>
+     <string>HDS_VPS_R_GV6_CL</string>
+     <string>HDS_VPS_W_GV6_ON</string>
+     <string>HDS_VPS_R_O_TMP6_ON</string>
+     <string>HDS_VPS_R_TMP6_ON</string>
+     <string>HDS_VPS_W_TMP6_ON</string>
+     <string>HDS_VPS_R_TMP6_AMP</string>
+     <string>HDS_VPS_R_TMP6_ROT</string>
+     <string>HDS_VPS_R_TMP6_STANDBY</string>
+     <string>HDS_VPS_R_TMP6_FAULT</string>
+     <string>HDS_VPS_R_TMP6_ERRCODE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_5" >
+   <property name="geometry" >
+    <rect>
+     <x>58</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_FG1</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_13" >
+   <property name="geometry" >
+    <rect>
+     <x>248</x>
+     <y>54</y>
+     <width>34</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VacuumGauge</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_CG1_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_CG_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_CG1_ON</string>
+     <string>HDS_VPS_W_CG1_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_6" >
+   <property name="geometry" >
+    <rect>
+     <x>191</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_CG1</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_7" >
+   <property name="geometry" >
+    <rect>
+     <x>324</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG1</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_8" >
+   <property name="geometry" >
+    <rect>
+     <x>515</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_FG2</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_9" >
+   <property name="geometry" >
+    <rect>
+     <x>648</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_CG2</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_10" >
+   <property name="geometry" >
+    <rect>
+     <x>781</x>
+     <y>17</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG2</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_11" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>602</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG3</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_12" >
+   <property name="geometry" >
+    <rect>
+     <x>515</x>
+     <y>602</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG4</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_13" >
+   <property name="geometry" >
+    <rect>
+     <x>669</x>
+     <y>602</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG5</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_14" >
+   <property name="geometry" >
+    <rect>
+     <x>949</x>
+     <y>490</y>
+     <width>128</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG6</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_14" >
+   <property name="geometry" >
+    <rect>
+     <x>709</x>
+     <y>54</y>
+     <width>34</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VacuumGauge</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_CG2_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_CG_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_CG2_ON</string>
+     <string>HDS_VPS_W_CG2_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_15" >
+   <property name="geometry" >
+    <rect>
+     <x>412</x>
+     <y>507</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV8_OP</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_GV_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV8</string>
+     <string>HDS_VPS_R_GV8_OP</string>
+     <string>HDS_VPS_R_GV8_CL</string>
+     <string>HDS_VPS_W_GV8_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_16" >
+   <property name="geometry" >
+    <rect>
+     <x>814</x>
+     <y>441</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_GV7_OP</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_GV_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_GV7</string>
+     <string>HDS_VPS_R_GV7_OP</string>
+     <string>HDS_VPS_R_GV7_CL</string>
+     <string>HDS_VPS_W_GV7_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_17" >
+   <property name="geometry" >
+    <rect>
+     <x>873</x>
+     <y>303</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_RV_OP</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_GV_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_RV</string>
+     <string>HDS_VPS_R_RV_OP</string>
+     <string>HDS_VPS_R_RV_CL</string>
+     <string>HDS_VPS_W_RV_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_18" >
+   <property name="geometry" >
+    <rect>
+     <x>817</x>
+     <y>649</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>64</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_EXV_OP</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_GV_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_EX_V</string>
+     <string>HDS_VPS_R_EXV_OP</string>
+     <string>HDS_VPS_R_EXV_CL</string>
+     <string>HDS_VPS_W_EXV_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_19" >
+   <property name="geometry" >
+    <rect>
+     <x>297</x>
+     <y>507</y>
+     <width>42</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>42</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_LAMP_SV1_OP</string>
+   </property>
+   <property name="filename" >
+    <string/>
+   </property>
+   <property name="pvs" >
+    <stringlist/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_20" >
+   <property name="geometry" >
+    <rect>
+     <x>931</x>
+     <y>350</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_LAMP_SV2_OP</string>
+   </property>
+   <property name="filename" >
+    <string/>
+   </property>
+   <property name="pvs" >
+    <stringlist/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_21" >
+   <property name="geometry" >
+    <rect>
+     <x>398</x>
+     <y>556</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::DRP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_BP_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_BP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_BP</string>
+     <string>HDS_VPS_R_BP_ON</string>
+     <string>HDS_VPS_W_BP_ON</string>
+     <string>HDS_VPS_R_O_DRY_ROOT</string>
+     <string>HDS_VPS_R_DRY_ROOT</string>
+     <string>HDS_VPS_R_DRY_ALM</string>
+     <string>HDS_VPS_R_DRY_WARN</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_22" >
+   <property name="geometry" >
+    <rect>
+     <x>858</x>
+     <y>487</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::BP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_MBP_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_MBP_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_O_MBP_ON</string>
+     <string>HDS_VPS_R_MBP_ON</string>
+     <string>HDS_VPS_W_MBP_ON</string>
+     <string>HDS_VPS_R_O_RP_ON</string>
+     <string>HDS_VPS_R_RP_ON</string>
+     <string>HDS_VPS_W_RP_ON</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_23" >
+   <property name="geometry" >
+    <rect>
+     <x>859</x>
+     <y>556</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::RP</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>68</red>
+     <green>142</green>
+     <blue>144</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_RP_ON</string>
+   </property>
+   <property name="filename" >
+    <string/>
+   </property>
+   <property name="pvs" >
+    <stringlist/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_24" >
+   <property name="geometry" >
+    <rect>
+     <x>938</x>
+     <y>44</y>
+     <width>127</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_CG2_ON</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_SIS_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_VPS_R_N2_PRESSURE</string>
+     <string>HDS_VPS_R_AIR_PRESSURE</string>
+     <string>HDS_VPS_R_PCW_RETURN_TEMP1</string>
+     <string>HDS_VPS_R_PCW_RETURN_TEMP2</string>
+     <string>HDS_VPS_R_PCW_RETURN_PRESSURE</string>
+     <string>HDS_VPS_R_PCW_SUPPLY_TEMP1</string>
+     <string>HDS_VPS_R_PCW_SUPPLY_PRESSURE</string>
+     <string>HDS_VPS_R_PCW_FLOW_RATE</string>
+     <string>HDS_VPS_R_PRS_ALM</string>
+     <string>HDS_VPS_R_O_INT_LEVEL1</string>
+     <string>HDS_VPS_R_PRS_WARN_LEVEL1</string>
+     <string>HDS_VPS_W_PRS_LEV1</string>
+     <string>HDS_VPS_R_O_INT_LEVEL2</string>
+     <string>HDS_VPS_R_PRS_WARN_LEVEL2</string>
+     <string>HDS_VPS_W_PRS_LEV2</string>
+     <string>HDS_VPS_R_O_INT_LEVEL3</string>
+     <string>HDS_VPS_R_PRS_WARN_LEVEL3</string>
+     <string>HDS_VPS_W_PRS_LEV3</string>
+     <string>HDS_VPS_R_O_INT_LEVEL4</string>
+     <string>HDS_VPS_R_PRS_WARN_LEVEL4</string>
+     <string>HDS_VPS_W_PRS_LEV4</string>
+     <string>HDS_VPS_R_O_INT_LEVEL5</string>
+     <string>HDS_VPS_R_PRS_WARN_LEVEL5</string>
+     <string>HDS_VPS_W_PRS_LEV5</string>
+     <string>HDS_VPS_W_HARD_INT_ON</string>
+     <string>HDS_VPS_R_HARD_INT_USE</string>
+     <string>HDS_VPS_W_PRS_INT_ON</string>
+     <string>HDS_VPS_R_PRESSURE_INTERLOCK_USE</string>
+     <string>HDS_VPS_R_O_DCU_SELECT</string>
+     <string>HDS_VPS_R_O_SIGN_TOWER_RED</string>
+     <string>HDS_VPS_R_O_SIGN_TOWER_YELLOW</string>
+     <string>HDS_VPS_R_O_SIGN_TOWER_GREEN</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>936</x>
+     <y>52</y>
+     <width>127</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>INTERLOCK panel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel" >
+   <property name="geometry" >
+    <rect>
+     <x>125</x>
+     <y>0</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_FG1_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_2" >
+   <property name="geometry" >
+    <rect>
+     <x>259</x>
+     <y>0</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_CG1_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_3" >
+   <property name="geometry" >
+    <rect>
+     <x>391</x>
+     <y>0</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG1_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_4" >
+   <property name="geometry" >
+    <rect>
+     <x>583</x>
+     <y>1</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_FG2_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_5" >
+   <property name="geometry" >
+    <rect>
+     <x>716</x>
+     <y>0</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_CG2_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_6" >
+   <property name="geometry" >
+    <rect>
+     <x>849</x>
+     <y>0</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG2_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_7" >
+   <property name="geometry" >
+    <rect>
+     <x>1017</x>
+     <y>524</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG6_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_8" >
+   <property name="geometry" >
+    <rect>
+     <x>737</x>
+     <y>635</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG5_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_9" >
+   <property name="geometry" >
+    <rect>
+     <x>583</x>
+     <y>635</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG4_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_10" >
+   <property name="geometry" >
+    <rect>
+     <x>198</x>
+     <y>635</y>
+     <width>60</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_PG3_STS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>DATA OK</string>
+     <string>Under Range</string>
+     <string>Over Range</string>
+     <string>Sensor Error</string>
+     <string>Sensor Off</string>
+     <string>No Sensor</string>
+     <string>ID Error</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_11" >
+   <property name="geometry" >
+    <rect>
+     <x>196</x>
+     <y>398</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP1_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_12" >
+   <property name="geometry" >
+    <rect>
+     <x>311</x>
+     <y>398</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP2_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_13" >
+   <property name="geometry" >
+    <rect>
+     <x>428</x>
+     <y>397</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP3_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_14" >
+   <property name="geometry" >
+    <rect>
+     <x>543</x>
+     <y>398</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP4_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_15" >
+   <property name="geometry" >
+    <rect>
+     <x>659</x>
+     <y>397</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP5_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_16" >
+   <property name="geometry" >
+    <rect>
+     <x>773</x>
+     <y>397</y>
+     <width>100</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text" >
+    <string>TMP Err</string>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_TMP6_ERRCODE</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>state0</string>
+     <string>EX ROT SPEED</string>
+     <string>POWER PACK ERR</string>
+     <string>state 3</string>
+     <string>state 4</string>
+     <string>state 5</string>
+     <string>START TIME ERR</string>
+     <string>OP FLUID ERR</string>
+     <string>TC AND PUMP ERR</string>
+     <string>state 9</string>
+     <string>state 10</string>
+     <string>state 11</string>
+     <string>state 12</string>
+     <string>state 13</string>
+     <string>HEAT-COOL ERR</string>
+     <string>TC CTRL ERR</string>
+     <string></string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_50" >
+   <property name="geometry" >
+    <rect>
+     <x>939</x>
+     <y>2</y>
+     <width>20</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>L1</string>
+   </property>
+   <property name="indent" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_51" >
+   <property name="geometry" >
+    <rect>
+     <x>965</x>
+     <y>2</y>
+     <width>20</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>L2</string>
+   </property>
+   <property name="indent" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_52" >
+   <property name="geometry" >
+    <rect>
+     <x>990</x>
+     <y>2</y>
+     <width>21</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>L3</string>
+   </property>
+   <property name="indent" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_53" >
+   <property name="geometry" >
+    <rect>
+     <x>1014</x>
+     <y>2</y>
+     <width>20</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>L4</string>
+   </property>
+   <property name="indent" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_54" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>2</y>
+     <width>20</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>W</string>
+   </property>
+   <property name="indent" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="ca211_6" >
+   <property name="geometry" >
+    <rect>
+     <x>1039</x>
+     <y>18</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>200</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_INT_LEVEL5</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="ca211_7" >
+   <property name="geometry" >
+    <rect>
+     <x>1014</x>
+     <y>18</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>200</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_INT_LEVEL4</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="ca211_8" >
+   <property name="geometry" >
+    <rect>
+     <x>989</x>
+     <y>18</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>200</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_INT_LEVEL3</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="ca211_9" >
+   <property name="geometry" >
+    <rect>
+     <x>964</x>
+     <y>18</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>200</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_INT_LEVEL2</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="ca211_10" >
+   <property name="geometry" >
+    <rect>
+     <x>939</x>
+     <y>18</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>200</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>32</red>
+     <green>66</green>
+     <blue>66</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_VPS_R_O_INT_LEVEL1</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../tms.qrc" />
+ </resources>
+ <connections/>
+</ui>

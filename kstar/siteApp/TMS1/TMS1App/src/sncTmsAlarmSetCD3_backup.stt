@@ -1,0 +1,201 @@
+program sncTmsAlarmSetCD3
+option +r; /*Make the run-time code reentrant, thus allowing more than one instance of the state program to run on an IOC*/
+option -c; /* Allow the state proram to begin execution before connections are established to all channel */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+
+/* %% , %{, }%, is Escape to C Code */
+/*	TMS CoolDown 3st(HE Temp 4.5K Status) Alarm Setting */
+
+int i;
+int cd1st;
+int cd2st;
+int cd3st;
+assign cd1st to "TMS_CDSTATUS_1ST";
+assign cd2st to "TMS_CDSTATUS_2ST";
+assign cd3st to "TMS_CDSTATUS_3ST";
+
+monitor cd1st;
+monitor cd2st;
+monitor cd3st;
+
+float data[104];
+float tmsAlarmHihi[104];
+float tmsAlarmHigh[104];
+float tmsAlarmLow[104];
+float tmsAlarmLolo[104];
+
+int compareCount;  /* Compare PV Count Number First Line at File */
+int once;
+float tmpDiffMinor; /* Minor Set Value : 1st Line Value */
+float tmpDiffMajor; /* Major Set Value : 2nd Line Value */
+
+int dataCount;
+char *pfileName;
+string tmpStr1;
+string tmpStr2;
+float udf[104];
+
+evflag eventFlag1;
+
+
+/* Compare HRS Inlet to each other : Standard Value is second Min value PV */
+assign data to {"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+					    "", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", ""};
+monitor data;
+
+assign tmsAlarmHihi to {"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+					    "", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", ""};
+monitor tmsAlarmHihi; 
+
+assign tmsAlarmHigh to {"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+					    "", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", ""};
+monitor tmsAlarmHigh;
+
+assign tmsAlarmLow to {"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+					    "", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", ""};
+monitor tmsAlarmLow;
+
+assign tmsAlarmLolo to {"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+					    "", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", "",
+						"", "", "", "", "", "", "", ""};
+monitor tmsAlarmLolo;
+
+assign udf to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor udf;
+
+ss tmsTempAlarmSetCD3{
+	state init{
+		when (TRUE){
+					once=1;
+					pfileName = macValueGet("FNAME");
+/*					%% epicsThreadId threadId;           */
+					%% FILE *pfile;
+					%% pfile = fopen (pVar->pfileName, "r");
+					%% if(!pfile) { 
+					%% printf("error in fopen\n");
+/*					%% 	threadId = epicsThreadGetIdSelf();  */
+/*					%%	printf("threadID : %x\n",threadId);  */
+/*					%%	seqStop(threadId);                   */
+				%% }
+			%% fscanf(pfile, "%f", &pVar->tmpDiffMinor);  /* Minor Set Value : 1st Line Value */
+			%% fscanf(pfile, "%f", &pVar->tmpDiffMajor);  /* Major Set Value : 2nd Line Value */
+			%% fscanf(pfile, "%d", &pVar->compareCount);  /* Compare PV List Count : Max 104 PV */
+			
+			/* Data PV Alarm Set PV assign Each Alarm */
+            dataCount =0;
+            %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+											pvAssign(data[i], tmpStr1);
+											%%	sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+											pvAssign (udf[i], tmpStr2);
+											%%	sprintf(pVar->tmpStr2, "%s.HIHI", pVar->tmpStr1);
+											pvAssign (tmsAlarmHihi[dataCount], tmpStr2);
+											%%	sprintf(pVar->tmpStr2, "%s.HIGH", pVar->tmpStr1);
+											pvAssign (tmsAlarmHigh[dataCount], tmpStr2);
+											%%	sprintf(pVar->tmpStr2, "%s.LOW", pVar->tmpStr1);
+											pvAssign (tmsAlarmLow[dataCount], tmpStr2);
+											%%	sprintf(pVar->tmpStr2, "%s.LOLO", pVar->tmpStr1);
+											pvAssign (tmsAlarmLolo[dataCount], tmpStr2);
+											printf("connect %d %s\n", dataCount, tmpStr1);
+											dataCount++;
+											%%}
+			%% fclose(pfile);
+			printf("Data count number is %d\n",dataCount);
+		}state tms_alarm_set	
+	}
+	state tms_alarm_set{
+        	when (cd3st==1 && once==1){
+					for(i=0; i < dataCount; i++){
+							if(udf[i]==0){
+										tmsAlarmHihi[i] = tmpDiffMajor;
+										tmsAlarmHigh[i] = tmpDiffMinor;
+										tmsAlarmLow[i] = tmpDiffMinor;
+										tmsAlarmLolo[i] = tmpDiffMajor;
+										pvPut(tmsAlarmHihi[i]);
+										pvPut(tmsAlarmHigh[i]);
+										pvPut(tmsAlarmLow[i]);
+										pvPut(tmsAlarmLolo[i]);
+							}
+					}
+					once=0;
+			efSet(eventFlag1);
+			} state tms_alarm_set
+	}
+}
+ss tmsAlarmOnce{
+	state tms_alarm_once{
+			when(efTestAndClear(eventFlag1)){
+				if(cd3st==0 && cd2st==1){
+				once=1;
+				}
+			} state tms_alarm_once
+	}
+}
+

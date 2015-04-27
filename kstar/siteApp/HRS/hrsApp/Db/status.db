@@ -1,0 +1,24 @@
+record (bi, "hrs-s7-status") {
+  field (DTYP, "S7plc stat")
+  field (INP,  "@DB1PLC")
+  field (SCAN, "I/O Intr")
+  field (ZNAM, "disconnected")
+  field (ONAM, "connected")
+  field (ZSV,  "MAJOR")
+  field (FLNK, "hrs-s7-status-counter")
+}
+
+record (calc, "hrs-s7-status-counter")
+{
+   field (INPA, "hrs-s7-status-counter")
+   field (CALC, "A+1")
+   field (FLNK, "hrs-s7-disconnect-counter")
+}
+
+record (calc, "hrs-s7-disconnect-counter")
+{
+   field (INPA, "hrs-s7-status")
+   field (INPB, "hrs-s7-disconnect-counter.LA")
+   field (INPC, "hrs-s7-disconnect-counter")
+   field (CALC, "(A=0&&B=1)?C+1:C")
+}

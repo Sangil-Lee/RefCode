@@ -1,0 +1,48 @@
+#!../../bin/linux-ppc/DDS2
+
+## Register all support components
+dbLoadDatabase("../../dbd/DDS2.dbd",0,0)
+DDS2_registerRecordDeviceDriver(pdbbase) 
+
+epicsEnvSet(CLTU_IOC_DEBUG,"0")
+
+cd ${TOP}/iocBoot/${IOC}
+
+
+< initDriverDev1.cmd
+< initDriverDev2.cmd
+#< initDriverDev3.cmd
+
+
+cd ${TOP}
+
+## Load record instances
+dbLoadRecords("db/dds2.db")
+#dbLoadRecords("db/DDS2_AO.db")
+dbLoadTemplate("db/DDS2_AO.template")
+dbLoadTemplate("db/DDS2_BO.template")
+dbLoadTemplate("db/DDS2_BO_ZCAL.template")
+#dbLoadRecords("db/DDS2_String.db")
+dbLoadTemplate("db/DDS2_String.template")
+dbLoadRecords("db/dds2TimeStamp.db")
+# Delete SNL Create - Add DDS2_BI.db  at 20081107
+#dbLoadRecords("db/DDS_SoftPV.vdb", "SYS=DDS2")
+#dbLoadRecords("db/DDS_SoftPV_INTN.vdb", "SYS=DDS2")
+dbLoadRecords("db/DDS2_BI.db", "SYS=DDS2")
+dbLoadRecords("db/dbSysMon.db", "SYS=DDS2")
+
+dbLoadRecords("db/SYS_CLTU.db", "TYPE=LTU, SYS=DDS2" )
+createTaskCLTU("DDS2", "/dev/tss/cltu.0")
+
+
+
+iocInit()
+
+# cd ${TOP}/iocBoot/${IOC}
+# dbl > pvlist
+
+## Start any sequence programs
+#seq sncExample,"user=snl"
+seq sncDDS2BoProc
+seq sncDDS2DaqSeq
+

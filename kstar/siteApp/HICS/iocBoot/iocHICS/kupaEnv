@@ -1,0 +1,114 @@
+# ------------------------------------------------
+# kupaEnv for HICS
+# ------------------------------------------------
+# Any export is not needed why kupa is used for monitoring only
+# ------------------------------------------------
+
+# ------------------------------------------------
+# Set debug level to display on standard output
+# ------------------------------------------------
+#  -> 0(OFF)  1(FATAL) 2(ERROR) 3(WARN) 4(MON)
+#  -> 5(INFO) 6(DEBUG) 7(TRACE) 8(DATA) 9(ALL)
+# ------------------------------------------------
+
+kuSetPrintLevel (4)
+
+# ------------------------------------------------------------------------------
+# Name, Shot# PV, OpMode PV, Run PV, SamplingRate(Hz), StartTime, Duration, Delay(s)
+# ------------------------------------------------------------------------------
+# - If there is no PV, archiving will be handled by user's application
+# ------------------------------------------------------------------------------
+
+kupaInitManager ("HICS", "", "", "", 1, 0, 1, 0)
+
+# ------------------------------------------------------------------------------
+# Export Type (CSV, MDS, FILE), arg1, arg2, arg3, arg4, arg5, arg6
+# ------------------------------------------------------------------------------
+
+# None export
+
+# ------------------------------------------------------------------------------
+# PV Name, Tag Name, CA Type(0:DB, 1:CA, 2:Event), Description, Unit
+# ------------------------------------------------------------------------------
+
+kupaAddPV ("EC1_PSPLC_STAT_KSTAR", "", 2, "KSTAR Mode"  , "")
+kupaAddPV ("EC1_PLCS_STAT_FLT"   , "", 2, "ECH Error"   , "")
+kupaAddPV ("EC1_PSPLC_SLOW_LIST" , "", 2, "ECH Error"   , "")
+
+kupaAddPV ("ECEHR_READ_DATA_CH00", "", 2, "RT ECE01", "")
+kupaAddPV ("ECEHR_READ_DATA_CH01", "", 2, "RT ECE02", "")
+kupaAddPV ("ECEHR_READ_DATA_CH02", "", 2, "RT ECE03", "")
+kupaAddPV ("ECEHR_READ_DATA_CH03", "", 2, "RT ECE04", "")
+kupaAddPV ("ECEHR_READ_DATA_CH04", "", 2, "RT ECE05", "")
+kupaAddPV ("ECEHR_READ_DATA_CH05", "", 2, "RT ECE06", "")
+kupaAddPV ("ECEHR_READ_DATA_CH06", "", 2, "RT ECE07", "")
+kupaAddPV ("ECEHR_READ_DATA_CH07", "", 2, "RT ECE08", "")
+kupaAddPV ("ECEHR_READ_DATA_CH08", "", 2, "RT ECE09", "")
+kupaAddPV ("ECEHR_READ_DATA_CH09", "", 2, "RT ECE10", "")
+kupaAddPV ("ECEHR_READ_DATA_CH10", "", 2, "RT ECE11", "")
+kupaAddPV ("ECEHR_READ_DATA_CH11", "", 2, "RT ECE12", "")
+kupaAddPV ("ECEHR_READ_DATA_CH12", "", 2, "RT ECE13", "")
+kupaAddPV ("ECEHR_READ_DATA_CH13", "", 2, "RT ECE14", "")
+kupaAddPV ("ECEHR_READ_DATA_CH14", "", 2, "RT ECE15", "")
+kupaAddPV ("ECEHR_READ_DATA_CH15", "", 2, "RT ECE16", "")
+kupaAddPV ("ECEHR_READ_DATA_CH16", "", 2, "RT ECE17", "")
+kupaAddPV ("ECEHR_READ_DATA_CH17", "", 2, "RT ECE18", "")
+kupaAddPV ("ECEHR_READ_DATA_CH18", "", 2, "RT ECE19", "")
+kupaAddPV ("ECEHR_READ_DATA_CH19", "", 2, "RT ECE20", "")
+kupaAddPV ("ECEHR_READ_DATA_CH20", "", 2, "RT ECE21", "")
+kupaAddPV ("ECEHR_READ_DATA_CH21", "", 2, "RT ECE22", "")
+kupaAddPV ("ECEHR_READ_DATA_CH22", "", 2, "RT ECE23", "")
+kupaAddPV ("ECEHR_READ_DATA_CH23", "", 2, "RT ECE24", "")
+kupaAddPV ("ECEHR_READ_DATA_CH24", "", 2, "RT ECE25", "")
+kupaAddPV ("ECEHR_READ_DATA_CH25", "", 2, "RT ECE26", "")
+kupaAddPV ("ECEHR_READ_DATA_CH26", "", 2, "RT ECE27", "")
+kupaAddPV ("ECEHR_READ_DATA_CH27", "", 2, "RT ECE28", "")
+kupaAddPV ("ECEHR_READ_DATA_CH28", "", 2, "RT ECE29", "")
+kupaAddPV ("ECEHR_READ_DATA_CH29", "", 2, "RT ECE30", "")
+kupaAddPV ("ECEHR_READ_DATA_CH30", "", 2, "RT ECE31", "")
+kupaAddPV ("ECEHR_READ_DATA_CH31", "", 2, "RT ECE32", "")
+kupaAddPV ("ECEHR_READ_DATA_CH32", "", 2, "RT ECE33", "")
+kupaAddPV ("ECEHR_READ_DATA_CH33", "", 2, "RT ECE34", "")
+kupaAddPV ("ECEHR_READ_DATA_CH34", "", 2, "RT ECE35", "")
+kupaAddPV ("ECEHR_READ_DATA_CH35", "", 2, "RT ECE36", "")
+kupaAddPV ("ECEHR_READ_DATA_CH36", "", 2, "RT ECE37", "")
+kupaAddPV ("ECEHR_READ_DATA_CH37", "", 2, "RT ECE38", "")
+kupaAddPV ("ECEHR_READ_DATA_CH38", "", 2, "RT ECE39", "")
+kupaAddPV ("ECEHR_READ_DATA_CH39", "", 2, "RT ECE40", "")
+
+kupaAddPV ("ECH_LTU_P1_SEC0_T0", "", 2, "ECH START TIME", "")
+kupaAddPV ("ECH_LTU_P1_SEC0_T1", "", 2, "ECH END   TIME", "")
+
+kupaAddPV ("HICS_ECH_PWR_CTRL_TORMAG", "", 2, "Toroidal Magnetic Field", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_DTTIME", "", 2, "Control Interval", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGMANUAL", "", 2, "Target Set Manually On/Off", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGTEGAIN", "", 2, "Te Control Gain", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGPOS1", "", 2, "Target Position 1", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGPOS2", "", 2, "Target Position 2", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGPOS3", "", 2, "Target Position 3", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGPOS4", "", 2, "Target Position 4", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGPOS5", "", 2, "Target Position 5", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGVAL1", "", 2, "Target Value 1", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGVAL2", "", 2, "Target Value 2", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGVAL3", "", 2, "Target Value 3", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGVAL4", "", 2, "Target Value 4", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_TARGVAL5", "", 2, "Target Value 5", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_FLATXEON", "", 2, "Flat Xe Profile On/Off", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_FLATXEVAL", "", 2, "Flat Xe Profile Value", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_XECOEFA", "", 2, "Shaped Xe Profile Coef A", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_XECOEFB", "", 2, "Shaped Xe Profile Coef B", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_XECOEFC", "", 2, "Shaped Xe Profile Coef C", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_XECOEFD", "", 2, "Shaped Xe Profile Coef D", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_FLATNEVAL", "", 2, "NE(0) or NEL Value", "")
+kupaAddPV ("HICS_ECH_PWR_CTRL_ECHPOS", "", 2, "Normalized ECH Deposition", "")
+
+# ------------------------------------------------------------------------------
+# Register a post action to be executed after exporting
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Starts PV archive manager
+# ------------------------------------------------------------------------------
+
+kupaRunManager ()
+

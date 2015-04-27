@@ -1,0 +1,26 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AO.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    HOPR    LOPR    DRVH    DRVL    PREC}
+{NB1_P1ARC_ECMD_PAPL    NB1_P1ARC_ECMD_PAPL    plc1    "Pre-ARC Pulse Length"    100000    0    100000    0    0}
+{NB1_P1ARC_ECMD_MSDT    NB1_P1ARC_ECMD_MSDT    plc1    "ARC Mod. start delay"    100000    0    100000    0    2}
+{NB1_P1ARC_ECMD_MEDT    NB1_P1ARC_ECMD_MEDT    plc1    "ARC Mod. end delay"    100000    0    100000    0    2}
+#{NB1_P1ARC_ECMD_MFREQ   NB1_P1ARC_ECMD_MFREQ   plc1    "ARC Mod. Freq."    100000    0    100000    0    0}
+{NB1_P1ARC_ECMD_MFREQ_A   NB1_P1ARC_ECMD_MFREQ   plc1    "ARC Mod. Freq."    100000    0    100000    0    1}
+{NB1_P1ARC_ECMD_MDUTY   NB1_P1ARC_ECMD_MDUTY   plc1    "ARC Mod. Freq. duty"    100000    0    100000    0    0}
+#{NB1_P1BM_RTN_BMINT     NB1_P1BM_RTN_BMINT     plc1    "BM Func. interlock"    100000    0    100000    0    0}
+
+# 2012.10.17
+{NB1_P1ARC_ECMD_MSDT2    NB1_P1ARC_ECMD_MSDT2    plc1    "ARC Mod. start delay"    100000    0    100000    0    2}
+{NB1_P1ARC_ECMD_MEDT2    NB1_P1ARC_ECMD_MEDT2    plc1    "ARC Mod. end delay"    100000    0    100000    0    2}
+#{NB1_P1ARC_ECMD_MFREQ   NB1_P1ARC_ECMD_MFREQ   plc1    "ARC Mod. Freq."    100000    0    100000    0    0}
+{NB1_P1ARC_ECMD_MFREQ2_A   NB1_P1ARC_ECMD_MFREQ2   plc1    "ARC Mod. Freq."    100000    0    100000    0    1}
+{NB1_P1ARC_ECMD_MDUTY2   NB1_P1ARC_ECMD_MDUTY2   plc1    "ARC Mod. Freq. duty"    100000    0    100000    0    0}
+
+
+## 2012.08.09
+#{NB1_P2BM_RTN_BMINT     NB1_P2BM_RTN_BMINT     plc2    "BM Func. interlock"    100000    0    100000    0    0}
+}

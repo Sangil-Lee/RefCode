@@ -1,0 +1,28 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_BI.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    ZNAM    ONAM    ZSV    OSV}
+{NB1_P1ARC_RTN_RUN    NB1_P1ARC_RTN_RUN    plc1    "Power Supply Run"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_STOP    NB1_P1ARC_RTN_STOP    plc1    "Power Supply Stop"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_AMD    NB1_P1ARC_RTN_AMD    plc1    "Current Mode"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_VMD    NB1_P1ARC_RTN_VMD    plc1    "Voltage Mode"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_PMD    NB1_P1ARC_RTN_PMD    plc1    "Power Mode"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_LOC    NB1_P1ARC_RTN_LOC    plc1    "Local"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_EMG    NB1_P1ARC_RTN_EMG    plc1    "Emergency"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_P1ARC_RTN_RDY    NB1_P1ARC_RTN_RDY    plc1    "Emergency"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_P1ARC_RTN_MANIT    NB1_P1ARC_RTN_MANIT    plc1    "Emergency"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_P1ARC_RTN_FILMCON    NB1_P1ARC_RTN_FILMCON    plc1    "Fila Reset"    OFF    ON    NO_ALARM    MAJOR}
+
+# PS2 2012.07.03
+{NB1_P2ARC_STA_ESTOP	NB1_P2ARC_STA_ESTOP	plc2    "EMG STOP"    	OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_REM		NB1_P2ARC_STA_REM	plc2    "REMOTE/LOCAL"  OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_RDY		NB1_P2ARC_STA_RDY	plc2    "Ready"    	OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_RUN		NB1_P2ARC_STA_RUN	plc2    "RUN/STOP"    	OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_AMODE	NB1_P2ARC_STA_AMODE	plc2    "Current Mode"  OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_VMODE	NB1_P2ARC_STA_VMODE	plc2    "Voltage Mode"  OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2ARC_STA_PMODE	NB1_P2ARC_STA_PMODE	plc2    "Power Mode"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_P2PLC_STA_FILACTRLON   NB1_P2PLC_STA_FILACTRLON    plc2    "Fila Reset"    OFF    ON    NO_ALARM    MAJOR}
+}

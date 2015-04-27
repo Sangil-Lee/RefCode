@@ -1,0 +1,50 @@
+program sncPermission
+
+int permission_stat;
+assign permission_stat to "LH1_KSTAR_OPR_PER";
+monitor permission_stat;
+
+int oper_mode;
+assign oper_mode to "LH1_MODE_KSTAR";
+monitor oper_mode;
+
+int hv_sta;
+assign hv_sta to "LH1_PS_HVON_STAT";
+monitor hv_sta;
+
+int hv_off;
+assign hv_off to "LH1_PS_HVOFF_ECMD";
+
+ss PermissionApply
+{
+	state low
+	{
+		when(oper_mode == 1)
+		{
+			if(permission_stat == 0 && hv_sta == 1)
+			{
+				hv_off = 1;
+				pvPut(hv_off,SYNC);
+				epicsThreadSleep(1);
+				printf("Permission Set\n");
+				hv_off = 0;
+				pvPut(hv_off,SYNC);
+			}
+			epicsThreadSleep(1);
+		} state high
+		when(delay(1))
+		{
+		}state high
+	}
+	state high
+	{
+		when(permission_stat == 0)
+		{
+			epicsThreadSleep(1);
+		}state low
+		when(delay(1))
+		{
+		} state low
+	}
+}
+

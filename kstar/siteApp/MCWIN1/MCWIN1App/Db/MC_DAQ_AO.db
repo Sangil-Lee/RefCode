@@ -1,0 +1,64 @@
+record(ao, "$(PV_NAME)_SAMPLE_PERIOD")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_PERIOD")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) smpl_period")
+	field(SCAN, "Passive")
+	field(PREC, "7")
+	field(PINI,"YES")
+	field(VAL,"0.0000013")
+}
+record(ao, "$(PV_NAME)_SAMPLE_COUNT")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_COUNT")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) smpl_count")
+	field(SCAN, "Passive")
+	field(PINI,"YES")
+	field(VAL,"50000")
+}
+record(ao, "$(PV_NAME)_SAMPLE_PRECOUNT")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_PRECOUNT")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) smpl_precount")
+	field(SCAN, "Passive")
+	field(VAL,"0")
+}
+record(ao, "$(PV_NAME)_SAMPLE_MODE")
+{
+	field(DESC,"$(PV_NAME)_SAMPLE_MODE")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) smpl_mode")
+	field(SCAN, "Passive")
+	field(PINI,"YES")
+	field(VAL,"0")
+}
+record(ao, "$(PV_NAME)_SHOT_NUMBER")
+{
+	field(DESC,"$(PV_NAME)_SHOT_NUMBER")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) shot_number")
+	field(SCAN, "Passive")
+	field(PINI,"YES")
+	field(VAL,"1")
+}
+record(ao, "$(PV_NAME)_BLIP_TIME")
+{
+	field(DESC,"$(PV_NAME)_BLIP_TIME")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) blip_time")
+	field(SCAN, "Passive")
+	field(PINI,"YES")
+	field(VAL,"11.")
+}
+record(ao, "$(PV_NAME)_START_TIME")
+{
+	field(DESC,"$(PV_NAME)_START_TIME")
+	field(DTYP,"VXI1564a Control")
+	field(OUT,"@$(TASK) daq_time")
+	field(SCAN, "Passive")
+	field(PINI,"YES")
+	field(VAL,"0")
+}
+

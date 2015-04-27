@@ -1,0 +1,785 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>530</width>
+    <height>166</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>ECH Timing</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>530</width>
+      <height>144</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pixmap" >
+     <pixmap resource="../ech.qrc" >:/images/ECH_Timing_Popup.png</pixmap>
+    </property>
+    <property name="scaledContents" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca17" >
+    <property name="geometry" >
+     <rect>
+      <x>436</x>
+      <y>126</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT1_sec2</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca13" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>55</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T1_p2</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca03" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>55</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T0_p2</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca07" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>126</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT0_sec2</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca05" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>91</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT0_sec0</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca06" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>108</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT0_sec1</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca02" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>38</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T0_p1</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca14" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>73</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T1_p3</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca04" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>73</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T0_p3</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca15" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>91</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT1_sec0</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca12" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>38</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T1_p1</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca16" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>108</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_mT1_sec1</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca11" >
+    <property name="geometry" >
+     <rect>
+      <x>435</x>
+      <y>20</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T1_p0</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca01" >
+    <property name="geometry" >
+     <rect>
+      <x>341</x>
+      <y>20</y>
+      <width>94</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>20</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>94</width>
+      <height>18</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_LTU_T0_p0</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>60</red>
+      <green>76</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ech.qrc" />
+ </resources>
+ <connections/>
+</ui>

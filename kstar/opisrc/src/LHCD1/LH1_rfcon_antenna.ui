@@ -1,0 +1,5109 @@
+<ui version="4.0" >
+ <class>panel_rfcon_antenna</class>
+ <widget class="QWidget" name="panel_rfcon_antenna" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1078</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>270</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet" >
+    <string>font-size:18px;</string>
+   </property>
+   <property name="text" >
+    <string>ANTENNA RF CONTROLLER</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>610</x>
+     <y>50</y>
+     <width>460</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0,152, 255); 
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_43" >
+    <property name="geometry" >
+     <rect>
+      <x>2</x>
+      <y>10</y>
+      <width>530</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px; font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>LOSS SET</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="indent" >
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_62" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Forward</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_63" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_64" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_65" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_66" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_67" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_68" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_69" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>270</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_114" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 8</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_33" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_34" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH2</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH2</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_35" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH3</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH3</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_36" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH4</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH4</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_37" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH5</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH5</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_38" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH6</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH6</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_39" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH7</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH7</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_40" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FLOSS_CH8</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FLOSS_CH8</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_116" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Reverse</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_42" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_43" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH3</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH3</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_44" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH5</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH5</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_45" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH8</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH8</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_46" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH6</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH6</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_47" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH7</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH7</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_48" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH2</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH2</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_49" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_RLOSS_CH4</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_RLOSS_CH4</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_48" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>90</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS1_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_49" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>120</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS2_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_50" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>150</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS3_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_51" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>180</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS4_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_52" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>240</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS6_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_53" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>210</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS5_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_54" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>270</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS7_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_55" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>300</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REVLOSS8_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_56" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>90</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS1_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_57" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS3_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_58" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>210</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS5_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_59" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS4_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_60" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS8_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_61" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS6_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_62" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>270</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS7_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_63" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWDLOSS2_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_70" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>90</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_71" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>240</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_72" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_73" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_74" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>180</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_115" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>300</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_75" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>150</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_76" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>210</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_77" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>90</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_78" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>120</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_79" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>150</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_80" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_81" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>210</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_155" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>300</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_82" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>270</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_83" >
+    <property name="geometry" >
+     <rect>
+      <x>420</x>
+      <y>180</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>dB</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>580</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0,152, 255); 
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_42" >
+    <property name="geometry" >
+     <rect>
+      <x>2</x>
+      <y>10</y>
+      <width>480</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px; font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>VALUE READ</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="indent" >
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_134" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>150</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_135" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>90</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_136" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>120</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_137" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>180</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_138" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>210</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_139" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>240</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_140" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>270</y>
+      <width>42</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1-8</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_142" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Phase</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_8" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>90</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_12</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_9" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>120</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_13</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_10" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>150</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_14</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_11" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>180</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_15</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_12" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>210</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_16</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_13" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>240</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_17</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_14" >
+    <property name="geometry" >
+     <rect>
+      <x>370</x>
+      <y>270</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_18</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_141" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>90</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 1</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_15" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>90</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_16" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>90</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_17" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>90</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_143" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>P_forward</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_144" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>P_reverse</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_145" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>VSWR</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_18" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>120</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_146" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>120</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 2</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_19" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>120</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_20" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>120</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_21" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>150</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW3</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_22" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>150</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW3</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_23" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>150</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW3</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_147" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>150</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 3</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_24" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>180</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW4</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_25" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>180</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW4</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_26" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>180</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW4</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_148" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>180</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 4</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_27" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>210</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW5</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_28" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>210</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW5</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_29" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>210</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW5</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_149" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>210</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 5</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_30" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>240</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW6</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_31" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>240</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW6</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_32" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>240</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW6</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_150" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>240</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 6</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_33" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>270</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW7</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_34" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>270</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW7</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_35" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>270</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW7</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_151" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>270</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 7</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_36" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>300</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_POW8</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_152" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>300</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>CH 8</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_37" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>300</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_POW8</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_38" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>300</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_POW8</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_156" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>90</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 1-2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_160" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>120</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 2-3</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_43" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>210</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_56</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_42" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>120</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_23</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_154" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>240</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 6-7</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_41" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>90</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_12</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_159" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>270</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 7-8</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_45" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>180</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_45</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_157" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>180</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 4-5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_158" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>210</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 5-6</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_39" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>270</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_78</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_153" >
+    <property name="geometry" >
+     <rect>
+      <x>445</x>
+      <y>150</y>
+      <width>43</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 3-4</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_40" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>240</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_67</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_44" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>150</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_PHASE_34</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_161" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Phase</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_170" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>345</y>
+      <width>37</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>P_total</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_80" >
+    <property name="geometry" >
+     <rect>
+      <x>125</x>
+      <y>345</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_REV_TPOW</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_81" >
+    <property name="geometry" >
+     <rect>
+      <x>205</x>
+      <y>345</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_TPOW</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_82" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>345</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FWD_TPOW</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_176" >
+    <property name="geometry" >
+     <rect>
+      <x>7</x>
+      <y>375</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>P_LH</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_83" >
+    <property name="geometry" >
+     <rect>
+      <x>45</x>
+      <y>375</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_LHCD_POW</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_2" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>90</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP1_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_3" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>120</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP2_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_4" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>150</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP3_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_5" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>180</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP4_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_6" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>210</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP5_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_7" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>240</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP6_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_8" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>270</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP7_RTN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_9" >
+    <property name="geometry" >
+     <rect>
+      <x>280</x>
+      <y>300</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_TRIP8_RTN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_177" >
+    <property name="geometry" >
+     <rect>
+      <x>256</x>
+      <y>65</y>
+      <width>70</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Trip</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_5" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>460</y>
+     <width>420</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0,152, 255); 
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_44" >
+    <property name="geometry" >
+     <rect>
+      <x>2</x>
+      <y>10</y>
+      <width>380</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px; font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>DAQ SET</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="indent" >
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_2" >
+    <property name="geometry" >
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_READY</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ READY</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ READY</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_9" >
+    <property name="geometry" >
+     <rect>
+      <x>194</x>
+      <y>60</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_DAQ_DURA</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_DURA</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_45" >
+    <property name="geometry" >
+     <rect>
+      <x>265</x>
+      <y>65</y>
+      <width>25</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>S</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_46" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>65</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>DAQ duration</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_48" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Status</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_7" >
+    <property name="geometry" >
+     <rect>
+      <x>123</x>
+      <y>140</y>
+      <width>290</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQRDY_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::TrueFalse</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="truelabel" >
+     <string>READY</string>
+    </property>
+    <property name="falselabel" >
+     <string>Not Ready</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_3" >
+    <property name="geometry" >
+     <rect>
+      <x>300</x>
+      <y>100</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_STOP</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ STOP</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ STOP</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_54" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>105</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Sampling rate</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>120</x>
+      <y>64</y>
+      <width>70</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQDURA_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CAComboBox" name="caComboBox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>105</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="currentIndex" >
+     <number>0</number>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQSAMP_CMD</string>
+    </property>
+    <item>
+     <property name="text" >
+      <string>1 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>2 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>5 kHz</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>450</x>
+     <y>460</y>
+     <width>620</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0,152, 255); 
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_130" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_132" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_126" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 2</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_50" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH2</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH2</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_51" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH7</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH7</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_55" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH6</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_127" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 4</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_54" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_128" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 5</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_52" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH5</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_131" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>270</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_129" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 6</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_53" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH8</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH8</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_133" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 8</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_56" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH3</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH3</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_57" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH4</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_55" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>270</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px; font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>TRIP SET</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="indent" >
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_125" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>65</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>VSWR</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_67" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>90</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR1_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_64" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>150</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR3_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_65" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR2_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_66" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR4_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_69" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>210</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR5_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_68" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR6_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_70" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>270</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR7_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_71" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR8_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_84" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_85" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>150</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_86" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>240</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_87" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>210</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_162" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>300</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_88" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_89" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>90</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_90" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>180</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_163" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>90</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 1</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_72" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>240</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA6_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_58" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_164" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>300</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 8</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_59" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH2</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_60" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_165" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>150</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_166" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>120</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_167" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>240</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 6</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_61" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH4</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_73" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>180</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA4_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_168" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>65</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>GAMMA</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_62" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_169" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>270</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 7</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_74" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>150</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA3_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_63" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH7</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_75" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>300</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA8_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_76" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA1_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_77" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>120</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA2_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_171" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>180</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 4</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_78" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>270</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA7_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_79" >
+    <property name="geometry" >
+     <rect>
+      <x>290</x>
+      <y>210</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GAMMA5_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_172" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>210</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH 5</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_64" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH6</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_65" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH8</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_67" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>350</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_VSWR_CH1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvlist" stdset="0" >
+     <stringlist>
+      <string>LH1_RFANT_VSWR_CH2</string>
+      <string>LH1_RFANT_VSWR_CH3</string>
+      <string>LH1_RFANT_VSWR_CH4</string>
+      <string>LH1_RFANT_VSWR_CH5</string>
+      <string>LH1_RFANT_VSWR_CH6</string>
+      <string>LH1_RFANT_VSWR_CH7</string>
+      <string>LH1_RFANT_VSWR_CH8</string>
+     </stringlist>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_VSWR_CH1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_66" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>350</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvlist" stdset="0" >
+     <stringlist>
+      <string>LH1_RFANT_GRAD_CH2</string>
+      <string>LH1_RFANT_GRAD_CH3</string>
+      <string>LH1_RFANT_GRAD_CH4</string>
+      <string>LH1_RFANT_GRAD_CH5</string>
+      <string>LH1_RFANT_GRAD_CH6</string>
+      <string>LH1_RFANT_GRAD_CH7</string>
+      <string>LH1_RFANT_GRAD_CH8</string>
+     </stringlist>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_GRAD_CH1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_174" >
+    <property name="geometry" >
+     <rect>
+      <x>255</x>
+      <y>350</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>All</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_173" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>350</y>
+      <width>33</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>All</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_175" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>350</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>: 1</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>670</y>
+     <width>420</width>
+     <height>190</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0,152, 255); 
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_49" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>65</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Pulse width</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_47" >
+    <property name="geometry" >
+     <rect>
+      <x>354</x>
+      <y>65</y>
+      <width>25</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>S</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_10" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>91</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_FEED_DURA</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FEED_DURA</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_2" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>65</y>
+      <width>70</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_FBDURA_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAComboBox</class>
+   <extends>QComboBox</extends>
+   <header>caComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,84 @@
+program sncSeqTSSC
+
+option +r;
+option -c;
+
+%{
+
+#define STATUS_NOT_INIT                  0
+#define STATUS_STANDBY             1
+#define STATUS_ARM_ENABLED              2
+#define STATUS_WAIT_FOR_TRIGGER              3
+#define STATUS_IN_PROGRESS              4
+#define STATUS_POST_PROCESS       5
+#define STATUS_DATA_TRANSFER        6
+#define STATUS_SYSTEM_IDLE              7
+
+
+
+}%
+
+/***********************************************
+    Shot Number
+***********************************************/
+
+
+int       ts1_status;
+assign    ts1_status to "TS1_STATUS";
+monitor   ts1_status;
+
+
+int       ts1_arm;
+assign    ts1_arm to "TS1_SYS_ARMING";
+monitor   ts1_arm;
+
+/*
+int       ts1_run;
+assign    ts1_run to "TS1_SYS_RUN";
+monitor   ts1_run;
+*/
+
+int       ts1_period;
+assign    ts1_period to "TS1_B0_SET_STOP_TIME";
+monitor   ts1_period;
+
+
+int tssg_stop_pulse;
+assign tssg_stop_pulse  to "TSSC_STOP_PULSE";
+
+
+
+ss SysRunMonitor
+{
+   state wait_sys_arm {
+	entry {
+		%%printf("[SNL] wait TS1 arming.\n");
+	}
+     when( ts1_status == STATUS_ARM_ENABLED ) {
+/*	%%printf("[SNL] TS1 arming ok!\n"); */
+	tssg_stop_pulse = 0;
+	pvPut(tssg_stop_pulse);
+      } state wait_in_progress
+   }
+   
+    state wait_in_progress {
+     when( ts1_status == STATUS_IN_PROGRESS ) { }  state wait_sys_stop /* wait until in progress */
+
+     when( ts1_arm == 0 ) { 
+	tssg_stop_pulse = 1;
+	pvPut(tssg_stop_pulse);
+	%%printf("[SNL] TS1 stop abnormally!\n"); 
+      }  state wait_sys_arm 
+   }
+   
+   state wait_sys_stop {
+     when( delay(ts1_period) ) {
+       tssg_stop_pulse = 1;
+       pvPut(tssg_stop_pulse);
+
+     }  state wait_sys_arm
+   }
+
+}
+
+

@@ -1,0 +1,66 @@
+program crpModeSelector
+option +r;
+
+%%    #define ON           1
+%%    #define OFF          0
+%%    #define COOLDOWN     1
+%%    #define FULLREGEN    2
+
+short setMDSEL1;
+short setMDSEL2;
+short setREGEN;
+short monSelector;
+
+assign setMDSEL1 to "{SYS}:{SUB}:{CTRL}:MDSEL1";
+assign setMDSEL2 to "{SYS}:{SUB}:{CTRL}:MDSEL2";
+assign setREGEN  to "{SYS}:{SUB}:{CTRL}:REGEN";
+
+assign  monSelector to "{SYS}:{SUB}:{CTRL}:PWR";
+monitor monSelector;
+
+ss crpModeSelector {
+
+    state  state_off {
+        entry {
+            setMDSEL1 = OFF;
+            setMDSEL2 = OFF;
+            setREGEN  = OFF;
+            pvPut(setMDSEL1); pvPut(setREGEN); pvPut(setMDSEL2);
+        }
+
+        when(monSelector == COOLDOWN) {} state state_cooldown
+        when(monSelector == FULLREGEN) {} state state_fullregen        
+    }
+
+    state  state_cooldown {
+        entry {
+            setMDSEL2 = ON;
+            setREGEN  = ON;
+            pvPut(setMDSEL2); pvPut(setREGEN);
+        }
+
+        when(monSelector == OFF)      {} state state_off
+        when(monSelector != COOLDOWN) {    /* not allowed transition */
+            monSelector = OFF;
+            pvPut(monSelector);
+        } state state_off
+
+    }
+
+    state  state_fullregen {
+        entry {
+            setMDSEL2 = ON;
+            setMDSEL1 = ON;
+            setREGEN  = ON;
+            pvPut(setMDSEL2); pvPut(setMDSEL1); pvPut(setREGEN);
+        }
+
+        when(monSelector == OFF)      {} state state_off
+        when(monSelector != FULLREGEN) {    /* not allowed transition */
+            monSelector = OFF;
+            pvPut(monSelector);
+        } state state_off
+
+    }
+
+}

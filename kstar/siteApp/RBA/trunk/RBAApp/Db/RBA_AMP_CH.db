@@ -1,0 +1,31 @@
+record(mbbo, "RBA_AMP_GAIN_$(CH)") {
+  field(DESC, "RBA Amplifier Gain")
+  field(DTYP, "NI4882 MbboControl")
+  field(OUT, "@gain $(UNIT) $(UNIT_CH)")
+  field(ZRST, "20")
+  field(ONST, "50")
+  field(TWST, "100")
+  field(THST, "200")
+  field(FRST, "500")
+  field(FVST, "1000")
+  field(SXST, "2000")
+  field(SVST, "5000")
+}
+
+record(mbbo, "RBA_AMP_FLT_$(CH)") {
+  field(DESC, "RBA Amplifier Filter")
+  field(DTYP, "NI4882 MbboControl")
+  field(OUT, "@filter $(UNIT) $(UNIT_CH)")
+  field(ZRST, "200")
+  field(ONST, "1000")
+  field(TWST, "2000")
+  field(THST, "4000")
+}
+
+record(ao, "RBA_AMP_T_$(CH)") {
+  field(DESC, "RBA Amplifier Temp.")
+  field(DTYP, "NI4882 AoControl")
+  field(OUT, "@temp $(UNIT) $(UNIT_CH)")
+  field(PREC, "9")
+}
+

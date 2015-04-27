@@ -1,0 +1,18 @@
+device(ai,        GPIB_IO, devAiTMP,    "TMP")
+device(ao,        GPIB_IO, devAoTMP,    "TMP")
+device(bi,        GPIB_IO, devBiTMP,    "TMP")
+device(bo,        GPIB_IO, devBoTMP,    "TMP")
+device(event,     GPIB_IO, devEvTMP,    "TMP")
+device(longin,    GPIB_IO, devLiTMP,    "TMP")
+device(longout,   GPIB_IO, devLoTMP,    "TMP")
+device(mbbi,      GPIB_IO, devMbbiTMP , "TMP")
+device(mbbiDirect,GPIB_IO, devMbbidTMP, "TMP")
+device(mbbo,      GPIB_IO, devMbboTMP,  "TMP")
+device(mbboDirect,GPIB_IO, devMbbodTMP, "TMP")
+device(stringin,  GPIB_IO, devSiTMP,    "TMP")
+device(stringout, GPIB_IO, devSoTMP,    "TMP")
+device(waveform,  GPIB_IO, devWfTMP,    "TMP")
+
+variable(devPumpTMPDebug)
+
+include "asyn.dbd"

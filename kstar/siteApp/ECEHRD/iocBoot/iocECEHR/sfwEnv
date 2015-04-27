@@ -1,0 +1,23 @@
+### Standard Frame Work configuration.
+
+##### Common CA ADDR list ##############
+#epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.200 172.17.101.201 172.17.102.65")
+epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.200 172.17.101.201 172.17.101.210 127.0.0.1")
+#epicsEnvSet("EPICS_CA_ADDR_LIST", "172.17.101.200 172.17.101.201")
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "no")
+
+## MDS plus environment ###########
+epicsEnvSet("MDS_LOCAL_IP_PORT","172.17.102.77:8000")
+epicsEnvSet("MDS_LOCAL_TREE_NAME","electron")
+epicsEnvSet("MDS_LOCAL_EVENT_IP","none")
+
+epicsEnvSet("MDS_REMOTE_IP_PORT","172.17.100.202:8000")
+epicsEnvSet("MDS_REMOTE_TREE_NAME","r_electron")
+epicsEnvSet("MDS_REMOTE_EVENT_IP","none")
+
+epicsEnvSet("MDS_CAL_IP_PORT","172.17.102.77:8000")
+epicsEnvSet("MDS_CAL_TREE_NAME","electron")
+epicsEnvSet("MDS_CAL_EVENT_IP","none")
+
+epicsEnvSet("MDS_EVENT_ARG","ECEHR")
+

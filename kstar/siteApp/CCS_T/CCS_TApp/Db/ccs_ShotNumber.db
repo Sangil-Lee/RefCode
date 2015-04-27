@@ -1,0 +1,25 @@
+record(longin, CCS_SHOT_NUMBER) {
+  field(DESC, "KSTAR Shot number")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Soft Channel")
+}
+
+record(ai, "CCS_BLIP_TIME") {
+  field(DESC, "KSTAR blip time")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(DTYP, "Soft Channel")
+  field(VAL, "16")
+}
+
+record(bi, "CCS_CTU_shotStart") {
+  field(DESC, "get old CTU start time")
+  field(PINI, "YES")
+  field(DTYP, "Soft Channel")
+  field(INP, "TSS_CTU_shotStart CPP")
+  field(ZNAM, "flip(0)")
+  field(ONAM, "flop(1)")
+}
+
+

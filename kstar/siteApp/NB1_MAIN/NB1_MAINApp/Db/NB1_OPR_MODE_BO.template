@@ -1,0 +1,18 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_OPR_MODE_BO.db
+{
+pattern
+{PVNAME        TAG     LNKNAME	PLC     DESC	SCAN}
+{NB1_P1GV2_DO_OPEN    NB1_P1GV2_DO_OPEN    NB1_VAC_GAV_O08	plc1    "G/V2 Open"	".1 second"}
+{NB1_GV1_DO_OPEN    NB1_GV1_DO_OPEN    NB1_VAC_GAV_O07	plc1    "G/V1 Open"	".1 second"}
+{NB1_CAL_DO_TOP    NB1_CAL_DO_TOP    NB1_SRV_RTN_CALTOP	plc1    "Calori Top"	".1 second"}
+{NB1_CAL_DO_BOT    NB1_CAL_DO_BOT    NB1_BLS_SRV_O01	plc1    "Calori Bottom"	".1 second"}
+
+## PS2 MODE
+{NB1_P2GV2_DO_OPEN    NB1_P2GV2_DO_OPEN    NB1_VAC_GAV_O16	plc2    "G/V22 Open"	".1 second"}
+{NB1_P2GV1_DO_OPEN    NB1_GV1_DO_OPEN    NB1_VAC_GAV_O07	plc2    "G/V1 Open"	".1 second"}
+{NB1_P2CAL_DO_TOP    NB1_CAL_DO_TOP    NB1_SRV_RTN_CALTOP	plc2    "Calori Top"	".1 second"}
+{NB1_P2CAL_DO_BOT    NB1_CAL_DO_BOT    NB1_BLS_SRV_O01		plc2    "Calori Bottom"	".1 second"}
+}

@@ -1,0 +1,14 @@
+[USAGE]#>ether_ip_test -i PLC_IP PLG_TAG_NAME
+
+
+exmaple>
+[root@CWF src]# ether_ip_test -i 172.17.101.158 CWF_WATER_TEMP
+Tag 'CWF_WATER_TEMP'
+REAL -29.975401
+
+[root@CWF src]# ether_ip_test -i 172.17.101.158 TRA_HPAC02A
+Tag 'TRA_HPAC02A'
+DINT 27
+
+ether_ip_test source:
+/usr/local/kics/trunk/siteLib/ether_ipLib/src

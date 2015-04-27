@@ -1,0 +1,23 @@
+#epicsThreadSleep 2.
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP1"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP2"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP3"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP4"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP5"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP6"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP7"
+#seq tmpScan, "SYS=VAC, SUB=VVSL, CTRL=TMP8"
+
+#epicsThreadSleep 2.
+#seq crpScan, "SYS=VAC, SUB=VVSL, CTRL=CRP1"
+#seq crpScan, "SYS=VAC, SUB=VVSL, CTRL=CRP2"
+
+
+#epicsThreadSleep 2.
+#seq crpModeSelector, "SYS=VAC, SUB=VVSL, CTRL=CRP1"
+#epicsThreadSleep 2.
+#seq crpModeSelector, "SYS=VAC, SUB=VVSL, CTRL=CRP2"
+
+#epicsThreadSleep 2.
+#seq scenario
+seq SRSRGA

@@ -1,0 +1,146 @@
+program sncRuntimeMonitor
+
+option +r;
+option -c;
+
+/*
+%{
+
+#define       SHOTSEQ_STATUS_NOTDEF       0
+#define       SHOTSEQ_STATUS_SETTSS       1
+#define       SHOTSEQ_STATUS_MPSSTANDBY   2
+#define       SHOTSEQ_STATUS_PCSSTANDBY   3
+#define       SHOTSEQ_STATUS_MPSRUN       4
+#define       SHOTSEQ_STATUS_SHOTSTART    5
+#define       SHOTSEQ_STATUS_DURINGSHOT   6
+#define       SHOTSEQ_STATUS_ENDOFSHOT    7
+#define       SHOTSEQ_STATUS_MPSSTOP      8
+#define       SHOTSEQ_STATUS_TERMINATION  9
+
+}%
+*/
+
+int         seq_start;
+assign      seq_start to "CCS_SHOTSEQ_START";
+monitor     seq_start;
+
+int         trig_start;
+assign      trig_start to "TSS_CTU_shotStart";
+monitor     trig_start;
+evflag      ef_trig_start;
+sync        trig_start       ef_trig_start;
+evflag      ef_shot_trigg;
+
+/*
+int         seq_st_status_num;
+assign      seq_st_status_num    to "CCS_SHOTSEQ_STAGE";
+monitor     seq_st_status_num;
+*/
+int  rt_plasma_status;
+assign  rt_plasma_status   to "CCS_RT_PLASMA_STATUS";
+monitor  rt_plasma_status;
+
+float plasma_threadhold;
+assign  plasma_threadhold  to  "CCS_PLASMA_STATUS_THRESHOLD";
+monitor plasma_threadhold;
+
+float rt_plasma_current;
+assign  rt_plasma_current  to "RTMON_PLASMA_CURRENT";
+monitor rt_plasma_current;
+
+float       pcs_check_time;
+assign      pcs_check_time to "CCS_PCS_CHECK_TIME";
+monitor     pcs_check_time;
+
+int       plasma_disruption;
+assign      plasma_disruption to "CCS_DISRUPTION_EVENT";
+
+ss realtime_monitor
+{
+    state Normal
+    {
+		entry {
+			rt_plasma_status = 0;
+			pvPut( rt_plasma_status );
+		}
+        
+        when(seq_start ) {
+/*			printf("go to 'Check_Plasma_ON'\n"); */
+		efClear(ef_trig_start);
+		efClear(ef_shot_trigg);
+		plasma_disruption = 0; pvPut( plasma_disruption );
+        } state Check_Triggering
+    }
+
+    state Check_Triggering
+    {
+       when( !seq_start ) {} state Normal
+       
+    	when(efTestAndClear(ef_trig_start)) 
+       { 
+		efSet(ef_shot_trigg);
+    		
+	} state Check_Plasma_ON
+
+    }
+    
+    state Check_Plasma_ON
+    {
+       when( !seq_start ) {} state Normal
+       
+    	when( rt_plasma_current > plasma_threadhold ) {
+    		rt_plasma_status = 1;
+     		pvPut( rt_plasma_status );
+    		
+    	} state Check_Plasma_Off
+
+    }
+
+    state Check_Plasma_Off
+    {
+    	when( !seq_start ) {} state Normal
+    	
+	    when( rt_plasma_current < plasma_threadhold ) {
+    		rt_plasma_status = 0;
+		    pvPut( rt_plasma_status );
+/*			printf("plasma Off, go back to waitQ\n"); */
+    		
+    	} state wait_seq_end
+
+    }
+
+	state wait_seq_end
+	{
+		when(!seq_start ) {} state Normal
+	}
+     
+}
+
+ss check_distruption
+{
+    state init {
+        entry { }
+
+        when(TRUE) {} state monit
+    }
+
+    state monit {
+        when(efTestAndClear(ef_shot_trigg)) {
+            epicsThreadSleep(pcs_check_time + 0.5);
+        } state monit_after_shot
+    }
+
+     state monit_after_shot {
+     
+        when(!seq_start) {} state monit
+        
+        when( !rt_plasma_status  ) {
+	        plasma_disruption = 1;
+	        pvPut( plasma_disruption );
+        } state init
+    }
+  
+}
+
+
+

@@ -1,0 +1,27 @@
+record(ai, "$(PV_NAME)_ION") {
+  field(DTYP, "SRSRGA")
+  field(INP, "#L12 A0 @$(INP)")
+  field(EGU, "A")
+  field(UDF, "")
+  field(FLNK, "$(PV_NAME)_IN")
+}
+
+record(calc, "$(PV_NAME)_IN") {
+  field(CALC, "(B/A)*(1013/760)*1000")
+  field(INPA, "CLB_TF_RGA_SP.VAL")
+  field(INPB, "$(PV_NAME)_ION.VAL")
+  field(EGU, "mbar")
+  field(PREC, "2")
+  field(FLNK, "$(PV_NAME)")
+}
+
+record(calc, "$(PV_NAME)") {
+  field(CALC, "A?B:C")
+  field(INPA, "CLB_TF_RGA_FL_ON CPP")
+  field(INPB, "$(PV_NAME)_IN CPP")
+  field(C,"0")
+#  field(INPC, "$(PV_NAME)_IN NPP")
+  field(DESC, "$(DESC)")
+  field(EGU, "mbar")
+  field(PREC, "2")
+}

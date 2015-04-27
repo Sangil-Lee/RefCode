@@ -1,0 +1,172 @@
+program sncDlsProctect
+option +r;
+option -c;
+%% #include <string.h>
+
+int i;
+int checkShut;
+
+string tmpStr1;
+string tmpStr2;
+
+int dataCount;
+char *pfileName;
+int shutter[16];
+int shutterStatus[16];
+
+assign shutter to {"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", ""};
+assign shutterStatus to {"", "", "", "", "", "", "", "",
+                	"", "", "", "", "", "", "", ""};
+monitor shutter;
+monitor shutterStatus;
+
+%% /* shutter valve state     */
+%% /* Val = 0 - shutter Close */
+%% /* Val = 1 - shutter Open  */ 
+%% /* Diag Requirement : All shutter close 1.1sec before the RF/DC discharge cleaning Run */ 
+%% /* Diag Requirement : All shutter open after the RF/DC discharge cleaning Stop */ 
+
+unsigned int gdcAF;
+assign gdcAF to "DCLN_APORT_FWRD";
+monitor gdcAF;
+evflag fgdcAF;
+sync gdcAF fgdcAF;
+
+unsigned int gdcAB;
+assign gdcAB to "DCLN_APORT_BWRD";
+monitor gdcAB;
+evflag fgdcAB;
+sync gdcAB fgdcAB;
+
+unsigned int gdcIF;
+assign gdcIF to "DCLN_IPORT_FWRD";
+monitor gdcIF;
+evflag fgdcIF;
+sync gdcIF fgdcIF;
+
+unsigned int gdcIB;
+assign gdcIB to "DCLN_IPORT_BWRD";
+monitor gdcIB;
+evflag fgdcIB;
+sync gdcIB fgdcIB;
+
+
+unsigned int icrfMode;
+assign icrfMode to "ICRF_RF_SELECT";
+monitor icrfMode;
+evflag ficrfMode;
+sync icrfMode ficrfMode;
+
+int protectShut;
+assign protectShut to "DLS_GDC_PROTECTION";
+monitor protectShut;
+
+int protectICRF;
+assign protectICRF to "ICRF_ECH_PROTECTION";
+monitor protectICRF;
+
+ss dlsProtect{
+	state init{
+		when (TRUE){
+			pfileName = macValueGet("FNAME");
+			%% epicsThreadId threadId;
+			%% FILE *pfile;
+			%% pfile = fopen (pVar->pfileName, "r");
+			%% if(!pfile) { 
+				%% printf("error in fopen\n");
+				%% threadId = epicsThreadGetIdSelf();
+				%% printf("threadID : %x\n",threadId);
+				%% seqStop(threadId);
+			%% }
+			dataCount =0;
+			%% fscanf(pfile, "%s", pVar->tmpStr1);
+			pvAssign (shutter[dataCount], tmpStr1);
+			pvAssign (shutterStatus[dataCount], tmpStr1);
+			dataCount =1;
+			%% fscanf(pfile, "%s", pVar->tmpStr1);
+			pvAssign (shutter[dataCount], tmpStr1);
+			%% sprintf(pVar->tmpStr2, "%s_READ", pVar->tmpStr1);
+			pvAssign (shutterStatus[dataCount], tmpStr2);
+			dataCount =2;
+			%% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+				pvAssign (shutter[dataCount], tmpStr1);
+				%% sprintf(pVar->tmpStr2, "%s_STATUS", pVar->tmpStr1);
+				pvAssign (shutterStatus[dataCount], tmpStr2);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+				dataCount++;
+				%%}
+				%% fclose(pfile);
+				printf("Data count number is %d\n",dataCount);
+		}state dls_protection	
+	}
+	state dls_protection{
+		when (efTestAndClear(fgdcAF) || efTestAndClear(fgdcAB) || efTestAndClear(fgdcIF) || efTestAndClear(fgdcIB)){
+			if((gdcAF==0 && gdcAB==1) || (gdcIF==0 && gdcIB==1)){
+%% /* Why we need all shutter open ?  ECH requirement: Do not auto open shutter ECH shutter first time at shutter list */
+				for (i = 1; i < dataCount; i++){
+					if(shutter[i]==0){
+						shutter[i] = 1;
+						pvPut(shutter[i],SYNC);
+					}
+				}
+				protectShut = 1;
+				pvPut(protectShut,SYNC);
+			}
+			if((gdcAF==1 && gdcAB==0) || (gdcIF==1 && gdcIB==0)){
+				for (i = 0; i < dataCount; i++){
+					if(shutter[i]==1){
+						shutter[i] = 0;
+						pvPut(shutter[i],SYNC);
+					}
+				}
+				checkShut = 0;
+				for (i = 0; i < dataCount; i++){
+					if(shutterStatus[i]!=0){
+						checkShut += 1;
+					}
+				}
+				if(checkShut != 0){
+					protectShut = 1;
+					pvPut(protectShut,SYNC);
+				} else if (checkShut ==0){
+					protectShut = 0;
+					pvPut(protectShut,SYNC);
+				}
+			}
+		} state dls_protection 
+		when (efTestAndClear(ficrfMode)){
+			if(icrfMode==0 && protectShut==1){
+				for (i = 0; i < dataCount; i++){
+					if(shutter[i]==0){
+						shutter[i] = 1;
+						pvPut(shutter[i],SYNC);
+					}
+				}
+				protectICRF = 0;
+				pvPut(protectICRF,SYNC);
+			}
+			if(icrfMode==1 && protectShut==1){
+				for (i = 0; i < dataCount; i++){
+					if(shutter[i]==1){
+						shutter[i] = 0;
+						pvPut(shutter[i],SYNC);
+					}
+				}
+				checkShut = 0;
+				for (i = 0; i < dataCount; i++){
+					if(shutterStatus[i]!=0){
+						checkShut += 1;
+					}
+				}
+				if(checkShut != 0){
+					protectICRF = 1;
+					pvPut(protectICRF,SYNC);
+				} else if (checkShut ==0){
+					protectICRF = 0;
+					pvPut(protectICRF,SYNC);
+				}
+			}
+		} state dls_protection
+	}
+}

@@ -1,0 +1,163 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAUITime" name="caUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>26</x>
+     <y>25</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1270</width>
+     <height>980</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../scs.qrc" >:/images/SCS_VP_main.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0_3" >
+   <property name="geometry" >
+    <rect>
+     <x>426</x>
+     <y>408</y>
+     <width>800</width>
+     <height>170</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>800</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>800</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>86</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>VMS_VV_TPG262C3_P0</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>8</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>18</red>
+     <green>29</green>
+     <blue>57</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>mbar</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="TPG262C0_PRS0" >
+   <property name="geometry" >
+    <rect>
+     <x>426</x>
+     <y>700</y>
+     <width>800</width>
+     <height>170</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>800</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>800</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>86</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>VMS_CR_TPG262C3_P0</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>8</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>18</red>
+     <green>29</green>
+     <blue>57</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>mbar</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../scs.qrc" />
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,37 @@
+# By HMT - 2010/05/19
+# By HMT - 2010/06/29
+# NB1-1 Beamline PLC
+
+file ./db/NB1_PLC_AO.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC	DRVH	DRVL	PREC}
+{NB1_CRY_LN2_V01	NB1_CRY_LN2_V01	"per"	plc1	"LN2 Valve1"	100	0    0}
+{NB1_CRY_LN2_V02	NB1_CRY_LN2_V02	"per"	plc1	"LN2 Valve2"	100	0    0}
+{NB1_CRY_LN2_V03	NB1_CRY_LN2_V03	"per"	plc1	"LN2 Valve3"	100	0    0}
+{NB1_CRY_LN2_V04	NB1_CRY_LN2_V04	"per"	plc1	"LN2 Valve4"	100	0    0}
+{NB1_CRY_LN2_V05	NB1_CRY_LN2_V05	"per"	plc1	"LN2 Valve5"	100	0    0}
+{NB1_CRY_LN2_V06	NB1_CRY_LN2_V06	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+
+{NB1_LN2_ECMD_BFL	NB1_LN2_ECMD_BFL	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+{NB1_LN2_ECMD_BFR	NB1_LN2_ECMD_BFR	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+{NB1_LN2_ECMD_TSL	NB1_LN2_ECMD_TSL	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+{NB1_LN2_ECMD_TSR	NB1_LN2_ECMD_TSR	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+{NB1_LN2_ECMD_VENT	NB1_LN2_ECMD_VENT	"per"	plc1	"LN2 Inlet Valve"	100	0    0}
+
+{NB1_VAC_FG1_INTVAL	NB1_VAC_FG1_INTVAL	"F/G1"	plc1	"LN2 Inlet Valve"	10	0    0}
+{NB1_VAC_FG2_INTVAL	NB1_VAC_FG2_INTVAL	"F/G2"	plc1	"LN2 Inlet Valve"	10	0    0}
+
+{NB1_SRV_ECMD_TORPOS	Axis2_ECMD_SetPos	"deg."	plc1	"Toroidal"	2	-2    1}
+{NB1_SRV_ECMD_POLPOS	Axis3_ECMD_SetPos	"deg."	plc1	"Poloidal"	2	-2    1}
+
+{NB1_SRV2_ECMD_TORPOS	Axis4_ECMD_SetPos	"deg."	plc1	"Toroidal"	2	-2    1}
+{NB1_SRV2_ECMD_POLPOS	Axis5_ECMD_SetPos	"deg."	plc1	"Poloidal"	2	-2    1}
+
+{ICP_CV_CMD_AO		LTM_CV_CMD_AO	"per"	plc1	"c/v"	100	0    0}
+
+#RGA H20
+{NB1_RGA_H2O_INTC	NB1_RGA_H2O_INTC	"mbar"	plc1 "RGA H20 Int. level"	100	0	15}
+{NB1_BL_RGA_M18_AO	NB1_BL_RGA_M18	"mbar"	plc1 "BL RGA M18 Int. level"	100	0	15}
+
+}

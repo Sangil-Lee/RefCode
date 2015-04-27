@@ -1,0 +1,26 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AO.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    HOPR    LOPR    DRVH    DRVL    PREC}
+{NB1_P1BI_ECMD_OVR    NB1_P1BI_ECMD_OVR    plc1    "Output Over Voltage Ref."    100000    0    100000    0    0}
+{NB1_P1BI_ECMD_OCR    NB1_P1BI_ECMD_OCR    plc1    "Output Over Current Ref."    100000    0    100000    0    0}
+{NB1_P1BI_ECMD_VOLT    NB1_P1BI_ECMD_VOLT    plc1    "Output Under Current Ref."    100000    0    100000    0    0}
+{NB1_P1BI_ECMD_ICMD    NB1_P1BI_ECMD_ICMD    plc1    "INPUT Current"    100000    0    100000    0    0}
+
+{NB1_P1BI_ECMD_VINT    NB1_P1BI_ECMD_VINT    plc1    "INPUT Current"    100000    0    100000    0    0}
+{NB1_P1BI_ECMD_IINT    NB1_P1BI_ECMD_IINT    plc1    "INPUT Current"    100000    0    100000    0    0}
+
+# PS2 2012.07.03
+{NB1_P2BIAS_ECMD_VCMD	NB1_P2BIAS_ECMD_VCMD	plc2    "Voltage Command"    100000    0    100000    0    3}
+{NB1_P2BIAS_ECMD_ICMD	NB1_P2BIAS_ECMD_ICMD	plc2    "Current Command"    100000    0    100000    0    3}
+{NB1_P2BIAS_ECMD_OVR	NB1_P2BIAS_ECMD_OVR		plc2    "Output OV Ref."    100000    0    100000    0    3}
+{NB1_P2BIAS_ECMD_OCR	NB1_P2BIAS_ECMD_OCR		plc2    "Output OC Ref."    100000    0    100000    0    3}
+
+#PS2 2012.07.19
+{NB1_P2BIAS_ECMD_VINT    NB1_P2BIAS_ECMD_VINT    plc2    "UV CMD"    100000    0    100000    0    0}
+{NB1_P2BIAS_ECMD_IINT    NB1_P2BIAS_ECMD_IINT    plc2    "UI CMD"    100000    0    100000    0    0}
+
+}

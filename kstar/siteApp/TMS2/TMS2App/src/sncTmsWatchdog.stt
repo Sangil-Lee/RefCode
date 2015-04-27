@@ -1,0 +1,164 @@
+program sncTmsWatchdog
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <epicsThread.h>
+
+unsigned long tempTimeTMS1;
+unsigned long preTimeTMS1;
+
+double dataTMS1;
+assign dataTMS1 to "TMS_CSS02_ISL_TCU001_V";
+monitor dataTMS1;
+
+double stateTMS1;
+assign stateTMS1 to "TMS_NIDAQ1_WATCHDOG_STATUS";
+monitor stateTMS1;
+
+int countTMS2;
+unsigned long tempTimeTMS2;
+unsigned long preTimeTMS2;
+
+double dataTMS2;
+%% /* assign dataTMS2 to "TMS_VVS02_SPR_SAD001_RVAL";  changed 20110523 because High sampling data acquisition for strain senser */
+assign dataTMS2 to "TMS_GSP02_GSP_SAA001_RVAL";
+monitor dataTMS2;
+
+double stateTMS2;
+assign stateTMS2 to "TMS_NIDAQ2_WATCHDOG_STATUS";
+monitor stateTMS2;
+
+int countCFP1;
+unsigned long tempTimeCFP1;
+unsigned long preTimeCFP1;
+
+double dataCFP1;
+assign dataCFP1 to "TMS_GSP05_GSP_TPT001A_RVAL";
+monitor dataCFP1;
+
+double stateCFP1;
+assign stateCFP1 to "TMS_CFP1_WATCHDOG_STATUS";
+monitor stateCFP1;
+
+int countCFP2;
+unsigned long tempTimeCFP2;
+unsigned long preTimeCFP2;
+
+double dataCFP2;
+assign dataCFP2 to "TMS_DPSPT_SPT_TPT001_RVAL";
+monitor dataCFP2;
+
+double stateCFP2;
+assign stateCFP2 to "TMS_CFP2_WATCHDOG_STATUS";
+monitor stateCFP2;
+
+/* pvTimeStamp type is secPastEpoch (seconds since 0000 Jan 1, 1990) and nsec (nanoseconds within second). in epicsTime.h   */
+
+ss tms1WatchDog{
+	state init{
+		when (TRUE){
+			printf("Init state TMS1 Watchdog \n");
+		}state tms1_watchdog_start	
+	}
+	state tms1_watchdog_start{
+			when((preTimeTMS1 = pvTimeStamp(dataTMS1).secPastEpoch) > 0){
+					preTimeTMS1 = pvTimeStamp(dataTMS1).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeTMS1 = pvTimeStamp(dataTMS1).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeTMS1 = pvTimeStamp(dataTMS1).secPastEpoch;
+					if(preTimeTMS1 >= tempTimeTMS1)
+					{
+%%						/* NI DAQ is Not Processing. DAQ have some problem  */
+						stateTMS1 = 1;      
+						pvPut(stateTMS1);
+%%					/*	printf("Error TMS1 for one sec pre:%lu,>= temp:%lu.\n",preTimeTMS1, tempTimeTMS1); */
+					} else {
+%%						/* NI DAQ is Processing. DAQ No problem - Normal Status.  */
+						stateTMS1 =0;
+						pvPut(stateTMS1);
+					}
+			} state tms1_watchdog_start
+	}
+}
+ss tms2WatchDog{
+	state init{
+		when (TRUE){
+			printf("Init state TMS2 Watchdog \n");
+		}state tms2_watchdog_start	
+	}
+	state tms2_watchdog_start{
+			when((preTimeTMS2 = pvTimeStamp(dataTMS2).secPastEpoch) > 0){
+					preTimeTMS2 = pvTimeStamp(dataTMS2).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeTMS2 = pvTimeStamp(dataTMS2).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeTMS2 = pvTimeStamp(dataTMS2).secPastEpoch;
+					if(preTimeTMS2 >= tempTimeTMS2)
+					{
+%%						/* NI DAQ is Not Processing. DAQ have some problem  */
+						stateTMS2 = 1;      
+						pvPut(stateTMS2);
+%% /*						printf("Error TMS2 for one sec pre:%lu,>= temp:%lu.\n",preTimeTMS2, tempTimeTMS2);  */
+					} else {
+%%						/* NI DAQ is Processing. DAQ No problem - Normal Status.  */
+						stateTMS2 =0;
+						pvPut(stateTMS2);
+					}
+			} state tms2_watchdog_start
+	}
+}
+ss tmscFP1WatchDog{
+	state init{
+		when (TRUE){
+			printf("Init state set \n");
+		}state tmscfp1_watchdog_start	
+	}
+	state tmscfp1_watchdog_start{
+			when((preTimeCFP1 = pvTimeStamp(dataCFP1).secPastEpoch) > 0){
+					preTimeCFP1 = pvTimeStamp(dataCFP1).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeCFP1 = pvTimeStamp(dataCFP1).secPastEpoch;
+%%					epicsThreadSleep(1.1);					
+					tempTimeCFP1 = pvTimeStamp(dataCFP1).secPastEpoch;
+					if(preTimeCFP1 >= tempTimeCFP1)
+					{
+%%						/* NI DAQ is Not Processing. DAQ have some problem  */
+						stateCFP1 = 1;      
+						pvPut(stateCFP1);
+%% /*						printf("Error cFP1 for one sec pre:%lu,>= temp:%lu.\n",preTimeCFP1, tempTimeCFP1);  */
+					} else {
+%%						/* NI DAQ is Processing. DAQ No problem - Normal Status.  */
+						stateCFP1 =0;
+						pvPut(stateCFP1);
+					}
+			} state tmscfp1_watchdog_start
+	}
+}
+ss tmscFP2WatchDog{
+	state init{
+		when (TRUE){
+			printf("Init state set \n");
+		}state tmscfp2_watchdog_start	
+	}
+	state tmscfp2_watchdog_start{
+			when((preTimeCFP2 = pvTimeStamp(dataCFP2).secPastEpoch) > 0){
+					preTimeCFP2 = pvTimeStamp(dataCFP2).secPastEpoch;
+%%					epicsThreadSleep(10.1);					
+					tempTimeCFP2 = pvTimeStamp(dataCFP2).secPastEpoch;
+%%					epicsThreadSleep(10.1);					
+					tempTimeCFP2 = pvTimeStamp(dataCFP2).secPastEpoch;
+					if(preTimeCFP2 >= tempTimeCFP2)
+					{
+%%						/* NI DAQ is Not Processing. DAQ have some problem  */
+						stateCFP2 = 1;      
+						pvPut(stateCFP2);
+%% /*						printf("Error cFP2 for one sec pre:%lu,>= temp:%lu.\n",preTimeCFP2, tempTimeCFP2);  */
+					} else {
+%%						/* NI DAQ is Processing. DAQ No problem - Normal Status.  */
+						stateCFP2 =0;
+						pvPut(stateCFP2);
+					}
+			} state tmscfp2_watchdog_start
+	}
+}

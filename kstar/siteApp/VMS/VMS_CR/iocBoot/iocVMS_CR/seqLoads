@@ -1,0 +1,44 @@
+seq crpScan, "SYS=VAC, SUB=CRYO, CTRL=CRP1"
+seq crpScan, "SYS=VAC, SUB=CRYO, CTRL=CRP2"
+
+seq tmpScan, "SYS=VAC, SUB=CRYO, CTRL=TMP1"
+seq tmpScan, "SYS=VAC, SUB=CRYO, CTRL=TMP2"
+seq tmpScan, "SYS=VAC, SUB=CRYO, CTRL=TMP3"
+seq tmpScan, "SYS=VAC, SUB=CRYO, CTRL=TMP4"
+
+seq mbpScan, "SYS=VAC, SUB=CRYO, CTRL=TBP"
+seq mbpScan, "SYS=VAC, SUB=CRYO, CTRL=CBP1"
+
+seq crpModeSelector, "SYS=VAC, SUB=CRYO, CTRL=CRP1"
+seq crpModeSelector, "SYS=VAC, SUB=CRYO, CTRL=CRP2"
+
+
+
+#seq valveCheck, "SYS=VAC, SUB=VVSL, CTRL=RL,  INST=GV,  DESC=VVSL Roughline GateValvle"
+#seq valveCheck, "SYS=VAC, SUB=VVSL, CTRL=TBP, INST=FGV, DESC=VVSL TMP Booster FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=VVSL, CTRL=CBP, INST=FGV, DESC=VVSL CRP Booster FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=VVSL, CTRL=RL2BP, INST=GV, DESC=VVSL Rough to Booster Valve"
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=RL,  INST=GV, TIMEOUT=3,  DESC=Cryo Roughline GateValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TBP, INST=FGV, DESC=Cryo TMP Booster FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CBP1, INST=FGV, DESC=Cryo CMP Booster1 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CBP2, INST=FGV, DESC=Cryo CMP Booster2 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=RL2BP, INST=GV, DESC=Cryo Rough to Booster Valve"
+
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP1, INST=FGV, DESC=Cryo TMP1 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP1, INST=BGV, DESC=Cryo TMP1 BwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP2, INST=FGV, DESC=Cryo TMP2 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP2, INST=BGV, DESC=Cryo TMP2 BwdValve"
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP3, INST=FGV, TIMEOUT=4, DESC=Cryo TMP3 FwdValve"
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP3, INST=BGV, TIMEOUT=2, DESC=Cryo TMP3 BwdValve"
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP4, INST=FGV, TIMEOUT=4, DESC=Cryo TMP4 FwdValve"
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=TMP4, INST=BGV, TIMEOUT=2, DESC=Cryo TMP4 BwdValve"
+#####epicsThreadSleep 5.
+#####seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CRP1, INST=FGV, TIMEOUT=10, DESC=Cryo CRP1 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CRP1, INST=BGV, DESC=Cryo CRP1 BwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CRP2, INST=FGV, DESC=Cryo CRP2 FwdValve"
+#seq valveCheck, "SYS=VAC, SUB=CRYO, CTRL=CRP2, INST=BGV, DESC=Cryo CRP2 BwdValve"
+
+
+epicsThreadSleep 5.
+
+seq scenario

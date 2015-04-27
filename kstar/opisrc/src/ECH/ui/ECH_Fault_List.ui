@@ -1,0 +1,3309 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>1080</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>1080</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../ech.qrc" >:/images/ECH_Fault_List.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>4</x>
+     <y>3</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_28" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>150</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GRY_SCM</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_34" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>256</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_CWB_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_31" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>214</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_WATER_FLAG</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_27" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>129</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CMD_INT_OUT3</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_33" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>235</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_FAST_ST</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_30" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>193</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CMD_INT_OUT2</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_35" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>277</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_KSTAR_66VCB_ONOFF</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_29" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>171</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GPS_ST</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_36" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>496</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_MIRROR</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_37" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>539</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_BRFLOAD</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_38" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>475</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_IL</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_39" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>390</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_COLL</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_40" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>560</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_LBOX</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_41" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>454</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_WIND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_42" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>432</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_CAVITY</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_43" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>411</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_PRE</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_44" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>517</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_DL</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_45" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>582</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_MIBEND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_46" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>603</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_FLOW_TORWIND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_47" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>683</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TL_TORUS_OVTEMP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_48" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>662</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_CL_TEMP_OT</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_49" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>129</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG1_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_50" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>150</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG2_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_51" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>172</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG3_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_52" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>193</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG4_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_53" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>214</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG5_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_54" >
+   <property name="geometry" >
+    <rect>
+     <x>409</x>
+     <y>235</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VAC_GAG6_FA</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_55" >
+   <property name="geometry" >
+    <rect>
+     <x>748</x>
+     <y>129</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="blink" >
+    <bool>false</bool>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_BORIS_COLL_RDY</string>
+   </property>
+   <property name="blinkvalue" stdset="0" >
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_56" >
+   <property name="geometry" >
+    <rect>
+     <x>748</x>
+     <y>150</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_BORIS_GUN_RDY</string>
+   </property>
+   <property name="blinkvalue" stdset="0" >
+    <number>-1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_57" >
+   <property name="geometry" >
+    <rect>
+     <x>748</x>
+     <y>242</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_BORIS_SCM_RDY</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_58" >
+   <property name="geometry" >
+    <rect>
+     <x>748</x>
+     <y>172</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_BORIS_HEAT_RDY</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_62" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>390</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_KBODY_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_63" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>411</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_BODYOC_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_64" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>432</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_WINARC_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_65" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>454</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_LBOX_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_66" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>517</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_RFREF_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_69" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>476</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_ARCMB1_RTN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_70" >
+   <property name="geometry" >
+    <rect>
+     <x>69</x>
+     <y>497</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_VME_ARCMB2_RTN</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_12" >
+   <property name="geometry" >
+    <rect>
+     <x>969</x>
+     <y>274</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_BORIS_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_59" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>390</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOMP_CCPS_LFAULT</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_60" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>411</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOMP_CCPS_HFAULT</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_61" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>433</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOM_HEATER_ST</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_67" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>454</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOM_GUNF_ST</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_68" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>524</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOM_SCM_LEVEL</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_71" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>546</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOM_SCM_TEMP</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_72" >
+   <property name="geometry" >
+    <rect>
+     <x>749</x>
+     <y>566</y>
+     <width>14</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Blink</enum>
+   </property>
+   <property name="pvname" >
+    <string>ECH_TOM_SCM_PSRDY</string>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_13" >
+   <property name="geometry" >
+    <rect>
+     <x>970</x>
+     <y>597</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_TOM_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_14" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>126</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG1_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_15" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>148</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG2_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_16" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>169</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG3_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_17" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>190</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG4_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_18" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>211</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG5_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_19" >
+   <property name="geometry" >
+    <rect>
+     <x>603</x>
+     <y>232</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_GAG6_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CALabel" name="caLabel_20" >
+   <property name="geometry" >
+    <rect>
+     <x>629</x>
+     <y>714</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>150</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>ECH_INT_WATER_DIS</string>
+   </property>
+   <property name="dmode" stdset="0" >
+    <enum>CALabel::Choice</enum>
+   </property>
+   <property name="cmode" stdset="0" >
+    <enum>CALabel::Alarm</enum>
+   </property>
+   <property name="truelabel" >
+    <string>True</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALabel::DBRGSTR</enum>
+   </property>
+   <property name="messages" stdset="0" >
+    <stringlist>
+     <string>Enable</string>
+     <string>Disable</string>
+    </stringlist>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ech.qrc" />
+ </resources>
+ <connections/>
+</ui>

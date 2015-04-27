@@ -1,0 +1,25 @@
+# 2013. 7. 15
+#
+
+file db/ccs_EtherIP_ao_deliver.db {
+pattern { NAME,                            PLC,            ADDR,                        INPUT_LINK        }
+
+
+# deliver NBI neutron alarm to sis. 2011. 5. 2 request by jshong
+	{"CCS_NB1_P1VME_RTN_HVON",     "INTL_PLC0",  "SIS_NBI1_P1VME_RTN_HVON",    "NB1_P1VME_RTN_HVON"  },
+	{"CCS_NB1_P1FIL_RTN_TSTOP",    "INTL_PLC0",  "SIS_NBI1_P1FIL_RTN_TSTOP",   "NB1_P1FIL_RTN_TSTOP"   },
+# deliver NBI neutron alarm to sis. 2013. 7. 1 request by jshong
+	{"CCS_NB1_P2VME_RTN_HVON",     "INTL_PLC0",  "SIS_NBI1_P2VME_RTN_HVON",    "NB1_PS2_STA_HVON"  },
+	{"CCS_NB1_P2FIL_RTN_TSTOP",    "INTL_PLC0",  "SIS_NBI1_P2FIL_RTN_TSTOP",   "NB1_P2FILA_STA_TRUN"   },
+	{"CCS_NB1_P3VME_RTN_HVON",     "INTL_PLC0",  "SIS_NBI1_P3VME_RTN_HVON",    "NB1_P3VME_RTN_HVON"  },
+	{"CCS_NB1_P3FIL_RTN_TSTOP",    "INTL_PLC0",  "SIS_NBI1_P3FIL_RTN_TSTOP",   "NB1_P3FIL_RTN_TSTOP"   },
+
+# deliver PFC alarm to sis. 2013. 7. 1 request by jshong
+	{"CCS_PMS_ALL_MAX_INTERLOCK",        "INTL_PLC0",  "SIS_PMS_ALL_MAX_INTERLOCK",        "PMS_ALL_MAX_INTERLOCK"  },
+	{"CCS_PMS_NB_ALL_MAX_INTERLOCK",     "INTL_PLC0",  "SIS_PMS_NB_ALL_MAX_INTERLOCK",     "PMS_NB_ALL_MAX_INTERLOCK"   },
+	{"CCS_PMS_IVCC_COIL_MAX_INTERLOCK",  "INTL_PLC0",  "SIS_PMS_IVCC_COIL_MAX_INTERLOCK",  "PMS_IVCC_COIL_MAX_INTERLOCK"   },
+	{"CCS_PMS_IVCC_CABLE_MAX_INTERLOCK", "INTL_PLC0",  "SIS_PMS_IVCC_CABLE_MAX_INTERLOCK", "PMS_IVCC_CABLE_MAX_INTERLOCK"   }
+
+}
+
+

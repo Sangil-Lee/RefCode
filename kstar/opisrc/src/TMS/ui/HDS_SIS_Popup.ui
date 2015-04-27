@@ -1,0 +1,2501 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>640</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pixmap" >
+     <pixmap resource="../tms.qrc" >:/images/HDS_Vacuum_Interlock.png</pixmap>
+    </property>
+    <property name="scaledContents" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca101" >
+    <property name="geometry" >
+     <rect>
+      <x>164</x>
+      <y>141</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_N2_PRESSURE</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca102" >
+    <property name="geometry" >
+     <rect>
+      <x>322</x>
+      <y>141</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_AIR_PRESSURE</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2" >
+    <property name="geometry" >
+     <rect>
+      <x>186</x>
+      <y>166</y>
+      <width>39</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>MPa</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3" >
+    <property name="geometry" >
+     <rect>
+      <x>344</x>
+      <y>166</y>
+      <width>39</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>MPa</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca103" >
+    <property name="geometry" >
+     <rect>
+      <x>61</x>
+      <y>422</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_RETURN_TEMP1</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4" >
+    <property name="geometry" >
+     <rect>
+      <x>121</x>
+      <y>426</y>
+      <width>16</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>°C</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca104" >
+    <property name="geometry" >
+     <rect>
+      <x>61</x>
+      <y>473</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_RETURN_TEMP2</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5" >
+    <property name="geometry" >
+     <rect>
+      <x>121</x>
+      <y>477</y>
+      <width>16</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>°C</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca105" >
+    <property name="geometry" >
+     <rect>
+      <x>61</x>
+      <y>528</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_RETURN_PRESSURE</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6" >
+    <property name="geometry" >
+     <rect>
+      <x>83</x>
+      <y>551</y>
+      <width>36</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Mpa</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca106" >
+    <property name="geometry" >
+     <rect>
+      <x>237</x>
+      <y>422</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_SUPPLY_TEMP1</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7" >
+    <property name="geometry" >
+     <rect>
+      <x>297</x>
+      <y>426</y>
+      <width>16</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>°C</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca107" >
+    <property name="geometry" >
+     <rect>
+      <x>237</x>
+      <y>473</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_SUPPLY_PRESSURE</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8" >
+    <property name="geometry" >
+     <rect>
+      <x>259</x>
+      <y>498</y>
+      <width>36</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>MPa</string>
+    </property>
+   </widget>
+   <widget class="CABoButton" name="ca301" >
+    <property name="geometry" >
+     <rect>
+      <x>503</x>
+      <y>429</y>
+      <width>200</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>200</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="align" stdset="0" >
+     <enum>CABoButton::Column</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_W_HARD_INT_ON</string>
+    </property>
+    <property name="confirm" >
+     <bool>true</bool>
+    </property>
+    <property name="truelabel" >
+     <string>Use</string>
+    </property>
+    <property name="falselabel" >
+     <string>Unuse</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CABoButton" name="ca303" >
+    <property name="geometry" >
+     <rect>
+      <x>503</x>
+      <y>492</y>
+      <width>200</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>200</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="align" stdset="0" >
+     <enum>CABoButton::Column</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_W_PRS_INT_ON</string>
+    </property>
+    <property name="confirm" >
+     <bool>true</bool>
+    </property>
+    <property name="truelabel" >
+     <string>Use</string>
+    </property>
+    <property name="falselabel" >
+     <string>Unuse</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CABoButton" name="ca305" >
+    <property name="geometry" >
+     <rect>
+      <x>503</x>
+      <y>555</y>
+      <width>200</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>200</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="align" stdset="0" >
+     <enum>CABoButton::Column</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_O_DCU_SELECT</string>
+    </property>
+    <property name="control" >
+     <bool>true</bool>
+    </property>
+    <property name="confirm" >
+     <bool>true</bool>
+    </property>
+    <property name="truelabel" >
+     <string>ETOS</string>
+    </property>
+    <property name="falselabel" >
+     <string>PLC</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="ca108" >
+    <property name="geometry" >
+     <rect>
+      <x>237</x>
+      <y>528</y>
+      <width>60</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>60</width>
+      <height>28</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Temperature</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VAC_R_PCW_FLOW_RATE</string>
+    </property>
+    <property name="framecol" stdset="0" >
+     <color>
+      <red>80</red>
+      <green>80</green>
+      <blue>80</blue>
+     </color>
+    </property>
+    <property name="unit" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>552</y>
+      <width>36</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>l/min</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_26" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>120</y>
+      <width>30</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>200</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>Out</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin" >
+     <number>0</number>
+    </property>
+    <property name="indent" >
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_27" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>120</y>
+      <width>30</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>200</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>In</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin" >
+     <number>0</number>
+    </property>
+    <property name="indent" >
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_82" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>120</y>
+      <width>116</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>200</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>Description</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin" >
+     <number>0</number>
+    </property>
+    <property name="indent" >
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_81" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>120</y>
+      <width>145</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>130</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>200</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>170</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>Pressure Level Setting</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin" >
+     <number>0</number>
+    </property>
+    <property name="indent" >
+     <number>3</number>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca202" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>139</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_41" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>139</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>16777215</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>INTERLOCK</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_49" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>170</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure L1 (mbar)</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca211" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="ca233" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>232</y>
+      <width>145</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Eng</enum>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca212" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>170</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="ca213" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>170</y>
+      <width>145</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Eng</enum>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca221" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>201</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca222" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>201</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca231" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>232</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca232" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>232</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_51" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>201</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure L2 (mbar)</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_52" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>232</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure L3 (mbar)</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_54" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>263</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure L4 (mbar)</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca241" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>263</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca242" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>263</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="ca223" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>201</y>
+      <width>145</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Eng</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="ca243" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>263</y>
+      <width>145</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Eng</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca302" >
+    <property name="geometry" >
+     <rect>
+      <x>691</x>
+      <y>416</y>
+      <width>119</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VPS_R_HARD_INT_USE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="truelabel" >
+     <string/>
+    </property>
+    <property name="falselabel" >
+     <string/>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>Unuse</string>
+      <string>Use</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CALabel" name="ca304" >
+    <property name="geometry" >
+     <rect>
+      <x>688</x>
+      <y>479</y>
+      <width>119</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VPS_R_PRESSURE_INTERLOCK_USE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Choice</enum>
+    </property>
+    <property name="truelabel" >
+     <string/>
+    </property>
+    <property name="falselabel" >
+     <string/>
+    </property>
+    <property name="messages" stdset="0" >
+     <stringlist>
+      <string>Unuse</string>
+      <string>Use</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca402" >
+    <property name="geometry" >
+     <rect>
+      <x>751</x>
+      <y>28</y>
+      <width>33</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>32</red>
+      <green>66</green>
+      <blue>66</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VPS_R_O_SIGN_TOWER_YELLOW</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca403" >
+    <property name="geometry" >
+     <rect>
+      <x>751</x>
+      <y>47</y>
+      <width>33</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>32</red>
+      <green>66</green>
+      <blue>66</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VPS_R_O_SIGN_TOWER_GREEN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca401" >
+    <property name="geometry" >
+     <rect>
+      <x>751</x>
+      <y>9</y>
+      <width>33</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>32</red>
+      <green>66</green>
+      <blue>66</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname" >
+     <string>HDS_VPS_R_O_SIGN_TOWER_RED</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10" >
+    <property name="geometry" >
+     <rect>
+      <x>638</x>
+      <y>10</y>
+      <width>106</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure Interlock</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11" >
+    <property name="geometry" >
+     <rect>
+      <x>638</x>
+      <y>30</y>
+      <width>106</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>H/W Interlock</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12" >
+    <property name="geometry" >
+     <rect>
+      <x>638</x>
+      <y>50</y>
+      <width>106</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Normal</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="ca253" >
+    <property name="geometry" >
+     <rect>
+      <x>621</x>
+      <y>294</y>
+      <width>145</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Eng</enum>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca251" >
+    <property name="geometry" >
+     <rect>
+      <x>442</x>
+      <y>294</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_55" >
+    <property name="geometry" >
+     <rect>
+      <x>504</x>
+      <y>294</y>
+      <width>116</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Pressure W (mbar)</string>
+    </property>
+    <property name="indent" >
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca252" >
+    <property name="geometry" >
+     <rect>
+      <x>473</x>
+      <y>294</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>200</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Ellipse</enum>
+    </property>
+    <property name="lineColor" >
+     <color>
+      <red>150</red>
+      <green>150</green>
+      <blue>150</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../tms.qrc" />
+ </resources>
+ <connections/>
+</ui>

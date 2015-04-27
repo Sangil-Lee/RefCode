@@ -1,0 +1,297 @@
+program sncDlsTSC 
+option +r;
+option +c; 
+%% #include <string.h>
+%% #include <epicsPrint.h>
+%% #include "epicsThread.h"
+
+int i;
+int status;
+int statusEdge;
+int close;
+int open;
+
+int closeCoreProtect;
+int openCoreProtect;
+int closeEdgeProtect;
+int openEdgeProtect;
+
+int closeCoreMultiAct;
+int closeCore;
+int closeCoreAct;
+int openCoreAct;
+int closeEdgeAct;
+int openEdgeAct;
+
+%% /* changed PV name DLS_THOMSONCORE_N_OP_SHUT, DLS_THOMSONCORE_N_CL_SHUT   */
+
+assign status to "DLS_THOMSONCORE_N_SHUT_STATUS";
+monitor status;
+
+assign statusEdge to "DLS_THOMSONEDGE_N_SHUT_STATUS";
+monitor statusEdge;
+
+assign close to "DLS_THOMSONCORE_N_SHUT_CLOSE_READ";
+monitor close;
+assign open to "DLS_THOMSONCORE_N_SHUT_OPEN_READ";
+monitor open;
+
+assign closeEdgeProtect to "DLS_THOMSONEDGE_N_SHUT_MCLOSE.DISV";
+monitor closeEdgeProtect;
+assign openEdgeProtect to "DLS_THOMSONEDGE_N_SHUT_MOPEN.DISV";
+monitor openEdgeProtect;
+
+assign closeCoreProtect to "DLS_THOMSONCORE_N_SHUT_MCLOSE.DISV";
+monitor closeCoreProtect;
+assign openCoreProtect to "DLS_THOMSONCORE_N_SHUT_MOPEN.DISV";
+monitor openCoreProtect;
+
+assign closeCore to "DLS_THOMSONCORE_N_SHUT_MCLOSE";
+monitor closeCore;
+
+assign closeCoreMultiAct to "DLS_THOMSONCORE_N_SHUT_MCLOSE_MULTI_ACT";
+monitor closeCoreMultiAct;
+assign closeCoreAct to "DLS_THOMSONCORE_N_SHUT_MCLOSE_ACT";
+monitor closeCoreAct;
+assign openCoreAct to "DLS_THOMSONCORE_N_SHUT_MOPEN_ACT";
+monitor openCoreAct;
+
+assign closeEdgeAct to "DLS_THOMSONEDGE_N_SHUT_MCLOSE_ACT";
+monitor closeEdgeAct;
+assign openEdgeAct to "DLS_THOMSONEDGE_N_SHUT_MOPEN_ACT";
+monitor openEdgeAct;
+
+
+ss dlsTSCStatus{
+	state init{
+		when (TRUE){
+			if(close==1 && open ==0) {
+				status=0;
+				pvPut(status);
+			} else if(close==0 && open==1) {
+				status=1;
+				pvPut(status);
+			} else if(close==0 && open==0) {
+				status=2;
+				pvPut(status);	
+			} else if(close==1 && open ==1) {
+				status=3;
+                                pvPut(status);
+			}
+		}state dls_check	
+	}
+	state dls_check {
+        	when (delay(1.0)){
+			if(close==1 && open ==0) {
+				status=0;
+				pvPut(status);
+			} else if(close==0 && open==1) {
+				status=1;
+				pvPut(status);
+			} else if(close==0 && open==0) {
+				status=2;
+				pvPut(status);	
+			} else if(close==1 && open ==1) {
+				status=3;
+                                pvPut(status);
+			}
+		} state dls_check
+	}
+}
+ss dlsTSCControl{
+        state dls_opencloseLock {
+                when (delay(0.3)){
+                        if(statusEdge==1 && status==1) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=0;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=1;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=0;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=1;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if(statusEdge==0 && status==0) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=0;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=0;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if(statusEdge==1 && status==0) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=1;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=1;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if((statusEdge==2 || statusEdge==3) && status==0) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=0;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=0;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if((statusEdge==2 || statusEdge==3) && status==1) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=0;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=1;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=0;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=1;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if((status==2 || status==3) && statusEdge==0) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=0;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=0;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if((status==2 || status==3) && statusEdge==1) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=1;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=1;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        } else if((status==2 || status==3) && (statusEdge==2 || statusEdge==3)) {
+                                openEdgeProtect=1;
+                                pvPut(openEdgeProtect,SYNC);
+                                closeEdgeProtect=1;
+                                pvPut(closeEdgeProtect,SYNC);
+
+                                openCoreProtect=0;
+                                pvPut(openCoreProtect,SYNC);
+                                closeCoreProtect=1;
+                                pvPut(closeCoreProtect,SYNC);
+	
+                                openEdgeAct=1;
+                                pvPut(openEdgeAct,SYNC);
+                                closeEdgeAct=1;
+                                pvPut(closeEdgeAct,SYNC);
+
+                                openCoreAct=0;
+                                pvPut(openCoreAct,SYNC);
+                                closeCoreAct=1;
+                                pvPut(closeCoreAct,SYNC);
+                        }
+                } state dls_opencloseLock
+        }
+}
+ss dlsTSCClose{
+	state init{
+		when (TRUE){
+		}state dls_CloseControl	
+	}
+	state dls_CloseControl {
+        	when (delay(1.0)){
+			if(closeCoreMultiAct ==1 && closeCoreProtect == 1) {
+				for (i = 0; i < 15; i++) {
+					closeCore = 1;
+					pvPut(closeCore);
+				%% 	epicsThreadSleep(0.05);
+					closeCore = 0;
+					pvPut(closeCore);
+				%% 	epicsThreadSleep(0.5);
+				}
+                                closeCore = 1;
+                                pvPut(closeCore);
+			%% 	epicsThreadSleep(5.0);
+                                closeCore = 0;
+                                pvPut(closeCore);
+				closeCoreMultiAct = 0;
+				pvPut(closeCoreMultiAct);		
+			} else if(closeCoreMultiAct ==1 && closeCoreProtect == 0) {
+				closeCoreMultiAct = 0;
+				pvPut(closeCoreMultiAct);		
+			}
+		} state dls_CloseControl
+	}
+}

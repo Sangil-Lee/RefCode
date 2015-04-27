@@ -1,0 +1,18 @@
+record(mbbi, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(INP, "$(PV_NAME)_IN")
+  field(ZRST, "DATA OK")
+  field(ONST, "Under Range")
+  field(TWST, "Over Range")
+  field(THST, "Sensor Error")
+  field(FRST, "Sensor Off")
+  field(FVST, "No Sensor")
+  field(SXST, "ID Error")
+}
+
+record(ai, "$(PV_NAME)_IN") {
+  field(DTYP, "EtherIP")
+  field(FLNK, "$(PV_NAME)")
+  field(SCAN, "1 second")
+  field(INP, "@plc0 $(TAG) S 1")
+}

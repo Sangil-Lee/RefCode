@@ -1,0 +1,56 @@
+program sncDlsLIBEAM 
+option +r;
+option +c; 
+%% #include <string.h>
+%% #include <epicsPrint.h>
+
+int status;
+int close;
+int open;
+
+
+assign status to "DLS_LIBEAM_K_GV_STATUS";
+monitor status;
+
+assign close to "DLS_LIBEAM_K_GV_CLOSE_READ";
+monitor close;
+assign open to "DLS_LIBEAM_K_GV_OPEN_READ";
+monitor open;
+
+ss dlsXCSBStatus{
+	state init{
+		when (TRUE){
+			if(close==1 && open ==0) {
+				status=0;
+				pvPut(status);
+			} else if(close==0 && open==1) {
+				status=1;
+				pvPut(status);
+			} else if(close==0 && open==0) {
+				status=2;
+				pvPut(status);	
+			} else if(close==1 && open ==1) {
+				status=3;
+                                pvPut(status);
+			}
+		}state dls_check	
+	}
+	state dls_check {
+        	when (delay(1.0)){
+			if(close==1 && open ==0) {
+				status=0;
+				pvPut(status);
+			} else if(close==0 && open==1) {
+				status=1;
+				pvPut(status);
+			} else if(close==0 && open==0) {
+				status=2;
+				pvPut(status);	
+			} else if(close==1 && open ==1) {
+				status=3;
+                                pvPut(status);
+			}
+		} state dls_check
+	}
+}
+

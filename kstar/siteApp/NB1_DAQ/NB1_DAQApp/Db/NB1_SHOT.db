@@ -1,0 +1,96 @@
+record(ai, "NB1_DTACQ_LocalShot")
+{
+    field(DESC, "LocalShot")
+    field(DTYP, "AI_Acq196")
+    field(SCAN, "1 second")
+    field(INP, "#$(PORT) A$(A) @1")
+    field(PREC, "0")
+}
+record(ao,"NB1_DTACQ_SetLocalShot")
+{
+    field(DESC, "Internal Clock")
+    field(DTYP, "AO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @1")
+    field(PREC, "0")
+}
+record(bo, "NB1_KSTAR_PUT_MDSPLUS")
+{
+    field(DESC, "KSTAR MDSPLUS")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @10")
+    field(ONAM, "KSTAR")
+    field(ZNAM, "NONE")
+}
+record(calcout, "NB1_KSTAR_PUT_MDSPLUS_C")
+{
+    field(DESC, "KSTAR MDSPLUS")
+    field(SCAN, "1 second")
+    field(CALC, "A?1:0")
+    field(INPA, "NB1_INJECT_KSTAR_MODE")
+    field(OUT, "NB1_KSTAR_PUT_MDSPLUS.VAL NMP PP")
+}
+record(bo, "NB1_KSTAR_SHOT_RDY")
+{
+    field(DESC, "KSTAR MDSPLUS")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @11")
+    field(ONAM, "KSTAR")
+    field(ZNAM, "NONE")
+}
+record(calcout, "NB1_KSTAR_SHOT_RDY_C")
+{
+    field(DESC, "KSTAR MDSPLUS")
+    field(SCAN, "1 second")
+    field(CALC, "A?1:0")
+    field(INPA, "CCS_SHOTSEQ_START")
+    field(OUT, "NB1_KSTAR_SHOT_RDY.VAL NMP PP")
+}
+### NB1 KSTAR Auto ARM
+record(calcout, "NB1_KSTAR_SHOT_AUTO")
+{
+    field(DESC, "KSTAR auto arm")
+#    field(SCAN, "1 second")
+    field(CALC, "A&&B&&(C=0) ? 1:0")
+    field(INPA, "CCS_SHOTSEQ_START CPP")
+    field(INPB, "NB1_BEAM_INJECT_KSTAR.VAL")
+    field(INPC, "NB1_BEAM_INJECT_DUMMY.VAL")
+    field(OUT, "NB1_DTACQ_setArm.VAL NMP PP")
+}
+record(ao, "NB1_KSTAR_SHOT_NUM")
+{
+    field(DESC, "KSTAR SHOT")
+    field(DTYP, "AO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @10")
+}
+record(calcout, "NB1_KSTAR_SHOT_NUM_C")
+{
+    field(DESC, "KSTAR Shot")
+    field(SCAN, "1 second")
+    field(CALC, "A")
+    #field(INPA, "CCS_SHOT_NUMBER")
+    field(INPA, "CCS_SHOT_NUMBER CPP")
+    field(OUT, "NB1_KSTAR_SHOT_NUM.VAL NMP PP")
+    field(FLNK, "NB1_KSTAR_SHOT_NUM.VAL")
+}
+record(bo, "NB1_KSTAR_MODE_FORCE")
+{
+    field(DESC, "KSTAR MDSPLUS")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @12")
+    field(ONAM, "OK")
+    field(ZNAM, "NO")
+}
+record(bo, "NB1_CCS_TEST_BO")
+{
+    field(DESC, "TEST BO")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(calc, "NB1_DTACQ_State")
+{
+    field(DESC, "DTACQ Statue")
+	field(SCAN, "Passive")
+	field(CALC, "A|B?1:0")
+	field(INPA, "NB1_DTACQ1_State.VAL CPP")
+	field(INPB, "NB1_DTACQ2_State.VAL CPP")
+}

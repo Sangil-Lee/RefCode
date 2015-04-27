@@ -1,0 +1,12 @@
+file db/MC_DAQ_BO.db {
+            pattern {PV_NAME,          		  DSR,		               TASK,	   	  STR }
+                    {"MCWIN_SLOT3_DISCON_CLOSE",   "MCWIN_SLOT3_DISCON_CLOSE",    "VXI0::128::INSTR",  "mds_disClose"}
+                    {"MCWIN_SLOT3_CONNECT_OPEN",   "MCWIN_SLOT3_CONNECT_OPEN",    "VXI0::128::INSTR",  "mds_conOpen"}
+                    {"MCWIN_SLOT3_EX_TRIG_REMOTE", "MCWIN_SLOT3_EXTRIG_REMOTE",   "VXI0::128::INSTR",  "task_trigger"}
+                    {"MCWIN_SLOT3_TASK_CALLBACK",  "MCWIN_SLOT3_TASK_CALLBACK" ,  "VXI0::128::INSTR",  "task_call"}
+                    {"MCWIN_SLOT3_TASK_START",     "MCWIN_SLOT3_TASK_START" ,     "VXI0::128::INSTR",  "task_start"}
+                    {"MCWIN_SLOT3_TASK_STOP",      "MCWIN_SLOT3_TASK_STOP" ,      "VXI0::128::INSTR",  "task_stop"}
+                    {"MCWIN_SLOT3_TASK_ABORT",     "MCWIN_SLOT3_TASK_ABORT" ,     "VXI0::128::INSTR",  "task_abort"}
+                    {"MCWIN_SLOT3_TASK_REG_UPDATE","MCWIN_SLOT3_TASK_REGUPDATE",  "VXI0::128::INSTR",  "task_regupdate"}
+                    {"MCWIN_SLOT3_REMOTE_LOCAL",   "MCWIN_SLOT3_REMOTE_LOCAL" ,   "VXI0::128::INSTR",  "operation_mode"}
+}

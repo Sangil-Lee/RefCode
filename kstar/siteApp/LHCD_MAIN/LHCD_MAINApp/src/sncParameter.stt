@@ -1,0 +1,242 @@
+program sncParameter
+
+int para_apply;
+assign para_apply to "LH1_RF_AUTO_SET";
+monitor para_apply;
+
+float beam_on;
+assign beam_on to "LH1_RF_ON_TIME";
+monitor beam_on;
+
+float beam_pw;
+assign beam_pw to "LH1_RF_PULSE_WIDTH";
+monitor beam_pw;
+
+float beam_daqdura;
+assign beam_daqdura to "LH1_RF_DAQDURA_CMD";
+monitor beam_daqdura;
+
+float rfkly_dura;
+assign rfkly_dura to "LH1_RFK_DAQDURA_CMD";
+
+float rfant_dura;
+assign rfant_dura to "LH1_RFANT_DAQ_DURA";
+
+float rf_feedon;
+assign rf_feedon to "LH1_RF_FEED_ON";
+monitor rf_feedon;
+
+float ltu_hv_on;
+assign ltu_hv_on to "LHCD_LTU_P0_SEC0_T0";
+float ltu_hv_on_e;
+assign ltu_hv_on_e to "LHCD_LTU_P0_SEC0_T1";
+
+float ltu_hvs_on;
+assign ltu_hvs_on to "LHCD_LTU_P1_SEC0_T0";
+float ltu_hvs_on_e;
+assign ltu_hvs_on_e to "LHCD_LTU_P1_SEC0_T1";
+
+float ltu_rf_t_on;
+assign ltu_rf_t_on to "LHCD_LTU_P2_SEC0_T0";
+float ltu_rf_t_on_e;
+assign ltu_rf_t_on_e to "LHCD_LTU_P2_SEC0_T1";
+
+float ltu_rf_f_on;
+assign ltu_rf_f_on to "LHCD_LTU_P3_SEC0_T0";
+float ltu_rf_f_on_e;
+assign ltu_rf_f_on_e to "LHCD_LTU_P3_SEC0_T1";
+
+float ltu_nidaq_on;
+assign ltu_nidaq_on to "LHCD_LTU_P4_SEC0_T0";
+float ltu_nidaq_on_e;
+assign ltu_nidaq_on_e to "LHCD_LTU_P4_SEC0_T1";
+
+float ltu_rtddaq_on;
+assign ltu_rtddaq_on to "LHCD_LTU_P5_SEC0_T0";
+float ltu_rtddaq_on_e;
+assign ltu_rtddaq_on_e to "LHCD_LTU_P5_SEC0_T1";
+
+float ltu_rfdaq_on;
+assign ltu_rfdaq_on to "LHCD_LTU_P6_SEC0_T0";
+float ltu_rfdaq_on_e;
+assign ltu_rfdaq_on_e to "LHCD_LTU_P6_SEC0_T1";
+
+int ltu_p0_en;
+assign ltu_p0_en to "LHCD_LTU_SOFT_SETUP_P0";
+int ltu_p1_en;
+assign ltu_p1_en to "LHCD_LTU_SOFT_SETUP_P1";
+int ltu_p2_en;
+assign ltu_p2_en to "LHCD_LTU_SOFT_SETUP_P2";
+int ltu_p3_en;
+assign ltu_p3_en to "LHCD_LTU_SOFT_SETUP_P3";
+int ltu_p4_en;
+assign ltu_p4_en to "LHCD_LTU_SOFT_SETUP_P4";
+int ltu_p5_en;
+assign ltu_p5_en to "LHCD_LTU_SOFT_SETUP_P5";
+int ltu_p6_en;
+assign ltu_p6_en to "LHCD_LTU_SOFT_SETUP_P6";
+
+float ps_p_len;
+assign ps_p_len to "LH1_P_LEN_E";
+
+float rf_on_dura;
+assign rf_on_dura to "LH1_RFK_PULSE_CMD";
+
+float cal_beam_pw;
+assign cal_beam_pw to "LH1_DAQ_BEAM_PW";
+
+int kstar_mode;
+assign kstar_mode to "LH1_MODE_KSTAR";
+monitor kstar_mode;
+
+float ltu_ni6254_t0;
+assign ltu_ni6254_t0 to "LH1_DAQ_6254_T0";
+float ltu_ni6220_t0;
+assign ltu_ni6220_t0 to "LH1_DAQ_6220_T0";
+float ltu_ni6254_t1;
+assign ltu_ni6254_t1 to "LH1_DAQ_6254_T1";
+float ltu_ni6220_t1;
+assign ltu_ni6220_t1 to "LH1_DAQ_6220_T1";
+float ltu_kly_rfcon_t0;
+assign ltu_kly_rfcon_t0 to "LH1_DAQ_RFK_AO_T0";
+float ltu_ant_rfcon_t0;
+assign ltu_ant_rfcon_t0 to "LH1_DAQ_RFANT_AO_T0";
+
+float ant_pulse_width;
+assign ant_pulse_width to "LH1_RFANT_FEED_DURA";
+
+int nTemp;
+
+ss parameterApply
+{
+	state low
+	{
+		when(para_apply == 1)
+	    {
+	        printf("--- Parameter Apply Ok ---\n");
+	        
+	        ltu_hv_on = 0.0;
+	        pvPut(ltu_hv_on, SYNC);
+	        ltu_hv_on_e = ltu_hv_on + 0.1;
+	        pvPut(ltu_hv_on_e, SYNC);
+
+	        ltu_hvs_on = (beam_on + 16.0) - 0.5;
+	        pvPut(ltu_hvs_on, SYNC);
+	        ltu_hvs_on_e = ltu_hvs_on + 0.1;
+	        pvPut(ltu_hvs_on_e, SYNC);
+
+	        ltu_rf_t_on = beam_on + 16.0;
+	        pvPut(ltu_rf_t_on, SYNC);
+	        ltu_rf_t_on_e = ltu_rf_t_on + 0.1;
+	        pvPut(ltu_rf_t_on_e, SYNC);
+
+	        ltu_rf_f_on = ltu_rf_t_on + rf_feedon;
+	        pvPut(ltu_rf_f_on, SYNC);
+	        ltu_rf_f_on_e = ltu_rf_f_on + 0.1;
+	        pvPut(ltu_rf_f_on_e, SYNC);
+
+			if(kstar_mode) {
+				ltu_nidaq_on = 16.0;
+				ltu_nidaq_on_e = 16.1;
+				ltu_ni6254_t0 = 16.0;	
+				ltu_ni6254_t1 = 16.0 + beam_daqdura;
+			}
+			else {
+				ltu_nidaq_on = ltu_rf_t_on - 1.0;
+				ltu_nidaq_on_e = ltu_nidaq_on + 0.1;
+				ltu_ni6254_t0 = ltu_rf_t_on - 1.0;
+				ltu_ni6254_t1 = ltu_rf_t_on - 1.0 + beam_daqdura;
+			}
+	        pvPut(ltu_nidaq_on, SYNC);
+	        pvPut(ltu_nidaq_on_e, SYNC);
+			pvPut(ltu_ni6254_t0, SYNC);
+			pvPut(ltu_ni6254_t1, SYNC);
+
+			if(kstar_mode) {
+				printf("-- ltu_rtddaq kstar --\n");
+				ltu_rtddaq_on = 16.0;
+				ltu_rtddaq_on_e = 16.1;
+				ltu_ni6220_t0 = 16.0;
+				ltu_ni6220_t1 = 16.0 + 10.0 + beam_daqdura;
+			}
+			else {
+				ltu_rtddaq_on = ltu_rf_t_on;
+				ltu_rtddaq_on_e = ltu_rtddaq_on + 0.1;
+				ltu_ni6220_t0 = ltu_rf_t_on;
+				ltu_ni6220_t1 = ltu_rf_t_on + 10.0 + beam_daqdura;
+			}
+	        pvPut(ltu_rtddaq_on, SYNC);
+	        pvPut(ltu_rtddaq_on_e, SYNC);
+			pvPut(ltu_ni6220_t0, SYNC);
+			pvPut(ltu_ni6220_t1, SYNC);
+
+			rfkly_dura = beam_daqdura;
+			rfant_dura = beam_daqdura;
+			pvPut(rfkly_dura, SYNC);
+			pvPut(rfant_dura, SYNC);
+
+			if(kstar_mode) {
+				ltu_rfdaq_on = 16.0;
+				ltu_rfdaq_on_e = 16.1;
+				ltu_kly_rfcon_t0 = 16.0;
+				ltu_ant_rfcon_t0 = 16.0;
+			}
+			else {
+				ltu_rfdaq_on = ltu_rf_t_on - 1.0;
+				ltu_rfdaq_on_e = ltu_rfdaq_on + 0.1;
+				ltu_kly_rfcon_t0 = ltu_rf_t_on - 1.0;
+				ltu_ant_rfcon_t0 = ltu_rf_t_on - 1.0;
+			}
+	        pvPut(ltu_rfdaq_on, SYNC);
+	        pvPut(ltu_rfdaq_on_e, SYNC);
+			pvPut(ltu_kly_rfcon_t0, SYNC);
+			pvPut(ltu_ant_rfcon_t0, SYNC);
+
+	        ltu_p0_en = 1;
+	        pvPut(ltu_p0_en, SYNC);
+	        ltu_p1_en = 1;
+	        pvPut(ltu_p1_en, SYNC);
+	        ltu_p2_en = 1;
+	        pvPut(ltu_p2_en, SYNC);
+	        ltu_p3_en = 1;
+	        pvPut(ltu_p3_en, SYNC);
+	        ltu_p4_en = 1;
+	        pvPut(ltu_p4_en, SYNC);
+	        ltu_p5_en = 1;
+	        pvPut(ltu_p5_en, SYNC);
+	        ltu_p6_en = 1;
+	        pvPut(ltu_p6_en, SYNC);
+
+			cal_beam_pw = beam_pw;
+			pvPut(cal_beam_pw);
+
+
+			rf_on_dura = beam_pw;
+			pvPut(rf_on_dura);
+
+			nTemp = (beam_pw + 0.0999) * 10;
+
+			ps_p_len = (nTemp/10.) + 0.5;
+			pvPut(ps_p_len);
+
+
+
+			ant_pulse_width = beam_pw;
+			pvPut(ant_pulse_width);
+
+	    } state high
+	    when(delay(1))
+	    {
+	    } state high
+	}
+	state high
+	{
+	    when(para_apply == 0)
+	    {
+
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low
+	}
+}

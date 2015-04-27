@@ -1,0 +1,527 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 403
+y 72
+w 1270
+h 973
+font "utopia-medium-r-10.0"
+ctlFont "utopia-medium-r-10.0"
+btnFont "utopia-medium-r-10.0"
+fgColor index 14
+bgColor index 1
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 52
+ctlBgColor1 index 52
+ctlBgColor2 index 14
+topShadowColor index 52
+botShadowColor index 14
+title "KSTAR Current Charging Control Panel"
+disableScroll
+endScreenProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 5
+y 74
+w 1258
+h 865
+# Appearance
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-bold-r-24.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+xAxisSrc "fromUser"
+xMin 0
+xMax 2500
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "fromUser"
+yMin -25000
+yMax 25000
+yAxisFormat "g"
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "fromUser"
+y2Min -10000
+y2Max 40000
+y2AxisFormat "g"
+# Trace Properties
+numTraces 13
+yPv {
+  0 "CCS_ITF_MEASURED_WF"
+  1 "CCS_IPF1_MEASURED_WF"
+  2 "CCS_IPF2_MEASURED_WF"
+  3 "CCS_IPF3U_MEASURED_WF"
+  4 "CCS_IPF3L_MEASURED_WF"
+  5 "CCS_IPF4U_MEASURED_WF"
+  6 "CCS_IPF4L_MEASURED_WF"
+  7 "CCS_IPF5U_MEASURED_WF"
+  8 "CCS_IPF5L_MEASURED_WF"
+  9 "CCS_IPF6U_MEASURED_WF"
+  10 "CCS_IPF6L_MEASURED_WF"
+  11 "CCS_IPF7_MEASURED_WF"
+  12 "CCS_IIVC_MEASURED_WF"
+}
+lineThickness {
+  0 3
+  1 2
+  2 2
+  3 2
+  4 2
+  5 2
+  6 2
+  7 2
+  8 2
+  9 2
+  10 2
+  11 2
+  12 2
+}
+opMode {
+  0 "plot"
+  1 "plot"
+  2 "plot"
+  3 "plot"
+  4 "plot"
+  5 "plot"
+  6 "plot"
+  7 "plot"
+  8 "plot"
+  9 "plot"
+  10 "plot"
+  11 "plot"
+  12 "plot"
+}
+useY2Axis {
+  0 1
+}
+xSigned {
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+  6 1
+  7 1
+  8 1
+  9 1
+  10 1
+  11 1
+  12 1
+}
+plotColor {
+  0 index 20
+  1 index 25
+  2 index 28
+  3 index 21
+  4 index 24
+  5 index 30
+  6 index 33
+  7 index 40
+  8 index 43
+  9 index 45
+  10 index 47
+  11 index 14
+  12 index 22
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 594
+y 36
+w 181
+h 38
+font "utopia-bold-r-32.0"
+fontAlign "right"
+fgColor index 48
+bgColor index 52
+useDisplayBg
+value {
+  "TF Current:"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 371
+y 2
+w 216
+h 70
+controlPv "CCS_SHOT_NUMBER"
+fgColor index 26
+fgAlarm
+bgColor index 52
+font "utopia-bold-r-72.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1177
+y 40
+w 80
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 20
+bgColor index 52
+useDisplayBg
+value {
+  "TF I(A)"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 119
+y 944
+w 45
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 25
+bgColor index 52
+useDisplayBg
+value {
+  "PF1"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 198
+y 944
+w 45
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 28
+bgColor index 52
+useDisplayBg
+value {
+  "PF2"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 270
+y 944
+w 65
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 20
+bgColor index 52
+useDisplayBg
+value {
+  "PF3U"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 371
+y 944
+w 60
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 23
+bgColor index 52
+useDisplayBg
+value {
+  "PF3L"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 544
+y 944
+w 60
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 33
+bgColor index 52
+useDisplayBg
+value {
+  "PF4L"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 645
+y 944
+w 65
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 40
+bgColor index 52
+useDisplayBg
+value {
+  "PF5U"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 459
+y 944
+w 65
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 30
+bgColor index 52
+useDisplayBg
+value {
+  "PF4U"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 836
+y 944
+w 65
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 45
+bgColor index 52
+useDisplayBg
+value {
+  "PF6U"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 748
+y 944
+w 60
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 43
+bgColor index 52
+useDisplayBg
+value {
+  "PF5L"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 924
+y 944
+w 60
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 47
+bgColor index 52
+useDisplayBg
+value {
+  "PF6L"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1019
+y 944
+w 45
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 14
+bgColor index 52
+useDisplayBg
+value {
+  "PF7"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 794
+y 5
+w 336
+h 87
+controlPv "CCS_IPTF_MEASURED"
+font "utopia-bold-r-72.0"
+fontAlign "right"
+fgColor index 20
+bgColor index 52
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 52
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1097
+y 944
+w 44
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 22
+bgColor index 52
+useDisplayBg
+value {
+  "IVC"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 1142
+y 35
+w 22
+h 38
+font "utopia-bold-r-32.0"
+fontAlign "right"
+fgColor index 48
+bgColor index 52
+useDisplayBg
+value {
+  "A"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 93
+y 35
+w 249
+h 38
+font "utopia-bold-r-32.0"
+fontAlign "right"
+fgColor index 48
+bgColor index 52
+useDisplayBg
+value {
+  "SHOT NUMBER"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 13
+y 39
+w 65
+h 26
+font "utopia-bold-r-24.0"
+fgColor index 26
+bgColor index 52
+useDisplayBg
+value {
+  "PF(A)"
+}
+autoSize
+endObjectProperties
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+# 1sec 21 sec 10kHz setting
+# start at 2012.8.20 15:09 
+export EPICS_CA_ADDR_LIST="172.17.102.100"
+start=0
+while [ $start -lt 3400 ]
+do
+echo "Do loof test GCDS DAQ : $start"
+caput GCDS_CREATE_LOCAL_TREE 20128201
+sleep 2
+caput GCDS_SYS_ARMING 1
+sleep 5 
+caput GCDS_SYS_RUN 1
+sleep 50
+let start+=1
+done
+

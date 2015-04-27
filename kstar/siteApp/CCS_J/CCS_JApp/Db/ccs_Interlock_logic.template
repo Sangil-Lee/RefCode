@@ -1,0 +1,19 @@
+# 2013. 7. 15
+# 2013. 7. 19 ECH EMG PV changed
+#
+
+file db/ccs_Interlock_logic.db
+{
+    pattern
+      { NAME,                         INPUTA,                   INPUTB,                      OUTPUT }
+      { "CCS_INTL_PRO_ECH110_ESTOP",  "PMS_ALL_MAX_INTERLOCK",  "ECH_OPR_MODE_KSTAR",      "ECH_PERMIT_ALARM"   },
+      { "CCS_INTL_PRO_ECH170_ESTOP",  "PMS_ALL_MAX_INTERLOCK",  "EC1_PSPLC_STAT_KSTAR",    "EC1_PSPLC_ECMD_ESTOP"  },        
+      { "CCS_INTL_PRO_ICRH_ESTOP",    "PMS_ALL_MAX_INTERLOCK",  "ICRF_MODE_KSTAR",         "ICRF_TOK_CENT_STOP"    },
+      { "CCS_INTL_PRO_NBI1A_ESTOP",   "PMS_ALL_MAX_INTERLOCK",  "NB1_INJECT_KSTAR_MODE",   "NB1_P1PLC_ECMD_EMG"    },
+      { "CCS_INTL_PRO_LHCD_ESTOP",    "PMS_ALL_MAX_INTERLOCK",  "LH1_MODE_KSTAR",          "LH1_HVPS_OFF"     }
+
+#      { "CCS_INTL_PRO_RTMON_ESTOP",  "PMS_ALL_MAX_INTERLOCK",  "RTMON_OP_MODE",           "ECEI_LTU_SET_FREE_RUN"  }
+	  
+}
+
+

@@ -1,0 +1,577 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="windowModality" >
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>710</width>
+    <height>568</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>0</y>
+     <width>641</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Cyber Log Setup</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox" >
+   <property name="windowModality" >
+    <enum>Qt::NonModal</enum>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>600</x>
+     <y>520</y>
+     <width>81</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="standardButtons" >
+    <set>QDialogButtonBox::Close</set>
+   </property>
+   <property name="centerButtons" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>81</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Test ID:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>102</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Project Name:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>102</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Description:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>74</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Start Time</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QDateTimeEdit" name="dteStart" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>340</y>
+     <width>194</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="displayFormat" >
+    <string>yyyy-MM-dd hh:mm:ss</string>
+   </property>
+   <property name="calendarPopup" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leTestID" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>50</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="teDesc" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>130</y>
+     <width>461</width>
+     <height>75</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leProName" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>90</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>360</x>
+     <y>219</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>Periodic Save Time</string>
+   </property>
+   <widget class="QSpinBox" name="sbMin" >
+    <property name="geometry" >
+     <rect>
+      <x>80</x>
+      <y>40</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sbSec" >
+    <property name="geometry" >
+     <rect>
+      <x>220</x>
+      <y>40</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>61</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Minute</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14" >
+    <property name="geometry" >
+     <rect>
+      <x>155</x>
+      <y>40</y>
+      <width>56</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Second</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>Mode</string>
+   </property>
+   <widget class="QRadioButton" name="rbAuto" >
+    <property name="geometry" >
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>71</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Auto</string>
+    </property>
+    <property name="checked" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbManual" >
+    <property name="geometry" >
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>90</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Manual</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pbSave" >
+   <property name="geometry" >
+    <rect>
+     <x>330</x>
+     <y>520</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbStop" >
+   <property name="geometry" >
+    <rect>
+     <x>420</x>
+     <y>520</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>390</y>
+     <width>641</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>End Time</string>
+   </property>
+   <widget class="QRadioButton" name="rbSetEnd" >
+    <property name="geometry" >
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Set End Time</string>
+    </property>
+    <property name="checked" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbSetTimer" >
+    <property name="geometry" >
+     <rect>
+      <x>380</x>
+      <y>30</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Set Timer</string>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="dteEnd" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>194</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="displayFormat" >
+     <string>yyyy-MM-dd hh:mm:ss</string>
+    </property>
+    <property name="calendarPopup" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="teSetTimer" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>60</y>
+      <width>118</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="displayFormat" >
+     <string>hh:mm:ss</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pbModify" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>520</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Modify</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbDelete" >
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>520</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbCurDateTime" >
+   <property name="geometry" >
+    <rect>
+     <x>440</x>
+     <y>55</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>CurrentDateTime</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbRunStop" >
+   <property name="geometry" >
+    <rect>
+     <x>440</x>
+     <y>90</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Runing/Stoped</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbCreate" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>520</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Create</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>leTestID</tabstop>
+  <tabstop>leProName</tabstop>
+  <tabstop>teDesc</tabstop>
+  <tabstop>rbAuto</tabstop>
+  <tabstop>rbManual</tabstop>
+  <tabstop>sbMin</tabstop>
+  <tabstop>sbSec</tabstop>
+  <tabstop>dteStart</tabstop>
+  <tabstop>rbSetEnd</tabstop>
+  <tabstop>rbSetTimer</tabstop>
+  <tabstop>dteEnd</tabstop>
+  <tabstop>teSetTimer</tabstop>
+  <tabstop>pbCreate</tabstop>
+  <tabstop>pbModify</tabstop>
+  <tabstop>pbDelete</tabstop>
+  <tabstop>pbSave</tabstop>
+  <tabstop>pbStop</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>clicked(QAbstractButton*)</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>600</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>608</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

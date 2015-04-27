@@ -1,0 +1,1380 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAUITime" name="caUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>26</x>
+     <y>25</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="StaticGraphic" name="staticGraphic" >
+   <property name="geometry" >
+    <rect>
+     <x>156</x>
+     <y>65</y>
+     <width>187</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>187</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>188</width>
+     <height>1</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillMode" >
+    <enum>StaticGraphic::Solid</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1270</width>
+     <height>980</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../scs.qrc" >:/images/SCS_experiment.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p0t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1105</x>
+     <y>675</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T0_p0</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p0t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1135</x>
+     <y>675</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="mouseTracking" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T1_p0</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p0t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>678</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>20.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p0t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>678</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>239</red>
+     <green>239</green>
+     <blue>239</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p1t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1135</x>
+     <y>689</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T1_p1</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p1t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1105</x>
+     <y>689</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T0_p1</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p1t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>692</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>20.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p1t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>692</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>239</red>
+     <green>239</green>
+     <blue>239</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p2t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1105</x>
+     <y>703</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T0_p2</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p2t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1135</x>
+     <y>703</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T1_p2</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p2t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>706</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>20.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p2t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>706</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>239</red>
+     <green>239</green>
+     <blue>239</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p3t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1135</x>
+     <y>717</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="statusTip" >
+    <string>PVname : DDS1_LTU_T1_p3</string>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T1_p3</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_dds1_p3t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1105</x>
+     <y>717</y>
+     <width>30</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>14</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="statusTip" >
+    <string>PVname : DDS1_LTU_T0_p3</string>
+   </property>
+   <property name="pvname" >
+    <string>DDS1_LTU_T0_p3</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p3t1" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>720</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>239</red>
+         <green>239</green>
+         <blue>239</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>128</red>
+     <green>0</green>
+     <blue>128</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>20.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QwtThermo" name="Thermo_dds1_p3t0" >
+   <property name="geometry" >
+    <rect>
+     <x>1165</x>
+     <y>720</y>
+     <width>102</width>
+     <height>5</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>102</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>102</width>
+     <height>5</height>
+    </size>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="0" >
+         <red>128</red>
+         <green>0</green>
+         <blue>128</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="scalePosition" >
+    <enum>QwtThermo::TopScale</enum>
+   </property>
+   <property name="borderWidth" >
+    <number>0</number>
+   </property>
+   <property name="fillColor" >
+    <color>
+     <red>239</red>
+     <green>239</green>
+     <blue>239</blue>
+    </color>
+   </property>
+   <property name="maxValue" >
+    <double>30.000000000000000</double>
+   </property>
+   <property name="pipeWidth" >
+    <number>5</number>
+   </property>
+   <property name="value" >
+    <double>10.000000000000000</double>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>StaticGraphic</class>
+   <extends>QWidget</extends>
+   <header>staticGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtThermo</class>
+   <extends>QWidget</extends>
+   <header>qwt_thermo.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../scs.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>CADisplayer_dds1_p0t0</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p0t0</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1117</x>
+     <y>682</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1182</x>
+     <y>678</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p0t1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p0t1</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1155</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1181</x>
+     <y>690</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p1t0</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p1t0</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1123</x>
+     <y>697</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1175</x>
+     <y>694</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p1t1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p1t1</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1155</x>
+     <y>699</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1183</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p2t0</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p2t0</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1128</x>
+     <y>714</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1186</x>
+     <y>725</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p2t1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p2t1</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1155</x>
+     <y>712</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1174</x>
+     <y>709</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p3t0</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p3t0</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1125</x>
+     <y>727</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1182</x>
+     <y>723</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CADisplayer_dds1_p3t1</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo_dds1_p3t1</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1159</x>
+     <y>727</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1177</x>
+     <y>739</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

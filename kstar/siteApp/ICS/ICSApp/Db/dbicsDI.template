@@ -1,0 +1,15 @@
+file db/dbicsDI.db
+{
+  pattern { REC,					DESC,					SYSMON,		CH,			INIT}
+		#{ "ICS_THERMOHYD1_STATE",	"ThermoHydro1 state",	"SYSMON2",	"DI0CH0",	"0"},
+		#{ "ICS_THERMOHYD1_ALARM",	"ThermoHydro1 alarm",	"SYSMON2",	"DI0CH1",	"0"},
+		#{ "ICS_THERMOHYD2_STATE",	"ThermoHydro2 state",	"SYSMON2",	"DI0CH2",	"1"},
+		#{ "ICS_THERMOHYD2_ALARM",	"ThermoHydro2 alarm",	"SYSMON2",	"DI0CH3",	"0"},
+		#{ "ICS_HPCWARTERLEAK_ALARM","HPC waterleak alarm",	"SYSMON2",	"DI0CH4",	"0"}
+
+		{ "ICS_THERMOHYD1_STATE",	"ThermoHydro1 state",	"SYSMON2",	"DI0CH0",	"1"},
+		{ "ICS_THERMOHYD1_ALARM",	"ThermoHydro1 alarm",	"SYSMON2",	"DI0CH1",	"0"},
+		{ "ICS_THERMOHYD2_STATE",	"ThermoHydro2 state",	"SYSMON2",	"DI0CH2",	"0"},
+		{ "ICS_THERMOHYD2_ALARM",	"ThermoHydro2 alarm",	"SYSMON2",	"DI0CH3",	"0"},
+		{ "ICS_HPCWARTERLEAK_ALARM","HPC waterleak alarm",	"SYSMON2",	"DI0CH4",	"0"}
+}

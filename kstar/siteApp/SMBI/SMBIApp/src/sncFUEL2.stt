@@ -1,0 +1,45 @@
+program FUEL_ON2
+option +r;  
+option -c;
+%% #include <epicsThread.h> 
+int MGI_VALVE_PULSE_SRC;
+int SMBI_VALVE_PULSE_SRC;
+int MGI_VALVE_PULSE_DST;
+int SMBI_VALVE_PULSE_DST;
+
+assign MGI_VALVE_PULSE_SRC to "MGI_I_VALVE_PULSE";
+monitor MGI_VALVE_PULSE_SRC;
+evflag ef_MGI_VALVE;
+sync MGI_VALVE_PULSE_SRC ef_MGI_VALVE;
+
+assign SMBI_VALVE_PULSE_SRC to "SMBI_I_VALVE_PULSE";
+monitor SMBI_VALVE_PULSE_SRC;
+evflag ef_SMBI_VALVE;
+sync SMBI_VALVE_PULSE_SRC ef_SMBI_VALVE;
+
+assign MGI_VALVE_PULSE_DST to "MGI_VALVE_PULSE_DST";
+monitor MGI_VALVE_PULSE_DST;
+assign SMBI_VALVE_PULSE_DST to "SMBI_VALVE_PULSE_DST";
+monitor SMBI_VALVE_PULSE_DST;
+
+ss FUEL {
+    state MAIN {
+        when( efTestAndClear(ef_SMBI_VALVE) || efTestAndClear(ef_MGI_VALVE) ){
+		if( MGI_VALVE_PULSE_SRC == 1) {
+              		MGI_VALVE_PULSE_DST = 1; 
+              		pvPut(MGI_VALVE_PULSE_DST, SYNC);
+			%%epicsThreadSleep(3.);
+              		MGI_VALVE_PULSE_DST = 0; 
+              		pvPut(MGI_VALVE_PULSE_DST, SYNC);
+		}
+		if( SMBI_VALVE_PULSE_SRC == 1) {
+              		SMBI_VALVE_PULSE_DST = 1; 
+              		pvPut(SMBI_VALVE_PULSE_DST, SYNC);
+			%%epicsThreadSleep(3.);
+              		SMBI_VALVE_PULSE_DST = 0; 
+              		pvPut(SMBI_VALVE_PULSE_DST, SYNC);
+		}
+        } state MAIN
+    }
+
+}

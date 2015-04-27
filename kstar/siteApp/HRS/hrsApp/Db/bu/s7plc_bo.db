@@ -1,0 +1,8 @@
+record(bo, "$(PVNAME)") {
+	field(DTYP, "S7plc")
+	field(OUT, "@$(PLCNAME)/$(OFFSET) T=$(TYPE) B=$(BIT)")
+	field(PINI, "YES")
+	field(ZNAM, "False")
+	field(ONAM, "True")
+	field(ZSV,  "MAJOR")
+}

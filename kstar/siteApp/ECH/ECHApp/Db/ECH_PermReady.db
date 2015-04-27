@@ -1,0 +1,61 @@
+# ---------------------------------------------
+# KSTAR Heating Control Test
+# ---------------------------------------------
+
+record (bo, "$(SYS)_KSTAR_OPR_PER") {
+  field(DESC, "Heating Permission Command")
+  field(ZNAM, "NO")
+  field(ONAM, "YES")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+record (bo, "$(SYS)_KSTAR_OPR_RDY") {
+  field(DESC, "Heating Ready Command")
+  field(ZNAM, "NOT READY")
+  field(ONAM, "READY")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+record (bo, "$(SYS)_KSTAR_OPR_RDY_LAMP") {
+  field(DESC, "Heating Ready Status")
+  field(ZNAM, "NOT READY")
+  field(ONAM, "READY")
+  field(ZSV , "MAJOR")
+  field(OSV , "NO_ALARM")
+}
+
+#record (bo, "$(SYS)_KSTAR_OPR_UPLOAD") {
+#  field(DESC, "Heating Setting Upload")
+#  field(ZNAM, "0")
+#  field(ONAM, "1")
+#}
+
+record (ao, "$(SYS)_KSTAR_OPR_PULSEON") {
+  field(DESC, "Heating Setting for Pulse On")
+  field(PREC, "2")
+}
+
+record (ao, "$(SYS)_HV_PULSE_START") {
+  field(DESC, "ECH HV Set for Pulse")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+}
+record (ao, "$(SYS)_HV_PULSE_LENGTH") {
+  field(DESC, "ECH HV Set for Pulse")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+}
+record (ao, "$(SYS)_WAVEFORM_NI_T0") {
+  field(DESC, "ECH WaveForm NI T0")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+}
+record (ao, "$(SYS)_WAVEFORM_NI_T1") {
+  field(DESC, "ECH WaveForm NI T1")
+  field(SCAN, "Passive")
+  field(PREC, "4")
+}
+
+

@@ -1,0 +1,40 @@
+record(ai, "$(REC)_RVAL")
+{
+        field(DESC, "PT100 Reading")
+        field(DTYP, "cFP20x0 NI compactFieldPoint")
+        field(INP, "@nicFP20x0Ctrl2 read $(CHAN)")
+        field(SCAN, "I/O Intr")
+        field(FLNK, "$(REC)_1000")
+        field(PREC, "3")
+        field(EGU, "ohm")
+}
+record(calc, "$(REC)_1000")
+{
+        field(DESC, "Raw Value * 1000")
+        field(SCAN, "Passive")
+        field(CALC, "(A*1000)")
+        field(INPA, "$(REC)_RVAL NPP NMS")
+        field(FLNK, "$(REC)")
+}
+
+record(ai, "$(REC)") {
+        field(DESC, "PT100 Conversion")
+        field(DTYP, "Raw Soft Channel")
+        field(SCAN, "Passive")
+        field(INP, "$(REC)_1000 NPP NMS")
+        field(LINR, "tempKelvinPT100")
+        field(PREC, "3")
+        field(EGU, "K")
+}
+
+#record(calc, "$(REC)")
+#{
+#       field(DESC, "PT100 Temp")
+#       field(SCAN, "Passive")
+#       field(CALC, "(A+273)")
+#       field(INPA, "$(REC)_RVAL NPP NMS")
+#       field(EGU, "K")
+#       field(PREC, "2")
+#}
+
+

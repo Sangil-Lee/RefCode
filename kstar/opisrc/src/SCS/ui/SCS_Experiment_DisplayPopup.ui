@@ -1,0 +1,160 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>471</width>
+    <height>199</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" >
+   <item>
+    <widget class="CAMbboButton" name="caMbboButton_2" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>200</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="palette" >
+      <palette>
+       <active>
+        <colorrole role="ButtonText" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>40</red>
+           <green>40</green>
+           <blue>40</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="ButtonText" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>40</red>
+           <green>40</green>
+           <blue>40</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="ButtonText" >
+         <brush brushstyle="SolidPattern" >
+          <color alpha="255" >
+           <red>115</red>
+           <green>115</green>
+           <blue>115</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="align" stdset="0" >
+      <enum>CAMbboButton::Horizontal</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICS_SHOTINFO_SELECT</string>
+     </property>
+     <property name="textlist" >
+      <stringlist>
+       <string>Off</string>
+       <string>LCD1</string>
+       <string>LCD2</string>
+      </stringlist>
+     </property>
+     <property name="bitlist" >
+      <stringlist>
+       <string>0</string>
+       <string>1</string>
+       <string>2</string>
+       <string>3</string>
+       <string>4</string>
+       <string>5</string>
+       <string>6</string>
+      </stringlist>
+     </property>
+     <property name="control" >
+      <bool>true</bool>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="CAPushButton" name="caPushButton_5" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>200</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>ICS_SHOTINFO_SHOW</string>
+     </property>
+     <property name="truelabel" >
+      <string>IP Show</string>
+     </property>
+     <property name="falselabel" >
+      <string>Time Show</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMbboButton</class>
+   <extends>QWidget</extends>
+   <header>caMbbobutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

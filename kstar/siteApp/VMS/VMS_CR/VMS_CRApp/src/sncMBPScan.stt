@@ -1,0 +1,55 @@
+program mbpScan
+option +r;
+
+%% #define NUM_CHAN   20 
+
+short index;
+short pvProc[20];
+assign pvProc to { 
+                   "{SYS}:{SUB}:{CTRL}:SERIAL.PROC",   /* index 0 */
+                   "{SYS}:{SUB}:{CTRL}:V2.PROC",    /* index 1 */
+                   "{SYS}:{SUB}:{CTRL}:V3.PROC",    /* index 2 */
+                   "{SYS}:{SUB}:{CTRL}:V4.PROC",    /* index 3 */
+                   "{SYS}:{SUB}:{CTRL}:V6.PROC",    /* index 4 */
+                   "{SYS}:{SUB}:{CTRL}:V7.PROC",    /* index 5 */
+                   "{SYS}:{SUB}:{CTRL}:V8.PROC",    /* index 6 */
+                   "{SYS}:{SUB}:{CTRL}:V14.PROC",   /* index 7 */
+                   "{SYS}:{SUB}:{CTRL}:V16.PROC",   /* index 8 */
+                   "{SYS}:{SUB}:{CTRL}:V35.PROC",   /* index 9 */
+                   "{SYS}:{SUB}:{CTRL}:V39.PROC",   /* index 10 */
+                   "{SYS}:{SUB}:{CTRL}:V40.PROC",   /* index 11 */
+                   "{SYS}:{SUB}:{CTRL}:V48.PROC",   /* index 12 */
+                   "{SYS}:{SUB}:{CTRL}:V54.PROC",   /* index 13 */
+                   "{SYS}:{SUB}:{CTRL}:V55.PROC",   /* index 14 */
+                   "{SYS}:{SUB}:{CTRL}:V57.PROC",   /* index 15 */
+                   "{SYS}:{SUB}:{CTRL}:V172.PROC",  /* index 16 */
+                   "{SYS}:{SUB}:{CTRL}:V173.PROC",  /* index 17 */
+                   "{SYS}:{SUB}:{CTRL}:V174.PROC",  /* index 18 */
+                   "{SYS}:{SUB}:{CTRL}:V175.PROC"   /* index 19 */
+                  };
+
+ss mbpScan {
+    state init {
+        when(pvConnectCount() == pvAssignCount()) {
+            index = 0;
+        } state scan
+    }
+
+    state scan {
+        when(delay(.2) && index < NUM_CHAN) {
+            pvProc[index] = 1;
+            pvPut(pvProc[index], SYNC);
+            index++;
+        } state scan
+
+        when(index >= NUM_CHAN) {
+        } state reset
+    }
+
+    state reset {
+        when(delay(2.)) {
+            index = 0;
+        } state scan
+    }
+
+}

@@ -1,0 +1,5279 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../tms.qrc" >:/images/HDS_HCS_PFBus.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>10</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+   <property name="pvname" stdset="0" >
+    <string>HDS_HCS_R_REMOTE</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_12" >
+   <property name="geometry" >
+    <rect>
+     <x>28</x>
+     <y>274</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_HV_300</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_13" >
+   <property name="geometry" >
+    <rect>
+     <x>193</x>
+     <y>310</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_TI_300</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_22" >
+   <property name="geometry" >
+    <rect>
+     <x>193</x>
+     <y>274</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_FI_300</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_19" >
+   <property name="geometry" >
+    <rect>
+     <x>244</x>
+     <y>115</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_HV_340</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_20" >
+   <property name="geometry" >
+    <rect>
+     <x>244</x>
+     <y>274</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_PV_320</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_28" >
+   <property name="geometry" >
+    <rect>
+     <x>289</x>
+     <y>274</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_PI_320</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_29" >
+   <property name="geometry" >
+    <rect>
+     <x>248</x>
+     <y>484</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_FV_315</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_30" >
+   <property name="geometry" >
+    <rect>
+     <x>193</x>
+     <y>346</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_PI_300</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_31" >
+   <property name="geometry" >
+    <rect>
+     <x>191</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_TI_309</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_32" >
+   <property name="geometry" >
+    <rect>
+     <x>248</x>
+     <y>522</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_HV_349</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_33" >
+   <property name="geometry" >
+    <rect>
+     <x>244</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_PV_329</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_34" >
+   <property name="geometry" >
+    <rect>
+     <x>289</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_TI_329</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_35" >
+   <property name="geometry" >
+    <rect>
+     <x>334</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_PI_329</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_36" >
+   <property name="geometry" >
+    <rect>
+     <x>106</x>
+     <y>442</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_TI_900</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_37" >
+   <property name="geometry" >
+    <rect>
+     <x>106</x>
+     <y>478</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_LI_902</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_38" >
+   <property name="geometry" >
+    <rect>
+     <x>106</x>
+     <y>514</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_LI_902</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_39" >
+   <property name="geometry" >
+    <rect>
+     <x>106</x>
+     <y>550</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HRSAI_300_LI_900</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_118" >
+   <property name="geometry" >
+    <rect>
+     <x>692</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T52</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_119" >
+   <property name="geometry" >
+    <rect>
+     <x>785</x>
+     <y>638</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_MF1_TEMP_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_120" >
+   <property name="geometry" >
+    <rect>
+     <x>785</x>
+     <y>534</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_MF5_TEMP_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_121" >
+   <property name="geometry" >
+    <rect>
+     <x>784</x>
+     <y>384</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_MF4_TEMP_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_122" >
+   <property name="geometry" >
+    <rect>
+     <x>784</x>
+     <y>234</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_MF3_TEMP_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_123" >
+   <property name="geometry" >
+    <rect>
+     <x>785</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_MF2_TEMP_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_124" >
+   <property name="geometry" >
+    <rect>
+     <x>529</x>
+     <y>639</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T50</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_125" >
+   <property name="geometry" >
+    <rect>
+     <x>529</x>
+     <y>535</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T49</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_126" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>385</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T48</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_127" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>235</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T47</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_128" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T46</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_129" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL1U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_130" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>68</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL1L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_131" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>90</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL2U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_132" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>111</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL2L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_133" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>234</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL3U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_134" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>278</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL4U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_135" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>322</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL5U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_136" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>385</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL3L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_137" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>428</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL4L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_138" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>472</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL5L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_139" >
+   <property name="geometry" >
+    <rect>
+     <x>729</x>
+     <y>533</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL6U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_141" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>638</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL7U_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_142" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>660</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL7L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_143" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>599</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL6L_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_144" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>534</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_PRS_SHe5_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_145" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>45</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_PRS_SHe2_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_146" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>638</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_PRS_SHe1_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_147" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>234</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_PRS_SHe3_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_148" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>384</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_PRS_SHe4_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_149" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>43</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB01_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_150" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>131</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB01_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_151" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>87</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB02_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_152" >
+   <property name="geometry" >
+    <rect>
+     <x>983</x>
+     <y>197</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB02_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_153" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>234</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU3_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_154" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>278</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU4_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_155" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>322</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU5_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_156" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>384</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL3_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_157" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>429</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL4_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_158" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>473</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL5_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_159" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>534</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU6_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_160" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>556</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU6_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_161" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>577</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL6_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_162" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>599</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL6_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_163" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>637</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB07_BHL_TCUR01</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_164" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>659</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFB07_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_165" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>256</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU3_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_166" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>344</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU5_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_167" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>451</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL4_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_168" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>495</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL5_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_169" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>406</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL3_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_170" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>300</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBU4_BHL_TCUR02</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_171" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>344</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL5UB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_172" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>407</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL3LB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_173" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>300</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL4UB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_174" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>450</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL4LB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_175" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>256</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL3UB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_176" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>494</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL5LB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_197" >
+   <property name="geometry" >
+    <rect>
+     <x>424</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C46_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_198" >
+   <property name="geometry" >
+    <rect>
+     <x>473</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_F46</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_199" >
+   <property name="geometry" >
+    <rect>
+     <x>587</x>
+     <y>46</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P46</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_200" >
+   <property name="geometry" >
+    <rect>
+     <x>587</x>
+     <y>235</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P47</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_201" >
+   <property name="geometry" >
+    <rect>
+     <x>473</x>
+     <y>235</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_F47</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_202" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>234</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C47_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_203" >
+   <property name="geometry" >
+    <rect>
+     <x>473</x>
+     <y>385</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_F48</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_204" >
+   <property name="geometry" >
+    <rect>
+     <x>588</x>
+     <y>385</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P48</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_205" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>385</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C48_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_206" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>535</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C49_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_207" >
+   <property name="geometry" >
+    <rect>
+     <x>473</x>
+     <y>535</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_F49</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_208" >
+   <property name="geometry" >
+    <rect>
+     <x>587</x>
+     <y>534</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P49</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_209" >
+   <property name="geometry" >
+    <rect>
+     <x>587</x>
+     <y>638</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P50</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_210" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>639</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C50_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_211" >
+   <property name="geometry" >
+    <rect>
+     <x>473</x>
+     <y>639</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_F50</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_212" >
+   <property name="geometry" >
+    <rect>
+     <x>736</x>
+     <y>751</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_P52</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_76" >
+   <property name="geometry" >
+    <rect>
+     <x>658</x>
+     <y>705</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_Q13_R</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="TP52" >
+   <property name="geometry" >
+    <rect>
+     <x>708</x>
+     <y>725</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>12</width>
+     <height>12</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>200</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_T52</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_TP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_T52</string>
+     <string>HDS_HCS_R_T52_AL_EN</string>
+     <string>HDS_HCS_R_T52_AL_CD_HH</string>
+     <string>HDS_HCS_R_T52_AL_CD_H</string>
+     <string>HDS_HCS_R_T52_AL_CD_L</string>
+     <string>HDS_HCS_R_T52_AL_CD_LL</string>
+     <string>HDS_HCS_W_T52_AL_EN</string>
+     <string>HDS_HCS_W_T52_AL_CD_HH</string>
+     <string>HDS_HCS_W_T52_AL_CD_H</string>
+     <string>HDS_HCS_W_T52_AL_CD_L</string>
+     <string>HDS_HCS_W_T52_AL_CD_LL</string>
+     <string>HDS_HCS_R_T52_SEL</string>
+     <string>HDS_HCS_W_T52_SEL</string>
+     <string>HDS_HCS_R_T52_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T52_AL_H_BIT</string>
+     <string>HDS_HCS_R_T52_AL_L_BIT</string>
+     <string>HDS_HCS_R_T52_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T52_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T52_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T52_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T52_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T52_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T52_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T52_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T52_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T52_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T52_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T52_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T52_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P52</string>
+     <string>HDS_HCS_R_P52_AL_EN</string>
+     <string>HDS_HCS_R_P52_AL_HH</string>
+     <string>HDS_HCS_R_P52_AL_H</string>
+     <string>HDS_HCS_R_P52_AL_L</string>
+     <string>HDS_HCS_R_P52_AL_LL</string>
+     <string>HDS_HCS_W_P52_AL_EN</string>
+     <string>HDS_HCS_W_P52_AL_HH</string>
+     <string>HDS_HCS_W_P52_AL_H</string>
+     <string>HDS_HCS_W_P52_AL_L</string>
+     <string>HDS_HCS_W_P52_AL_LL</string>
+     <string>HDS_HCS_R_P52_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P52_AL_H_BIT</string>
+     <string>HDS_HCS_R_P52_AL_L_BIT</string>
+     <string>HDS_HCS_R_P52_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P52_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P52_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P52_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P52_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P52_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="Q13" >
+   <property name="geometry" >
+    <rect>
+     <x>636</x>
+     <y>700</y>
+     <width>22</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>22</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_Q13_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_Q.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_Q13_W</string>
+     <string>HDS_HCS_R_Q13_R</string>
+     <string>HDS_HCS_W_Q13_W</string>
+     <string>HDS_HCS_R_Q13_AL_EN</string>
+     <string>HDS_HCS_R_Q13_AL_HH</string>
+     <string>HDS_HCS_R_Q13_AL_H</string>
+     <string>HDS_HCS_R_Q13_AL_L</string>
+     <string>HDS_HCS_R_Q13_AL_LL</string>
+     <string>HDS_HCS_W_Q13_AL_EN</string>
+     <string>HDS_HCS_W_Q13_AL_HH</string>
+     <string>HDS_HCS_W_Q13_AL_H</string>
+     <string>HDS_HCS_W_Q13_AL_L</string>
+     <string>HDS_HCS_W_Q13_AL_LL</string>
+     <string>HDS_HCS_R_Q13_AL_HH_BIT</string>
+     <string>HDS_HCS_R_Q13_AL_H_BIT</string>
+     <string>HDS_HCS_R_Q13_AL_L_BIT</string>
+     <string>HDS_HCS_R_Q13_AL_LL_BIT</string>
+     <string>HDS_HCS_W_Q13_MODE</string>
+     <string>HDS_HCS_W_Q13_ON_CMD</string>
+     <string>HDS_HCS_R_Q13_AL_BIT</string>
+     <string>HDS_HCS_R_Q13_AL</string>
+     <string>HDS_HCS_W_Q13_AL</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>182</x>
+     <y>387</y>
+     <width>45</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>mmH2O</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca109_2" >
+   <property name="geometry" >
+    <rect>
+     <x>2</x>
+     <y>2</y>
+     <width>79</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_W_MODE</string>
+   </property>
+   <property name="confirm" >
+    <bool>true</bool>
+   </property>
+   <property name="truelabel" >
+    <string>OP</string>
+   </property>
+   <property name="falselabel" >
+    <string>CD</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_213" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>577</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL6LB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_214" >
+   <property name="geometry" >
+    <rect>
+     <x>729</x>
+     <y>555</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF_CL6UB_MF_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C49" >
+   <property name="geometry" >
+    <rect>
+     <x>396</x>
+     <y>531</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C49_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_VFTP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_C49_W</string>
+     <string>HDS_HCS_R_C49_R</string>
+     <string>HDS_HCS_W_C49_W</string>
+     <string>HDS_HCS_R_C49_AL_EN</string>
+     <string>HDS_HCS_R_C49_AL_HH</string>
+     <string>HDS_HCS_R_C49_AL_H</string>
+     <string>HDS_HCS_R_C49_AL_L</string>
+     <string>HDS_HCS_R_C49_AL_LL</string>
+     <string>HDS_HCS_W_C49_AL_EN</string>
+     <string>HDS_HCS_W_C49_AL_HH</string>
+     <string>HDS_HCS_W_C49_AL_H</string>
+     <string>HDS_HCS_W_C49_AL_L</string>
+     <string>HDS_HCS_W_C49_AL_LL</string>
+     <string>HDS_HCS_R_C49_AL_HH_BIT</string>
+     <string>HDS_HCS_R_C49_AL_H_BIT</string>
+     <string>HDS_HCS_R_C49_AL_L_BIT</string>
+     <string>HDS_HCS_R_C49_AL_LL_BIT</string>
+     <string>HDS_HCS_W_F49</string>
+     <string>HDS_HCS_R_F49_AL_EN</string>
+     <string>HDS_HCS_R_F49_AL_HH</string>
+     <string>HDS_HCS_R_F49_AL_H</string>
+     <string>HDS_HCS_R_F49_AL_L</string>
+     <string>HDS_HCS_R_F49_AL_LL</string>
+     <string>HDS_HCS_W_F49_AL_EN</string>
+     <string>HDS_HCS_W_F49_AL_HH</string>
+     <string>HDS_HCS_W_F49_AL_H</string>
+     <string>HDS_HCS_W_F49_AL_L</string>
+     <string>HDS_HCS_W_F49_AL_LL</string>
+     <string>HDS_HCS_R_F49_AL_HH_BIT</string>
+     <string>HDS_HCS_R_F49_AL_H_BIT</string>
+     <string>HDS_HCS_R_F49_AL_L_BIT</string>
+     <string>HDS_HCS_R_F49_AL_LL_BIT</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL1</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL2</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL3</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL4</string>
+     <string>HDS_HCS_W_F49_AL_LEVEL1</string>
+     <string>HDS_HCS_W_F49_AL_LEVEL2</string>
+     <string>HDS_HCS_W_F49_AL_LEVEL3</string>
+     <string>HDS_HCS_W_F49_AL_LEVEL4</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_F49_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_T49</string>
+     <string>HDS_HCS_R_T49_AL_EN</string>
+     <string>HDS_HCS_R_T49_AL_CD_HH</string>
+     <string>HDS_HCS_R_T49_AL_CD_H</string>
+     <string>HDS_HCS_R_T49_AL_CD_L</string>
+     <string>HDS_HCS_R_T49_AL_CD_LL</string>
+     <string>HDS_HCS_W_T49_AL_EN</string>
+     <string>HDS_HCS_W_T49_AL_CD_HH</string>
+     <string>HDS_HCS_W_T49_AL_CD_H</string>
+     <string>HDS_HCS_W_T49_AL_CD_L</string>
+     <string>HDS_HCS_W_T49_AL_CD_LL</string>
+     <string>HDS_HCS_R_T49_SEL</string>
+     <string>HDS_HCS_W_T49_SEL</string>
+     <string>HDS_HCS_R_T49_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T49_AL_H_BIT</string>
+     <string>HDS_HCS_R_T49_AL_L_BIT</string>
+     <string>HDS_HCS_R_T49_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T49_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T49_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T49_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T49_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T49_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T49_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T49_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T49_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T49_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T49_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T49_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T49_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P49</string>
+     <string>HDS_HCS_R_P49_AL_EN</string>
+     <string>HDS_HCS_R_P49_AL_HH</string>
+     <string>HDS_HCS_R_P49_AL_H</string>
+     <string>HDS_HCS_R_P49_AL_L</string>
+     <string>HDS_HCS_R_P49_AL_LL</string>
+     <string>HDS_HCS_W_P49_AL_EN</string>
+     <string>HDS_HCS_W_P49_AL_HH</string>
+     <string>HDS_HCS_W_P49_AL_H</string>
+     <string>HDS_HCS_W_P49_AL_L</string>
+     <string>HDS_HCS_W_P49_AL_LL</string>
+     <string>HDS_HCS_R_P49_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P49_AL_H_BIT</string>
+     <string>HDS_HCS_R_P49_AL_L_BIT</string>
+     <string>HDS_HCS_R_P49_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P49_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P49_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P49_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P49_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P49_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C50" >
+   <property name="geometry" >
+    <rect>
+     <x>397</x>
+     <y>635</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C50_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_VFTP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_C50_W</string>
+     <string>HDS_HCS_R_C50_R</string>
+     <string>HDS_HCS_W_C50_W</string>
+     <string>HDS_HCS_R_C50_AL_EN</string>
+     <string>HDS_HCS_R_C50_AL_HH</string>
+     <string>HDS_HCS_R_C50_AL_H</string>
+     <string>HDS_HCS_R_C50_AL_L</string>
+     <string>HDS_HCS_R_C50_AL_LL</string>
+     <string>HDS_HCS_W_C50_AL_EN</string>
+     <string>HDS_HCS_W_C50_AL_HH</string>
+     <string>HDS_HCS_W_C50_AL_H</string>
+     <string>HDS_HCS_W_C50_AL_L</string>
+     <string>HDS_HCS_W_C50_AL_LL</string>
+     <string>HDS_HCS_R_C50_AL_HH_BIT</string>
+     <string>HDS_HCS_R_C50_AL_H_BIT</string>
+     <string>HDS_HCS_R_C50_AL_L_BIT</string>
+     <string>HDS_HCS_R_C50_AL_LL_BIT</string>
+     <string>HDS_HCS_W_F50</string>
+     <string>HDS_HCS_R_F50_AL_EN</string>
+     <string>HDS_HCS_R_F50_AL_HH</string>
+     <string>HDS_HCS_R_F50_AL_H</string>
+     <string>HDS_HCS_R_F50_AL_L</string>
+     <string>HDS_HCS_R_F50_AL_LL</string>
+     <string>HDS_HCS_W_F50_AL_EN</string>
+     <string>HDS_HCS_W_F50_AL_HH</string>
+     <string>HDS_HCS_W_F50_AL_H</string>
+     <string>HDS_HCS_W_F50_AL_L</string>
+     <string>HDS_HCS_W_F50_AL_LL</string>
+     <string>HDS_HCS_R_F50_AL_HH_BIT</string>
+     <string>HDS_HCS_R_F50_AL_H_BIT</string>
+     <string>HDS_HCS_R_F50_AL_L_BIT</string>
+     <string>HDS_HCS_R_F50_AL_LL_BIT</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL1</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL2</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL3</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL4</string>
+     <string>HDS_HCS_W_F50_AL_LEVEL1</string>
+     <string>HDS_HCS_W_F50_AL_LEVEL2</string>
+     <string>HDS_HCS_W_F50_AL_LEVEL3</string>
+     <string>HDS_HCS_W_F50_AL_LEVEL4</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_F50_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_T50</string>
+     <string>HDS_HCS_R_T50_AL_EN</string>
+     <string>HDS_HCS_R_T50_AL_CD_HH</string>
+     <string>HDS_HCS_R_T50_AL_CD_H</string>
+     <string>HDS_HCS_R_T50_AL_CD_L</string>
+     <string>HDS_HCS_R_T50_AL_CD_LL</string>
+     <string>HDS_HCS_W_T50_AL_EN</string>
+     <string>HDS_HCS_W_T50_AL_CD_HH</string>
+     <string>HDS_HCS_W_T50_AL_CD_H</string>
+     <string>HDS_HCS_W_T50_AL_CD_L</string>
+     <string>HDS_HCS_W_T50_AL_CD_LL</string>
+     <string>HDS_HCS_R_T50_SEL</string>
+     <string>HDS_HCS_W_T50_SEL</string>
+     <string>HDS_HCS_R_T50_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T50_AL_H_BIT</string>
+     <string>HDS_HCS_R_T50_AL_L_BIT</string>
+     <string>HDS_HCS_R_T50_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T50_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T50_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T50_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T50_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T50_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T50_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T50_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T50_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T50_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T50_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T50_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T50_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P50</string>
+     <string>HDS_HCS_R_P50_AL_EN</string>
+     <string>HDS_HCS_R_P50_AL_HH</string>
+     <string>HDS_HCS_R_P50_AL_H</string>
+     <string>HDS_HCS_R_P50_AL_L</string>
+     <string>HDS_HCS_R_P50_AL_LL</string>
+     <string>HDS_HCS_W_P50_AL_EN</string>
+     <string>HDS_HCS_W_P50_AL_HH</string>
+     <string>HDS_HCS_W_P50_AL_H</string>
+     <string>HDS_HCS_W_P50_AL_L</string>
+     <string>HDS_HCS_W_P50_AL_LL</string>
+     <string>HDS_HCS_R_P50_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P50_AL_H_BIT</string>
+     <string>HDS_HCS_R_P50_AL_L_BIT</string>
+     <string>HDS_HCS_R_P50_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P50_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P50_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P50_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P50_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P50_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C48" >
+   <property name="geometry" >
+    <rect>
+     <x>396</x>
+     <y>381</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C48_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_VFTP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_C48_W</string>
+     <string>HDS_HCS_R_C48_R</string>
+     <string>HDS_HCS_W_C48_W</string>
+     <string>HDS_HCS_R_C48_AL_EN</string>
+     <string>HDS_HCS_R_C48_AL_HH</string>
+     <string>HDS_HCS_R_C48_AL_H</string>
+     <string>HDS_HCS_R_C48_AL_L</string>
+     <string>HDS_HCS_R_C48_AL_LL</string>
+     <string>HDS_HCS_W_C48_AL_EN</string>
+     <string>HDS_HCS_W_C48_AL_HH</string>
+     <string>HDS_HCS_W_C48_AL_H</string>
+     <string>HDS_HCS_W_C48_AL_L</string>
+     <string>HDS_HCS_W_C48_AL_LL</string>
+     <string>HDS_HCS_R_C48_AL_HH_BIT</string>
+     <string>HDS_HCS_R_C48_AL_H_BIT</string>
+     <string>HDS_HCS_R_C48_AL_L_BIT</string>
+     <string>HDS_HCS_R_C48_AL_LL_BIT</string>
+     <string>HDS_HCS_W_F48</string>
+     <string>HDS_HCS_R_F48_AL_EN</string>
+     <string>HDS_HCS_R_F48_AL_HH</string>
+     <string>HDS_HCS_R_F48_AL_H</string>
+     <string>HDS_HCS_R_F48_AL_L</string>
+     <string>HDS_HCS_R_F48_AL_LL</string>
+     <string>HDS_HCS_W_F48_AL_EN</string>
+     <string>HDS_HCS_W_F48_AL_HH</string>
+     <string>HDS_HCS_W_F48_AL_H</string>
+     <string>HDS_HCS_W_F48_AL_L</string>
+     <string>HDS_HCS_W_F48_AL_LL</string>
+     <string>HDS_HCS_R_F48_AL_HH_BIT</string>
+     <string>HDS_HCS_R_F48_AL_H_BIT</string>
+     <string>HDS_HCS_R_F48_AL_L_BIT</string>
+     <string>HDS_HCS_R_F48_AL_LL_BIT</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL1</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL2</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL3</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL4</string>
+     <string>HDS_HCS_W_F48_AL_LEVEL1</string>
+     <string>HDS_HCS_W_F48_AL_LEVEL2</string>
+     <string>HDS_HCS_W_F48_AL_LEVEL3</string>
+     <string>HDS_HCS_W_F48_AL_LEVEL4</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_F48_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_T48</string>
+     <string>HDS_HCS_R_T48_AL_EN</string>
+     <string>HDS_HCS_R_T48_AL_CD_HH</string>
+     <string>HDS_HCS_R_T48_AL_CD_H</string>
+     <string>HDS_HCS_R_T48_AL_CD_L</string>
+     <string>HDS_HCS_R_T48_AL_CD_LL</string>
+     <string>HDS_HCS_W_T48_AL_EN</string>
+     <string>HDS_HCS_W_T48_AL_CD_HH</string>
+     <string>HDS_HCS_W_T48_AL_CD_H</string>
+     <string>HDS_HCS_W_T48_AL_CD_L</string>
+     <string>HDS_HCS_W_T48_AL_CD_LL</string>
+     <string>HDS_HCS_R_T48_SEL</string>
+     <string>HDS_HCS_W_T48_SEL</string>
+     <string>HDS_HCS_R_T48_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T48_AL_H_BIT</string>
+     <string>HDS_HCS_R_T48_AL_L_BIT</string>
+     <string>HDS_HCS_R_T48_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T48_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T48_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T48_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T48_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T48_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T48_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T48_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T48_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T48_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T48_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T48_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T48_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P48</string>
+     <string>HDS_HCS_R_P48_AL_EN</string>
+     <string>HDS_HCS_R_P48_AL_HH</string>
+     <string>HDS_HCS_R_P48_AL_H</string>
+     <string>HDS_HCS_R_P48_AL_L</string>
+     <string>HDS_HCS_R_P48_AL_LL</string>
+     <string>HDS_HCS_W_P48_AL_EN</string>
+     <string>HDS_HCS_W_P48_AL_HH</string>
+     <string>HDS_HCS_W_P48_AL_H</string>
+     <string>HDS_HCS_W_P48_AL_L</string>
+     <string>HDS_HCS_W_P48_AL_LL</string>
+     <string>HDS_HCS_R_P48_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P48_AL_H_BIT</string>
+     <string>HDS_HCS_R_P48_AL_L_BIT</string>
+     <string>HDS_HCS_R_P48_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P48_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P48_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P48_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P48_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P48_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C47" >
+   <property name="geometry" >
+    <rect>
+     <x>396</x>
+     <y>231</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C47_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_VFTP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_C47_W</string>
+     <string>HDS_HCS_R_C47_R</string>
+     <string>HDS_HCS_W_C47_W</string>
+     <string>HDS_HCS_R_C47_AL_EN</string>
+     <string>HDS_HCS_R_C47_AL_HH</string>
+     <string>HDS_HCS_R_C47_AL_H</string>
+     <string>HDS_HCS_R_C47_AL_L</string>
+     <string>HDS_HCS_R_C47_AL_LL</string>
+     <string>HDS_HCS_W_C47_AL_EN</string>
+     <string>HDS_HCS_W_C47_AL_HH</string>
+     <string>HDS_HCS_W_C47_AL_H</string>
+     <string>HDS_HCS_W_C47_AL_L</string>
+     <string>HDS_HCS_W_C47_AL_LL</string>
+     <string>HDS_HCS_R_C47_AL_HH_BIT</string>
+     <string>HDS_HCS_R_C47_AL_H_BIT</string>
+     <string>HDS_HCS_R_C47_AL_L_BIT</string>
+     <string>HDS_HCS_R_C47_AL_LL_BIT</string>
+     <string>HDS_HCS_W_F47</string>
+     <string>HDS_HCS_R_F47_AL_EN</string>
+     <string>HDS_HCS_R_F47_AL_HH</string>
+     <string>HDS_HCS_R_F47_AL_H</string>
+     <string>HDS_HCS_R_F47_AL_L</string>
+     <string>HDS_HCS_R_F47_AL_LL</string>
+     <string>HDS_HCS_W_F47_AL_EN</string>
+     <string>HDS_HCS_W_F47_AL_HH</string>
+     <string>HDS_HCS_W_F47_AL_H</string>
+     <string>HDS_HCS_W_F47_AL_L</string>
+     <string>HDS_HCS_W_F47_AL_LL</string>
+     <string>HDS_HCS_R_F47_AL_HH_BIT</string>
+     <string>HDS_HCS_R_F47_AL_H_BIT</string>
+     <string>HDS_HCS_R_F47_AL_L_BIT</string>
+     <string>HDS_HCS_R_F47_AL_LL_BIT</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL1</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL2</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL3</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL4</string>
+     <string>HDS_HCS_W_F47_AL_LEVEL1</string>
+     <string>HDS_HCS_W_F47_AL_LEVEL2</string>
+     <string>HDS_HCS_W_F47_AL_LEVEL3</string>
+     <string>HDS_HCS_W_F47_AL_LEVEL4</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_F47_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_T47</string>
+     <string>HDS_HCS_R_T47_AL_EN</string>
+     <string>HDS_HCS_R_T47_AL_CD_HH</string>
+     <string>HDS_HCS_R_T47_AL_CD_H</string>
+     <string>HDS_HCS_R_T47_AL_CD_L</string>
+     <string>HDS_HCS_R_T47_AL_CD_LL</string>
+     <string>HDS_HCS_W_T47_AL_EN</string>
+     <string>HDS_HCS_W_T47_AL_CD_HH</string>
+     <string>HDS_HCS_W_T47_AL_CD_H</string>
+     <string>HDS_HCS_W_T47_AL_CD_L</string>
+     <string>HDS_HCS_W_T47_AL_CD_LL</string>
+     <string>HDS_HCS_R_T47_SEL</string>
+     <string>HDS_HCS_W_T47_SEL</string>
+     <string>HDS_HCS_R_T47_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T47_AL_H_BIT</string>
+     <string>HDS_HCS_R_T47_AL_L_BIT</string>
+     <string>HDS_HCS_R_T47_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T47_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T47_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T47_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T47_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T47_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T47_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T47_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T47_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T47_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T47_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T47_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T47_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P47</string>
+     <string>HDS_HCS_R_P47_AL_EN</string>
+     <string>HDS_HCS_R_P47_AL_HH</string>
+     <string>HDS_HCS_R_P47_AL_H</string>
+     <string>HDS_HCS_R_P47_AL_L</string>
+     <string>HDS_HCS_R_P47_AL_LL</string>
+     <string>HDS_HCS_W_P47_AL_EN</string>
+     <string>HDS_HCS_W_P47_AL_HH</string>
+     <string>HDS_HCS_W_P47_AL_H</string>
+     <string>HDS_HCS_W_P47_AL_L</string>
+     <string>HDS_HCS_W_P47_AL_LL</string>
+     <string>HDS_HCS_R_P47_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P47_AL_H_BIT</string>
+     <string>HDS_HCS_R_P47_AL_L_BIT</string>
+     <string>HDS_HCS_R_P47_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P47_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P47_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P47_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P47_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P47_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_177" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>65</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL1_BHL_TCUR01_M</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_178" >
+   <property name="geometry" >
+    <rect>
+     <x>982</x>
+     <y>109</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL2_BHL_TCUR01_M</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_179" >
+   <property name="geometry" >
+    <rect>
+     <x>983</x>
+     <y>153</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL1_BHL_TCUR02_M</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_180" >
+   <property name="geometry" >
+    <rect>
+     <x>785</x>
+     <y>133</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12U_CV_T</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_181" >
+   <property name="geometry" >
+    <rect>
+     <x>785</x>
+     <y>155</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12L_CV_T</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_182" >
+   <property name="geometry" >
+    <rect>
+     <x>983</x>
+     <y>175</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBL2_BHL_TCUR02_M</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_183" >
+   <property name="geometry" >
+    <rect>
+     <x>842</x>
+     <y>134</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12U_CV_P</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_184" >
+   <property name="geometry" >
+    <rect>
+     <x>843</x>
+     <y>156</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12L_CV_P</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_140" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>133</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_HCS_PF12U_MF</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_185" >
+   <property name="geometry" >
+    <rect>
+     <x>728</x>
+     <y>155</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_HCS_PF12L_MF</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C46" >
+   <property name="geometry" >
+    <rect>
+     <x>397</x>
+     <y>40</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>HDS_HCS_R_C46_R</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_VFTP.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>HDS_HCS_R_C46_W</string>
+     <string>HDS_HCS_R_C46_R</string>
+     <string>HDS_HCS_W_C46_W</string>
+     <string>HDS_HCS_R_C46_AL_EN</string>
+     <string>HDS_HCS_R_C46_AL_HH</string>
+     <string>HDS_HCS_R_C46_AL_H</string>
+     <string>HDS_HCS_R_C46_AL_L</string>
+     <string>HDS_HCS_R_C46_AL_LL</string>
+     <string>HDS_HCS_W_C46_AL_EN</string>
+     <string>HDS_HCS_W_C46_AL_HH</string>
+     <string>HDS_HCS_W_C46_AL_H</string>
+     <string>HDS_HCS_W_C46_AL_L</string>
+     <string>HDS_HCS_W_C46_AL_LL</string>
+     <string>HDS_HCS_R_C46_AL_HH_BIT</string>
+     <string>HDS_HCS_R_C46_AL_H_BIT</string>
+     <string>HDS_HCS_R_C46_AL_L_BIT</string>
+     <string>HDS_HCS_R_C46_AL_LL_BIT</string>
+     <string>HDS_HCS_W_F46</string>
+     <string>HDS_HCS_R_F46_AL_EN</string>
+     <string>HDS_HCS_R_F46_AL_HH</string>
+     <string>HDS_HCS_R_F46_AL_H</string>
+     <string>HDS_HCS_R_F46_AL_L</string>
+     <string>HDS_HCS_R_F46_AL_LL</string>
+     <string>HDS_HCS_W_F46_AL_EN</string>
+     <string>HDS_HCS_W_F46_AL_HH</string>
+     <string>HDS_HCS_W_F46_AL_H</string>
+     <string>HDS_HCS_W_F46_AL_L</string>
+     <string>HDS_HCS_W_F46_AL_LL</string>
+     <string>HDS_HCS_R_F46_AL_HH_BIT</string>
+     <string>HDS_HCS_R_F46_AL_H_BIT</string>
+     <string>HDS_HCS_R_F46_AL_L_BIT</string>
+     <string>HDS_HCS_R_F46_AL_LL_BIT</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL1</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL2</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL3</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL4</string>
+     <string>HDS_HCS_W_F46_AL_LEVEL1</string>
+     <string>HDS_HCS_W_F46_AL_LEVEL2</string>
+     <string>HDS_HCS_W_F46_AL_LEVEL3</string>
+     <string>HDS_HCS_W_F46_AL_LEVEL4</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_F46_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_T46</string>
+     <string>HDS_HCS_R_T46_AL_EN</string>
+     <string>HDS_HCS_R_T46_AL_CD_HH</string>
+     <string>HDS_HCS_R_T46_AL_CD_H</string>
+     <string>HDS_HCS_R_T46_AL_CD_L</string>
+     <string>HDS_HCS_R_T46_AL_CD_LL</string>
+     <string>HDS_HCS_W_T46_AL_EN</string>
+     <string>HDS_HCS_W_T46_AL_CD_HH</string>
+     <string>HDS_HCS_W_T46_AL_CD_H</string>
+     <string>HDS_HCS_W_T46_AL_CD_L</string>
+     <string>HDS_HCS_W_T46_AL_CD_LL</string>
+     <string>HDS_HCS_R_T46_SEL</string>
+     <string>HDS_HCS_W_T46_SEL</string>
+     <string>HDS_HCS_R_T46_AL_HH_BIT</string>
+     <string>HDS_HCS_R_T46_AL_H_BIT</string>
+     <string>HDS_HCS_R_T46_AL_L_BIT</string>
+     <string>HDS_HCS_R_T46_AL_LL_BIT</string>
+     <string>HDS_HCS_R_T46_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_R_T46_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_R_T46_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_R_T46_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_W_T46_AL_SB_LEVEL1</string>
+     <string>HDS_HCS_W_T46_AL_SB_LEVEL2</string>
+     <string>HDS_HCS_W_T46_AL_SB_LEVEL3</string>
+     <string>HDS_HCS_W_T46_AL_SB_LEVEL4</string>
+     <string>HDS_HCS_R_T46_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_T46_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_T46_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_T46_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_P46</string>
+     <string>HDS_HCS_R_P46_AL_EN</string>
+     <string>HDS_HCS_R_P46_AL_HH</string>
+     <string>HDS_HCS_R_P46_AL_H</string>
+     <string>HDS_HCS_R_P46_AL_L</string>
+     <string>HDS_HCS_R_P46_AL_LL</string>
+     <string>HDS_HCS_W_P46_AL_EN</string>
+     <string>HDS_HCS_W_P46_AL_HH</string>
+     <string>HDS_HCS_W_P46_AL_H</string>
+     <string>HDS_HCS_W_P46_AL_L</string>
+     <string>HDS_HCS_W_P46_AL_LL</string>
+     <string>HDS_HCS_R_P46_AL_HH_BIT</string>
+     <string>HDS_HCS_R_P46_AL_H_BIT</string>
+     <string>HDS_HCS_R_P46_AL_L_BIT</string>
+     <string>HDS_HCS_R_P46_AL_LL_BIT</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL1</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL2</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL3</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL4</string>
+     <string>HDS_HCS_W_P46_AL_LEVEL1</string>
+     <string>HDS_HCS_W_P46_AL_LEVEL2</string>
+     <string>HDS_HCS_W_P46_AL_LEVEL3</string>
+     <string>HDS_HCS_W_P46_AL_LEVEL4</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL1_BIT</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL2_BIT</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL3_BIT</string>
+     <string>HDS_HCS_R_P46_AL_LEVEL4_BIT</string>
+     <string>HDS_HCS_R_REMOTE</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_215" >
+   <property name="geometry" >
+    <rect>
+     <x>679</x>
+     <y>134</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12U_CV_OUTR</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_216" >
+   <property name="geometry" >
+    <rect>
+     <x>679</x>
+     <y>156</y>
+     <width>45</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>38</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12L_CV_OUTR</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C46_3" >
+   <property name="geometry" >
+    <rect>
+     <x>656</x>
+     <y>151</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12L_CV_OUTR</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_CV.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>CLS_HCS_PF12L_MF</string>
+     <string>CLS_PF12L_CV_OUTR</string>
+     <string>CLS_PF12L_GAS_HILIM_ECMD</string>
+     <string>CLS_PF12L_GAS_LOLIM_ECMD</string>
+     <string>CLS_PF12L_CV_T</string>
+     <string>CLS_PF12L_CV_P</string>
+     <string>CLS_PF12L_CV_DP</string>
+     <string>CLS_PF12L_GAS_POS_ECMD</string>
+     <string>CLS_PF12L_CV_OUTW</string>
+     <string>CLS_PF12L_GAS_HILIM_ECMD</string>
+     <string>CLS_PF12L_GAS_LOLIM_ECMD</string>
+     <string>CLS_PF12L_CV_MANUW</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="C46_4" >
+   <property name="geometry" >
+    <rect>
+     <x>656</x>
+     <y>130</y>
+     <width>20</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HPValve</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>150</red>
+     <green>150</green>
+     <blue>150</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>CLS_PF12U_CV_OUTR</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/HDS_HCS_CV.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>CLS_HCS_PF12U_MF</string>
+     <string>CLS_PF12U_CV_OUTR</string>
+     <string>CLS_PF12U_GAS_HILIM_ECMD</string>
+     <string>CLS_PF12U_GAS_LOLIM_ECMD</string>
+     <string>CLS_PF12U_CV_T</string>
+     <string>CLS_PF12U_CV_P</string>
+     <string>CLS_PF12U_CV_DP</string>
+     <string>CLS_PF12U_GAS_POS_ECMD</string>
+     <string>CLS_PF12U_CV_OUTW</string>
+     <string>CLS_PF12U_GAS_HILIM_ECMD</string>
+     <string>CLS_PF12U_GAS_LOLIM_ECMD</string>
+     <string>CLS_PF12U_CV_MANUW</string>
+    </stringlist>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../tms.qrc" />
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX" >
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY" >
+   <number>10</number>
+  </property>
+  <property name="gridSnapX" >
+   <bool>false</bool>
+  </property>
+  <property name="gridSnapY" >
+   <bool>false</bool>
+  </property>
+  <property name="gridVisible" >
+   <bool>false</bool>
+  </property>
+ </designerdata>
+</ui>

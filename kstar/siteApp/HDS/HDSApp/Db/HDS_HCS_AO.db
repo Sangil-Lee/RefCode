@@ -1,0 +1,32 @@
+record(calcout, "$(PV_NAME)_IN") {
+  field(FLNK, "$(PV_NAME)")
+  field(CALC, "B")
+  field(INPA, "HDS_HCS_R_REMOTE CPP")
+  field(INPB, "$(PV_NAME_INP) CPP")
+  field(OUT, "$(PV_NAME)")
+}
+
+record(ao, "$(PV_NAME)") {
+  field(SCAN, "Passive")
+  field(EGU, "$(UNIT)")
+  field(OMSL, "supervisory")
+  field(OUT, "$(PV_NAME)_C")
+  field(DESC, "$(DESC)")
+}
+
+record(calcout, "$(PV_NAME)_C"){
+  field(FLNK, "$(PV_NAME)_O")
+  field(CALC, "A*B")
+  field(INPA, "$(ASLO)")
+  field(INPB, "$(PV_NAME) CPP")
+  field(OUT, "$(PV_NAME)_O")
+}
+
+
+record(ao, "$(PV_NAME)_O") {
+  field(SCAN, "Passive")
+  field(DTYP, "S7plc")
+  field(OUT, "@HCS_PLC/$(BYTE) T=$(TYPE)")
+  field(OMSL, "supervisory")
+}
+

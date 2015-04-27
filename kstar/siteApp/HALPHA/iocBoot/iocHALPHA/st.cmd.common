@@ -1,0 +1,48 @@
+#!../../bin/linux-ppc/HALPHA
+
+## Register all support components
+dbLoadDatabase("../../dbd/HALPHA.dbd",0,0)
+HALPHA_registerRecordDeviceDriver(pdbbase) 
+
+epicsEnvSet(CLTU_IOC_DEBUG,"0")
+
+cd ${TOP}/iocBoot/${IOC}
+
+
+< initDriverDev1.cmd
+#< initDriverDev2.cmd
+#< initDriverDev3.cmd
+
+
+cd ${TOP}
+
+## Load record instances
+dbLoadRecords("db/HALPHA.db")
+dbLoadTemplate("db/HALPHA_AO.template")
+dbLoadTemplate("db/HALPHA_BO.template")
+dbLoadTemplate("db/HALPHA_BO_CHON.template")
+dbLoadTemplate("db/HALPHA_BO_ZCAL.template")
+dbLoadTemplate("db/HALPHA_String.template")
+dbLoadRecords("db/HALPHATimeStamp.db")
+dbLoadRecords("db/HALPHA_BI.db", "SYS=HALPHA")
+dbLoadRecords("db/dbSysMon.db", "SYS=HALPHA")
+dbLoadRecords("db/SYS_CLTU.db", "TYPE=LTU, SYS=HALPHA" )
+createTaskCLTU("HALPHA", "/dev/tss/cltu.0")
+
+#dbLoadRecords("db/HALPHA_M2.db")
+#dbLoadTemplate("db/HALPHA_AO_M2.template")
+#dbLoadTemplate("db/HALPHA_BO_CHON_M2.template")
+#dbLoadTemplate("db/HALPHA_BO_ZCAL_M2.template")
+#dbLoadTemplate("db/HALPHA_String_M2.template")
+
+iocInit()
+
+# cd ${TOP}/iocBoot/${IOC}
+# dbl > pvlist
+
+## Start any sequence programs
+#seq sncExample,"user=snl"
+seq sncHALPHABoProc
+seq sncHALPHADaqSeq
+seq sncHALPHAChSelect 
+

@@ -1,0 +1,131 @@
+file ./db/devLHCD_BI.db
+{
+pattern
+{PV_NAME    TAG DESC    OSV ZSV}
+{LH1_ALL_OK           ALL_OK                     "ARC Fault" "MAJOR" "NO_ALARM"}
+{LH1_ARC_FLT          ARC_FLT                    "ARC Fault" "MAJOR" "NO_ALARM"}
+{LH1_INT_MPS_STAT     LH1_INT_MPS_STAT           "Coil Slow Interlock" "MAJOR" "NO_ALARM"}
+{LH1_INT_CMPS_STAT    LH1_INT_CMPS_STAT          "Counter Coil OK" "NO_ALARM" "MAJOR"}
+{LH1_INT_PS_STAT      LH1_INT_PS_STAT            "CATHODE Power Fault" "MAJOR" "NO_ALARM"}
+{LH1_INT_CL_STAT      LH1_INT_CL_STAT            "LH1 Interlock" "MAJOR" "NO_ALARM"}
+{LH1_OM_EPICS_STAT    LH1_CM_EPICS_STAT          "EPICS Run mode" "NO_ALARM" "MAJOR"}
+{LH1_INT_EMG_STAT     LH1_INT_EMG_STAT           "EMG. STOP Activity" "MAJOR" "NO_ALARM"}
+{LH1_CL_FLOW_STAT     LH1_CL_FLOW_STAT           "FLOW Slow Interlock" "MAJOR" "NO_ALARM"}
+{LH1_KL_HPS_STAT      LH1_KL_HPS_STAT            "HEATER Slow Interlock" "MAJOR" "NO_ALARM"}
+{LH1_HEATER_V_DN      HEATER_V_DN                "HEATER PS Volt. Down CMD" "MAJOR" "NO_ALARM"}
+{LH1_HEATER_V_STOP    HEATER_V_STOP              "HEATER PS Stop" "MAJOR" "NO_ALARM"}
+{LH1_HEATER_V_UP      HEATER_V_UP                "HEATER PS Volt. UP CMD" "MAJOR" "NO_ALARM"}
+{LH1_HEATE_V_MOVE     HEATE_V_MOVE               "HEATER PS MOVE" "MAJOR" "NO_ALARM"}
+{LH1_HV_OFF_MV        HV_OFF_MV                  "HV OFF CMD" "MAJOR" "NO_ALARM"}
+{LH1_PS_HVON_STAT     LH1_PS_HVON_STAT           "HV ON Status" "MAJOR" "NO_ALARM"}
+{LH1_HV_ON_MV         HV_ON_MV                   "HV ON CMD" "MAJOR" "NO_ALARM"}
+{LH1_INT_KLY_STAT     LH1_INT_KLY_STAT           "Klystron Interlock" "MAJOR" "NO_ALARM"}
+{LH1_K_FLT            K_FLT                      "CATHODE PS Fault" "MAJOR" "NO_ALARM"}
+{LH1_K_OK             K_OK                       "KSTAR Interlock OK" "MAJOR" "NO_ALARM"}
+{LH1_KL_MPS_STAT      LH1_KL_MPS_STAT            "Main Coil OK" "NO_ALARM" "MAJOR"}
+{LH1_M_A_FLT          M_A_FLT                    "MOD ANODE Fault" "MAJOR" "NO_ALARM"}
+{LH1_M_A_PS_FLT       M_A_PS_FLT                 "MOD ANODE PS Fault" "MAJOR" "NO_ALARM"}
+{LH1_CM_PLC_STAT      LH1_CM_PLC_STAT            "PLC Run mode" "MAJOR" "NO_ALARM"}
+{LH1_PULSE_OFF_MV     PULSE_OFF_MV               "Pulse Stop CMD" "MAJOR" "NO_ALARM"}
+{LH1_PULSE_ON_MV      PULSE_ON_MV                "Pulse RUN CMD" "MAJOR" "NO_ALARM"}
+{LH1_PULSE_RUN        PULSE_ON_MV                "Pulse Running" "MAJOR" "NO_ALARM"}
+{LH1_P_S              P_S                        "PS Interlock" "MAJOR" "NO_ALARM"}
+{LH1_RF_FLT           RF_FLT                     "RF Fault" "MAJOR" "NO_ALARM"}
+{LH1_RF_FWD_FLT       RF_FWD_FLT                 "RF Forward Fault" "MAJOR" "NO_ALARM"}
+{LH1_INT_DF_STAT      LH1_INT_DF_STAT            "Door Fence 1,2 OK" "MAJOR" "NO_ALARM"}
+{LH1_INT_TL_STAT      LH1_INT_TL_STAT            "Transmition line Interlock" "MAJOR" "NO_ALARM"}
+#{LH1_T_OK             T_OK             "Cooling System OK" "NO_ALARM" "MAJOR"}
+{LH1_Vac_Ion_FLT      Vac_Ion_FLT      "VACCUM ION Fault" "MAJOR" "NO_ALARM"}
+{LH1_VCB_ON           VCB_ON           "VCB ON Status" "MAJOR" "NO_ALARM"}
+{LH1_VME_Fault        VME_Fault        "VME Fault Status" "MAJOR" "NO_ALARM"}
+{LH1_VME_I            VME_I            "VME Interlock" "MAJOR" "NO_ALARM"}
+{LH1_VME_MODE         VME_Mode         "Local Run Mode" "MAJOR" "NO_ALARM"}
+{LH1_VME_RUN          VME_RUN          "VME RUN Status" "MAJOR" "NO_ALARM"}
+{LH1_VME_Stop         VME_Stop         "VME Stop Status" "MAJOR" "NO_ALARM"}
+{LH1_FLT_CATHODE      FLT_CATHODE      "Cathode P/S" "MAJOR" "NO_ALARM"}
+{LH1_FLT_MOD_ANODE    FLT_MOD_ANODE    "Cathode P/S" "MAJOR" "NO_ALARM"}
+
+{LH1_INT_AUX_STAT     LH1_INT_AUX_STAT             "Aux.Intc. Reset"   "MAJOR"	"NO_ALARM"}
+{LH1_INT_DKLY_STAT    LH1_INT_DKLY_STAT            "Kly. Int. Disable" "MAJOR"	"NO_ALARM"}
+{LH1_INT_DTL_STAT     LH1_INT_DTL_STAT             "T/L Int. Disable"  "MAJOR"	"NO_ALARM"}
+{LH1_INT_DCL_STAT     LH1_INT_DCL_STAT             "Interlock Status"  "MAJOR"	"NO_ALARM"}
+
+## 2011.12.07
+{LH1_INT_L1_STAT     LH1_INT_L1_STAT              "Interlock Status" "MAJOR"	"NO_ALARM"}
+{LH1_INT_L2_STAT     LH1_INT_L2_STAT              "Interlock Status" "MAJOR"	"NO_ALARM"}
+{LH1_INT_L3_STAT     LH1_INT_L3_STAT              "Interlock Status" "MAJOR"	"NO_ALARM"}
+{LH1_INT_L4_STAT     LH1_INT_L4_STAT              "Interlock Status" "MAJOR"	"NO_ALARM"}
+{LH1_TL_SF6_STAT     LH1_TL_SF6_STAT              "Interlock Status" "MAJOR" 	"NO_ALARM"}
+{LH1_INT_DF1_STAT    LH1_INT_DF1_STAT             "Interlock Status" "MAJOR" "NO_ALARM"}
+{LH1_INT_DF2_STAT    LH1_INT_DF2_STAT             "Interlock Status" "MAJOR" "NO_ALARM"}
+{LH1_INT_SKEY_STAT   LH1_INT_SKEY_STAT            "Interlock Status" "MAJOR"	"NO_ALARM"}
+
+## 2012.04.27
+{LH1_PS_RFFWD_DIS    LH1_PS_RFFWD_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_RFREF_DIS    LH1_PS_RFREF_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_KLYRFREF_DIS    LH1_PS_KLYRFREF_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_ANTRFREF_DIS    LH1_PS_ANTRFREF_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_WGARC_DIS    LH1_PS_WGARC_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_VION_DIS    LH1_PS_VION_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_IP_DIS    LH1_PS_IP_DIS              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_RF_FWD    LH1_PS_RF_FWD              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_RF_REF    LH1_PS_RF_REF              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_KLY_REF    LH1_PS_KLY_REF              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_ANT_REF    LH1_PS_ANT_REF              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_WG_ARC    LH1_PS_WG_ARC              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_VION_FLT    LH1_PS_VION_FLT              "Disabled" "MAJOR"	"NO_ALARM"}
+{LH1_PS_IP_FLT    LH1_PS_IP_FLT              "Disabled" "MAJOR"	"NO_ALARM"}
+
+{LH1_CL_STEMP_STAT    LH1_CL_STEMP_STAT              "Surface" "MAJOR"	"NO_ALARM"}
+{LH1_CL_RTEMP_STAT    LH1_CL_RTEMP_STAT              "Return" "MAJOR"	"NO_ALARM"}
+
+## 2012.05.09
+{LH1_RET_TEMP_BODY    LH1_RET_TEMP_BODY              "Return" "MAJOR"	"NO_ALARM"}
+{LH1_RET_TEMP_WIN     LH1_RET_TEMP_WIN               "Window" "MAJOR"	"NO_ALARM"}
+{LH1_RET_TEMP_SOL     LH1_RET_TEMP_SOL               "SOL"    "MAJOR"	"NO_ALARM"}
+
+{LH1_SUR_TEMP_ROW     LH1_SUR_TEMP_ROW               "ROW"    "MAJOR"	"NO_ALARM"}
+{LH1_SUR_TEMP_LOW     LH1_SUR_TEMP_LOW               "LOW"    "MAJOR"	"NO_ALARM"}
+{LH1_SUR_TEMP_BODY1   LH1_SUR_TEMP_BODY1             "LOW"    "MAJOR"	"NO_ALARM"}
+{LH1_SUR_TEMP_BODY3   LH1_SUR_TEMP_BODY3             "LOW"    "MAJOR"	"NO_ALARM"}
+{LH1_SUR_TEMP_BODY5   LH1_SUR_TEMP_BODY5             "LOW"    "MAJOR"	"NO_ALARM"}
+{LH1_SUR_TEMP_BODY7   LH1_SUR_TEMP_BODY7             "LOW"    "MAJOR"	"NO_ALARM"}
+
+{LH1_INT_DF_STAT    LH1_INT_DF_STAT             "Interlock Status" "NO_ALARM" "MAJOR"}
+
+{LH1_TC_WATER_TEMP    LH1_CL_RTEMP_STAT             "Water int." "MAJOR" "NO_ALARM"}
+{LH1_TC_WG_TEMP    LH1_WG_STA_TEMP             "waveguide int." "MAJOR" "NO_ALARM"}
+{LH1_TC_KLY_STEMP    LH1_KLY_STA_TEMP             "waveguide int." "MAJOR" "NO_ALARM"}
+{LH1_TC_BODY_STEMP    LH1_CL_STEMP_STAT             "waveguide int." "MAJOR" "NO_ALARM"}
+
+## 2012.08.16
+{LH1_KLY_HPSRDY_STAT    LH1_KLY_HPSRDY_STAT             "Heater P/S ready" "NO_ALARM" "MAJOR"}
+{LH1_KLY_HPSEINT_STAT    LH1_KLY_HPSEINT_STAT             "EXT. HPS interlock" "NO_ALARM" "MAJOR"}
+{LH1_KLY_HPSON_STAT    LH1_KLY_HPSON_STAT             "HPS ON" "NO_ALARM" "MAJOR"}
+{LH1_KLY_HPSOV_STAT    LH1_KLY_HPSOV_STAT             "HPS OV" "MAJOR"    "NO_ALARM"}
+{LH1_KLY_HPSOC_STAT    LH1_KLY_HPSOC_STAT             "HPS OC" "MAJOR"    "NO_ALARM"}
+{LH1_KLY_HPSZP_STAT    LH1_KLY_HPSZP_STAT             "HPS zero" "MAJOR"    "NO_ALARM"}
+
+{LH1_KLY_MCPSI_STAT    LH1_KLY_MCPSI_STAT             "MCP current int." "NO_ALARM"    "MAJOR"}
+{LH1_KLY_MCPSV_STAT    LH1_KLY_MCPSV_STAT             "MCP voltage int." "NO_ALARM"    "MAJOR"}
+{LH1_KLY_MCPSEINT_STAT    LH1_KLY_MCPSEINT_STAT             "MCP EXT. int." "NO_ALARM"    "MAJOR"}
+{LH1_KLY_CCPSI_STAT    LH1_KLY_CCPSI_STAT             "CCPS current int." "NO_ALARM"    "MAJOR"}
+{LH1_KLY_CCPSV_STAT    LH1_KLY_CCPSV_STAT             "CCPS voltage int." "NO_ALARM"    "MAJOR"}
+{LH1_KLY_CCPSEINT_STAT    LH1_KLY_CCPSEINT_STAT             "CCPS EXT. int." "NO_ALARM"    "MAJOR"}
+
+{LH1_MODE_DUMMY    LH1_OM_DUMMY_STAT				"Dummy mode" "NO_ALARM"    "MAJOR"}
+{LH1_MODE_KSTAR    LH1_OM_KSTAR_STAT				"KSTAR mode" "NO_ALARM"    "MAJOR"}
+
+{LH1_SW_DUMMY_STAT    LH1_SW_DUMMY_STAT				"Dummy mode" "NO_ALARM"    "MAJOR"}
+{LH1_SW_KSTAR_STAT    LH1_SW_KSTAR_STAT				"KSTAR mode" "NO_ALARM"    "MAJOR"}
+
+#2012.09.26
+{LH1_SF6_FILON_STAT    LH1_SF6_FILON_STAT			"FILL STAT RETURN" "MAJOR"    "NO_ALARM"}
+{LH1_SF6_VENTON_STAT    LH1_SF6_VENTON_STAT			"VENT STAT RETURN" "MAJOR"    "NO_ALARM"}
+{LH1_TK_SF6_STAT    LH1_TK_SF6_STAT			"SF6 STAT RETURN" "NO_ALARM"    "MAJOR"}
+
+
+#2013.05.21
+#{LH1_PERMISSION_STAT    LH1_PERMISSION_STAT			"Permission STAT RETURN"  "NO_ALARM" "MAJOR"}
+
+}

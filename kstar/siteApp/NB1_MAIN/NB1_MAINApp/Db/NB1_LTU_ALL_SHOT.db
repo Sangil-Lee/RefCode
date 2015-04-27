@@ -1,0 +1,21 @@
+record(bo, "NB1_LTU_ALL_SHOT")
+{
+    field(DESC, "NB1 LTU Shot")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+record(calcout, "NB1_DTACQ_START_EN")
+{
+    field(DESC, "NB1 DTACQ EN")
+    field(SCAN, ".5 second")
+    field(CALC, "A>B:1:0")
+    field(INPA, "NB1_DTACQ_T0")
+    field(INPB, "NB1_DTACQ_T1")
+    field(OUT, "NB1_TEST_DTACQ.DISV")
+}
+record(bo, "NB1_TEST_DTACQ")
+{
+    field(DESC, "TEST")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}

@@ -1,0 +1,931 @@
+record(ao, "EC1_CCPS_ECMD_VOLT") {
+   field(DESC, "목표 전압치")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_VOLT S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_CCPS_ECMD_AMP") {
+   field(DESC, "목표 전류치")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_AMP S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_CCPS_ECMD_SEND") {
+   field(DESC, "CCPS SEND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_SEND S 1")
+} 
+
+record(ao, "EC1_CCPS_ECMD_STOP") {
+   field(DESC, "CCPS STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_CCPS_ECMD_PROG") {
+   field(DESC, "CCPS PROGRAM START")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_PROG S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_CCPSDIS") {
+   field(DESC, "CCPS DISABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_CCPSDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_CCPSEN") {
+   field(DESC, "CCPS ENABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_CCPSEN S 1")
+} 
+
+record(ao, "EC1_HPS_VOLT_ESTART") {
+   field(DESC, "HPS VOLT START")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_VOLT_ESTART S 1")
+} 
+
+record(ao, "EC1_HPS_VOLT_ESTOP") {
+   field(DESC, "HPS VOLT STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_VOLT_ESTOP S 1")
+} 
+
+record(ao, "EC1_HPS_VOLT_EBYPASS") {
+   field(DESC, "HPS VOLT BYPASS")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_VOLT_EBYPASS S 1")
+} 
+
+record(ao, "EC1_HPS_ECMD_VOLT") {
+   field(DESC, "HPS VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_VOLT S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_HPS_ECMD_TIME") {
+   field(DESC, "HPS TIME")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_TIME S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+}
+
+record(ao, "EC1_HPS_ECMD_STEP") {
+   field(DESC, "HPS STEP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_STEP S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+}
+
+record(ao, "EC1_TLPLC_ECMD_HPSDIS") {
+   field(DESC, "HPS DISABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_HPSDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_HPSEN") {
+   field(DESC, "HPS ENABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_HPSEN S 1")
+} 
+
+record(ao, "EC1_PHI1_ECMD_SVON") {
+   field(DESC, "PHI SVON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ECMD_SVON S 1")
+} 
+
+record(ao, "EC1_PHI1_ECMD_SVOFF") {
+   field(DESC, "PHI SVOFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ECMD_SVOFF S 1")
+} 
+
+record(ao, "EC1_PHI1_ECMD_DEG") {
+   field(DESC, "PHI DEGREE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ECMD_DEG S 1")
+} 
+
+record(ao, "EC1_PHI1_ANGLE_ESET") {
+   field(DESC, "PHI ANGLE SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ANGLE_ESET S 1")
+} 
+
+record(ao, "EC1_PHI1_ECMD_STOP") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_PHI1_ECMD_VEL") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_ECMD_VEL S 1")
+} 
+
+record(ao, "EC1_PHI1_SP_ESET") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI1_SP_ESET S 1")
+} 
+
+record(ao, "EC1_PHI2_ECMD_SVON") {
+   field(DESC, "PHI SVON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ECMD_SVON S 1")
+} 
+
+record(ao, "EC1_PHI2_ECMD_SVOFF") {
+   field(DESC, "PHI SVOFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ECMD_SVOFF S 1")
+} 
+
+record(ao, "EC1_PHI2_ECMD_DEG") {
+   field(DESC, "PHI DEGREE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ECMD_DEG S 1")
+} 
+
+record(ao, "EC1_PHI2_ANGLE_ESET") {
+   field(DESC, "PHI ANGLE SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ANGLE_ESET S 1")
+} 
+
+record(ao, "EC1_PHI2_ECMD_STOP") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_PHI2_ECMD_VEL") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_ECMD_VEL S 1")
+} 
+
+record(ao, "EC1_PHI2_SP_ESET") {
+   field(DESC, "PHI STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PHI2_SP_ESET S 1")
+} 
+
+record(ao, "EC1_TMP1_ECMD_STRT") {
+   field(DESC, "TMP 가동")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP1_ECMD_STRT S 1")
+} 
+
+record(ao, "EC1_TMP1_ECMD_STOP") {
+   field(DESC, "TMP 정지")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP1_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_TMP2_ECMD_STRT") {
+   field(DESC, "TMP 가동")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP2_ECMD_STRT S 1")
+} 
+
+record(ao, "EC1_TMP2_ECMD_STOP") {
+   field(DESC, "TMP 정지")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP2_ECMD_STOP S 1")
+} 
+
+
+
+record(ao, "EC1_TMP3_ECMD_STRT") {
+   field(DESC, "TMP 가동")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP3_ECMD_STRT S 1")
+} 
+
+record(ao, "EC1_TMP3_ECMD_STOP") {
+   field(DESC, "TMP 정지")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP3_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_TMP4_ECMD_STRT") {
+   field(DESC, "TMP 가동")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP4_ECMD_STRT S 1")
+} 
+
+record(ao, "EC1_TMP4_ECMD_STOP") {
+   field(DESC, "TMP 정지")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP4_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_MPS_ECMD_AMP") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_ECMD_AMP S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_MPS_ECMD_RATE") {
+   field(DESC, "목표 전류비율")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_ECMD_RATE S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+
+
+
+
+record(ao, "EC1_GMPS1_ECMD_AMP") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_ECMD_AMP S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS1_ECMD_RATE") {
+   field(DESC, "목표 전류비율")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_ECMD_RATE S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+
+
+
+
+record(ao, "EC1_GMPS2_ECMD_AMP") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_ECMD_AMP S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS2_ECMD_RATE") {
+   field(DESC, "목표 전류비율")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_ECMD_RATE S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_ECMD_MOUVAV_OPEN_ON") {
+   field(DESC, "MOU OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_MOUVAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_MOUVAV_OPEN_OFF") {
+   field(DESC, "MOU OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_MOUVAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_ECMD_DUMVAV_OPEN_ON") {
+   field(DESC, "DUMMY LOAD ON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_DUMVAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_DUMVAV_OPEN_OFF") {
+   field(DESC, "DUMMY LOAD OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_DUMVAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_ECMD_TEVAV_OPEN_ON") {
+   field(DESC, "PUMP OUT T ON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_TEVAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_TEVAV_OPEN_OFF") {
+   field(DESC, "PUMP OUT T OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_TEVAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_ECMD_MBVAV_OPEN_ON") {
+   field(DESC, "MITER BEND ON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_MBVAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_MBVAV_OPEN_OFF") {
+   field(DESC, "MITER BEND OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_MBVAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MBDIS") {
+   field(DESC, "MITER BEND DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MBDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_TEEDIS") {
+   field(DESC, "PUMP OUT TEE DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_TEEDIS S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_MMBDIS") {
+   field(DESC, "MITER BEND DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MMBDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_DUMDIS") {
+   field(DESC, "DUMMY LOAD DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUMDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MOUDIS") {
+   field(DESC, "MOU DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MOUDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MOUPDIS") {
+   field(DESC, "MOU PUMP DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MOUPDIS S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_DUMPDIS") {
+   field(DESC, "DUMMY LOAD PUMP DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUMPDIS S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MBEN") {
+   field(DESC, "MITER BEND EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MBEN S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_TEEEN") {
+   field(DESC, "PUMP OUT TEE EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_TEEEN S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_MMBEN") {
+   field(DESC, "MITER BEND EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MMBEN S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_DUMEN") {
+   field(DESC, "DUMMY LOAD EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUMEN S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MOUEN") {
+   field(DESC, "MOU EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MOUEN S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_MOUPEN") {
+   field(DESC, "MOU PUMP EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_MOUPEN S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_DUMPEN") {
+   field(DESC, "DUMMY LOAD PUMP EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUMPEN S 1")
+} 
+
+record(ao, "EC1_MPS_EAMP_HI") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_EAMP_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_MPS_EAMP_LO") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_EAMP_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_MPS_EVOLT_HI") {
+   field(DESC, "목표 HI VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_EVOLT_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_MPS_EVOLT_LO") {
+   field(DESC, "목표 LOW VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_EVOLT_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+record(ao, "EC1_MPS_ECMD_DOWN") {
+   field(DESC, "MPS DOWN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_ECMD_DOWN S 1")
+} 
+
+record(ao, "EC1_MPS_ECMD_SET") {
+   field(DESC, "MPS SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_ECMD_SET S 1")
+} 
+record(ao, "EC1_MPS_ECMD_HOLD") {
+   field(DESC, "MPS HOLD")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_MPS_ECMD_HOLD S 1")
+} 
+
+record(ao, "EC1_GMPS1_EAMP_HI") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_EAMP_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS1_EAMP_LO") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_EAMP_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS1_EVOLT_HI") {
+   field(DESC, "목표 HI VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_EVOLT_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS1_EVOLT_LO") {
+   field(DESC, "목표 LOW VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_EVOLT_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+record(ao, "EC1_GMPS1_ECMD_DOWN") {
+   field(DESC, "GMPS1 DOWN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_ECMD_DOWN S 1")
+} 
+
+record(ao, "EC1_GMPS1_ECMD_SET") {
+   field(DESC, "GMPS1 SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_ECMD_SET S 1")
+} 
+record(ao, "EC1_GMPS1_ECMD_HOLD") {
+   field(DESC, "GMPS1 HOLD")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS1_ECMD_HOLD S 1")
+} 
+
+record(ao, "EC1_GMPS2_EAMP_HI") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_EAMP_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS2_EAMP_LO") {
+   field(DESC, "목표 전류")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_EAMP_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS2_EVOLT_HI") {
+   field(DESC, "목표 HI VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_EVOLT_HI S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+
+record(ao, "EC1_GMPS2_EVOLT_LO") {
+   field(DESC, "목표 LOW VOLT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_EVOLT_LO S 1")
+   field(LOPR, "0.0")
+   field(HOPR, "100.0")
+} 
+record(ao, "EC1_GMPS2_ECMD_DOWN") {
+   field(DESC, "GMPS2 DOWN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_ECMD_DOWN S 1")
+} 
+
+record(ao, "EC1_GMPS2_ECMD_SET") {
+   field(DESC, "GMPS2 SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_ECMD_SET S 1")
+} 
+record(ao, "EC1_GMPS2_ECMD_HOLD") {
+   field(DESC, "GMPS2 HOLD")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_GMPS2_ECMD_HOLD S 1")
+} 
+record(ao, "EC1_ECMD_WG_SW1_ON") {
+   field(DESC, "SWITCH KSTAR")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_WG_SW1_ON S 1")
+} 
+record(ao, "EC1_ECMD_WG_SW1_OFF") {
+   field(DESC, "SWITCH DUMMY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_WG_SW1_OFF S 1")
+} 
+record(ao, "EC1_ECMD_RFVAV_OPEN_ON") {
+   field(DESC, "RF VALVE OPEN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_RFVAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_RFVAV_OPEN_OFF") {
+   field(DESC, "RF VALVE OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_RFVAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_ECMD_LAU_SOL_ON") {
+   field(DESC, "LAUNCHER OPEN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_LAU_SOL_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_LAU_SOL_OFF") {
+   field(DESC, "LAUNCHER CLOSE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_LAU_SOL_OFF S 1")
+} 
+
+record(ao, "EC1_CCPS_ECMD_SEND") {
+   field(DESC, "CCPS SEND COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_CCPS_ECMD_SEND S 1")
+}
+
+record(ao, "EC1_TOR_MV_ECMD") {
+   field(DESC, "TOROIDAL MOVE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_MV_ECMD S 1")
+}
+
+record(ao, "EC1_POL_MV_ECMD") {
+   field(DESC, "POLOIDAL MOVE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_MV_ECMD S 1")
+}
+
+record(ao, "EC1_SHU_OP_ECMD") {
+   field(DESC, "SHUTTER OPEN")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_SHU_OP_ECMD S 1")
+}
+
+record(ao, "EC1_SHU_CL_ECMD") {
+   field(DESC, "SHUTTER CLOSE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_SHU_CL_ECMD S 1")
+}
+
+record(ao, "EC1_TOR_SP_ECMD") {
+   field(DESC, "TOROIDAL SPEED SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_SP_ECMD S 1")
+}
+
+record(ao, "EC1_POL_SP_ECMD") {
+   field(DESC, "TOROIDAL SPEED SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_SP_ECMD S 1")
+}
+
+record(ao, "EC1_TOR_ENC_EVAL") {
+   field(DESC, "TOROIDAL ENCODER")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_ENC_EVAL S 1")
+}
+
+record(ao, "EC1_TOR_ANG_EVAL") {
+   field(DESC, "TOROIDAL ANGLE ENCODER")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_ANG_EVAL S 1")
+   field(LOPR, "-10.1")
+   field(HOPR, "20.1")
+}
+
+record(ao, "EC1_POL_ENC_EVAL") {
+   field(DESC, "POLOIDAL ENCODER")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_ENC_EVAL S 1")
+}
+
+record(ao, "EC1_POL_ANG_EVAL") {
+   field(DESC, "POLOIDAL ANGLE ENCODER")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_ANG_EVAL S 1")
+   field(LOPR, "-75.1")
+   field(HOPR, "-44.9")
+}
+
+record(ao, "EC1_TOR_SP_EVAL") {
+   field(DESC, "TOROIDAL SPEED")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_SP_EVAL S 1")
+}
+
+record(ao, "EC1_POL_SP_EVAL") {
+   field(DESC, "POLOIDAL SPEED")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_SP_EVAL S 1")
+}
+
+record(ao, "EC1_TOR_STOP_ECMD") {
+   field(DESC, "TOROIDAL STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TOR_STOP_ECMD S 1")
+}
+
+record(ao, "EC1_POL_STOP_ECMD") {
+   field(DESC, "POLOIDAL STOP")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_STOP_ECMD S 1")
+}
+
+record(ao, "EC1_POL_EXT_ECMD") {
+   field(DESC, "POLOIDAL EXT. ENC APPLY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_EXT_ECMD S 1")
+}
+
+record(ao, "EC1_POL_SOFT_ECMD") {
+   field(DESC, "POLOIDAL SOFT. ENC APPLY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_SOFT_ECMD S 1")
+}
+
+record(ao, "EC1_POL_EANG_EVAL") {
+   field(DESC, "POLOIDAL EXT MOVE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_EANG_EVAL S 1")
+}
+
+record(ao, "EC1_POL_EXTEN_ECMD") {
+   field(DESC, "POLOIDAL EXT ENABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_EXTEN_ECMD S 1")
+}
+
+record(ao, "EC1_POL_EXTDIS_ECMD") {
+   field(DESC, "POLOIDAL EXT DISABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_POL_EXTDIS_ECMD S 1")
+}
+
+record(ao, "EC1_LAUN_RT_MODE") {
+   field(DESC, "Launch rt mode")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_LAUN_RT_MODE S 1")
+}
+
+record(ao, "EC1_HPS_ECMD_RESET") {
+   field(DESC, "HPS RESET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_RESET S 1")
+}
+
+record(ao, "EC1_HPS_ECMD_PCURR") {
+   field(DESC, "HPS CURRENT LIMIT")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_PCURR S 1")
+}
+
+record(ao, "EC1_HPS_ECMD_PSET") {
+   field(DESC, "HPS CURRENT LIMIT SET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_HPS_ECMD_PSET S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_GUNEN") {
+   field(DESC, "GUN OIL TANK ENABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_GUNEN S 1")
+}
+
+record(ao, "EC1_TLPLC_ECMD_GUNDIS") {
+   field(DESC, "GUN OIL TANK DISABLE")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_GUNDIS S 1")
+}
+record(ao, "EC1_ECMD_WG_SW2_ON") {
+   field(DESC, "SWITCH KSTAR2")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_WG_SW2_ON S 1")
+} 
+record(ao, "EC1_ECMD_WG_SW2_OFF") {
+   field(DESC, "SWITCH DUMMY2")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_WG_SW2_OFF S 1")
+} 
+
+record(ao, "EC1_TMP5_ECMD_STRT") {
+   field(DESC, "TMP 가동")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP5_ECMD_STRT S 1")
+} 
+
+record(ao, "EC1_TMP5_ECMD_STOP") {
+   field(DESC, "TMP 정지")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TMP5_ECMD_STOP S 1")
+} 
+
+record(ao, "EC1_ECMD_DUM2VAV_OPEN_ON") {
+   field(DESC, "DUMMY LOAD ON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_DUM2VAV_OPEN_ON S 1")
+} 
+
+record(ao, "EC1_ECMD_DUM2VAV_OPEN_OFF") {
+   field(DESC, "DUMMY LOAD OFF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_ECMD_DUM2VAV_OPEN_OFF S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_DUM2EN") {
+   field(DESC, "DUMMY LOAD PUMP EN COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUM2EN S 1")
+} 
+
+record(ao, "EC1_TLPLC_ECMD_DUM2DIS") {
+   field(DESC, "DUMMY LOAD PUMP DIS COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_TLPLC_ECMD_DUM2DIS S 1")
+} 
+

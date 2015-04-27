@@ -1,0 +1,324 @@
+# By HMT - 2010/05/19
+# By HMT - 2010/06/29
+# NBI-1 Beamline PLC
+
+file ./db/NB1_PLC_BI.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    ZNAM    ONAM    ZSV    OSV}
+{NB1_VAC_COL_O01  NB1_VAC_COL_O01   plc1    "MBP pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O02  NB1_VAC_COL_O02   plc1    "BP1 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O03  NB1_VAC_COL_O03   plc1    "BP2 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O04  NB1_VAC_COL_O04   plc1    "RP pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O05  NB1_VAC_COL_O05   plc1    "TMP1 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O06  NB1_VAC_COL_O06   plc1    "TMP2 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O07  NB1_VAC_COL_O07   plc1    "TMP3 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O08  NB1_VAC_COL_O08   plc1    "TMP41 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O09  NB1_VAC_COL_O09   plc1    "TMP5 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O10  NB1_VAC_COL_O10   plc1    "Dry pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O11  NB1_VAC_COL_O11   plc1    "TMP42 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_VAC_COL_O12  NB1_VAC_COL_O12   plc1    "TMP43 pump overload"    OK    Fault    NO_ALARM    MAJOR}
+
+
+{NB1_BLS_SWT_O01  NB1_BLS_SWT_O01   plc1    "EMG. Stop"    OK    Fault    NO_ALARM    MAJOR}
+{NB1_BLS_SWT_O02  i05X11   plc1    "Remote S/W"    EPICS    EPICS    MAJOR    NO_ALARM}
+{NB1_BLS_SWT_O03  i05X12   plc1    "Local S/W"    PLC    PLC    MAJOR    NO_ALARM}
+
+{NB1_BLS_POW_INT1  NB1_BLS_POW_INT1   plc1    "Power INT."    Fault    OK    NO_ALARM    MAJOR}
+
+{NB1_VAC_PUM_O01  NB1_VAC_PUM_O01   plc1    "TMP1 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O02  NB1_VAC_PUM_O02   plc1    "TMP1 No Error"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O03  NB1_VAC_PUM_O03   plc1    "TMP1 Warning"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O04  NB1_VAC_PUM_O04   plc1    "TMP1 Remote"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O05  NB1_VAC_PUM_O05   plc1    "TMP2 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O06  NB1_VAC_PUM_O06   plc1    "TMP2 No Error"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O07  NB1_VAC_PUM_O07   plc1    "TMP2 Warning"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O08  NB1_VAC_PUM_O08   plc1    "TMP2 Remote"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O09  NB1_VAC_PUM_O09   plc1    "TMP3 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O10  NB1_VAC_PUM_O10   plc1    "TMP3 No Error"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O11  NB1_VAC_PUM_O11   plc1    "TMP3 Warning"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O12  NB1_VAC_PUM_O12   plc1    "TMP3 Remote"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O13  NB1_VAC_PUM_O13   plc1    "TMP4 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O14  NB1_VAC_PUM_O14   plc1    "TMP4 No Error"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O15  NB1_VAC_PUM_O15   plc1    "TMP4 Warning"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O16  NB1_VAC_PUM_O16   plc1    "TMP4 Remote"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O17  NB1_VAC_PUM_O17   plc1    "TMP5 Remote"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O18  NB1_VAC_PUM_O18   plc1    "TMP5 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O19  NB1_VAC_PUM_O19   plc1    "TMP5 Alarm"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O20  NB1_VAC_PUM_O20   plc1    "TMP5 Actual Temp"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O21  NB1_VAC_PUM_O21   plc1    "TMP5 Warning"    Fault    OK    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_O22  NB1_VAC_PUM_O22   plc1    "Dry Pump Healthy Signal"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O23  NB1_VAC_PUM_O23   plc1    "TMP42 Full Speed"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O24  NB1_VAC_PUM_O24   plc1    "TMP42 No Error"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O25  NB1_VAC_PUM_O25   plc1    "TMP42 Warning"    Fault    OK    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_O26  NB1_VAC_PUM_O26   plc1    "TMP42 Remote"    Fault    OK    MAJOR    NO_ALARM}
+
+
+{NB1_GAS_SOL_C01  NB1_GAS_SOL_C01   plc1    "Ion Line P/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C02  NB1_GAS_SOL_C02   plc1    "Neu#1 P/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C03  NB1_GAS_SOL_C03   plc1    "Gas 1 P/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C04  NB1_GAS_SOL_C04   plc1    "Gas 2 Line P/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C05  NB1_GAS_SOL_C05   plc1    "Gas 2 Ion Line P/V SOL"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C06  NB1_GAS_SOL_C06   plc1    "Gas 2 Neu Line P/V SOL"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C07  NB1_GAS_SOL_C07   plc1    "Gas 3 Ion Line P/V SOL"    Open    Close    NO_ALARM    MAJOR}
+{NB1_GAS_SOL_C08  NB1_GAS_SOL_C08   plc1    "Gas 3 Neu Line P/V SOL"    Open    Close    NO_ALARM    MAJOR}
+
+{NB1_VAC_SOL_C01  NB1_VAC_SOL_C01   plc1    "TMP#5 Line P/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_SOL_C02  NB1_VAC_SOL_C02   plc1    "TMP#5 Vent P/V Close"    Open    Close    NO_ALARM    MAJOR}
+
+{NB1_VAC_GTV_C01  NB1_VAC_GTV_C01   plc1    "BP3 Valve Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GTV_O01  NB1_VAC_GTV_O01   plc1    "BP3 Valve Open"    Close    Open    NO_ALARM    MAJOR}
+
+{NB1_CRY_PUM_A01  NB1_CRY_PUM_A01   plc1    "Cryo Pump#1 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A02  NB1_CRY_PUM_A02   plc1    "Cryo Pump#2 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A03  NB1_CRY_PUM_A03   plc1    "Cryo Pump#3 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A04  NB1_CRY_PUM_A04   plc1    "Cryo Pump#4 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A05  NB1_CRY_PUM_A05   plc1    "Cryo Pump#5 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A06  NB1_CRY_PUM_A06   plc1    "Cryo Pump#6 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A07  NB1_CRY_PUM_A07   plc1    "Cryo Pump#7 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A08  NB1_CRY_PUM_A08   plc1    "Cryo Pump#8 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A09  NB1_CRY_PUM_A09   plc1    "Cryo Pump#9 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A10  NB1_CRY_PUM_A10   plc1    "Cryo Pump#10 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A11  NB1_CRY_PUM_A11   plc1    "Cryo Pump#11 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A12  NB1_CRY_PUM_A12   plc1    "Cryo Pump#12 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A13  NB1_CRY_PUM_A13   plc1    "Cryo Pump#13 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A14  NB1_CRY_PUM_A14   plc1    "Cryo Pump#14 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A15  NB1_CRY_PUM_A15   plc1    "Cryo Pump#15 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+{NB1_CRY_PUM_A16  NB1_CRY_PUM_A16   plc1    "Cryo Pump#16 Alarm"    OK    Alarm    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C02  NB1_VAC_GAV_C02   plc1    "R/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O02  NB1_VAC_GAV_O02   plc1    "R/V Open"    Close    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C03  NB1_VAC_GAV_C03   plc1    "S/V1 Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O03  NB1_VAC_GAV_O03   plc1    "S/V1 Open"    Close    Open    MAJOR    NO_ALARM}
+
+{NB1_VAC_GAV_C04  NB1_VAC_GAV_C04   plc1    "S/V2 Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O04  NB1_VAC_GAV_O04   plc1    "S/V2 Open"    Close    Open    MAJOR    NO_ALARM}
+
+{NB1_VAC_GAV_C05  NB1_VAC_GAV_C05   plc1    "S/V3 Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O05  NB1_VAC_GAV_O05   plc1    "S/V3 Open"    Close    Open    MAJOR    NO_ALARM}
+
+{NB1_VAC_GAV_C06  NB1_VAC_GAV_C06   plc1    "EX/V Close"    Open    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O06  NB1_VAC_GAV_O06   plc1    "EX/V Open"    Close    Open    NO_ALARM    MAJOR}
+
+{NB1_BMT_INT_O01  NB1_BMT_INT_O01   plc1    "Bending Magnet INT. 1"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_BMT_INT_O02  NB1_BMT_INT_O02   plc1    "Bending Magnet INT. 2"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_KST_INT_O01  NB1_KST_INT_O01   plc1    "KSTAR INT. LV #1"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_KST_INT_O02  NB1_KST_INT_O02   plc1    "KSTAR INT. LV #2"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_KST_INT_O03  NB1_KST_INT_O03   plc1    "KSTAR INT. LV #3"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_KST_INT_O04  NB1_KST_INT_O04   plc1    "KSTAR INT. LV #4"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_VAC_GAV_C07  NB1_VAC_GAV_C07   plc1    "G/V1 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O07  NB1_VAC_GAV_O07   plc1    "G/V1 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C08  NB1_VAC_GAV_C08   plc1    "G/V21 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O08  NB1_VAC_GAV_O08   plc1    "G/V21 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C09  NB1_VAC_GAV_C09   plc1    "G/V3 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O09  NB1_VAC_GAV_O09   plc1    "G/V3 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C10  NB1_VAC_GAV_C10   plc1    "G/V4 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O10  NB1_VAC_GAV_O10   plc1    "G/V4 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C11  NB1_VAC_GAV_C11   plc1    "G/V5 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O11  NB1_VAC_GAV_O11   plc1    "G/V5 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C12  NB1_VAC_GAV_C12   plc1    "G/V61 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O12  NB1_VAC_GAV_O12   plc1    "G/V61 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C13  NB1_VAC_GAV_C13   plc1    "G/V7 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O13  NB1_VAC_GAV_O13   plc1    "G/V7 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C14  NB1_VAC_GAV_C14   plc1    "G/V8 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O14  NB1_VAC_GAV_O14   plc1    "G/V8 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C15  NB1_VAC_GAV_C15   plc1    "G/V9 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O15  NB1_VAC_GAV_O15   plc1    "G/V9 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C16  NB1_VAC_GAV_C16   plc1    "G/V22 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O16  NB1_VAC_GAV_O16   plc1    "G/V22 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C17  NB1_VAC_GAV_C17   plc1    "G/V62 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O17  NB1_VAC_GAV_O17   plc1    "G/V62 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C18  NB1_VAC_GAV_C18   plc1    "G/V23 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O18  NB1_VAC_GAV_O18   plc1    "G/V23 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_C19  NB1_VAC_GAV_C19   plc1    "G/V63 Close"    Close    Close    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_O19  NB1_VAC_GAV_O19   plc1    "G/V63 Open"    Open    Open    NO_ALARM    MAJOR}
+
+{NB1_VAC_PUM_R17  NB1_VAC_PUM_R17   plc1    "Gx600N Pump Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_W17  NB1_VAC_PUM_W17   plc1    "Gx600N Pump Warning"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_A17  NB1_VAC_PUM_A17   plc1    "Gx600N Pump Alarm"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_VAC_PUM_R18  NB1_VAC_PUM_R18   plc1    "Gx100N Pump Run"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_W18  NB1_VAC_PUM_W18   plc1    "Gx100N Pump Warning"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_VAC_PUM_A18  NB1_VAC_PUM_A18   plc1    "Gx100N Pump Alarm"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_CRY_TCU_O01  NB1_CRY_TCU_O01   plc1    "Model 218S Relay 1-1"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O02  NB1_CRY_TCU_O02   plc1    "Model 218S Relay 1-2"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O03  NB1_CRY_TCU_O03   plc1    "Model 218S Relay 1-3"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O04  NB1_CRY_TCU_O04   plc1    "Model 218S Relay 1-4"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O05  NB1_CRY_TCU_O05   plc1    "Model 218S Relay 1-5"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O06  NB1_CRY_TCU_O06   plc1    "Model 218S Relay 1-6"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O07  NB1_CRY_TCU_O07   plc1    "Model 218S Relay 1-7"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O08  NB1_CRY_TCU_O08   plc1    "Model 218S Relay 1-8"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O09  NB1_CRY_TCU_O09   plc1    "Model 218S Relay 2-1"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O10  NB1_CRY_TCU_O10   plc1    "Model 218S Relay 2-2"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O11  NB1_CRY_TCU_O11   plc1    "Model 218S Relay 2-3"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O12  NB1_CRY_TCU_O12   plc1    "Model 218S Relay 2-4"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O13  NB1_CRY_TCU_O13   plc1    "Model 218S Relay 2-5"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O14  NB1_CRY_TCU_O14   plc1    "Model 218S Relay 2-6"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O15  NB1_CRY_TCU_O15   plc1    "Model 218S Relay 2-7"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O16  NB1_CRY_TCU_O16   plc1    "Model 218S Relay 2-8"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O17  NB1_CRY_TCU_O17   plc1    "Model 218S Relay 3-1"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O18  NB1_CRY_TCU_O18   plc1    "Model 218S Relay 3-2"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O19  NB1_CRY_TCU_O19   plc1    "Model 218S Relay 3-3"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O20  NB1_CRY_TCU_O20   plc1    "Model 218S Relay 3-4"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O21  NB1_CRY_TCU_O21   plc1    "Model 218S Relay 3-5"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O22  NB1_CRY_TCU_O22   plc1    "Model 218S Relay 3-6"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O23  NB1_CRY_TCU_O23   plc1    "Model 218S Relay 3-7"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O24  NB1_CRY_TCU_O24   plc1    "Model 218S Relay 3-8"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O25  NB1_CRY_TCU_O25   plc1    "Model 218S Relay 4-1"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O26  NB1_CRY_TCU_O26   plc1    "Model 218S Relay 4-2"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O27  NB1_CRY_TCU_O27   plc1    "Model 218S Relay 4-3"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O28  NB1_CRY_TCU_O28   plc1    "Model 218S Relay 4-4"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O29  NB1_CRY_TCU_O29   plc1    "Model 218S Relay 4-5"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O30  NB1_CRY_TCU_O30   plc1    "Model 218S Relay 4-6"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O31  NB1_CRY_TCU_O31   plc1    "Model 218S Relay 4-7"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_CRY_TCU_O32  NB1_CRY_TCU_O32   plc1    "Model 218S Relay 4-8"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_CRY_PUM_R01  NB1_CRY_PUM_R01   plc1    "Cryo Pump#1 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R02  NB1_CRY_PUM_R02   plc1    "Cryo Pump#2 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R03  NB1_CRY_PUM_R03   plc1    "Cryo Pump#3 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R04  NB1_CRY_PUM_R04   plc1    "Cryo Pump#4 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R05  NB1_CRY_PUM_R05   plc1    "Cryo Pump#5 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R06  NB1_CRY_PUM_R06   plc1    "Cryo Pump#6 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R07  NB1_CRY_PUM_R07   plc1    "Cryo Pump#7 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R08  NB1_CRY_PUM_R08   plc1    "Cryo Pump#8 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R09  NB1_CRY_PUM_R09   plc1    "Cryo Pump#9 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R10  NB1_CRY_PUM_R10   plc1    "Cryo Pump#10 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R11  NB1_CRY_PUM_R11   plc1    "Cryo Pump#11 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R12  NB1_CRY_PUM_R12   plc1    "Cryo Pump#12 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R13  NB1_CRY_PUM_R13   plc1    "Cryo Pump#13 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R14  NB1_CRY_PUM_R14   plc1    "Cryo Pump#14 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R15  NB1_CRY_PUM_R15   plc1    "Cryo Pump#15 Run"    Stop    Running    MAJOR    NO_ALARM}
+{NB1_CRY_PUM_R16  NB1_CRY_PUM_R16   plc1    "Cryo Pump#16 Run"    Stop    Running    MAJOR    NO_ALARM}
+
+{NB1_CRY_LN2_PUMP  NB1_CRY_LN2_PUMP   plc1    "LN2 Pump On Status"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_BMT_INT_O03  NB1_BMT_INT_O03   plc1    "INT. #1 from waterline"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_BMT_INT_O04  NB1_BMT_INT_O04   plc1    "INT. #2 from waterline"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_BMT_INT_O05  NB1_BMT_INT_O05   plc1    "INT. #3 from waterline"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_BMT_INT_O06  NB1_BMT_INT_O06   plc1    "INT. #4 from waterline"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_VAC_EOC_O01  NB1_VAC_EOC_O01   plc1    "Vacuum Interlock"    Interlock    Normal    MAJOR    NO_ALARM}
+
+{NB1_VAC_SRV_TOP  NB1_VAC_SRV_TOP   plc1    "CAL. Top"    TOP    TOP    MAJOR    NO_ALARM}
+
+{NB1_VAC_EOC_O03  NB1_VAC_EOC_O03   plc1    "Chamber TC"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_EOC_O01  NB1_VAC_EOC_O01   plc1    "Beam Port"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_VAC_TP1_DRV  NB1_VAC_TP1_DRV   plc1    "TMP1"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP2_DRV  NB1_VAC_TP2_DRV   plc1    "TMP2"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP3_DRV  NB1_VAC_TP3_DRV   plc1    "TMP3"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP4_DRV  NB1_VAC_TP4_DRV   plc1    "TMP41"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP42_DRV  NB1_VAC_TP42_DRV   plc1    "TMP42"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_VAC_PUM_S19  NB1_VAC_PUM_S19   plc1    "R/P"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_S20  NB1_VAC_PUM_S20   plc1    "MBP"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_VAC_TP5_STR  NB1_VAC_TP5_STR   plc1    "TMP5 Run/Stop"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_SRV_RTN_CALTOP  NB1_VAC_SRV_TOP   plc1    "CAL Top."    OFF    ON    NO_ALARM    MAJOR}
+{NB1_SRV_RTN_CALUP  Axis1_Up_Limit   plc1    "CAL Up."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV_RTN_CALDW  Axis1_Down_Limit   plc1    "CAL Down."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_BLS_SRV_O01  NB1_BLS_SRV_O01   plc1    "CAL SetPos."    OFF    ON    NO_ALARM    MAJOR}
+{NB1_SRV_RTN_TORUP  Axis2_Up_Limit   plc1    "Tor Up."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV_RTN_POLUP  Axis3_Up_Limit   plc1    "Pol Up."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV_RTN_TORDW  Axis2_Down_Limit   plc1    "Tor Down."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV_RTN_POLDW  Axis3_Down_Limit   plc1    "Pol Down."    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_BLS_SRV_POW  NB1_BLS_SRV_POW   plc1    "SRV POW"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_CAL_RTN_ON  NB1_CAL_RTN_ON   plc1    "Calori ON"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_TOR_RTN_ON  NB1_TOR_RTN_ON   plc1    "Tor ON"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_POL_RTN_ON  NB1_POL_RTN_ON   plc1    "Pol ON"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_VAC_GAV_S12  NB1_VAC_GAV_S12   plc1    "S/V1 Open"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_S13  NB1_VAC_GAV_S13   plc1    "S/V2 Open"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_VAC_GAV_S14  NB1_VAC_GAV_S14   plc1    "S/V3 Open"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_VAC_SOL_S02  NB1_VAC_SOL_S02   plc1    "S/V4 Open"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_VAC_TP1_POW  NB1_VAC_TP1_POW   plc1    "TMP1 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP2_POW  NB1_VAC_TP2_POW   plc1    "TMP2 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP3_POW  NB1_VAC_TP3_POW   plc1    "TMP3 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP4_POW  NB1_VAC_TP4_POW   plc1    "TMP41 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP5_POW  NB1_VAC_TP5_POW   plc1    "TMP5 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP42_POW  NB1_VAC_TP42_POW   plc1    "TMP42 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TP43_POW  NB1_VAC_TP43_POW   plc1    "TMP43 PW"    OFF    ON    MAJOR    NO_ALARM}
+
+
+{NB1_VAC_PUM_S17  NB1_VAC_PUM_S17   plc1    "BP3 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_PUM_S18  NB1_VAC_PUM_S18   plc1    "BP3 PW"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_DRY_POW  NB1_VAC_DRY_POW   plc1    "BP3 PW"    OFF    ON    MAJOR    NO_ALARM}
+
+#{NB1_HW_INTC_BYPASS  NB1_HW_INTC_BYPASS   plc1    "HW Interlock"    ENABLE    DISABLE    MAJOR    NO_ALARM}
+
+{NB1_KST_INT_O07  NB1_KST_INT_O07   plc1    "GV1"    CLOSE    OPEN    MAJOR    NO_ALARM}
+{NB1_KST_INT_O08  NB1_KST_INT_O08   plc1    "GV2"    CLOSE    OPEN    MAJOR    NO_ALARM}
+{NB1_KST_INT_O09  NB1_KST_INT_O09   plc1    "Calorimeter"    DOWN    UP    MAJOR    NO_ALARM}
+
+## GAS Check 2012.07.16
+{NB1_KST_INT_GAS  NB1_KST_INT_GAS   plc1    "GAS"    OK    ERROR    NO_ALARM    MAJOR}
+{NB1_GAS_INT_ST  NB1_GAS_INT_ST   plc1    "GAS"    OK    ERROR    NO_ALARM    MAJOR}
+{NB1_GAS_INT_ST1  NB1_GAS_INT_ST1   plc1    "GAS"    OK    ERROR    NO_ALARM    MAJOR}
+{NB1_GAS_INT_ST2  NB1_GAS_INT_ST2   plc1    "GAS"    OK    ERROR    NO_ALARM    MAJOR}
+
+{NB1_VAC_INT_ST  CRYO_FG1_INTC   plc1    "VAC"    OK    ERROR    NO_ALARM    MAJOR}
+
+{NB1_VAC_TMP_FULL  NB1_VAC_TMP_FULL   plc1    "TMP ST"    FAULT    OK    MAJOR    NO_ALARM}
+{NB1_LN2_VV_ST     NB1_LN2_VV_ST      plc1    "LN2 C/V ST"    FAULT    OK    MAJOR    NO_ALARM}
+{NB1_CRY_ALL_RUN   NB1_CRY_ALL_RUN    plc1    "Compressor"    STOP    RUN    MAJOR    NO_ALARM}
+
+{NB1_VAC_DIS_RTN   NB1_VAC_INT_DIS    plc1    "Vac. Dis"    ENABLE    DISABLE    NO_ALARM    MAJOR}
+{NB1_TC_DIS_RTN   NB1_TC_TEMP_DIS    plc1    "TC Dis"    ENABLE    DISABLE    NO_ALARM    MAJOR}
+
+{NB1_HTR_LMP_O01  NB1_HTR_LMP_O01   plc1    "HEATER LAMP #1"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O02  NB1_HTR_LMP_O02   plc1    "HEATER LAMP #2"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O03  NB1_HTR_LMP_O03   plc1    "HEATER LAMP #3"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O04  NB1_HTR_LMP_O04   plc1    "HEATER LAMP #4"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O05  NB1_HTR_LMP_O05   plc1    "HEATER LAMP #5"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O06  NB1_HTR_LMP_O06   plc1    "HEATER LAMP #6"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O07  NB1_HTR_LMP_O07   plc1    "HEATER LAMP #7"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_HTR_LMP_O08  NB1_HTR_LMP_O08   plc1    "HEATER LAMP #8"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_KST_INT_O10  NB1_KST_INT_O10   plc1    "HEART BEAT"    OFF    ON    MAJOR    NO_ALARM}
+
+## Beamline to PowerSupply, interlock
+{NB1_FEN_KEY_INT0  NB1_FEN_KEY_INT0   plc1    "HEART BEAT"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_FEN_KEY_INT1  NB1_FEN_KEY_INT1   plc1    "HEART BEAT"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_GND_STK_INT0  NB1_GND_STK_INT0   plc1    "HEART BEAT"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_GND_STK_INT1  NB1_GND_STK_INT1   plc1    "HEART BEAT"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_VAC_HTR_O01  NB1_VAC_HTR_O01   plc1    "Heater"    OFF    ON    MAJOR    NO_ALARM}
+{NB1_VAC_TST_C01  NB1_VAC_TST_C01   plc1    "Heater"    OFF    ON    NO_ALARM	MAJOR}
+
+{NB1_SAFE_DOOR_ST  NB1_SAFE_DOOR_ST   plc1    "safe key"      OFF    ON    MAJOR    NO_ALARM}
+{NB1_GND_STK_ST	   NB1_GND_STK_ST	  plc1    "gnd. stick"    OFF    ON    MAJOR    NO_ALARM}
+
+{NB1_TC_UNDER_INT	   NB1_TC_UN_INT_FLAG	  plc1    "tc under inter."    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_TOR2_RTN_ON  NB1_TOR2_RTN_ON   plc1    "Tor ON"    OFF    ON    NO_ALARM    MAJOR}
+{NB1_POL2_RTN_ON  NB1_POL2_RTN_ON   plc1    "Pol ON"    OFF    ON    NO_ALARM    MAJOR}
+
+{NB1_SRV2_RTN_TORUP  Axis4_Up_Limit   plc1    "Tor Up."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV2_RTN_POLUP  Axis5_Up_Limit   plc1    "Pol Up."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV2_RTN_TORDW  Axis4_Down_Limit   plc1    "Tor Down."    OFF    ON    MAJOR    NO_ALARM}
+{NB1_SRV2_RTN_POLDW  Axis5_Down_Limit   plc1    "Pol Down."    OFF    ON    MAJOR    NO_ALARM}
+
+#RGA H20
+#{NB1_RGA_INT_ST	NB1_RGA_INT_ST	plc1	"RGA INT stat."	OK	FAULT	NO_ALARM	MAJOR}
+{NB1_RGA_INTC	NB1_RGA_INTC	plc1	"RGA GV stat."	ENABLE	DISABLE	NO_ALARM	MAJOR}
+}

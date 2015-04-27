@@ -1,0 +1,151 @@
+program sncMdsPutTSS
+option -c;
+%% /* TSS Setting Time Data Store at MDSplus Node  */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% #define MDS_SERVER   "172.17.100.202:8000"
+%% #define RTREE_NAME	"rdata"
+%% #define ATREE_NAME	"adata"
+
+%% int dtypeLong = DTYPE_LONG;
+%% int i;
+   int shotNumber;
+   int mdsPutTss;
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% char buf[50];
+%% char buf1[20];
+%% int socket;
+%% int idesc;
+int dataCount;
+
+char *pfileName;
+string tmpStr1;
+string tmpStr2;
+string timeA;
+double timeB;
+double trigTime[40];
+string nodeName[40];
+
+assign trigTime to {"","","","","","","","","","",
+		    "","","","","","","","","","",
+		    "","","","","","","","","","",
+		    "","","","","","","","","",""};
+
+monitor trigTime;
+assign shotNumber to "MDS_SHOT_NUMBER";
+assign mdsPutTss to "MDS_TSS_DATA_PUT";
+assign timeA to "CCS_SHOT_TRIGG_TIME_MDS_STRING";
+assign timeB to "CCS_SHOT_TRIGG_TIME_MDS";
+
+
+monitor shotNumber;
+monitor mdsPutTss;
+monitor timeA;
+monitor timeB;
+
+ss mdsDataPut {
+	state init{
+        	when (TRUE){
+                        pfileName = macValueGet("FNAME");
+                        %% epicsThreadId threadId;
+                        %% FILE *pfile;
+                        %% pfile = fopen (pfileName, "r");
+                        %% if(!pfile) {
+                		%%  printf("error in fopen\n");
+            			%%  threadId = epicsThreadGetIdSelf();
+            			%%  printf("threadID : %x\n",threadId);
+            			%%  seqStop(threadId);
+            		%% }
+                        dataCount =0;
+                        %% while (EOF != fscanf(pfile, "%s %s", tmpStr1, tmpStr2)) {
+                            	pvAssign (trigTime[dataCount], tmpStr1);
+  			 	strcpy(nodeName[dataCount],tmpStr2);
+                		printf("connect %d, Time PV : %s, nodeName : %s \n", dataCount, tmpStr1, tmpStr2);
+                		printf("connect %d, Mds nodeName : %s \n", dataCount, nodeName[dataCount]);
+                		dataCount++;
+                        %%}
+            	%% fclose(pfile);
+            	printf("Data count number is %d\n",dataCount);
+        }state timeData_put 
+    }
+   state timeData_put {
+        	when (mdsPutTss==1) {
+			%% idesc = descr(&dtypeLong, &tstat, &null);
+		    	%% socket = MdsConnect(MDS_SERVER); 
+     			%% if (socket == -1 )
+            		%% {
+            			%% fprintf(stderr,"Error connecting to mdsip server(%s).\n", MDS_SERVER);
+            		%% }
+     			%% if (socket != -1)
+		    	%% {
+		    		%% fprintf(stdout,"\nMDSplus >>> MdsConnect(\"%s\")... OK\n", MDS_SERVER);
+		    		%% status = MdsOpen(ATREE_NAME, &shotNumber);
+     				%% if ( !statusOk(status) )
+        			%% {
+        				%% fprintf(stderr,"Error TCL command: %s.\n",MdsGetMsg(status));
+        			%% }
+		    		%% fprintf(stdout,"MdsOpen Tree open(\"%s,%d\")..OK\n",ATREE_NAME,shotNumber);
+/* Data Put loop Start */
+			 	%% for(i=0; i<dataCount; i++) {
+		     			%% sprintf(buf, "\%s", nodeName[i]); /* printf("%s: %d\n", buf, strlen(buf));  */
+		     			%% sprintf(buf1, "FS_FLOAT(%lf)", trigTime[i] ); printf("%s: %s %lf ccsTime:%lf\n", buf, buf1, trigTime[i],timeB);
+		     			%%/* sprintf(buf1, "MAKE_WITH_UNIT(FS_FLOAT(%f),'sec')",trigTime[i] );printf("%s: %f\n", buf1, trigTime[i]); */
+		     			%% status = MdsPut(nodeName[i], buf1, &null);  /*  MdsPut  !!  */  
+     		 			%% if ( !statusOk(status) )
+        	 				%% {
+        	 					%% fprintf(stderr,"Error Mds Put 1 :  %s.\n",MdsGetMsg(status));
+        	 				%% }
+		 			%% epicsThreadSleep(.50);
+			 	%% }
+		     		%% sprintf(buf1, "'%s'", timeA); printf("RDATA::T0_STR  %s ccsTime:%s\n",  buf1, timeA);
+	     			%% status = MdsPut("\\RDATA::T0_STR", buf1, &null);  /*  MdsPut  !!  */  
+     		 		%% if ( !statusOk(status) )
+        	 			%% {
+        	 				%% fprintf(stderr,"Error Mds Put RDATA TIME STRING :  %s.\n",MdsGetMsg(status));
+        	 			%% }
+	     			%% status = MdsPut("\\T0_STR", buf1, &null);  /*  MdsPut ADATA::T0_STR !!  */  
+     		 		%% if ( !statusOk(status) )
+        	 			%% {
+        	 				%% fprintf(stderr,"Error Mds Put ADATA TIME STRING :  %s.\n",MdsGetMsg(status));
+        	 			%% }
+		     		%% /*  sprintf(buf1, "G_FLOAT(%f)", timeB); printf("RDATA::T0  %s ccsTime:%f\n",  buf1, timeB); */
+	     			%% /*  status = MdsPut("\\RDATA::T0", buf1, &null);    MdsPut  !!  */  
+			 	%% status = MdsClose(ATREE_NAME, &shotNumber);
+     				%% if ( !statusOk(status) )
+        			%% {
+        				%% fprintf(stderr,"Error TCL command: %s.\n",MdsGetMsg(status));
+        			%% }
+		    		%% fprintf(stdout,"MdsClose Tree Closed(\"%s\")..OK\n",ATREE_NAME);
+    		 		%% fprintf(stdout, "\nMDSplus >>> TSS Data Stored (\"%d\")... OK\n", shotNumber);
+		     	%% }
+			mdsPutTss=0;
+			pvPut(mdsPutTss);
+
+/*  Test MdsPut Function !!! */	
+/*	status = MdsPut("\\PF_PS2:GOOD", "BUILD_WITH_UNIT(3,'m/s')", &null); Put the data, unit But Not Reading */
+/*	status = MdsPut("\\PF_PS3L:GOOD", "XD(FS_FLOAT(3.1))", &null);  Put the data and unit But Not Reading  */
+/*	status = MdsPut("\\PF_PS3U:GOOD", "FS_FLOAT(3.1)", &null);  OK Numeric Data Put TDI OK!! */ 
+/*	status = MdsPut("\\PF_PS1:GOOD", "XD(COMPILE('BUILD_WITH_UNIT($1,'m/s')'))", sampleCnt, &null);  */
+/*	Numeric OK but BUILD_WITH_UNIT(1,'m/s') Printed  Bad!! Do Not Read at TDI*/
+/*	status = MdsPut("\\PF_PS2:GOOD", "XD(BUILD_WITH_UNIT(1,'m/s'))", &null); */ 
+/*	Numeric OK but BUILD_WITH_UNIT(1,'m/s') Printed */
+/* 	status = MdsPut("\\PF_PS1:GOOD", "XD(COMPILE('11.1'))", &null);  OK but Read not at TDI  */
+/* 	status = MdsPut("\\PF_PS1:GOOD", "$1", sampleCnt, &null);   Bad !!  but Read not at TDI  */
+/* 	status = MdsPut("\\PF_PS2:GOOD", "'112.1'", &null);    Not Atcion */
+/* 	status = MdsPut("\\PF_PS2:GOOD", "VAL($1)", sampleCnt, &null);    */
+/* 	status = MdsPut("\\PF_PS1:LOCATION", "'Ion Statration'", &null);    String Put  Text OK */   
+			 
+		} state timeData_put
+	}
+}
+

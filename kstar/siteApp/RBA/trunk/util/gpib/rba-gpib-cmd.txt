@@ -1,0 +1,60 @@
+########################################################################
+#
+#-----------------------------------------------------------------------
+# 1. GPIB addresses are 1, 2 and 3 (DIP switch)
+# 2. Procedure : Reset -> Get/Set -> Start -> Reset ->
+# 3. Command : <command> LF EOI
+#    - A "line feed" character has to be added to each command
+# 4. Return string
+#    - Most GPIB commands of the RBA return a string
+#    - Don't forget to read a return string after writing each command
+########################################################################
+
+# -----------------------------------------------------
+# Open and initialize a device descriptor
+# Board Idx / Pri. Addr / Sec. Addr / Timeout / EOI / EOS mode/byte
+# -----------------------------------------------------
+ibdev 0 1 0 5 1 0
+
+# -----------------------------------------------------
+# Clear a specific device : ibclr is equal to RESET
+# -----------------------------------------------------
+ibclr
+ibrd 255
+ibwrt "RESET\n"
+ibrd 255
+
+# -----------------------------------------------------
+# Get/Set
+#  - ibwrt : Write data to a device from a user buffer
+#  - ibrd  : Read data from a device into a user buffer
+# -----------------------------------------------------
+ibwrt "T1,C1\n"
+
+# Frequency(Hz) : 1(default, 200Hz) -> 2(1kHz)
+ibwrt "GF,C1\n"
+ibwrt "SF,C1,2\n"
+
+# Gain : 8(default, 5000) -> 3(100)
+ibwrt "GG,C1\n"
+ibwrt "SG,C1,3\n"
+
+# Get all parameters
+# cmd, id, gain, filter, refph, temp1, temp2, flags, signal data
+ibwrt "GA,C1\n"
+
+ibwrt "STATUS\n"
+ibwrt "LFLAGS\n"
+
+# -----------------------------------------------------
+# Start
+# -----------------------------------------------------
+ibwrt "START\n"
+ibrd 255
+
+# -----------------------------------------------------
+# Clear
+# -----------------------------------------------------
+ibonl 0
+q
+

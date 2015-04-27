@@ -1,0 +1,14 @@
+record(bi, "$(TMP_RSS_BI)") {
+  field(INP, "$(TMP_RSS_X).VAL")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+
+record(calc, "$(TMP_RSS_X)") {
+  field(FLNK, "$(TMP_RSS_BI)")
+  field(CALC, "(A==$(VAL))?1:0")
+  field(INPA, "$(TMP_RSS) CPP")
+}

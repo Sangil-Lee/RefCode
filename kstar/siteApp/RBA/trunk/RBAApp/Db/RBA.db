@@ -1,0 +1,164 @@
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "NI6122 BoControl")
+  field(OUT, "@daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_AUTO_RUN") {
+  field(DTYP, "NI6122 BoControl")
+  field(OUT, "@auto_run")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_MIN_VOLT") {
+  field(DESC, "NI6122 Minimum Voltage")
+  field(DTYP, "NI6122 AoControl")
+  field(OUT , "@min_volt")
+  field(VAL , "-10")
+  field(PINI, "YES")
+}
+
+record(ao, "$(SYS)_MAX_VOLT") {
+  field(DESC, "NI6122 Maximum Voltage")
+  field(DTYP, "NI6122 AoControl")
+  field(OUT, "@max_volt")
+  field(VAL , "10")
+  field(PINI, "YES")
+}
+
+record(calcout, "$(SYS)_START_T0_SEC1_CALC") {
+  field(DESC, "Calcuration for START_T0_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T0 CPP")
+  field(OUT , "$(SYS)_START_T0_SEC1")
+  field(FLNK, "$(SYS)_START_T0_SEC1")
+}
+
+record(calcout, "$(SYS)_STOP_T1_SEC1_CALC") {
+  field(DESC, "Calcuration for STOP_T1_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T1 CPP")
+  field(OUT , "$(SYS)_STOP_T1_SEC1")
+  field(FLNK, "$(SYS)_STOP_T1_SEC1")
+}
+
+record(mbbi, "$(SYS)_AMP_STAT") {
+  field(DESC, "Status of Amplifier")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6122 MbbiRead")
+  field(INP , "@amp_stat")
+  field(ZRST, "Reset")
+  field(ONST, "Ready")
+  field(TWST, "Started")
+  field(THST, "Error")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+  field(THSV, "MAJOR")
+}
+
+record(mbbi, "$(SYS)_DIG_STAT") {
+  field(DESC, "Status of Digitizer")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6122 MbbiRead")
+  field(INP , "@dig_stat")
+  field(ZRST, "Ready")
+  field(ONST, "Started")
+  field(TWST, "Acquiring")
+  field(THST, "Error")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "NO_ALARM")
+  field(THSV, "MAJOR")
+}
+
+record(mbbi, "$(SYS)_MDS_STAT") {
+  field(DESC, "Status of MDSplus")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6122 MbbiRead")
+  field(INP , "@mds_stat")
+  field(ZRST, "Normal")
+  field(ONST, "Archiving")
+  field(TWST, "File err")
+  field(THST, "Connection err")
+  field(ZRSV, "NO_ALARM")
+  field(ONSV, "NO_ALARM")
+  field(TWSV, "MAJOR")
+  field(THSV, "MAJOR")
+}
+
+#record(bi, "$(SYS)_SHUT_STATUS") {
+#  field(DESC, "Status of shutter")
+#  field(DTYP, "Soft Channel")
+#  field(INPA, "DLS_RBA_L_SHUT_STATUS CPP")
+#  field(PINI, "YES")
+#}
+
+record(calc, "$(SYS)_SHUT_STATUS") {
+  field(DESC, "Status of shutter")
+  field(SCAN,"1 second")
+  field(CALC, "A")
+  #field(INPA, "DLS_RBA_L_SHUT CPP")
+  field(INPA, "DLS_RBA_L_SHUT_STATUS NPP NMS")
+  field(PINI, "YES")
+}
+
+record(stringout, "$(SYS)_CAL_DATE") {
+  field(DESC, "Data of calibration")
+  field(DTYP, "Soft Channel")
+}
+
+# --------------------------------------------
+# 2013.06.19 Start & Duration time
+# --------------------------------------------
+
+record(ao, "$(SYS)_START_TIME") {
+  field(DESC, "Start time")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(SYS)_DURATION_TIME") {
+  field(DESC, "Duration time of acquistion")
+  field(DTYP, "Soft Channel")
+}
+
+record(calcout, "$(SYS)_LTU_T0_CALC") {
+  field(DESC, "Calcuration for T0")
+  field(SCAN, "Passive")
+  field(CALC, "A+B")
+  field(INPA, "$(SYS)_START_TIME CPP")
+  field(INPB, "$(SYS)_CCS_BLIP_TIME CPP")
+  field(OUT , "$(SYS)_LTU_P0_SEC0_T0 PP")
+}
+
+record(calcout, "$(SYS)_LTU_T1_CALC") {
+  field(DESC, "Calcuration for T1")
+  field(SCAN, "Passive")
+  field(CALC, "A+B")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T0 CPP")
+  field(INPB, "$(SYS)_DURATION_TIME CPP")
+  field(OUT , "$(SYS)_LTU_P0_SEC0_T1 PP")
+}
+
+record(calcout, "$(SYS)_START_TIME_CALC") {
+  field(DESC, "Calcuration for Start time")
+  field(SCAN, "Passive")
+  field(CALC, "A-B")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T0 CPP")
+  field(INPB, "$(SYS)_CCS_BLIP_TIME CPP")
+  field(OUT , "$(SYS)_START_TIME PP")
+}
+
+record(calcout, "$(SYS)_DURATION_CALC") {
+  field(DESC, "Calcuration for Duration time")
+  field(SCAN, "Passive")
+  field(CALC, "B-A")
+  field(INPA, "$(SYS)_LTU_P0_SEC0_T0 CPP")
+  field(INPB, "$(SYS)_LTU_P0_SEC0_T1 CPP")
+  field(OUT , "$(SYS)_DURATION_TIME PP")
+}
+

@@ -1,0 +1,180 @@
+# 2007. 12. 17  add bo record......
+
+# 2007. 12. 24  remove bo record......
+# + PV: ECEHR_getState  add field(PINI, "YES")
+# 2008. 9. 26  Modify.. Delete AO and String Record......
+
+
+
+#record(ai, ECEHR_masterGainAi2) {
+#  field(DESC, "Analog input")
+#  field(DTYP, "M6802 Raw Reading")
+#  field(INP, "@master ai2 gain")
+#}
+
+#record(ai, ECEHR_getState) {
+#  field(DESC, "Analog input")
+#  field(DTYP, "M6802 Raw Reading")
+#  field(INP, "@master state")
+#  field(SCAN, "I/O Intr")
+#  field(PINI, "YES")
+#}
+record(ao, "ECEHR_CalStop_shotNumber")
+{
+ field(DESC, "ECEHR_CALSTOP_NUMBER")
+ field(SCAN, "Passive" )
+}
+record(mbbi, ECEHR_DAQ_STATUS)
+{
+        field(DESC, "ECEHR_DAQ_STATUS")
+        field(SCAN, "I/O Intr")
+        field(DTYP, "M6802 Raw Reading")
+        field(INP, "@master state")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(FRVL, "4")
+        field(FVVL, "5")
+        field(SXVL, "6")
+        field(SVVL, "7")
+        field(EIVL, "8")
+        field(NIVL, "9")
+        field(ZRST, "Not_Init/First")
+        field(ONST, "Ready to Shot")
+        field(TWST, "ADC Stop")
+        field(THST, "DAQ Stop")
+        field(FRST, "Wait_ DAQ Start")
+        field(FVST, "DAQ/Mea/WaiTrig")
+        field(SXST, "Local Storing")
+        field(SVST, "Remote Storing")
+        field(EIST, "Fail Storing")
+        field(NIST, "Mystery Status")
+}
+
+record(mbbo, ECEHR_SAMPLING_RATE)
+{
+        field(DESC, "ECEHR_SAMPL_RATE")
+        field(SCAN, "Passive")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(FRVL, "4")
+        field(FVVL, "5")
+        field(SXVL, "6")
+        field(SVVL, "7")
+        field(EIVL, "8")
+        field(NIVL, "9")
+        field(ONST, "1 kHz")
+        field(TWST, "2 kHz")
+        field(THST, "5 kHz")
+        field(FRST, "10 kHz")
+        field(FVST, "20 kHz")
+        field(SXST, "25 kHz")
+        field(SVST, "50 kHz")
+        field(EIST, "100 kHz ")
+        field(NIST, "200 kHz")
+}
+
+#record(ai, ECEHR_myState) {
+#  field(DESC, "Analog input")
+#  field(INP, "getState")
+#}
+record(calc, ECEHR_HZ_sampleRate) {
+  field(SCAN, "Passive")
+  field(CALC, "A*1000")
+  field(INPA, "ECEHR_sampleRate CPP NMS")
+}
+
+record(bi, ECEHR_HeartBeat) {
+  field(DESC, "Analog input")
+  field(INP, "ECEHR_calcHeartBeat NPP NMS")
+}
+record(calc, ECEHR_calcHeartBeat) {
+  field(SCAN, "1 second")
+  field(FLNK, "ECEHR_HeartBeat NPP NMS")
+  field(CALC, "A=0?1:0")
+  field(INPA, "ECEHR_HeartBeat")
+}
+record(calc, ECEHR_CTU_SHOTSTART) {
+  field(SCAN, "Passive")
+  field(CALC, "A=0?1:0")
+  field(INPA, "CCS_CTU_shotStart CPP NMS")
+}
+
+record(bo, ECEHR_SLOT1_SELECT_ALL )
+{
+ field(DESC, "ECEHR_SLOT1_SELECT" )
+ field(SCAN, "Passive")
+ field(ZNAM, "AllOFF")
+ field(ONAM, "AllON")
+}
+record(bo, ECEHR_SLOT2_SELECT_ALL )
+{
+ field(DESC, "ECEHR_SLOT2_SELECT" )
+ field(SCAN, "Passive")
+ field(ZNAM, "AllOFF")
+ field(ONAM, "AllON")
+}
+record(bo, ECEHR_SLOT3_SELECT_ALL )
+{
+ field(DESC, "ECEHR_SLOT3_SELECT" )
+ field(SCAN, "Passive")
+ field(ZNAM, "AllOFF")
+ field(ONAM, "AllON")
+}
+record(bo, ECEHR_CAL_START_STOP)
+{
+ field(DESC, "ECEHR_CAL_STARTSTOP" )
+ field(SCAN, "Passive")
+ field(ZNAM, "CAL STOP")
+ field(ONAM, "CAL START")
+}
+record(bo, ECEHR_SETTING_HOLD)
+{
+ field(DESC, "ECEHR_SETTING_HOLD" )
+ field(SCAN, "Passive")
+ field(ZNAM, "Normal")
+ field(ONAM, "HoldSet")
+}
+record(bo, ECEHR_SETTING_DONE)
+{
+ field(DESC, "ECEHR_SETTING_DONE" )
+ field(SCAN, "Passive")
+ field(ZNAM, "Normal")
+ field(ONAM, "SetDown")
+}
+record(bo, ECEHR_setOpMode_REM)
+{
+ field(DESC, "ECEHR_OPMODE_REM")
+ field(SCAN, "Passive")
+ field(ZNAM, "Normal")
+ field(ONAM, "RemoteMode")
+}
+record(bo, ECEHR_setOpMode_CAL)
+{
+ field(DESC, "ECEHR_OPMODE_CAL")
+ field(SCAN, "Passive")
+ field(ZNAM, "Normal")
+ field(ONAM, "CalMode")
+}
+record(bo, ECEHR_setOpMode_LOC)
+{
+ field(DESC, "ECEHR_OPMODE_LOC")
+ field(SCAN, "Passive")
+ field(ZNAM, "Normal")
+ field(ONAM, "LocalMode")
+}
+record(mbbo, ECEHR_setOpMode_OPI)
+{
+        field(DESC, "ECEHR_setOpMode")
+        field(SCAN, "Passive")
+        field(ZRVL, "0")
+        field(ONVL, "1")
+        field(TWVL, "2")
+        field(THVL, "3")
+        field(ZRST, "Not_Init")
+        field(ONST, "RemoteMode")
+        field(TWST, "CalMode")
+        field(THST, "LocalMode")
+}

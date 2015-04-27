@@ -1,0 +1,90 @@
+program sncSetResetTimeToShot
+option +r;
+option -c;
+
+%{
+#include <stdarg.h>
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <libgen.h>
+#include <unistd.h>
+#include <string.h>
+
+int setNextTimeShot(char *strShotTime)
+{
+	epicsTimeStamp curTS;
+	epicsTimeGetCurrent(&curTS);
+	int modcount = curTS.secPastEpoch%60;
+	curTS.secPastEpoch -= modcount;
+	curTS.secPastEpoch += (16*60);
+
+	epicsTimeToStrftime(strShotTime, 12, "%H:%M:%S", &curTS);
+	return 0;
+}
+
+void resetNextTimeShot(char *strShotTime)
+{
+	epicsTimeStamp curTS;
+	epicsTimeGetCurrent(&curTS);
+	epicsTimeToStrftime(strShotTime, 12, "%H:%M:%S", &curTS);
+}
+}%
+
+int  intSEQStart;
+assign  intSEQStart to "CCS_SHOTSEQ_START";
+monitor intSEQStart;
+
+int  intShotStart;
+assign  intShotStart to "CCS_CTU_SOFT_START";
+monitor intShotStart;
+evflag	efShotStart;
+sync	intShotStart efShotStart;
+
+string  strICSShotTime;
+assign  strICSShotTime to "ICS_SHOTINFO_SHOTTIME";
+monitor strICSShotTime;
+
+ss ICS_ReSetTimeShot
+{
+	state init
+	{
+		when(TRUE)
+		{
+		} state ShotStart
+	}
+	state ShotStart
+	{
+		when(efTestAndClear(efShotStart) && intShotStart == 1)
+		{
+			%%resetNextTimeShot(pVar->strICSShotTime);
+			pvPut(strICSShotTime);
+		} state ShotStart
+	}
+}
+
+ss ICS_SetNextTimeShot
+{
+	state init
+	{
+		when(TRUE)
+		{
+			intSEQStart = 0;
+			pvPut(intSEQStart);
+		} state ShotSEQStart
+	}
+	state ShotSEQStop
+	{
+		when(intSEQStart == 1)
+		{
+		} state ShotSEQStart
+	}
+	state ShotSEQStart
+	{
+		when(intSEQStart == 0)
+		{
+			%%setNextTimeShot(pVar->strICSShotTime);
+			pvPut(strICSShotTime);
+		} state ShotSEQStop
+	}
+}

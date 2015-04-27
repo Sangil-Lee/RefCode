@@ -1,0 +1,545 @@
+program scenario
+
+option +r;    /* for re-entrance */
+option -e;    /* execute entry block even if the previous state was the current state */
+option -x;    /* execute exit block enven if the nexte state is the same state */
+
+
+%%    #define OPEN       1
+%%    #define CLOSE      0 
+%%    #define OFF        0
+%%    #define ON         1
+%%    #define BIT_OFF    0
+%%    #define BIT_ON     1
+%%    #define INVALID    0
+%%    #define VALID      1
+%%    #define IGON_THRESHOLD    (1.E-4)
+%%    #define IGOFF_THRESHOLD   (5.E-4)
+
+%%    #define DEACTIVATE 0
+%%    #define ACTIVATE   1
+%%    #define SHUTDOWN   2
+%%    #define CRP_PIG_THRESHOLD     4
+%%    #define TMP_START_THRESHOLD   (1.E-1)
+%%    #define ROUGHING_THRESHOLD    (1.E-1)
+%%    #define CRP_PROTECTION_THRESHOLD (1.E-3)
+%%    #define CRP_1ST_TEMP_THRESHOLD  90
+%%    #define CRP_2ND_TEMP_THRESHOLD  15
+%%    #define CRP_ROOM_TEMP           270
+
+%%    #define VAC_DEACTIVATE 0
+%%    #define VAC_START  1
+%%    #define VAC_STOP   2
+
+%%    #define START_FROM_ATM 0
+%%    #define START_FROM_VAC 1
+
+
+
+/**************
+ ss calcVacPrs
+***************/
+float vacPrs;
+float frg0;
+float frg1;
+float ig0;
+short sig;
+
+short flipflop;
+
+assign vacPrs to "VAC:CRYO:SNL:PRS";
+assign frg0 to "VAC:CRYO:TPG262C0:PRS0";
+assign frg1 to "VAC:CRYO:TPG262C1:PRS0";
+assign ig0  to "VAC:CRYO:GP307C0:IG";
+assign sig  to "VAC:CRYO:GP307C0:SIG";
+assign flipflop to "VAC:CRYO:SNL:CALCPRS:FLIPFLOP";
+
+monitor frg0;
+monitor frg1;
+monitor ig0;
+monitor sig;
+
+evflag ev_frg0;
+evflag ev_frg1;
+evflag ev_sig;
+
+sync frg0   ev_frg0;
+sync frg1   ev_frg1;
+sync sig    ev_sig;
+
+/***************
+  ss igControl
+****************/
+short  ig_onoff;
+assign ig_onoff to "VAC:CRYO:GP307C0:IG0ONOFF";
+
+monitor vacPrs;
+
+
+/****************
+     scenario
+*****************/
+
+short start_flag_for_tmp;
+short start_flag_for_crp;
+
+short scenario_permit;
+assign scenario_permit to "VAC:CRYO:SNL:SCEN:PERMIT";
+monitor scenario_permit;
+
+short tmp1_fgv; assign tmp1_fgv to "VAC:CRYO:TMP1:FGV";
+short tmp1_bgv; assign tmp1_bgv to "VAC:CRYO:TMP1:BGV";
+short tmp1_pwr; assign tmp1_pwr to "VAC:CRYO:TMP1:PWR";
+
+short tmp2_fgv; assign tmp2_fgv to "VAC:CRYO:TMP2:FGV";
+short tmp2_bgv; assign tmp2_bgv to "VAC:CRYO:TMP2:BGV";
+short tmp2_pwr; assign tmp2_pwr to "VAC:CRYO:TMP2:PWR";
+
+short tmp3_fgv; assign tmp3_fgv to "VAC:CRYO:TMP3:FGV";
+short tmp3_bgv; assign tmp3_bgv to "VAC:CRYO:TMP3:BGV";
+short tmp3_pwr; assign tmp3_pwr to "VAC:CRYO:TMP3:PWR";
+
+short tmp4_fgv; assign tmp4_fgv to "VAC:CRYO:TMP4:FGV";
+short tmp4_bgv; assign tmp4_bgv to "VAC:CRYO:TMP4:BGV";
+short tmp4_pwr; assign tmp4_pwr to "VAC:CRYO:TMP4:PWR";
+
+short tbp_pwr;  assign tbp_pwr  to "VAC:CRYO:TBP:PWR";
+
+short rl_gv;    assign rl_gv    to "VAC:CRYO:RL:GV";
+short cbp1_pwr; assign cbp1_pwr to "VAC:CRYO:CBP1:PWR";
+
+short crp1_fgv; assign crp1_fgv to "VAC:CRYO:CRP1:FGV";
+short crp1_rv;  assign crp1_rv  to "VAC:CRYO:CRP1:RV";
+short crp1_pwr; assign crp1_pwr to "VAC:CRYO:CRP1:PWR";
+
+short crp2_fgv; assign crp2_fgv to "VAC:CRYO:CRP2:FGV";
+short crp2_rv;  assign crp2_rv  to "VAC:CRYO:CRP2:RV";
+short crp2_pwr; assign crp2_pwr to "VAC:CRYO:CRP2:PWR";
+
+int   crp1_1st_temp; assign crp1_1st_temp to "VAC:CRYO:CRP1:TEMP1ST"; monitor crp1_1st_temp;
+int   crp1_2nd_temp; assign crp1_2nd_temp to "VAC:CRYO:CRP1:TEMP2ND"; monitor crp1_2nd_temp;
+int   crp1_pig;      assign crp1_pig      to "VAC:CRYO:CRP1:PIG";     monitor crp1_pig;
+
+int   crp2_1st_temp; assign crp2_1st_temp to "VAC:CRYO:CRP2:TEMP1ST"; monitor crp2_1st_temp;
+int   crp2_2nd_temp; assign crp2_2nd_temp to "VAC:CRYO:CRP2:TEMP2ND"; monitor crp2_2nd_temp;
+int   crp2_pig;      assign crp2_pig      to "VAC:CRYO:CRP2:PIG";     monitor crp2_pig;
+
+short tmp1_rpm_normal; assign tmp1_rpm_normal to "VAC:CRYO:TMP1:NORM"; monitor tmp1_rpm_normal;
+short tmp2_rpm_normal; assign tmp2_rpm_normal to "VAC:CRYO:TMP2:NORM"; monitor tmp2_rpm_normal;
+short tmp3_rpm_normal; assign tmp3_rpm_normal to "VAC:CRYO:TMP3:NORM"; monitor tmp3_rpm_normal;
+short tmp4_rpm_normal; assign tmp4_rpm_normal to "VAC:CRYO:TMP4:NORM"; monitor tmp4_rpm_normal;
+
+
+
+/********************
+    fault
+*********************/
+
+/* chiller */
+short chiller_motor;
+short chiller_compressor;
+assign chiller_motor      to  "VAC:CRYO:CHIL:MTR";
+assign chiller_compressor to "VAC:CRYO:CHIL:CMPR";
+monitor chiller_motor;
+monitor chiller_compressor;
+
+/* roughing */
+short roughing_noalarm;
+short roughing_nowarn;
+assign roughing_noalarm to "VAC:CRYO:CBP1:NOALARM";
+assign roughing_nowarn  to "VAC:CRYO:CBP1:NOWARN";
+monitor roughing_noalarm;
+monitor roughing_nowarn;
+
+/* backing */
+short backing_noalarm;
+short backing_nowarn;
+assign backing_noalarm to "VAC:CRYO:TBP:NOALARM";
+assign backing_nowarn  to "VAC:CRYO:TBP:NOWARN";
+monitor backing_noalarm;
+monitor backing_nowarn;
+
+/* crp1 */
+short crp1_alarm;
+short crp1_overheat;
+short crp1_cpualarm;
+short crp1_cpuerror;
+assign crp1_alarm to "VAC:CRYO:CRP1:R00.B7";
+assign crp1_overheat to "VAC:CRYO:CRP1:R01.B3";
+assign crp1_cpualarm to "VAC:CRYO:CRP1:R01.B7";
+assign crp1_cpuerror to "VAC:CRYO:CRP1:R01.B0";
+monitor crp1_alarm;
+monitor crp1_overheat;
+monitor crp1_cpualarm;
+monitor crp1_cpuerror;
+
+/* crp2 */
+short crp2_alarm;
+short crp2_overheat;
+short crp2_cpualarm;
+short crp2_cpuerror;
+assign crp2_alarm to "VAC:CRYO:CRP2:R00.B7";
+assign crp2_overheat to "VAC:CRYO:CRP2:R01.B3";
+assign crp2_cpualarm to "VAC:CRYO:CRP2:R01.B7";
+assign crp2_cpuerror to "VAC:CRYO:CRP2:R01.B0";
+monitor crp2_alarm;
+monitor crp2_overheat;
+monitor crp2_cpualarm;
+monitor crp2_cpuerror;
+
+
+/* tmp1, tmp2, tmp3, tmp4 */
+short tmp1_rss; assign tmp1_rss to "VAC:CRYO:TMP1:RSS"; monitor tmp1_rss;
+short tmp2_rss; assign tmp2_rss to "VAC:CRYO:TMP2:RSS"; monitor tmp2_rss;
+short tmp3_rss; assign tmp3_rss to "VAC:CRYO:TMP3:RSS"; monitor tmp3_rss;
+short tmp4_rss; assign tmp4_rss to "VAC:CRYO:TMP4:RSS"; monitor tmp4_rss;
+
+
+
+/**************
+ ss calcVacPrs
+***************/
+
+ss calcVacPrs {
+    state calcVacPrs {
+        option -e;
+        option -x;
+  
+        entry {
+            pvGet(flipflop);
+            if(flipflop) flipflop = 0;
+            else         flipflop = 1;
+            pvPut(flipflop, SYNC);
+        }
+ 
+        when(sig == VALID) {
+            vacPrs = ig0;
+            epicsThreadSleep(.5);
+        } state calcVacPrs 
+
+        when(efTestAndClear(ev_frg0) || efTestAndClear(ev_frg1)) {
+            vacPrs = (frg0 + frg1) /2.;
+        } state calcVacPrs
+       
+
+        exit {
+            pvPut(vacPrs, SYNC);
+        } 
+    }
+}
+
+/***************
+  ss igControl
+****************/
+ss igControl {
+    state init {
+        when(vacPrs <= IGON_THRESHOLD) {} state igOn
+        when(vacPrs >= IGOFF_THRESHOLD) {} state igOff
+    }
+
+    state igOn {
+        entry {
+            ig_onoff = ON;
+            pvPut(ig_onoff, SYNC);
+        }
+
+        when(vacPrs >= IGOFF_THRESHOLD) {} state igOff
+    }
+
+    state igOff {
+        entry {
+            ig_onoff = OFF;
+            pvPut(ig_onoff, SYNC);
+        }
+
+        when(vacPrs <= IGON_THRESHOLD) {} state igOn
+    }
+}
+
+
+
+/**************************
+  scenario
+***************************/
+
+ss scenario_tmp {
+    state deactivate {
+        entry {
+            printf("tmp: deactivate\n");
+    
+            tmp1_fgv = tmp1_bgv = tmp2_fgv = tmp2_bgv = CLOSE;
+            /* tmp3_fgv = tmp3_bgv = tmp4_fgv = tmp4_bgv = CLOSE; */
+            pvPut(tmp1_fgv, SYNC); pvPut(tmp1_bgv, SYNC); pvPut(tmp2_fgv, SYNC); pvPut(tmp2_bgv, SYNC);
+            /* pvPut(tmp3_fgv, SYNC); pvPut(tmp3_bgv, SYNC); pvPut(tmp4_fgv, SYNC); pvPut(tmp4_bgv, SYNC); */
+            epicsThreadSleep(10.);
+
+            printf("tmp: wait for valve settle\n");
+
+            tmp1_pwr = tmp2_pwr = OFF;
+            /* tmp3_pwr = tmp4_pwr = tbp_pwr = OFF; */
+            pvPut(tmp1_pwr, SYNC); pvPut(tmp2_pwr, SYNC);
+            /* pvPut(tmp3_pwr, SYNC); pvPut(tmp4_pwr, SYNC); */
+            pvPut(tbp_pwr, SYNC);
+        }
+        when(scenario_permit == VAC_START) {} state start
+    }
+
+
+    state start {
+        entry {
+            printf("tmp: start\n");
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE)  {} state deactivate
+        when(scenario_permit == VAC_STOP)        {} state deactivate    
+
+        when(vacPrs > ROUGHING_THRESHOLD) { 
+            start_flag_for_tmp = START_FROM_ATM; 
+        } state valve_open
+        when(vacPrs <= ROUGHING_THRESHOLD) { 
+            start_flag_for_tmp = START_FROM_VAC;
+        } state backing_on
+    }
+
+    state valve_open {
+        entry {
+            printf("tmp: valve_open\n");
+
+            tmp1_fgv = tmp1_bgv = tmp2_fgv = tmp2_bgv = OPEN;
+            /* tmp3_fgv = tmp3_bgv = tmp4_fgv = tmp4_bgv = OPEN; */
+            pvPut(tmp1_fgv, SYNC); pvPut(tmp1_bgv, SYNC); pvPut(tmp2_fgv, SYNC); pvPut(tmp2_bgv, SYNC);
+            /* pvPut(tmp3_fgv, SYNC); pvPut(tmp3_bgv, SYNC); pvPut(tmp4_fgv, SYNC); pvPut(tmp4_bgv, SYNC); */
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE)  {} state deactivate
+        when(scenario_permit == VAC_STOP)        {} state deactivate
+
+        when(delay(10.) && start_flag_for_tmp == START_FROM_ATM) {} state backing_on
+        when(delay(10.) && start_flag_for_tmp == START_FROM_VAC) {} state steady
+    }
+
+    state backing_on {
+        entry {
+            printf("tmp: backing_on\n");
+       
+            tbp_pwr = ON;
+            pvPut(tbp_pwr, SYNC);
+
+            epicsThreadSleep(60.);
+            tmp1_bgv = tmp2_bgv = OPEN;
+            /* tmp3_bgv = tmp4_bgv = OPEN; */
+            pvPut(tmp1_bgv,SYNC); pvPut(tmp2_bgv,SYNC);
+            /* pvPut(tmp3_bgv,SYNC); pvPut(tmp4_bgv,SYNC); */
+            
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE)  {} state deactivate
+        when(scenario_permit == VAC_STOP)        {} state deactivate
+
+        when(vacPrs <= TMP_START_THRESHOLD) {} state tmp_on
+    }
+
+    state tmp_on {
+        entry {
+            printf("tmp: tmp_on\n");
+
+            tmp1_pwr = tmp2_pwr = ON;
+            /* tmp3_pwr = tmp4_pwr = ON; */
+            pvPut(tmp1_pwr, SYNC); pvPut(tmp2_pwr, SYNC);
+            /* pvPut(tmp3_pwr, SYNC); pvPut(tmp4_pwr, SYNC); */
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE)  {} state deactivate
+        when(scenario_permit == VAC_STOP)        {} state deactivate
+
+
+        when(delay(10.) && start_flag_for_tmp == START_FROM_ATM) {} state steady
+        when(tmp1_rpm_normal == ON &&
+             tmp2_rpm_normal == ON &&
+             /* tmp3_rpm_normal == ON && 
+                tmp4_rpm_normal == ON && */
+             start_flag_for_tmp == START_FROM_VAC) {} state valve_open
+    }
+
+    state steady {
+        entry {
+            printf("tmp: steady\n");
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE)  {} state deactivate
+        when(scenario_permit == VAC_STOP)        {} state deactivate
+ 
+    }
+}
+
+
+
+ss scenario_crp {
+    state deactivate {
+        entry {
+            printf("crp: deactivate\n");
+
+            crp2_fgv = crp2_rv = rl_gv = CLOSE;
+            pvPut(crp2_fgv, SYNC); pvPut(crp2_rv, SYNC); pvPut(rl_gv, SYNC);
+
+            epicsThreadSleep(10.);
+
+            crp2_pwr = cbp1_pwr = OFF;
+            pvPut(crp2_pwr, SYNC); pvPut(cbp1_pwr, SYNC);
+        }
+
+        when(scenario_permit == VAC_START) {} state start
+    }
+
+    state start {
+        entry {
+            printf("crp: start\n");
+
+            if(vacPrs > ROUGHING_THRESHOLD || crp2_pig > 4) {
+                cbp1_pwr = ON;
+                pvPut(cbp1_pwr, SYNC);
+            }
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE) {} state deactivate
+        when(scenario_permit == VAC_STOP)       {} state stop
+
+        when(delay(60.)) {
+        } state valve_open
+    }
+
+    state valve_open {
+        entry {
+            printf("crp: valve_open\n");
+        
+            if(vacPrs > ROUGHING_THRESHOLD) { 
+                rl_gv = OPEN; pvPut(rl_gv, SYNC);
+            }
+
+            if(crp2_pig >=4 ) {
+                crp2_rv = OPEN; pvPut(crp2_rv, SYNC); 
+            }
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE) {} state deactivate
+        when(scenario_permit == VAC_STOP)       {} state stop
+
+        when(delay(10.)) {
+        } state roughing
+    }
+
+    state roughing {
+        entry {
+            printf("crp: roughing\n");
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE) {} state deactivate
+        when(scenario_permit == VAC_STOP)       {} state stop
+
+        when(crp2_pig < 4 && crp2_rv == OPEN) {
+            crp2_rv = CLOSE;
+            pvPut(crp2_rv, SYNC);
+            epicsThreadSleep(1.);
+        } state roughing
+
+        when(vacPrs < ROUGHING_THRESHOLD && rl_gv == OPEN) {
+            rl_gv = CLOSE; pvPut(rl_gv, SYNC);
+            epicsThreadSleep(5.);
+        } state roughing
+
+        when(crp2_rv == CLOSE && rl_gv == CLOSE && 
+             vacPrs < ROUGHING_THRESHOLD) {
+            cbp1_pwr = OFF; pvPut(cbp1_pwr, SYNC);
+            crp2_pwr = ON;  pvPut(crp2_pwr, SYNC);
+        } state cooldown
+    }
+
+    state cooldown {
+        entry {
+            printf("crp: cooldown\n");
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE) {} state deactivate
+        when(scenario_permit == VAC_STOP)       {} state stop
+
+        when(crp2_1st_temp <= CRP_1ST_TEMP_THRESHOLD &&
+             crp2_2nd_temp <= CRP_2ND_TEMP_THRESHOLD && 
+             vacPrs        <= CRP_PROTECTION_THRESHOLD) {
+            crp2_fgv = OPEN;
+            pvPut(crp2_fgv, SYNC);
+        } state steady
+    }
+
+    state steady {
+        entry {
+            printf("crp: steady\n");
+        }
+
+        when(scenario_permit == VAC_DEACTIVATE) {} state deactivate
+        when(scenario_permit == VAC_STOP)       {} state stop    
+       
+    }
+
+    state stop {
+        entry {
+            printf("crp: stop\n");
+
+            crp2_pwr = OFF; pvPut(crp2_pwr, SYNC);
+            cbp1_pwr = ON; pvPut(cbp1_pwr, SYNC);
+
+            epicsThreadSleep(20.);
+            crp2_fgv = rl_gv = CLOSE;
+            pvPut(crp2_fgv, SYNC); pvPut(rl_gv, SYNC);
+      
+            epicsThreadSleep(60.);
+            crp2_rv = OPEN; pvPut(crp2_rv, SYNC);
+        }
+
+        when(crp2_1st_temp >= CRP_ROOM_TEMP &&
+             crp2_2nd_temp >= CRP_ROOM_TEMP) {} state deactivate
+    }
+
+}
+
+
+ss scenario_fail {
+    state normal {
+        entry {
+            printf("scenario_fail: normal\n");
+        }
+
+        when( /* chiller */
+             chiller_motor      != ON   ||
+              /* roughing */
+             roughing_noalarm   != ON   ||
+             /* roughing_nowarn    != ON   || */
+              /* backing */
+             backing_noalarm    != ON   ||
+             backing_nowarn     != ON   ||
+              /* crp2 */
+             crp2_alarm         == ON   ||
+             crp2_overheat      == ON   ||
+             crp2_cpualarm      == ON   ||
+             crp2_cpuerror      == ON   ||
+              /* tmp1, tmp2, tmp3, tmp4 */
+             tmp1_rss           == 7    ||
+             tmp2_rss           == 7   /* ||
+             tmp3_rss           == 7    ||
+             tmp4_rss           == 7 */) {
+
+            scenario_permit = VAC_DEACTIVATE;
+            pvPut(scenario_permit, SYNC);
+
+        } state fail
+
+    }
+
+    state fail {
+        entry {
+            printf("scenario_fail: fail\n");
+        }
+        when(delay(2.) && scenario_permit == VAC_DEACTIVATE) {} state normal
+    }
+
+
+}

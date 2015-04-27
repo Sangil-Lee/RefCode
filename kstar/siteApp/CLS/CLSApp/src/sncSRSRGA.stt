@@ -1,0 +1,207 @@
+program SRSRGA_ON
+option +r;
+
+short i;
+short PvScan[9];
+int PvScan_M2;
+int FL_ON;
+int FL_1;
+int FL_0;
+int CDEM_ON;
+int CDEM_1;
+int CDEM_0;
+float FL_READ;
+int FL_READ_ACT;
+int ID;
+int IN0;
+int CA;
+
+
+assign PvScan to {
+	"CLS_VPS_{PORT}_M2_ION.SCAN", 
+        "CLS_VPS_{PORT}_M4_ION.SCAN",
+        "CLS_VPS_{PORT}_M12_ION.SCAN",
+        "CLS_VPS_{PORT}_M18_ION.SCAN",
+        "CLS_VPS_{PORT}_M28_ION.SCAN",
+        "CLS_VPS_{PORT}_M32_ION.SCAN",
+        "CLS_VPS_{PORT}_M40_ION.SCAN",
+        "CLS_VPS_{PORT}_M44_ION.SCAN",
+        "CLS_VPS_{PORT}_M55_ION.SCAN"
+        };
+
+
+assign FL_ON to "CLS_VPS_{PORT}_FL_ON";
+monitor FL_ON;
+assign CDEM_ON to "CLS_VPS_{PORT}_CDEM_ON";
+monitor CDEM_ON;
+
+assign FL_READ to "CLS_VPS_{PORT}_FL";
+monitor FL_READ;
+
+assign FL_1 to "CLS_VPS_{PORT}_FL_1.PROC";
+assign FL_0 to "CLS_VPS_{PORT}_FL_0.PROC";
+assign CDEM_1 to "CLS_VPS_{PORT}_CDEM_1.PROC";
+assign CDEM_0 to "CLS_VPS_{PORT}_CDEM_0.PROC";
+assign FL_READ_ACT to "CLS_VPS_{PORT}_FL.PROC";
+
+assign ID to "CLS_VPS_{PORT}_ID.PROC";
+assign IN0 to "CLS_VPS_{PORT}_IN0.PROC";
+assign CA to "CLS_VPS_{PORT}_CA.PROC";
+
+ss SRSRGA {
+
+    state INIT {
+        when(delay(2.0)){
+            ID = 1;
+            pvPut(ID);
+            printf("ID READ ACTUATED !!\n");
+        } state INIT_1
+    }
+
+    state INIT_1 { 
+        when(delay(2.0)){ 
+            FL_0 = 1;
+            pvPut(FL_0);
+            printf("FIL OFF ACTUATED !!\n");
+        } state INIT_2
+    }
+ 
+    state INIT_2 {  
+        when(delay(5.0)){
+            CA = 1;
+            pvPut(CA);
+            printf("CALIB. ACTUATED !!\n");
+        } state FIL_OFF
+    }
+
+    state FIL_OFF {
+        when(FL_ON == 1 ){
+            FL_1 = 1;
+            pvPut(FL_1);
+            printf("FIL ON !! \n");            
+        } state  DELAY
+
+        when(CDEM_ON == 1){
+            CDEM_ON = 0;
+	    pvPut(CDEM_ON);
+        } state FIL_OFF 
+    }
+
+    state DELAY {
+        when(delay(5.0) ){
+           FL_READ_ACT = 1;
+           pvPut(FL_READ_ACT);
+           pvGet(FL_READ); 
+        } state DELAY2
+    }
+
+    state DELAY2 {
+        when(FL_READ > 0.9 && delay(2.0)){
+            for (i = 0; i < 10; i++)
+            {
+              PvScan[i] = 4;
+              pvPut(PvScan[i]);
+            }
+            printf("FL_READ = %lf  \n",FL_READ);
+	    printf("SCAN Activated !! \n");
+        } state FIL_ON
+        
+	 when(FL_READ <= 0.9 && delay(2.0)){
+	    for (i = 0; i < 10; i++)
+            {
+              PvScan[i] = 0;
+              pvPut(PvScan[i]);
+            }
+            printf("FL_READ = %lf  \n",FL_READ);
+            printf("SCAN Passive !! \n");
+        } state FIL_ON
+    }
+
+
+    state FIL_ON {
+        when(FL_ON == 0){ 
+            FL_0 = 1; 
+            pvPut(FL_0); 
+            for (i = 0; i < 10; i++)
+            {
+              PvScan[i] = 0;
+              pvPut(PvScan[i]);
+            }
+            CDEM_0 = 1;
+            pvPut(CDEM_0);
+            CDEM_ON = 0;
+            pvPut(CDEM_ON);
+            FL_READ_ACT = 1;
+            pvPut(FL_READ_ACT);
+       printf("FIL OFF !! \n");
+        } state FIL_OFF 
+
+       when(CDEM_ON == 1 ){
+            CDEM_1 = 1;
+            pvPut(CDEM_1);
+        printf("CDEM ON ++ \n");
+        } state CDEM_ON
+
+       when(FL_READ <= 0.9 ){
+            FL_ON = 0;
+            pvPut(FL_ON);
+            FL_0 = 1;
+            pvPut(FL_0);
+        printf("FIL Not ON \n");
+        } state FIL_OFF
+    }
+
+    
+    state CDEM_ON {
+        when(FL_ON == 0){
+            FL_0 = 1;
+            pvPut(FL_0);
+
+            for (i = 0; i < 10; i++)
+            {
+              PvScan[i] = 0;
+              pvPut(PvScan[i]);
+            }
+
+	    CDEM_0 = 1;
+            pvPut(CDEM_0); 
+            CDEM_ON = 0;
+            pvPut(CDEM_ON);
+            FL_READ_ACT = 1;
+            pvPut(FL_READ_ACT);        
+       printf("FIL OFF !! \n");   
+        } state FIL_OFF
+
+        when(CDEM_ON == 0){
+	    CDEM_0 = 1;
+            pvPut(CDEM_0);
+        printf("CDEM OFF -- \n");
+        } state CDEM_OFF
+    }
+
+    state CDEM_OFF {
+        when(FL_ON == 0){
+            FL_0 = 1;
+            pvPut(FL_0);
+            for (i = 0; i < 10; i++)
+            {
+              PvScan[i] = 0;
+              pvPut(PvScan[i]);
+            }
+	    FL_READ_ACT = 1;
+            pvPut(FL_READ_ACT);
+            CDEM_0 = 1;
+            pvPut(CDEM_0);
+            CDEM_ON = 0;
+            pvPut(CDEM_ON);
+       printf("FIL OFF !!\n");
+        } state FIL_OFF
+       
+        when(CDEM_ON == 1 ){
+            CDEM_1 = 1;
+            pvPut(CDEM_1);
+        printf("CDEM ON ++ \n");
+        } state CDEM_ON
+    }
+
+}

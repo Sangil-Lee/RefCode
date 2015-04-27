@@ -1,0 +1,45 @@
+program FUEL_ON
+
+/*
+option +r;
+*/
+
+int PS_MODE;
+int RUN_ACT;
+int REMOTE;
+
+assign RUN_ACT to "DCLN_EC_DC_RUN_ACT";
+monitor RUN_ACT;
+
+assign PS_MODE to "DCLN_E_PS_MODE";
+monitor PS_MODE;
+evflag ef_PS_MODE;
+sync PS_MODE ef_PS_MODE;
+
+assign REMOTE to "DCLN_REMOTE";
+monitor REMOTE; 
+evflag ef_REMOTE; 
+sync REMOTE ef_REMOTE;
+
+ss FUEL {
+    
+    state MAIN {
+
+
+        when( efTestAndClear(ef_PS_MODE) || efTestAndClear(ef_REMOTE) ){
+          if( PS_MODE == 0 && REMOTE == 1) {
+              RUN_ACT = 1; 
+              pvPut(RUN_ACT, SYNC);
+            }
+            else {
+              RUN_ACT = 0; 
+              pvPut(RUN_ACT, SYNC);
+            }
+        } state MAIN
+
+       
+    }
+
+}
+
+

@@ -1,0 +1,15 @@
+record(ao, "$(PVNAME)_TAG")
+{
+  field(DESC, "$(DESC)")
+  field(SCAN, "Passive")
+  field(DTYP, "EtherIP")
+  field(OUT, "@$(PLC) $(TAG) S 1")
+}
+record(calcout, "$(PVNAME)_RET")
+{
+  field(DESC, "EPICS to PLC")
+  field(SCAN, "$(SCAN)")
+  field(INPA, "$(PVNAME)")
+  field(CALC, "A")
+  field(OUT, "$(PVNAME)_TAG.VAL NMP PP")
+}

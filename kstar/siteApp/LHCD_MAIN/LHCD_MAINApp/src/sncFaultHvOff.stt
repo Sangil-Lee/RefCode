@@ -1,0 +1,53 @@
+program sncFaultHvOff
+
+int oper_mode;
+assign oper_mode to "LH1_MODE_KSTAR";
+monitor oper_mode;
+
+int hv_off;
+assign hv_off to "LH1_PS_HVOFF_ECMD";
+
+
+int upload;
+assign upload to "LH1_HVPS_OFF";
+monitor upload;
+
+evflag ef_upload;
+sync	upload ef_upload;
+int		upload_prev;
+
+ss FaultHvOffApply
+{
+	state init
+	{
+		when(1)
+		{
+			upload_prev = upload;
+		} state run
+	}
+	state run
+	{
+		when(efTestAndClear (ef_upload))
+		{
+			if(upload_prev != upload)
+			{
+				if(upload == 1 && oper_mode == 1)
+				{
+					hv_off = 1;
+					pvPut(hv_off,SYNC);
+					epicsThreadSleep(1);
+					hv_off = 0;
+				
+					pvPut(hv_off,SYNC);
+					/*
+					upload = 0;
+					pvPut(upload,SYNC);
+					*/
+					printf("--- FaultHvOff Sequence ---\n");
+				}
+			}
+			upload_prev = upload;
+		} state run
+	}
+}
+			

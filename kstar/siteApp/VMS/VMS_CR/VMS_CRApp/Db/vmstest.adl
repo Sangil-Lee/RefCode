@@ -1,0 +1,250 @@
+
+file {
+	name="/usr/local/epics/apps/vms/vmsApp/Db/vmstest.adl"
+	version=030101
+}
+display {
+	object {
+		x=1349
+		y=96
+		width=861
+		height=877
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+"choice button" {
+	object {
+		x=110
+		y=77
+		width=247
+		height=38
+	}
+	control {
+		chan="vms_ref"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	stacking="column"
+}
+text {
+	object {
+		x=34
+		y=85
+		width=53
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vms_ref"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=38
+		y=143
+		width=53
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vms_ind"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=109
+		y=132
+		width=247
+		height=38
+	}
+	control {
+		chan="vms_ind"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	stacking="column"
+}
+text {
+	object {
+		x=33
+		y=199
+		width=53
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vms"
+	align="horiz. centered"
+}
+"choice button" {
+	object {
+		x=111
+		y=186
+		width=247
+		height=38
+	}
+	control {
+		chan="vms"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	stacking="column"
+}
+"text update" {
+	object {
+		x=118
+		y=261
+		width=202
+		height=58
+	}
+	monitor {
+		chan="vms_calc"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=40
+		y=263
+		width=53
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vms_calc"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=50
+		y=370
+		width=53
+		height=22
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vms_out"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=118
+		y=366
+		width=202
+		height=58
+	}
+	monitor {
+		chan="vms_out"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=372
+		y=58
+		width=202
+		height=58
+	}
+	monitor {
+		chan="vms_ref.VAL"
+		clr=14
+		bclr=4
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}

@@ -1,0 +1,186 @@
+/*
+ * Heating control for NBI1 in KSTAR mode
+ */
+
+program sncPermReady
+
+option +r;
+option -c;
+
+%{
+#include "kutil.h"
+}%
+
+int		permission;
+assign	permission to	"{SYS}_KSTAR_OPR_PER";
+monitor	permission;
+
+int		ready;
+assign	ready to		"{SYS}_KSTAR_OPR_RDY";
+monitor	ready;
+
+int		ready_lamp;
+assign	ready_lamp to	"{SYS}_KSTAR_OPR_RDY_LAMP";
+monitor	ready_lamp;
+
+double	pulse_on;
+assign	pulse_on to		"{SYS}_KSTAR_OPR_PULSEON";
+monitor	pulse_on;
+
+double	pulse_on_blip;
+assign	pulse_on_blip to	"{PULSEON}";
+monitor	pulse_on_blip;
+
+int		fault;
+assign	fault to		"{FAULT}";
+monitor	fault;
+
+int		kstar_mode;
+/*assign	kstar_mode to	"NB1_INJECT_KSTAR_MODE";*/
+assign	kstar_mode to	"{SYS}_KSTAR_OPR_MODE";
+monitor	kstar_mode;
+
+int		shotseq_start;
+assign	shotseq_start to "CCS_SHOTSEQ_START";
+monitor	shotseq_start;
+
+double	blip_time;
+assign	blip_time to "CCS_BLIP_TIME";
+monitor	blip_time;
+
+double	pulse_start;
+assign	pulse_start to	"{SYS}_KSTAR_OPR_PULSE_START";
+monitor	pulse_start;
+
+evflag	ef_shotseq_start;
+sync	shotseq_start ef_shotseq_start;
+
+double	pulse_start_tmp;
+int		is_equal_dval;
+
+/*
+int		upload;
+assign	upload to		"{SYS}_KSTAR_OPR_UPLOAD";
+monitor	upload;
+
+evflag	ef_upload;
+sync	upload ef_upload;
+
+int		upload_prev;
+*/
+
+ss sncPermReadyProcess {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncPermReady.init] ...\n");
+		} state run
+	}
+
+	state run {
+		when (delay(1.0)) {
+			pulse_start_tmp	= pulse_on_blip - blip_time;
+
+			if (pulse_start_tmp != pulse_start) {
+				pulse_start	= pulse_start_tmp;
+				pvPut (pulse_start);
+			}
+
+			kuDebug (kuINFO, "[sncPermReady::sncPermReady.run] kmode(%d) ready(%d/%d) pulse(%.2f/%.2f) perm(%d) fault(%d)\n",
+							kstar_mode, ready, ready_lamp, pulse_on, pulse_start, permission, fault);
+
+			if (1 == kstar_mode) {
+				is_equal_dval	= kuDoubleEqual (pulse_on, pulse_start, 0.0001);
+
+				/* Ready status for lamp */
+				/*if ( (1 == ready) && (pulse_on == pulse_start) ) {*/
+				if ( (1 == ready) && (1 == is_equal_dval) ) {
+					if (1 != ready_lamp) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] set ready : kmode(%d) ready(%d) pulse(%.2f/%.2f)\n",
+							kstar_mode, ready, pulse_on, pulse_start);
+
+						ready_lamp = 1;
+						pvPut (ready_lamp);
+					}
+				}
+				else {
+					if (0 != ready_lamp) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] not ready : kmode(%d) ready(%d) pulse(%.2f/%.2f)\n",
+							kstar_mode, ready, pulse_on, pulse_start);
+
+						ready_lamp = 0;
+						pvPut (ready_lamp);
+					}
+				}
+
+				/* Permission : Fault processing */
+				/*if ( (1 != permission) || (1 != ready_lamp) ) {*/
+				if (1 != permission) {
+					if (0 != fault) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] set fault : kmode(%d) perm(%d) ready_lamp(%d)\n",
+							kstar_mode, permission, ready_lamp);
+
+						fault = 0;
+						pvPut (fault);
+					}
+				}
+			}
+		} state run
+	}
+}
+
+ss sncShotSequence {
+	state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncShotSequence.init] ...\n");
+		} state run
+	}
+
+	state run {
+		when (efTestAndClear (ef_shotseq_start)) {
+			if (1 == kstar_mode) {
+				if (0 == shotseq_start) {   /* stop */
+					kuDebug (kuMON, "[sncPermReady::sncShotSequence.run] shot sequence was stopped \n");
+					kuDebug (kuMON, "[sncPermReady::sncShotSequence.run] set to not ready \n");
+
+					ready = 0;
+					pvPut (ready);
+				}
+				else {  /* start */
+					kuDebug (kuMON, "[sncPermReady::sncShotSequence.run] shot sequence was started \n");
+				}
+			}
+		} state run
+	}
+}
+
+%{
+#if 0
+ss sncUploadProcess {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncUpload.init] ...\n");
+
+			/* stores previous value */
+			upload_prev = upload;
+		} state run
+	}
+
+	state run {
+		when (efTestAndClear (ef_upload)) {
+			if (upload_prev != upload) {
+				kuDebug (kuMON, "[sncPermReady::sncUpload.run] upload(%d) : set to not ready \n", upload);
+
+				ready = 0;
+				pvPut (ready);
+
+				ready_lamp = 0;
+				pvPut (ready_lamp);
+			}
+
+			upload_prev = upload;
+		} state run
+	}
+}
+#endif
+}%
+

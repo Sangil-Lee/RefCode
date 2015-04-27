@@ -1,0 +1,86 @@
+record(ai, "$(PV)_MAX")
+{
+	field(DESC, "$(PV) max")
+	field(SCAN, "Passive")
+	field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+	field(EGU,  "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+        field(HIHI, "$(HHVAL)")
+        field(HIGH, "$(HIVAL)")
+        field(HHSV, "MAJOR")
+        field(HSV, "MINOR")
+        field(FLNK, "$(PV)_CALC_HIHI")
+}
+record(stringin, "$(PV)_MAX_PV")
+{
+	field(VAL, "")
+	field(DESC, "$(PV) max pv")
+}
+record(ai, "$(PV)_MIN")
+{
+        field(DESC, "$(PV) min")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+record(stringin, "$(PV)_MIN_PV")
+{
+        field(VAL, "")
+        field(DESC, "$(PV) min pv")
+}
+record(ai, "$(PV)_AVR")
+{
+        field(DESC, "$(PV) average")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+
+        
+record(calcout, "$(PV)_CALC_HIHI")
+{ 
+        field(DESC, "$(PV) CALC")
+        field(CALC, "(A=3)?1:0")
+        field(INPA, "$(PV)_MAX.STAT")
+        field(OUT, "$(PV)_MAX_HIHI")
+        field(FLNK, "$(PV)_MAX_HIHI")
+}
+
+record(bi, "$(PV)_MAX_HIHI")
+{  
+        field(DESC, "$(PV) CALC")
+        field(ZNAM, "OFF")
+        field(ONAM, "ON")
+        field(ZSV, "NO_ALARM")
+        field(OSV, "MAJOR") 
+        field(FLNK, "$(PV)_CALC_HIGH")
+} 
+
+record(calcout, "$(PV)_CALC_HIGH")
+{  
+        field(DESC, "$(PV) CALC")
+        field(CALC, "(A=4)?1:0") 
+        field(INPA, "$(PV)_MAX.STAT")
+        field(OUT, "$(PV)_MAX_HIGH")
+        field(FLNK, "$(PV)_MAX_HIGH")
+} 
+
+record(bi, "$(PV)_MAX_HIGH") 
+{
+        field(DESC, "$(PV) CALC")
+        field(ZNAM, "OFF") 
+        field(ONAM, "ON") 
+        field(ZSV, "NO_ALARM") 
+        field(OSV, "MAJOR")  
+} 

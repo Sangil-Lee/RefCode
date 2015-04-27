@@ -1,0 +1,252 @@
+program sncDCSET
+
+int dc_set;
+assign dc_set to "LH1_RF_DC_SET";
+monitor dc_set;
+
+float rf_vgain;
+assign rf_vgain to "LH1_PARM_RF_VGAIN";
+monitor rf_vgain;
+
+float rfk_dura;
+assign rfk_dura to "LH1_RFK_PULSE_CMD";
+monitor rfk_dura;
+
+float rfk_wtime0;
+assign rfk_wtime0 to "LH1_RFK_WFTIME0_CMD";
+float rfk_wtime1;
+assign rfk_wtime1 to "LH1_RFK_WFTIME1_CMD";
+float rfk_wtime2;
+assign rfk_wtime2 to "LH1_RFK_WFTIME2_CMD";
+float rfk_wtime3;
+assign rfk_wtime3 to "LH1_RFK_WFTIME3_CMD";
+float rfk_wtime4;
+assign rfk_wtime4 to "LH1_RFK_WFTIME4_CMD";
+float rfk_wtime5;
+assign rfk_wtime5 to "LH1_RFK_WFTIME5_CMD";
+float rfk_wtime6;
+assign rfk_wtime6 to "LH1_RFK_WFTIME6_CMD";
+float rfk_wtime7;
+assign rfk_wtime7 to "LH1_RFK_WFTIME7_CMD";
+float rfk_wtime8;
+assign rfk_wtime8 to "LH1_RFK_WFTIME8_CMD";
+float rfk_wtime9;
+assign rfk_wtime9 to "LH1_RFK_WFTIME9_CMD";
+float rfk_wtime10;
+assign rfk_wtime10 to "LH1_RFK_WFTIME10_CMD";
+float rfk_wtime11;
+assign rfk_wtime11 to "LH1_RFK_WFTIME11_CMD";
+float rfk_wtime12;
+assign rfk_wtime12 to "LH1_RFK_WFTIME12_CMD";
+float rfk_wtime13;
+assign rfk_wtime13 to "LH1_RFK_WFTIME13_CMD";
+float rfk_wtime14;
+assign rfk_wtime14 to "LH1_RFK_WFTIME14_CMD";
+float rfk_wtime15;
+assign rfk_wtime15 to "LH1_RFK_WFTIME15_CMD";
+float rfk_wtime16;
+assign rfk_wtime16 to "LH1_RFK_WFTIME16_CMD";
+float rfk_wtime17;
+assign rfk_wtime17 to "LH1_RFK_WFTIME17_CMD";
+float rfk_wtime18;
+assign rfk_wtime18 to "LH1_RFK_WFTIME18_CMD";
+float rfk_wtime19;
+assign rfk_wtime19 to "LH1_RFK_WFTIME19_CMD";
+float rfk_wtime20;
+assign rfk_wtime20 to "LH1_RFK_WFTIME20_CMD";
+
+float rfk_wval0;
+assign rfk_wval0 to "LH1_RFK_WFVALUE0_CMD";
+float rfk_wval1;
+assign rfk_wval1 to "LH1_RFK_WFVALUE1_CMD";
+float rfk_wval2;
+assign rfk_wval2 to "LH1_RFK_WFVALUE2_CMD";
+float rfk_wval3;
+assign rfk_wval3 to "LH1_RFK_WFVALUE3_CMD";
+float rfk_wval4;
+assign rfk_wval4 to "LH1_RFK_WFVALUE4_CMD";
+float rfk_wval5;
+assign rfk_wval5 to "LH1_RFK_WFVALUE5_CMD";
+float rfk_wval6;
+assign rfk_wval6 to "LH1_RFK_WFVALUE6_CMD";
+float rfk_wval7;
+assign rfk_wval7 to "LH1_RFK_WFVALUE7_CMD";
+float rfk_wval8;
+assign rfk_wval8 to "LH1_RFK_WFVALUE8_CMD";
+float rfk_wval9;
+assign rfk_wval9 to "LH1_RFK_WFVALUE9_CMD";
+float rfk_wval10;
+assign rfk_wval10 to "LH1_RFK_WFVALUE10_CMD";
+float rfk_wval11;
+assign rfk_wval11 to "LH1_RFK_WFVALUE11_CMD";
+float rfk_wval12;
+assign rfk_wval12 to "LH1_RFK_WFVALUE12_CMD";
+float rfk_wval13;
+assign rfk_wval13 to "LH1_RFK_WFVALUE13_CMD";
+float rfk_wval14;
+assign rfk_wval14 to "LH1_RFK_WFVALUE14_CMD";
+float rfk_wval15;
+assign rfk_wval15 to "LH1_RFK_WFVALUE15_CMD";
+float rfk_wval16;
+assign rfk_wval16 to "LH1_RFK_WFVALUE16_CMD";
+float rfk_wval17;
+assign rfk_wval17 to "LH1_RFK_WFVALUE17_CMD";
+float rfk_wval18;
+assign rfk_wval18 to "LH1_RFK_WFVALUE18_CMD";
+float rfk_wval19;
+assign rfk_wval19 to "LH1_RFK_WFVALUE19_CMD";
+float rfk_wval20;
+assign rfk_wval20 to "LH1_RFK_WFVALUE20_CMD";
+
+ss DCSETApply
+{
+	state low
+	{
+	    when(dc_set == 1)
+	    {
+	        printf("--- DC SET Ok ---\n");
+			rfk_wval0 = rf_vgain;
+			pvPut(rfk_wval0,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval1 = 10.0;
+			pvPut(rfk_wval1,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval2 = 10.0;
+			pvPut(rfk_wval2,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval3 = 10.0;
+			pvPut(rfk_wval3,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval4 = 10.0;
+			pvPut(rfk_wval4,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval5 = 10.0;
+			pvPut(rfk_wval5,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval6 = 10.0;
+			pvPut(rfk_wval6,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval7 = 10.0;
+			pvPut(rfk_wval7,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval8 = 10.0;
+			pvPut(rfk_wval8,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval9 = 10.0;
+			pvPut(rfk_wval9,SYNC);
+			epicsThreadSleep(0.05);
+			rfk_wval10 = 10.0;
+			pvPut(rfk_wval10,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval11 = 10.0;
+			pvPut(rfk_wval11,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval12 = 10.0;
+			pvPut(rfk_wval12,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval13 = 10.0;
+			pvPut(rfk_wval13,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval14 = 10.0;
+			pvPut(rfk_wval14,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval15 = 10.0;
+			pvPut(rfk_wval15,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval16 = 10.0;
+			pvPut(rfk_wval16,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval17 = 10.0;
+			pvPut(rfk_wval17,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval18 = 10.0;
+			pvPut(rfk_wval18,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval19 = 10.0;
+			pvPut(rfk_wval19,SYNC);
+			epicsThreadSleep(0.01);
+			rfk_wval20 = 10.0;
+			pvPut(rfk_wval20,SYNC);
+			epicsThreadSleep(0.01);
+
+			rfk_wtime0 = 0.0;
+			pvPut(rfk_wtime0,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime1 = rfk_dura-0.001;
+			pvPut(rfk_wtime1,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime2 = rfk_dura;
+			pvPut(rfk_wtime2,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime3 = rfk_dura + 0.001;
+			pvPut(rfk_wtime3,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime4 = rfk_dura + 0.002;
+			pvPut(rfk_wtime4,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime5 = rfk_dura + 0.003;
+			pvPut(rfk_wtime5,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime6 = rfk_dura + 0.004;
+			pvPut(rfk_wtime6,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime7 = rfk_dura + 0.005;
+			pvPut(rfk_wtime7,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime8 = rfk_dura + 0.006;
+			pvPut(rfk_wtime8,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime9 = rfk_dura + 0.007;
+			pvPut(rfk_wtime9,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime10 = rfk_dura + 0.008;
+			pvPut(rfk_wtime10,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime11 = rfk_dura + 0.009;
+			pvPut(rfk_wtime11,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime12 = rfk_dura + 0.010;
+			pvPut(rfk_wtime12,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime13 = rfk_dura + 0.011;
+			pvPut(rfk_wtime13,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime14 = rfk_dura + 0.012;
+			pvPut(rfk_wtime14,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime15 = rfk_dura + 0.013;
+			pvPut(rfk_wtime15,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime16 = rfk_dura + 0.014;
+			pvPut(rfk_wtime16,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime17 = rfk_dura + 0.015;
+			pvPut(rfk_wtime17,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime18 = rfk_dura + 0.016;
+			pvPut(rfk_wtime18,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime19 = rfk_dura + 0.017;
+			pvPut(rfk_wtime19,SYNC);
+			epicsThreadSleep(0.1);
+			rfk_wtime20 = rfk_dura + 0.018;
+			pvPut(rfk_wtime20,SYNC);
+			epicsThreadSleep(0.1);
+
+
+	    } state high
+	    when(delay(1))
+	    {
+	    } state high
+	}
+	state high
+	{
+	    when(dc_set == 0)
+	    {
+
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low
+	}
+}

@@ -1,0 +1,280 @@
+program sncTmsIntLevel1
+option +r;
+option -c;
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <string.h>
+%% #include "epicsRingBytes.h"
+%% #include "ellLib.h"
+
+unsigned long tmsIntLevel;
+assign tmsIntLevel to "TEST_TMS_INT_LEVEL1";
+monitor tmsIntLevel;
+
+int intUse;
+assign intUse to "TEST_TMS_INT_ENABLE";
+monitor intUse;
+
+float tfctMax;
+assign tfctMax to "TEST_PV_VALUE_MAX";
+monitor tfctMax;
+evflag maxFlag;
+sync tfctMax maxFlag;
+
+float tfbtMax;
+assign tfbtMax to "TEST_PV_VALUE_MIN";
+monitor tfbtMax;
+evflag minFlag;
+sync tfbtMax minFlag;
+
+string tfbtMaxPV;
+assign tfbtMaxPV to "TEST_PV_VALUE_MAX_PV";
+monitor tfbtMaxPV;
+evflag maxPV_Flag;
+sync tfbtMaxPV maxPV_Flag;
+
+string tfbtMinPV;
+assign tfbtMinPV to "TEST_PV_VALUE_MIN_PV";
+monitor tfbtMinPV;
+evflag minPV_Flag;
+sync tfbtMinPV minPV_Flag;
+
+float setTFCTVal;
+assign setTFCTVal to "TEST_AI_PV14";
+monitor setTFCTVal;
+
+float setTFBTVal;
+assign setTFBTVal to "TEST_AI_PV15";
+monitor setTFBTVal;
+
+float tms_ellInit;
+assign tms_ellInit to "TEST_ELLINIT";
+monitor tms_ellInit;
+
+string oldPvName1;
+string oldPvName2;
+
+float oldMaxPV1;
+assign oldMaxPV1 to "";
+float oldMaxPV2;
+assign oldMaxPV2 to "";
+
+%% unsigned long long int oneSec;
+%% unsigned long long int oneSecDuring;
+%% unsigned long long int startTime;
+%% unsigned long long int startOneSec;
+%% unsigned long long int oneSecInterval;
+%% unsigned long long int oneSecAll;
+%% unsigned long long int currentTime;
+%% int i;
+%% int existPv1;
+%% int existPv2;
+%% int ellCountNum;
+%% int ellCountNum2;
+%% unsigned long long int current_time(void)
+%% {
+%%	    unsigned long long int x;
+%%		    __asm__ volatile(".byte 0x0f, 0x31": "=A"(x));
+%%			    return x;
+%% }
+%% double startStop_intervalUSec(unsigned long long int start, unsigned long long int stop)
+%% {
+%%	    return 1.E+6 * (double)(stop-start)/(double)(oneSecDuring);
+%% }
+
+
+%% typedef struct dataConfig {
+%%	ELLNODE  node;
+%%	int		 count;
+%%	int		 pvNum1;
+%%	char	 pvName1[60];
+%%	double	 value;
+%% } dataConfig;
+%% typedef struct dataConfig2 {
+%%	ELLNODE  node;
+%%	int		 count;
+%%	int		 pvNum2;
+%%	char	 pvName2[60];
+%%	double	 value;
+%% } dataConfig2;
+
+%% ELLLIST * pdata_ellList = NULL;
+%% ELLLIST * pdata_ellList2 = NULL;
+%% dataConfig *pdataConfig = NULL;
+%% dataConfig2 *pdataConfig2 = NULL;
+
+ss tmsInterlock1{
+	state init{
+		when(TRUE){
+%%			oneSec = current_time();
+			epicsThreadSleep(1.0);
+%%			oneSecInterval = current_time();
+%%			oneSecDuring = oneSecInterval - oneSec;
+%%			printf("Init oneSec print:%ud \n",oneSec);
+%%			printf("Init oneSecInterval print:%ud \n",oneSecInterval);
+%%			printf("Init oneSecDuring print:%ud \n",oneSecDuring);
+%%			printf("Init 1 \n");
+%%			if(!pdata_ellList) {
+%%				printf("Init 2 \n");
+%%				pdata_ellList = (ELLLIST *) malloc(sizeof(ELLLIST));
+%%				pdata_ellList2 = (ELLLIST *) malloc(sizeof(ELLLIST));
+%%				printf("Init 3 \n");
+%%				ellInit (pdata_ellList);  
+%%				ellInit (pdata_ellList2);  
+%%			pdataConfig = (dataConfig*) malloc(sizeof(dataConfig));
+%%			pdataConfig2 = (dataConfig2*) malloc(sizeof(dataConfig2));
+%%			}
+		}state tms_OneSec_event_wait
+	}
+	state tms_OneSec_event_wait{
+        when (efTestAndClear(maxFlag) && intUse==1){
+%%				printf("TMS event Enable..... Status \n");
+		} state tms_interlock_enable
+	}
+	state tms_interlock_enable{
+        when (((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal)) && intUse==1){
+%%				printf("Init 7 \n");
+				if((tfctMax>setTFCTVal) || (tfbtMax>setTFBTVal)){
+%%					sprintf(pVar->oldPvName1,"%s",pVar->tfbtMaxPV);
+%%					sprintf(pVar->oldPvName2,"%s",pVar->tfbtMinPV);
+%%					ellCountNum = ellCount(pdata_ellList);
+%%					ellCountNum2 = ellCount(pdata_ellList2);
+%%	    			printf("Init 5 \n");
+
+%%					if(ellCountNum >= 1){
+%%						pdataConfig = (dataConfig*) ellFirst (pdata_ellList);  
+%%						printf("pdata_ellFirst Num:%d, Name1:%s \n", ellCount(pdata_ellList),pdataConfig->pvName1);
+%%						existPv1 = 1;
+%%						for (i=0; i<ellCountNum; i++) {    
+%%							sprintf(pVar->oldPvName1,"%s",pdataConfig->pvName1);
+							pvAssign (oldMaxPV1, oldPvName1);
+							pvMonitor (oldMaxPV1);
+%%							if(!strcmp(pdataConfig->pvName1,pVar->oldPvName1) && existPv1==1){
+								if(oldMaxPV1>setTFCTVal){
+%%									pdataConfig->pvNum1 = pdataConfig->pvNum1 + 1;
+%%									printf("pdata_ell same pvNum1:%d, Name1:%s \n", pdataConfig->pvNum1,pdataConfig->pvName1);
+								}else {
+%%									pdataConfig->pvNum1 = 0;
+								}
+%%								existPv1=0;
+%%							}
+%%							if (existPv1==1) {
+								if(oldMaxPV1>setTFCTVal){
+%%									pdataConfig->pvNum1 = pdataConfig->pvNum1 + 1;
+%%									printf("pdata_ell Not same  pvNum1:%d, Name1:%s \n", pdataConfig->pvNum1,pdataConfig->pvName1);
+								}else {
+%%									pdataConfig->pvNum1 = 0;
+								}
+%%							}
+%%							printf("Enable Ell Next 1 count i:%d \n",i);
+%%							if (i<(ellCountNum-1)) {
+%%								pdataConfig = (dataConfig*) ellNext (&pdataConfig->node);   
+%%							}
+%%						}
+%%						if (existPv1 == 1){
+%%							strcpy(pdataConfig->pvName1,pVar->oldPvName1);
+%%							printf("pdata_ellAdd Not same  pvNum1:%d, Name1:%s \n", pdataConfig->pvNum1,pdataConfig->pvName1);
+%%							pdataConfig->pvNum1 = 1;
+%%							ellAdd (pdata_ellList, &pdataConfig->node);
+%%							existPv1=0;
+%%							existPv2=0;
+%%						}
+%%					} else {
+%%						strcpy(pdataConfig->pvName1,pVar->oldPvName1);
+%%						pdataConfig->pvNum1 = 1;
+%%						ellAdd (pdata_ellList, &pdataConfig->node);
+%%						printf("New Pv ellAdd part1 PV and Value \n");
+%%						printf("pdata_ellCount :%d \n", ellCount(pdata_ellList));
+%%					}
+					printf(" init 6 \n");
+
+%%					if(ellCountNum2 >= 1){
+%%						pdataConfig2 = (dataConfig2*) ellFirst (pdata_ellList2);  
+%%						printf("pdata_ellFirst2 Num2:%d, Name2:%s \n", ellCount(pdata_ellList2),pdataConfig2->pvName2);
+%%						existPv2 = 1;
+%%						for (i=0; i<ellCountNum2; i++) {    
+%%							sprintf(pVar->oldPvName2,"%s",pdataConfig2->pvName2);
+							pvAssign (oldMaxPV2, oldPvName2);
+							pvMonitor (oldMaxPV2);
+%%							if(!strcmp(pdataConfig2->pvName2,pVar->oldPvName2) && existPv2==1){
+								if(oldMaxPV2>setTFBTVal){
+%%									pdataConfig2->pvNum2 = pdataConfig2->pvNum2 + 1;
+%%									printf("pdata_ell same pvNum2:%d, Name2:%s \n", pdataConfig2->pvNum2,pdataConfig2->pvName2);
+								}else {
+%%									pdataConfig2->pvNum2 = 0;
+								}
+%%								existPv2=0;
+%%							}
+%%							if (existPv2==1) {
+								if(oldMaxPV2>setTFBTVal){
+%%									pdataConfig2->pvNum2 = pdataConfig2->pvNum2 + 1;
+%%									printf("pdata_ell Not same pvNum2:%d, Name2:%s \n", pdataConfig2->pvNum2,pdataConfig2->pvName2);
+								}else {
+%%									pdataConfig2->pvNum2 = 0;
+								}
+%%							}
+%%							printf("Level Ell Next 2 count i:%d \n",i);
+%%							if (i<(ellCountNum2-1)) {
+%%								pdataConfig2 = (dataConfig2*) ellNext (&pdataConfig2->node);   
+%%							}
+%%						}
+%%						if (existPv2==1){
+%%							strcpy(pdataConfig2->pvName2,pVar->oldPvName2);
+%%							printf("pdata_ellAdd Not same pvNum2:%d, Name2:%s \n", pdataConfig2->pvNum2,pdataConfig2->pvName2);
+%%							pdataConfig2->pvNum2 = 1;
+%%							ellAdd (pdata_ellList2, &pdataConfig2->node);
+%%							existPv2=0;
+%%						}
+%%					} else {
+%%						strcpy(pdataConfig2->pvName2,pVar->oldPvName2);
+%%						pdataConfig2->pvNum2 = 1;
+%%						ellAdd (pdata_ellList2, &pdataConfig2->node);
+%%						printf("New Pv ellAdd part2 PV and Value  \n");
+%%						printf("pdata_ellCount :%d \n", ellCount(pdata_ellList2));
+%%					}
+				}
+		} state tms_interlock_level1
+        when ((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal) && intUse==1){
+%%		       printf("startTime Normal Status before If - Nomal(high 1) or Interlock(low 0) : %d\n",pVar->tmsIntLevel);
+                 if( tmsIntLevel==0){
+					 tmsIntLevel=1;
+                     pvPut(tmsIntLevel);
+%%					 printf("startTime Normal Status 0 \n");
+				 }
+		} state tms_OneSec_event_wait
+	}
+	state tms_interlock_level1{
+		when (TRUE){
+%%					ellCountNum = ellCount(pdata_ellList);
+%%					ellCountNum2 = ellCount(pdata_ellList2);
+%%						for (i=0; i < ellCountNum; i++) {    
+%%							if(pdataConfig->pvNum1 >= 10){
+								tmsIntLevel=0;
+								pvPut(tmsIntLevel);
+%%								pdataConfig->pvNum1 = 0;
+%%								printf("InterLock Enable Value 0 (Nomal High -1) Num:%d \n",pdataConfig->pvNum1);
+%%							}
+%%							if (ellCountNum > 10) {
+								if(oldMaxPV1>setTFCTVal){
+%%									pdataConfig->pvNum1 = pdataConfig->pvNum1 + 1;
+%%									printf("pdata_ell Not same  pvNum1:%d, Name1:%s \n", pdataConfig->pvNum1,pdataConfig->pvName1);
+								}else {
+%%									pdataConfig->pvNum1 = 0;
+								}
+%%							}
+%%							printf("Level Ell Next 1 count i:%d \n",i);
+%%							if (i<(ellCountNum-1)) {
+%%								pdataConfig = (dataConfig*) ellNext (&pdataConfig->node);   
+%%							}
+%%						}
+                if((tfctMax<=setTFCTVal) && (tfbtMax<=setTFBTVal)){
+					if((oldMaxPV1<=setTFCTVal) && (oldMaxPV2<=setTFBTVal)){
+%%				         fprintf(stderr,"TEST_PV_VALUE_MAX_PV Name: %s \n",pVar->tfbtMaxPV);
+%%				         fprintf(stderr,"TEST_PV_VALUE_MIN_PV Name: %s \n",pVar->tfbtMinPV);
+						tmsIntLevel=1;
+						pvPut(tmsIntLevel);
+					}
+                 }
+		} state tms_OneSec_event_wait
+	}
+}

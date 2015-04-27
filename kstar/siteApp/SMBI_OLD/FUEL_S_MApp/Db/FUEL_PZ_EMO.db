@@ -1,0 +1,22 @@
+record(ao, "FUEL_PZ_PS_EMO_STOP_OUT") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc0 PS_EMO_STOP S 0.1")
+  field(OMSL, "supervisory")
+}
+
+record(bo, "FUEL_PZ_PS_EMO_STOP") {
+  field(SCAN, "Passive")
+  field(FLNK, "FUEL_PZ_PS_EMO_STOP_C")
+  field(OMSL, "supervisory")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+  field(VAL, "1")
+}
+
+record(calcout, "FUEL_PZ_PS_EMO_STOP_C") {
+  field(CALC, "(A=0)?0:1")
+  field(OUT, "FUEL_PZ_PS_EMO_STOP_OUT PP")
+  field(INPA, "FUEL_PZ_PS_EMO_STOP")
+}

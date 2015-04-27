@@ -1,0 +1,30 @@
+record(bo, "$(PV_NAME)") {
+  field(FLNK, "$(PV_NAME)_IN")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+  field(DESC, "$(DESC)")
+  field(SCAN, "Passive")
+}
+
+record(ao, "$(PV_NAME)_OUT") {
+  field(DTYP, "S7plc")
+  field(OUT, "@HCS_PLC/$(BYTE) T=$(TYPE)")
+  field(DOL, "$(PV_NAME)_IN.VAL")
+  field(OMSL, "closed_loop")
+}
+
+record(calcout, "$(PV_NAME)_IN") {
+  field(CALC, "A+1")
+  field(FLNK, "$(PV_NAME)_OUT")
+  field(INPA, "$(PV_NAME)")
+}
+
+record(calcout, "$(PV_NAME)_IN1") {
+  field(CALC, "B")
+  field(FLNK, "$(PV_NAME)")
+  field(INPA, "HDS_HCS_R_REMOTE CPP")
+  field(OUT, "$(PV_NAME)")
+  field(INPB, "$(PV_NAME_INP) CPP")
+}

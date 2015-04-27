@@ -1,0 +1,70 @@
+record(ao, "$(P)_T0")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NI6254")
+    field(OUT, "#$(PORT) A$(A) @0")
+    field(PREC, "1")
+}
+record(ao, "$(P)_T1")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NI6254")
+    field(OUT, "#$(PORT) A$(A) @1")
+    field(PREC, "1")
+#    field(PINI, "YES")
+#    field(VAL, "1")
+}
+record(ao, "$(P)_BLIP")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NI6254")
+    field(OUT, "#$(PORT) A$(A) @2")
+    field(PREC, "1")
+}
+record(ao, "$(P)_RATE")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NI6254")
+    field(OUT, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_T0")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NI6254")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @0")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_T1")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NI6254")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @1")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_BLIP")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NI6254")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @2")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_RATE")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NI6254")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_SAMPCNT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NI6254")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @5")
+    field(PREC, "0")
+}

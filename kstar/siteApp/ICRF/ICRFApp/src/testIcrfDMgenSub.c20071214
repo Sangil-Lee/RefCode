@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include <stdlib.h>
+
+#include <dbEvent.h>
+#include <dbDefs.h>
+#include <dbCommon.h>
+#include <dbAccess.h>
+#include <registryFunction.h>
+#include <epicsExport.h>
+#include <recSup.h>
+#include <genSubRecord.h>
+
+long procIQInit( genSubRecord *pgsub )
+{
+  return(0);
+}
+
+long procIQ( genSubRecord *pgsub )
+{
+    unsigned short  I;
+    unsigned short  Q;
+    double *amp;
+    double *pha;
+    unsigned long nelm,i;
+    int dummy;
+
+    nelm = *((unsigned long *)pgsub->d);
+    /* allocate memory */
+    amp = (double *)malloc(nelm*sizeof(double));
+    pha = (double *)malloc(nelm*sizeof(double));
+
+    for(i=0;i<nelm;i++) {
+        I = *((unsigned short *)pgsub->a+i);
+        Q = *((unsigned short *)pgsub->b+i);
+        
+        *(amp+i) = sqrt((I-2047)*(I-2047)+(Q-2047)*(Q-2047));
+        if(Q!=0) {                                      
+            *(pha+i) = atan( (I-2047) / (double)(Q-2047) );
+        } else {
+            *(pha+i) = 3.14159/2.;
+        } 
+    }
+    memcpy(pgsub->vala, amp, nelm*sizeof(double));
+    memcpy(pgsub->valb, pha, nelm*sizeof(double));
+
+    pgsub->vald = &nelm;
+
+  return(nelm);
+}
+
+
+/* Register these symbols for use by IOC code */
+/*
+epicsRegisterFunction( procIQInit );
+epicsRegisterFunction( procIQ );
+*/
+static registryFunctionRef procIQSubRef[] = {
+    {"procIQInit",(REGISTRYFUNCTION)procIQInit},
+    {"procIQ",(REGISTRYFUNCTION)procIQ}
+};
+
+static void procIQSubRegistrar(void)
+{
+    registryFunctionRefAdd(procIQSubRef,NELEMENTS(procIQSubRef));
+}
+epicsExportRegistrar(procIQSubRegistrar);
+

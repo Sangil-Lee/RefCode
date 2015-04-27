@@ -1,0 +1,117 @@
+#record(bo, "NB1_OPER_IS1_MODE")
+#{
+#    field(DESC, "OPER. I/S #1")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#	field(ZSV, "MAJOR")
+#	field(OSV, "NO_ALARM")
+#	field(PINI, "YES")
+#}
+#record(bo, "NB1_OPER_IS2_MODE")
+#{
+#    field(DESC, "OPER. I/S #2")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#	field(ZSV, "MAJOR")
+#	field(OSV, "NO_ALARM")
+#	field(PINI, "YES")
+#}
+record(bo, "NB1_OPER_IS3_MODE")
+{
+    field(DESC, "OPER. I/S #3")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+record(calcout, "NB1_BLWC1_FLT_MSG_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "1 second")
+	field(CALC, "(C&D)?1:0")
+	field(INPA, "NB1_PLC_BL_FLT.VAL CPP")
+	field(INPB, "NB1_PLC_WC_FLT.VAL CPP")
+	field(INPC, "NB1_PLC_CRY_FLT.VAL CPP")
+	field(INPD, "NB1_PLC_GAS1_FLT.VAL CPP")
+	field(OUT, "NB1_BLWC1_FLT_MSG.VAL NMP PP")
+}
+record(calcout, "NB1_BLWC2_FLT_MSG_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "1 second")
+	field(CALC, "(C&D)?1:0")
+	field(INPA, "NB1_PLC_BL_FLT.VAL CPP")
+	field(INPB, "NB1_PLC_WC_FLT.VAL CPP")
+	field(INPC, "NB1_PLC_CRY_FLT.VAL CPP")
+	field(INPD, "NB1_PLC_GAS2_FLT.VAL CPP")
+	field(OUT, "NB1_BLWC2_FLT_MSG.VAL NMP PP")
+}
+record(calc, "NB1_PS1_STA_HVON")
+{
+	field(DESC, "HV ON")
+	field(SCAN, "Passive")
+	field(CALC, "A&&B?1:0")
+	field(INPA, "NB1_P1VME_RTN_HVON.VAL CPP")
+	field(INPB, "NB1_P1G3_RTN_HVON.VAL CPP")
+	field(HSV, "NO_ALARM")
+	field(LSV, "MAJOR")
+	field(LOW, "0")
+	field(HIGH, "1")
+}
+record(calc, "NB1_PS2_STA_HVON")
+{
+	field(DESC, "HV ON")
+	field(SCAN, "Passive")
+	field(CALC, "A&&B?1:0")
+	field(INPA, "NB1_P2G1_STA_HVON.VAL CPP")
+	field(INPB, "NB1_P2G3_STA_HVON.VAL CPP")
+	field(HSV, "NO_ALARM")
+	field(LSV, "MAJOR")
+	field(LOW, "0")
+	field(HIGH, "1")
+}
+record(calcout, "NB1_BL_COMM_ST1_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "Passive")
+	field(CALC, "A")
+	field(INPA, "NB1_KST_INT_O10.VAL CPP")
+	field(OUT, "NB1_BL_COMM_ST1.VAL NMP PP")
+}
+record(calcout, "NB1_BL_COMM_ST2_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "Passive")
+	field(CALC, "A")
+	field(INPA, "NB1_KST_INT_O10.VAL CPP")
+	field(OUT, "NB1_BL_COMM_ST2.VAL NMP PP")
+}
+record(calcout, "NB1_WC_COMM_ST1_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "Passive")
+	field(CALC, "A")
+	field(INPA, "NB1_WAT_PLC_OK.VAL CPP")
+	field(OUT, "NB1_WC_COMM_ST1.VAL NMP PP")
+}
+record(calcout, "NB1_WC_COMM_ST2_C")
+{
+	field(DESC, "BL/WC fault")
+	field(SCAN, "Passive")
+	field(CALC, "A")
+	field(INPA, "NB1_WAT_PLC_OK.VAL CPP")
+	field(OUT, "NB1_WC_COMM_ST2.VAL NMP PP")
+}
+#record(bo, "NB1_PS1_RTN_OK")
+#{
+#    field(DESC, "PS1 Return Val")
+#    field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}
+#record(bo, "NB1_PS2_RTN_OK")
+#{
+#    field(DESC, "PS2 Return Val")
+#    field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}

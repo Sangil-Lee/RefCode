@@ -1,0 +1,38 @@
+record(ao,"$(SLOT1)_MASTER_RANGE")
+{
+field(DESC,"$(SLOT1)_MASTER_GAIN")
+field(SCAN,"Passive")
+field(FLNK,"$(SLOT1)_MASTER_RANGE_PUT PP NMS")
+field(PINI,"YES")
+field(VAL,"7")
+}
+record(dfanout,"$(SLOT1)_MASTER_RANGE_PUT")
+{
+field(DESC,"$(SLOT1)_MASTER_RANGE_PUT")
+field(SCAN,"Passive")
+field(DOL,"$(SLOT1)_MASTER_RANGE")
+field(OMSL,"closed_loop")
+field(OUTA,"$(SLOT1)_RANGE_CH1 PP")
+field(OUTB,"$(SLOT1)_RANGE_CH2 PP")
+field(OUTC,"$(SLOT1)_RANGE_CH3 PP")
+field(OUTD,"$(SLOT1)_RANGE_CH4 PP")
+}
+record(ao,"$(SLOT1)_MASTER_FILTER")
+{
+field(DESC,"$(SLOT1)_MASTER_FILTER")
+field(SCAN,"Passive")
+field(FLNK,"$(SLOT1)_MASTER_FILTER_PUT PP NMS")
+field(PINI,"YES")
+field(VAL,"7")
+}
+record(dfanout,"$(SLOT1)_MASTER_FILTER_PUT")
+{
+field(DESC,"$(SLOT1)_MASTER_FILTER_PUT")
+field(SCAN,"Passive")
+field(DOL,"$(SLOT1)_MASTER_FILTER")
+field(OMSL,"closed_loop")
+field(OUTA,"$(SLOT1)_FILTER_CH1 PP")
+field(OUTB,"$(SLOT1)_FILTER_CH2 PP")
+field(OUTC,"$(SLOT1)_FILTER_CH3 PP")
+field(OUTD,"$(SLOT1)_FILTER_CH4 PP")
+}

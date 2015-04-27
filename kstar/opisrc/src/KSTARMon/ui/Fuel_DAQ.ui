@@ -1,0 +1,3384 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1072</width>
+    <height>772</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <layout class="QVBoxLayout" >
+     <item>
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="QPushButton" name="pushButton" >
+         <property name="text" >
+          <string>Stopped</string>
+         </property>
+         <property name="checkable" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox" >
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI00</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI01</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI02</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI03</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI04</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI05</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI06</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI07</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_2" >
+         <item>
+          <property name="text" >
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>5</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_3" >
+         <item>
+          <property name="text" >
+           <string>Red</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Green</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Blue</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>#b3ff8a</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>#c4e2ff</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_4" >
+         <item>
+          <property name="text" >
+           <string>Steps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Lines</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Dots</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Sticks</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>140</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="CAMultiwaveplot" name="CAMultiwaveplot" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Expanding" hsizetype="MinimumExpanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>400</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="pvname" >
+          <string>FUEL_NI_DAQ_AI00</string>
+         </property>
+         <property name="pvname1" >
+          <string>FUEL_NI_DAQ_AI01</string>
+         </property>
+         <property name="pvname2" >
+          <string>FUEL_NI_DAQ_AI02</string>
+         </property>
+         <property name="pvname3" >
+          <string>FUEL_NI_DAQ_AI03</string>
+         </property>
+         <property name="pvname4" >
+          <string>FUEL_NI_DAQ_AI04</string>
+         </property>
+         <property name="pvname5" >
+          <string>FUEL_NI_DAQ_AI05</string>
+         </property>
+         <property name="pvname6" >
+          <string>FUEL_NI_DAQ_AI06</string>
+         </property>
+         <property name="pvname7" >
+          <string>FUEL_NI_DAQ_AI07</string>
+         </property>
+         <property name="canvasColor" stdset="0" >
+          <color>
+           <red>249</red>
+           <green>249</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="majLinecolor" stdset="0" >
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="xTitle" stdset="0" >
+          <string>Time</string>
+         </property>
+         <property name="yTitle" stdset="0" >
+          <string>FUEL Waveform AI00~AI07</string>
+         </property>
+         <property name="reqElement" stdset="0" >
+          <number>10000</number>
+         </property>
+         <property name="updateTime" >
+          <number>500</number>
+         </property>
+         <property name="refreshTime" >
+          <number>500</number>
+         </property>
+         <property name="bufferPage" >
+          <number>2</number>
+         </property>
+         <property name="type" >
+          <enum>CAMultiwaveplot::CAPendIO</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" >
+         <property name="verticalSpacing" >
+          <number>1</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI00</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_2" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI01</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_3" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI02</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_4" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI03</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_5" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI04</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_6" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI05</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_7" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI06</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_8" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI07</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" >
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_5" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH00</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH00</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_6" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH01</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH01</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_7" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH02</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH02</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_8" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH03</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH03</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_12" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH04</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH04</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_9" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH05</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH05</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_10" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH06</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH06</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_11" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH07</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH07</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="CAUITime" name="CAUITime" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Ignored" hsizetype="Ignored" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>5</width>
+       <height>1</height>
+      </size>
+     </property>
+     <property name="timeset" stdset="0" >
+      <enum>CAUITime::Event</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" >
+     <item>
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="QPushButton" name="pushButton_2" >
+         <property name="text" >
+          <string>Stopped</string>
+         </property>
+         <property name="checkable" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_5" >
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI08</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI09</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI10</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI11</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI12</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI13</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI14</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>FUEL_NI_DAQ_AI15</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_6" >
+         <item>
+          <property name="text" >
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>5</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_7" >
+         <item>
+          <property name="text" >
+           <string>Red</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Green</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Blue</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>#b3ff8a</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>#c4e2ff</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_8" >
+         <item>
+          <property name="text" >
+           <string>Steps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Lines</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Dots</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>Sticks</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>140</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="CAMultiwaveplot" name="CAMultiwaveplot_2" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Expanding" hsizetype="MinimumExpanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>400</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="pvname" >
+          <string>FUEL_NI_DAQ_AI08</string>
+         </property>
+         <property name="pvname1" >
+          <string>FUEL_NI_DAQ_AI09</string>
+         </property>
+         <property name="pvname2" >
+          <string>FUEL_NI_DAQ_AI10</string>
+         </property>
+         <property name="pvname3" >
+          <string>FUEL_NI_DAQ_AI11</string>
+         </property>
+         <property name="pvname4" >
+          <string>FUEL_NI_DAQ_AI12</string>
+         </property>
+         <property name="pvname5" >
+          <string>FUEL_NI_DAQ_AI13</string>
+         </property>
+         <property name="pvname6" >
+          <string>FUEL_NI_DAQ_AI14</string>
+         </property>
+         <property name="pvname7" >
+          <string>FUEL_NI_DAQ_AI15</string>
+         </property>
+         <property name="canvasColor" stdset="0" >
+          <color>
+           <red>249</red>
+           <green>249</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="majLinecolor" stdset="0" >
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="xTitle" stdset="0" >
+          <string>Time</string>
+         </property>
+         <property name="yTitle" stdset="0" >
+          <string>FUEL Waveform AI08~AI15</string>
+         </property>
+         <property name="reqElement" stdset="0" >
+          <number>10000</number>
+         </property>
+         <property name="updateTime" >
+          <number>500</number>
+         </property>
+         <property name="refreshTime" >
+          <number>500</number>
+         </property>
+         <property name="bufferPage" >
+          <number>2</number>
+         </property>
+         <property name="type" >
+          <enum>CAMultiwaveplot::CAPendIO</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" >
+         <property name="verticalSpacing" >
+          <number>1</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_9" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI08</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_10" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI09</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_11" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI10</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_12" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI11</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_13" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI12</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_14" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI13</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_15" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI14</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" >
+          <widget class="CAColorCheckBox" name="CAColorCheckBox_16" >
+           <property name="text" >
+            <string>FUEL_NI_DAQ_AI15</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" >
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_37" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH08</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH08</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_38" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH09</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH09</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_39" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH10</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH10</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_40" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH11</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH11</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_41" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH12</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH12</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_42" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH13</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH13</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_43" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH14</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH14</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_44" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>180</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>FUEL_MDS_NODE_CH15</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_MDS_NODE_CH15</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QGridLayout" >
+     <property name="leftMargin" >
+      <number>0</number>
+     </property>
+     <property name="topMargin" >
+      <number>0</number>
+     </property>
+     <property name="rightMargin" >
+      <number>0</number>
+     </property>
+     <property name="bottomMargin" >
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing" >
+      <number>10</number>
+     </property>
+     <property name="verticalSpacing" >
+      <number>5</number>
+     </property>
+     <item row="0" column="0" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_2" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Shadow" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>127</red>
+               <green>129</green>
+               <blue>107</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Shadow" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>127</red>
+               <green>129</green>
+               <blue>107</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Shadow" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>127</red>
+               <green>129</green>
+               <blue>107</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth" >
+          <number>1</number>
+         </property>
+         <property name="text" >
+          <string>Sampling Rate</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="CALineEdit" name="caLineEdit" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_DAQ_SAMPLING_RATE</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4" >
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text" >
+            <string>Hz</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_6" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>Operation Mode</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CABoButton" name="caBoButton" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="align" stdset="0" >
+          <enum>CABoButton::Column</enum>
+         </property>
+         <property name="pvname" >
+          <string>FUEL_DAQ_OPERATION_MODE</string>
+         </property>
+         <property name="truelabel" >
+          <string>Remote</string>
+         </property>
+         <property name="falselabel" >
+          <string>Local</string>
+         </property>
+         <property name="selColor" >
+          <color>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
+          </color>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="2" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_7" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>Blip Time</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="CALabel" name="caLabel_2" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>235</red>
+                 <green>239</green>
+                 <blue>198</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>235</red>
+                 <green>239</green>
+                 <blue>198</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>115</red>
+                 <green>115</green>
+                 <blue>115</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="indent" >
+            <number>10</number>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_DAQ_BLIP_TIME</string>
+           </property>
+           <property name="dmode" stdset="0" >
+            <enum>CALabel::Int</enum>
+           </property>
+           <property name="cmode" stdset="0" >
+            <enum>CALabel::Alarm</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11" >
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text" >
+            <string>sec</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="3" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_9" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>KSTAR Shot Number</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CALineEdit" name="caLineEdit_3" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font" >
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="nuformat" stdset="0" >
+          <enum>CALineEdit::Integer</enum>
+         </property>
+         <property name="pvname" >
+          <string>FUEL_DAQ_SHOT_NUMBER</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_3" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>Sampling Counts</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="CALineEdit" name="caLineEdit_2" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::Integer</enum>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_DAQ_SAMPLE_COUNT</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5" >
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text" >
+            <string>EA</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="1" >
+      <widget class="CAPushButton" name="caPushButton" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font" >
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="buttonType" >
+        <enum>CAPushButton::TrueButton</enum>
+       </property>
+       <property name="pvname" >
+        <string>FUEL_DAQ_START</string>
+       </property>
+       <property name="truelabel" >
+        <string>DAQ Start</string>
+       </property>
+       <property name="falselabel" >
+        <string>DAQ Start</string>
+       </property>
+       <property name="selColor" >
+        <color>
+         <red>0</red>
+         <green>255</green>
+         <blue>0</blue>
+        </color>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_8" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>127</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>DAQ Start Time</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="CALabel" name="caLabel_4" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>235</red>
+                 <green>239</green>
+                 <blue>198</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>235</red>
+                 <green>239</green>
+                 <blue>198</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>115</red>
+                 <green>115</green>
+                 <blue>115</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>71</red>
+                 <green>110</green>
+                 <blue>117</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="indent" >
+            <number>10</number>
+           </property>
+           <property name="pvname" >
+            <string>FUEL_DAQ_START_TIME</string>
+           </property>
+           <property name="dmode" stdset="0" >
+            <enum>CALabel::Int</enum>
+           </property>
+           <property name="cmode" stdset="0" >
+            <enum>CALabel::Alarm</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_12" >
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text" >
+            <string>sec</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="3" >
+      <layout class="QVBoxLayout" >
+       <property name="spacing" >
+        <number>2</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_10" >
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>235</red>
+               <green>239</green>
+               <blue>198</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>235</red>
+               <green>239</green>
+               <blue>198</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>229</red>
+               <green>226</green>
+               <blue>206</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="text" >
+          <string>DAQ Status</string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CALabel" name="caLabel_3" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="palette" >
+          <palette>
+           <active>
+            <colorrole role="WindowText" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>235</red>
+               <green>239</green>
+               <blue>198</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>71</red>
+               <green>110</green>
+               <blue>117</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>235</red>
+               <green>239</green>
+               <blue>198</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>71</red>
+               <green>110</green>
+               <blue>117</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="WindowText" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>115</red>
+               <green>115</green>
+               <blue>115</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>71</red>
+               <green>110</green>
+               <blue>117</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window" >
+             <brush brushstyle="SolidPattern" >
+              <color alpha="255" >
+               <red>71</red>
+               <green>110</green>
+               <blue>117</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="font" >
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground" >
+          <bool>true</bool>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="indent" >
+          <number>10</number>
+         </property>
+         <property name="pvname" >
+          <string>FUEL_DAQ_START</string>
+         </property>
+         <property name="dmode" stdset="0" >
+          <enum>CALabel::TrueFalse</enum>
+         </property>
+         <property name="cmode" stdset="0" >
+          <enum>CALabel::Alarm</enum>
+         </property>
+         <property name="truelabel" >
+          <string>DATA Storing</string>
+         </property>
+         <property name="falselabel" >
+          <string>Normal Status</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMultiwaveplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiwaveplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../fuel.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>CAColorCheckBox</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>CAColorCheckBox</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>CAColorCheckBox_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>CAColorCheckBox_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>CAColorCheckBox_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>CAColorCheckBox_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>CAColorCheckBox_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>CAColorCheckBox_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>273</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>CAColorCheckBox_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>369</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>179</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>550</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>271</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_3</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penColor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>732</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>520</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_4</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>penStyle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>913</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>707</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_9</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>CAColorCheckBox_9</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_10</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>CAColorCheckBox_10</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>401</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_11</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>CAColorCheckBox_11</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_12</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>CAColorCheckBox_12</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>455</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_13</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>482</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>CAColorCheckBox_13</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>482</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_14</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>509</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>CAColorCheckBox_14</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>509</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_15</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>687</x>
+     <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>CAColorCheckBox_15</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>686</x>
+     <y>520</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_16</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>871</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>694</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiwaveplot_2</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>CAColorCheckBox_16</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>871</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_5</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>penIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>350</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>155</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_6</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>penWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>550</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>293</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_7</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>penColor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>732</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>484</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_8</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>penStyle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>913</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>719</x>
+     <y>567</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>userUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>123</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>122</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMultiwaveplot_2</receiver>
+   <slot>userUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>102</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>113</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caBoButton</sender>
+   <signal>valueChanged(bool)</signal>
+   <receiver>caLineEdit_3</receiver>
+   <slot>setFalseActivate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>495</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>838</x>
+     <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

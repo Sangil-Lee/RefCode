@@ -1,0 +1,29 @@
+record(ao, "TMS_$(DEV)_CERNOX_GAIN")
+{
+	field(DESC, "($DEV) gain control")
+	field(DTYP, "PXISCXI Control")
+	field(OUT, "@$(DEV) cernox_gain")
+	field(SCAN, "Passive")
+}
+record(ao, "TMS_$(DEV)_CERNOX_CURRENT")
+{
+	field(DESC, "($DEV) current control")
+	field(DTYP, "PXISCXI Control")
+	field(OUT, "@$(DEV) cernox_current")
+	field(SCAN, "Passive")
+}
+
+record(ao, "TMS_$(DEV)_CERNOX_LOWPASS")
+{
+	field(DESC, "$(DEV) lowpass filter control")
+	field(DTYP, "PXISCXI Control")
+	field(OUT, "@$(DEV) cernox_lowpass")
+	field(SCAN, "Passive")
+}
+
+record(ao, "TMS_$(DEV)_SAMPL_RATE")
+{
+	field(DTYP, "PXISCXI Control")
+	field(OUT, "@$(DEV) smpl_rate")
+	field(SCAN, "Passive")
+}

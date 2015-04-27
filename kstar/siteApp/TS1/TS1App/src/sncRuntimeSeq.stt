@@ -1,0 +1,134 @@
+program sncRuntimeSeq
+
+option +r;
+option -c;
+
+/***********************************************
+    Shot Number
+***********************************************/
+
+int           ts1_opmode;
+assign        ts1_opmode to "TS1_OP_MODE";
+monitor   ts1_opmode;
+int           ts2_opmode;
+assign        ts2_opmode to "TS2_OP_MODE";
+int ts1_opmode_prev;
+
+/*
+int           ts1_pre_daq;
+assign        ts1_pre_daq to "TS1_PRE_DAQ_TIME";
+monitor   ts1_pre_daq;
+int           ts2_pre_daq;
+assign        ts2_pre_daq to "TS2_PRE_DAQ_TIME";
+int           ts1_pre_daq_prev;
+
+
+int           ts1_stop_time;
+assign        ts1_stop_time to "TS1_B0_SET_STOP_TIME";
+monitor   ts1_stop_time;
+int           ts2_stop_time;
+assign        ts2_stop_time to "TS2_B0_SET_STOP_TIME";
+int           ts1_stop_time_prev;
+
+
+int           ts1_create_tree;
+assign        ts1_create_tree to "TS1_CREATE_LOCAL_TREE";
+monitor   ts1_create_tree;
+int           ts2_create_tree;
+assign        ts2_create_tree to "TS2_CREATE_LOCAL_TREE";
+int           ts1_create_tree_prev;
+*/
+/*
+int           ts1_arm;
+assign        ts1_arm to "TS1_SYS_ARMING";
+monitor   ts1_arm;
+int           ts2_arm;
+assign        ts2_arm to "TS2_SYS_ARMING";
+
+
+int           ts1_run;
+assign        ts1_run to "TS1_SYS_RUN";
+monitor   ts1_run;
+int           ts2_run;
+assign        ts2_run to "TS2_SYS_RUN";
+
+*/
+
+
+ss RuntimeMonitor_opmode
+{
+
+      state operation {
+          option -e;
+          option +t;
+          entry {
+			ts2_opmode = ts1_opmode;
+			ts1_opmode_prev = ts1_opmode;
+			pvPut(ts2_opmode);
+			printf("opmode: %d\n", ts1_opmode_prev);
+          }
+
+           when( ts1_opmode != ts1_opmode_prev )
+           {	
+           	printf("opmode: changed!\n");
+           } state operation
+
+    }
+}
+/*
+ss RuntimeMonitor_pre_daq
+{
+
+      state operation {
+          option -e;
+          option +t;
+          entry {
+			ts2_pre_daq = ts1_pre_daq;
+			ts1_pre_daq_prev = ts1_pre_daq;
+			pvPut(ts2_pre_daq);
+          }
+
+           when( ts1_pre_daq != ts1_pre_daq_prev )
+           {	} state operation
+
+    }
+}
+
+ss RuntimeMonitor_stop_time
+{
+
+      state operation {
+          option -e;
+          option +t;
+          entry {
+			ts2_stop_time = ts1_stop_time;
+			ts1_stop_time_prev = ts1_stop_time;
+			pvPut(ts2_stop_time);
+          }
+
+           when( ts1_stop_time != ts1_stop_time_prev )
+           {	} state operation
+
+    }
+}
+
+ss RuntimeMonitor_create_tree
+{
+
+      state operation {
+          option -e;
+          option +t;
+          entry {
+			ts2_create_tree = ts1_create_tree;
+			ts1_create_tree_prev = ts1_create_tree;
+			pvPut(ts2_create_tree);
+          }
+
+           when( ts1_create_tree != ts1_create_tree_prev )
+           {	} state operation
+
+    }
+}
+*/
+
+

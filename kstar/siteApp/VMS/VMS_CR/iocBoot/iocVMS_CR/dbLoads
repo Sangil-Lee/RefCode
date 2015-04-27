@@ -1,0 +1,31 @@
+cd ${TOP}
+
+## Load record instances
+
+dbLoadTemplate("db/VMS_CR_BI_READ.template")
+#dbLoadTemplate("db/VMS_CR_BO_WRITE.template")
+dbLoadTemplate("db/VMS_CR_BO_SW_WRITE.template")
+dbLoadTemplate("db/dbLoadTMP.template")
+dbLoadTemplate("db/VMS_CR_TMP_RSS.template")
+dbLoadTemplate("db/dbLoadCRP.template")
+dbLoadTemplate("db/VMS_CR_CRP_Rxx.template")
+dbLoadTemplate("db/dbLoadTPG262.template")
+#dbLoadTemplate("db/dbLoadGP307.template")
+
+
+# MBP ##
+dbLoadTemplate("db/dbLoadMBP.template")
+
+
+# GAUGE Value TRANSFER#
+dbLoadTemplate("db/VMS_CR_GAUGE_OUT.template")
+
+# HEART BEAT #
+dbLoadRecords("db/VMS_CR_HEART.db")
+dbLoadRecords("db/dbSysMon.db", "SYS=VMS_CR")
+
+# SRSRGA #
+#dbLoadRecords("db/VMS_CR_INIT.db")
+#dbLoadRecords("db/VMS_CR_FL.db")
+#dbLoadTemplate("db/VMS_CR_READ.template")
+

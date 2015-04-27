@@ -1,0 +1,2885 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1292
+y 44
+w 632
+h 497
+font "helvetica-bold-r-18.0"
+ctlFont "helvetica-bold-r-18.0"
+btnFont "helvetica-bold-r-18.0"
+fgColor index 14
+bgColor index 1
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 52
+ctlBgColor1 index 52
+ctlBgColor2 index 14
+topShadowColor index 52
+botShadowColor index 14
+title "KSTAR Current Charging Control Panel"
+disableScroll
+endScreenProperties
+
+# (Png)
+object activePngClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 625
+h 483
+file "ccs_bg_half.png"
+refreshRate 1000
+noErase
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 543
+y 23
+w 79
+h 15
+controlPv "CCS_TF_ELAPSED_TIME"
+fgColor index 2
+bgColor index 50
+colorPv "mbbo_test"
+font "helvetica-bold-r-10.0"
+fontAlign "right"
+lineWidth 1
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 543
+y 9
+w 80
+h 15
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 2
+bgColor index 29
+useDisplayBg
+value {
+  "TF ELAPSED TIME"
+}
+border
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 389
+y 72
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_ITF_MEASURED_WF"
+  1 "CCS_VTF_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 72
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_TF_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 96
+w 33
+h 7
+controlPv "MPS_TF_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 459
+y 60
+w 32
+h 10
+controlPv "MPS_TF_re_current_mmi"
+fgColor index 13
+bgColor index 1
+fill
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 354
+y 129
+w 25
+h 7
+controlPv "MPS_TF_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 391
+y 58
+w 65
+h 13
+controlPv "CCS_ITF_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 496
+y 58
+w 78
+h 13
+controlPv "CCS_VTF_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 136
+w 25
+h 7
+controlPv "MPS_TF_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 70
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 143
+w 20
+h 8
+controlPv "MPS_TF_re_ramp_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 113
+w 34
+h 7
+controlPv "MPS_TF_re_hold_on_off_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 104
+w 34
+h 7
+controlPv "MPS_TF_re_charge_on_off_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 80
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_TF_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 88
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_TF_BI0_06"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 120
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_TF_BI1_06"
+visMin "1"
+visMax "100"
+value {
+  "  SLOW  "
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 24
+y 26
+w 100
+h 12
+controlPv "CCSCSL_WCLOCK"
+fgColor index 0
+bgColor index 52
+font "helvetica-bold-r-12.0"
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 74
+y 293
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF3_MEASURED_WF"
+  1 "CCS_VPF3_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 235
+y 279
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF3_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 170
+y 279
+w 52
+h 13
+controlPv "CCS_VPF3_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 358
+w 33
+h 14
+controlPv "MPS_PF3_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 349
+w 25
+h 7
+controlPv "MPS_PF3_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 342
+w 25
+h 7
+controlPv "MPS_PF3_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 329
+w 33
+h 7
+controlPv "PCS_PF3_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 318
+w 33
+h 7
+controlPv "MPS_PF3_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 309
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF3_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 301
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF3_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 41
+y 293
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF3_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 91
+y 279
+w 48
+h 13
+controlPv "CCS_IPF3_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 74
+y 402
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF4_MEASURED_WF"
+  1 "CCS_VPF4_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 235
+y 388
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF4_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 171
+y 388
+w 52
+h 13
+controlPv "CCS_VPF4_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 467
+w 33
+h 14
+controlPv "MPS_PF4_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 39
+y 459
+w 25
+h 7
+controlPv "MPS_PF4_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 451
+w 25
+h 7
+controlPv "MPS_PF4_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 439
+w 33
+h 7
+controlPv "PCS_PF4_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 427
+w 33
+h 7
+controlPv "MPS_PF4_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 418
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF4_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 410
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF4_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 41
+y 402
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF4_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 388
+w 48
+h 13
+controlPv "CCS_IPF4_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 389
+y 402
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF7_MEASURED_WF"
+  1 "CCS_VPF7_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 550
+y 388
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF7_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 482
+y 388
+w 52
+h 13
+controlPv "CCS_VPF7_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 467
+w 33
+h 14
+controlPv "MPS_PF7_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 459
+w 25
+h 7
+controlPv "MPS_PF7_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 451
+w 25
+h 7
+controlPv "MPS_PF7_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 439
+w 33
+h 7
+controlPv "PCS_PF7_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 427
+w 33
+h 7
+controlPv "MPS_PF7_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 418
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF7_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 410
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF7_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 402
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF7_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 405
+y 389
+w 48
+h 13
+controlPv "CCS_IPF7_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 389
+y 292
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF6_MEASURED_WF"
+  1 "CCS_VPF6_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 550
+y 278
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF6_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 481
+y 279
+w 52
+h 13
+controlPv "CCS_VPF6_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 357
+w 33
+h 14
+controlPv "MPS_PF6_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 349
+w 25
+h 7
+controlPv "MPS_PF6_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 341
+w 25
+h 7
+controlPv "MPS_PF6_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 328
+w 33
+h 7
+controlPv "PCS_PF6_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 317
+w 33
+h 7
+controlPv "MPS_PF6_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 308
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF6_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 300
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF6_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 292
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF6_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 404
+y 278
+w 48
+h 13
+controlPv "CCS_IPF6_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 389
+y 182
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF5_MEASURED_WF"
+  1 "CCS_VPF5_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 550
+y 168
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF5_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 480
+y 168
+w 52
+h 13
+controlPv "CCS_VPF5_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 247
+w 33
+h 14
+controlPv "MPS_PF5_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 238
+w 25
+h 7
+controlPv "MPS_PF5_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 230
+w 25
+h 7
+controlPv "MPS_PF5_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 356
+y 219
+w 33
+h 7
+controlPv "PCS_PF5_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 355
+y 206
+w 33
+h 7
+controlPv "MPS_PF5_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 198
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF5_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 354
+y 190
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF5_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 182
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF5_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 404
+y 168
+w 48
+h 13
+controlPv "CCS_IPF5_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 74
+y 183
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF2_MEASURED_WF"
+  1 "CCS_VPF2_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 235
+y 58
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF1_MEASURED"
+origin "0"
+font "helvetica-medium-r-8.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 169
+y 169
+w 52
+h 13
+controlPv "CCS_VPF2_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 248
+w 33
+h 14
+controlPv "MPS_PF2_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 240
+w 25
+h 7
+controlPv "MPS_PF2_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 232
+w 25
+h 7
+controlPv "MPS_PF2_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 219
+w 33
+h 7
+controlPv "PCS_PF2_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 208
+w 33
+h 7
+controlPv "MPS_PF2_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 199
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF2_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 192
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF2_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 184
+w 35
+h 8
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF2_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 169
+w 48
+h 13
+controlPv "CCS_IPF2_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 74
+y 72
+w 235
+h 80
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF1_MEASURED_WF"
+  1 "CCS_VPF1_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 235
+y 169
+w 73
+h 5
+indicatorColor index 20
+fgColor index 14
+bgColor index 1
+indicatorPv "CCS_APF2_MEASURED"
+origin "0"
+font "utopia-medium-r-4.0"
+labelTicks "2"
+majorTicks "1"
+minorTicks "4"
+precision "0"
+min "0"
+max "180"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 163
+y 58
+w 52
+h 13
+controlPv "CCS_VPF1_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 92
+y 58
+w 48
+h 13
+controlPv "CCS_IPF1_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "helvetica-bold-r-12.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 137
+w 33
+h 14
+controlPv "MPS_PF1_circulating_curr_slope_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 39
+y 128
+w 25
+h 7
+controlPv "MPS_PF1_re_voltage_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 120
+w 25
+h 7
+controlPv "MPS_PF1_re_current_limit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 41
+y 109
+w 33
+h 7
+controlPv "PCS_PF1_CURRENT_DIRECTION"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 40
+y 96
+w 34
+h 10
+controlPv "MPS_PF1_re_permit_mmi"
+fgColor index 13
+bgColor index 1
+font "helvetica-medium-r-8.0"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 88
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF1_BI0_02"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 80
+w 35
+h 8
+lineColor index 13
+fill
+fillColor index 15
+lineWidth 0
+visPv "MPS_PF1_BI0_01"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 74
+w 35
+h 6
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 13
+bgColor index 15
+visPv "MPS_PF1_BI0_00"
+visMin "1"
+visMax "100"
+value {
+  " READY "
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 58
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_TF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 58
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 169
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 279
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 388
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 168
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 278
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 355
+y 388
+w 35
+h 13
+lineColor index 13
+fill
+fillColor index 22
+lineWidth 0
+visPv "CCS_INTL_PF_QUENCH"
+visInvert
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 231
+y 24
+w 82
+h 14
+font "helvetica-bold-r-12.0"
+fgColor index 2
+bgColor index 52
+useDisplayBg
+value {
+  "Shot Number:"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 314
+y 23
+w 129
+h 15
+controlPv "CCS_SHOT_NUMBER"
+fgColor index 0
+fgAlarm
+bgColor index 82
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 26
+w 12
+h 12
+lineColor index 14
+fill
+fillColor index 9
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 11
+y 27
+w 10
+h 10
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "CCS_HEARTBEAT"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 277
+y 62
+w 30
+h 10
+controlPv "CCS_APF1_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 277
+y 173
+w 30
+h 10
+controlPv "CCS_APF2_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 276
+y 283
+w 30
+h 10
+controlPv "CCS_APF3_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 277
+y 392
+w 30
+h 10
+controlPv "CCS_APF4_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 592
+y 172
+w 30
+h 10
+controlPv "CCS_APF5_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 592
+y 282
+w 30
+h 10
+controlPv "CCS_APF6_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 592
+y 392
+w 30
+h 10
+controlPv "CCS_APF7_MEASURED"
+displayMode "decimal"
+fgColor index 14
+bgColor index 1
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+

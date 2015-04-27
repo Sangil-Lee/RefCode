@@ -1,0 +1,72 @@
+# ------------------------------------------------
+# kupaEnv for EC1
+# ------------------------------------------------
+# This is handled by SNL code
+# ------------------------------------------------
+
+# ------------------------------------------------
+# Set debug level to display on standard output
+# ------------------------------------------------
+#  -> 0(OFF)  1(FATAL) 2(ERROR) 3(WARN) 4(MON)
+#  -> 5(INFO) 6(DEBUG) 7(TRACE) 8(DATA) 9(ALL)
+# ------------------------------------------------
+
+kuSetPrintLevel (4)
+
+# ------------------------------------------------------------------------------
+# Name, Shot# PV, OpMode PV, Run PV, SamplingRate(Hz), StartTime, Duration, Delay(s)
+# ------------------------------------------------------------------------------
+# - If there is no PV, archiving will be handled by user's application
+# ------------------------------------------------------------------------------
+
+#kupaInitManager ("EC1", "EC1_SHOT_NUM", "EC1_OP_MODE", "EC1_DAQ_CMD_START", 2, 0, 10, 0)
+#kupaInitManager ("EC1", "EC1_SHOT_NUM", "EC1_OP_MODE", "EC1_START", 2, 0, 10, 0)
+kupaInitManager ("EC1", "", "EC1_OP_MODE", "", 2, 0.0, 100.0, 0.0)
+
+# ------------------------------------------------------------------------------
+# Export Type (CSV, MDS, FILE), arg1, arg2, arg3, arg4, arg5, arg6
+# ------------------------------------------------------------------------------
+
+# CSV, FileName, Path, ValueOrder(V : Vertical, H : Horizontal), Format(UNIX, DOS), New/Append,
+# For verification
+#kupaAddExport ("CSV", "EC1", "/tmp", "V", "UNIX", "New", "")
+
+# MDS, TreeName, MdsAddr(IP:Port), EventName, EventAddr(IP:Port), OpMode(ALL,REMOTE,LOCAL)
+kupaAddExport ("MDS", "eccd1"  , "172.17.121.251:8000", "", "", "ALL"   , "")
+kupaAddExport ("MDS", "HEATING", "172.17.100.202:8000", "", "", "REMOTE", "")
+
+# ------------------------------------------------------------------------------
+# PV Name, Tag Name, CA Type(0:DB, 1:CA, 2:Event), Description, Unit
+# ------------------------------------------------------------------------------
+
+kupaAddPV ("EC1_LAU_WGTC"   , "\EC1_L_WGTC" , 2, "Antenna Temp. WGTC"        , ".C")
+kupaAddPV ("EC1_LAU_FIXTC1" , "\EC1_L_FMTC1", 2, "Antenna Temp. FIXTC1"      , ".C")
+kupaAddPV ("EC1_LAU_FIXTC2" , "\EC1_L_FMTC2", 2, "Antenna Temp. FIXTC2"      , ".C")
+kupaAddPV ("EC1_LAU_STTC1"  , "\EC1_L_SMTC1", 2, "Antenna Temp. STTC1"       , ".C")
+kupaAddPV ("EC1_LAU_STTC2"  , "\EC1_L_SMTC2", 2, "Antenna Temp. STTC2"       , ".C")
+
+kupaAddPV ("EC1_TOR_ANG_RTN", "\EC1_LT_DEG" , 0, "Toroidal Antenna Angle"    , ".")
+kupaAddPV ("EC1_POL_ANG_RTN", "\EC1_LP_DEG" , 0, "Poroidal Antenna Angle"    , ".")
+kupaAddPV ("EC1_TOR_ENC_RTN", "\EC1_LT_ENC" , 0, "Toroidal Antenna Encorder" , "count")
+kupaAddPV ("EC1_POL_ENC_RTN", "\EC1_LP_ENC" , 0, "Poroidal Antenna Encorder" , "count")
+
+kupaAddPV ("EC1_TL_TC_01"   , "\EC1_TLTC01" , 0, "Transmission Line Temp. 01", ".C")
+kupaAddPV ("EC1_TL_TC_02"   , "\EC1_TLTC02" , 0, "Transmission Line Temp. 02", ".C")
+kupaAddPV ("EC1_TL_TC_03"   , "\EC1_TLTC03" , 0, "Transmission Line Temp. 03", ".C")
+kupaAddPV ("EC1_TL_TC_04"   , "\EC1_TLTC04" , 0, "Transmission Line Temp. 04", ".C")
+kupaAddPV ("EC1_TL_TC_05"   , "\EC1_TLTC05" , 0, "Transmission Line Temp. 05", ".C")
+kupaAddPV ("EC1_TL_TC_06"   , "\EC1_TLTC06" , 0, "Transmission Line Temp. 06", ".C")
+kupaAddPV ("EC1_TL_TC_07"   , "\EC1_TLTC07" , 0, "Transmission Line Temp. 07", ".C")
+kupaAddPV ("EC1_TL_TC_08"   , "\EC1_TLTC08" , 0, "Transmission Line Temp. 08", ".C")
+kupaAddPV ("EC1_TL_TC_09"   , "\EC1_TLTC09" , 0, "Transmission Line Temp. 09", ".C")
+
+# ------------------------------------------------------------------------------
+# Register a post action to be executed after exporting
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Starts PV archive manager
+# ------------------------------------------------------------------------------
+
+kupaRunManager ()
+

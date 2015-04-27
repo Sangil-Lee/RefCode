@@ -1,0 +1,4 @@
+#make build ARCH=ppc KBUILD_VERBOSE=1 CROSS_COMPILE=/opt/eldk/usr/bin/ppc-linux-
+cc -D__KERNEL__ -DMODULE -Wall -O2 -I/usr/src/linux-2.4.20-8.1.kstarcustom/include -I/usr/src/linux-2.4.20-8.1.kstarcustom/include/asm -I/usr/src/linux-2.4.20-8.1.kstarcustom/include/linux -I./../src -c cltu_drv_k24_pcs.c -o cltu_driver.o
+
+

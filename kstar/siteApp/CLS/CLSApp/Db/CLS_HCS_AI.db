@@ -1,0 +1,14 @@
+record(ai, "$(PV_NAME)_A") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@plc1 $(TAG) S 1")
+  field(FLNK, "$(PV_NAME)")
+}
+
+record(calc, "$(PV_NAME)") {
+  field(PINI, "YES")
+  field(CALC, "A*B")
+  field(INPA, "$(ASLO)")
+  field(INPB, "$(PV_NAME)_A")
+  field(EGU, "$(EGU)")
+}

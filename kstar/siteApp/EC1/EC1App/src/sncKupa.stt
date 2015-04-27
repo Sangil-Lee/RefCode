@@ -1,0 +1,123 @@
+/*
+ * --------------------------------------------------------------------------
+ * KUPA (KSTAR Utility for PV Archive) for EC1_MAIN
+ * --------------------------------------------------------------------------
+ */
+
+program sncKupa
+
+option -c;
+
+%{
+#include "kutil.h"
+#include "kupaLib.h"
+}%
+
+int		ctu_start;
+assign	ctu_start to "CCS_CTU_shotStart";
+monitor	ctu_start;
+
+evflag	ef_ctu_start;
+sync	ctu_start	ef_ctu_start;
+
+int		ltu_start;
+assign	ltu_start to "EC1A_LTU_SOFT_START";
+monitor	ltu_start;
+
+evflag	ef_ltu_start;
+sync	ltu_start	ef_ltu_start;
+
+int		shot_num;
+assign	shot_num to "EC1_SHOT_NUMBER";
+monitor shot_num;
+
+int		op_mode;
+assign	op_mode to "EC1_OP_MODE";
+monitor op_mode;
+
+double	start_t0;
+assign	start_t0 to "EC1A_LTU_P0_SEC0_T0";
+monitor start_t0;
+
+double	period_t1;
+assign	period_t1 to "EC1_DAQ_6220_T1";
+monitor period_t1;
+
+int		sampling_rate = 10;	/* HZ */
+double	duration_sec;
+double	delay_sec = 0.0;
+double	blip_sec = 16.0;
+
+int		bFirstKstarRun = 1;
+int		bFirstLocalRun = 1;
+
+ss kupa_handle_kstar {
+    state init {
+		when (TRUE) {
+			kuDebug (kuMON, "[kupa_handle_kstar.init] ...\n");
+			efClear (ef_ctu_start);
+		} state waitShotStart
+	}
+
+	state waitShotStart {
+		when (efTestAndClear (ef_ctu_start)) {
+			if (bFirstKstarRun) {
+				kuDebug (kuMON, "[kupa_handle_kstar.waitShotStart] ignores first event ... \n");
+				bFirstKstarRun = 0;
+			}
+			else {
+				duration_sec = period_t1 + 40;	/* 60 + 40 */
+
+				kuDebug (kuMON, "[sncKupa.waitShotStart] shot(%d) opmode(%d) rate(%d) start(%.2f) duration(%.2f) delay(%.2f)\n",
+					shot_num, op_mode, sampling_rate, start_t0, duration_sec, delay_sec);
+
+				kupaSetShotInfo (op_mode, shot_num, sampling_rate, start_t0 - blip_sec, duration_sec, delay_sec);
+
+				if (1 == op_mode) {
+					kuDebug (kuMON, "[kupa_handle_kstar] start (%d)... \n", shot_num);
+
+					kupaStart ();
+
+					kuDebug (kuMON, "[kupa_handle_kstar] end (%d) ... \n", shot_num);
+				}
+			}
+		} state waitShotStart
+	}
+}
+
+ss kupa_handle_local {
+    state init {
+		when (TRUE) {
+			kuDebug (kuMON, "[kupa_handle_local.init] ...\n");
+			efClear (ef_ltu_start);
+		} state waitShotStart
+	}
+
+	state waitShotStart {
+		when (efTestAndClear (ef_ltu_start)) {
+			/*
+			if (bFirstLocalRun) {
+				kuDebug (kuMON, "[kupa_handle_local] ignores first event ... \n");
+				bFirstLocalRun = 0;
+			}
+			*/
+			if (ltu_start) {
+				duration_sec = period_t1 + 40;	/* 60 + 40 */
+
+				kuDebug (kuMON, "[kupa_handle_local] shot(%d) opmode(%d) rate(%d) start(%.2f) duration(%.2f) delay(%.2f)\n",
+					shot_num, op_mode, sampling_rate, start_t0, duration_sec, delay_sec);
+
+				kupaSetShotInfo (op_mode, shot_num, sampling_rate, start_t0 - blip_sec, duration_sec, delay_sec);
+
+				if (2 == op_mode) {
+					kuDebug (kuMON, "[kupa_handle_local] start (%d)... \n", shot_num);
+
+					kupaStart ();
+
+					kuDebug (kuMON, "[kupa_handle_local] end (%d)... \n", shot_num);
+				}
+			}
+		} state waitShotStart
+	}
+}
+

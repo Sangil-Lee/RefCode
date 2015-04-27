@@ -1,0 +1,16 @@
+record(calcout, "$(PV_NAME)_C") {
+  field(CALC, "(A=0)?0:1")
+  field(INPA, "$(PV_NAME_INP) CPP")
+#  field(INPA, "$(PV_NAME_INP)")
+#  field(INPB, "CLS_REMOTE CPP")
+  field(FLNK, "$(PV_NAME)")
+#  field(OUT, "$(PV_NAME)")
+#  field(SCAN, "1 second")
+}
+
+record(ao, "$(PV_NAME)") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 $(TAG) S 1")
+  field(OMSL, "closed_loop")
+  field(DOL, "$(PV_NAME)_C")
+}

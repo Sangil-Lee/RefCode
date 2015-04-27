@@ -1,0 +1,40 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "Usage -> sdn-set-env <project_dir> <sdn_interface_name>"
+else
+	PROJDIR=$1
+
+	if [ -d $PROJDIR ]; then
+		echo "Project directory $PROJDIR exist!"
+
+		SDN_TOPIC_DIRECTORY_TEMP="${PROJDIR}/src/main/c++/include"
+
+		if [ -d $SDN_TOPIC_DIRECTORY_TEMP ]; then
+
+			# sdn topic definition file directory (default: /opt/codac/apps/include)
+			export SDN_TOPIC_DIRECTORY="$SDN_TOPIC_DIRECTORY_TEMP"
+
+			# topic_multicast_map.dat directory (default: /etc/opt/codac/sdn)
+			export SDN_CONFIG_DIRECTORY="$SDN_TOPIC_DIRECTORY_TEMP"
+
+			# Log file directory (default: /var/opt/codac/sdn)
+			export SDN_LOG_DIRECTORY="${PROJDIR}/target/var/log/"
+
+			# SDN interface name
+			if [ $# -gt 1 ]; then
+				export SDN_INTERFACE_NAME="$2"
+				echo "setting SDN_INTERFACE_NAME"=$SDN_INTERFACE_NAME
+			fi
+			
+			echo "setting SDN_TOPIC_DIRECTORY"=$SDN_TOPIC_DIRECTORY
+			echo "setting SDN_CONFIG_DIRECTORY"=$SDN_CONFIG_DIRECTORY
+			echo "setting SDN_LOG_DIRECTORY"=$SDN_LOG_DIRECTORY
+		else
+			echo "$SDN_TOPIC_DIRECTORY_TEMP does not exist or is not a standard project directory"
+		fi
+	else
+		echo "Project directory $PROJDIR does not exist!"
+	fi
+fi
+

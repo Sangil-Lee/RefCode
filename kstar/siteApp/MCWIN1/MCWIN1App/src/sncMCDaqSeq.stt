@@ -1,0 +1,90 @@
+program sncMCDaqSeq
+option +r;
+option +c;
+%% #include <string.h>
+%% #include <epicsThread.h>
+
+int ccsShotSeqStart;
+double ccsBlipTime;
+double ltuTrigTime;
+int ccsShotNumber; 
+
+assign ccsShotSeqStart to "CCS_SHOTSEQ_START";
+assign ccsBlipTime to "CCS_BLIP_TIME";
+%% /* assign ltuTrigTime to "RBA_LTU_T0_p3"; change from RBA to MC LTU P0  20110530 */
+assign ltuTrigTime to "DDS1B_LTU_P7_SEC0_T0";
+assign ccsShotNumber to "CCS_SHOT_NUMBER";
+
+monitor ccsShotSeqStart;
+monitor ccsBlipTime;
+monitor ltuTrigTime;
+monitor ccsShotNumber;
+
+evflag ccsSeqFlag;
+sync ccsShotSeqStart ccsSeqFlag;
+
+int mcAutoRun;
+int mcOperMode;
+int mcTaskStart;
+
+int mcParamUpdate;
+
+int mcShotNumber; 
+double mcTrigTime; 
+double mcBlipTime; 
+
+assign mcAutoRun to "MC_SET_DONE_AUTO_RUN";
+assign mcOperMode to "MC_MASTER_REMOTE_LOCAL";
+assign mcTaskStart to "MC_MASTER_TASK_START";
+
+assign mcParamUpdate to "MC_MASTER_SETUP_UPDATE";
+
+assign mcShotNumber to "MC_MASTER_SHOT_NUMBER";
+assign mcTrigTime to "MC_MASTER_START_TIME";
+assign mcBlipTime to "MC_MASTER_BLIP_TIME";
+
+monitor mcAutoRun;
+monitor mcOperMode;
+monitor mcTaskStart;
+monitor mcShotNumber;
+monitor mcTrigTime;
+monitor mcBlipTime;
+
+evflag autoRunFlag;
+sync mcAutoRun autoRunFlag;
+
+ss mcDAQseq {
+	state init{
+		when (TRUE){
+		  %%	epicsThreadSleep(5.0);
+		}state mc_daqSeq_start	
+	}
+	state mc_daqSeq_start{
+		when (efTestAndClear(ccsSeqFlag) && ccsShotSeqStart==1 && mcAutoRun==1){
+			if (mcOperMode == 1 && mcAutoRun == 1){
+				mcShotNumber = ccsShotNumber;
+				pvPut(mcShotNumber,SYNC);
+				mcTrigTime = ltuTrigTime;
+				pvPut(mcTrigTime,SYNC);
+				mcBlipTime = ccsBlipTime;
+				pvPut(mcBlipTime,SYNC);
+				%%	epicsThreadSleep(1.0);
+				mcParamUpdate = 1;
+				pvPut(mcParamUpdate,SYNC);
+				%%	epicsThreadSleep(1.0);
+				mcTaskStart = 1;
+				pvPut(mcTaskStart,SYNC);
+			}
+		}state mc_daqSeq_start
+		when (efTestAndClear(autoRunFlag) && mcAutoRun==1){
+			if (mcOperMode == 1 && mcAutoRun == 1){
+				mcShotNumber = ccsShotNumber;
+				pvPut(mcShotNumber,SYNC);
+				mcTrigTime = ltuTrigTime;
+				pvPut(mcTrigTime,SYNC);
+				mcBlipTime = ccsBlipTime;
+				pvPut(mcBlipTime,SYNC);
+			}
+		}state mc_daqSeq_start
+	}
+}

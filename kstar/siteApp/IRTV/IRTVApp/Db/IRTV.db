@@ -1,0 +1,508 @@
+record(bo, "$(SYS)_DAQ_STOP") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_daq_stop")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_SOFT_TRIGGER") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_soft_trigger")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_LIVE_VIEW") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_live_view")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+}
+
+record(bo, "$(SYS)_AGC_ENABLE") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_agc_enable")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_SYNC_SOURCE") {
+  field(DESC, "0:Free, 3:SW Trigger, 1:Ext")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_sync_source")
+}
+
+record(ao, "$(SYS)_GRAB_TIME") {
+  field(DESC, "Duration time of grabbing image")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_grab_time")
+}
+
+record(ao, "$(SYS)_ROI_X") {
+  field(DESC, "X Offset of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_x")
+}
+
+record(ao, "$(SYS)_ROI_Y") {
+  field(DESC, "Y Offset of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_y")
+}
+
+record(ao, "$(SYS)_ROI_WIDTH") {
+  field(DESC, "Width of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_width")
+}
+
+record(ao, "$(SYS)_ROI_HEIGHT") {
+  field(DESC, "Height of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_height")
+}
+
+record(ao, "$(SYS)_ROI_LIFETIME") {
+  field(DESC, "Lifetime of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_lifetime")
+}
+
+record(ao, "$(SYS)_ROI_COLOR") {
+  field(DESC, "Color of ROI")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_roi_color")
+}
+
+record(bo, "$(SYS)_ROI_COORDI") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_roi_coordi")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_ROI_SAVE") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_roi_save")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_ROI_FULL_SCALE") {
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_roi_full_scale")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_REFRESH_TIME") {
+  field(DESC, "Live view refresh time (msec)")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_refresh_time")
+}
+
+record(calcout, "$(SYS)_REFRESH_TIME_CALC") {
+  field(DESC, "Calcuration for live view refresh time")
+  field(SCAN, "Passive")
+  field(CALC, "(A=1)?500:(A=2)?200:(A=3)?100:(A=4)?30:1000")
+  field(INPA, "$(SYS)_REFRESH_TIME_TYPE CPP")
+  field(OUT, "$(SYS)_REFRESH_TIME")
+  field(FLNK, "$(SYS)_REFRESH_TIME")
+}
+
+record(ao, "$(SYS)_REFRESH_TIME_TYPE") {
+  field(DESC, "$(SYS)_REFRESH_TIME_TYPE")
+  field(DTYP, "Soft Channel")
+  field(PINI, "YES")
+  field(VAL, "0")
+}
+
+record(stringout, "$(SYS)_IMAGE_PATH") {
+  field(DESC, "Image path")
+  field(DTYP, "IRTV SoControl")
+  field(OUT, "@so_image_path")
+  field(PINI, "YES")
+  field(VAL, "D:\\IRTV\\IMAGE")
+}
+
+record(ai, "$(SYS)_MAX_RATE") {
+  field(DESC, "Maximum frame rate (Hz)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_max_rate")
+}
+
+record(ai, "$(SYS)_STATUS_FPA_TEMP") {
+  field(DESC, "FPA Temperature of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_fpa_temp")
+}
+
+record(ai, "$(SYS)_STATUS_PRESET") {
+  field(DESC, "Active Preset of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_preset")
+}
+
+record(ai, "$(SYS)_STATUS_INT_TIME") {
+  field(DESC, "Integration time of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_int_time")
+}
+
+record(ai, "$(SYS)_STATUS_WIDTH") {
+  field(DESC, "Frame width of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_width")
+}
+
+record(ai, "$(SYS)_STATUS_HEIGHT") {
+  field(DESC, "Frame height of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_height")
+}
+
+record(ai, "$(SYS)_STATUS_FRAME_RATE") {
+  field(DESC, "Frame rate of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_frame_rate")
+}
+
+record(mbbi, "$(SYS)_STATUS_SYNC_SRC") {
+  field(DESC, "Type of sync. source")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV MbbiRead")
+  field(INP, "@mbbi_sts_sync_src")
+  field(NOBT, "0")
+  field(ZRST, "Free")
+  field(ONST, "External")
+  field(TWST, "Video")
+  field(THST, "SW")
+}
+
+record(stringin, "$(SYS)_STATUS_SYNC_SRC_NAME") {
+  field(DESC, "Name of sync. source")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV SiRead")
+  field(INP, "@si_sts_sync_src_name")
+}
+
+record(mbbi, "$(SYS)_STATUS_SYNC_POLARITY") {
+  field(DESC, "Type of sync. polarity")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV MbbiRead")
+  field(INP, "@mbbi_sts_sync_polarity")
+  field(NOBT, "0")
+  field(ZRST, "Falling Edge")
+  field(ONST, "Rising Edge")
+}
+
+record(stringin, "$(SYS)_STATUS_SYNC_POLARITY_NAME") {
+  field(DESC, "Name of sync. polarity")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV SiRead")
+  field(INP, "@si_sts_sync_polarity_name")
+}
+
+record(bi, "$(SYS)_STATUS_CONN") {
+  field(DESC, "Connection status")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV BiRead")
+  field(INP, "@bi_sts_conn")
+  field(ZNAM, "NOK")
+  field(ONAM, "OK")
+}
+
+#####################
+# 2012
+#####################
+record(ao, "$(SYS)_GAIN_LEVEL") {
+  field(DESC, "Level of gain")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_gain_level")
+}
+
+record(bo, "$(SYS)_INVERT_ENABLE") {
+  field(DESC, "Flip the image vertically")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_invert_enable")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_REVERT_ENABLE") {
+  field(DESC, "Flip the image horizontally")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_revert_enable")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_SYNC_POLARITY") {
+  field(DESC, "Polarity for external sync")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_sync_polarity")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_FPA_COOLER_ON") {
+  field(DESC, "FPA Cooler On/Off")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_cooler_on")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(mbbo, "$(SYS)_FPA_COOLER_TYPE") {
+  field(DESC, "FPA Cooler Type")
+  field(DTYP, "IRTV MbboControl")
+  field(OUT, "@mbbo_cooler_type")
+  field(ZRST, "NO_COOLER")
+  field(ONST, "TE_COOLER")
+  field(TWST, "MECHANICAL_COOLER")
+}
+
+record(mbbo, "$(SYS)_FPA_COOLER_AUTO") {
+  field(DESC, "FPA Auto On/Off")
+  field(DTYP, "IRTV MbboControl")
+  field(OUT, "@mbbo_cooler_auto")
+  field(ZRST, "Disable FPA")
+  field(ONST, "Enable FPA")
+  field(TWST, "Auto Off/On FPA")
+}
+
+record(ao, "$(SYS)_FPA_OFF_TEMP") {
+  field(DESC, "Temp. for turn off FPA")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_fpa_off_temp")
+}
+
+record(ao, "$(SYS)_FPA_ON_TEMP") {
+  field(DESC, "Temp. for turn on FPA")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_fpa_on_temp")
+}
+
+record(bo, "$(SYS)_PRESET_SEQ_MODE") {
+  field(DESC, "Preset sequencing sequence mode")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_preset_seq_mode")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bi, "$(SYS)_PRESET_CYCLING") {
+  field(DESC, "Preset cycling enable")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV BiRead")
+  field(INP, "@bi_preset_cycling")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(bo, "$(SYS)_SET_ACTIVE_PRESET") {
+  field(DESC, "Set active preset")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_set_active_preset")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(ao, "$(SYS)_SEL_PRESET_NUM") {
+  field(DESC, "Number of preset selected")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_sel_preset_num")
+}
+
+record(ai, "$(SYS)_ACTIVE_PRESET_NUM") {
+  field(DESC, "Number of active preset")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_active_preset_num")
+}
+
+record(ai, "$(SYS)_CONFIG_PRESET_NUM") {
+  field(DESC, "Number of config preset")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_config_preset_num")
+}
+
+record(ai, "$(SYS)_STATUS_INT_TIME") {
+  field(DESC, "Integration time of camera")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_sts_int_time")
+}
+
+record(bo, "$(SYS)_FULL_NUC_ENABLE") {
+  field(DESC, "Use full window NUCs")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_full_nuc_enable")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(mbbo, "$(SYS)_NUC_ACTION_TYPE") {
+  field(DESC, "Type of action for correction")
+  field(DTYP, "IRTV MbboControl")
+  field(OUT, "@mbbo_nuc_action_type")
+  field(ZRST, "Perform")
+  field(ONST, "Load")
+  field(TWST, "Unload")
+  field(THST, "Save")
+}
+
+record(bo, "$(SYS)_NUC_ACTION_LOAD") {
+  field(DESC, "Load a stored NUC")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_nuc_action_load")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(mbbi, "$(SYS)_NUC_ACTION_STATUS") {
+  field(DESC, "Status of action for NUC")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV MbbiRead")
+  field(INP, "@mbbi_nuc_action_status")
+  field(NOBT, "0")
+  field(ZRST, "Ready")
+  field(ONST, "External")
+  field(TWST, "Video")
+  field(THST, "SW")
+}
+
+record(ai, "$(SYS)_NUC_MEM_FREE") {
+  field(DESC, "Available NUC memory")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_nuc_mem_free")
+}
+
+record(bo, "$(SYS)_GET_STORED_NUCS") {
+  field(DESC, "Get list of stored NUCs")
+  field(DTYP, "IRTV BoControl")
+  field(OUT, "@bo_get_stored_nucs")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+}
+
+record(waveform, "$(SYS)_STORED_NUC_LIST") {
+  field(DESC, "Stored NUCs")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV WaveRead")
+  field(INP, "@wave_stored_nucs")
+  field(NELM, "20")
+  field(FTVL, "STRING")
+}
+
+record(stringout, "$(SYS)_SEL_NUC_NAME") {
+  field(DESC, "Name of selected NUC")
+  field(DTYP, "IRTV SoControl")
+  field(OUT, "@so_sel_nuc_name")
+}
+
+record(mbbo, "$(SYS)_CAM_MODEL_TYPE") {
+  field(DESC, "Type of camera model")
+  field(DTYP, "IRTV MbboControl")
+  field(OUT, "@mbbo_cam_model_type")
+  field(ZRST, "SC6000 for IRTV")
+  field(ONST, "SC6100 for Divertor")
+}
+
+########################################################
+# For LTU
+########################################################
+
+record(ao, "$(SYS)_LTU_SET_FREE_RUN") {
+  field(DTYP, "Soft Channel")
+  field(DESC, "Calcuration for FREE RUN")
+}
+
+record(calcout, "$(SYS)_LTU_SET_FREE_RUN_CALC") {
+  field(DESC, "Calcuration for FREE RUN")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_SET_FREE_RUN CPP")
+  field(OUT , "$(LSYS)_LTU_SET_FREE_RUN")
+  field(FLNK, "$(LSYS)_LTU_SET_FREE_RUN")
+}
+
+record(ao, "$(SYS)_START_TIME") {
+  field(DESC, "Start time")
+  field(DTYP, "Soft Channel")
+}
+ 
+record(calcout, "$(SYS)_LTU_T0_CALC") {
+  field(DESC, "Calcuration for T0")
+  field(SCAN, "Passive")
+  field(CALC, "A+B")
+  field(INPA, "$(SYS)_START_TIME CPP")
+  field(INPB, "$(SYS)_CCS_BLIP_TIME CPP")
+  field(OUT , "$(LSYS)_LTU_$(LPORT)_SEC0_T0")
+  field(FLNK, "$(LSYS)_LTU_$(LPORT)_SEC0_T0")
+}
+
+record(calcout, "$(SYS)_START_T0_SEC1_CALC") {
+  field(DESC, "Calcuration for START_T0_SEC1")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(LSYS)_LTU_$(LPORT)_SEC0_T0 CPP")
+  field(OUT , "$(SYS)_START_T0_SEC1")
+  field(FLNK, "$(SYS)_START_T0_SEC1")
+}
+
+record(calcout, "$(SYS)_LTU_T1_CALC") {
+  field(DESC, "Calcuration for T1")
+  field(SCAN, "Passive")
+  field(CALC, "A+B")
+  field(INPA, "$(SYS)_LTU_T0_CALC CPP")
+  field(INPB, "$(SYS)_GRAB_TIME CPP")
+  field(OUT , "$(LSYS)_LTU_$(LPORT)_SEC0_T1")
+  field(FLNK, "$(LSYS)_LTU_$(LPORT)_SEC0_T1")
+}
+
+#record(calcout, "$(SYS)_LTU_CLOCK_CALC") {
+#  field(DESC, "Calcuration for CLOCK")
+#  field(SCAN, "Passive")
+#  field(CALC, "A")
+#  field(INPA, "$(SYS)_SAMPLING_RATE CPP")
+#  field(OUT , "$(LSYS)_LTU_$(LPORT)_SEC0_CLOCK")
+#  field(FLNK, "$(LSYS)_LTU_$(LPORT)_SEC0_CLOCK")
+#}
+
+record(ao, "$(SYS)_LTU_ENABLE") {
+  field(DESC, "Calcuration for ENABLE")
+  field(DTYP, "Soft Channel")
+}
+
+record(calcout, "$(SYS)_LTU_ENABLE_CALC") {
+  field(DESC, "Calcuration for ENABLE")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_ENABLE CPP")
+  field(OUT , "$(LSYS)_LTU_$(LPORT)_ENABLE")
+  field(FLNK, "$(LSYS)_LTU_$(LPORT)_ENABLE")
+}
+
+record(ao, "$(SYS)_LTU_MODE") {
+  field(DESC, "Calcuration for MODE")
+  field(DTYP, "Soft Channel")
+}
+
+record(calcout, "$(SYS)_LTU_MODE_CALC") {
+  field(DESC, "Calcuration for MODE")
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(SYS)_LTU_MODE CPP")
+  field(OUT , "$(LSYS)_LTU_$(LPORT)_MODE")
+  field(FLNK, "$(LSYS)_LTU_$(LPORT)_MODE")
+}

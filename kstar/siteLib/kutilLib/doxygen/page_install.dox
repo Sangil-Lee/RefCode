@@ -1,0 +1,68 @@
+/**
+\page Installation Installation
+
+\section Compiling Compiling from source on the SVN repository for KSTAR
+
+kutil 라이브러리는 KSTAR 제어시스템의 개발을 지원하기 위한 라이브러리로서,
+KSTAR 제어시스템 개발 표준안에서 제시하는 디렉터리 구조를 따른다. \n
+즉, kutil 라이브러리는 siteLib의 모듈로서 배포되고 컴파일 된다. \n\n
+
+kutil 라이브러리 소스는 KSTAR SVN의 저장소 <b>kics</b>에서 얻을 수 있으며, 그 URL은 다음과 같다. \n
+ <A HREF="svn://172.17.100.214/kics/trunk/siteLib/kutilLib/">svn://172.17.100.214/kics/trunk/siteLib/kutilLib/</A>
+
+설치 절차는 다음과 같다.
+
+1. SVN 저장소로부터 kutil 라이브러리 소스 얻기
+ \code
+ # cd /usr/local/epics/siteLib/
+ # svn co svn://172.17.100.214/kics/trunk/siteLib/kutilLib/
+ \endcode
+ \n
+
+2. Makefile 수정
+ \code
+  # cd /usr/local/epics/siteLib/
+  # vi Makefile
+ \endcode
+ \n
+
+ kutilLib을 컴파일 할 수 있도록, 다음 내용을 추가한다. \n
+ \code
+ DIRS += kutilLib
+ \endcode
+ \n
+
+3. 컴파일
+ \code
+  # make
+ \endcode
+
+\section Using How to use the kutilLib on an EPICS IOC
+
+컴파일을 통해 생성된 kutil 라이브러리를 EPICS IOC에서 사용하기 위해서는 
+라이브러리와 dbd의 경로를 지정해 주어야 한다. \n\n
+
+first 이름을 갖는 EPICS IOC에서의 사용 방법은 다음과 같다.
+
+1. Makefile 수정
+ \code
+  # cd /usr/local/epics/siteApp/first/firstApp/src/
+  # vi Makefile
+ \endcode
+ \n
+
+ kutilLib을 사용할 수 있도록, 다음 내용을 추가한다. \n
+ \code
+ kutil_DIR  += $(EPICS_SITE)/lib/$(T_A)
+ first_DBD  += kutil.dbd
+ first_LIBS += kutil
+ \endcode
+ \n
+
+2. 컴파일
+ \code
+  # make
+ \endcode
+
+*/
+ 

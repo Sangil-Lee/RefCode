@@ -1,0 +1,197 @@
+program sncRuntimeSeq
+
+option +r;
+option -c;
+
+%{
+#define    INTL_NORMAL                 0
+#define    INTL_LEVEL1                 1
+#define    INTL_LEVEL2                 2
+#define    INTL_LEVEL3                 3
+#define    INTL_LEVEL4                 4
+#define    INTL_WARNING                5
+#define    INTL_NOT_DEFINED            10
+
+
+#define     ACTIVATE                   1
+#define     DEACTIVATE                 0
+
+}%
+
+/***********************************************
+    Shot Number
+***********************************************/
+
+int         seq_start;
+assign      seq_start to "CCS_SHOTSEQ_START";
+monitor     seq_start;
+
+
+int        rmp_opmode;
+assign     rmp_opmode to "RMP_OP_MODE";
+monitor    rmp_opmode;
+
+int       rmp_arm;
+assign    rmp_arm to "RMP_SYS_ARMING";
+monitor   rmp_arm;
+
+int       rmp_run;
+assign    rmp_run to "RMP_SYS_RUN";
+monitor   rmp_run;
+
+/*
+int       rmp_ip_min_fault;
+assign    rmp_ip_min_fault to "RMP_IP_MIN_FAULT_LINK";
+monitor   rmp_ip_min_fault;
+*/
+
+/*
+
+int       pcs_fault_ip_minimum;
+assign    pcs_fault_ip_minimum to "CCS_PCS_FAULT_IP_MINIMUM";
+monitor   pcs_fault_ip_minimum;
+
+
+int       rmp_btm_rdy_off;
+assign    rmp_btm_rdy_off to "RMP_DIO24_DO_A1:BTM_RDY_OFF";
+monitor   rmp_btm_rdy_off;
+
+int       rmp_btm_stop;
+assign    rmp_btm_stop to "RMP_DIO24_DO_A3:BTM_STOP";
+monitor   rmp_btm_stop;
+
+int       rmp_btm_emg_stop;
+assign    rmp_btm_emg_stop to "RMP_DIO24_DO_A4:BTM_EMG_STOP";
+monitor   rmp_btm_emg_stop;
+
+int       rmp_btm_fault;
+assign    rmp_btm_fault to "RMP_16ADIO_DI3:BTM_FAULT";
+monitor   rmp_btm_fault;
+
+
+
+int       rmp_mid_rdy_off;
+assign    rmp_mid_rdy_off to "RMP_DIO24_DO_B1:MID_RDY_OFF";
+monitor   rmp_mid_rdy_off;
+
+int       rmp_mid_stop;
+assign    rmp_mid_stop to "RMP_DIO24_DO_B3:MID_STOP";
+monitor   rmp_mid_stop;
+
+int       rmp_mid_emg_stop;
+assign    rmp_mid_emg_stop to "RMP_DIO24_DO_B4:MID_EMG_STOP";
+monitor   rmp_mid_emg_stop;
+
+int       rmp_mid_fault;
+assign    rmp_mid_fault to "RMP_16ADIO_DI7:MID_FAULT";
+monitor   rmp_mid_fault;
+
+
+
+int       rmp_top_rdy_off;
+assign    rmp_top_rdy_off to "RMP_DIO24_DO_C1:TOP_RDY_OFF";
+monitor   rmp_top_rdy_off;
+
+int       rmp_top_stop;
+assign    rmp_top_stop to "RMP_DIO24_DO_C3:TOP_STOP";
+monitor   rmp_top_stop;
+
+int       rmp_top_emg_stop;
+assign    rmp_top_emg_stop to "RMP_DIO24_DO_C4:TOP_EMG_STOP";
+monitor   rmp_top_emg_stop;
+
+int       rmp_top_fault;
+assign    rmp_top_fault to "RMP_16ADIO_DI11:TOP_FAULT";
+monitor   rmp_top_fault;
+*/
+
+
+/***********************************************
+   Interlock interface
+***********************************************/
+
+unsigned int    global_interlock_hardwired[5];
+assign          global_interlock_hardwired    to  { "CCS_INTL_LEVEL1",
+                                                    "CCS_INTL_LEVEL2",
+                                                    "CCS_INTL_LEVEL3",
+                                                    "CCS_INTL_LEVEL4",
+                                                    "CCS_INTL_WARNING" };
+monitor         global_interlock_hardwired;
+
+/*
+int ivcc_temp_high;
+assign   ivcc_temp_high  to  "IVCC_TEMP_HIGH";
+monitor ivcc_temp_high;
+*/
+
+
+
+ss interlock_normal_monitor
+{
+	state normal
+	{
+		entry {
+			epicsThreadSleep(1.0);
+		
+		}
+        
+		when(!(global_interlock_hardwired[INTL_LEVEL1 -1] &&
+			global_interlock_hardwired[INTL_LEVEL2 -1] &&
+			global_interlock_hardwired[INTL_LEVEL3 -1] )) 
+		{
+			%% printf("<SNL>:Interlock occured.\n");
+		} state fault
+    
+	}
+
+	state fault
+	{
+		entry {
+/*			rmp_btm_stop = 1;
+			rmp_mid_stop = 1; 
+			rmp_top_stop = 1; 
+			pvPut(rmp_btm_stop);  
+			pvPut(rmp_mid_stop); 
+			pvPut(rmp_top_stop); 
+			epicsThreadSleep(1.0);
+			rmp_btm_stop = 0;
+			rmp_mid_stop = 0; 
+			rmp_top_stop = 0; 
+			pvPut(rmp_btm_stop);  
+			pvPut(rmp_mid_stop); 
+			pvPut(rmp_top_stop); 
+*/
+
+			rmp_run = 0;
+			pvPut(rmp_run); 
+
+			epicsThreadSleep(2.0);
+/*
+			rmp_btm_rdy_off = 1;
+			rmp_mid_rdy_off = 1;
+			rmp_top_rdy_off = 1;
+			pvPut(rmp_btm_rdy_off);  
+			pvPut(rmp_mid_rdy_off);  
+			pvPut(rmp_top_rdy_off);  
+			epicsThreadSleep(1.0);
+			rmp_btm_rdy_off = 0;
+			rmp_mid_rdy_off = 0;
+			rmp_top_rdy_off = 0;
+			pvPut(rmp_btm_rdy_off);  
+			pvPut(rmp_mid_rdy_off);  
+			pvPut(rmp_top_rdy_off);  
+*/
+			rmp_arm = 0;
+			pvPut(rmp_arm); 
+
+		}
+
+	        when(global_interlock_hardwired[INTL_LEVEL1 -1] &&
+	             global_interlock_hardwired[INTL_LEVEL2 -1] &&
+	             global_interlock_hardwired[INTL_LEVEL3 -1]  ) 
+	             {
+	               %% printf("<SNL>:Interlock cleared. return to normal.\n");
+	             } state normal
+    	}
+}
+

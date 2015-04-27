@@ -1,0 +1,40 @@
+program PMS_Alarm
+option +r;
+
+int ALARM;
+double HIHI_VAL;
+double NORMAL_VAL;
+double MAX;
+
+assign ALARM to "PMS_NB_G_MAX_ALARM";
+assign HIHI_VAL to "PMS_NB_G_MAX_HIHI";
+assign NORMAL_VAL to "PMS_NB_G_MAX_NORMAL";
+assign MAX to "PMS_NB_G_MAX";
+
+monitor HIHI_VAL;
+monitor NORMAL_VAL;
+monitor MAX;
+
+
+ss PMS_AL {
+
+     state NORMAL {
+        when (MAX > HIHI_VAL  ) {
+        ALARM = 1;
+        pvPut(ALARM);
+        printf("SET ALARM to 1 !!\n");
+        } state HIHI
+     }
+
+     state HIHI {
+        when( MAX < NORMAL_VAL){
+            ALARM = 0;
+            pvPut(ALARM);
+            printf("SET ALARM to 0 !!\n");
+        } state NORMAL
+
+
+    }
+
+}
+

@@ -1,0 +1,26 @@
+record(ai, "$(SYS)_$(DEV)_D2_SAMPLE_RATE_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NI6123 RawRead_ai")
+  field(INP, "@Dev2 smp_rate_r")
+}
+record(ai, "$(SYS)_$(DEV)_D2_SAMPLE_TIME_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NI6123 RawRead_ai")
+  field(INP, "@Dev2 smp_time_r")
+}
+record(ai, "$(SYS)_$(DEV)_D2_MINVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NI6123 RawRead_ai")
+  field(INP, "@Dev2 min_val_r")
+}
+
+record(ai, "$(SYS)_$(DEV)_D2_MAXVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NI6123 RawRead_ai")
+  field(INP, "@Dev2 max_val_r")
+}
+

@@ -1,0 +1,133 @@
+program sncGasFaultStatus
+
+float rf_gas1_ion;
+assign rf_gas1_ion to "NB1_GAS_ION_RF";
+monitor rf_gas1_ion;
+float rf_gas1_ion_check = 0;
+int rf_gas1_ion_cnt = 0;
+int rf_gas1_ion_fault = 0;
+assign rf_gas1_ion_fault to "NB1_GAS_ION_RF_FAULT";
+float rf_gas1_neu;
+assign rf_gas1_neu to "NB1_GAS_NEU_RF";
+monitor rf_gas1_neu;
+float rf_gas1_neu_check = 0;
+int rf_gas1_neu_cnt = 0;
+int rf_gas1_neu_fault = 0;
+assign rf_gas1_neu_fault to "NB1_GAS_NEU_RF_FAULT";
+
+float rf_gas2_ion;
+assign rf_gas2_ion to "NB1_GAS_ION2_RF";
+monitor rf_gas2_ion;
+float rf_gas2_ion_check = 0;
+int rf_gas2_ion_cnt = 0;
+int rf_gas2_ion_fault = 0;
+assign rf_gas2_ion_fault to "NB1_GAS_ION2_RF_FAULT";
+float rf_gas2_neu;
+assign rf_gas2_neu to "NB1_GAS_NEU2_RF";
+monitor rf_gas2_neu;
+float rf_gas2_neu_check = 0;
+int rf_gas2_neu_cnt = 0;
+int rf_gas2_neu_fault = 0;
+assign rf_gas2_neu_fault to "NB1_GAS_NEU2_RF_FAULT";
+
+
+ss GasFaultStatus
+{
+    state low
+    {
+	when(delay(1))
+	{
+		if(rf_gas1_ion_check == rf_gas1_ion)
+		{
+			rf_gas1_ion_cnt++;
+		}
+		else
+		{
+			rf_gas1_ion_check = rf_gas1_ion;
+			rf_gas1_ion_cnt = 0;
+		}
+		if(rf_gas1_ion_cnt >= 5)
+		{
+			rf_gas1_ion_fault = 1;
+			pvPut(rf_gas1_ion_fault, SYNC);
+		}
+		else
+		{
+			rf_gas1_ion_fault = 0;
+			pvPut(rf_gas1_ion_fault, SYNC);
+		}
+		
+		if(rf_gas1_neu_check == rf_gas1_neu)
+		{
+			rf_gas1_neu_cnt++;
+		}
+		else
+		{
+			rf_gas1_neu_check = rf_gas1_neu;
+			rf_gas1_neu_cnt = 0;
+		}
+		if(rf_gas1_neu_cnt >= 5)
+		{
+			rf_gas1_neu_fault = 1;
+			pvPut(rf_gas1_neu_fault, SYNC);
+		}
+		else
+		{
+			rf_gas1_neu_fault = 0;
+			pvPut(rf_gas1_neu_fault, SYNC);
+		}
+
+		if(rf_gas2_ion_check == rf_gas2_ion)
+		{
+			rf_gas2_ion_cnt++;
+		}
+		else
+		{
+			rf_gas2_ion_check = rf_gas2_ion;
+			rf_gas2_ion_cnt = 0;
+		}
+		if(rf_gas2_ion_cnt >= 5)
+		{
+			rf_gas2_ion_fault = 1;
+			pvPut(rf_gas2_ion_fault, SYNC);
+		}
+		else
+		{
+			rf_gas2_ion_fault = 0;
+			pvPut(rf_gas2_ion_fault, SYNC);
+		}
+		
+		if(rf_gas2_neu_check == rf_gas2_neu)
+		{
+			rf_gas2_neu_cnt++;
+		}
+		else
+		{
+			rf_gas2_neu_check = rf_gas2_neu;
+			rf_gas2_neu_cnt = 0;
+		}
+		if(rf_gas2_neu_cnt >= 5)
+		{
+			rf_gas2_neu_fault = 1;
+			pvPut(rf_gas2_neu_fault, SYNC);
+		}
+		else
+		{
+			rf_gas2_neu_fault = 0;
+			pvPut(rf_gas2_neu_fault, SYNC);
+		}
+
+
+	} state high
+	when(delay(1))
+	{
+	} state high
+    }
+    state high
+    {
+	when(delay(1))
+	{
+	} state low
+    }
+}
+

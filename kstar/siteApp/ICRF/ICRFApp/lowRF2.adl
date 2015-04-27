@@ -1,0 +1,1104 @@
+
+file {
+	name="/usr/local/epics/siteApp/testIcrfDMApp/lowRF2.adl"
+	version=020503
+}
+display {
+	object {
+		x=51
+		y=139
+		width=1162
+		height=186
+	}
+	clr=14
+	bclr=0
+	cmap=""
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+"message button" {
+	type="push"
+	object {
+		x=1020
+		y=124
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:on"
+		clr=14
+		bclr=0
+	}
+	label="RF ON"
+	press_msg="1"
+	release_msg="1"
+}
+"message button" {
+	type="push"
+	object {
+		x=1091
+		y=124
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:off"
+		clr=14
+		bclr=0
+	}
+	label="RF OFF"
+	press_msg="1"
+	release_msg="1"
+}
+"message button" {
+	type="push"
+	object {
+		x=1090
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:writewf"
+		clr=14
+		bclr=40
+	}
+	label="write"
+	press_msg="1"
+	release_msg="1"
+}
+"message button" {
+	type="toggle"
+	object {
+		x=460
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:trgmode"
+		clr=14
+		bclr=40
+	}
+	label="soft"
+	press_msg="1"
+	release_msg="0"
+	pressed_bclr=0
+	pressed_label="external"
+}
+"message button" {
+	type="toggle"
+	object {
+		x=530
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:runmode"
+		clr=14
+		bclr=0
+	}
+	label="single"
+	press_msg="1"
+	release_msg="0"
+	pressed_label="train"
+}
+text {
+	object {
+		x=6
+		y=31
+		width=105
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="vertical (%)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=6
+		y=52
+		width=105
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="horizontal (msec)"
+	alignment="NorthEast"
+}
+"text entry" {
+	object {
+		x=110
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv0"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=110
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh0"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=180
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv1"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=180
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh1"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=250
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv2"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=250
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh2"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=320
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv3"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=320
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh3"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=390
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv4"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=390
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh4"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=460
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv5"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=460
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh5"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=530
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv6"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=530
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh6"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=600
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv7"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=600
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh7"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=670
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv8"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=670
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh8"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=740
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv9"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=740
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh9"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=810
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv10"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=810
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh10"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=880
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv11"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=880
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh11"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=950
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv12"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=950
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh12"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=1020
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv13"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=1020
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh13"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=1090
+		y=26
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkv14"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"text entry" {
+	object {
+		x=1090
+		y=50
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:bkh14"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+text {
+	object {
+		x=130
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	alignment="North"
+}
+text {
+	object {
+		x=201
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	alignment="North"
+}
+text {
+	object {
+		x=270
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="3"
+	alignment="North"
+}
+text {
+	object {
+		x=341
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+	alignment="North"
+}
+text {
+	object {
+		x=407
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5"
+	alignment="North"
+}
+text {
+	object {
+		x=478
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6"
+	alignment="North"
+}
+text {
+	object {
+		x=547
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="7"
+	alignment="North"
+}
+text {
+	object {
+		x=618
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+	alignment="North"
+}
+text {
+	object {
+		x=692
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="9"
+	alignment="North"
+}
+text {
+	object {
+		x=761
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="10"
+	alignment="North"
+}
+text {
+	object {
+		x=832
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="11"
+	alignment="North"
+}
+text {
+	object {
+		x=898
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="12"
+	alignment="North"
+}
+text {
+	object {
+		x=969
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="13"
+	alignment="North"
+}
+text {
+	object {
+		x=1038
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="14"
+	alignment="North"
+}
+text {
+	object {
+		x=1109
+		y=9
+		width=20
+		height=12
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="15"
+	alignment="North"
+}
+"text entry" {
+	object {
+		x=110
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:period"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+text {
+	object {
+		x=6
+		y=90
+		width=105
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="period (msec)"
+	alignment="NorthEast"
+}
+text {
+	object {
+		x=235
+		y=90
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="number of break points"
+	alignment="NorthEast"
+}
+"text entry" {
+	object {
+		x=390
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:breakpoints"
+		clr=14
+		bclr=0
+	}
+	format="truncated"
+}
+"message button" {
+	type="toggle"
+	object {
+		x=600
+		y=86
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:lowrf:control"
+		clr=14
+		bclr=0
+	}
+	label="power"
+	press_msg="1"
+	release_msg="0"
+	pressed_label="voltage"
+}
+rectangle {
+	object {
+		x=4
+		y=4
+		width=1154
+		height=115
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=10
+		y=160
+		width=369
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Low level RF waveform generator"
+}
+"message button" {
+	type="toggle"
+	object {
+		x=750
+		y=124
+		width=86
+		height=25
+	}
+	control {
+		chan="icrf:cfg:finish"
+		clr=14
+		bclr=0
+	}
+	label="Conf. Finish"
+	press_msg="1"
+	release_msg="0"
+	pressed_bclr=15
+	pressed_label="Finish"
+}
+	composite {
+		object {
+			x=10
+			y=127
+			width=700
+			height=25
+		}
+		vis="static"
+		children {
+			"text update" {
+				object {
+					x=650
+					y=127
+					width=60
+					height=20
+				}
+				monitor {
+					chan="icrf:tok:freq"
+					clr=14
+					bclr=4
+				}
+				override {
+				}
+				alignment="East"
+			}
+			text {
+				object {
+					x=570
+					y=131
+					width=80
+					height=21
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Freq (MHz) :"
+			}
+			"text update" {
+				object {
+					x=480
+					y=127
+					width=60
+					height=20
+				}
+				monitor {
+					chan="icrf:tok:pwr"
+					clr=14
+					bclr=4
+				}
+				override {
+				}
+				alignment="East"
+			}
+			text {
+				object {
+					x=400
+					y=131
+					width=80
+					height=21
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Power (MW) :"
+			}
+			"text update" {
+				object {
+					x=310
+					y=127
+					width=60
+					height=20
+				}
+				monitor {
+					chan="icrf:tok:width"
+					clr=14
+					bclr=4
+				}
+				override {
+				}
+				alignment="East"
+			}
+			text {
+				object {
+					x=220
+					y=131
+					width=369
+					height=21
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Width (msec) :"
+			}
+			"text update" {
+				object {
+					x=140
+					y=127
+					width=60
+					height=20
+				}
+				monitor {
+					chan="icrf:tok:start"
+					clr=14
+					bclr=4
+				}
+				override {
+				}
+				alignment="East"
+			}
+			text {
+				object {
+					x=10
+					y=131
+					width=100
+					height=21
+				}
+				"basic attribute" {
+					clr=14
+				}
+				textix="Pulse Start (msec) :"
+			}
+		}
+	}
+rectangle {
+	object {
+		x=4
+		y=122
+		width=850
+		height=30
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+		width=2
+	}
+}
+"message button" {
+	type="toggle"
+	object {
+		x=870
+		y=124
+		width=60
+		height=25
+	}
+	control {
+		chan="icrf:2mw:lowrf"
+		clr=14
+		bclr=40
+	}
+	label="RF READY"
+	press_msg="1"
+	release_msg="0"
+	pressed_bclr=0
+}
+"message button" {
+	type="toggle"
+	object {
+		x=727
+		y=86
+		width=120
+		height=25
+	}
+	control {
+		chan="icrf:cfg:fsen"
+		clr=14
+		bclr=40
+	}
+	label="fast sample off"
+	press_msg="1"
+	release_msg="0"
+	pressed_bclr=0
+	pressed_label="fast sample on"
+}

@@ -1,0 +1,111 @@
+#record(ai, "ECH_SHOT_NUMBER")
+#{
+#	field(DESC, "CCS_SHOT_NUMBER")
+#	field(SCAN, "Passive")
+#	field(INP, "0")
+#	field(PINI, "YES")
+#}
+#record(ai, "ECH_DATA_MDS_PUT")
+#{
+#   field(DESC, "CCS_CREATE_SHOT")
+#    field(SCAN, "Passive")
+#    field(INP, "0")
+#    field(PINI, "YES")
+#}
+#record(stringin, "ECH_ERROR_MSG") 
+#{
+#  field(DESC, "Test MdsData Put")
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#}
+record(ai, "MDS_SHOT_CREATE_DONE")
+{
+  field(DESC, "MDS_SHOT_CREATE_DONE")
+  field(SCAN, "Passive")
+  field(INP, "0")
+  field(PINI, "YES")
+}
+record(ai, "MDS_SHOT_CREATE")
+{
+  field(DESC, "CCS_CREATE_SHOT_COMMAND")
+  field(SCAN, "Passive")
+  field(INP, "0")
+  field(PINI, "YES")
+}
+record(ai, "MDS_SHOT_NUMBER")
+{
+  field(DESC, "CCS_CREATE_SHOT_COMMAND")
+  field(SCAN, "Passive")
+  field(INP, "0")
+  field(PINI, "YES")
+}
+record(bi, "MDS_TSS_DATA_PUT") {
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(ZNAM, "READY")
+  field(ONAM, "STORING")
+}
+record(bi, "MDS_CAL_DATA_PUT") {
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(ZNAM, "READY")
+  field(ONAM, "STORING")
+}
+
+#record(ai, "SOFT_MDS_SHOT_CREATE")
+#{
+#  field(DESC, "CCS_CREATE_SHOT_COMMAND")
+#  field(SCAN, "Passive")
+#  field(INP, "0")
+#  field(PINI, "YES")
+#}
+#record(ai, "SOFT_MDS_SHOT_NUMBER")
+#{
+#  field(DESC, "CCS_CREATE_SHOT_NU_PUT")
+#  field(SCAN, "Passive")
+#  field(INP, "0")
+#  field(PINI, "YES")
+#}
+record(ai, "MDS_SNL_SHOT_CREATE_STATUS")
+{
+  field(DESC, "KSTAR_CREATE_SHOT_STATUS")
+  field(SCAN, "Passive")
+  field(INP, "0")
+  field(PINI, "YES")
+}
+record(bi, "MDS_SNL_SHOT_CREATE_HEARTBEAT") {
+  field(DESC, "MDS_SNL_SHOT_C_Heartbeat")
+  field(VAL, "0")
+}
+record(bi, "MDS_SNL_ECH_MDSPUT_HEARTBEAT") {
+  field(DESC, "MDS_SNL_ECH_D_Heartbeat")
+  field(VAL, "0")
+}
+record(bi, "MDS_SNL_PUT_TSS_HEARTBEAT") {
+  field(DESC, "MDS_SNL_TSS_Heartbeat")
+  field(VAL, "0")
+}
+record(bi, "SOFT_MDS_HEARTBEAT") {
+  field(DESC, "Binary input")
+  field(INP, "SOFT_MDS_CAL_HEARTBEAT NPP NMS")
+  field(VAL, "0")
+}
+record(calc, "SOFT_MDS_CAL_HEARTBEAT") {
+  field(SCAN, "1 second")
+  field(FLNK, "SOFT_MDS_HEARTBEAT NPP NMS")
+  field(CALC, "A=0?1:0")
+  field(INPA, "SOFT_MDS_HEARTBEAT")
+}
+#record(bi, "SOFT_MDS_TSS_DATA_PUT") {
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#  field(ZNAM, "READY")
+#  field(ONAM, "STORING")
+#}
+#record(bi, "SOFT_MDS_CAL_DATA_PUT") {
+#  field(SCAN, "Passive")
+#  field(PINI, "YES")
+#  field(ZNAM, "READY")
+#  field(ONAM, "STORING")
+#}
+

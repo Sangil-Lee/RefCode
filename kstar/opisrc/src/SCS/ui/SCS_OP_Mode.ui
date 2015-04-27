@@ -1,0 +1,631 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>138</green>
+        <blue>145</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>138</green>
+        <blue>145</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>147</red>
+        <green>172</green>
+        <blue>167</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>111</red>
+        <green>138</green>
+        <blue>145</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAUITime" name="caUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>26</x>
+     <y>25</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CAMbboButton" name="caMbboButton" >
+   <property name="geometry" >
+    <rect>
+     <x>392</x>
+     <y>110</y>
+     <width>168</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>168</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CAMbboButton::Vertical</enum>
+   </property>
+   <property name="pvname" >
+    <string>CCS_OPST_CW_STAGE</string>
+   </property>
+   <property name="textlist" >
+    <stringlist>
+     <string>1st Stage</string>
+     <string>2nd Stage</string>
+     <string>3rd Stage</string>
+     <string>Cooldown Complete</string>
+    </stringlist>
+   </property>
+   <property name="bitlist" >
+    <stringlist>
+     <string>1</string>
+     <string>2</string>
+     <string>3</string>
+     <string>4</string>
+    </stringlist>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>220</red>
+     <green>220</green>
+     <blue>220</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAMbboButton" name="caMbboButton_5" >
+   <property name="geometry" >
+    <rect>
+     <x>915</x>
+     <y>111</y>
+     <width>152</width>
+     <height>108</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>152</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CAMbboButton::Vertical</enum>
+   </property>
+   <property name="pvname" >
+    <string>CCS_OPST_CW_STAGE</string>
+   </property>
+   <property name="textlist" >
+    <stringlist>
+     <string>3rd Stage</string>
+     <string>2nd Stage</string>
+     <string>1st Stage</string>
+    </stringlist>
+   </property>
+   <property name="bitlist" >
+    <stringlist>
+     <string>1</string>
+     <string>2</string>
+     <string>3</string>
+    </stringlist>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>220</red>
+     <green>220</green>
+     <blue>220</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAMbboButton" name="caMbboButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>25</y>
+     <width>1055</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CAMbboButton::Horizontal</enum>
+   </property>
+   <property name="pvname" >
+    <string>CCS_OPST_CONTROL</string>
+   </property>
+   <property name="textlist" >
+    <stringlist>
+     <string> Maintenance </string>
+     <string> Vac. Pump </string>
+     <string> Cooldown </string>
+     <string> Charge-up </string>
+     <string> Experiment </string>
+     <string> Warm-up </string>
+    </stringlist>
+   </property>
+   <property name="bitlist" >
+    <stringlist>
+     <string>0</string>
+     <string>1</string>
+     <string>2</string>
+     <string>3</string>
+     <string>4</string>
+     <string>5</string>
+    </stringlist>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>220</red>
+     <green>220</green>
+     <blue>220</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>58</x>
+     <y>554</y>
+     <width>565</width>
+     <height>183</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>1</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_5" >
+      <property name="palette" >
+       <palette>
+        <active>
+         <colorrole role="Base" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>189</red>
+            <green>189</green>
+            <blue>189</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Base" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>189</red>
+            <green>189</green>
+            <blue>189</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Base" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>189</red>
+            <green>189</green>
+            <blue>189</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window" >
+          <brush brushstyle="SolidPattern" >
+           <color alpha="255" >
+            <red>189</red>
+            <green>189</green>
+            <blue>189</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="font" >
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>true</bool>
+      </property>
+      <property name="text" >
+       <string>CCS-SIS Interfaces</string>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" >
+      <property name="topMargin" >
+       <number>6</number>
+      </property>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>KSTAR Operation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="CAMbboButton" name="caMbboButton_6" >
+        <property name="minimumSize" >
+         <size>
+          <width>400</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CCS_INTL_KSTARST</string>
+        </property>
+        <property name="textlist" >
+         <stringlist>
+          <string>Maintenance</string>
+          <string>Pump Down</string>
+          <string>Cool Down</string>
+          <string>TF Charging</string>
+         </stringlist>
+        </property>
+        <property name="bitlist" >
+         <stringlist>
+          <string>0</string>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+         </stringlist>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Operation Status</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="CAMbboButton" name="caMbboButton_7" >
+        <property name="minimumSize" >
+         <size>
+          <width>400</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CCS_INTL_OPST</string>
+        </property>
+        <property name="textlist" >
+         <stringlist>
+          <string>Idle</string>
+          <string>Shot Start</string>
+          <string>Pulse Operation</string>
+          <string>Post Discharge</string>
+         </stringlist>
+        </property>
+        <property name="bitlist" >
+         <stringlist>
+          <string>0</string>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+         </stringlist>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label_3" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CCS Operation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="CAMbboButton" name="caMbboButton_8" >
+        <property name="minimumSize" >
+         <size>
+          <width>400</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection" >
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="pvname" >
+         <string>CCS_INTL_CCSOPST</string>
+        </property>
+        <property name="textlist" >
+         <stringlist>
+          <string>Ready</string>
+          <string>TEST</string>
+          <string>Fault</string>
+          <string>Not Ready</string>
+         </stringlist>
+        </property>
+        <property name="bitlist" >
+         <stringlist>
+          <string>0</string>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+         </stringlist>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_4" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>TSS Operation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="CAMbboButton" name="caMbboButton_9" >
+        <property name="minimumSize" >
+         <size>
+          <width>400</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection" >
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="pvname" >
+         <string>CCS_INTL_TSSOPST</string>
+        </property>
+        <property name="textlist" >
+         <stringlist>
+          <string>Ready</string>
+          <string>TEST</string>
+          <string>Fault</string>
+          <string>Not Ready</string>
+         </stringlist>
+        </property>
+        <property name="bitlist" >
+         <stringlist>
+          <string>0</string>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+         </stringlist>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMbboButton</class>
+   <extends>QWidget</extends>
+   <header>caMbbobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../scs.qrc" />
+ </resources>
+ <connections/>
+</ui>

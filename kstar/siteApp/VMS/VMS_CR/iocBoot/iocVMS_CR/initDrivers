@@ -1,0 +1,36 @@
+###################
+# make serial connection via TCP
+###################
+#drvGenericSerialConfigure("GP307CTRL0",  "${GP307CTRL0}",  0, 0)
+#drvGenericSerialConfigure("GP307CTRL1",  "${GP307CTRL1}",  0, 0)
+drvGenericSerialConfigure("TPG262CTRL0", "${TPG262CTRL0}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL1", "${TPG262CTRL1}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL2", "${TPG262CTRL2}", 0, 0)
+drvGenericSerialConfigure("TPG262CTRL3", "${TPG262CTRL3}", 0, 0)
+drvGenericSerialConfigure("L0", "${TC3213CTRL0}", 0, 0)
+drvGenericSerialConfigure("L1", "${TC3213CTRL1}", 0, 0)
+drvGenericSerialConfigure("L2", "${TC3213CTRL2}", 0, 0)
+drvGenericSerialConfigure("L3", "${TC3213CTRL3}", 0, 0)
+drvGenericSerialConfigure("L4",      "${U2CTRL}",      0, 0)
+drvGenericSerialConfigure("L5", "${ROUGHINGCTRL0}", 0, 0)
+drvGenericSerialConfigure("L6", "${ROUGHINGCTRL1}", 0, 0)
+drvGenericSerialConfigure("L7", "${BACKINGCTRL}", 0, 0)
+
+################
+# GP307
+################
+#drvGP307_init("GP307CTRL0", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_GP307})
+#drvGP307_init("GP307CTRL1", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_GP307})
+
+###########
+# TPG262
+###########
+drvTPG262_init("TPG262CTRL0", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_TPG262})
+drvTPG262_init("TPG262CTRL1", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_TPG262})
+drvTPG262_init("TPG262CTRL2", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_TPG262})
+drvTPG262_init("TPG262CTRL3", "${UNIT_TPG262}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_TPG262})
+
+###########
+# cFP20x0
+###########
+

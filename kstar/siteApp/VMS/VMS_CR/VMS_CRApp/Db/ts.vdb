@@ -1,0 +1,18 @@
+record(timestamp, "TS:$(PORT)") {
+  field(SCAN, "I/O Intr")
+  field(INP, "@$(PORT) status timestamp")
+  field(DTYP, "cFP20x0 NI compactFieldPoint")
+  field(TST, "Mon DD, YYYY HH:MM:SS.ns")
+  field(FLNK, "TS:$(PORT):SOFT")
+}
+
+record(timestamp, "TS:$(PORT):SOFT") {
+  field(TST,"Mon DD, YYYY HH:MM:SS.ns")
+  field(FLNK, "TS:$(PORT):TSEL")
+}
+
+record(timestamp, "TS:$(PORT):TSEL") {
+  field(TST,"Mon DD, YYYY HH:MM:SS.ns")
+  field(TSEL, "TS:$(PORT).TIME")
+}
+

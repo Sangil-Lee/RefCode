@@ -1,0 +1,6 @@
+record(ao, "$(PVNAME)") {
+	field(DTYP, "S7plc")
+	field(OUT, "@$(PLCNAME)/$(OFFSET) T=$(TYPE)")
+	field(PINI, "YES")
+	field(PREC, "3")
+}

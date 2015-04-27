@@ -1,0 +1,146 @@
+program sncDlsStop
+option +r;
+option -c; 
+%% #include <string.h>
+%% #include <epicsPrint.h>
+%% #include "epicsThread.h"
+
+
+int i;
+int tv01Open;
+int tv01Close;
+int tv01Status;
+int tv02Open;
+int tv02Close;
+int tv02Status;
+
+int dataCount;
+int allClosed;
+char *pfileName;
+string tmpStr1;
+string tmpStr2;
+int data[32];
+float udf[32];
+string pvName1[104];
+
+assign tv01Open to "DLS_TV01_I_SHUT_OPEN";
+assign tv01Close to "DLS_TV01_I_SHUT_CLOSE";
+assign tv01Status to "DLS_TV01_I_SHUT_STATUS";
+
+assign tv02Open to "DLS_TV02_A_SHUT_OPEN";
+assign tv02Close to "DLS_TV02_A_SHUT_CLOSE";
+assign tv02Status to "DLS_TV02_A_SHUT_STATUS";
+
+assign allClosed to "DLS_EMERGENCY_CLOSE";
+
+monitor tv01Open;
+monitor tv01Close;
+monitor tv01Status;
+
+monitor tv02Open;
+monitor tv02Close;
+monitor tv02Status;
+
+monitor allClosed;
+
+assign udf to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor udf;
+
+
+assign data to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor data;
+
+
+
+
+ss dlsEmergency{
+	state init{
+		when (TRUE){
+                        pfileName = macValueGet("FNAME");
+                        %% FILE *pfile;
+                        %% pfile = fopen (pVar->pfileName, "r");
+                        %% if(!pfile) { 
+     			%%	printf("error in fopen\n");
+			%% }
+                        dataCount =0;
+                        %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+                        	pvAssign (data[dataCount], tmpStr1);
+			%%/*	sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+			%%	pvAssign (udf[dataCount], tmpStr2); */
+				printf("connect %d %s %d\n", dataCount, tmpStr1, pvConnected(data[dataCount]));
+				dataCount++;
+                        %%}
+			%% fclose(pfile);
+			printf("Data count number is %d %d\n",dataCount, pvConnectCount());
+		}state dls_all_closed	
+	}
+	state dls_all_closed {
+        	 when (delay(1.0)){
+			 if(allClosed==1){
+				 for (i = 0; i < dataCount; i++){ 
+					 printf("Index: %d/%d\n", i, dataCount);
+					 data[i]=0;
+					 pvPut(data[i],SYNC);
+				 }
+				 if(tv01Status != 0){
+					 tv01Close = 1;
+					 pvPut(tv01Close,SYNC);
+					 %% epicsThreadSleep(9.);	
+					 tv01Close = 0;
+					 pvPut(tv01Close,SYNC);
+				 }
+				 allClosed=0;
+				 pvPut(allClosed);
+			} else if(allClosed==2){
+				 for (i = 0; i < dataCount; i++){ 
+					 printf("Index: %d/%d\n", i, dataCount);
+					 data[i]=1;
+					 pvPut(data[i],SYNC);
+				 }
+				 if(tv01Status != 1){
+					 tv01Open = 1;
+					 pvPut(tv01Open,SYNC);
+					 %% epicsThreadSleep(9.);	
+					 tv01Open = 0;
+					 pvPut(tv01Open,SYNC);
+				 }
+				 allClosed=0;
+				 pvPut(allClosed);
+			}
+		} state dls_all_closed
+	}
+}
+
+ss dlsEmergency2{
+	state init{
+		when (TRUE){
+		}state dls_all_closed2	
+	}
+	state dls_all_closed2 {
+        	 when (delay(1.0)){
+			 if(allClosed==1){
+				 if(tv02Status != 0){
+					 tv02Close = 1;
+					 pvPut(tv02Close,SYNC);
+					 %% epicsThreadSleep(9.);	
+					 tv02Close = 0;
+					 pvPut(tv02Close,SYNC);
+				 }
+			} else if(allClosed==2){
+				if(tv02Status != 1){
+					tv02Open = 1;
+					pvPut(tv02Open,SYNC);
+					%% epicsThreadSleep(9.);	
+					tv02Open = 0;
+					pvPut(tv02Open,SYNC);
+				}
+			}
+		} state dls_all_closed2
+	}
+}

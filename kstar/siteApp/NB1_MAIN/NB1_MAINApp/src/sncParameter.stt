@@ -1,0 +1,348 @@
+program sncParameter
+
+int para_apply;
+assign para_apply to "NB1_PARAM_APPLY";
+monitor para_apply;
+
+float beam_on;
+assign beam_on to "NB1_PARAM_BEAM_ON";
+monitor beam_on;
+
+float beam_pw;
+assign beam_pw to "NB1_PARAM_BEAM_PW";
+monitor beam_pw;
+
+float pre_arc_pw;
+assign pre_arc_pw to "NB1_P1ARC_ECMD_PAPL";
+monitor pre_arc_pw;
+
+float pre_interval;
+assign pre_interval to "NB1_PARAM_PRE_INTERVAL";
+monitor pre_interval;
+
+float dtacq_get_time;
+assign dtacq_get_time to "NB1_DTACQ1_LEN_TIME";
+monitor dtacq_get_time;
+
+float g1_pw;
+assign g1_pw to "NB1_P1VME_ECMD_G1R";
+
+float g3_pw;
+assign g3_pw to "NB1_P1VME_ECMD_G3R";
+
+float fila_pw;
+assign fila_pw to "NB1_P1VME_ECMD_FILAR";
+
+float fila_pw2;
+assign fila_pw2 to "NB1_P2VME_ECMD_FILASEC";
+monitor fila_pw2;
+
+float main_arc_pw;
+assign main_arc_pw to "NB1_P1VME_ECMD_ARCR";
+
+float ltu_fila_s;
+assign ltu_fila_s to "NBI1A_LTU_P0_SEC0_T0";
+
+float ltu_fila_s;
+assign ltu_fila_s to "NBI1D_LTU_P0_SEC0_T0";
+monitor ltu_fila_s;
+
+float ltu_fila_e;
+assign ltu_fila_e to "NBI1A_LTU_P0_SEC0_T1";
+
+float ltu_g1_s;
+assign ltu_g1_s to "NBI1A_LTU_P1_SEC0_T0";
+float ltu_g1_e;
+assign ltu_g1_e to "NBI1A_LTU_P1_SEC0_T1";
+
+float ltu_g3_s;
+assign ltu_g3_s to "NBI1A_LTU_P2_SEC0_T0";
+float ltu_g3_e;
+assign ltu_g3_e to "NBI1A_LTU_P2_SEC0_T1";
+
+int ltu_dtacq_s;
+assign ltu_dtacq_s to "NBI1A_LTU_P3_SEC0_T0";
+int ltu_dtacq_e;
+assign ltu_dtacq_e to "NBI1A_LTU_P3_SEC0_T1";
+
+float ltu_arc1_s;
+assign ltu_arc1_s to "NBI1A_LTU_P4_SEC0_T0";
+float ltu_arc1_e;
+assign ltu_arc1_e to "NBI1A_LTU_P4_SEC0_T1";
+
+float ltu_arc2_s;
+assign ltu_arc2_s to "NBI1A_LTU_P5_SEC0_T0";
+float ltu_arc2_e;
+assign ltu_arc2_e to "NBI1A_LTU_P5_SEC0_T1";
+
+float ltu_hvon_s;
+assign ltu_hvon_s to "NBI1A_LTU_P6_SEC0_T0";
+float ltu_hvon_e;
+assign ltu_hvon_e to "NBI1A_LTU_P6_SEC0_T1";
+
+int ltu_is_s;
+assign ltu_is_s to "NBI1B_LTU_P0_SEC0_T0";
+float ltu_is_e;
+assign ltu_is_e to "NBI1B_LTU_P0_SEC0_T1";
+
+int ltu_oma_s;
+assign ltu_oma_s to "NBI1B_LTU_P1_SEC0_T0";
+float ltu_oma_e;
+assign ltu_oma_e to "NBI1B_LTU_P1_SEC0_T1";
+
+float ltu_omat_s;
+assign ltu_omat_s to "NBI1B_LTU_P2_SEC0_T0";
+float ltu_omat_e;
+assign ltu_omat_e to "NBI1B_LTU_P2_SEC0_T1";
+
+float ltu_cal_s;
+assign ltu_cal_s to "NBI1C_LTU_P2_SEC0_T0";
+float ltu_cal_e;
+assign ltu_cal_e to "NBI1C_LTU_P2_SEC0_T1";
+
+int ltu1_setup_p0;
+assign ltu1_setup_p0 to "NBI1A_LTU_SOFT_SETUP_P0";
+int ltu1_setup_p1;
+assign ltu1_setup_p1 to "NBI1A_LTU_SOFT_SETUP_P1";
+int ltu1_setup_p2;
+assign ltu1_setup_p2 to "NBI1A_LTU_SOFT_SETUP_P2";
+int ltu1_setup_p3;
+assign ltu1_setup_p3 to "NBI1A_LTU_SOFT_SETUP_P3";
+int ltu1_setup_p4;
+assign ltu1_setup_p4 to "NBI1A_LTU_SOFT_SETUP_P4";
+int ltu1_setup_p5;
+assign ltu1_setup_p5 to "NBI1A_LTU_SOFT_SETUP_P5";
+int ltu1_setup_p6;
+assign ltu1_setup_p6 to "NBI1A_LTU_SOFT_SETUP_P6";
+
+int ltu2_setup_p0;
+assign ltu2_setup_p0 to "NBI1B_LTU_SOFT_SETUP_P0";
+int ltu2_setup_p1;
+assign ltu2_setup_p1 to "NBI1B_LTU_SOFT_SETUP_P1";
+int ltu2_setup_p2;
+assign ltu2_setup_p2 to "NBI1B_LTU_SOFT_SETUP_P2";
+
+int ltu3_setup_p0;
+assign ltu3_setup_p0 to "NBI1C_LTU_SOFT_SETUP_P0";
+int ltu3_setup_p1;
+assign ltu3_setup_p1 to "NBI1C_LTU_SOFT_SETUP_P1";
+int ltu3_setup_p2;
+assign ltu3_setup_p2 to "NBI1C_LTU_SOFT_SETUP_P2";
+
+int dtacq_t1;
+assign dtacq_t1 to "NB1_DTACQ1_T1";
+
+int dtacq2_t1;
+assign dtacq2_t1 to "NB1_DTACQ2_T1";
+
+float cal_beam_len;
+assign cal_beam_len to "NB11_BEAM_PULSE";
+
+int plc_send;
+assign plc_send to "NB1_P1VME_ECMD_IDONE";
+
+int beam_mode1;
+assign beam_mode1 to "NB1_OPER1_MODE_STATUS";
+monitor beam_mode1;
+
+int beam_mode2;
+assign beam_mode2 to "NB1_OPER2_MODE_STATUS";
+monitor beam_mode2;
+
+float ltu_beam;
+
+ss parameterApply
+{
+	state low
+	{
+	    when(para_apply == 1)
+	    {
+                printf("--- Parameter Apply Ok ---\n");
+		ltu_beam = beam_on + 16;
+
+	    main_arc_pw = beam_pw;
+	    pvPut(main_arc_pw,SYNC);
+		g1_pw = beam_pw+0.002;
+		pvPut(g1_pw);
+		g3_pw = beam_pw+0.004;
+		pvPut(g3_pw);
+		fila_pw = beam_pw+12;
+		pvPut(fila_pw, SYNC);
+
+		ltu_fila_s = ltu_beam - 11.0;
+		pvPut(ltu_fila_s);
+		ltu_fila_e = ltu_beam - 11.0 + 0.1;
+		pvPut(ltu_fila_e);
+
+		ltu_g1_s = ltu_beam - 0.002;
+		pvPut(ltu_g1_s);
+		ltu_g1_e = ltu_beam - 0.002 + 0.01;
+		pvPut(ltu_g1_e);
+
+		ltu_g3_s = ltu_beam - 0.004;
+		pvPut(ltu_g3_s);
+		ltu_g3_e = ltu_beam - 0.004 + 0.01;
+		pvPut(ltu_g3_e);
+
+		ltu_arc1_s = ltu_beam - (pre_interval*0.001) - (pre_arc_pw*0.001);
+		pvPut(ltu_arc1_s,SYNC);
+		ltu_arc1_e = ltu_arc1_s + 0.01;
+		pvPut(ltu_arc1_e,SYNC);
+
+		ltu_arc2_s = ltu_arc1_s + (pre_arc_pw*0.001) + (pre_interval*0.001);
+		pvPut(ltu_arc2_s,SYNC);
+		ltu_arc2_e = ltu_arc2_s + 0.01;
+		pvPut(ltu_arc2_e,SYNC);
+
+		ltu_is_s = ltu_fila_s + 4.0;
+		pvPut(ltu_is_s,SYNC);
+		ltu_is_e = fila_pw + ltu_fila_s;
+		pvPut(ltu_is_e,SYNC);
+		ltu_oma_s = ltu_fila_s + 4.0 ;
+		pvPut(ltu_oma_s,SYNC);
+		ltu_oma_e = fila_pw + ltu_fila_s;
+		pvPut(ltu_oma_e,SYNC);
+
+		epicsThreadSleep(0.01);
+
+		dtacq_t1 = ltu_is_e + 2;
+		pvPut(dtacq_t1);
+
+		if(beam_mode1 == 4 && beam_mode2 == 4)
+		{
+			if(dtacq_t1 > fila_pw + ltu_fila_s + 2)
+			{
+				pvPut(dtacq_t1);
+				dtacq2_t1 = dtacq_t1;
+				pvPut(dtacq2_t1);
+			}
+			else
+			{
+				epicsThreadSleep(0.01);
+				dtacq_t1 = fila_pw + ltu_fila_s + 2;
+				pvPut(dtacq_t1);
+			}
+		}
+		ltu_omat_s = beam_on + 16;
+		pvPut(ltu_omat_s,SYNC);
+		ltu_omat_e = beam_on + 16 + 0.1;
+		pvPut(ltu_omat_e,SYNC);
+		ltu_cal_s = 2.0;
+		pvPut(ltu_cal_s,SYNC);
+		ltu_cal_e = 2.1;
+		pvPut(ltu_cal_e,SYNC);
+
+		ltu_hvon_s = 0.0;
+		pvPut(ltu_hvon_s,SYNC);
+		ltu_hvon_e = 0.1;
+		pvPut(ltu_hvon_e,SYNC);
+
+		ltu_dtacq_s = 0.0;
+		pvPut(ltu_dtacq_s,SYNC);
+		ltu_dtacq_e = dtacq_get_time + 5;
+		pvPut(ltu_dtacq_e,SYNC);
+		
+		epicsThreadSleep(0.01);
+		ltu1_setup_p0 = 1;
+		pvPut(ltu1_setup_p0);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p0 = 0;
+		pvPut(ltu1_setup_p0);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p1 = 1;
+		pvPut(ltu1_setup_p1);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p1 = 0;
+		pvPut(ltu1_setup_p1);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p2 = 1;
+		pvPut(ltu1_setup_p2);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p2 = 0;
+		pvPut(ltu1_setup_p2);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p3 = 1;
+		pvPut(ltu1_setup_p3);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p3 = 0;
+		pvPut(ltu1_setup_p3);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p4 = 1;
+		pvPut(ltu1_setup_p4);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p4 = 0;
+		pvPut(ltu1_setup_p4);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p5 = 1;
+		pvPut(ltu1_setup_p5);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p5 = 0;
+		pvPut(ltu1_setup_p5);
+
+		epicsThreadSleep(0.01);
+		ltu1_setup_p6 = 1;
+		pvPut(ltu1_setup_p6);
+		epicsThreadSleep(0.01);
+		ltu1_setup_p6 = 0;
+		pvPut(ltu1_setup_p6);
+
+		epicsThreadSleep(0.01);
+		ltu2_setup_p0 = 1;
+		pvPut(ltu2_setup_p0);
+		epicsThreadSleep(0.01);
+		ltu2_setup_p0 = 0;
+		pvPut(ltu2_setup_p0);
+
+		epicsThreadSleep(0.01);
+		ltu2_setup_p1 = 1;
+		pvPut(ltu2_setup_p1);
+		epicsThreadSleep(0.01);
+		ltu2_setup_p1 = 0;
+		pvPut(ltu2_setup_p1);
+
+		epicsThreadSleep(0.01);
+		ltu2_setup_p2 = 1;
+		pvPut(ltu2_setup_p2);
+		epicsThreadSleep(0.01);
+		ltu2_setup_p2 = 0;
+		pvPut(ltu2_setup_p2);
+
+        epicsThreadSleep(0.01);
+		ltu3_setup_p2 = 1;
+		pvPut(ltu3_setup_p2);
+		epicsThreadSleep(0.01);
+		ltu3_setup_p2 = 0;
+		pvPut(ltu3_setup_p2);
+
+
+		epicsThreadSleep(0.01);
+		cal_beam_len = beam_pw;
+		pvPut(cal_beam_len);
+
+		epicsThreadSleep(0.01);
+		plc_send = 1;
+		pvPut(plc_send);
+		epicsThreadSleep(1);
+		plc_send = 0;
+		pvPut(plc_send);
+
+	    } state high
+	    when(delay(1)) 
+	    {
+	    } state high
+	}
+	state high
+	{
+	    when(para_apply == 0)
+	    {
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low
+	}
+}

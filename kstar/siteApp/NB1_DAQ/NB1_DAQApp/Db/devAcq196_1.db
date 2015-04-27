@@ -1,0 +1,158 @@
+record(ao,"$(P)_SetClock")
+{
+    field(DESC, "Internal Clock")
+    field(DTYP, "AO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @0")
+    field(PREC, "0")
+}
+#record(ao,"$(P)_SetLocalShot")
+#{
+#    field(DESC, "Internal Clock")
+#    field(DTYP, "AO_Acq196")
+#    field(OUT, "#$(PORT) A$(A) @1")
+#    field(PREC, "0")
+#}
+record(ao,"$(P)_T0")
+{
+    field(DESC, "Internal Clock")
+    field(DTYP, "AO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @2")
+    field(PREC, "0")
+}
+record(ao,"$(P)_T1")
+{
+    field(DESC, "Internal Clock")
+    field(DTYP, "AO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+#record(calcout,	"$(P)_T1_C")
+#{
+#	field(DESC,	"Internal Clock")
+#	field(SCAN,	"Passive")
+#	field(CALC,	"(E=1) & ((A+B)>(C+D))?A+B:C+D")
+#	field(INPA,	"NB1_PARAM_BEAM_PW.VAL")
+#	field(INPB,	"NB1_PARAM_PRE_INTERVAL.VAL")
+#	field(INPC,	"NB1_PARAM2_BEAM_PW.VAL")
+#	field(INPD,	"NB1_PARAM2_PRE_INTERVAL.VAL")
+#	field(INPE,	"NB1_PARAM_APPLY.VAL CPP")
+#	field(OUT,	"$(P)_T1.VAL NMP PP")
+#}
+record(bo, "$(P)_setAbort")
+{
+    field(DESC, "setAbort")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @1")
+}
+record(bo, "$(P)_setArm")
+{
+    field(DESC, "setArm")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @2")
+}
+record(bo, "$(P)_trgRising")
+{
+    field(DESC, "Trig. Rising")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @3")
+}
+record(bo, "$(P)_trgFalling")
+{
+    field(DESC, "Trig. Falling")
+    field(DTYP, "BO_Acq196")
+    field(OUT, "#$(PORT) A$(A) @4")
+}
+record(bi, "$(P)_Fault")
+{
+    field(DESC, "Set Fault")
+    field(SCAN, ".1 second")
+    field(DTYP, "BI_Acq196")
+    field(INP, "#$(PORT) A$(A) @0")
+    field(ZNAM, "OK")
+    field(ONAM, "Error")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+}
+#record(bi, "$(P)_SoftTrig")
+#{
+#    field(DESC, "SoftTrig")
+#    field(SCAN, ".1 second")
+#    field(DTYP, "BI_Acq196")
+#    field(INP, "#$(PORT) A$(A) @1")
+#    field(ZNAM, "OK")
+#    field(ONAM, "Error")
+#    field(ZSV, "NO_ALARM")
+#    field(OSV, "MAJOR")
+#}
+record(bi, "$(P)_State")
+{
+    field(DESC, "SoftTrig")
+    field(SCAN, ".1 second")
+    field(DTYP, "BI_Acq196")
+    field(INP, "#$(PORT) A$(A) @2")
+    field(ZNAM, "STOP")
+    field(ONAM, "RUN")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+}
+record(ai, "$(P)_GetClock")
+{
+    field(DESC, "LocalShot")
+    field(DTYP, "AI_Acq196")
+    field(SCAN, "1 second")
+    field(INP, "#$(PORT) A$(A) @0")
+    field(PREC, "1")
+}
+#record(ai, "$(P)_LocalShot")
+#{
+#    field(DESC, "LocalShot")
+#    field(DTYP, "AI_Acq196")
+#    field(SCAN, "1 second")
+#    field(INP, "#$(PORT) A$(A) @1")
+#    field(PREC, "0")
+#}
+record(ai, "$(P)_GetT0")
+{
+    field(DESC, "Get T0")
+    field(DTYP, "AI_Acq196")
+    field(SCAN, "1 second")
+    field(INP, "#$(PORT) A$(A) @2")
+    field(PREC, "0")
+}
+record(ai, "$(P)_GetT1")
+{
+    field(DESC, "Get T1")
+    field(DTYP, "AI_Acq196")
+    field(SCAN, "1 second")
+    field(INP, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+record(calc, "$(P)_LtuSetError")
+{
+    field(DESC, "Set Error")
+    field(SCAN, "Passive")
+    field(CALC, "A>B?0:1")
+    field(INPA, "$(P)_LTU_TIME CPP")
+    field(INPB, "$(P)_LEN_TIME CPP")
+}
+record(calc, "$(P)_LTU_TIME")
+{
+    field(DESC, "LTU Time")
+    field(SCAN, "Passive")
+    field(CALC, "A-B")
+    field(INPA, "NBI1A_LTU_P3_SEC0_T1.VAL CPP")
+    field(INPB, "NBI1A_LTU_P3_SEC0_T0.VAL CPP")
+}
+record(calc, "$(P)_LEN_TIME")
+{
+    field(DESC, "DTACQ Time")
+    field(SCAN, "Passive")
+    field(CALC, "(A-B)+(((D/(C*E*G))/F)+F)")
+    field(INPA, "$(P)_T1.VAL CPP")
+    field(INPB, "$(P)_T0.VAL CPP")
+    field(INPC, "$(P)_GetClock.VAL CPP")
+    field(INPD, "4194304")
+    field(INPE, "96")
+    field(INPF, "2")
+    field(INPG, "1000")
+}

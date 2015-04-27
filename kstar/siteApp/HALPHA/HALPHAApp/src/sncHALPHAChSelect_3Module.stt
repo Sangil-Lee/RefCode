@@ -1,0 +1,286 @@
+program sncHALPHAChSelect 
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <epicsThread.h>
+
+int i; 
+int slotNu; 
+int dataCount;
+string tmpStr1;
+
+int ece1SelectAll;
+int ece2SelectAll;
+int ece3SelectAll;
+
+int ece1MaskBit;
+int ece2MaskBit;
+int ece3MaskBit;
+int chMaskBitDone;
+
+
+int ece1SelectCh[32];
+int ece2SelectCh[32];
+int ece3SelectCh[32];
+
+
+assign ece1SelectAll to "HALPHA_SLOT1_SELECT_ALL";
+assign ece2SelectAll to "HALPHA_SLOT2_SELECT_ALL";
+assign ece3SelectAll to "HALPHA_SLOT3_SELECT_ALL";
+
+assign chMaskBitDone to "HALPHA_SETTING_DONE";
+assign ece1MaskBit to "HALPHA_master_chBitMask";
+assign ece2MaskBit to "HALPHA_Dev2_chBitMask";
+assign ece3MaskBit to "HALPHA_Dev3_chBitMask";
+
+assign ece1SelectCh to {"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", ""};
+
+assign ece2SelectCh to {"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", ""};
+
+assign ece3SelectCh to {"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", "", "", "", "", "",
+                	"", ""};
+
+monitor chMaskBitDone;
+evflag flagChMaskDone;
+sync chMaskBitDone flagChMaskDone;
+
+monitor ece1SelectAll;
+monitor ece2SelectAll;
+monitor ece3SelectAll;
+
+monitor ece1MaskBit;
+monitor ece2MaskBit;
+monitor ece3MaskBit;
+
+monitor ece1SelectCh;
+monitor ece2SelectCh;
+monitor ece3SelectCh;
+
+evflag flagSlot1All;
+sync ece1SelectAll flagSlot1All;
+
+evflag flagSlot2All;
+sync ece2SelectAll flagSlot2All;
+
+evflag flagSlot3All;
+sync ece3SelectAll flagSlot3All;
+
+int eceOpmode;
+int eceOpmodeOpi;
+int eceOpmodeRem;
+int eceOpmodeCal;
+int eceOpmodeLoc;
+
+int trigInter;
+int  trigExter;
+int  adcStart;
+int  adcStop;
+int  daqStart;
+int daqStop;
+int sampleRate;
+int sampleRateMbbi;
+
+assign trigInter to "HALPHA_setTrigInternal";
+assign trigExter to "HALPHA_setTrigExternal";
+assign adcStart to "HALPHA_ADCstart";
+assign adcStop to "HALPHA_ADCstop";
+assign daqStart to "HALPHA_DAQstart";
+assign daqStop to "HALPHA_DAQstop";
+
+assign eceOpmode to "HALPHA_setOpMode";
+assign eceOpmodeOpi to "HALPHA_setOpMode_OPI";
+assign eceOpmodeRem to "HALPHA_setOpMode_REM";
+assign eceOpmodeCal to "HALPHA_setOpMode_CAL";
+assign eceOpmodeLoc to "HALPHA_setOpMode_LOC";
+
+assign sampleRate to "HALPHA_sampleRate";
+assign sampleRateMbbi to "HALPHA_SAMPLING_RATE";
+
+monitor trigInter;
+monitor trigExter;
+monitor adcStart;
+monitor adcStop;
+monitor daqStart;
+monitor daqStop;
+
+monitor eceOpmode;
+monitor eceOpmodeOpi;
+
+monitor eceOpmodeRem;
+monitor eceOpmodeCal;
+monitor eceOpmodeLoc;
+evflag flagOpModeOpi;
+sync eceOpmodeOpi flagOpModeOpi;
+
+
+monitor sampleRate;
+monitor sampleRateMbbi;
+evflag flagSampleRate;
+sync sampleRateMbbi flagSampleRate;
+
+ss ecehrMasteSetup{
+	state init{
+		when (TRUE){
+			slotNu=32;
+                        dataCount =0;
+                	for (i=0; i<slotNu; i++){
+			%% 	sprintf(pVar->tmpStr1, "HALPHA_SELECT_CH%d", pVar->i);
+                        	pvAssign (ece1SelectCh[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "HALPHA_SELECT_CH%d", pVar->i + 32);
+                        	pvAssign (ece2SelectCh[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%% 	sprintf(pVar->tmpStr1, "HALPHA_SELECT_CH%d", pVar->i + 64);
+                        	pvAssign (ece3SelectCh[dataCount], tmpStr1);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+				dataCount++;
+                        }
+			printf("Data count number is %d\n",dataCount);
+		}state ecehr_set_value	
+	}
+	state ecehr_set_value{
+        	when (efTestAndClear(flagSlot1All)){
+                	if(ece1SelectAll==1){
+				for (i = 0; i < dataCount; i++){
+                        		ece1SelectCh[i]=1;
+					pvPut(ece1SelectCh[i],SYNC);
+                		}
+			} else if (ece1SelectAll==0){
+				for (i = 0; i < dataCount; i++){
+                        		ece1SelectCh[i]=0;
+					pvPut(ece1SelectCh[i],SYNC);
+                		}
+			}
+		} state ecehr_set_value
+        	when (efTestAndClear(flagSlot2All)){
+                	if(ece2SelectAll==1){
+				for (i = 0; i < dataCount; i++){
+                        		ece2SelectCh[i]=1;
+					pvPut(ece2SelectCh[i],SYNC);
+                		}
+			} else if (ece2SelectAll==0){
+				for (i = 0; i < dataCount; i++){
+                        		ece2SelectCh[i]=0;
+					pvPut(ece2SelectCh[i],SYNC);
+                		}
+			}
+		} state ecehr_set_value
+        	when (efTestAndClear(flagSlot3All)){
+                	if(ece3SelectAll==1){
+				for (i = 0; i < dataCount; i++){
+                        		ece3SelectCh[i]=1;
+					pvPut(ece3SelectCh[i],SYNC);
+                		}
+			} else if (ece3SelectAll==0){
+				for (i = 0; i < dataCount; i++){
+                        		ece3SelectCh[i]=0;
+					pvPut(ece3SelectCh[i],SYNC);
+                		}
+			}
+		} state ecehr_set_value
+        	when (efTestAndClear(flagChMaskDone)){
+                	if(chMaskBitDone==1){
+				ece1MaskBit = 0x0;
+				ece2MaskBit = 0x0;
+				ece3MaskBit = 0x0;
+				for (i = 0; i < dataCount; i++){
+                        		if(ece1SelectCh[i]==1){
+						ece1MaskBit |= (0x1 << i);
+					}
+                        		if(ece2SelectCh[i]==1){
+						ece2MaskBit |= (0x1 << i);
+					}
+                        		if(ece3SelectCh[i]==1){
+						ece3MaskBit |= (0x1 << i);
+					}
+                		}
+				pvPut(ece1MaskBit,SYNC);
+				pvPut(ece2MaskBit,SYNC);
+				pvPut(ece3MaskBit,SYNC);
+				chMaskBitDone=0;
+				pvPut(chMaskBitDone,SYNC);
+			} 
+		} state ecehr_set_value
+	}
+}
+
+ss ecehrOpMode{
+	state init{
+		when (TRUE){
+		} state ecehr_set_opmode
+	}
+	state ecehr_set_opmode{
+		when(efTestAndClear(flagOpModeOpi)){
+			if(eceOpmodeOpi==1){
+				eceOpmode = 1;
+				pvPut(eceOpmode,SYNC);
+				eceOpmodeRem =1;
+				eceOpmodeCal =0;
+				eceOpmodeLoc =0;
+				trigExter=1;	
+				pvPut(eceOpmodeCal,SYNC);
+				pvPut(eceOpmodeLoc,SYNC);
+				pvPut(eceOpmodeRem,SYNC);
+				pvPut(trigExter,SYNC);		
+			}
+			if(eceOpmodeOpi==2){
+				eceOpmode = 3;
+				pvPut(eceOpmode,SYNC);
+				eceOpmodeRem =0;
+				eceOpmodeCal =1;
+				eceOpmodeLoc =0;
+%% /*				trigExter=1;	I will changed cal function. 20101209 	 */
+				trigInter = 1;
+				pvPut(eceOpmodeRem,SYNC);
+				pvPut(eceOpmodeLoc,SYNC);		
+				pvPut(eceOpmodeCal,SYNC);
+				pvPut(trigInter,SYNC);		
+%% /*				pvPut(trigExter,SYNC); 	*/
+			}
+			if(eceOpmodeOpi==3){
+				eceOpmode = 3;
+				pvPut(eceOpmode,SYNC);
+				eceOpmodeRem =0;
+				eceOpmodeCal =0;
+				eceOpmodeLoc =1;
+				trigInter = 1;
+				pvPut(eceOpmodeRem,SYNC);		
+				pvPut(eceOpmodeCal,SYNC);
+				pvPut(eceOpmodeLoc,SYNC);
+				pvPut(trigInter,SYNC);		
+			}
+		} state ecehr_set_opmode
+		when(efTestAndClear(flagSampleRate)){
+%{
+			switch(pVar->sampleRateMbbi)
+			{
+				case 1:   pVar->sampleRate=1;break;
+				case 2:   pVar->sampleRate=2;break;
+				case 3:   pVar->sampleRate=5;break;
+				case 4:   pVar->sampleRate=10;break;
+				case 5:   pVar->sampleRate=20;break;
+				case 6:   pVar->sampleRate=25;break;
+				case 7:   pVar->sampleRate=50;break;
+				case 8:   pVar->sampleRate=100;break;
+				case 9:   pVar->sampleRate=200;break;
+				default:   pVar->sampleRate=1;break;
+			}
+}%
+			pvPut(sampleRate,SYNC);
+		} state ecehr_set_opmode
+	}
+}

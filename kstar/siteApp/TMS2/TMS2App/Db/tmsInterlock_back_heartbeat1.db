@@ -1,0 +1,23 @@
+record(ai, "TMS_IOC2_INTERLOCK")
+{
+	field(DESC, "TMS_IOC2_INTERLOCK")
+	field(SCAN, "Passive")
+	field(LINR, "LINEAR")
+	field(INP, "1")
+	field(LOPR, "0")
+	field(HOPR, "65535")
+	field(EGUL, "0")
+	field(EGUF, "65535")
+}
+
+record(bi, "TMS_IOC2_HEART_BEAT")
+{
+    	field(DESC, "TMS_IOC2_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(INP, "TMS_IOC2_HEART_BEAT_CALC.VAL NPP NMS")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+

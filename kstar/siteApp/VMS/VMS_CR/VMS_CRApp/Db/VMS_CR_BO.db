@@ -1,0 +1,29 @@
+record(calc, "$(PV_NAME)_CALC") {
+  field(FLNK, "$(PV_NAME)_OUT")
+  field(CALC, "A?1:0")
+  field(INPA, "$(PV_NAME).VAL")
+}
+
+record(bi, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(FLNK, "$(PV_NAME)_CALC")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+}
+
+record(ao, "$(PV_NAME)_OUT") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc0 $(TAG) S 0.1")
+  field(DOL, "$(PV_NAME)_CALC")
+  field(OMSL, "closed_loop")
+  field(FLNK, "$(PV_NAME)_0")
+}
+
+record(calcout, "$(PV_NAME)_0") {
+  field(FLNK, "$(PV_NAME)")
+  field(CALC, "A")
+  field(INPA, "0")
+  field(OUT, "$(PV_NAME)")
+}

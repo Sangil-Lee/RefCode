@@ -1,0 +1,62 @@
+record(bo, "VSS_SIF_CONVERT_START")
+{
+	field(DESC, "VSS_SIF_CONVERT")
+	field(SCAN,"Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+record(bi, "VSS_SIF_MODE")
+{
+	field(DESC, "VSS_SIF_MODE")
+	field(SCAN,"Passive")
+	field(ZNAM, "LOCAL_STORE")
+	field(ONAM, "REMOTE_STORE")
+}
+record(bi, "VSS_SIF_AUTO_RUN")
+{
+	field(DESC, "VSS_SIF_AUTO_RUN")
+	field(SCAN,"Passive")
+	field(ZNAM, "MANUAL_RUN")
+	field(ONAM, "AUTO_RUN_START")
+}
+record(bo, "VSS_SPE_CONVERT_START")
+{
+	field(DESC, "VSS_SPE_CONVERT")
+	field(SCAN,"Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}
+record(bi, "VSS_SPE_MODE")
+{
+	field(DESC, "VSS_SPE_MODE")
+	field(SCAN,"Passive")
+	field(ZNAM, "LOCAL_STORE")
+	field(ONAM, "REMOTE_STORE")
+}
+record(bi, "VSS_SPE_AUTO_RUN")
+{
+	field(DESC, "VSS_SPE_AUTO_RUN")
+	field(SCAN,"Passive")
+	field(ZNAM, "MANUAL_RUN")
+	field(ONAM, "AUTO_RUN_START")
+}
+record(bi, "VSS_HEARTBEAT")
+{
+  field(DESC, "VSS_HEARTBEAT")
+	field(SCAN,"Passive")
+	field(INP, "VSS_HEARTBEAT_CALC.VAL NPP NMS")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+}
+record(calc, "VSS_HEARTBEAT_CALC")
+{
+  field(DESC, "VSS_HEARTBEAT_CALC")
+	field(SCAN,"1 second")
+	field(INPA, "VSS_HEARTBEAT.VAL NPP NMS")
+	field(CALC, "A=0?1:0")
+	field(FLNK, "VSS_HEARTBEAT")
+}
+
+

@@ -1,0 +1,21 @@
+program sncExample
+
+int vStatus;
+assign vStatus to "RBA_STATUS";
+monitor vStatus;
+
+ss ss1 {
+    state init {
+		when (delay(3)) {
+			printf("sncExample: Startup delay over\n");
+			epicsThreadSleep(1);
+		} state start
+    }
+    state start {
+		when ( vStatus > 0 ) {
+			printf("sncExample: status is %d\n", vStatus);
+			/*pvPut(vStatus);*/
+			epicsThreadSleep(1);
+		} state start
+    }
+}

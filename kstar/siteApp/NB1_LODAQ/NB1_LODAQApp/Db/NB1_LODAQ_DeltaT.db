@@ -1,0 +1,43 @@
+record(ai, "$(PV)") {
+  field(DESC, "Engineering Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6254 RawRead_ai")
+  field(INP, "@$(DEV) $(ID) value")
+}
+
+record(ai, "$(PV)_PWR") {
+  field(DESC, "Power")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6254 RawRead_ai")
+  field(INP, "@$(DEV) $(ID) power")
+}
+
+record(ai, "$(PV)_FLOW") {
+  field(DESC, "Flow average")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6254 RawRead_ai")
+  field(INP, "@$(DEV) $(ID) flow")
+}
+
+record(ao, "$(PV)_TIME") {
+  field(DESC, "Integral Time")
+  field(DTYP, "NI6254 AoControl")
+  field(OUT, "@integral_time $(DEV) $(ID)")
+}
+
+###############################################
+# 2013.07.03
+###############################################
+
+record(ao, "$(PV)_REF") {
+  field(DESC, "Reference")
+}
+
+record(ao, "$(PV)_RATE") {
+  field(DESC, "Rate")
+}
+
+record(bo, "$(PV)_ALM") {
+  field(DESC, "Alarm")
+}
+

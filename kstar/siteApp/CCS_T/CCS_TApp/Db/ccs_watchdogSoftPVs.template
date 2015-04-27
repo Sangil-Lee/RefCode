@@ -1,0 +1,71 @@
+#
+#
+file db/ccs_watchdogSoftPVs_BI.db
+{
+    pattern
+        { NAME,                          DESC,                      DEVICE,             ZRST,       ONST      }
+#
+#       Soft PVs for PCS Watchdog
+#
+        {"CCS_PCS_RT_VIOLATION",        "PCS RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_WATCHDOG_PCS",            "PCS Watchdog",            "Soft Channel",     "STOP",     "RUN"      },
+#
+        {"CCS_SET_PCS_FORCE_ABORT",     "PCS Force Abort",         "Soft Channel",     "CONT(0)",     "ABORT(1)"    },
+        {"CCS_SET_PCS_PFC_FAULT",       "PCS PFC fault",           "Soft Channel",     "CONT(0)",     "ABORT(1)"    },
+#       {"PCS_SET_EXT_FAULT",           "PCS Ext fault",           "Soft Channel",     "CONT(0)",     "ABORT(1)"    },
+
+#
+#       Soft PVs for MPS Watchdog
+#
+        {"CCS_MPS_RT_VIOLATION",        "MPS RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF1_RT_VIOLATION",        "PF1 RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF2_RT_VIOLATION",        "PF2 RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF3U_RT_VIOLATION",       "PF3U RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF3L_RT_VIOLATION",       "PF3L RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF4U_RT_VIOLATION",       "PF4U RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF4L_RT_VIOLATION",       "PF4L RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF5U_RT_VIOLATION",       "PF5U RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF5L_RT_VIOLATION",       "PF5L RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF6U_RT_VIOLATION",       "PF6U RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF6L_RT_VIOLATION",       "PF6L RT violation",       "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_PF7_RT_VIOLATION",        "PF7 RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_IVC_RT_VIOLATION",        "IVC RT violation",        "Soft Channel",     "NORMAL",   "ABNORMAL" },
+        {"CCS_WATCHDOG_MPS",            "MPS Watchdog",            "Soft Channel",     "STOP",     "RUN"      },
+#
+#       Soft PVs for PCS Fault
+#
+        {"CCS_PCS_FAULT_IP_MINIMUM",       "IP minimum Error",     "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_NE_ERROR",         "NE Error",             "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_PF_ERROR",         "PF Error",             "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_PF_OVERCURRENT",   "PF Overcurrent",       "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_PF_VOLTAGE_ERROR", "PF Voltage",           "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_PF_OVERVOLTAGE",   "PF Overvoltage",       "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_EXT_FAULT",        "Ext Fault",            "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_PS_FAULT",         "PS Fault",             "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_IP_ERROR",         "IP Error",             "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_IC_OVERCURRENT",   "IC Overcurrent",       "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_RTEFIT",           "reEFIT fault",         "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_TOTAL_MVA",        "Total MVA",            "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_DISRUPTION",       "Disruption warning",   "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_SOFT_LANDING",     "Soft Landing",         "Soft Channel",     "NORMAL",   "FAULT"    },
+        {"CCS_PCS_FAULT_FAST_INTL",        "Fast Interlock",       "Soft Channel",     "Low(0)",   "High(1)"    },
+#
+#       Soft PVs to indicate MPS Current Direction
+#
+        {"PCS_PF1_CURRENT_DIRECTION",   "PF1 Current Dir",         "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF2_CURRENT_DIRECTION",   "PF2 Current Dir",         "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF3U_CURRENT_DIRECTION",  "PF3U Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF3L_CURRENT_DIRECTION",  "PF3L Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF4U_CURRENT_DIRECTION",  "PF4U Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF4L_CURRENT_DIRECTION",  "PF4L Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF5U_CURRENT_DIRECTION",  "PF5U Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF5L_CURRENT_DIRECTION",  "PF5L Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF6U_CURRENT_DIRECTION",  "PF6U Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF6L_CURRENT_DIRECTION",  "PF6L Current Dir",        "Soft Channel",     "POSITIVE", "NEGATIVE" },
+        {"PCS_PF7_CURRENT_DIRECTION",   "PF7 Current Dir",         "Soft Channel",     "POSITIVE", "NEGATIVE" }, 
+        {"PCS_IVC_CURRENT_DIRECTION",   "IVC Current Dir",         "Soft Channel",     "POSITIVE", "NEGATIVE" } 
+}
+
+
+
+

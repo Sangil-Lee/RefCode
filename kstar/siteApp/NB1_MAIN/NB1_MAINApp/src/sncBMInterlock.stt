@@ -1,0 +1,178 @@
+program sncBMInterlock
+int kmode;
+assign kmode to "NB1_INJECT_KSTAR_MODE";
+#assign kmode to "NB1_TEST_BO";
+monitor kmode;
+
+int dmode;
+assign dmode to "NB1_INJECT_DUMMY_MODE";
+monitor dmode;
+
+int defmode;
+assign defmode to "NB1_BM1_DEF_MODE";
+monitor defmode;
+
+int bmcalc;
+assign bmcalc to "NB1_BM1_CALC_INT";
+monitor bmcalc;
+
+int bmoff;
+assign bmoff to "NB1_BM1_STOP_ECMD";
+monitor bmoff;
+
+int bmint_bo;
+assign bmint_bo to "NB1_P1BM_RTN_BMINT";
+
+int defmode_bo;
+assign defmode_bo to "NB1_BM1_DEF_MODE";
+
+int uv_bo;
+assign uv_bo to "NB1_P1VME_ECMD_FIBMUVEN";
+
+int ui_bo;
+assign ui_bo to "NB1_P1VME_ECMD_FIBMUCEN";
+
+int fault_bo;
+assign fault_bo to "NB1_P1VME_ECMD_FIBMEN";
+
+int uv_dis;
+assign uv_dis to "NB1_P1VME_ECMD_FIBMUVDIS";
+
+int ui_dis;
+assign ui_dis to "NB1_P1VME_ECMD_FIBMUCDIS";
+
+int fault_dis;
+assign fault_dis to "NB1_P1VME_ECMD_FIBMDIS";
+
+int kemg_en;
+assign kemg_en to "NB1_P1VME_ECMD_FIKEMGEN";
+
+int kemg_dis;
+assign kemg_dis to "NB1_P1VME_ECMD_FIKEMGDIS";
+
+int duct_en;
+assign duct_en to "NB1_P1VME_ECMD_FIVACEN";
+
+int is1_on;
+assign is1_on to "NB1_OPER_IS1_MODE";
+monitor is1_on;
+
+int kindex = 0;
+int dindex = 0;
+
+ss bmInterlock
+{
+	state low
+	{
+	    when(kmode==1&&dmode==0&&is1_on==1)
+	    {
+		/*printf("bending magnet deflecting mode ON\n");*/
+                defmode_bo = 1;
+                pvPut(defmode_bo, SYNC);
+
+                if(kindex == 0) {
+                    uv_bo = 1;
+                    ui_bo = 1;
+                    fault_bo = 1;
+					kemg_en = 1;
+					duct_en = 1;
+                    pvPut(uv_bo, SYNC);
+                    pvPut(ui_bo, SYNC);
+                    pvPut(fault_bo, SYNC);
+					pvPut(kemg_en, SYNC);
+					pvPut(duct_en, SYNC);
+
+                    epicsThreadSleep(1);
+
+                    uv_bo = 0;
+                    ui_bo = 0;
+                    fault_bo = 0;
+					kemg_en = 0;
+					duct_en = 0;
+                    pvPut(uv_bo, SYNC);
+                    pvPut(ui_bo, SYNC);
+                    pvPut(fault_bo, SYNC);
+					pvPut(kemg_en, SYNC);
+					pvPut(duct_en, SYNC);
+
+                    kindex = 1;
+                }
+
+                if(bmcalc == 1) {
+                    bmint_bo = 1;
+                }
+                else {
+                    bmint_bo = 0;
+                }
+                pvPut(bmint_bo, SYNC);
+
+                dindex = 0;
+	    } state high
+	    when(delay(1)) 
+	    {
+	    } state high 
+	}
+	state high
+	{
+	    when(dmode==1&&kmode==0&&is1_on==1)
+	    {
+                kindex = 0;
+                if(defmode == 1) {
+                    if(bmcalc == 1) {
+                        bmint_bo = 1;
+                    }
+                    else {
+                        bmint_bo = 0;
+                    }
+
+                    if(dindex == 0) {
+                        uv_bo = 1;
+                        ui_bo = 1;
+                        fault_bo = 1;
+                        pvPut(uv_bo, SYNC);
+                        pvPut(ui_bo, SYNC);
+                        pvPut(fault_bo, SYNC);
+
+                        epicsThreadSleep(1);
+
+                        uv_bo = 0;
+                        ui_bo = 0;
+                        fault_bo = 0;
+                        pvPut(uv_bo, SYNC);
+                        pvPut(ui_bo, SYNC);
+                        pvPut(fault_bo, SYNC);
+                        dindex = 1;
+                    }
+                }
+                else {
+                    bmoff = 1;
+                    pvPut(bmoff, SYNC);
+                    epicsThreadSleep(0.5);
+                    bmoff = 0;
+                    pvPut(bmoff, SYNC);
+
+                    uv_dis = 1;
+                    ui_dis = 1;
+                    fault_dis = 1;
+                    pvPut(uv_dis, SYNC);
+                    pvPut(ui_dis, SYNC);
+                    pvPut(fault_dis, SYNC);
+                    epicsThreadSleep(1);
+                    uv_dis = 0;
+                    ui_dis = 0;
+                    fault_dis = 0;
+                    pvPut(uv_dis, SYNC);
+                    pvPut(ui_dis, SYNC);
+                    pvPut(fault_dis, SYNC);
+
+                    bmint_bo = 0;
+                    dindex = 0;
+
+                }
+                pvPut(bmint_bo, SYNC);
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low 
+	}
+}

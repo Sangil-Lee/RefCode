@@ -1,0 +1,1106 @@
+record(ao, "EC1_PCPS_ECMD_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET : kV")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_VOLT S 1")
+   field(DRVL, "0")
+   field(DRVH, "65")
+} 
+
+record(ao, "EC1_PCPS_ECMD_VSTEP") {
+   field(DESC, "STEP VOLTAGE PRESET : kV")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_VSTEP S 1")
+   field(LOPR, "-60.0")
+   field(HOPR, "-0.5")
+} 
+
+record(ao, "EC1_PCPS_ECMD_PWS") {
+   field(DESC, "PULSE LENGTH PRESET : sec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_PWS S 1")
+   field(DRVL, "0.001")
+   field(DRVH, "300")
+} 
+
+record(ao, "EC1_PCPS_ECMD_TSTEPS") {
+   field(DESC, "STEP TIME LENGTH PRESET : se")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_TSTEPS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+} 
+
+record(ao, "EC1_PCPS_ECMD_STBY") {
+   field(DESC, "P/S STANBY COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_STBY S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_RST") {
+   field(DESC, "P/S FAULT RESET COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_RST S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_MVCBON") {
+   field(DESC, "ECH/CD MAIN VCB ON/OFF COMMA")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_MVCBON S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_P01ON") {
+   field(DESC, "VCB-P01 ON/OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_P01ON S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_MVCBOF") {
+   field(DESC, "ECH/CD MAIN VCB OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_MVCBOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_P01OF") {
+   field(DESC, "VCB-P01 OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_P01OF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_STBYOF") {
+   field(DESC, "P/S STANDBY OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_STBYOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PCPS_ECMD_TSTEPS") {
+   field(DESC, "STEP TIME LENGTH PRESET : se")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PCPS_ECMD_TSTEPS S 1")
+   field(LOPR, "1.0")
+   field(HOPR, "300.0")
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+record(ao, "EC1_PAPS_ECMD_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET : kV")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_VOLT S 1")
+   field(DRVL, "0")
+   field(DRVH, "60")
+} 
+
+record(ao, "EC1_PAPS_ECMD_PWS") {
+   field(DESC, "PULSE LENGTH PRESET : sec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_PWS S 1")
+   field(LOPR, "0")
+   field(HOPR, "10")
+} 
+
+record(ao, "EC1_PAPS_ECMD_TSDS") {
+   field(DESC, "START TIME DELAY PRESET : se")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_TSDS S 1")
+   field(DRVL, "0")
+   field(DRVH, "300")
+} 
+
+record(ao, "EC1_PAPS_ECMD_TEDS") {
+   field(DESC, "END TIME DELAY PRESET : sec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_TEDS S 1")
+   field(DRVL, "0")
+   field(DRVH, "300")
+} 
+
+record(ao, "EC1_PAPS_ECMD_MFREQ") {
+   field(DESC, "MODULATION FREQUENCY PRESET ")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_MFREQ S 1")
+   field(DRVL, "0")
+   field(DRVH, "5000")
+} 
+
+record(ao, "EC1_PAPS_ECMD_MVOLT") {
+   field(DESC, "MODULATION VOLTAGE PRESET : ")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_MVOLT S 1")
+   field(LOPR, "-50.0")
+   field(HOPR, "-0.2")
+} 
+
+record(ao, "EC1_PAPS_ECMD_MTSDS") {
+   field(DESC, "MODULATION START TIME DELAY ")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_MTSDS S 1")
+   field(LOPR, "0")
+   field(HOPR, "0.5")
+} 
+
+record(ao, "EC1_PAPS_ECMD_MTEDS") {
+   field(DESC, "MODULATION END TIME DELAY PR")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_MTEDS S 1")
+   field(LOPR, "0")
+   field(HOPR, "0.5")
+} 
+
+record(ao, "EC1_PAPS_ECMD_OCTSDS") {
+   field(DESC, "I-ANODE OVER CURRENT START T")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_OCTSDS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+} 
+
+record(ao, "EC1_PAPS_ECMD_OCTEDS") {
+   field(DESC, "I-ANODE OVER CURRENT END TIM")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_OCTEDS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+} 
+
+record(ao, "EC1_PAPS_ECMD_OCTDT") {
+   field(DESC, "I-ANODE OVER CURRENT DETECTI")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_OCTDT S 1")
+   field(LOPR, "1")
+   field(HOPR, "32767")
+} 
+
+record(ao, "EC1_PAPS_ECMD_STBY") {
+   field(DESC, "P/S STANBY COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_STBY S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PAPS_ECMD_STBYOF") {
+   field(DESC, "P/S STANBY OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_STBYOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PAPS_ECMD_RST") {
+   field(DESC, "P/S FAULT RESET COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_RST S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+record(ao, "EC1_PBPS_ECMD_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET : kV")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_VOLT S 1")
+   field(DRVL, "0")
+   field(DRVH, "50")
+} 
+
+record(ao, "EC1_PBPS_ECMD_TSDS") {
+   field(DESC, "START TIME DELAY PRESET : se")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_TSDS S 1")
+   field(DRVL, "0")
+   field(DRVH, "300")
+} 
+
+record(ao, "EC1_PBPS_ECMD_TEDS") {
+   field(DESC, "END TIME DELAY PRESET : sec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_TEDS S 1")
+   field(DRVL, "0")
+   field(DRVH, "300")
+} 
+
+record(ao, "EC1_PBPS_ECMD_STBY") {
+   field(DESC, "P/S STANBY COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_STBY S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PBPS_ECMD_STBYOF") {
+   field(DESC, "P/S STANBY OFF COMMAND")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_STBYOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+record(ao, "EC1_PLCS_ECMD_IAOCDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCDIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAOCEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCEN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCDIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCEN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IKOCDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IKOCDIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IKOCEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IKOCEN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_KSTAR") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_KSTAR S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_LOC") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_LOC S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC11DIS") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC11DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC11EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC11EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC12DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC12DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC12EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC12EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC21DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC21DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC21EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC21EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC22DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC22DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_MARC22EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_MARC22EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_RFWDDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_RFWDDIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_RFWDEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_RFWDEN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_RREFDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_RREFDIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_RREFEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_RREFEN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION1DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION1DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION1EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION1EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION2DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION2DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION2EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION2EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION3DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION3DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VION3EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VION3EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_WARC1DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_WARC1DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_WARC1EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_WARC1EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_WARC2DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_WARC2DIS S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_WARC2EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_WARC2EN S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_KEMGDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_KEMGDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_KEMGEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_KEMGEN S 1")
+} 
+record(ao, "EC1_PSPLC_ECMD_HVOF") {
+   field(DESC, "ECCD1 EPICS COMMAND : HV OF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_HVOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_HVON") {
+   field(DESC, "ECCD1 EPICS COMMAND : HV ON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_HVON S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_RST") {
+   field(DESC, "ECCD1 P/S HMI$NCOMMAND : RES")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_RST S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_SEND") {
+   field(DESC, "ECCD1 P/S EPICS$NCOMMAND : S")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_SEND S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+
+
+
+
+
+
+
+
+record(ao, "EC1_PAPS_ECMD_MDUTY") {
+   field(DESC, "MODULATION DUTY PRESET")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PAPS_ECMD_MDUTY S 1")
+   field(DRVL, "20")
+   field(DRVH, "80")
+} 
+
+record(ao, "EC1_PLCS_ECMD_ICPSEN") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_ICPSEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_ICPSDIS") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_ICPSDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBPSDIS") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBPSDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAPSEN") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAPSEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAPSDIS") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAPSDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBPSEN") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBPSEN S 1")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_PLCTRIGON") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_PLCTRIGON S 1")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_PLCTRIGOF") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_PLCTRIGOF S 1")
+} 
+
+
+record(ao, "EC1_PSPLC_ECMD_RUN") {
+   field(DESC, "")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_RUN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_GYRODIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_GYRODIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_GYROEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_GYROEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FLOWDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FLOWDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FLOWEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FLOWEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VACDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VACDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_VACEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_VACEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_TEMPDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_TEMPDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_TEMPEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_TEMPEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_TCDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_TCDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_TCEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_TCEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_SAFETYDIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_SAFETYDIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_SAFETYEN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_SAFETYEN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_L1DIS") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L1DIS S 1")
+}
+
+record(ao, "EC1_PLCS_ECMD_L1EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L1EN S 1")
+}
+
+record(ao, "EC1_PLCS_ECMD_L2DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L2DIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_L2EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L2EN S 1")
+}
+ 
+record(ao, "EC1_PLCS_ECMD_L3DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTO")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L3DIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_L3EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L3EN S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_L4DIS") {
+   field(DESC, "FAST INTERLOCK DISABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L4DIS S 1")
+} 
+
+record(ao, "EC1_PLCS_ECMD_L4EN") {
+   field(DESC, "FAST INTERLOCK ENABLE BUTTON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_L4EN S 1")
+} 
+
+record(ao, "EC1_PSPLC_ECMD_ESTOP") {
+   field(DESC, "ECCD1 P/S E-STOP COMMAND : E")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PSPLC_ECMD_ESTOP S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_REFSD") {
+   field(DESC, "REFLECTION START DELAY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_REFED") {
+   field(DESC, "REFLECTION END DELAY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFED S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDSD") {
+   field(DESC, "FORWARD START DELAY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDED") {
+   field(DESC, "FORWARD END DELAY")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDED S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+
+
+
+
+
+record(ao, "EC1_PLCS_ECMD_IAOCSB") {
+   field(DESC, "I-ANODE OC START BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAOCEB") {
+   field(DESC, "I-ANODE OC END BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAOCMB") {
+   field(DESC, "I-ANODE OC MOD BLANK:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IAOCKEEP") {
+   field(DESC, "I-ANODE OC KEEP TIME:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IAOCKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCSB") {
+   field(DESC, "I-BODY OC START BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCEB") {
+   field(DESC, "I-BODY OC END BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCMB") {
+   field(DESC, "I-BODY OC MOD BLANK:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_IBOCKEEP") {
+   field(DESC, "I-BODY OC KEEP TIME:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_IBOCKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+record(ao, "EC1_PLCS_ECMD_REFSB") {
+   field(DESC, "RF_REF INT START BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_REFEB") {
+   field(DESC, "RF_REF INT END BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_REFMB") {
+   field(DESC, "RF_REF INT MOD BLANK:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_REFKEEP") {
+   field(DESC, "RF_REF OC KEEP TIME:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_REFKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDSB") {
+   field(DESC, "RF_FWD OC START BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDEB") {
+   field(DESC, "RF_FWD OC END BLANK:msec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDMB") {
+   field(DESC, "RF_FWD OC MOD BLANK:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PLCS_ECMD_FWDKEEP") {
+   field(DESC, "RF_FWD OC KEEP TIME:usec")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PLCS_ECMD_FWDKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+} 
+
+record(ao, "EC1_PBPS_ECMD_MODON") {
+   field(DESC, "EC1_PBPS_ECMD_MODON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_MODON S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PBPS_ECMD_MODOF") {
+   field(DESC, "EC1_PBPS_ECMD_MODOF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_MODOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PBPS_ECMD_DISON") {
+   field(DESC, "EC1_PBPS_ECMD_DISON")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_DISON S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 
+
+record(ao, "EC1_PBPS_ECMD_DISOF") {
+   field(DESC, "EC1_PBPS_ECMD_DISOF")
+   field(SCAN, "Passive")
+   field(DTYP, "EtherIP")
+   field(OUT, "@$(PLC) EC1_PBPS_ECMD_DISOF S 1")
+   field(LOPR, "0")
+   field(HOPR, "255")
+} 

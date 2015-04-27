@@ -1,0 +1,144 @@
+# frist created 2007. 4. 25
+Redhat ID: olzetek PASSWD: nfrcdds
+************************************************
+/ MDSplus 	// MDSplus 	// MDSplus 	// MDSplus 		/
+************************************************
+1. MDSplus server set
+mdsip -p 8000 -m -h /usr/local/mdsplus/etc/mdsip.hosts
+
+
+2. .bashrc
+export PATH=/usr/local/mdsplus/bin:\
+$PATH
+
+export MDSPLUS_DIR=/usr/local/mdsplus
+export LD_LIBRARY_PATH=/usr/local/mdsplus/lib:$LD_LIBRARY_PATH
+
+
+
+3.  cross compile 
+
+./configure --disable-java --target=powerpc-unknown-linux
+-> Modify "LD", "CC" for each Makefiles
+
+make -f Makefile.ppc
+
+
+4. EPICS compile with mdsplus
+
+inside directory, ./xxxApp/src
+make -C O.linux-ppc -f ../Makefile TOP=../../.. T_A=linux-ppc install
+
+inside directory, ./xxxApp
+make -C Db install
+
+************************************************
+/ ELDK // ELDK // ELDK // ELDK // ELDK // ELDK //  /
+************************************************
+1. NFS server set
+    vi /etc/exports
+    /opt/eldk/ppc_74xx *(rw,no_root_squash,async)
+
+2. .bashrc
+	CWC_BUILD=/opt/eldk/ppc_74xx/usr/src/cwcec-kernel-source-2.6.16.13/
+	alias ppcdir='cd $CWC_BUILD'
+
+	export CROSS_COMPILE=ppc_74xx-
+
+	export PATH=/opt/eldk/bin:/opt/eldk/usr/bin:\
+	/opt/eldk/ppc_74xx/usr/src/cwcec-kernel-source-2.6.16.13/include/linux:\
+	/opt/eldk/ppc_74xx/usr/src/linux:\
+	$PATH
+
+	alias ppcmake='make ARCH=ppc CROSS_COMPILE=ppc-linux-'
+
+3. kernel image compile
+	ppcmake distclean
+#	ppcmake cw_183_up_nd_defconfig
+	ppcmake cw_183_up_hd_defconfig
+
+	ppcmake zImage
+	cd cwcec_tools
+	./osr -a 0x900000 -s 0x900000 -f ../arch/ppc/boot/images/zImage.cw > ./linux.mx
+
+4. mount SCSI HDD
+
+bug fixed in 2.6.16.xx/drivers/scsi/sata_sil24.c
+
+mknod /dev/sda b 8 0
+mknod /dev/sda1 b 8 1
+mknod /dev/sda2 b 8 2
+mknod /dev/sdb b 8 16
+mknod /dev/sdb1 b 8 17
+mknod /dev/sdc b 8 32
+mknod /dev/sdc1 b 8 33
+mknod /dev/sdd b 8 48
+mknod /dev/sdd1 b 8 49
+
+#swap region
+/dev/sda1 1~978 
+
+#format partitions 
+ext3 :   mke2fs -j /dev/sdb1
+ext3 :   mount -t ext3 /dev/sdb1 /data
+
+#  /etc/fstab  ... should be modified
+/dev/sda2               /               ext3    defaults        1 1
+/dev/sda1               swap            swap    defaults        0 0
+/dev/sdb1               /data           ext3    defaults        0 0
+/dev/proc               /proc           proc    defaults        0 0
+/dev/sys                /sys            sysfs   defaults        0 0
+
+# /etc/rc.sysinit ... modify
+
+..........................................................................................................................................................................................................................................
+//////////   QT ///////////////////////////////////////////////////////////////////
+..........................................................................................................................................................................................................................................
+1. compile with VC2005
+	1. make "ui" file with Designer
+	2. type "qmake -project -t vcapp xxx" in console window
+	3. type "qmake" then "vcproject" file generated.
+	4. open project file and compile, then header files created
+	5. if you want make header files manually, type  "uic xxx.ui > xxx.h"
+
+qmake -project RESOURCES application.qrc -t vcapp -o OPIapp.pro
+
+qmake -project RESOURCES application.qrc -o OPIapp.pro
+
+add below part in "xxx.pro"
+INCLUDEPATH += . $(EPICS_BASE)/include $(EPICS_BASE)/include/os/Linux
+LIBS += -L$(EPICS_BASE)/lib/${EPICS_HOST_ARCH} -lCom -lca
+
+
+..........................................................................................................................................................................................................................................
+/    EPICS		//    EPICS		//    EPICS		//    EPICS		//    EPICS
+..........................................................................................................................................................................................................................................
+# ~/epics/base-3.14.8.2/configure/os/CONFIG.Common.linuxCommon  :  lcurses -> lncurses
+# ~/epics/modules/soft/seq/configure/RELEASE   :   EPICS_BASE=/home/woong/NFRC/epics/base-3.14.8.2
+# ~/epics/modules/support/asyn/4-6/configure/RELEASE   :   EPICS_BASE=/home/woong/NFRC/epics/base-3.14.8.2
+#
+1. add below in ".bashrc"
+
+EPICS_HOST_ARCH=linux-x86; export EPICS_HOST_ARCH
+EPICS_BASE=/usr/local/epics/base-3.14.8.2; export EPICS_BASE
+
+export PATH=/usr/local/epics/base-3.14.8.2/bin/linux-x86:$PATH
+#export LD_LIBRARY_PATH=/usr/local/epics/base-3.14.8.2/lib/linux-x86:&LD_LIBRARY_PATH
+
+export EPICS_CA_ADDR_LIST="192.168.1.100"
+
+
+2. to make ioc
+makeBaseApp.pl -t example test
+makeBaseApp.pl -i -t example test
+
+
+3. cross compile 
+configure/CONFIG_SITE -> CROSS_COMPILER_TARGET_ARCHS=linux-ppc  : modify
+configure/os/CONFIG_SITE.linux-x86.linux-ppc : create new file
+
+
+
+172.17.101.190 nfrcech
+
+

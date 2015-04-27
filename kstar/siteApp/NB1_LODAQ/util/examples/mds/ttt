@@ -1,0 +1,3 @@
+gcc -c -I /usr/local/mdsplus/include mdstest.c
+gcc -o mdstest -L/usr/local/mdsplus/lib mdstest.o -lMdsLib -lMdsShr -lc
+\rm mdstest.o

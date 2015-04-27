@@ -1,0 +1,16 @@
+record(bi, "NB1_MAIN_HeartBeat")
+{
+    field(DESC, "Heartbeat")
+    field(INP, "NB1_MAIN_HeartBeat_TIMER.VAL  NPP NMS")
+    field(OSV, "NO_ALARM")
+    field(ZSV, "MAJOR")
+}
+record(calc, "NB1_MAIN_HeartBeat_TIMER")
+{
+    field(DESC, "Calc Timer")
+    field(SCAN, ".5 second")
+    field(FLNK, "NB1_MAIN_HeartBeat")
+    field(CALC, "A?0:1")
+    field(INPA, "NB1_MAIN_HeartBeat")
+
+}

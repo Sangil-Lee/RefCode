@@ -1,0 +1,23 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC}
+{NB1_P1ARC_RTN_PAPL    NB1_P1ARC_RTN_PAPL    "ms"    plc1    "Pre-ARC Pulse length"    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_MSDT  NB1_P1ARC_RTN_MSDT    "ms"    plc1    "ARC Mod. start delay"    100000    0    100000    100000    0    0    2}
+{NB1_P1ARC_RTN_MEDT    NB1_P1ARC_RTN_MEDT    "ms"    plc1    "ARC Mod. end delay"    100000    0    100000    100000    0    0    2}
+#{NB1_P1ARC_RTN_MFREQ   NB1_P1ARC_RTN_MFREQ   "Hz"    plc1    "ARC Mod. Freq."    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_MFREQ_A   NB1_P1ARC_RTN_MFREQ   "Hz"    plc1    "ARC Mod. Freq."    100000    0    100000    100000    0    0    1}
+{NB1_P1ARC_RTN_MDUTY   NB1_P1ARC_RTN_MDUTY   "%"     plc1    "ARC Mod. Freq. duty"    100000    0    100000    100000    0    0    0}
+
+#2012.10.17 
+{NB1_P1ARC_RTN_MSDT2  NB1_P1ARC_RTN_MSDT2    "ms"    plc1    "ARC Mod. start delay"    100000    0    100000    100000    0    0    2}
+{NB1_P1ARC_RTN_MEDT2    NB1_P1ARC_RTN_MEDT2    "ms"    plc1    "ARC Mod. end delay"    100000    0    100000    100000    0    0    2}
+#{NB1_P1ARC_RTN_MFREQ   NB1_P1ARC_RTN_MFREQ   "Hz"    plc1    "ARC Mod. Freq."    100000    0    100000    100000    0    0    0}
+{NB1_P1ARC_RTN_MFREQ2_A   NB1_P1ARC_RTN_MFREQ2   "Hz"    plc1    "ARC Mod. Freq."    100000    0    100000    100000    0    0    1}
+{NB1_P1ARC_RTN_MDUTY2   NB1_P1ARC_RTN_MDUTY2   "%"     plc1    "ARC Mod. Freq. duty"    100000    0    100000    100000    0    0    0}
+
+
+}

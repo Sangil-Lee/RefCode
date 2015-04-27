@@ -1,0 +1,750 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 179
+y 68
+w 1080
+h 738
+font "helvetica-bold-r-18.0"
+ctlFont "helvetica-bold-r-18.0"
+btnFont "helvetica-bold-r-18.0"
+fgColor index 22
+bgColor index 1
+textColor index 23
+ctlFgColor1 index 47
+ctlFgColor2 index 52
+ctlBgColor1 index 52
+ctlBgColor2 index 72
+topShadowColor index 52
+botShadowColor index 29
+title "KSTAR DCDS DAQ Configuration"
+disableScroll
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 9
+y 9
+w 1067
+h 49
+font "helvetica-bold-r-24.0"
+fgColor index 76
+bgColor index 2
+value {
+  "  GCDS DAQ Configuration"
+}
+border
+lineWidth 2
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 27
+y 79
+w 250
+h 250
+# Appearance
+border
+plotAreaBorder
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "GCDS_NI_DAQ_AI00"
+}
+opMode {
+  0 "plot"
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 27
+y 528
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "Sampling Rate"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 284
+y 528
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "Operation Mode"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 541
+y 528
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "Blip Time"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 799
+y 528
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "KSTAR Shot Number"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 27
+y 616
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "Sampling Counts"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 541
+y 616
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "DAQ Start Time"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 799
+y 616
+w 250
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "center"
+fgColor index 0
+bgColor index 57
+value {
+  "DAQ Status"
+}
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 227
+y 568
+w 50
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 52
+value {
+  "Hz"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 541
+y 569
+w 200
+h 40
+controlPv "GDCS_BLIP_TIME"
+font "helvetica-bold-r-24.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 52
+limitsFromDb
+nullColor index 52
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 27
+y 568
+w 200
+h 40
+controlPv "GCDS_SAMPLING_RATE"
+fgColor index 14
+fgAlarm
+bgColor index 52
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 741
+y 569
+w 50
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 52
+value {
+  "sec"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 799
+y 569
+w 250
+h 40
+controlPv "GCDS_SHOT_NUMBER"
+font "helvetica-bold-r-24.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 52
+limitsFromDb
+nullColor index 52
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 799
+y 658
+w 250
+h 40
+controlPv "GCDS_DAQ_START"
+fgColor index 14
+fgAlarm
+bgColor index 52
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "center"
+lineWidth 2
+lineAlarm
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 27
+y 658
+w 250
+h 40
+controlPv "GCDS_SAMPLE_COUNT"
+fgColor index 14
+fgAlarm
+bgColor index 52
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 284
+y 568
+w 250
+h 40
+fgColor index 14
+bgColor index 52
+selectColor index 52
+inconsistentColor index 14
+topShadowColor index 52
+botShadowColor index 14
+controlPv "GCDS_OPERATION_MODE"
+font "helvetica-bold-r-18.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 284
+y 616
+w 250
+h 80
+fgColor index 14
+onColor index 52
+offColor index 52
+inconsistentColor index 14
+topShadowColor index 52
+botShadowColor index 14
+controlPv "GCDS_DAQ_START"
+onLabel "DAQ Start"
+offLabel "Stop"
+buttonType "push"
+3d
+font "helvetica-bold-r-18.0"
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 541
+y 658
+w 200
+h 40
+controlPv "GDCS_DAQ_START_TIME"
+font "helvetica-bold-r-24.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 52
+limitsFromDb
+nullColor index 52
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 741
+y 658
+w 50
+h 40
+font "helvetica-medium-r-24.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 52
+value {
+  "sec"
+}
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 27
+y 330
+w 250
+h 40
+controlPv "GCDS_MDS_NODE_CH00"
+fgColor index 12
+fgAlarm
+bgColor index 51
+fill
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 284
+y 330
+w 250
+h 40
+controlPv "GCDS_MDS_NODE_CH00"
+fgColor index 12
+fgAlarm
+bgColor index 51
+fill
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+lineWidth 0
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 284
+y 79
+w 250
+h 250
+# Appearance
+border
+plotAreaBorder
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "GCDS_NI_DAQ_AI00"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 15792890
+}
+ySigned {
+  0 15792882
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 541
+y 330
+w 250
+h 40
+controlPv "GCDS_MDS_NODE_CH00"
+fgColor index 12
+fgAlarm
+bgColor index 51
+fill
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+lineWidth 0
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 541
+y 79
+w 250
+h 250
+# Appearance
+border
+plotAreaBorder
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "GCDS_NI_DAQ_AI00"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 -1
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Text Entry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 799
+y 330
+w 250
+h 40
+controlPv "GCDS_MDS_NODE_CH00"
+fgColor index 12
+fgAlarm
+bgColor index 51
+fill
+font "helvetica-medium-r-18.0"
+fontAlign "center"
+lineWidth 0
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 799
+y 79
+w 250
+h 250
+# Appearance
+border
+plotAreaBorder
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "helvetica-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "GCDS_NI_DAQ_AI00"
+}
+opMode {
+  0 "plot"
+}
+xSigned {
+  0 5963494
+}
+ySigned {
+  0 8191720
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1040
+y 22
+w 22
+h 22
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1040
+y 22
+w 22
+h 22
+lineColor index 14
+fill
+fillColor index 9
+lineWidth 2
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1041
+y 23
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+lineWidth 0
+visPv "GCDS_IOC_HEART_BEAT"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+

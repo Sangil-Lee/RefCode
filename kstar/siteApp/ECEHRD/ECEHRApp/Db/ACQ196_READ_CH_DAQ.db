@@ -1,0 +1,21 @@
+record(ai, "$(PVNAME)")
+{
+  field(DESC, "Volt Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) value")
+}
+record(ai, "$(PVNAME)_TE")
+{
+  field(DESC, "ECE Te Val")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) tevalue")
+}
+record(ai, "$(PVNAME)_TE_POS2ND")
+{
+  field(DESC, "ECE Te Pos2ND")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "ACQ196 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) tepos2nd")
+}

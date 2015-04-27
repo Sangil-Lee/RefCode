@@ -1,0 +1,832 @@
+program sncFaultCheck
+
+option +r;
+option -c;
+
+%{
+
+
+#define    NUM_INTL_SUBSYSTEM           32
+#define    NUM_INTL_MPS_SYSTEM           13
+
+
+
+
+#define    INTL_NORMAL                 0
+#define    INTL_LEVEL1                 1
+#define    INTL_LEVEL2                 2
+#define    INTL_LEVEL3                 3
+#define    INTL_LEVEL4                 4
+#define    INTL_WARNING                5
+#define    INTL_NOT_DEFINED            10
+
+
+#define     ACTIVATE                   1
+#define     DEACTIVATE                 0
+
+
+
+#include <string.h>
+
+typedef struct {
+    int    code;
+    char   *codeString;
+} tMPSFault;
+
+
+static tMPSFault   mpsTFFaultList[] = {
+    {(int) 0x00, "Normal"},
+    {(int) 0x01, "[S] PF Gate Driver Fault"},
+    {(int) 0x02, "[S] Interter Overheating"},
+    {(int) 0x03, "[S] High Frequency TF overheating"},
+    {(int) 0x04, "[S] Cooling water flow fault"},
+    {(int) 0x05, "[S] Main MC Fault"},
+    {(int) 0x06, "[S] DC over-current"},
+    {(int) 0x07, "[S] Inverter AC current"},
+    {(int) 0x08, "[S] DC Link over-voltage"},
+    {(int) 0x09, "[S] DC Link under-voltage"},
+    {(int) 0x0a, "[S] Pre-charging fulat"},
+    {(int) 0x0b, "[S] Common error in stack"},
+    {(int) 0x0c, "Reserved Code"},
+    {(int) 0x0d, "Reserved Code"},
+    {(int) 0x0e, "SDR not ready"},
+    {(int) 0x0f, "QPR not ready"},
+    {(int) 0x10, "Common error Stack/Slave"},
+    {(int) 0x11, "Stack Fault (>3EA)"},
+    {(int) 0x12, "Common error Slave/Master"},
+    {(int) 0x13, "Reserved Code"},
+    {(int) 0x14, "Panel door open"},
+    {(int) 0x15, "SDC system not ready"},
+    {(int) 0x16, "QP system not ready"},
+    {(int) 0x17, "SDC system fault"},
+    {(int) 0x18, "QP system fault"},
+    {(int) 0x19, "Main TR over-heating(>100C)"},
+    {(int) 0x1a, "Main TR over-heating(>130C)"},
+    {(int) 0x1b, "Cooling water over-temperature(>50C)"},
+    {(int) 0x1c, "Cooling water over-temperature(>60C)"},
+    {(int) 0x1d, "DC Busbar over-temperature (>80C)"},
+    {(int) 0x1e, "DC Busbar over-temperature (>100C)"},
+    {(int) 0x1f, "Main cooling-water supply fault"},
+    {(int) 0x20, "Converter1 DCCT saturation"},
+    {(int) 0x21, "Converter2 DCCT saturation"},
+    {(int) 0x22, "Control power shutdown"},
+    {(int) 0x23, "Output voltage limit fault"},
+    {(int) 0x24, "Output current limit fault"},
+    {(int) 0x25, "TF quench detected"},
+    {(int) 0x26, "Forced quench"},
+    {(int) 0x27, "Emergency stop"},
+    {(int) 0x28, "Comm. error TF PS/LCS"},
+    {(int) -1,   "Not defined fault code"}
+};
+
+static tMPSFault    mpsPFFaultList [] = {
+    {(int) 0x00, "Normal"},
+    {(int) 0x01, "Y-converter AC fuse fault"},
+    {(int) 0x02, "D-converter AC fuse fault"},
+    {(int) 0x03, "DCCT signal offset fault"},
+    {(int) 0x04, "QP system not ready"},
+    {(int) 0x05, "QP system fault"},
+    {(int) 0x06, "PF panel door open"},
+    {(int) 0x07, "Transformer fence door open"},
+    {(int) 0x08, "Main TR over-heating(>100C)"},
+    {(int) 0x09, "Reservedi Code"},
+    {(int) 0x0a, "Cooling water over-temperature(>50C)"},
+    {(int) 0x0b, "Reserved Code"},
+    {(int) 0x0c, "Reserved Code"},
+    {(int) 0x0d, "Reserved Code"},
+    {(int) 0x0e, "Reserved Code"},
+    {(int) 0x0f, "Reserved Code"},
+    {(int) 0x10, "Y-converter DCCT saturation"},
+    {(int) 0x11, "D-converter DDCT saturation"},
+    {(int) 0x12, "Main cooling water supply fault"},
+    {(int) 0x13, "Y-converter current limit fault"},
+    {(int) 0x14, "D-converter current limit fault"},
+    {(int) 0x15, "Total output current limit fault"},
+    {(int) 0x16, "Y-converter voltage limit fault"},
+    {(int) 0x17, "D-converter voltage limit fault"},
+    {(int) 0x18, "Totoal output voltage limit fault"},
+    {(int) 0x19, "Coolint water flow fault"},
+    {(int) 0x1a, "Input AC over-current fault (H/W)"},
+    {(int) 0x1b, "Output DC over-current fault (H/W)"},
+    {(int) 0x1c, "Output DC over-voltage fault (H/W)"},
+    {(int) 0x1d, "Zero crossing fault"},
+    {(int) 0x1e, "Gating fault"},
+    {(int) 0x1f, "BRIS fault (flow fault or over-heating)"},
+    {(int) 0x20, "Control power shutdown"},
+    {(int) 0x21, "Gate driver poser shutdown"},
+    {(int) 0x22, "Sequence power shutdown"},
+    {(int) 0x23, "Sync. TR outage"},
+    {(int) 0x24, "PF Quench detected"},
+    {(int) 0x25, "Forced quench"},
+    {(int) 0x26, "Emergency STOP"},
+    {(int) 0x27, "TSS signal fault"},
+    {(int) 0x28, "Comm. error PFPS/lCS"},
+    {(int) 0x29, "Comm. error PFPS/PCS"}, 
+    {(int) -1,   "Not defined fault code"}
+};
+
+static tMPSFault    mpsIVCFaultList [] = {
+     {(int) 0x01, "DC Link overvoltage"},
+     {(int) 0x02, "DC Link undervoltage"},
+     {(int) 0x03, "Offset fault"},
+     {(int) 0x04, "Output voltage limit fault"},
+     {(int) 0x05, "Output current limit fault"},
+     {(int) 0x06, "Stack current limit fault"},
+     {(int) 0x07, "Transformer overheating"},
+     {(int) 0x08, "Converter overheating"},
+      {(int) 0x09, "Reserved Code"},
+     {(int) 0x0A, "Inverter overheating"},
+     {(int) 0x0B, "Control power shutdown"},
+     {(int) 0x0C, "Cooling water flow fault"},
+     {(int) 0x0D, "Emergency stop"},
+     {(int) 0x0E, "MC fault"},
+     {(int) 0x0F, "Charging fault"},
+     {(int) 0x10, "Gate 1A fault [H/W]"},
+     {(int) 0x11, "Gate 1B fault [H/W]"},
+     {(int) 0x12, "Gate 2A fault [H/W]"},
+     {(int) 0x13, "Gate 2B fault [H/W]"},
+     {(int) 0x14, "Gate 3A fault [H/W]"},
+     {(int) 0x15, "Gate 3B fault [H/W]"},
+     {(int) 0x16, "Gate 4A fault [H/W]"},
+     {(int) 0x17, "Gate 4B fault [H/W]"},
+     {(int) 0x18, "Gate 5A fault [H/W]"},
+      {(int) 0x19, "Reserved Code"},
+     {(int) 0x1A, "Gate 5B fault [H/W]"},
+     {(int) 0x1B, "Output current limit fault [H/W]"},
+     {(int) 0x1C, "Output voltage limit fault [H/W]"},
+     {(int) 0x1D, "Stack current limit fault [H/W]"},
+      {(int) 0x1E, "Reserved Code"},
+       {(int) 0x1F, "Reserved Code"},
+        {(int) 0x20, "Comm error between IVC PS & LCS"},
+        {(int) 0x21, "Comm error between IVC PS & PCS"},
+        {(int) -1,   "Not defined fault code"}
+};
+
+
+
+static char* getFaultString(tMPSFault *pfaultList, int fault_code)
+{
+    int i=0;
+ 
+    while((pfaultList+i)->code >-1) {
+        if((pfaultList+i)->code == fault_code) break;
+        else i++;
+    }
+
+    return (pfaultList+i)->codeString;
+
+}
+
+
+static int getFaultIndex(tMPSFault *pfaultList, int fault_code)
+{
+    int i=0;
+
+    while((pfaultList+i)->code > -1) {
+        if((pfaultList+i)->code == fault_code) break;
+        else i++;
+    }
+
+    return (pfaultList+i)->code;
+
+}
+
+}%
+
+unsigned int    global_interlock_hardwired[5];
+assign          global_interlock_hardwired    to  { "CCS_INTL_LEVEL1",
+                                                    "CCS_INTL_LEVEL2",
+                                                    "CCS_INTL_LEVEL3",
+                                                    "CCS_INTL_LEVEL4",
+                                                    "CCS_INTL_WARNING" };
+monitor         global_interlock_hardwired;
+unsigned int    global_interlock_normal;
+assign          global_interlock_normal       to    "CCS_INTL_NORMAL";
+monitor         global_interlock_normal;
+
+/*****************************************/
+unsigned int     global_interlock_level[5];
+assign      global_interlock_level         to    { "CCS_EIP_INTL_LEVEL_1",
+                                                   "CCS_EIP_INTL_LEVEL_2",
+                                                   "CCS_EIP_INTL_LEVEL_3",
+                                                   "CCS_EIP_INTL_LEVEL_4",
+                                                   "CCS_EIP_INTL_WARN" };
+monitor     global_interlock_level;
+evflag      ev_global_interlock_level;
+sync        global_interlock_level         ev_global_interlock_level;
+
+int individual_interlock_level_latch[32];
+int individual_interlock_level[32];
+assign      individual_interlock_level     to     { "CCS_LCSINTL_PSI",            /* index 0 */
+                                                    "CCS_LCSINTL_CCS",            /* index 1 */
+                                                    "CCS_LCSINTL_ELECT",          /* index 2 */
+                                                    "CCS_LCSINTL_CHILL",          /* index 3 */
+                                                    "CCS_LCSINTL_VMS",            /* index 4 */
+                                                    "CCS_LCSINTL_QDS",            /* index 5 */
+                                                    "CCS_LCSINTL_TMS",            /* index 6 */
+                                                    "CCS_LCSINTL_HRS",            /* index 7 */
+                                                    "CCS_LCSINTL_MPS",            /* index 8 */
+                                                    "CCS_LCSINTL_CLS_HELIUM",     /* index 9 */
+                                                    "CCS_LCSINTL_CLS_VACUUM",     /* index 10 */
+                                                    "CCS_LCSINTL_ECH",            /* index 11 */
+                                                    "CCS_LCSINTL_DLS",            /* index 12 */
+                                                    "CCS_LCSINTL_GDS",            /* index 13 */
+                                                    "CCS_LCSINTL_ICH",            /* index 14 */
+                                                    "CCS_LCSINTL_HDS_HELIUM",     /* index 15 */
+                                                    "CCS_LCSINTL_HDS_VACUUM",      /* index 16 */
+                                                    "CCS_LCSINTL_GND",     /* index 17 */
+                                                    "CCS_LCSINTL_NBI1",     /* index 18 */
+                                                    "CCS_LCSINTL_NBI2",     /* index 19 */
+                                                    "CCS_LCSINTL_LHCD",     /* index 20 */
+                                                    "CCS_LCSINTL_ECCD",              /* index 21 */ 
+                                                    "CCS_LCSINTL_PMS",             /* index 22 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 23 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 24 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 25 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 26 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 27 */
+                                                    "CCS_LCSINTL_RESERVED",             /* index 28 */
+                                                    "CCS_LCSINTL_SIS",             /* index 29 */
+                                                    "CCS_LCSINTL_HMI_ESB",             /* index 30 */
+                                                    "CCS_LCSINTL_ESB"              /* index 31 */ };
+monitor    individual_interlock_level;
+
+/*********************************************/
+unsigned int     global_interlock_mps_level[5];
+assign      global_interlock_mps_level         to    { "CCS_EIP_INTL_MPS_LEVEL_1",
+                                                   "CCS_EIP_INTL_MPS_LEVEL_2",
+                                                   "CCS_EIP_INTL_MPS_LEVEL_3",
+                                                   "CCS_EIP_INTL_MPS_LEVEL_4",
+                                                   "CCS_EIP_INTL_MPS_WARN" };
+monitor     global_interlock_mps_level;
+evflag      ev_global_interlock_mps_level;
+sync        global_interlock_mps_level         ev_global_interlock_mps_level;
+
+int individual_interlock_mps_level_latch[13];
+int individual_interlock_mps_level[13];
+assign      individual_interlock_mps_level     to     { "CCS_LCSINTL_MPS_TF",            /* index 0 */
+                                                    "CCS_LCSINTL_MPS_PF1",            /* index 1 */
+                                                    "CCS_LCSINTL_MPS_PF2",          /* index 2 */
+                                                    "CCS_LCSINTL_MPS_PF3U",          /* index 3 */
+                                                    "CCS_LCSINTL_MPS_PF3L",            /* index 4 */
+                                                    "CCS_LCSINTL_MPS_PF4U",            /* index 5 */
+                                                    "CCS_LCSINTL_MPS_PF4L",            /* index 6 */
+                                                    "CCS_LCSINTL_MPS_PF5U",            /* index 7 */
+                                                    "CCS_LCSINTL_MPS_PF5L",            /* index 8 */
+                                                    "CCS_LCSINTL_MPS_PF6U",     /* index 9 */
+                                                    "CCS_LCSINTL_MPS_PF6L",     /* index 10 */
+                                                    "CCS_LCSINTL_MPS_PF7",            /* index 11 */
+                                                    "CCS_LCSINTL_MPS_IVC"            /* index 12 */ };
+monitor    individual_interlock_mps_level;
+
+
+
+int         tfMPSFaultCode;
+assign      tfMPSFaultCode    to "MPS_TF_first_fault_code";
+monitor     tfMPSFaultCode;
+evflag      ef_tfMPSFaultCode;
+sync        tfMPSFaultCode    ef_tfMPSFaultCode;
+
+int         pf1MPSFaultCode;
+assign      pf1MPSFaultCode   to "MPS_PF1_first_fault_code";
+monitor     pf1MPSFaultCode;
+evflag      ef_pf1MPSFaultCode;
+sync        pf1MPSFaultCode   ef_pf1MPSFaultCode;
+
+int         pf2MPSFaultCode;
+assign      pf2MPSFaultCode   to "MPS_PF2_first_fault_code";
+monitor     pf2MPSFaultCode;
+evflag      ef_pf2MPSFaultCode;
+sync        pf2MPSFaultCode   ef_pf2MPSFaultCode;
+
+int         pf3uMPSFaultCode;
+assign      pf3uMPSFaultCode   to "MPS_PF3U_first_fault_code";
+monitor     pf3uMPSFaultCode;
+evflag      ef_pf3uMPSFaultCode;
+sync        pf3uMPSFaultCode   ef_pf3uMPSFaultCode;
+
+int         pf3lMPSFaultCode;
+assign      pf3lMPSFaultCode   to "MPS_PF3L_first_fault_code";
+monitor     pf3lMPSFaultCode;
+evflag      ef_pf3lMPSFaultCode;
+sync        pf3lMPSFaultCode   ef_pf3lMPSFaultCode;
+
+int         pf4uMPSFaultCode;
+assign      pf4uMPSFaultCode   to "MPS_PF4U_first_fault_code";
+monitor     pf4uMPSFaultCode;
+evflag      ef_pf4uMPSFaultCode;
+sync        pf4uMPSFaultCode   ef_pf4uMPSFaultCode;
+
+int         pf4lMPSFaultCode;
+assign      pf4lMPSFaultCode   to "MPS_PF4L_first_fault_code";
+monitor     pf4lMPSFaultCode;
+evflag      ef_pf4lMPSFaultCode;
+sync        pf4lMPSFaultCode   ef_pf4lMPSFaultCode;
+
+int         pf5uMPSFaultCode;
+assign      pf5uMPSFaultCode   to "MPS_PF5U_first_fault_code";
+monitor     pf5uMPSFaultCode;
+evflag      ef_pf5uMPSFaultCode;
+sync        pf5uMPSFaultCode   ef_pf5uMPSFaultCode;
+
+int         pf5lMPSFaultCode;
+assign      pf5lMPSFaultCode   to "MPS_PF5L_first_fault_code";
+monitor     pf5lMPSFaultCode;
+evflag      ef_pf5lMPSFaultCode;
+sync        pf5lMPSFaultCode   ef_pf5lMPSFaultCode;
+
+int         pf6uMPSFaultCode;
+assign      pf6uMPSFaultCode   to "MPS_PF6U_first_fault_code";
+monitor     pf6uMPSFaultCode;
+evflag      ef_pf6uMPSFaultCode;
+sync        pf6uMPSFaultCode   ef_pf6uMPSFaultCode;
+
+int         pf6lMPSFaultCode;
+assign      pf6lMPSFaultCode   to "MPS_PF6L_first_fault_code";
+monitor     pf6lMPSFaultCode;
+evflag      ef_pf6lMPSFaultCode;
+sync        pf6lMPSFaultCode   ef_pf6lMPSFaultCode;
+
+int         pf7MPSFaultCode;
+assign      pf7MPSFaultCode   to "MPS_PF7_first_fault_code";
+monitor     pf7MPSFaultCode;
+evflag      ef_pf7MPSFaultCode;
+sync        pf7MPSFaultCode   ef_pf7MPSFaultCode;
+
+int         ivcMPSFaultCode;
+assign      ivcMPSFaultCode   to "IVC_first_fault_code";
+monitor     ivcMPSFaultCode;
+evflag      ef_ivcMPSFaultCode;
+sync        ivcMPSFaultCode   ef_ivcMPSFaultCode;
+
+
+string      tfMPSFaultString;
+assign      tfMPSFaultString    to "CCS_TF_MPS_STATUS_STRING";
+string      pf1MPSFaultString;
+assign      pf1MPSFaultString   to "CCS_PF1_MPS_STATUS_STRING";
+string      pf2MPSFaultString;
+assign      pf2MPSFaultString   to "CCS_PF2_MPS_STATUS_STRING";
+string      pf3uMPSFaultString;
+assign      pf3uMPSFaultString   to "CCS_PF3U_MPS_STATUS_STRING";
+string      pf4uMPSFaultString;
+assign      pf4uMPSFaultString   to "CCS_PF4U_MPS_STATUS_STRING";
+string      pf5uMPSFaultString;
+assign      pf5uMPSFaultString   to "CCS_PF5U_MPS_STATUS_STRING";
+string      pf6uMPSFaultString;
+assign      pf6uMPSFaultString   to "CCS_PF6U_MPS_STATUS_STRING";
+string      pf3lMPSFaultString;
+assign      pf3lMPSFaultString   to "CCS_PF3L_MPS_STATUS_STRING";
+string      pf4lMPSFaultString;
+assign      pf4lMPSFaultString   to "CCS_PF4L_MPS_STATUS_STRING";
+string      pf5lMPSFaultString;
+assign      pf5lMPSFaultString   to "CCS_PF5L_MPS_STATUS_STRING";
+string      pf6lMPSFaultString;
+assign      pf6lMPSFaultString   to "CCS_PF6L_MPS_STATUS_STRING";
+string      pf7MPSFaultString;
+assign      pf7MPSFaultString   to "CCS_PF7_MPS_STATUS_STRING";
+string      ivcMPSFaultString;
+assign      ivcMPSFaultString   to "CCS_IVC_STATUS_STRING";
+
+
+int         tfMPSFaultInt;
+assign      tfMPSFaultInt       to   "CCS_TF_MPS_STATUS_INT";
+int         pf1MPSFaultInt;
+assign      pf1MPSFaultInt      to   "CCS_PF1_MPS_STATUS_INT";
+int         pf2MPSFaultInt;
+assign      pf2MPSFaultInt      to   "CCS_PF2_MPS_STATUS_INT";
+int         pf3uMPSFaultInt;
+assign      pf3uMPSFaultInt      to   "CCS_PF3U_MPS_STATUS_INT";
+int         pf4uMPSFaultInt;
+assign      pf4uMPSFaultInt      to   "CCS_PF4U_MPS_STATUS_INT";
+int         pf5uMPSFaultInt;
+assign      pf5uMPSFaultInt      to   "CCS_PF5U_MPS_STATUS_INT";
+int         pf6uMPSFaultInt;
+assign      pf6uMPSFaultInt      to   "CCS_PF6U_MPS_STATUS_INT";
+int         pf3lMPSFaultInt;
+assign      pf3lMPSFaultInt      to   "CCS_PF3L_MPS_STATUS_INT";
+int         pf4lMPSFaultInt;
+assign      pf4lMPSFaultInt      to   "CCS_PF4L_MPS_STATUS_INT";
+int         pf5lMPSFaultInt;
+assign      pf5lMPSFaultInt      to   "CCS_PF5L_MPS_STATUS_INT";
+int         pf6lMPSFaultInt;
+assign      pf6lMPSFaultInt      to   "CCS_PF6L_MPS_STATUS_INT";
+int         pf7MPSFaultInt;
+assign      pf7MPSFaultInt      to   "CCS_PF7_MPS_STATUS_INT";
+int         ivcMPSFaultInt;
+assign      ivcMPSFaultInt      to   "CCS_IVC_STATUS_INT";
+
+
+int nval_intl_m; /* used in ss interlock_monitor */
+int nval2_intl_m; /* used in ss interlock_monitor_mps */
+
+ss interlock_normal_monitor
+{
+    state normal
+    {
+       entry {
+            global_interlock_normal = DEACTIVATE; /* 0 */
+            pvPut(global_interlock_normal);
+        }
+
+        when(global_interlock_normal != DEACTIVATE) { 
+            global_interlock_normal = DEACTIVATE;
+            pvPut(global_interlock_normal);
+        } state normal
+        
+	when(!(global_interlock_hardwired[INTL_LEVEL1 -1] &&
+               global_interlock_hardwired[INTL_LEVEL2 -1] &&
+               global_interlock_hardwired[INTL_LEVEL3 -1] &&
+               global_interlock_hardwired[INTL_LEVEL4 -1] &&
+               global_interlock_hardwired[INTL_WARNING -1])) {} state fault
+
+    
+    }
+
+    state fault
+    {
+        entry {
+            global_interlock_normal = ACTIVATE; /* 1 */
+            pvPut(global_interlock_normal);
+        }
+
+        when(global_interlock_normal != ACTIVATE) {
+            global_interlock_normal = ACTIVATE;
+            pvPut(global_interlock_normal);
+        } state fault
+
+        when(global_interlock_hardwired[INTL_LEVEL1 -1] &&
+             global_interlock_hardwired[INTL_LEVEL2 -1] &&
+             global_interlock_hardwired[INTL_LEVEL3 -1] &&
+             global_interlock_hardwired[INTL_LEVEL4 -1] &&
+             global_interlock_hardwired[INTL_WARNING -1] ) {} state normal
+    }
+}
+
+ss interlock_monitor
+{
+      state init {
+          entry {
+                %% int i;
+                %% for(i = 0; i <NUM_INTL_SUBSYSTEM; i++) {
+                %%      pVar->individual_interlock_level[i] = INTL_NORMAL;
+                %%      pVar->individual_interlock_level_latch[i] = INTL_NOT_DEFINED;
+                %% }
+          }
+          when(TRUE) {}  state posting
+      
+      }
+
+      state monitoring {
+
+          when(efTestAndClear(ev_global_interlock_level)) {
+              %% int i, j;
+              %%
+              %% for(j=0; j < NUM_INTL_SUBSYSTEM; j++)  pVar->individual_interlock_level[j] = INTL_NORMAL;   
+              %%
+              %% for(i=INTL_WARNING; i >= INTL_LEVEL1; i--) {
+              %%     for(j = 0; j<NUM_INTL_SUBSYSTEM; j++) {
+              %%           if(pVar->global_interlock_level[i-1] & (0x00000001<<j)) pVar->individual_interlock_level[j] = i;
+              %%     }
+              %%}
+
+          } state posting
+      }
+
+
+      state posting {
+          entry {              
+              %% for (pVar->nval_intl_m = 0; pVar->nval_intl_m < NUM_INTL_SUBSYSTEM; pVar->nval_intl_m++) { 
+              %%      if(pVar->individual_interlock_level[pVar->nval_intl_m] != pVar->individual_interlock_level_latch[pVar->nval_intl_m]) {
+              %%          pVar->individual_interlock_level_latch[pVar->nval_intl_m] = pVar->individual_interlock_level[pVar->nval_intl_m];
+                              pvPut(individual_interlock_level[nval_intl_m]);
+              %%      }
+              %% }
+          }
+
+          when (TRUE) {} state monitoring
+      }
+
+}
+
+ss interlock_monitor_mps
+{
+      state init {
+          entry {
+                %% int i;
+                %% for(i = 0; i <NUM_INTL_MPS_SYSTEM; i++) {
+                %%      pVar->individual_interlock_mps_level[i] = INTL_NORMAL;
+                %%      pVar->individual_interlock_mps_level_latch[i] = INTL_NOT_DEFINED;
+                %% }
+          }
+          when(TRUE) {}  state posting
+      
+      }
+
+      state monitoring {
+
+          when(efTestAndClear(ev_global_interlock_mps_level)) {
+              %% int i, j;
+              %%
+              %% for(j=0; j < NUM_INTL_MPS_SYSTEM; j++)  pVar->individual_interlock_mps_level[j] = INTL_NORMAL;   
+              %%
+              %% for(i=INTL_WARNING; i >= INTL_LEVEL1; i--) {
+              %%     for(j = 0; j<NUM_INTL_MPS_SYSTEM; j++) {
+              %%           if(pVar->global_interlock_mps_level[i-1] & (0x00000001<<j)) pVar->individual_interlock_mps_level[j] = i;
+              %%     }
+              %%}
+
+          } state posting
+      }
+
+      state posting {
+           entry {              
+              %% for (pVar->nval2_intl_m = 0; pVar->nval2_intl_m < NUM_INTL_MPS_SYSTEM; pVar->nval2_intl_m++) { 
+              %%      if(pVar->individual_interlock_mps_level[pVar->nval2_intl_m] != pVar->individual_interlock_mps_level_latch[pVar->nval2_intl_m]) {
+              %%          pVar->individual_interlock_mps_level_latch[pVar->nval2_intl_m] = pVar->individual_interlock_mps_level[pVar->nval2_intl_m];
+                              pvPut(individual_interlock_mps_level[nval2_intl_m]);
+              %%      }
+              %% }
+          }
+
+          when (TRUE) {} state monitoring
+      }
+
+}
+
+
+
+/*******************
+*******************/
+
+ss TF_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->tfMPSFaultString, getFaultString(mpsTFFaultList, pVar->tfMPSFaultCode));
+            %% pVar->tfMPSFaultInt = getFaultIndex(mpsTFFaultList, pVar->tfMPSFaultCode);
+            pvPut(tfMPSFaultString);
+            pvPut(tfMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_tfMPSFaultCode)) {} state posting
+    }
+}
+
+
+ss PF1_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf1MPSFaultString, getFaultString(mpsPFFaultList, pVar->pf1MPSFaultCode));
+            %% pVar->pf1MPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf1MPSFaultCode);
+            pvPut(pf1MPSFaultString);
+            pvPut(pf1MPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf1MPSFaultCode)) {} state posting
+    }
+}
+
+
+ss PF2_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf2MPSFaultString, getFaultString(mpsPFFaultList, pVar->pf2MPSFaultCode));
+            %% pVar->pf2MPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf2MPSFaultCode);
+            pvPut(pf2MPSFaultString);
+            pvPut(pf2MPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf2MPSFaultCode)) {} state posting
+    }
+}
+
+
+ss PF3U_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf3uMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf3uMPSFaultCode));
+            %% pVar->pf3uMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf3uMPSFaultCode);
+            pvPut(pf3uMPSFaultString);
+            pvPut(pf3uMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf3uMPSFaultCode)) {} state posting
+    }
+}
+ss PF3L_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf3lMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf3lMPSFaultCode));
+            %% pVar->pf3lMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf3lMPSFaultCode);
+            pvPut(pf3lMPSFaultString);
+            pvPut(pf3lMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf3lMPSFaultCode)) {} state posting
+    }
+}
+
+
+ss PF4U_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf4uMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf4uMPSFaultCode));
+            %% pVar->pf4uMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf4uMPSFaultCode);
+            pvPut(pf4uMPSFaultString);
+            pvPut(pf4uMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf4uMPSFaultCode)) {} state posting
+    }
+
+}
+ss PF4L_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf4lMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf4lMPSFaultCode));
+            %% pVar->pf4lMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf4lMPSFaultCode);
+            pvPut(pf4lMPSFaultString);
+            pvPut(pf4lMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf4lMPSFaultCode)) {} state posting
+    }
+
+}
+
+ss PF5U_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf5uMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf5uMPSFaultCode));
+            %% pVar->pf5uMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf5uMPSFaultCode);
+            pvPut(pf5uMPSFaultString);
+            pvPut(pf5uMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf5uMPSFaultCode)) {} state posting
+    }
+
+}
+ss PF5L_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf5lMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf5lMPSFaultCode));
+            %% pVar->pf5lMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf5lMPSFaultCode);
+            pvPut(pf5lMPSFaultString);
+            pvPut(pf5lMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf5lMPSFaultCode)) {} state posting
+    }
+
+}
+
+
+ss PF6U_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf6uMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf6uMPSFaultCode));
+            %% pVar->pf6uMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf6uMPSFaultCode);
+            pvPut(pf6uMPSFaultString);
+            pvPut(pf6uMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf6uMPSFaultCode)) {} state posting
+    }
+
+}
+ss PF6L_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf6lMPSFaultString, getFaultString(mpsPFFaultList, pVar->pf6lMPSFaultCode));
+            %% pVar->pf6lMPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf6lMPSFaultCode);
+            pvPut(pf6lMPSFaultString);
+            pvPut(pf6lMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf6lMPSFaultCode)) {} state posting
+    }
+
+}
+
+
+ss PF7_MPSFaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->pf7MPSFaultString, getFaultString(mpsPFFaultList, pVar->pf7MPSFaultCode));
+            %% pVar->pf7MPSFaultInt = getFaultIndex(mpsPFFaultList, pVar->pf7MPSFaultCode);
+            pvPut(pf7MPSFaultString);
+            pvPut(pf7MPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_pf7MPSFaultCode)) {} state posting
+    }
+
+}
+
+ss IVC_FaultList
+{
+    state posting
+    {
+        entry {
+            %% strcpy(pVar->ivcMPSFaultString, getFaultString(mpsIVCFaultList, pVar->ivcMPSFaultCode));
+            %% pVar->ivcMPSFaultInt = getFaultIndex(mpsIVCFaultList, pVar->ivcMPSFaultCode);
+            pvPut(ivcMPSFaultString);
+            pvPut(ivcMPSFaultInt);
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring
+    {
+        when(efTestAndClear(ef_ivcMPSFaultCode)) {} state posting
+    }
+
+}
+
+

@@ -1,0 +1,131 @@
+program HDSHCS_ON
+option +r;
+
+int MODE;
+int SELECT[3];
+int READ_BI[8];
+double READ_AI[20];
+double WRITE_AO[20];
+int PV_BI[4];
+double PV_AI[7];
+double PV_AO[7];
+
+assign MODE to "HDS_HCS_R_MODE";
+monitor MODE;
+evflag ef_MODE;
+sync MODE ef_MODE;
+
+assign SELECT to {
+        "HDS_HCS_R_B1_SENSOR_SEL",
+        "HDS_HCS_R_B2_SENSOR_SEL",
+        "HDS_HCS_R_B3_SENSOR_SEL" 
+	};
+monitor SELECT;
+evflag ef_SELECT;
+sync SELECT ef_SELECT;
+
+assign READ_BI to {
+        "HDS_HCS_R_P5_AL_HH_BIT",
+        "HDS_HCS_R_P5_AL_LEVEL1_BIT",
+ 	"HDS_HCS_R_P28_AL_HH_BIT",
+        "HDS_HCS_R_P28_AL_LEVEL1_BIT",
+	"HDS_HCS_R_P51_AL_HH_BIT",
+        "HDS_HCS_R_P51_AL_LEVEL1_BIT",
+	"HDS_HCS_R_P52_AL_HH_BIT",
+        "HDS_HCS_R_P52_AL_LEVEL1_BIT"
+        }; 
+monitor READ_BI;
+evflag ef_READ_BI;
+sync READ_BI ef_READ_BI;
+
+assign PV_BI to {
+        "HDS_HCS_R_Q2_AL_BIT",
+        "HDS_HCS_R_Q8_AL_BIT",
+	"HDS_HCS_R_Q12_AL_BIT",
+	"HDS_HCS_R_Q13_AL_BIT"
+	};
+
+
+assign READ_AI to { 
+        "HDS_HCS_R_P5_AL_HH",
+	"HDS_HCS_R_P10_AL_HH",
+	"HDS_HCS_R_P5_AL_LEVEL1",
+	"HDS_HCS_R_P10_AL_LEVEL1",
+	"HDS_HCS_R_P26_AL_HH",
+	"HDS_HCS_R_P27_AL_HH",
+	"HDS_HCS_R_P26_AL_LEVEL1",
+	"HDS_HCS_R_P27_AL_LEVEL1",
+	"HDS_HCS_R_P64_AL_HH",
+	"HDS_HCS_R_P69_AL_HH",
+	"HDS_HCS_R_P64_AL_LEVEL1",
+	"HDS_HCS_R_P69_AL_LEVEL1",
+	"HDS_HCS_R_P5_AL_HH", 
+        "HDS_HCS_R_P5_AL_LEVEL1",
+	"HDS_HCS_R_P28_AL_HH",
+        "HDS_HCS_R_P28_AL_LEVEL1",
+	"HDS_HCS_R_P51_AL_HH",
+        "HDS_HCS_R_P51_AL_LEVEL1",
+	"HDS_HCS_R_P52_AL_HH",
+        "HDS_HCS_R_P52_AL_LEVEL1"
+	};
+monitor READ_AI;
+evflag ef_READ_AI;
+sync READ_AI ef_READ_AI;
+
+assign PV_AI to {
+        "HDS_HCS_R_B1_P_LIMIT",
+	"HDS_HCS_R_B2_P_LIMIT",
+	"HDS_HCS_R_B3_P_LIMIT",
+        "HDS_HCS_R_Q2_AL",
+	"HDS_HCS_R_Q8_AL",
+	"HDS_HCS_R_Q12_AL",
+	"HDS_HCS_R_Q13_AL"
+        };
+
+assign WRITE_AO to {  
+        "HDS_HCS_W_P5_AL_HH", 
+        "HDS_HCS_W_P10_AL_HH", 
+        "HDS_HCS_W_P5_AL_LEVEL1", 
+        "HDS_HCS_W_P10_AL_LEVEL1", 
+        "HDS_HCS_W_P26_AL_HH", 
+        "HDS_HCS_W_P27_AL_HH", 
+        "HDS_HCS_W_P26_AL_LEVEL1", 
+        "HDS_HCS_W_P27_AL_LEVEL1", 
+        "HDS_HCS_W_P64_AL_HH", 
+        "HDS_HCS_W_P69_AL_HH", 
+        "HDS_HCS_W_P64_AL_LEVEL1", 
+        "HDS_HCS_W_P69_AL_LEVEL1",
+        "HDS_HCS_W_P5_AL_HH",
+        "HDS_HCS_W_P5_AL_LEVEL1",
+        "HDS_HCS_W_P28_AL_HH",
+        "HDS_HCS_W_P28_AL_LEVEL1",
+        "HDS_HCS_W_P51_AL_HH",
+        "HDS_HCS_W_P51_AL_LEVEL1",
+        "HDS_HCS_W_P52_AL_HH",
+        "HDS_HCS_W_P52_AL_LEVEL1"
+        }; 
+
+assign PV_AO to {
+        "HDS_HCS_W_B1_P_LIMIT",
+        "HDS_HCS_W_B2_P_LIMIT",
+        "HDS_HCS_W_B3_P_LIMIT", 
+        "HDS_HCS_W_Q2_AL",
+        "HDS_HCS_W_Q8_AL",
+        "HDS_HCS_W_Q12_AL",
+        "HDS_HCS_W_Q13_AL"
+        }; 
+monitor PV_AO;
+evflag ef_PV_AO; 
+sync PV_AO ef_PV_AO;
+
+
+ss HDS_HCS {
+    
+    state MAIN {
+        when( efTestAndClear(ef_MODE) && SELECT[0] == 0 && MODE == 0 && delay(1.0)){
+            PV_AI[0] = READ_AI[0];
+            pvPut(PV_AI);
+        } state MAIN
+    }
+}
+

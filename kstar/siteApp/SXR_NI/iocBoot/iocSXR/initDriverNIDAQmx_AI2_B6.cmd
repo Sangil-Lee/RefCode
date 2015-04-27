@@ -1,0 +1,12 @@
+#           ( Type,   TaskName, DeviceName(createPhyChan),TriggerChannel, SigType, ClockChannel)
+createDevice("NI6123", "Dev6_AI", "Dev6", "/Dev6/PFI0", "ai",  "/Dev6/PFI12")
+
+#            ( TaskName, ChannelID, InputType, TagName, arg(MDS_Param or SCXI phyChannel))
+createChannel("Dev6_AI",     "0",     "SXR",  "SXR009",     "Dev6/ai0")
+createChannel("Dev6_AI",     "1",     "SXR",  "SXR009",     "Dev6/ai1")
+createChannel("Dev6_AI",     "2",     "SXR",  "SXR010",     "Dev6/ai2")
+createChannel("Dev6_AI",     "3",     "SXR",  "SXR011",     "Dev6/ai3")
+createChannel("Dev6_AI",     "4",     "SXR",  "SXR012",     "Dev6/ai4")
+createChannel("Dev6_AI",     "5",     "SXR",  "SXR013",     "Dev6/ai5")
+createChannel("Dev6_AI",     "6",     "SXR",  "SXR014",     "Dev6/ai6")
+createChannel("Dev6_AI",     "7",     "SXR",  "SXR015",     "Dev6/ai7")

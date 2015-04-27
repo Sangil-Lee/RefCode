@@ -1,0 +1,434 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1265</width>
+    <height>992</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>89</x>
+     <y>87</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Prject Name:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>60</x>
+     <y>119</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Test Description:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbClose" >
+   <property name="geometry" >
+    <rect>
+     <x>1170</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9" >
+   <property name="geometry" >
+    <rect>
+     <x>98</x>
+     <y>52</y>
+     <width>104</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Test ID:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>80</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Test Time:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>2</y>
+     <width>291</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>26</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Cyber Log Viewer</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leProjectName" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>88</y>
+     <width>431</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbTestTime" >
+   <property name="geometry" >
+    <rect>
+     <x>970</x>
+     <y>84</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leTestID" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>52</y>
+     <width>161</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>257</y>
+     <width>1261</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="teDesc" >
+   <property name="geometry" >
+    <rect>
+     <x>205</x>
+     <y>125</y>
+     <width>741</width>
+     <height>75</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbDetail" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>950</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Detail</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbLoglist" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>950</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Log list</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="summaryTable" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>660</y>
+     <width>1261</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>630</y>
+     <width>181</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Logging Summary:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>220</y>
+     <width>91</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>620</x>
+     <y>220</y>
+     <width>91</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>740</x>
+     <y>220</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Saving Type</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>220</y>
+     <width>101</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Index Number</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>850</x>
+     <y>220</y>
+     <width>91</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>380</x>
+     <y>220</y>
+     <width>91</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>220</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Network ID</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10" >
+   <property name="geometry" >
+    <rect>
+     <x>300</x>
+     <y>220</y>
+     <width>71</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Source</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbSearch" >
+   <property name="geometry" >
+    <rect>
+     <x>990</x>
+     <y>220</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Search</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

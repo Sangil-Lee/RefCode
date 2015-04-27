@@ -1,0 +1,221 @@
+program sncLogicSeq
+
+option +r;
+option -c;
+
+%{
+#include <string.h>
+
+#define  EREF_IDLE      0
+#define  EREF_DOING   1
+
+
+#define TASK_NOT_INIT               0x0
+#define TASK_INITIALIZED           (0x0001<<0)
+#define SCOPE_BEGIN_ACQUSITION     (0x0001<<1)
+#define SCOPE_ABORT_ACQUSITION     (0x0001<<2)
+#define SCOPE_START_FETCH          (0x0001<<3)
+#define SCOPE_FETCH_SUCCESS        (0x0001<<4)
+#define SCOPE_STORAGE_FINISH       (0x0001<<5) /* 20 */
+#define SCOPE_GET_ACTUAL_CONFIRM   (0x0001<<6) 
+#define SCOPE_FINISH_ACQUISITION    (0x0001<<7) 
+
+
+
+}%
+
+/*
+int          ccs_seqstart;
+assign       ccs_seqstart        to  "CCS_SHOTSEQ_START";
+monitor      ccs_seqstart;
+*/
+
+int       cp_mds_tree_create;
+assign  cp_mds_tree_create    to "MDS_TREE_CREATE";
+monitor     cp_mds_tree_create;
+
+float          eref_bliptime;
+assign       eref_bliptime   to    "EREF_BLIP_TIME"; 
+
+float          mps1_bliptime;
+assign       mps1_bliptime    to  "MPS1_LTU_T0_p0"; 
+monitor      mps1_bliptime;
+
+float          eref_t0;
+assign       eref_t0   to    "EREF_T0"; 
+
+float          ERef_LTU_t0;
+assign       ERef_LTU_t0    to  "EREF_LTU_T0_p1"; 
+monitor      ERef_LTU_t0;
+
+
+
+
+
+
+int          make_ready;
+assign       make_ready        to  "EREF_FROM_CCS_MAKE_READY";
+monitor      make_ready;
+
+int          fgen_sig_gen;
+assign       fgen_sig_gen        to  "EREF_5412_1:SIG_GEN";
+
+int          scope_init_acq1;
+assign       scope_init_acq1        to  "EREF_5122_1:INIT_ACQUISITION";
+
+int          scope_init_acq2;
+assign       scope_init_acq2        to  "EREF_5122_2:INIT_ACQUISITION";
+
+
+int          scope_1_tree_put;
+assign       scope_1_tree_put        to  "EREF_5122_1:TREE_PUT";
+
+int          scope_2_tree_put;
+assign       scope_2_tree_put        to  "EREF_5122_2:TREE_PUT";
+
+int          scope_1_make_init;
+assign       scope_1_make_init        to  "EREF_5122_1:SOFT_MAKE_INIT";
+
+int          scope_2_make_init;
+assign       scope_2_make_init        to  "EREF_5122_2:SOFT_MAKE_INIT";
+
+int       ERef_create_shot;
+assign ERef_create_shot     to "EREF_CREATE_SHOT";
+
+
+int          data_process;
+assign       data_process        to  "EREF_SOFT_DATA_PROCESS";
+
+
+int          ERef_status;
+assign    ERef_status        to  "EREF_AI_STATUS";
+monitor  ERef_status;
+
+int		Eref_sysrun;
+assign	Eref_sysrun   to "EREF_SOFT_SYS_RUN";
+
+
+
+int          scope_1_status;
+assign    scope_1_status        to  "EREF_5122_1:STATUS";
+monitor  scope_1_status;
+
+int          scope_2_status;
+assign    scope_2_status        to  "EREF_5122_2:STATUS";
+monitor  scope_2_status;
+
+
+
+/* evflag      ef_shotseq_start;
+
+%% unsigned short u16_dds1_make_ready=0;
+*/
+
+ss EREF_start_seq
+{
+	state wait_make_ready
+	{
+		when(  make_ready ) {	
+			Eref_sysrun = 1;
+			pvPut(Eref_sysrun);
+			printf("\n>>> SNC: process start!\n");
+		} state make_fgen_init
+	}
+
+	state make_fgen_init
+	{
+		entry {
+			fgen_sig_gen=1;
+			pvPut(fgen_sig_gen);
+		}
+		when(delay(2.)) {} state make_scope_init
+	}
+
+	state make_scope_init
+	{
+		entry {
+			scope_init_acq1= 1;
+			scope_init_acq2=1;
+			pvPut(scope_init_acq1);
+			pvPut(scope_init_acq2);
+		}
+		when(delay(.1)) {} state wait_fetch_done
+		
+	}
+
+	state wait_fetch_done 
+	{
+		when( (scope_1_status & SCOPE_FINISH_ACQUISITION) 
+				&&  (scope_2_status & SCOPE_FINISH_ACQUISITION) ) { 
+			data_process = 1;
+			pvPut(data_process);
+			
+			scope_1_tree_put = 1;
+			pvPut(scope_1_tree_put);						
+		} state wait_1_tree_put_done
+	}
+
+	state wait_1_tree_put_done 
+	{
+		when( scope_1_status & SCOPE_STORAGE_FINISH )  {
+			scope_2_tree_put = 1;
+			pvPut(scope_2_tree_put);						
+		} state wait_2_tree_put_done
+	}
+
+	state wait_2_tree_put_done 
+	{
+		when( scope_2_status & SCOPE_STORAGE_FINISH )  {
+			make_ready = 0;
+			pvPut(make_ready);
+
+			fgen_sig_gen=0;
+			pvPut(fgen_sig_gen);
+			
+			data_process = 0;
+			pvPut(data_process);
+
+			Eref_sysrun = 0;
+			pvPut(Eref_sysrun);
+			printf("\n>>> SNC: All process finished!\n");
+		} state wait_make_ready
+	}
+	
+}
+
+ss EREF_bliptime_seq
+{
+	state set_blip_time
+	{
+		entry {
+			eref_bliptime = mps1_bliptime;
+	        	pvPut(eref_bliptime);
+		}
+		when( delay(1.) ) { } state wait_blip_change
+	}
+
+	state wait_blip_change
+	{
+		when( eref_bliptime != mps1_bliptime ) {} state set_blip_time
+	}
+}
+
+ss EREF_t0_seq
+{
+	state set_t0
+	{
+		entry {
+			eref_t0 = ERef_LTU_t0;
+	        	pvPut(eref_t0);
+		}
+		when( delay(1.) ) { } state wait_t0_change
+	}
+
+	state wait_t0_change
+	{
+		when( eref_t0 != ERef_LTU_t0 ) {} state set_t0
+	}
+}
+
+
+

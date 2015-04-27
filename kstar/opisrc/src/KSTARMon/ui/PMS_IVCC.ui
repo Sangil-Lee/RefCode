@@ -1,0 +1,832 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>1080</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>1080</width>
+     <height>800</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../tms.qrc" >:/images/PMS_IVCC.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>730</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_50" >
+   <property name="geometry" >
+    <rect>
+     <x>676</x>
+     <y>436</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS01_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_78" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>465</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS02_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_79" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>555</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS05_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_80" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>495</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS03_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_81" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>525</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS04_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_82" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>435</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS01_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_83" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>615</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS07_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_84" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>585</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS06_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_85" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>645</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F01_TS08_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_86" >
+   <property name="geometry" >
+    <rect>
+     <x>273</x>
+     <y>555</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_B01_TS03_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_87" >
+   <property name="geometry" >
+    <rect>
+     <x>273</x>
+     <y>435</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_B01_TS01_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_88" >
+   <property name="geometry" >
+    <rect>
+     <x>273</x>
+     <y>465</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_B01_TS02_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_89" >
+   <property name="geometry" >
+    <rect>
+     <x>273</x>
+     <y>585</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_B01_TS04_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_93" >
+   <property name="geometry" >
+    <rect>
+     <x>273</x>
+     <y>675</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_B_MAX</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_94" >
+   <property name="geometry" >
+    <rect>
+     <x>393</x>
+     <y>675</y>
+     <width>118</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F_MAX</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_51" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>469</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS02_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_52" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>499</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS03_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_53" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>529</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS04_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_54" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>559</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS05_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_55" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>589</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_TS06_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_56" >
+   <property name="geometry" >
+    <rect>
+     <x>677</x>
+     <y>619</y>
+     <width>123</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_F00_MAX</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_57" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>620</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_MAX</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_58" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>560</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS05_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_59" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>590</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS06_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_60" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>500</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS03_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_61" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>470</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS02_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_62" >
+   <property name="geometry" >
+    <rect>
+     <x>802</x>
+     <y>437</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS01_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_63" >
+   <property name="geometry" >
+    <rect>
+     <x>803</x>
+     <y>530</y>
+     <width>121</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealOne</enum>
+   </property>
+   <property name="pvname" >
+    <string>PMS_IVCC_J00_TS04_OPI</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="unit" >
+    <string>°C</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../tms.qrc" />
+ </resources>
+ <connections/>
+</ui>

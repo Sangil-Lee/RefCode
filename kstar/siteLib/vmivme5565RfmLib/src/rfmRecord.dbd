@@ -1,0 +1,309 @@
+#/*
+#**    =========================================================================
+#**
+#**        Abs: EPICS Database Definition file for VMIVME5565 Reflect Memory Module
+#**
+#**        Name: rfmRecord.dbd
+#**
+#**        First Auth:   04-Feb-2004,  Kukhee Kim         (KHKIM)
+#**        Second Auth:  dd-mmm-yyyy,  First Lastname     (USERNAME)
+#**        Rev:          dd-mmm-yyyy,  Reviewer's name    (USERNAME)
+#**
+#**    -------------------------------------------------------------------------
+#**        Mod:
+#**                      dd-mmm-yyyy,  First Lastname     (USERNAME)
+#**                         comments
+#**
+#**    =========================================================================
+#*/
+#
+#
+#
+menu(menuRfmStatus) {
+	choice(rfmCardNotFound,  "Card NOT found")
+	choice(rfmInvBusType,    "Invalid Bus type")
+	choice(rfmNotRegistered, "Card NOT registered")
+	choice(rfmFailure,       "Faulure")
+	choice(rfmReset,         "Successfully RESET module")
+	choice(rfmSuccess,       "Successful")
+	choice(rfmInitSucess,    "Successful initialization")
+}
+menu(menuRfmMode) {
+	choice(rfmDisable,       "Disable")
+	choice(rfmEnable,        "Enable")
+}
+menu(menuRfmNetInt1Mode) {
+	choice(rfmNetInt1Disable, "Int1 disable")
+	choice(rfmNetInt1Enable,  "Int1 enable")
+}
+menu(menuRfmNetInt2Mode) {
+	choice(rfmNetInt2Disable, "Int2 disable")
+	choice(rfmNetInt2Enable,  "Int2 enable")
+}
+menu(menuRfmNetInt3Mode) {
+	choice(rfmNetInt3Disable, "Int3 disable")
+	choice(rfmNetInt3Enable,  "Int3 enable")
+}
+menu(menuRfmNetInt4Mode) {
+	choice(rfmNetInt4Disable, "Int4 disable")
+	choice(rfmNetInt4Enable,  "Int4 enable")
+}
+menu(menuRfmLEDBlinkMode) {
+	choice(rfmLEDBlinkDisable, "LED blink disable")
+	choice(rfmLEDBlinkEnable,  "LED blink enable")
+}
+menu(menuRfmLED){
+	choice(rfmLEDOff, "Off")
+	choice(rfmLEDOn,  "On")
+}
+menu(menuRfmAddType){
+	choice(rfmAddTypeatVMEA16, "VME A16")
+	choice(rfmAddTypeatVMEA24, "VME A24")
+	choice(rfmAddTypeatVMEA32, "VME A32")
+	choice(rfmAddTypeatISA,    "ISA")
+	choice(rfmAddTypeatLast,   "Must be last")
+}
+
+recordtype(rfm) {
+	include "dbCommon.dbd"
+	field(INP, DBF_INLINK) {
+		prompt("Input Specification")
+		promptgroup(GUI_INPUTS)
+		interest(1)
+	}
+## static variables (fields)
+	field(VAL, DBF_MENU) {
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuRfmStatus)
+	}
+	field(CRD, DBF_USHORT) {
+		prompt("Card number")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(VEC, DBF_UCHAR) {
+		prompt("VMEbus Interrupt Vector")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(LEV, DBF_UCHAR) {
+		prompt("VMEbus Interrupt Level")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(RAT, DBF_MENU) {
+		prompt("Address type for control register")
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuRfmAddType)
+	}
+	field(SAT, DBF_MENU) {
+		prompt("Address type for SRAM")
+		special(SPC_NOMOD)
+		interest(1)
+		menu(menuRfmAddType)
+	}
+	field(BAR, DBF_ULONG) {
+		prompt("base address for registers")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(LAR, DBF_ULONG) {
+		prompt("local address for registers")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(BAS, DBF_ULONG) {
+		prompt("base address for SRAM")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(LAS, DBF_ULONG) {
+		prompt("local address for SRAM")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(BRV, DBF_UCHAR) {
+		prompt("board revision number")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(BID, DBF_UCHAR) {
+		prompt("board id")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(NID, DBF_UCHAR) {
+		prompt("boad node id")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+## flight time variables (fields)
+	field(LED, DBF_MENU) {
+		prompt("LED status")
+		special(SPC_NOMOD)
+		menu(menuRfmLED)
+		interest(1)
+	}
+	field(OLED, DBF_MENU) {
+		prompt("Old LED status")
+		special(SPC_NOMOD)
+		menu(menuRfmLED)
+		interest(3)
+	}
+        field(CSR, DBF_ULONG) {
+		prompt("Local control and status Regs.")
+                special(SPC_NOMOD)
+                interest(1)
+                base(HEX)
+	}
+	field(OCSR, DBF_ULONG) {
+		prompt("Old local control and status regs.")
+		special(SPC_NOMOD)
+		interest(3)
+		base(HEX)
+	}
+	field(ISR, DBF_ULONG) {
+		prompt("Local interrupt status Regs.")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(OISR, DBF_ULONG) {
+		prompt("Old local interrupt status regs.")
+		special(SPC_NOMOD)
+		interest(3)
+		base(HEX)
+	}
+	field(IER, DBF_ULONG) {
+		prompt("Local interrupt enable Regs.")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(OIER, DBF_ULONG) {
+		prompt("Old local interrupt enable regs.")
+		special(SPC_NOMOD)
+		interest(3)
+		base(HEX)
+	}
+	field(ICT, DBF_ULONG) {
+		prompt("Interrupt Counter")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(OICT, DBF_ULONG) {
+		prompt("Old interrupt counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(IC1, DBF_ULONG) {
+		prompt("Network Int1 Counter")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(OIC1, DBF_ULONG) {
+		prompt("Old network Int1 counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(IC2, DBF_ULONG) {
+		prompt("Network Int2 Counter")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(OIC2, DBF_ULONG) {
+		prompt("Old network Int2 counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(IC3, DBF_ULONG) {
+		prompt("Network Int3 Counter")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(OIC3, DBF_ULONG) {
+		prompt("Old network Int3 counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(IC4, DBF_ULONG) {
+		prompt("Network Int4 Counter")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(OIC4, DBF_ULONG) {
+		prompt("Old network Int4 counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(RFB, DBF_ULONG) {
+		prompt("Ring buffer free bytes")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(ORFB, DBF_ULONG) {
+		prompt("Old ring buffer free bytes")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(RFE, DBF_ULONG) {
+		prompt("Ring buffer free events")
+		special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+	field(ORFE, DBF_ULONG) {
+		prompt("Old ring buffer free events")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+        field(SCT, DBF_ULONG) {
+		prompt("Scan counter")
+                special(SPC_NOMOD)
+		interest(1)
+		base(DECIMAL)
+	}
+        field(OSCT, DBF_ULONG) {
+		prompt("Old scan counter")
+		special(SPC_NOMOD)
+		interest(3)
+		base(DECIMAL)
+	}
+	field(IFG, DBF_UCHAR) {
+		prompt("Init Flag")
+		special(SPC_NOMOD)
+		interest(1)
+		base(HEX)
+	}
+	field(OIFG, DBF_UCHAR) {
+		prompt("Old init falg")
+		special(SPC_NOMOD)
+		interest(3)
+		base(HEX)
+	}
+}

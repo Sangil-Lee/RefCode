@@ -1,0 +1,5101 @@
+#record(ao, "ECH:POSFA:COMM:AINUM")
+#{
+#	field(DESC, "Number Of AI Data")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1005 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:AISADDR")
+#{
+#	field(DESC, "Analog In Start address")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1004 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:AONUM")
+#{
+#	field(DESC, "Number Of AO Data")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1007 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:AOSADDR")
+#{
+#	field(DESC, "Analog Out Start Address")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1006 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:BINUM")
+#{
+#	field(DESC, "Number Of BI Data")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1009 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:BISADDR")
+#{
+#	field(DESC, "Binary In Start Address")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1008 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:BONUM")
+#{
+#	field(DESC, "Number Of BO Data")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1011 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:BOSADDR")
+#{
+#	field(DESC, "Binary Out Start Address")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1010 @192.1.1.200")
+#}
+#record(ai, "ECH:POSFA:COMM:CRTIME")
+#{
+#	field(DESC, "Current Scan Time")
+#	field(DTYP, "PosfaChannel")
+#	field(INP, "#C0 S1000 @192.1.1.200")
+#	field(SCAN, "1 second")
+#}
+#record(ao, "ECH:POSFA:COMM:CTIME")
+#{
+#	field(DESC, "Constant Scan Time Ratio")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1001 @192.1.1.200")
+#}
+#record(bo, "ECH:POSFA:COMM:CTRL")
+#{
+#	field(DESC, "POSFA RUN STOP")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1000 @192.1.1.200")
+#	field(ONAM, "RUN")
+#	field(ZNAM, "STOP")
+#}
+#record(bi, "ECH:POSFA:COMM:STATUS")
+#{
+#	field(DESC, "POSFA COMM STATUS")
+#	field(DTYP, "PosfaChannel")
+#	field(INP, "#C0 S1000 @192.1.1.200")
+#	field(ONAM, "NORMAL")
+#	field(ZNAM, "ERROR")
+#	field(SCAN, "1 second")
+#}
+#record(ao, "ECH:POSFA:COMM:STIME")
+#{
+#	field(DESC, "REF SCAN TIME")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1000 @192.1.1.200")
+#}
+#record(ao, "ECH:POSFA:COMM:WTIME")
+#{
+#	field(DESC, "Watch Dog Time Ratio")
+#	field(DTYP, "PosfaChannel")
+#	field(OUT, "#C0 S1002 @192.1.1.200")
+#}
+record(bi, "ECH_RD00")
+{
+	field(DESC, "R050A")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd00 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD01")
+{
+	field(DESC, "R050B")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd01 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD02")
+{
+	field(DESC, "R0566")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd02 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD03")
+{
+	field(DESC, "R0503")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd03 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD04")
+{
+	field(DESC, "R0502")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd04 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD05")
+{
+	field(DESC, "R0421")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd05 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD06")
+{
+	field(DESC, "R0370")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd06 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD07")
+{
+	field(DESC, "R0371")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd07 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD08")
+{
+	field(DESC, "R0372")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd08 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD09")
+{
+	field(DESC, "R037F")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd09 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0A")
+{
+	field(DESC, "R037B")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0B")
+{
+	field(DESC, "R037E")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0C")
+{
+	field(DESC, "R0592")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0D")
+{
+	field(DESC, "R0270")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0E")
+{
+	field(DESC, "R0171")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD0F")
+{
+	field(DESC, "R0271")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD10")
+{
+	field(DESC, "R0273")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd10 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD11")
+{
+	field(DESC, "R0564")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd11 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD12")
+{
+	field(DESC, "R0565")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd12 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD13")
+{
+	field(DESC, "R0610")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd13 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD14")
+{
+	field(DESC, "R0611")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd14 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD15")
+{
+	field(DESC, "R0617")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd15 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD16")
+{
+	field(DESC, "R0618")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd16 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD17")
+{
+	field(DESC, "R03BA")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd17 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD18")
+{
+	field(DESC, "R03B0")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd18 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD19")
+{
+	field(DESC, "R03B1")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd19 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1A")
+{
+	field(DESC, "R03B2")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1B")
+{
+	field(DESC, "R03B3")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1C")
+{
+	field(DESC, "R03B4")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1D")
+{
+	field(DESC, "R03B5")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1E")
+{
+	field(DESC, "R03BB")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD1F")
+{
+	field(DESC, "R03BC")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD20")
+{
+	field(DESC, "R03BD")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd20 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD21")
+{
+	field(DESC, "R0612")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd21 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD22")
+{
+	field(DESC, "R0613")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd22 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD23")
+{
+	field(DESC, "R0614")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd23 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD24")
+{
+	field(DESC, "R0615")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd24 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD25")
+{
+	field(DESC, "R0616")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd25 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD26")
+{
+	field(DESC, "R0567")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd26 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD27")
+{
+	field(DESC, "R03A6")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd27 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD28")
+{
+	field(DESC, "R0396")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd28 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD29")
+{
+	field(DESC, "R058A")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd29 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2A")
+{
+	field(DESC, "R0568")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2B")
+{
+	field(DESC, "R05A1")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2C")
+{
+	field(DESC, "R05A2")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2D")
+{
+	field(DESC, "R05A3")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2E")
+{
+	field(DESC, "R05A4")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD2F")
+{
+	field(DESC, "R05A5")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD30")
+{
+	field(DESC, "R05A6")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd30 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD31")
+{
+	field(DESC, "R0690")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd31 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD32")
+{
+	field(DESC, "R0691")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd32 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD33")
+{
+	field(DESC, "R0692")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd33 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD34")
+{
+	field(DESC, "R0693")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd34 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD35")
+{
+	field(DESC, "R0694")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd35 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD36")
+{
+	field(DESC, "R0695")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd36 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD37")
+{
+	field(DESC, "R0696")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd37 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD38")
+{
+	field(DESC, "R0697")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd38 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD39")
+{
+	field(DESC, "R0698")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd39 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3A")
+{
+	field(DESC, "R0699")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3B")
+{
+	field(DESC, "R03B9")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3C")
+{
+	field(DESC, "R0654")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3D")
+{
+	field(DESC, "R0658")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3E")
+{
+	field(DESC, "R0650")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD3F")
+{
+	field(DESC, "R0651")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD40")
+{
+	field(DESC, "R0670")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd40 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD41")
+{
+	field(DESC, "R0654")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd41 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD42")
+{
+	field(DESC, "R0671")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd42 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD43")
+{
+	field(DESC, "R0658")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd43 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD44")
+{
+	field(DESC, "R0442")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd44 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD45")
+{
+	field(DESC, "R03A7")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd45 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD46")
+{
+	field(DESC, "R0396")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd46 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD47")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd47 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD48")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd48 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD49")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd49 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD4F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD50")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd50 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD51")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd51 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD52")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd52 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD53")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd53 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD54")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd54 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD55")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd55 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD56")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd56 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD57")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd57 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD58")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd58 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD59")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd59 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD5F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd5f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD60")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd60 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD61")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd61 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD62")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd62 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD63")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd63 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD64")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd64 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD65")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd65 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD66")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd66 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD67")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd67 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD68")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd68 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD69")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd69 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD6F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd6f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD70")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd70 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD71")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd71 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD72")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd72 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD73")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd73 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD74")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd74 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD75")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd75 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD76")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd76 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD77")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd77 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD78")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd78 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD79")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd79 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD7F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd7f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "MAJOR")
+	field(ZSV, "NO_ALARM")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD80")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd80 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD81")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd81 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD82")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd82 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD83")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd83 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD84")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd84 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD85")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd85 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD86")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd86 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD87")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd87 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD88")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd88 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD89")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd89 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bi, "ECH_RD8F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd8f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "1 second")
+}
+record(bo, "ECH_RE00")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe00 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE01")
+{
+	field(DESC, "EMERGENCY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe01 @203.230.120.167")
+	field(ONAM, "EMERGENCY")
+	field(ZNAM, "NORMAL")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE02")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe02 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE03")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe03 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE04")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe04 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE05")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe05 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE06")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe06 @203.230.120.167")
+	field(ONAM, "STOP")
+	field(ZNAM, "RUN")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE07")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe07 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE08")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe08 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE09")
+{
+	field(DESC, "HV OFF")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe09 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0A")
+{
+	field(DESC, "RF OFF")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0B")
+{
+	field(DESC, "GUN FAN")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0c @203.230.120.167")
+	field(ONAM,"KSTAR")
+	field(ZNAM,"DUMMY")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0d @203.230.120.167")
+	field(ONAM,"KSTAR")
+	field(ZNAM,"DUMMY")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0e @203.230.120.167")
+	field(ONAM, "OPEN")
+	field(ZNAM, "CLOSE")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE0F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0f @203.230.120.167")
+	field(ONAM, "OPEN")
+	field(ZNAM, "CLOSE")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE10")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe10 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE11")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe11 @203.230.120.167")
+	field(ONAM, "OPEN")
+	field(ZNAM, "CLOSE")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE12")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe12 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE13")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe13 @203.230.120.167")
+	field(ONAM, "CLOSE")
+	field(ZNAM, "OPEN")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE14")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe14 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE15")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe15 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE16")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe16 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE17")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe17 @203.230.120.167")
+	field(ONAM, "CW")
+	field(ZNAM, "CCW")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE18")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe18 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE19")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe19 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1a @203.230.120.167")
+	field(ONAM, "DOWN")
+	field(ZNAM, "UP")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1C")
+{
+	field(DESC, "RESET")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1c @203.230.120.167")
+	field(ONAM, "RST")
+	field(ZNAM, "RDY")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1d @203.230.120.167")
+	field(ONAM, "KSTAR")
+	field(ZNAM, "LOCAL")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE1F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE20")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe20 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE21")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe21 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE22")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe22 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE23")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe23 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE24")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe24 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE25")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe25 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE26")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe26 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE27")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe27 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE28")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe28 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE29")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe29 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE2F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE30")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe30 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE31")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe31 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE32")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe32 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE33")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe33 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE34")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe34 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE35")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe35 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE36")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe36 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE37")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe37 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE38")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe38 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE39")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe39 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE3F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE40")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe40 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE41")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe41 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE42")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe42 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE43")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe43 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE44")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe44 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE45")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe45 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE46")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe46 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE47")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe47 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE48")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe48 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE49")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe49 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE4F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE50")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe50 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE51")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe51 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE52")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe52 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE53")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe53 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE54")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe54 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE55")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe55 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE56")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe56 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE57")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe57 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE58")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe58 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE59")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe59 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE5F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe5f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE60")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe60 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE61")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe61 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE62")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe62 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE63")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe63 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE64")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe64 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE65")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe65 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE66")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe66 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE67")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe67 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE68")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe68 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE69")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe69 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE6F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe6f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE70")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe70 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE71")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe71 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE72")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe72 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE73")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe73 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE74")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe74 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE75")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe75 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE76")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe76 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE77")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe77 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE78")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe78 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE79")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe79 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE7F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe7f @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE80")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe80 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE81")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe81 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE82")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe82 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE83")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe83 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE84")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe84 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE85")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe85 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE86")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe86 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE87")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe87 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE88")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe88 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE89")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe89 @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8a @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8b @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8c @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8d @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8e @203.230.120.167")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(bo, "ECH_RE8F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe8f @203.230.120.167")
+	field(ONAM, "EPICS")
+	field(ZNAM, "TOP6")
+	field(OSV, "NO_ALARM")
+	field(ZSV, "MAJOR")
+	field(SCAN, "Passive")
+}
+record(dfanout, "ECH_NELM_1")
+{
+	field(DESC, "DAQ NELM Write")
+	field(SCAN, "Passive")
+	field(OMSL, "closed_loop")
+	field(DOL, "ECH_BSIZE.VAL")
+	field(OUTA, "ECH:NI:DAQ:AI00.NELM")
+	field(OUTB, "ECH:NI:DAQ:AI01.NELM")
+	field(OUTC, "ECH:NI:DAQ:AI02.NELM")
+	field(OUTD, "ECH:NI:DAQ:AI03.NELM")
+	field(OUTE, "ECH:NI:DAQ:AI04.NELM")
+	field(OUTF, "ECH:NI:DAQ:AI05.NELM")
+	field(OUTG, "ECH:NI:DAQ:AI06.NELM")
+	field(OUTH, "ECH:NI:DAQ:AI07.NELM")
+	field(FLNK, "ECH_NELM_2")
+}
+record(dfanout, "ECH_NELM_2")
+{
+	field(DESC, "DAQ NELM Write")
+	field(SCAN, "Passive")
+	field(OMSL, "closed_loop")
+	field(DOL, "ECH_NELM_1.VAL")
+	field(OUTA, "ECH:NI:DAQ:AI08.NELM")
+	field(OUTB, "ECH:NI:DAQ:AI09.NELM")
+	field(OUTC, "ECH:NI:DAQ:AI10.NELM")
+	field(OUTD, "ECH:NI:DAQ:AI11.NELM")
+	field(OUTE, "ECH:NI:DAQ:AI12.NELM")
+	field(OUTF, "ECH:NI:DAQ:AI13.NELM")
+	field(OUTG, "ECH:NI:DAQ:AI14.NELM")
+	field(OUTH, "ECH:NI:DAQ:AI15.NELM")
+}
+record(timestamp,"ECH_TIME") 
+{
+		field(DESC,"")
+		field(ASG,"")
+		field(SCAN,"1 second")
+		field(PINI,"NO")
+		field(PHAS,"0")
+		field(EVNT,"0")
+		field(TSEL,"0.000000000000000e+00")
+		field(DISV,"1")
+		field(SDIS,"0.000000000000000e+00")
+		field(DISS,"NO_ALARM")
+		field(PRIO,"LOW")
+		field(FLNK,"0.000000000000000e+00")
+		field(TST,"YY/MM/DD HH:MM:SS")
+	}
+record(ai, "ECH_WRD00")
+{
+	field(DESC, "WR3C2")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd00 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD00_CALC")
+{
+	field(DESC, "Calculation WRD00")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD00.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD01")
+{
+	field(DESC, "WR3C3")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd01 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD01_CALC")
+{
+	field(DESC, "Calculation WRD01")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD01.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD02")
+{
+	field(DESC, "WR3C4")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd02 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD02_CALC")
+{
+	field(DESC, "Calculation WRD02")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD02.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD03")
+{
+	field(DESC, "WR3C8")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd03 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD03_CALC")
+{
+	field(DESC, "Calculation WRD03")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD03.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD04")
+{
+	field(DESC, "WR2C9")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd04 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD04_CALC")
+{
+	field(DESC, "Calculation WRD04")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD04.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD05")
+{
+	field(DESC, "WR2C5")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd05 @203.230.120.167")
+	field(SCAN, "1 second")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}
+record(calc, "ECH_WRD05_CALC")
+{
+	field(DESC, "Calculation WRD05")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD05.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD06")
+{
+	field(DESC, "WR1CB")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd06 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD06_CALC")
+{
+	field(DESC, "Calculation WRD06")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD06.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD07")
+{
+	field(DESC, "WR1C5")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd07 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD07_CALC")
+{
+	field(DESC, "Calculation WRD07")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD07.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD08")
+{
+	field(DESC, "WR1C6")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd08 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD08_CALC")
+{
+	field(DESC, "Calculation WRD08")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD08.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD09")
+{
+	field(DESC, "WR1C7")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd09 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD09_CALC")
+{
+	field(DESC, "Calculation WRD09")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD09.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0A")
+{
+	field(DESC, "WR1C8")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0a @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD0A_CALC")
+{
+	field(DESC, "Calculation WRD0A")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0A.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0B")
+{
+	field(DESC, "WR1C9")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0b @203.230.120.167")
+	field(SCAN, "1 second")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}
+record(calc, "ECH_WRD0B_CALC")
+{
+	field(DESC, "Calculation WRD0B")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0B.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0C")
+{
+	field(DESC, "WR780")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0c @203.230.120.167")
+	field(SCAN, "1 second")
+	field(HIHI, "10608")
+	field(LOLO, "5872")
+	field(HHSV, "MAJOR")
+	field(LLSV, "MAJOR")
+}
+record(calc, "ECH_WRD0C_CALC")
+{
+	field(DESC, "Calculation WRD0C")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0C.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0D")
+{
+	field(DESC, "WR730")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0d @203.230.120.167")
+	field(SCAN, "1 second")
+	field(HIHI, "14765")
+	field(LOLO, "12776")
+	field(HHSV, "MAJOR")
+	field(LLSV, "MAJOR")
+}
+record(calc, "ECH_WRD0D_CALC")
+{
+	field(DESC, "Calculation WRD0D")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0D.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0E")
+{
+	field(DESC, "WR7B0")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0e @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD0E_CALC")
+{
+	field(DESC, "Calculation WRD0E")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0E.VAL  NPP NMS")
+	field(INPB, "65536")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "30")
+	field(LOLO, "-30")
+	field(HHSV, "MAJOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD0F")
+{
+	field(DESC, "WR760")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd0f @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD0F_CALC")
+{
+	field(DESC, "Calculation WRD0F")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD0F.VAL  NPP NMS")
+	field(INPB, "65536")
+	field(INPC, "10")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "-50")
+	field(LOLO, "-75")
+	field(HHSV, "MAJOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD10")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd10 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD10_CALC")
+{
+	field(DESC, "Calculation WRD10")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD10.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD11")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd11 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD11_CALC")
+{
+	field(DESC, "Calculation WRD11")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD11.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "80")
+	field(HIGH, "60")
+	field(LOW, "40")
+	field(LOLO, "20")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD12")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd12 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD12_CALC")
+{
+	field(DESC, "Calculation WRD12")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD12.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "30")
+	field(HIGH, "24")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+}
+record(ai, "ECH_WRD13")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd13 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD13_CALC")
+{
+	field(DESC, "Calculation WRD13")
+	field(SCAN, "1 second")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD13.VAL  NPP NMS")
+	field(INPB, "99")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(PREC,"1")
+	field(EGU, "Counts")
+	field(HOPR, "100")
+	field(HIHI, "60")
+	field(HIGH, "56")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+}
+record(ai, "ECH_WRD14")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd14 @203.230.120.167")
+	field(SCAN, "1 second")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}
+record(ai, "ECH_WRD15")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd15 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD15_CALC")
+{
+	field(DESC, "Calculation WRD15")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD15.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD16")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd16 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD16_CALC")
+{
+    field(DESC, "Calculation WRD16")
+    field(SCAN, "1 second")
+    field(CALC, "A/10")
+    field(INPA, "ECH_WRD16.VAL  NPP NMS")
+    field(INPB, "99")
+    field(INPC, "1")
+    field(INPD, "0")
+    field(PREC,"1")
+    field(EGU, "Counts")
+    field(HOPR, "100")
+    field(HIHI, "80")
+    field(HIGH, "60")
+    field(LOW, "40")
+    field(LOLO, "20")
+    field(HHSV, "MAJOR")
+    field(HSV, "MINOR")
+    field(LSV, "MINOR")
+    field(LLSV, "MAJOR")
+}
+record(ai, "ECH_WRD17")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd17 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD18")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd18 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD19")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd19 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD1A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1a @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD1B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1b @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD1C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1c @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD1D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1d @203.230.120.167")
+	field(SCAN, "1 second")
+}
+
+record(calc, "ECH_WRD1D_CALC")
+{
+	field(DESC, "Calculation WRD1D")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD1D.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD1E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1e @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD1E_CALC")
+{
+	field(DESC, "Calculation WRD1E")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD1E.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD1F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd1f @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(calc, "ECH_WRD1F_CALC")
+{
+	field(DESC, "Calculation WRD1F")
+	field(SCAN, "1 second")
+	field(PREC, "1")
+	field(CALC, "A/10")
+	field(INPA, "ECH_WRD1F.VAL  NPP NMS")
+}
+record(ai, "ECH_WRD20")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd20 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD21")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd21 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD22")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd22 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD23")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd23 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD24")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd24 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD25")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd25 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD26")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd26 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD27")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd27 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD28")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd28 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD29")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd29 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2a @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2b @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2c @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2d @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2e @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD2F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd2f @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD30")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd30 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD31")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd31 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD32")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd32 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD33")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd33 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD34")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd34 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD35")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd35 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD36")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd36 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD37")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd37 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD38")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd38 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD39")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd39 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3a @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3b @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3c @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3d @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3e @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD3F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd3f @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD40")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd40 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD41")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd41 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD42")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd42 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD43")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd43 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD44")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd44 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD45")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd45 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD46")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd46 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD47")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd47 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD48")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd48 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD49")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd49 @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4a @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4b @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4c @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4d @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4e @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ai, "ECH_WRD4F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(INP, "#C0 S0xd4f @203.230.120.167")
+	field(SCAN, "1 second")
+}
+record(ao, "ECH_WRE00")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe00 @203.230.120.167")
+	field(PREC,"1")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE01")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe01 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE01_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE01_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE01_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE01_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE01")
+}
+record(ao, "ECH_WRE02")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe02 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE02_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE02_INP") 
+{
+	field(PREC,"1")
+}
+record(calc, "ECH_WRE02_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE02_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE02")
+}
+record(calc, "ECH_WRE02_CALC")
+{
+	field(DESC, "Calculation")
+	field(PREC, "1")
+	field(SCAN, "1 second")
+	field(CALC, "A")
+	field(INPA, "ECH_WRE02_INP.VAL  NPP NMS")
+	field(HIHI, "2000")
+	field(HIGH, "1500")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+}
+record(calc, "ECH_WRE02_CALC_1")
+{
+	field(DESC, "Calculation")
+	field(PREC, "1")
+	field(SCAN, "1 second")
+	field(CALC, "A-(B+C)")
+	field(INPA, "ECH_WRE02_INP.VAL  NPP NMS")
+	field(INPB, "ECH_WRE08_INP.VAL  NPP NMS")
+	field(INPC, "ECH_WRE0B_INP.VAL  NPP NMS")
+}
+record(ao, "ECH_WRE03")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe03 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE03_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE03_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE03_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE03_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE03")
+}
+record(ao, "ECH_WRE04")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe04 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE04_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE04_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE04_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE04_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE04")
+}
+record(ao, "ECH_WRE05")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe05 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE06")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe06 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE07")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe07 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE08")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe08 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE08_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE08_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE08_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE08_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE08")
+}
+record(ao, "ECH_WRE09")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe09 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE09_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE09_INP")
+{
+	field(PREC, "1")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}
+record(calc, "ECH_WRE09_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE09_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE09")
+}
+record(ao, "ECH_WRE0A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0a @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0A_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0A_INP")
+{
+	field(PREC, "1")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}
+record(calc, "ECH_WRE0A_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0A_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0A")
+}
+record(ao, "ECH_WRE0B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0b @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0B_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0B_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE0B_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0B_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0B")
+}
+record(ao, "ECH_WRE0C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0c @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0C_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0C_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE0C_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0C_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0C")
+}
+
+record(ao, "ECH_WRE0D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0d @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0D_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0D_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE0D_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0D_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0D")
+}
+record(ao, "ECH_WRE0E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0e @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0E_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0E_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE0E_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0E_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0E")
+}
+record(ao, "ECH_WRE0F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe0F @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE0F_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE0F_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE0F_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE0F_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE0F")
+}
+record(ao, "ECH_WRE10")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe10 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE11")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe11 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE11_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE11_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE11_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE11_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE11")
+}
+record(ao, "ECH_WRE12")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe12 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE12_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE12_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE12_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE12_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE12")
+}
+record(ao, "ECH_WRE13")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe13 @203.230.120.167")
+	field(SCAN, "Passive")
+	field(DOL, "ECH_WRE13_BUF")
+	field(OMSL, "closed_loop")
+}
+record(ao, "ECH_WRE13_INP")
+{
+	field(PREC, "1")
+}
+record(calc, "ECH_WRE13_BUF")
+{
+	field(SCAN, "1 second")
+	field(CALC, "A * 10")
+	field(INPA, "ECH_WRE13_INP.VAL  NPP NMS")
+	field(FLNK, "ECH_WRE13")
+}
+record(ao, "ECH_WRE14")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe14 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE15")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe15 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE16")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe16 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE17")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe17 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE18")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe18 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE19")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe19 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1a @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1b @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1c @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1d @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1e @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE1F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe1f @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE20")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe20 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE21")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe21 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE22")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe22 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE23")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe23 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE24")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe24 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE25")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe25 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE26")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe26 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE27")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe27 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE28")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe28 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE29")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe29 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2a @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2b @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2c @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2d @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2e @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE2F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe2f @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE30")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe30 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE31")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe31 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE32")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe32 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE33")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe33 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE34")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe34 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE35")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe35 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE36")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe36 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE37")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe37 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE38")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe38 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE39")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe39 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3a @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3b @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3c @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3d @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3e @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE3F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe3f @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE40")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe40 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE41")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe41 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE42")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe42 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE43")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe43 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE44")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe44 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE45")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe45 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE46")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe46 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE47")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe47 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE48")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe48 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE49")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe49 @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4A")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4a @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4B")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4b @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4C")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4c @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4D")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4d @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4E")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4e @203.230.120.167")
+	field(SCAN, "Passive")
+}
+record(ao, "ECH_WRE4F")
+{
+	field(DESC, "EMPTY")
+	field(DTYP, "PosfaChannel")
+	field(OUT, "#C0 S0xe4f @203.230.120.167")
+    field(SCAN, "Passive")
+}
+record(ai, "ECH_WRF02")
+{   
+    field(DESC, "PLC Status")
+    field(DTYP, "PosfaChannel")
+    field(INP, "#C0 S0xf02 @203.230.120.167")
+    field(SCAN, "1 second")
+	field(HIHI, "1")
+	field(HHSV, "MAJOR")
+}

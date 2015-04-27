@@ -1,0 +1,57 @@
+program sncNB1_LODAQ
+
+%{
+#include "drvNI6254.h"
+}%
+
+int opmode_calc;
+assign opmode_calc to "NB1_LODAQ_OP_MODE_CALC";
+monitor opmode_calc;
+
+int opmode_curr;
+assign opmode_curr to "NB1_LODAQ_OP_MODE";
+monitor opmode_curr;
+
+int daq_stop;
+assign daq_stop to "NB1_LODAQ_DAQ_STOP";
+monitor daq_stop;
+
+int calc_mode;
+assign calc_mode to "NB1_LODAQ_CALC_RUN";
+monitor calc_mode;
+
+int daq_status;
+assign daq_status to "NB1_LODAQ_STATUS";
+monitor daq_status;
+
+ss setOperMode {
+    state init {
+		when (1) {
+			kLog (K_MON, "[sncNB1_LODAQ::init] setOperMode started ...\n");
+		} state run
+	}
+
+	state run {
+		when (delay(1)) {
+			kLog (K_DEBUG, "[sncNB1_LODAQ::run] OP_MODE : calc(%d) curr(%d)\n", opmode_calc, opmode_curr);
+
+			if (opmode_calc != opmode_curr) {
+				if ( (1 == calc_mode) && (STATUS_STANDBY < daq_status) ) {
+					kLog (K_MON, "[sncNB1_LODAQ::run] opmode(%d->%d) : processing in calc. mode\n", opmode_curr, opmode_calc);
+				}
+				else {
+					kLog (K_MON, "[sncNB1_LODAQ::run] stop ... \n");
+					daq_stop = 1;
+					pvPut (daq_stop);
+
+					epicsThreadSleep (2);
+
+					kLog (K_MON, "[sncNB1_LODAQ::run] set opmode : %d -> %d \n", opmode_calc, opmode_curr);
+					opmode_curr	= opmode_calc;
+					pvPut (opmode_curr);
+				}
+			}
+		} state run
+	}
+}
+

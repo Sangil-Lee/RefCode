@@ -1,0 +1,37 @@
+############################################################
+# IP address for Serial Server : MOXA NPort 5450
+############################################################
+#epicsEnvSet(IP_FILD_asynServer, "172.17.102.xxx")
+
+############################################################
+# PORT number for pfeiffer TPG261 single gauge controllers
+############################################################
+#epicsEnvSet(PORT_TPG261_CTRL0, "4001")
+
+############################################################
+# Assign port and port name
+############################################################
+#epicsEnvSet(TPG261CTRL0,   "${IP_FILD_asynServer}:${PORT_TPG261_CTRL0}")
+
+############################################################
+# Driver param.
+############################################################
+#epicsEnvSet(SCANINTV_TPG261,  "2.0")
+#epicsEnvSet(DEVICE_TIMEOUT,   "5.")
+#epicsEnvSet(CALLBACK_TIMEOUT, "5.")
+#epicsEnvSet(UNIT_TPG261,      "mBar")
+
+############################################################
+# Load record instances
+############################################################
+#dbLoadTemplate("db/FILD_TPG261.template")
+
+############################################################
+# Make serial connection via TCP
+############################################################
+#drvGenericSerialConfigure("TPG261CTRL0", "${TPG261CTRL0}", 0, 0)
+#drvTPG262_init("TPG261CTRL0", "${UNIT_TPG261}", ${DEVICE_TIMEOUT}, ${CALLBACK_TIMEOUT}, ${SCANINTV_TPG261})
+
+############################################################
+# End of File
+############################################################

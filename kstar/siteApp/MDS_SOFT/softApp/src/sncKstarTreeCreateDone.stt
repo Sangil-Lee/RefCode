@@ -1,0 +1,28 @@
+program sncKstarTreeCreateDone 
+option +r;
+option -c;
+
+
+int ccsShotSeq;
+int mdsCreateDone;
+
+assign ccsShotSeq to "CCS_SHOTSEQ_START";
+assign mdsCreateDone to "MDS_SHOT_CREATE_DONE";
+
+monitor ccsShotSeq;
+monitor mdsCreateDone;
+
+evflag createDoneClearFlag;
+
+sync ccsShotSeq createDoneClearFlag;
+
+ss mdsCreateDoneClear {
+        state createDone {
+                when (efTestAndClear(createDoneClearFlag)) {
+			if(ccsShotSeq==0){
+                                mdsCreateDone=0;
+                                pvPut(mdsCreateDone);
+			}
+                } state createDone
+        }
+}

@@ -1,0 +1,5375 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1171</width>
+    <height>826</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>1100</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="2" >
+    <widget class="QFrame" name="frame_4" >
+     <property name="minimumSize" >
+      <size>
+       <width>16</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="leftMargin" >
+       <number>2</number>
+      </property>
+      <property name="topMargin" >
+       <number>2</number>
+      </property>
+      <property name="rightMargin" >
+       <number>2</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>2</number>
+      </property>
+      <property name="horizontalSpacing" >
+       <number>2</number>
+      </property>
+      <property name="verticalSpacing" >
+       <number>2</number>
+      </property>
+      <item row="0" column="0" >
+       <widget class="CAImageMbbi" name="caImageMbbi" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_shot_prep_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_shot_prep_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="CAImageMbbi" name="caImageMbbi_2" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_standby_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_standby_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="CAImageMbbi" name="caImageMbbi_3" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_pcs_standby_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_pcs_standby_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>3</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" >
+       <widget class="CAImageMbbi" name="caImageMbbi_4" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_run_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_run_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>4</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" >
+       <widget class="CAImageMbbi" name="caImageMbbi_5" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_shot_start_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_shot_start_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5" >
+       <widget class="CAImageMbbi" name="caImageMbbi_6" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_during_shot_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_during_shot_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6" >
+       <widget class="CAImageMbbi" name="caImageMbbi_7" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_endof_shot_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_endof_shot_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>7</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7" >
+       <widget class="CAImageMbbi" name="caImageMbbi_8" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_stop_off.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_mps_stop_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>8</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="8" >
+       <widget class="CAImageMbbi" name="caImageMbbi_9" >
+        <property name="minimumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOTSEQ_STAGE</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CAImageMbbi::TrueFalse</enum>
+        </property>
+        <property name="falsepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_pcs_standby_shutdown_on.png</pixmap>
+        </property>
+        <property name="truepxm" stdset="0" >
+         <pixmap resource="../../SCS/scs.qrc" >:/images/SCS_exst_termination_on.png</pixmap>
+        </property>
+        <property name="index" >
+         <number>9</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_9" >
+        <property name="frameShape" >
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text" >
+         <string>Shot Number:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="CALabel" name="caLabel" >
+        <property name="maximumSize" >
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="frameShape" >
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="pvname" >
+         <string>CCS_SHOT_NUMBER</string>
+        </property>
+        <property name="dmode" stdset="0" >
+         <enum>CALabel::Int</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="9" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QFrame" name="frame_6" >
+     <property name="minimumSize" >
+      <size>
+       <width>750</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="CABoButton" name="caBoButton_11" >
+        <property name="minimumSize" >
+         <size>
+          <width>150</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>150</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>ITERPCS_LTU_SET_FREE_RUN</string>
+        </property>
+        <property name="truelabel" >
+         <string>Local</string>
+        </property>
+        <property name="falselabel" >
+         <string>Remote</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>0</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QFrame" name="frame_8" >
+        <property name="frameShape" >
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow" >
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>2</number>
+         </property>
+         <property name="topMargin" >
+          <number>2</number>
+         </property>
+         <property name="rightMargin" >
+          <number>2</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>2</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>2</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>2</number>
+         </property>
+         <item rowspan="2" row="0" column="0" >
+          <widget class="QLabel" name="label_103" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text" >
+            <string>KPCS clk #1</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="1" >
+          <widget class="CABoButton" name="caBoButton_20" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_ActiveLow</string>
+           </property>
+           <property name="truelabel" >
+            <string>Falling</string>
+           </property>
+           <property name="falselabel" >
+            <string>Rising</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="2" >
+          <widget class="QLabel" name="label_54" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="3" >
+          <widget class="QLabel" name="label_55" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T1</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="4" >
+          <widget class="QLabel" name="label_56" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>Clock</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="3" row="0" column="5" >
+          <widget class="CAPushButton" name="caPushButton_19" >
+           <property name="minimumSize" >
+            <size>
+             <width>80</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Setup</string>
+           </property>
+           <property name="buttonType" >
+            <enum>CAPushButton::TrueButton</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_SOFT_SETUP_P0</string>
+           </property>
+           <property name="truelabel" >
+            <string>Setup</string>
+           </property>
+           <property name="falselabel" >
+            <string>Setup</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+           <property name="unselColor" >
+            <color>
+             <red>200</red>
+             <green>200</green>
+             <blue>200</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4" >
+          <widget class="CALineEdit" name="caLineEdit_52" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P0_SEC0_CLOCK</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_SEC0_CLOCK</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="CABoButton" name="caBoButton_21" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_ENABLE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Enable</string>
+           </property>
+           <property name="falselabel" >
+            <string>Disable</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="CABoButton" name="caBoButton_22" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_MODE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Trigger</string>
+           </property>
+           <property name="falselabel" >
+            <string>Clock</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_53" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P0_SEC0_T0</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_SEC0_T0</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3" >
+          <widget class="CALineEdit" name="caLineEdit_54" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P0_SEC0_T1</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P0_SEC0_T1</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item rowspan="2" row="1" column="1" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>171</width>
+          <height>75</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QFrame" name="frame" >
+        <property name="frameShape" >
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow" >
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>2</number>
+         </property>
+         <property name="topMargin" >
+          <number>2</number>
+         </property>
+         <property name="rightMargin" >
+          <number>2</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>2</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>2</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>2</number>
+         </property>
+         <item rowspan="2" row="0" column="0" >
+          <widget class="QLabel" name="label_101" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text" >
+            <string>Ref clk #2</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="1" >
+          <widget class="CABoButton" name="caBoButton_17" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_ActiveLow</string>
+           </property>
+           <property name="truelabel" >
+            <string>Falling</string>
+           </property>
+           <property name="falselabel" >
+            <string>Rising</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="2" >
+          <widget class="QLabel" name="label_48" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="3" >
+          <widget class="QLabel" name="label_49" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T1</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="4" >
+          <widget class="QLabel" name="label_53" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>Clock</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="3" row="0" column="5" >
+          <widget class="CAPushButton" name="caPushButton_17" >
+           <property name="minimumSize" >
+            <size>
+             <width>80</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Setup</string>
+           </property>
+           <property name="buttonType" >
+            <enum>CAPushButton::TrueButton</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_SOFT_SETUP_P1</string>
+           </property>
+           <property name="truelabel" >
+            <string>Setup</string>
+           </property>
+           <property name="falselabel" >
+            <string>Setup</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+           <property name="unselColor" >
+            <color>
+             <red>200</red>
+             <green>200</green>
+             <blue>200</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4" >
+          <widget class="CALineEdit" name="caLineEdit_49" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P1_SEC0_CLOCK</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_SEC0_CLOCK</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="CABoButton" name="caBoButton_12" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_ENABLE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Enable</string>
+           </property>
+           <property name="falselabel" >
+            <string>Disable</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="CABoButton" name="caBoButton_13" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_MODE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Trigger</string>
+           </property>
+           <property name="falselabel" >
+            <string>Clock</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_42" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P1_SEC0_T0</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_SEC0_T0</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3" >
+          <widget class="CALineEdit" name="caLineEdit_43" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P1_SEC0_T1</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P1_SEC0_T1</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QFrame" name="frame_3" >
+        <property name="frameShape" >
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow" >
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>2</number>
+         </property>
+         <property name="topMargin" >
+          <number>2</number>
+         </property>
+         <property name="rightMargin" >
+          <number>2</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>2</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>2</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>2</number>
+         </property>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_102" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text" >
+            <string>RTMON clk #8</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="CABoButton" name="caBoButton_16" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_ActiveLow</string>
+           </property>
+           <property name="truelabel" >
+            <string>Falling</string>
+           </property>
+           <property name="falselabel" >
+            <string>Rising</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="QLabel" name="label_50" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3" >
+          <widget class="QLabel" name="label_51" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>T1</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4" >
+          <widget class="QLabel" name="label_52" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>300</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>127</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>229</red>
+                 <green>226</green>
+                 <blue>206</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="text" >
+            <string>Clock</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item rowspan="2" row="0" column="5" >
+          <widget class="CAPushButton" name="caPushButton_18" >
+           <property name="minimumSize" >
+            <size>
+             <width>80</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Setup</string>
+           </property>
+           <property name="buttonType" >
+            <enum>CAPushButton::TrueButton</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_SOFT_SETUP_P7</string>
+           </property>
+           <property name="truelabel" >
+            <string>Setup</string>
+           </property>
+           <property name="falselabel" >
+            <string>Setup</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+           <property name="unselColor" >
+            <color>
+             <red>200</red>
+             <green>200</green>
+             <blue>200</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="CABoButton" name="caBoButton_14" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_ENABLE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Enable</string>
+           </property>
+           <property name="falselabel" >
+            <string>Disable</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="CABoButton" name="caBoButton_15" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_MODE</string>
+           </property>
+           <property name="truelabel" >
+            <string>Trigger</string>
+           </property>
+           <property name="falselabel" >
+            <string>Clock</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_44" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P7_SEC0_T0</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_SEC0_T0</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3" >
+          <widget class="CALineEdit" name="caLineEdit_45" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P7_SEC0_T1</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_SEC0_T1</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4" >
+          <widget class="CALineEdit" name="caLineEdit_50" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>ITERPCS_LTU_P7_SEC0_CLOCK</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_P7_SEC0_CLOCK</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="4" column="0" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>698</width>
+          <height>21</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item rowspan="2" row="1" column="1" >
+    <widget class="QFrame" name="frame_2" >
+     <property name="minimumSize" >
+      <size>
+       <width>230</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>230</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QGroupBox" name="groupBox" >
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>16777215</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="title" >
+         <string>Operatio mode</string>
+        </property>
+        <layout class="QGridLayout" >
+         <item row="0" column="0" >
+          <widget class="CAMbboButton" name="caMbboBtn_ER_OP" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Minimum" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CAMbboButton::Vertical</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_OP_MODE</string>
+           </property>
+           <property name="textlist" >
+            <stringlist>
+             <string>Remote</string>
+             <string>Local</string>
+            </stringlist>
+           </property>
+           <property name="bitlist" >
+            <stringlist>
+             <string>1</string>
+             <string>2</string>
+            </stringlist>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QGroupBox" name="groupBox_10" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="title" >
+         <string>MDSplus setup</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading</set>
+        </property>
+        <layout class="QGridLayout" >
+         <item row="0" column="0" >
+          <layout class="QHBoxLayout" >
+           <item>
+            <widget class="QLabel" name="label_33" >
+             <property name="minimumSize" >
+              <size>
+               <width>80</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>80</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="palette" >
+              <palette>
+               <active>
+                <colorrole role="Base" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>127</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>229</red>
+                   <green>226</green>
+                   <blue>206</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="Base" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>255</red>
+                   <green>255</green>
+                   <blue>255</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>229</red>
+                   <green>226</green>
+                   <blue>206</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="Base" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>229</red>
+                   <green>226</green>
+                   <blue>206</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>229</red>
+                   <green>226</green>
+                   <blue>206</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>9</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="autoFillBackground" >
+              <bool>false</bool>
+             </property>
+             <property name="frameShape" >
+              <enum>QFrame::Panel</enum>
+             </property>
+             <property name="frameShadow" >
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text" >
+              <string>Create tree</string>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="CALineEdit" name="caLineEdit_9" >
+             <property name="sizePolicy" >
+              <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize" >
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font" >
+              <font>
+               <family>Sans Serif</family>
+               <pointsize>11</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text" >
+              <string>KPCS_CREATE_LOCAL_TREE</string>
+             </property>
+             <property name="nuformat" stdset="0" >
+              <enum>CALineEdit::RealOne</enum>
+             </property>
+             <property name="pvlist" stdset="0" >
+              <stringlist/>
+             </property>
+             <property name="pvname" >
+              <string>KPCS_CREATE_LOCAL_TREE</string>
+             </property>
+             <property name="dbrequest" stdset="0" >
+              <enum>CALineEdit::DBRGDBL</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QGroupBox" name="groupBox_4" >
+        <property name="title" >
+         <string>Control</string>
+        </property>
+        <layout class="QGridLayout" >
+         <item row="0" column="0" colspan="2" >
+          <widget class="CABoButton" name="caBoButton" >
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_SYS_ARMING</string>
+           </property>
+           <property name="truelabel" >
+            <string>Arming</string>
+           </property>
+           <property name="falselabel" >
+            <string>Release</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2" >
+          <widget class="CABoButton" name="caBoButton_2" >
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_SYS_RUN</string>
+           </property>
+           <property name="truelabel" >
+            <string>Run</string>
+           </property>
+           <property name="falselabel" >
+            <string>Stop</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="CAPushButton" name="caPushButton_35" >
+           <property name="minimumSize" >
+            <size>
+             <width>50</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="statusTip" >
+            <string>PVname : ITERPCS_LTU_SHOT_END</string>
+           </property>
+           <property name="text" >
+            <string>LTU stop</string>
+           </property>
+           <property name="buttonType" >
+            <enum>CAPushButton::PulseButton</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_SHOT_END</string>
+           </property>
+           <property name="truelabel" >
+            <string>LTU stop</string>
+           </property>
+           <property name="falselabel" >
+            <string>LTU stop</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+           <property name="unselColor" >
+            <color>
+             <red>200</red>
+             <green>200</green>
+             <blue>200</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="CAPushButton" name="caPushButton_22" >
+           <property name="minimumSize" >
+            <size>
+             <width>50</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>100</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="statusTip" >
+            <string>PVname : ITERPCS_LTU_SOFT_START</string>
+           </property>
+           <property name="text" >
+            <string>LTU start</string>
+           </property>
+           <property name="buttonType" >
+            <enum>CAPushButton::TrueButton</enum>
+           </property>
+           <property name="pvname" >
+            <string>ITERPCS_LTU_SOFT_START</string>
+           </property>
+           <property name="truelabel" >
+            <string>LTU start</string>
+           </property>
+           <property name="falselabel" >
+            <string>LTU start</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+           <property name="unselColor" >
+            <color>
+             <red>200</red>
+             <green>200</green>
+             <blue>200</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QGroupBox" name="groupBox_6" >
+        <property name="maximumSize" >
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="title" >
+         <string>Status</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="leftMargin" >
+          <number>1</number>
+         </property>
+         <property name="topMargin" >
+          <number>1</number>
+         </property>
+         <property name="rightMargin" >
+          <number>1</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>1</number>
+         </property>
+         <property name="horizontalSpacing" >
+          <number>1</number>
+         </property>
+         <property name="verticalSpacing" >
+          <number>1</number>
+         </property>
+         <item row="0" column="0" >
+          <layout class="QVBoxLayout" >
+           <property name="spacing" >
+            <number>2</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" >
+             <property name="spacing" >
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="CAImageMbbi" name="s1_8" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CAImageMbbi" name="s1_9" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CAImageMbbi" name="s1_10" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>3</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CAImageMbbi" name="s1_11" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>4</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CAImageMbbi" name="s1_12" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CAImageMbbi" name="s1_13" >
+               <property name="minimumSize" >
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="maximumSize" >
+                <size>
+                 <width>40</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="layoutDirection" >
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="pvname" >
+                <string>KPCS_STATUS</string>
+               </property>
+               <property name="dmode" stdset="0" >
+                <enum>CAImageMbbi::TrueFalse</enum>
+               </property>
+               <property name="falsepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_off.png</pixmap>
+               </property>
+               <property name="truepxm" stdset="0" >
+                <pixmap resource="../../DDS/bin/application.qrc" >:/images/DDS_MC_rect_on.png</pixmap>
+               </property>
+               <property name="index" >
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="CALabel" name="s1_14" >
+             <property name="minimumSize" >
+              <size>
+               <width>100</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize" >
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="palette" >
+              <palette>
+               <active>
+                <colorrole role="WindowText" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>0</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>0</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText" >
+                 <brush brushstyle="SolidPattern" >
+                  <color alpha="255" >
+                   <red>115</red>
+                   <green>115</green>
+                   <blue>115</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="font" >
+              <font>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="autoFillBackground" >
+              <bool>true</bool>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap" >
+              <bool>true</bool>
+             </property>
+             <property name="indent" >
+              <number>5</number>
+             </property>
+             <property name="pvname" >
+              <string>KPCS_STATUS</string>
+             </property>
+             <property name="dmode" stdset="0" >
+              <enum>CALabel::Choice</enum>
+             </property>
+             <property name="cmode" stdset="0" >
+              <enum>CALabel::Alarm</enum>
+             </property>
+             <property name="ttdmode" stdset="0" >
+              <enum>CALabel::Show</enum>
+             </property>
+             <property name="dbrequest" stdset="0" >
+              <enum>CALabel::DBRGSTR</enum>
+             </property>
+             <property name="messages" stdset="0" >
+              <stringlist/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0" >
+          <widget class="CALabel" name="caLabel_97" >
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Button" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Light" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Midlight" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>246</red>
+                 <green>244</green>
+                 <blue>241</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Dark" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Mid" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>158</red>
+                 <green>155</green>
+                 <blue>151</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Text" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="BrightText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="ButtonText" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>118</red>
+                 <green>116</green>
+                 <blue>113</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Shadow" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>0</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="AlternateBase" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>false</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_ERROR_STRING</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALabel::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="4" column="0" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>210</width>
+          <height>391</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QFrame" name="frame_5" >
+     <property name="minimumSize" >
+      <size>
+       <width>16</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QFrame" name="frame_7" >
+        <property name="frameShape" >
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow" >
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" >
+         <item row="0" column="0" colspan="2" >
+          <widget class="QLabel" name="label_7" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>RT Clock(Hz):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_51" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>KPCS_RT_CLOCK_RATE</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RT_CLOCK_RATE</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2" >
+          <widget class="QLabel" name="label" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Sampling rate (Hz):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_46" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>KPCS_SAMPLING_RATE</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealOne</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_SAMPLING_RATE</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2" >
+          <widget class="QLabel" name="label_2" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Start time (s):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_47" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>KPCS_START_T0_SEC1</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealThree</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_START_T0_SEC1</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_3" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Run Period (s):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2" >
+          <widget class="CALineEdit" name="caLineEdit_48" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>100</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Sans Serif</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text" >
+            <string>KPCS_RUN_PERIOD</string>
+           </property>
+           <property name="nuformat" stdset="0" >
+            <enum>CALineEdit::RealThree</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RUN_PERIOD</string>
+           </property>
+           <property name="dbrequest" stdset="0" >
+            <enum>CALineEdit::DBRGSTR</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" >
+          <widget class="QLabel" name="label_4" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Update RT PV:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" colspan="2" >
+          <widget class="CABoButton" name="caBoButton_18" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RTCORE_UPDATE_RT_PV</string>
+           </property>
+           <property name="truelabel" >
+            <string>Enable</string>
+           </property>
+           <property name="falselabel" >
+            <string>Disable</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" >
+          <widget class="QLabel" name="label_8" >
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Update 2nd RT PV:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2" >
+          <widget class="CABoButton" name="caBoButton_19" >
+           <property name="minimumSize" >
+            <size>
+             <width>150</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="align" stdset="0" >
+            <enum>CABoButton::Column</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RMCHK_UPDATE_RT_PV</string>
+           </property>
+           <property name="truelabel" >
+            <string>Enable</string>
+           </property>
+           <property name="falselabel" >
+            <string>Disable</string>
+           </property>
+           <property name="selColor" >
+            <color>
+             <red>0</red>
+             <green>255</green>
+             <blue>0</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>141</width>
+          <height>155</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QGroupBox" name="groupBox_2" >
+        <property name="title" >
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" >
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_6" >
+           <property name="text" >
+            <string>RT counter</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="CALabel" name="kca_B5_Clock_2" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>75</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>218</red>
+                 <green>213</green>
+                 <blue>240</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>218</red>
+                 <green>213</green>
+                 <blue>240</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RTCORE_RT_CNT</string>
+           </property>
+           <property name="dmode" stdset="0" >
+            <enum>CALabel::Int</enum>
+           </property>
+           <property name="fillcol" stdset="0" >
+            <color>
+             <red>218</red>
+             <green>213</green>
+             <blue>240</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_5" >
+           <property name="text" >
+            <string>DAQ counter</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="CALabel" name="kca_B5_Clock" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>75</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="palette" >
+            <palette>
+             <active>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>218</red>
+                 <green>213</green>
+                 <blue>240</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>218</red>
+                 <green>213</green>
+                 <blue>240</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Window" >
+               <brush brushstyle="SolidPattern" >
+                <color alpha="255" >
+                 <red>237</red>
+                 <green>233</green>
+                 <blue>227</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font" >
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="autoFillBackground" >
+            <bool>true</bool>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="pvname" >
+            <string>KPCS_RMCHK_DAQ_CNT</string>
+           </property>
+           <property name="dmode" stdset="0" >
+            <enum>CALabel::Int</enum>
+           </property>
+           <property name="fillcol" stdset="0" >
+            <color>
+             <red>218</red>
+             <green>213</green>
+             <blue>240</blue>
+            </color>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>20</width>
+          <height>121</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMbboButton</class>
+   <extends>QWidget</extends>
+   <header>caMbbobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAImageMbbi</class>
+   <extends>QWidget</extends>
+   <header>caImageMbbi.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../kpcs.qrc" />
+ </resources>
+ <connections/>
+</ui>

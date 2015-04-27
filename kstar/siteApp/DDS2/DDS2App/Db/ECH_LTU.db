@@ -1,0 +1,298 @@
+########################################################################
+# *  Copyright (c) 2006 ~ by OLZETEK. All Rights Reserved.
+#
+##==============================================================================
+#                        EDIT HISTORY
+#
+#	2007. 11. 15.
+#	add field(PINI, "YES") for getID PV
+#	add PV <**_putCalVal>
+#
+#
+# 2007. 11. 23
+# record(ai, DDS2_LTU_getTime) {
+#  - field(SCAN, "1 second")
+#  + field(SCAN, "I/O Intr")
+
+
+record(ai, ECH_LTU_getTime) {
+  field(DESC, "ECH_LTU_getTime")
+  field(DTYP, "CLTU Raw Reading")
+  field(INP, "@cltu my_time")
+  field(SCAN, "I/O Intr")
+}
+record(ai, ECH_LTU_getOffset) {
+  field(DESC, "ECH_LTU_getOffset")
+  field(DTYP, "CLTU Raw Reading")
+  field(INP, "@cltu offset")
+}
+record(ai, ECH_LTU_getID) {
+  field(DESC, "ECH_LTU_getID")
+  field(DTYP, "CLTU Raw Reading")
+  field(INP, "@cltu id_name")
+  field(PINI, "YES")
+}
+
+
+
+record(ao, ECH_LTU_putCalVal) {
+  field(DESC, "ECH_LTU putCalValue")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@put_cal")
+}
+
+record(ao, ECH_LTU_shotStart) {
+  field(DESC, "ECH_LTU shot start")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@shot_start")
+}
+
+###################################
+# set port configure ##############
+
+record(ao, ECH_LTU_setup_p0) {
+  field(DESC, "ECH_LTU board setup")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@setup 0")
+}
+
+record(ao, ECH_LTU_setup_p1) {
+  field(DESC, "ECH_LTU board setup")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@setup 1")
+}
+
+record(ao, ECH_LTU_setup_p2) {
+  field(DESC, "ECH_LTU board setup")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@setup 2")
+}
+
+record(ao, ECH_LTU_setup_p3) {
+  field(DESC, "ECH_LTU board setup")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@setup 3")
+}
+
+record(ao, ECH_LTU_setup_p4) {
+  field(DESC, "ECH_LTU board setup")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@setup 4")
+}
+
+
+##############################################
+# set clock on shot for each port ############
+
+record(ao, ECH_LTU_clkshot_p0) {
+  field(DESC, "ECH_LTU clock on shot")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clkOnShot 0")
+}
+
+record(ao, ECH_LTU_clkshot_p1) {
+  field(DESC, "ECH_LTU clock on shot")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clkOnShot 1")
+}
+
+record(ao, ECH_LTU_clkshot_p2) {
+  field(DESC, "ECH_LTU clock on shot")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clkOnShot 2")
+}
+
+record(ao, ECH_LTU_clkshot_p3) {
+  field(DESC, "ECH_LTU clock on shot")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clkOnShot 3")
+}
+
+###############################################
+# set shot period  ###############
+
+record(ao, ECH_LTU_ShotTerm) {
+  field(DESC, "ECH_LTU shot period")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@shot_term")
+}
+
+
+###############################################
+# set single port trigger level #######
+
+record(ao, ECH_LTU_Trig_p0) {
+  field(DESC, "ECH_LTU trigger level")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@trig 0")
+}
+record(ao, ECH_LTU_Trig_p1) {
+  field(DESC, "ECH_LTU trigger level")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@trig 1")
+}
+record(ao, ECH_LTU_Trig_p2) {
+  field(DESC, "ECH_LTU trigger level")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@trig 2")
+}
+record(ao, ECH_LTU_Trig_p3) {
+  field(DESC, "ECH_LTU trigger level")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@trig 3")
+}
+
+##########################################
+# set single port clock rate    ########
+
+record(ao, ECH_LTU_Clock_p0) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clock_hz 0")
+}
+record(ao, ECH_LTU_Clock_p1) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clock_hz 1")
+}
+record(ao, ECH_LTU_Clock_p2) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clock_hz 2")
+}
+record(ao, ECH_LTU_Clock_p3) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@clock_hz 3")
+}
+
+#########################################
+# set single port t0    ########
+
+record(ao, ECH_LTU_T0_p0) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t0 0")
+}
+record(ao, ECH_LTU_T0_p1) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t0 1")
+}
+record(ao, ECH_LTU_T0_p2) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t0 2")
+}
+record(ao, ECH_LTU_T0_p3) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t0 3")
+}
+
+##########################################
+# set single port t1    ########
+
+record(ao, ECH_LTU_T1_p0) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t1 0")
+}
+record(ao, ECH_LTU_T1_p1) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t1 1")
+}
+record(ao, ECH_LTU_T1_p2) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t1 2")
+}
+record(ao, ECH_LTU_T1_p3) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@t1 3")
+}
+
+###############################################
+# set multi port trigger level #######
+
+record(ao, ECH_LTU_mTrig) {
+  field(DESC, "ECH_LTU trigger level")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mtrig 0")
+}
+
+##########################################
+# set multi port clock rate    ########
+
+record(ao, ECH_LTU_mClock_sec0) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mclock_hz 0")
+}
+record(ao, ECH_LTU_mClock_sec1) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mclock_hz 1")
+}
+record(ao, ECH_LTU_mClock_sec2) {
+  field(DESC, "ECH_LTU clock rate")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mclock_hz 2")
+}
+
+#########################################
+# set multi port t0    ########
+
+record(ao, ECH_LTU_mT0_sec0) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt0 0")
+}
+record(ao, ECH_LTU_mT0_sec1) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt0 1")
+}
+record(ao, ECH_LTU_mT0_sec2) {
+  field(DESC, "ECH_LTU t0")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt0 2")
+}
+
+##########################################
+# set multi port t1    ########
+
+record(ao, ECH_LTU_mT1_sec0) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt1 0")
+}
+record(ao, ECH_LTU_mT1_sec1) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt1 1")
+}
+record(ao, ECH_LTU_mT1_sec2) {
+  field(DESC, "ECH_LTU t1")
+  field(DTYP, "CLTU Control")
+  field(OUT, "@mt1 2")
+}
+
+
+
+##########################################
+# set heart beat   ########
+
+record(bi, ECH_LTU_HeartBeat) {
+  field(DESC, "Analog input")
+  field(INP, "ECH_LTU_calcHeartBeat NPP NMS")
+}
+
+record(calc, ECH_LTU_calcHeartBeat) {
+  field(SCAN, "1 second")
+  field(FLNK, "ECH_LTU_HeartBeat NPP NMS")
+  field(CALC, "A=0?1:0")
+  field(INPA, "ECH_LTU_HeartBeat")
+}

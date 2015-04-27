@@ -1,0 +1,70 @@
+program sncTmsMainCon
+option +r;
+option -c;
+
+%% #include <string.h>
+
+float tfpf25;
+float tfpf50;
+
+int cdStage;
+
+float cdconstr1;
+float cdconstr2;
+int cdconstr3;
+
+assign cdStage to "TMS_CCS_OPST_CW_STAGE";
+
+assign cdconstr1 to "TMS_CDCONSTRAINT_TOUTTIN";
+assign cdconstr2 to "TMS_CDCONSTRAINT_TSURFACE";
+assign cdconstr3 to "TMS_CDCONSTRAINT_TFSURFACE";
+
+float tfcbpfcToutMax;
+float hrsTin20h;
+float hrsTin20l;
+float tfpfcsStrMax;
+float tfshlToutMax;
+float tfcToutMax;
+
+assign tfcbpfcToutMax to "TMS_TFCBPFC_TOUT_MAX";
+assign hrsTin20h to "HRSAI_270_TI_004";
+assign hrsTin20l to "HRSAI_300_TI_110";
+assign tfpfcsStrMax to "TMS_TFPFCS_STR_MAX";
+assign tfshlToutMax to "TMS_TFSHL_TOUT_MAX";
+assign tfcToutMax to "TMS_TFC_TOUT_MAX";
+
+monitor cdStage;
+monitor tfcbpfcToutMax;
+monitor hrsTin20h;
+monitor hrsTin20l;
+monitor tfpfcsStrMax;
+monitor tfshlToutMax;
+monitor tfcToutMax;
+
+ss tmsTempValue{
+	state tms_main_value{
+        	when (delay(0.1)){
+			tfpf25=0; tfpf50=0;
+			if(cdStage<3)
+			{
+			tfpf25=tfcbpfcToutMax-hrsTin20h;
+			tfpf50=tfpfcsStrMax-hrsTin20h;
+			}
+			else
+			{
+			tfpf25=tfcbpfcToutMax-hrsTin20l;
+			tfpf50=tfpfcsStrMax-hrsTin20l;
+			}
+			cdconstr1=tfpf25;
+			cdconstr2=tfpf50;
+			pvPut(cdconstr1);
+			pvPut(cdconstr2);
+                        if(tfshlToutMax>150 && tfshlToutMax<tfcToutMax){
+                                cdconstr3=1;
+                                pvPut(cdconstr3);
+                        }
+			else cdconstr3=0;
+			pvPut(cdconstr3);
+                }state tms_main_value
+	}
+}

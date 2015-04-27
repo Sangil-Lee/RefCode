@@ -1,0 +1,29 @@
+record(sub,"$(user):subExample")
+{
+    field(INAM,"mySubInit")
+    field(SNAM,"mySubProcess")
+}
+record(aSub,"$(user):aSubExample")
+{
+    field(INAM,"myAsubInit")
+    field(SNAM,"myAsubProcess")
+    field(FTA,"DOUBLE")
+    field(NOA,"10")
+    field(INPA,"$(user):compressExample CPP")
+}
+
+record(bi, "YUNSW_SHOTSEQ_START") {
+	field(DESC, "CCS_SHOTSEQ_START test")
+	field(DTYP, "Soft Channel")
+	field(ZNAM, "STOP")
+	field(ONAM, "START")
+}
+
+record(bi, "YUNSW_CTU_shotStart") {
+	field(DESC, "CCS_CTU_shotStart")
+	field(PINI, "YES")
+	field(DTYP, "Soft Channel")
+	field(ZNAM, "flip(0)")
+	field(ONAM, "flop(1)")
+}
+

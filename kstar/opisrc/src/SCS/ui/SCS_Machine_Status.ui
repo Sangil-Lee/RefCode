@@ -1,0 +1,6703 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <property name="dockNestingEnabled" >
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1270</width>
+      <height>980</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pixmap" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_machine_status.png</pixmap>
+    </property>
+    <property name="scaledContents" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="CAUITime" name="CAUITime" >
+    <property name="geometry" >
+     <rect>
+      <x>38</x>
+      <y>32</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="timeset" stdset="0" >
+     <enum>CAUITime::Event</enum>
+    </property>
+    <property name="periodicsecond" stdset="0" >
+     <enum>CAUITime::One</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>770</x>
+      <y>100</y>
+      <width>122</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>122</width>
+      <height>29</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>122</width>
+      <height>29</height>
+     </size>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>71</red>
+          <green>110</green>
+          <blue>117</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>71</red>
+          <green>110</green>
+          <blue>117</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>71</red>
+          <green>110</green>
+          <blue>117</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>71</red>
+          <green>110</green>
+          <blue>117</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="indent" >
+     <number>10</number>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SHOT_NUMBER</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="dbrequest" stdset="0" >
+     <enum>CALabel::DBRGDBL</enum>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="CAGraphic" >
+    <property name="geometry" >
+     <rect>
+      <x>1225</x>
+      <y>44</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::ActInact</enum>
+    </property>
+    <property name="pvname" >
+     <string>CCS_HEARTBEAT</string>
+    </property>
+   </widget>
+   <widget class="CAWclock" name="CAWclock" >
+    <property name="geometry" >
+     <rect>
+      <x>1040</x>
+      <y>43</y>
+      <width>184</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>43</red>
+          <green>66</green>
+          <blue>71</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>43</red>
+          <green>66</green>
+          <blue>71</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>115</red>
+          <green>115</green>
+          <blue>115</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Base" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>235</red>
+          <green>239</green>
+          <blue>198</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="text" >
+     <string>CCS_SYS_TIME.RVAL</string>
+    </property>
+    <property name="pvname" >
+     <string>CCS_SYS_TIME.RVAL</string>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_204" >
+    <property name="geometry" >
+     <rect>
+      <x>50</x>
+      <y>127</y>
+      <width>193</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>193</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>193</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_OPST_CONTROL</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_maintenance.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_pumping.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_cooldown.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_chargeup.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_experiment.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_s_warmup.png</pixmap>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_196" >
+    <property name="geometry" >
+     <rect>
+      <x>294</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_LEVEL1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1_tf_fast_discharge_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1_tf_fast_discharge_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_198" >
+    <property name="geometry" >
+     <rect>
+      <x>444</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_LEVEL3</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3_experiment_stop_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3_experiment_stop_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_197" >
+    <property name="geometry" >
+     <rect>
+      <x>369</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_LEVEL2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2_tf_slow_discharge_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2_tf_slow_discharge_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_199" >
+    <property name="geometry" >
+     <rect>
+      <x>519</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_LEVEL4</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4_next_shot_inhibit_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4_next_shot_inhibit_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_202" >
+    <property name="geometry" >
+     <rect>
+      <x>669</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_NORMAL</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln_normal_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln_normal_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_201" >
+    <property name="geometry" >
+     <rect>
+      <x>594</x>
+      <y>127</y>
+      <width>70</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>70</width>
+      <height>45</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_WARNING</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw_warning_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw_warning_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="index" >
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_47" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>224</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_QDS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_75" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>659</y>
+      <width>53</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>53</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>53</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_ELECT</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_76" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>768</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_CHILL</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_68" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>912</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_DLS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_69" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>912</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_DLS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_3" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>332</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_PSI</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_10" >
+    <property name="geometry" >
+     <rect>
+      <x>770</x>
+      <y>150</y>
+      <width>122</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>122</width>
+      <height>29</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>122</width>
+      <height>29</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_ACCESS_MODE</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_access_mode.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_controled_access_mode.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_no_access_mode.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_11" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>224</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_TF_QUENCH</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_tf_quench_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_tf_quench_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_12" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>260</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_INTL_PF_QUENCH</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_pf_quench_on.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_pf_quench_off.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_107" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>768</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_CWF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_normal.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_warning.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_fault.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_109" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>296</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_SIS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_113" >
+    <property name="geometry" >
+     <rect>
+      <x>774</x>
+      <y>659</y>
+      <width>110</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_154_VS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_sag_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_sag_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_114" >
+    <property name="geometry" >
+     <rect>
+      <x>774</x>
+      <y>695</y>
+      <width>110</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>108</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_229_VS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_sag_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_sag_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_115" >
+    <property name="geometry" >
+     <rect>
+      <x>774</x>
+      <y>677</y>
+      <width>110</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_154_INTERRUPT</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_interrupt_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_interrupt_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_116" >
+    <property name="geometry" >
+     <rect>
+      <x>774</x>
+      <y>713</y>
+      <width>110</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>110</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_229_INTERRUPT</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_interrupt_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_interrupt_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_108" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>804</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_AIR_PRESSURE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_normal.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_low_pressure.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_117" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>840</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_STATUS_ROOM_PRESSURE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_normal.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ld_fault.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_70" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>225</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_DDS1A</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_71" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>298</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_HALPHA</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_72" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>225</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ICS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_73" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>296</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_SIS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_74" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>260</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_PCS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_rtmode.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_79" >
+    <property name="geometry" >
+     <rect>
+      <x>497</x>
+      <y>852</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_FUEL</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_80" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>692</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF7</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_83" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>692</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF7</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_84" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>620</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF6U</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_87" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>620</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF6U</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_85" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>548</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF5U</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_88" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>548</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF5U</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_89" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>476</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF4U</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_86" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>476</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF4U</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_90" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>404</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF3U</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_91" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>404</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF3U</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_92" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>368</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_93" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>368</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF2</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_94" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>332</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF1</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_95" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>332</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_96" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>296</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_TF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_97" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>296</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_TF</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_98" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>260</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ICH</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_99" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>260</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_ICH</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_100" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>224</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ECH</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_101" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>224</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_ECH</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_102" >
+    <property name="geometry" >
+     <rect>
+      <x>188</x>
+      <y>447</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_VMS_VV</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_103" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>519</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_CLS_VACUUM</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_104" >
+    <property name="geometry" >
+     <rect>
+      <x>188</x>
+      <y>483</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_VMS_CR</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_105" >
+    <property name="geometry" >
+     <rect>
+      <x>188</x>
+      <y>519</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_CLS_VACUUM</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_106" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>495</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_GDS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_110" >
+    <property name="geometry" >
+     <rect>
+      <x>188</x>
+      <y>555</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_HDS_VACUUM</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_111" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>447</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_VMS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_112" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>555</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_HDS_VACUUM</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_118" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>667</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_TMS_MECH</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_119" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>739</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_HDS_HELIUM</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_120" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>775</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_HRS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_121" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>775</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_HRS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_122" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>631</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="toolTip" >
+     <string>TMS Unit 1 (Temperature unit)</string>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_TMS_CRYO</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_123" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>703</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_CLS_HELIUM</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_124" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>631</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_TMS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_125" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>703</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_CLS_HELIUM</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_126" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>739</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_HDS_HELIUM</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_81" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>495</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_FUEL</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_127" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>667</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_TMS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_128" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>483</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_VMS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_77" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>695</y>
+      <width>53</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>53</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>53</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_ELECT</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_48" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>260</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_QDS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_129" >
+    <property name="geometry" >
+     <rect>
+      <x>1040</x>
+      <y>86</y>
+      <width>100</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_TF_MPS_ONOFF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_tf_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_tf_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_130" >
+    <property name="geometry" >
+     <rect>
+      <x>1040</x>
+      <y>135</y>
+      <width>100</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_PF_MPS_ONOFF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_pf_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_pf_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_131" >
+    <property name="geometry" >
+     <rect>
+      <x>1150</x>
+      <y>86</y>
+      <width>100</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_GDC_ONOFF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_gdc_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_gdc_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_133" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>852</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_GDS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_78" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>332</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_PSI</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_82" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>368</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_DATA</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_data_storing.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_data_done.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_135" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>876</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_GCDS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_138" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>531</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_BORON</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_blank.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_140" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>522</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ER</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_142" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>373</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_XICS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_143" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>558</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_RBA</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_134" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>888</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_PMS</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_136" >
+    <property name="geometry" >
+     <rect>
+      <x>192</x>
+      <y>888</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_PMS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_137" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>440</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF3L</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_139" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>440</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF3L</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_145" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>512</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF4L</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_146" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>512</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF4L</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_147" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>584</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF5L</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_148" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>584</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF5L</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_149" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>656</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_PF6L</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_150" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>656</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_PF6L</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_151" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>728</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_IVC</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_152" >
+    <property name="geometry" >
+     <rect>
+      <x>414</x>
+      <y>728</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_MPS_IVC</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_153" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>296</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_NBI1</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_154" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>296</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_NBI1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_155" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>261</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_DDS1B</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_156" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>336</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ECE-HR</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_157" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>373</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MC</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_158" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>447</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ECEI</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_159" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>596</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_TS1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_161" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>671</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_SXR</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_160" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>224</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_VSS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_162" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>261</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_VFS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_163" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>448</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_CES</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_164" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>298</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_VBS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_165" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>336</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_NMS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_166" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>634</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_TS2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_167" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>485</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_FRLPA</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_169" >
+    <property name="geometry" >
+     <rect>
+      <x>496</x>
+      <y>764</y>
+      <width>81</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>33</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MPS_RMP</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_141" >
+    <property name="geometry" >
+     <rect>
+      <x>1150</x>
+      <y>135</y>
+      <width>100</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>100</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : CCS_ICWC_ONOFF</string>
+    </property>
+    <property name="pvname" >
+     <string>CCS_ICWC_ONOFF</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_icwc_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_icwc_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_144" >
+    <property name="geometry" >
+     <rect>
+      <x>993</x>
+      <y>823</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_BEAMON_OP1_STATUS</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_BEAMON_OP1_STATUS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_132" >
+    <property name="geometry" >
+     <rect>
+      <x>497</x>
+      <y>888</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_SMBI</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_168" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>404</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_ECCD</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_170" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>404</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_ECCD</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_171" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>709</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_HXR</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_172" >
+    <property name="geometry" >
+     <rect>
+      <x>720</x>
+      <y>369</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSINTL_LHCD</string>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ln.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l1.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l2.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l3.png</pixmap>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_l4.png</pixmap>
+    </property>
+    <property name="fvpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_lw.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_173" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>369</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_LHCD</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_174" >
+    <property name="geometry" >
+     <rect>
+      <x>802</x>
+      <y>732</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MG</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_175" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>410</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MC2</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_176" >
+    <property name="geometry" >
+     <rect>
+      <x>994</x>
+      <y>485</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_MMWI</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_177" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>411</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_BES</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_178" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>597</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_IRVB</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_179" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>671</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_IRTVD1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_180" >
+    <property name="geometry" >
+     <rect>
+      <x>1170</x>
+      <y>634</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="pvname" >
+     <string>CCS_LCSST_IRTV</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_fault.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_stop.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_operation.png</pixmap>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_181" >
+    <property name="geometry" >
+     <rect>
+      <x>1171</x>
+      <y>822</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_BEAMON_OP2_STATUS</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_BEAMON_OP2_STATUS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_182" >
+    <property name="geometry" >
+     <rect>
+      <x>993</x>
+      <y>859</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_P1ARC_RTN_RUN</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_P1ARC_RTN_RUN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_183" >
+    <property name="geometry" >
+     <rect>
+      <x>993</x>
+      <y>895</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_PS1_STA_HVON</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_PS1_STA_HVON</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_184" >
+    <property name="geometry" >
+     <rect>
+      <x>993</x>
+      <y>932</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_P1FIL_RTN_TSTOP</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_P1FIL_RTN_TSTOP</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is1_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_185" >
+    <property name="geometry" >
+     <rect>
+      <x>1171</x>
+      <y>859</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_P2ARC_STA_RUN</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_P2ARC_STA_RUN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_186" >
+    <property name="geometry" >
+     <rect>
+      <x>1171</x>
+      <y>896</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_PS2_STA_HVON</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_PS2_STA_HVON</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+   <widget class="CAImageMbbi" name="CAImageMbbi_187" >
+    <property name="geometry" >
+     <rect>
+      <x>1171</x>
+      <y>932</y>
+      <width>81</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>77</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>81</width>
+      <height>34</height>
+     </size>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : NB1_P2FILA_STA_TRUN</string>
+    </property>
+    <property name="pvname" >
+     <string>NB1_P2FILA_STA_TRUN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CAImageMbbi::Choice</enum>
+    </property>
+    <property name="zrpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_off.png</pixmap>
+    </property>
+    <property name="onpxm" stdset="0" >
+     <pixmap resource="../scs.qrc" >:/images/SCS_MS_ls_nbi1_is2_on.png</pixmap>
+    </property>
+    <property name="twpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="thpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="frpxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="falsepxm" stdset="0" >
+     <pixmap/>
+    </property>
+    <property name="truepxm" stdset="0" >
+     <pixmap/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAImageMbbi</class>
+   <extends>QWidget</extends>
+   <header>caImageMbbi.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAWclock</class>
+   <extends>QLabel</extends>
+   <header>caWclock.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../scs.qrc" />
+ </resources>
+ <connections/>
+</ui>

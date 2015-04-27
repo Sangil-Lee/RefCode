@@ -1,0 +1,45 @@
+record(ao, "$(SYS)_$(DEV)_SAMPLE_RATE") {
+  field(DESC, "NIDAQ Terminal Config")
+  field(DTYP, "NIDAQmx AoControl")
+  field(OUT, "@smp_rate")
+}
+record(ao, "$(SYS)_$(DEV)_SAMPLE_TIME") {
+  field(DESC, "NIDAQ Mesure Time")
+  field(DTYP, "NIDAQmx AoControl")
+  field(OUT, "@smp_time")
+}
+record(ao, "$(SYS)_$(DEV)_MINVAL") {
+  field(DESC, "NIDAQ Mesure Min. Voltage")
+  field(DTYP, "NIDAQmx AoControl")
+  field(OUT, "@min_val")
+}
+record(ao, "$(SYS)_$(DEV)_MAXVAL") {
+  field(DESC, "NIDAQ Mesure Max. Voltage")
+  field(DTYP, "NIDAQmx AoControl")
+  field(OUT, "@max_val")
+}
+record(ai, "$(SYS)_$(DEV)_SAMPLE_RATE_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NIDAQmx RawRead_ai")
+  field(INP, "@$(RDEV)_AI smp_rate_r")
+}
+record(ai, "$(SYS)_$(DEV)_SAMPLE_TIME_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NIDAQmx RawRead_ai")
+  field(INP, "@$(RDEV)_AI smp_time_r")
+}
+record(ai, "$(SYS)_$(DEV)_MINVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NIDAQmx RawRead_ai")
+  field(INP, "@$(RDEV)_AI min_val_r")
+}
+record(ai, "$(SYS)_$(DEV)_MAXVAL_R") {
+  field(SCAN, "I/O Intr")
+  field(PINI, "YES")
+  field(DTYP, "NIDAQmx RawRead_ai")
+  field(INP, "@$(RDEV)_AI max_val_r")
+}
+

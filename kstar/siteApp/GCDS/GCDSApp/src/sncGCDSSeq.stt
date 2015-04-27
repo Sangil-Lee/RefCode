@@ -1,0 +1,65 @@
+program sncGCDSSeq 
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+
+double startT0;
+double stopT1;
+double ltuT0;
+
+assign opMode to "GCDS_OP_MODE";
+assign status to "GCDS_STATUS";
+assign sysArming to "GCDS_SYS_ARMING";
+assign autoRun to "GCDS_AUTO_RUN";
+
+assign startT0 to "GCDS_START_T0_SEC1";
+assign stopT1 to "GCDS_STOP_T1_SEC1";
+assign ltuT0 to "FUEL2_LTU_P0_SEC0_T0";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+
+
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+evflag stopT1f;
+sync stopT1 stopT1f;
+
+ss setT0Seq {
+	state setT0 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+			}
+		}state setT0 
+	}
+}
+ss setT1Seq {
+	state setT1 {
+		 when (efTestAndClear(stopT1f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+			}
+		}state setT1 
+	}
+}

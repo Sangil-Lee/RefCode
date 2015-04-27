@@ -1,0 +1,14 @@
+record(ai, "$(PV_NAME)_A")
+{
+    field(DESC, "$(DESC)")
+    field(SCAN, "$(SCAN)")
+    field(INP, "$(TC)")
+    field(PREC, "1")
+}
+record(calc, "$(PV_NAME)")
+{
+    field(DESC, "$(DESC)")
+    field(SCAN, "$(SCAN)")
+    field(CALC, "A+273")
+    field(INPA, "$(PV_NAME)_A")
+}

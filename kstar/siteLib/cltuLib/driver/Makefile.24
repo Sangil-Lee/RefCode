@@ -1,0 +1,16 @@
+
+############################################################################
+#
+# Makefile
+#
+#
+############################################################################
+
+#LINUX_SRC = /opt/eldk/ppc_74xx/usr/src/cwcec-kernel-source-2.6.16.13
+KDIR = /lib/modules/$(shell uname -r)/build
+CFLAG = -D__KERNEL__ -DMODULE -I$(KDIR)/include -O
+
+all: cltu_drv_k26.o
+
+clean:
+	rm -rf *.o

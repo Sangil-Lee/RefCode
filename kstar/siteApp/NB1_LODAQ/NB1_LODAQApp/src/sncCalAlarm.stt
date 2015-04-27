@@ -1,0 +1,443 @@
+program sncCalAlarm
+
+%%//option +r;
+option -c;
+
+%{
+#include <math.h>
+#include <epicsThread.h>
+#include <cadef.h>
+
+#include "kutil.h"
+#include "kupaLib.h"
+#include "drvNI6254.h"
+
+#define MAX_STRING_SIZE	40
+#define MAX_PVNAME_SIZE	64
+#define MAX_PVLIST_SIZE	30
+
+// for display name of PV
+char	PvName_Grp1[2][3][MAX_PVNAME_SIZE] = {
+	{ "NB11_WAT_ELD_DT", "NB11_WAT_G11_DT",  "NB11_WAT_G12_DT" },
+	{ "NB12_WAT_ELD_DT", "NB12_WAT_G11_DT",  "NB12_WAT_G12_DT" }
+};
+char	PvName_Grp2[2][2][MAX_PVNAME_SIZE] = {
+	{ "NB11_WAT_ARC1_DT",	"NB11_WAT_ARC2_DT" },
+	{ "NB12_WAT_ARC1_DT",	"NB12_WAT_ARC2_DT" }
+};
+char	PvName_Grp3[2][11][MAX_PVNAME_SIZE] = {
+	{
+		"NB11_WAT_G21_DT",	"NB11_WAT_G22_DT",	"NB11_WAT_G31_DT",
+		"NB11_WAT_G32_DT",	"NB11_WAT_G41_DT",	"NB11_WAT_G42_DT",	"NB11_WAT_SCR_DT",	"NB11_WAT_N11_DT",
+		"NB11_WAT_N12_DT",	"NB11_WAT_N21_DT",	"NB11_WAT_N22_DT"
+	},
+	{
+		"NB12_WAT_G21_DT",	"NB12_WAT_G22_DT",	"NB12_WAT_G31_DT",
+		"NB12_WAT_G32_DT",	"NB12_WAT_G41_DT",	"NB12_WAT_G42_DT",	"NB12_WAT_SCR_DT",	"NB12_WAT_N11_DT",
+		"NB12_WAT_N12_DT",	"NB12_WAT_N21_DT",	"NB12_WAT_N22_DT"
+	}
+};
+char	PvName_Common[7][MAX_PVNAME_SIZE] = {
+	"NB1_WAT_BMSC_DT",	"NB1_WAT_BMID_DT", "NB1_WAT_ID1_DT",	"NB1_WAT_ID2_DT",	"NB1_WAT_ID3_DT",	
+	"NB1_WAT_BLSC_DT",	"NB1_WAT_BDSC_DT"
+};
+
+char	PvName_AlmList[3][MAX_PVNAME_SIZE] = {
+	"NB1_LODAQ_ALM_IS1_LIST",	"NB1_LODAQ_ALM_IS2_LIST", "NB1_LODAQ_ALM_COMMON_LIST"
+};
+
+char	almPVList[3][MAX_PVLIST_SIZE][MAX_STRING_SIZE];
+extern int proc_cal_alarm (char *pszTreeName, char *pszTreeIPport, int nShotNumber);
+
+}%
+
+int		snap_shot;
+assign	snap_shot to "NB1_LODAQ_SNAP_SHOT";
+monitor	snap_shot;
+
+evflag	ef_start_alarm;
+sync	snap_shot ef_start_alarm;
+
+double	PvPwr_Grp1_1  [3];
+double	PvPwr_Grp1_2  [3];
+double	PvPwr_Grp1    [2][3];
+double	PvPwr_Grp2_1  [2];
+double	PvPwr_Grp2_2  [2];
+double	PvPwr_Grp2    [2][2];
+double	PvPwr_Grp3_1  [11];
+double	PvPwr_Grp3_2  [11];
+double	PvPwr_Grp3    [2][11];
+double	PvPwr_Common  [7];
+
+double	PvRef_Grp1_1  [3];
+double	PvRef_Grp1_2  [3];
+double	PvRef_Grp1    [2][3];
+double	PvRef_Grp2_1  [2];
+double	PvRef_Grp2_2  [2];
+double	PvRef_Grp2    [2][2];
+double	PvRef_Grp3_1  [11];
+double	PvRef_Grp3_2  [11];
+double	PvRef_Grp3    [2][11];
+double	PvRef_Common  [7];
+
+double	PvRate_Grp1_1 [3];
+double	PvRate_Grp1_2 [3];
+double	PvRate_Grp1   [2][3];
+double	PvRate_Grp2_1 [2];
+double	PvRate_Grp2_2 [2];
+double	PvRate_Grp2   [2][2];
+double	PvRate_Grp3_1 [11];
+double	PvRate_Grp3_2 [11];
+double	PvRate_Grp3   [2][11];
+double	PvRate_Common [7];
+
+int		PvAlm_Grp1_1  [3];
+int		PvAlm_Grp1_2  [3];
+int		PvAlm_Grp1    [2][3];
+int		PvAlm_Grp2_1  [2];
+int		PvAlm_Grp2_2  [2];
+int		PvAlm_Grp2    [2][2];
+int		PvAlm_Grp3_1  [11];
+int		PvAlm_Grp3_2  [11];
+int		PvAlm_Grp3    [2][11];
+int		PvAlm_Common  [7];
+
+assign	PvPwr_Grp1_1  to { "", "", "" };
+assign	PvPwr_Grp1_2  to { "", "", "" };
+assign	PvPwr_Grp1    to { "PvPwr_Grp1_1", "PvPwr_Grp1_2" };
+assign	PvPwr_Grp2_1  to { "", "" };
+assign	PvPwr_Grp2_2  to { "", "" };
+assign	PvPwr_Grp2    to { "PvPwr_Grp2_1", "PvPwr_Grp2_2" };
+assign	PvPwr_Grp3_1  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvPwr_Grp3_2  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvPwr_Grp3    to { "PvPwr_Grp3_1", "PvPwr_Grp3_2" };
+assign	PvPwr_Common  to { "",  "",  "",  "",  "",  "",  "" };
+
+assign	PvRef_Grp1_1  to { "", "", "" };
+assign	PvRef_Grp1_2  to { "", "", "" };
+assign	PvRef_Grp1    to { "PvRef_Grp1_1", "PvRef_Grp1_2" };
+assign	PvRef_Grp2_1  to { "", "" };
+assign	PvRef_Grp2_2  to { "", "" };
+assign	PvRef_Grp2    to { "PvRef_Grp2_1", "PvRef_Grp2_2" };
+assign	PvRef_Grp3_1  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvRef_Grp3_2  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvRef_Grp3    to { "PvRef_Grp3_1", "PvRef_Grp3_2" };
+assign	PvRef_Common  to { "",  "",  "",  "",  "",  "",  "" };
+
+assign	PvRate_Grp1_1 to { "", "", "" };
+assign	PvRate_Grp1_2 to { "", "", "" };
+assign	PvRate_Grp1   to { "PvRate_Grp1_1", "PvRate_Grp1_2" };
+assign	PvRate_Grp2_1 to { "", "" };
+assign	PvRate_Grp2_2 to { "", "" };
+assign	PvRate_Grp2   to { "PvRate_Grp2_1", "PvRate_Grp2_2" };
+assign	PvRate_Grp3_1 to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvRate_Grp3_2 to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvRate_Grp3   to { "PvRate_Grp3_1", "PvRate_Grp3_2" };
+assign	PvRate_Common to { "",  "",  "",  "",  "",  "",  "" };
+
+assign	PvAlm_Grp1_1  to { "", "", "" };
+assign	PvAlm_Grp1_2  to { "", "", "" };
+assign	PvAlm_Grp1    to { "PvAlm_Grp1_1", "PvAlm_Grp1_2" };
+assign	PvAlm_Grp2_1  to { "", "" };
+assign	PvAlm_Grp2_2  to { "", "" };
+assign	PvAlm_Grp2    to { "PvAlm_Grp2_1", "PvAlm_Grp2_2" };
+assign	PvAlm_Grp3_1  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvAlm_Grp3_2  to { "",  "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+assign	PvAlm_Grp3    to { "PvAlm_Grp3_1", "PvAlm_Grp3_2" };
+assign	PvAlm_Common  to { "",  "",  "",  "",  "",  "",  "" };
+
+monitor	PvPwr_Grp1_1;
+monitor	PvPwr_Grp1_2;
+monitor	PvPwr_Grp2_1;
+monitor	PvPwr_Grp2_2;
+monitor	PvPwr_Grp3_1;
+monitor	PvPwr_Grp3_2;
+monitor	PvPwr_Common;
+
+monitor	PvRef_Grp1_1;
+monitor	PvRef_Grp1_2;
+monitor	PvRef_Grp2_1;
+monitor	PvRef_Grp2_2;
+monitor	PvRef_Grp3_1;
+monitor	PvRef_Grp3_2;
+monitor	PvRef_Common;
+
+double	arc[2];
+assign	arc to		{ "NB1_P1ARC_RTN_POW", "NB1_P2ARC_RTN_PCMD" };
+monitor	arc;
+
+double	ig1[2];
+assign	ig1 to		{ "NB1_LODAQ_IS1_IG1", "NB1_LODAQ_IS2_IG1" };
+monitor	ig1;
+
+double	volt[2];
+assign	volt to		{ "NB1_P1G1_RTN_VOLT", "NB1_P2G1_RTN_VCMD" };
+monitor	volt;
+
+int		PvCalAlm[3];
+assign	PvCalAlm to	{ "NB1_LODAQ_ALM_IS1", "NB1_LODAQ_ALM_IS2", "NB1_LODAQ_ALM_COMMON" };
+
+int		i;
+int		j;
+int		dim;
+double	errRate;
+double	filament[2];
+char	assignPVName[128];
+int		nAlmCnt[3];
+
+%{
+	ST_STD_device *pSTDdev = NULL;
+
+	void proc_cal_alarm_group_1 (int idx, int cnt, double *pPwr, double *pRef, double *pRate, int *pAlm)
+	{
+		int i;
+
+		for (i = 0; i < cnt; i++) {
+			pRate[i]	= pPwr[i] / (arc[idx] + filament[idx] + volt[idx] * ig1[idx]) * 100;
+			pAlm[i]		= ( (pRate[i] - pRef[i]) > (pRef[i] * errRate) ) ? 1 : 0;
+
+			kuDebug (kuMON, "[sncCalAlarm::grp1] %d/%02d : %s : %f = %f / (%f + %f + %f * %f) * 100, alarm(%d) : %f / %f\n",
+				idx, i, PvName_Grp1[idx][i], pRate[i], pPwr[i], arc[idx], filament[idx], volt[idx], ig1[idx], pAlm[i], pRate[i], pRef[i]);
+		}
+	}
+
+	void proc_cal_alarm_group_2 (int idx, int cnt, double *pPwr, double *pRef, double *pRate, int *pAlm)
+	{
+		int i;
+
+		for (i = 0; i < cnt; i++) {
+			pRate[i]	= pPwr[i] / (arc[idx] + filament[idx]) * 100;
+			pAlm[i]		= ( (pRate[i] - pRef[i]) > (pRef[i] * errRate) ) ? 1 : 0;
+
+			kuDebug (kuMON, "[sncCalAlarm::grp2] %d/%02d : %s : %f = %f / (%f + %f) * 100, alarm(%d) : %f / %f\n",
+				idx, i, PvName_Grp2[idx][i], pRate[i], pPwr[i], arc[idx], filament[idx], pAlm[i], pRate[i], pRef[i]);
+		}
+	}
+
+	void proc_cal_alarm_group_3 (int idx, int cnt, double *pPwr, double *pRef, double *pRate, int *pAlm)
+	{
+		int i;
+
+		for (i = 0; i < cnt; i++) {
+			if (0 != ig1[idx]) {
+				pRate[i]	= pPwr[i] / (volt[idx] * ig1[idx]) * 100;
+				pAlm[i]		= ( (pRate[i] - pRef[i]) > (pRef[i] * errRate) ) ? 1 : 0;
+			}
+			else {
+				pRate[i]	= 0;
+				pAlm[i]		= 0;
+			}
+
+			kuDebug (kuMON, "[sncCalAlarm::grp3] %d/%02d : %s : %f = %f / (%f * %f) * 100, alarm(%d) : %f / %f\n",
+				idx, i, PvName_Grp3[idx][i], pRate[i], pPwr[i], volt[idx], ig1[idx], pAlm[i], pRate[i], pRef[i]);
+		}
+	}
+
+	void proc_cal_alarm_common (int cnt, double *pPwr, double *pRef, double *pRate, int *pAlm)
+	{
+		int i;
+
+		for (i = 0; i < cnt; i++) {
+			pRate[i]	= pPwr[i] / (volt[0] * ig1[0] + volt[1] * ig1[1]) * 100;
+
+			/* 20130724 YSW : skips alarm fo ID1, 2 and 3 */
+			if (strcmp(PvName_Common[i], "NB1_WAT_ID1_DT") && strcmp(PvName_Common[i], "NB1_WAT_ID2_DT") && strcmp(PvName_Common[i], "NB1_WAT_ID3_DT")) {
+				pAlm[i]		= ( (pRate[i] - pRef[i]) > (pRef[i] * errRate) ) ? 1 : 0;
+			}
+			else {
+				pAlm[i]		= 0;
+			}
+
+			kuDebug (kuMON, "[sncCalAlarm::common] %02d : %s : %f = %f / (%f * %f + %f * %f) * 100, alarm(%d) : %f / %f\n",
+				i, PvName_Common[i], pRate[i], pPwr[i], volt[0], ig1[0], volt[1], ig1[1], pAlm[i], pRate[i], pRef[i]);
+		}
+	}
+
+	void write_waveform (char *name, int num, char **vals)
+	{
+		if (!name || !vals) {
+			return;
+		}
+
+		chid    mychid;
+
+		ca_context_create (ca_disable_preemptive_callback);
+
+		/*ca_create_channel (name, NULL, NULL, 10, &mychid);*/
+		ca_search (name, &mychid);
+		ca_pend_io (0.5);
+
+		if (mychid) {
+			ca_array_put (DBR_STRING, num, mychid, vals);
+			ca_pend_io (0.5);
+
+			ca_clear_channel (mychid);
+		}
+	}
+}%
+
+ss sncCalAlarmProcess {
+    state init {
+		when (TRUE) {
+			filament[0] = 12.0 * 1935 / 1000.0;		/* kW */
+			filament[1] = 11.5 * 1630 / 1000.0;		/* kW */
+			errRate		= 0.2;
+
+			/* Assign */
+			%%dim = KU_DIM(PvName_Grp1[0]);
+
+			for (i = 0; i < dim; i++) {
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp1[0][i]);  pvAssign (PvPwr_Grp1_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp1[0][i]);  pvAssign (PvRef_Grp1_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp1[0][i]);  pvAssign (PvAlm_Grp1_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp1[0][i]);  pvAssign (PvRate_Grp1_1[i], assignPVName);
+
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp1[1][i]);  pvAssign (PvPwr_Grp1_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp1[1][i]);  pvAssign (PvRef_Grp1_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp1[1][i]);  pvAssign (PvAlm_Grp1_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp1[1][i]);  pvAssign (PvRate_Grp1_2[i], assignPVName);
+			}
+
+			%%dim = KU_DIM(PvName_Grp2[0]);
+
+			for (i = 0; i < dim; i++) {
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp2[0][i]);  pvAssign (PvPwr_Grp2_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp2[0][i]);  pvAssign (PvRef_Grp2_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp2[0][i]);  pvAssign (PvAlm_Grp2_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp2[0][i]);  pvAssign (PvRate_Grp2_1[i], assignPVName);
+
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp2[1][i]);  pvAssign (PvPwr_Grp2_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp2[1][i]);  pvAssign (PvRef_Grp2_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp2[1][i]);  pvAssign (PvAlm_Grp2_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp2[1][i]);  pvAssign (PvRate_Grp2_2[i], assignPVName);
+			}
+
+			%%dim = KU_DIM(PvName_Grp3[0]);
+
+			for (i = 0; i < dim; i++) {
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp3[0][i]);  pvAssign (PvPwr_Grp3_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp3[0][i]);  pvAssign (PvRef_Grp3_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp3[0][i]);  pvAssign (PvAlm_Grp3_1[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp3[0][i]);  pvAssign (PvRate_Grp3_1[i], assignPVName);
+
+				sprintf (assignPVName, "%s_PWR" , PvName_Grp3[1][i]);  pvAssign (PvPwr_Grp3_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Grp3[1][i]);  pvAssign (PvRef_Grp3_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Grp3[1][i]);  pvAssign (PvAlm_Grp3_2[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Grp3[1][i]);  pvAssign (PvRate_Grp3_2[i], assignPVName);
+			}
+
+			%%dim = KU_DIM(PvName_Common);
+
+			for (i = 0; i < dim; i++) {
+				sprintf (assignPVName, "%s_PWR" , PvName_Common[i]);  pvAssign (PvPwr_Common[i] , assignPVName);
+				sprintf (assignPVName, "%s_REF" , PvName_Common[i]);  pvAssign (PvRef_Common[i] , assignPVName);
+				sprintf (assignPVName, "%s_ALM" , PvName_Common[i]);  pvAssign (PvAlm_Common[i] , assignPVName);
+				sprintf (assignPVName, "%s_RATE", PvName_Common[i]);  pvAssign (PvRate_Common[i], assignPVName);
+			}
+
+			/* Initialize */
+			for (i = 0; i < 3; i++) {
+				PvCalAlm[i] = 0;
+				pvPut (PvCalAlm[i]);
+			}
+
+			epicsThreadSleep (3.0);
+		} state run
+	}
+
+	state run {
+		when ( efTestAndClear (ef_start_alarm) && (1 == snap_shot) ) {
+			kuDebug (kuMON, "[sncCalAlarm::run] start ...\n");
+
+			/* initialize */
+			PvCalAlm[0] = PvCalAlm[1] = PvCalAlm[2] = 0;
+			nAlmCnt [0] = nAlmCnt [1] = nAlmCnt [2] = 0;
+
+			memset (almPVList, 0x00, sizeof(almPVList));
+
+			%% pSTDdev = get_first_STDdev();
+			%% proc_cal_alarm (pSTDdev->ST_mds.treeName[OPMODE_LOCAL],
+			%%		pSTDdev->ST_mds.treeIPport[OPMODE_LOCAL], pSTDdev->ST_Base_fetch.shotNumber);
+
+			%%dim = KU_DIM(PvName_Grp1[0]);
+			proc_cal_alarm_group_1 (0, dim, PvPwr_Grp1_1, PvRef_Grp1_1, PvRate_Grp1_1, PvAlm_Grp1_1);
+			proc_cal_alarm_group_1 (1, dim, PvPwr_Grp1_2, PvRef_Grp1_2, PvRate_Grp1_2, PvAlm_Grp1_2);
+
+			for (i = 0; i < dim; i++) {
+				pvPut (PvAlm_Grp1_1[i]); pvPut (PvRate_Grp1_1[i]);
+				pvPut (PvAlm_Grp1_2[i]); pvPut (PvRate_Grp1_2[i]);
+
+				if (PvAlm_Grp1_1[i]) {
+					PvCalAlm[0] = 1;
+					strncpy (almPVList[0][nAlmCnt[0]++], PvName_Grp1[0][i], MAX_STRING_SIZE);
+				}
+				if (PvAlm_Grp1_2[i]) {
+					PvCalAlm[1] = 1;
+					strncpy (almPVList[1][nAlmCnt[1]++], PvName_Grp1[1][i], MAX_STRING_SIZE);
+				}
+			}
+
+			%%dim = KU_DIM(PvName_Grp2[0]);
+			proc_cal_alarm_group_2 (0, dim, PvPwr_Grp2_1, PvRef_Grp2_1, PvRate_Grp2_1, PvAlm_Grp2_1);
+			proc_cal_alarm_group_2 (1, dim, PvPwr_Grp2_2, PvRef_Grp2_2, PvRate_Grp2_2, PvAlm_Grp2_2);
+
+			for (i = 0; i < dim; i++) {
+				pvPut (PvAlm_Grp2_1[i]); pvPut (PvRate_Grp2_1[i]);
+				pvPut (PvAlm_Grp2_2[i]); pvPut (PvRate_Grp2_2[i]);
+
+				if (PvAlm_Grp2_1[i]) {
+					PvCalAlm[0] = 1;
+					strncpy (almPVList[0][nAlmCnt[0]++], PvName_Grp2[0][i], MAX_STRING_SIZE);
+				}
+				if (PvAlm_Grp2_2[i]) {
+					PvCalAlm[1] = 1;
+					strncpy (almPVList[1][nAlmCnt[1]++], PvName_Grp2[1][i], MAX_STRING_SIZE);
+				}
+			}
+
+			%%dim = KU_DIM(PvName_Grp3[0]);
+			proc_cal_alarm_group_3 (0, dim, PvPwr_Grp3_1, PvRef_Grp3_1, PvRate_Grp3_1, PvAlm_Grp3_1);
+			proc_cal_alarm_group_3 (1, dim, PvPwr_Grp3_2, PvRef_Grp3_2, PvRate_Grp3_2, PvAlm_Grp3_2);
+
+			for (i = 0; i < dim; i++) {
+				pvPut (PvAlm_Grp3_1[i]); pvPut (PvRate_Grp3_1[i]);
+				pvPut (PvAlm_Grp3_2[i]); pvPut (PvRate_Grp3_2[i]);
+
+				if (PvAlm_Grp3_1[i]) {
+					PvCalAlm[0] = 1;
+					strncpy (almPVList[0][nAlmCnt[0]++], PvName_Grp3[0][i], MAX_STRING_SIZE);
+				}
+				if (PvAlm_Grp3_2[i]) {
+					PvCalAlm[1] = 1;
+					strncpy (almPVList[1][nAlmCnt[1]++], PvName_Grp3[1][i], MAX_STRING_SIZE);
+				}
+			}
+
+			%%dim = KU_DIM(PvName_Common);
+			proc_cal_alarm_common (dim, PvPwr_Common, PvRef_Common, PvRate_Common, PvAlm_Common);
+
+			for (i = 0; i < dim; i++) {
+				pvPut (PvAlm_Common[i]); pvPut (PvRate_Common[i]);
+
+				if (PvAlm_Common[i]) {
+					PvCalAlm[2] = 1;
+					strncpy (almPVList[2][nAlmCnt[2]++], PvName_Common[i], MAX_STRING_SIZE);
+				}
+			}
+
+			/* PvCalAlm */
+			for (i = 0; i < 3; i++) {
+				pvPut (PvCalAlm[i]);
+			}
+
+			/* Alarm PV List */
+			for (i = 0; i < 3; i++) {
+				for (j = 0; j < nAlmCnt[i]; j++) {
+					kuDebug (kuINFO, "sncCalAlarm::run] %d / %d : %s\n", i, j, almPVList[i][j]);
+				}
+
+				write_waveform (PvName_AlmList[i], nAlmCnt[i], almPVList[i]);
+			}
+		} state run
+	}
+}

@@ -1,0 +1,1338 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAMultiplot" name="CAMultiplot" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>1021</width>
+     <height>768</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="Text" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>170</red>
+         <green>85</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Text" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>170</red>
+         <green>85</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Text" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>115</red>
+         <green>115</green>
+         <blue>115</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>TMS_TFC00_MHL_TCUR00</string>
+   </property>
+   <property name="pvname1" >
+    <string>TMS_TFC01_MHL_TCUR01</string>
+   </property>
+   <property name="pvname2" >
+    <string>TMS_TFC01_MHL_TCUR02</string>
+   </property>
+   <property name="pvname3" >
+    <string>TMS_TFC01_MHL_TCUS00A</string>
+   </property>
+   <property name="pvname4" >
+    <string>TMS_TFC02_MHL_TCUR01</string>
+   </property>
+   <property name="pvname5" >
+    <string>TMS_TFC02_MHL_TCUR02</string>
+   </property>
+   <property name="pvname6" >
+    <string>TMS_TFC02_MHL_TCUS00A</string>
+   </property>
+   <property name="pvname7" >
+    <string>TMS_TFC03_MHL_TCUR01</string>
+   </property>
+   <property name="pvname8" >
+    <string>TMS_TFC03_MHL_TCUR02</string>
+   </property>
+   <property name="pvname9" >
+    <string>TMS_TFC03_MHL_TCUS00A</string>
+   </property>
+   <property name="canvasColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="majLinecolor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="minLinecolor" stdset="0" >
+    <color>
+     <red>160</red>
+     <green>160</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="plotTitle" stdset="0" >
+    <string>Log Scale</string>
+   </property>
+   <property name="xTitle" stdset="0" >
+    <string>Time Line</string>
+   </property>
+   <property name="yTitle" stdset="0" >
+    <string>Y-Value (torr)</string>
+   </property>
+   <property name="logScale" stdset="0" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>110</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>160</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>72</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Red</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Green</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Blue</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>#b3ff8a</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>#c4e2ff</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>80</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>80</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>140</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>250</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>280</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>165</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>PFCU6_MHL_TCU_R00</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCU6_MHL_TCU_R01</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL1_MHL_TCU_R01</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL1_MHL_TCU_S00</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL2_MHL_TCU_R02</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL2_MHL_TCU_R05</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL4_MHL_TCU_R03</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL5_MHL_TCU_S00</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL6_MHL_TCU_R00</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>PFCL3_MHL_TCU_R03</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_9" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>140</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>330</x>
+     <y>10</y>
+     <width>72</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Steps</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Lines</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Dots</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Sticks</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_11" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>190</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_10" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>330</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>220</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_7" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>250</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>160</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_9" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>300</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_8" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>280</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>300</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_6" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>220</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>10</y>
+     <width>72</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>5</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="CAColorCheckBox" name="CAColorCheckBox_5" >
+   <property name="geometry" >
+    <rect>
+     <x>1040</x>
+     <y>190</y>
+     <width>139</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>110</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox" >
+   <property name="geometry" >
+    <rect>
+     <x>420</x>
+     <y>10</y>
+     <width>101</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximum" >
+    <double>100000000.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16" >
+   <property name="geometry" >
+    <rect>
+     <x>1190</x>
+     <y>330</y>
+     <width>79</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>980</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>800</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>610</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>420</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>780</y>
+     <width>54</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue(double)</signal>
+   <receiver>label</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>182</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1051</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>penIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>94</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>312</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_2</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>penWidth(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>268</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>433</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_3</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>penColor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>338</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>528</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox_4</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>penStyle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>408</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>626</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>factor(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>495</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>765</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue1(double)</signal>
+   <receiver>label_2</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>148</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1051</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel1(QString)</signal>
+   <receiver>label_4</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>604</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>729</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel(QString)</signal>
+   <receiver>label_3</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>254</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>850</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel2(QString)</signal>
+   <receiver>label_5</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>488</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>569</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel3(QString)</signal>
+   <receiver>label_6</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>579</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>409</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel4(QString)</signal>
+   <receiver>label_7</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>556</x>
+     <y>358</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>249</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>timeLabel5(QString)</signal>
+   <receiver>label_8</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>133</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue2(double)</signal>
+   <receiver>label_9</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>650</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1084</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue3(double)</signal>
+   <receiver>label_10</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>627</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1093</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue4(double)</signal>
+   <receiver>label_11</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>627</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1086</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue6(double)</signal>
+   <receiver>label_13</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>655</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1098</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue5(double)</signal>
+   <receiver>label_12</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>639</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1092</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue7(double)</signal>
+   <receiver>label_14</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>660</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1077</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue9(double)</signal>
+   <receiver>label_16</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>763</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1090</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>currentValue8(double)</signal>
+   <receiver>label_15</receiver>
+   <slot>setNum(double)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>632</x>
+     <y>272</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1083</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>CAColorCheckBox</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>833</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>904</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>CAColorCheckBox_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>805</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>917</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>CAColorCheckBox_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>771</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>901</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>CAColorCheckBox_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>712</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>908</x>
+     <y>167</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>CAColorCheckBox_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>707</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>907</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>CAColorCheckBox_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>709</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>893</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>CAColorCheckBox_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>704</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>928</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>CAColorCheckBox_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>720</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>932</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel8(QString,QString)</signal>
+   <receiver>CAColorCheckBox_9</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>734</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>935</x>
+     <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAMultiplot</sender>
+   <signal>legendLabel9(QString,QString)</signal>
+   <receiver>CAColorCheckBox_10</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>783</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>930</x>
+     <y>351</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>912</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>665</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>907</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>666</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>903</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>762</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>915</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>698</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>892</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>830</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>927</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>819</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>934</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>808</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>948</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>687</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_9</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>928</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>671</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CAColorCheckBox_10</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>CAMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>939</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>798</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

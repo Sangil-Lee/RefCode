@@ -1,0 +1,47 @@
+record(ai, "$(REC)_RVAL")
+{
+        field(DESC, "$(DESC)")
+        field(DTYP, "PXISCXI Raw Reading")
+        field(INP, "@$(TASK) $(CHAN)")
+        field(SCAN, "I/O Intr")
+        field(PREC, "6")
+#       field(EGU, "Strain")  -> char [16]
+	field(EGU, "Micro Epsilon")
+}
+
+record(ao, "$(REC)_ZVAL")
+{
+        field(DESC, "Strain Zero Set")
+        field(SCAN, "Passive")
+        field(PREC, "6")
+	field(VAL, "0.0")
+#       field(EGU, "Strain")  -> char [16]
+	field(EGU, "Micro Epsilon")
+}
+record(calc, "$(REC)")
+{
+         field(DESC, "$(DESC)_ZERO_SET")
+         field(SCAN, "Passive")
+         field(CALC, "(A-B)")
+         field(INPA, "$(REC)_RVAL CPP NMS")
+         field(INPB, "$(REC)_ZVAL PP NMS")
+         field(HIHI, "$(HIHI1)")
+  	 field(LOLO, "$(LOLO1)")
+  	 field(HIGH, "$(HIGH1)")
+  	 field(LOW, "$(LOW1)")
+  	 field(HHSV, "MAJOR")
+  	 field(LLSV, "MAJOR")
+  	 field(HSV, "MINOR")
+  	 field(LSV, "MINOR")
+	 field(EGU, "Micro Epsilon")
+         field(PREC, "6")
+}
+record(bi, "TMS_STRAIN_ZERO_SETTING")
+{
+	     field(DESC, "TMS_STRAIN_ZERO_SETTING")
+	     field(SCAN, "Passive")
+	     field(ZNAM, "0")
+	     field(ONAM, "1")
+             field(ZSV, "NO_ALARM")
+	     field(OSV, "MAJOR")
+}

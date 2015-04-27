@@ -1,0 +1,74 @@
+#ifndef drvPXISCXI_H
+#define drvPXISCXI_H
+
+#include <NIDAQmx.h>
+
+#include "epicsRingBytes.h"
+#include "ellLib.h"
+#include "callback.h"
+#include "dbScan.h"
+
+#define INIT_GAIN_CERNOX	500.
+#define INIT_MINRANGE_CERNOX	0.
+#define INIT_MAXRANGE_CERNOX	10000.
+#define INIT_CUTOFF_CERNOX	4.
+#define INIT_SAMPLING_CERNOX	10
+#define INIT_EXCITATIONCURR_CERNOX 10.E-6
+#define INIT_DATAPOOLSIZE_CERNOX	10
+
+
+
+
+typedef struct {
+	ELLLIST		*ptaskList;
+} drvPXISCXIConfig;
+
+
+typedef struct {
+	ELLNODE		node;
+	char		taskName[60];
+	epicsMutexId	taskLock;
+	epicsMutexId	bufferLock;
+	IOSCANPVT	ioScanPvt;
+
+	TaskHandle	taskHandle;
+	float64		cutoffFreq;
+	float64		gain;
+	float64		samplingRate;
+	float64		minRange;
+	float64		maxRange;
+	float64		excitationCurrent;
+
+	int32 CVICALLBACK* cviCallback;
+
+	unsigned	numChan;
+	ELLLIST		*pcernoxChannelList;
+
+	ELLLIST		*pcernoxDataPoolList;
+
+} drvPXISCXI_cernoxTaskConfig;
+
+
+
+typedef struct {
+	ELLNODE		node;
+	char		chanName[60];
+	unsigned	chanIndex;
+
+	drvPXISCXI_cernoxTaskConfig	*pcernoxTaskConfig;
+
+} drvPXISCXI_cernoxChannelConfig;
+
+
+typedef struct {
+	ELLNODE		node;
+	unsigned	node_id;
+	float64		*data;
+	int32           readCount;
+
+	drvPXISCXI_cernoxTaskConfig	*pcernoxTaskConfig;
+} drvPXISCXI_cernoxDataPoolConfig;
+
+
+
+#endif		/* drvPXISCXI_H */

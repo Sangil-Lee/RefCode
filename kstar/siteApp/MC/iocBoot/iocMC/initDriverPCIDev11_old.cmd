@@ -1,0 +1,6 @@
+createVXITask("VXI0::256::INSTR","172.17.102.220:8000","R_magnetic")
+
+createVXI1564aChannel("VXI0::256::INSTR", "VXI0::256::INSTR/ai0","0","\MC1T20:FOO")
+createVXI1564aChannel("VXI0::256::INSTR", "VXI0::256::INSTR/ai1","1","\MC2P10:FOO")
+createVXI1564aChannel("VXI0::256::INSTR", "VXI0::256::INSTR/ai2","2","\MC2P11:FOO")
+createVXI1564aChannel("VXI0::256::INSTR", "VXI0::256::INSTR/ai3","3","\MC2P12:FOO")

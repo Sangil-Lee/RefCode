@@ -1,0 +1,160 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>477</width>
+    <height>301</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>KSTAR Monitoring Tool</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="systemCB" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text" >
+     <string>TMS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>VMS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>HDS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ECH</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>NBI</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Fuel</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>SCS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ICRH</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>GCDS</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QDialogButtonBox" name="closeBT" >
+   <property name="geometry" >
+    <rect>
+     <x>360</x>
+     <y>260</y>
+     <width>81</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="layoutDirection" >
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="standardButtons" >
+    <set>QDialogButtonBox::Close</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="showPagePB" >
+   <property name="geometry" >
+    <rect>
+     <x>360</x>
+     <y>90</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Show</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="pagesLV" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>90</y>
+     <width>221</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="selectionBehavior" >
+    <enum>QAbstractItemView::SelectColumns</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

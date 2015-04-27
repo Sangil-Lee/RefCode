@@ -1,0 +1,70 @@
+program sncFILDTestPLC
+
+%{
+#include "kutil.h"
+}%
+
+int test_plc_enable;
+assign test_plc_enable to "FILD_TEST_PLC_ENABLE";
+monitor test_plc_enable;
+
+int cur_pos;
+assign cur_pos to "FILD_CUR_POS";
+monitor cur_pos;
+
+int cmd_pos;
+assign cmd_pos to "FILD_CMD_POS";
+monitor cmd_pos;
+
+int auto_hand;
+assign auto_hand to "FILD_AUTO_HAND";
+monitor auto_hand;
+
+int cmd_auto_hand;
+assign cmd_auto_hand to "FILD_CMD_AUTO_HAND";
+monitor cmd_auto_hand;
+
+int emg_stop_release;
+assign emg_stop_release to "FILD_EMG_STOP_RELEASE";
+monitor emg_stop_release;
+
+int cmd_emg_stop_release;
+assign cmd_emg_stop_release to "FILD_CMD_EMG_STOP_RELEASE";
+monitor cmd_emg_stop_release;
+
+ss testPLC {
+    state init {
+		when (1) {
+		} state run
+	}
+	state run {
+		when (delay(1)) {
+			if (1 == test_plc_enable) {
+				kuDebug (kuDEBUG, "[sncFILDTestPLC] pos(%d) auto(%d) emg(%d)\n",
+					cur_pos, auto_hand, emg_stop_release);
+
+				if (cur_pos != cmd_pos) {
+					kuDebug (kuMON, "[sncFILDTestPLC] pos(%d -> %d)\n", cur_pos, cmd_pos);
+
+					cur_pos = cmd_pos;
+					pvPut (cur_pos);
+				}
+
+				if (auto_hand != cmd_auto_hand) {
+					kuDebug (kuMON, "[sncFILDTestPLC] auto/hand(%d -> %d)\n", auto_hand, cmd_auto_hand);
+
+					auto_hand = cmd_auto_hand;
+					pvPut (auto_hand);
+				}
+
+				if (emg_stop_release != cmd_emg_stop_release) {
+					kuDebug (kuMON, "[sncFILDTestPLC] emg stop release(%d -> %d)\n", emg_stop_release, cmd_emg_stop_release);
+
+					emg_stop_release = cmd_emg_stop_release;
+					pvPut (emg_stop_release);
+				}
+			}
+		} state init
+	}
+}
+

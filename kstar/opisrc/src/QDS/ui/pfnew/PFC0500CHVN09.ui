@@ -1,0 +1,118 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>540</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <property name="styleSheet" >
+   <string>background-color: rgba(0, 0, 0, 255);
+color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QFrame" name="frame" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>500</width>
+     <height>350</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="CAMultiplot" name="caMultiplot" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>480</width>
+      <height>330</height>
+     </rect>
+    </property>
+    <property name="styleSheet" >
+     <string>color:white;</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="pvname" >
+     <string>QDS:PFC_05_00CHV:N09:AI03:V_CAL</string>
+    </property>
+    <property name="pvname1" >
+     <string/>
+    </property>
+    <property name="pvname2" >
+     <string/>
+    </property>
+    <property name="pvname3" >
+     <string/>
+    </property>
+    <property name="pvname4" >
+     <string/>
+    </property>
+    <property name="pvname5" >
+     <string/>
+    </property>
+    <property name="pvname6" >
+     <string/>
+    </property>
+    <property name="pvname7" >
+     <string/>
+    </property>
+    <property name="canvasColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="majLinecolor" stdset="0" >
+     <color>
+      <red>223</red>
+      <green>223</green>
+      <blue>223</blue>
+     </color>
+    </property>
+    <property name="minLinecolor" stdset="0" >
+     <color>
+      <red>223</red>
+      <green>223</green>
+      <blue>223</blue>
+     </color>
+    </property>
+    <property name="plotTitle" stdset="0" >
+     <string>PFC 05 CHV CALC</string>
+    </property>
+    <property name="xTitle" stdset="0" >
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

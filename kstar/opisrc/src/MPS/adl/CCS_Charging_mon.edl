@@ -1,0 +1,1693 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 551
+y 58
+w 1280
+h 994
+font "utopia-medium-r-10.0"
+ctlFont "utopia-medium-r-10.0"
+btnFont "utopia-medium-r-10.0"
+fgColor index 14
+bgColor index 1
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 52
+ctlBgColor1 index 52
+ctlBgColor2 index 14
+topShadowColor index 52
+botShadowColor index 14
+title "KSTAR Current Charging Control Panel"
+disableScroll
+endScreenProperties
+
+# (Png)
+object activePngClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 5
+w 1270
+h 980
+file "/usr/local/opi/images/MPS_monitoring.png"
+refreshRate 1000
+noErase
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 14
+y 645
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF2_MEASURED_WF"
+  1 "CCS_VPF2_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 14
+y 450
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF1_MEASURED_WF"
+  1 "CCS_VPF1_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 14
+y 256
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_ITF_MEASURED_WF"
+  1 "CCS_VTF_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 183
+y 232
+w 64
+h 19
+controlPv "MPS_TF_re_current_mmi"
+fgColor index 13
+bgColor index 1
+fill
+font "utopia-bold-r-18.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 97
+y 228
+w 81
+h 26
+controlPv "CCS_ITF_MEASURED"
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 255
+y 228
+w 156
+h 26
+controlPv "CCS_VTF_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 715
+y 44
+w 195
+h 34
+controlPv "CCS_SYS_TIME"
+fgColor index 0
+bgColor index 52
+font "utopia-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 440
+y 256
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF3U_MEASURED_WF"
+  1 "CCS_VPF3U_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 681
+y 227
+w 158
+h 28
+controlPv "CCS_VPF3U_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 521
+y 227
+w 158
+h 28
+controlPv "CCS_IPF3U_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 440
+y 450
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF4U_MEASURED_WF"
+  1 "CCS_VPF4U_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 681
+y 421
+w 158
+h 28
+controlPv "CCS_VPF4U_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 522
+y 421
+w 157
+h 28
+controlPv "CCS_IPF4U_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 14
+y 839
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF7_MEASURED_WF"
+  1 "CCS_VPF7_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 255
+y 811
+w 158
+h 26
+controlPv "CCS_VPF7_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 96
+y 810
+w 156
+h 26
+controlPv "CCS_IPF7_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 440
+y 839
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF6U_MEASURED_WF"
+  1 "CCS_VPF6U_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 681
+y 810
+w 159
+h 29
+controlPv "CCS_VPF6U_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 521
+y 810
+w 157
+h 28
+controlPv "CCS_IPF6U_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 440
+y 645
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF5U_MEASURED_WF"
+  1 "CCS_VPF5U_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 682
+y 615
+w 157
+h 28
+controlPv "CCS_VPF5U_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 522
+y 616
+w 158
+h 27
+controlPv "CCS_IPF5U_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 257
+y 617
+w 155
+h 26
+controlPv "CCS_VPF2_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 97
+y 616
+w 155
+h 26
+controlPv "CCS_IPF2_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 257
+y 422
+w 156
+h 26
+controlPv "CCS_VPF1_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 97
+y 422
+w 157
+h 26
+controlPv "CCS_IPF1_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Text w. Reg. Exp.)
+object activeXRegTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 447
+y 10
+w 80
+h 15
+font "utopia-medium-r-12.0"
+fgColor index 2
+bgColor index 52
+useDisplayBg
+value {
+  "Shot Number:"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 445
+y 22
+w 176
+h 33
+controlPv "CCS_SHOT_NUMBER"
+fgColor index 0
+fgAlarm
+bgColor index 52
+font "utopia-bold-r-32.0"
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 864
+y 839
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF6L_MEASURED_WF"
+  1 "CCS_VPF6L_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1105
+y 810
+w 159
+h 29
+controlPv "CCS_VPF6L_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 945
+y 810
+w 157
+h 28
+controlPv "CCS_IPF6L_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 864
+y 645
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF5L_MEASURED_WF"
+  1 "CCS_VPF5L_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1106
+y 615
+w 157
+h 28
+controlPv "CCS_VPF5L_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 946
+y 616
+w 158
+h 27
+controlPv "CCS_IPF5L_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 864
+y 450
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF4L_MEASURED_WF"
+  1 "CCS_VPF4L_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1105
+y 421
+w 158
+h 28
+controlPv "CCS_VPF4L_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 946
+y 421
+w 157
+h 28
+controlPv "CCS_IPF4L_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 864
+y 256
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "CCS_IPF3L_MEASURED_WF"
+  1 "CCS_VPF3L_MEASURED_WF"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 1105
+y 227
+w 158
+h 28
+controlPv "CCS_VPF3L_MEASURED"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 945
+y 227
+w 158
+h 28
+controlPv "CCS_IPF3L_MEASURED"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 258
+y 33
+w 156
+h 26
+controlPv "IVC_volt_fbk"
+precision 2
+fgColor index 28
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (Reg Text Update)
+object RegTextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 99
+y 33
+w 155
+h 26
+controlPv "IVC_current_fb"
+precision 2
+fgColor index 22
+bgColor index 1
+fill
+font "utopia-bold-r-24.0"
+fontAlign "right"
+lineWidth 0
+endObjectProperties
+
+# Additional properties
+beginObjectProperties
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+# Geometry
+x 15
+y 62
+w 400
+h 140
+# Appearance
+border
+fgColor index 14
+bgColor index 1
+gridColor index 14
+font "utopia-medium-r-8.0"
+# Operating Modes
+nPts 2500
+updateTimerMs 500
+# X axis properties
+showXAxis
+xAxisSrc "AutoScale"
+xMin 0
+xMax 2048
+xAxisTimeFormat "dateTime"
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMax 1
+# Y2 axis properties
+showY2Axis
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 2
+yPv {
+  0 "IVC_current_fb"
+  1 "IVC_volt_fbk"
+}
+opMode {
+  0 "plot"
+  1 "plot"
+}
+useY2Axis {
+  1 1
+}
+ySigned {
+  0 24510700
+  1 24772955
+}
+plotColor {
+  0 index 21
+  1 index 26
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 916
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_TF_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 942
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "IVC_heartbeat_1s_bit"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 968
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF1_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 995
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF2_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1021
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF3U_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1048
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF3L_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1074
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF4U_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1100
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF4L_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1127
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF5U_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1153
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF5L_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1180
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF6U_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1206
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF6L_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 1233
+y 52
+w 20
+h 20
+lineColor index 14
+fill
+fillColor index 15
+fillAlarm
+lineWidth 2
+visPv "MPS_PF7_IO_BI_00"
+visMin "1"
+visMax "100"
+endObjectProperties
+

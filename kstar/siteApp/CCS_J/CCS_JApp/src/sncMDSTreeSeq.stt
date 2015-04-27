@@ -1,0 +1,184 @@
+program sncMDSTreeSeq
+
+option +r;
+option -c;
+
+%{
+#include <string.h>
+
+#define TREE_CREATE_COMMAND 1
+#define TREE_CREATE_COMPLETED 0
+}%
+
+int         mdsTree_create_command;
+assign      mdsTree_create_command     to "CCS_SHOTSEQ_MDSTREE_CREATE";
+monitor     mdsTree_create_command;
+
+int         shot_number;
+assign      shot_number        to "CCS_SHOT_NUMBER";
+monitor     shot_number;
+
+/*
+int         shot_number_latch;
+assign      shot_number_latch        to "CCS_SHOT_NUMBER_LATCH";
+*/
+
+int         mdsTree_shot_number;
+assign      mdsTree_shot_number   to "MDS_SHOT_NUMBER";
+monitor     mdsTree_shot_number;
+
+
+int         fbm_shot_number;
+assign      fbm_shot_number      to "FBM_MDS_SN";
+monitor     fbm_shot_number;
+
+int         isc_shot_number;
+assign      isc_shot_number      to "ISC_MDS_SN";
+monitor     isc_shot_number;
+
+int         vsc_shot_number;
+assign      vsc_shot_number      to "VSC_MDS_SN";
+monitor     vsc_shot_number;
+
+int         mdsTree_create;
+assign      mdsTree_create        to "MDS_SHOT_CREATE";
+monitor     mdsTree_create;
+
+int         shot_seq;
+assign      shot_seq            to  "CCS_SHOTSEQ_START";
+monitor     shot_seq;
+
+int         end_of_shot;
+assign      end_of_shot         to   "CCS_SHOTSEQ_ST_ENDOFSHOT";
+monitor     end_of_shot;
+
+int         tss_start;
+/*assign      tss_start                   to "CCS_CTU_shotStart";*/
+assign      tss_start 		      to "TSS_CTU_shotStart";
+monitor     tss_start;
+
+evflag      ef_trigg;
+sync        tss_start      ef_trigg;
+            
+string      shot_start_time_mds_string;
+assign      shot_start_time_mds_string    to "CCS_SHOT_TRIG_TIME_MDS_STRING";
+double      shot_start_time_mds;
+assign      shot_start_time_mds           to "CCS_SHOT_TRIG_TIME_MDS";
+int         shot_start_time_mds_put;
+assign      shot_start_time_mds_put       to "MDS_TSS_DATA_PUT";
+
+/*++leesi 2009-10-22*/
+string		gaweb_shot_status;
+assign		gaweb_shot_status			to "ICS_GAWEB_SHOTSTATUS";
+monitor		gaweb_shot_status;
+int	int_fbm_daq_shot;
+assign	int_fbm_daq_shot	to	"FBM_DAQ_SHOT";
+int	int_isc_daq_shot;
+assign	int_isc_daq_shot	to	"ISC_DAQ_SHOT";
+int	int_vsc_daq_shot;
+assign	int_vsc_daq_shot	to	"VSC_DAQ_SHOT";
+/*--leesi*/
+
+ss mdsTreeCreate
+{
+    state  complete
+    {
+        entry {
+            mdsTree_create_command = TREE_CREATE_COMPLETED;
+            pvPut(mdsTree_create_command);
+/*            printf("mds tree create put recevied!\n"); */
+	    %%strcpy(pVar->gaweb_shot_status, "MDS_TREE_CREATE");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(mdsTree_create_command) {} state setShotNum
+    }
+
+    state setShotNum
+    {
+        entry {
+            mdsTree_shot_number = shot_number;    pvPut(mdsTree_shot_number);
+
+	    fbm_shot_number	= shot_number;     pvPut(fbm_shot_number);
+	    isc_shot_number	= shot_number;     pvPut(isc_shot_number);
+	    vsc_shot_number	= shot_number;     pvPut(vsc_shot_number);
+/*	    shot_number_latch	= shot_number;     pvPut(shot_number_latch);	*/
+        }
+
+        when(delay(2.)) {} state create
+
+    }
+
+    state create
+    {
+        entry {
+            int_fbm_daq_shot = int_isc_daq_shot = int_vsc_daq_shot = mdsTree_create= TREE_CREATE_COMMAND;
+	    pvPut(mdsTree_create);
+            pvPut(int_fbm_daq_shot);
+            pvPut(int_isc_daq_shot);
+            pvPut(int_vsc_daq_shot);
+        }
+
+        when(!mdsTree_create) {} state complete
+    }
+}
+
+/*
+ss echDataMDSPut
+{
+
+    state wait_state
+    {
+        when(shot_seq
+             && end_of_shot ) {} state data_put
+    }
+
+    state data_put
+    {
+        when(TRUE) {
+            ech_data_mds_put=1;
+            pvPut(ech_data_mds_put);
+        } state wait_shot_termination
+    }
+
+    state wait_shot_termination
+    {
+        when(!shot_seq) {} state wait_state
+    }
+}
+*/
+
+ss Trigg_Time
+{
+    state init {
+        entry {
+            %% strcpy(pVar->shot_start_time_mds_string, "");
+            %% pVar->shot_start_time_mds = 0.;
+
+            pvPut(shot_start_time_mds_string);
+            pvPut(shot_start_time_mds);        
+        }
+
+        when(TRUE) {} state monitoring
+    }
+
+    state monitoring {
+        when(efTestAndClear(ef_trigg)) {
+            %% epicsTimeStamp epics_time;
+            %% epicsTimeGetCurrent(&epics_time);
+            %% epicsTimeToStrftime(pVar->shot_start_time_mds_string, 40, "%Y/%m/%d %H:%M:%S.%06f", &epics_time);
+            %% pVar->shot_start_time_mds =  (double) epics_time.secPastEpoch;
+            %% pVar->shot_start_time_mds += (double) epics_time.nsec * 1.E-9;
+        } state posting
+    }
+
+    state posting {
+        when(TRUE) {
+            pvPut(shot_start_time_mds_string);
+            pvPut(shot_start_time_mds);
+            shot_start_time_mds_put = 1; pvPut(shot_start_time_mds_put);
+        } state monitoring
+    }
+
+    
+}

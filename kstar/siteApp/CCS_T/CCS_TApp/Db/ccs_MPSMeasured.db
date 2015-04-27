@@ -1,0 +1,31 @@
+record(ai, "$(RAW_DATA)") {
+    field(DESC, "$(DESC_RAW)")
+    field(SCAN, "Passive")
+    field(FLNK, "$(COMP_DATA)")
+    field(PREC, "2")
+}
+
+record(compress, "$(COMP_DATA)") {
+    field(DESC, "$(DESC_COMP)")
+    field(SCAN, "Passive")
+    field(INP,  "$(RAW_DATA) NPP NMS")
+    field(ALG,  "Circular Buffer")
+    field(NSAM, "$(DATA_NUM)")
+    field(PREC, "2")
+}
+
+record(waveform, "$(WF_DATA)") {
+    field(DESC, "$(DESC_WF)")
+    field(SCAN, ".5 second")
+    field(INP,  "$(COMP_DATA) NPP NMS")
+    field(NELM, "$(DATA_NUM)")
+    field(FTVL, "FLOAT")
+    field(PREC, "2")
+}
+
+record(ai, "$(DATA)") {
+    field(DESC, "$(DESC_DATA)")
+    field(SCAN, ".1 second")
+    field(INP,  "$(RAW_DATA) NPP NMS")
+    field(PREC, "2")
+}

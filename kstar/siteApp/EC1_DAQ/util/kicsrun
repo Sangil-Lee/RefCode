@@ -1,0 +1,102 @@
+#!/bin/bash
+#
+# kicsrun   This starts and stops programs for EC1 DAQ
+#
+
+#PATH=/sbin:/bin:/usr/bin:/usr/sbin
+
+# Source function library.
+. /etc/init.d/functions
+
+# Check that we are root ... so non-root users stop here
+[ `id -u` = 0 ] || exit 1
+
+RETVAL=0
+
+# session_name, program_name, path
+start(){
+    name=$1
+    prog=$2
+    path=$3
+
+    echo -n $"Starting $prog: "
+
+    cd $path
+    daemon screen -d -m -S $name ./$prog
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+stop(){
+    name=$1
+    prog=$2
+
+    echo -n $"Stopping $prog: "
+
+    killproc $prog
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+kstart(){
+    start ioc st.cmd      /usr/local/epics/siteApp/ECCD_DAQ/iocBoot/iocECCD_DAQ
+    start adc adconvertor /usr/local/epics/siteApp/ECCD_DAQ/ADConverterApp/bin
+}
+
+kstop(){
+    stop ioc st.cmd
+    stop adc adconvertor
+}
+
+krestart(){
+    kstop
+    kstart
+}
+
+kstatus(){
+    status st.cmd
+    status adconvertor
+}
+
+kusage(){
+    echo ""
+    echo "------------------------------------------------------"
+    echo " List of screen "
+    echo "------------------------------------------------------"
+    screen -list
+
+    echo "------------------------------------------------------"
+    echo "You can attach a specific screen with session name. "
+    echo ""
+    echo " 1) How to attach the session for EPICS IOC "
+    echo "    # screen -r ioc "
+    echo " 2) How to attach the session for ADConvertor "
+    echo "    # screen -r adc "
+    echo "------------------------------------------------------"
+}
+
+# See how we were called.
+case "$1" in
+    start)
+	kstart
+	kusage
+	;;
+    stop)
+	kstop
+	;;
+    status)
+	kstatus
+	kusage
+	;;
+    restart)
+	krestart
+	;;
+    *)
+	echo $"Usage: $0 {start|stop|status|restart}"
+	kusage
+	RETVAL=1
+esac
+
+exit $RETVAL

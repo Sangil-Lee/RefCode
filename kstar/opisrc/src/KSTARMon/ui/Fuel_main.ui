@@ -1,0 +1,2596 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../fuel.qrc" >:/images/FUEL_gas_line.png</pixmap>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_6" >
+   <property name="geometry" >
+    <rect>
+     <x>389</x>
+     <y>351</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_MFC2_FLOW</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_11" >
+   <property name="geometry" >
+    <rect>
+     <x>123</x>
+     <y>254</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_H2_ON_IND</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_5" >
+   <property name="geometry" >
+    <rect>
+     <x>538</x>
+     <y>634</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_VG1</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic" >
+   <property name="geometry" >
+    <rect>
+     <x>468</x>
+     <y>725</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::TMP</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_TMP_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_23" >
+   <property name="geometry" >
+    <rect>
+     <x>485</x>
+     <y>742</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_TMP_PWR_IND</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_8" >
+   <property name="geometry" >
+    <rect>
+     <x>390</x>
+     <y>252</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_MFC1_FLOW</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_21" >
+   <property name="geometry" >
+    <rect>
+     <x>909</x>
+     <y>184</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV2_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_14" >
+   <property name="geometry" >
+    <rect>
+     <x>356</x>
+     <y>642</y>
+     <width>34</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VAValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_AV2_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_7" >
+   <property name="geometry" >
+    <rect>
+     <x>356</x>
+     <y>732</y>
+     <width>34</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>34</width>
+     <height>34</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HAValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_AV1_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_18" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>498</y>
+     <width>44</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV5_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_15" >
+   <property name="geometry" >
+    <rect>
+     <x>566</x>
+     <y>183</y>
+     <width>36</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV2_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_19" >
+   <property name="geometry" >
+    <rect>
+     <x>909</x>
+     <y>94</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV1_LED</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_3" >
+   <property name="geometry" >
+    <rect>
+     <x>538</x>
+     <y>595</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Pressure</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_VG2</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_4" >
+   <property name="geometry" >
+    <rect>
+     <x>516</x>
+     <y>93</y>
+     <width>36</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV1_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_16" >
+   <property name="geometry" >
+    <rect>
+     <x>331</x>
+     <y>498</y>
+     <width>44</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV3_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_17" >
+   <property name="geometry" >
+    <rect>
+     <x>431</x>
+     <y>497</y>
+     <width>45</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV4_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_20" >
+   <property name="geometry" >
+    <rect>
+     <x>909</x>
+     <y>281</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV3_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_10" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>181</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV2_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_6" >
+   <property name="geometry" >
+    <rect>
+     <x>935</x>
+     <y>181</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV2_CL_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_3" >
+   <property name="geometry" >
+    <rect>
+     <x>903</x>
+     <y>87</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV1_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_2" >
+   <property name="geometry" >
+    <rect>
+     <x>934</x>
+     <y>87</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV1_CL_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_9" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>281</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV3_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_8" >
+   <property name="geometry" >
+    <rect>
+     <x>934</x>
+     <y>281</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV3_CL_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_13" >
+   <property name="geometry" >
+    <rect>
+     <x>592</x>
+     <y>101</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PG1_ON_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_12" >
+   <property name="geometry" >
+    <rect>
+     <x>642</x>
+     <y>192</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PG2_ON_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_5" >
+   <property name="geometry" >
+    <rect>
+     <x>237</x>
+     <y>679</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::DRP</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_DP_ON_LED</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_17" >
+   <property name="geometry" >
+    <rect>
+     <x>559</x>
+     <y>234</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV2</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_24" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>141</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV1</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_23" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>231</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV2</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_22" >
+   <property name="geometry" >
+    <rect>
+     <x>903</x>
+     <y>329</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV3</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_19" >
+   <property name="geometry" >
+    <rect>
+     <x>482</x>
+     <y>497</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV5</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_18" >
+   <property name="geometry" >
+    <rect>
+     <x>382</x>
+     <y>496</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV4</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_16" >
+   <property name="geometry" >
+    <rect>
+     <x>283</x>
+     <y>497</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV3</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_21" >
+   <property name="geometry" >
+    <rect>
+     <x>315</x>
+     <y>645</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_AV2</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_20" >
+   <property name="geometry" >
+    <rect>
+     <x>314</x>
+     <y>729</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_AV1</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_11" >
+   <property name="geometry" >
+    <rect>
+     <x>510</x>
+     <y>142</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV1</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>220</red>
+     <green>220</green>
+     <blue>220</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_26" >
+   <property name="geometry" >
+    <rect>
+     <x>1043</x>
+     <y>64</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_SIGN_GREEN</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_27" >
+   <property name="geometry" >
+    <rect>
+     <x>1043</x>
+     <y>26</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_SIGN_RED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_28" >
+   <property name="geometry" >
+    <rect>
+     <x>1043</x>
+     <y>45</y>
+     <width>33</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_SIGN_YELLOW</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_29" >
+   <property name="geometry" >
+    <rect>
+     <x>1049</x>
+     <y>5</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>100</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_SIGN_BUZZER</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_30" >
+   <property name="geometry" >
+    <rect>
+     <x>466</x>
+     <y>223</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>191</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_FLOW1_STATUS</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/FUEL_MFC_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>FUEL_MFC1_ACT</string>
+     <string>FUEL_MFC1_ACT</string>
+     <string>FUEL_MFC1_FLOW</string>
+     <string>FUEL_MFC1_SET</string>
+     <string>FUEL_MFC1_SP</string>
+     <string>FUEL_FLOW1_STATUS</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_4" >
+   <property name="geometry" >
+    <rect>
+     <x>612</x>
+     <y>172</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PG2</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_9" >
+   <property name="geometry" >
+    <rect>
+     <x>562</x>
+     <y>81</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PG1</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_22" >
+   <property name="geometry" >
+    <rect>
+     <x>481</x>
+     <y>673</y>
+     <width>45</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>45</width>
+     <height>38</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>45</width>
+     <height>38</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VGValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV4_LED</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_32" >
+   <property name="geometry" >
+    <rect>
+     <x>527</x>
+     <y>668</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV4_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_33" >
+   <property name="geometry" >
+    <rect>
+     <x>528</x>
+     <y>698</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV4_CL_IND</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_25" >
+   <property name="geometry" >
+    <rect>
+     <x>433</x>
+     <y>673</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV4</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_31" >
+   <property name="geometry" >
+    <rect>
+     <x>466</x>
+     <y>322</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>3</number>
+   </property>
+   <property name="popup" >
+    <bool>true</bool>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_FLOW2_STATUS</string>
+   </property>
+   <property name="filename" >
+    <string>/usr/local/opi/ui/FUEL_MFC_Popup.ui</string>
+   </property>
+   <property name="pvs" >
+    <stringlist>
+     <string>FUEL_MFC2_ACT</string>
+     <string>FUEL_MFC2_ACT</string>
+     <string>FUEL_MFC2_FLOW</string>
+     <string>FUEL_MFC2_SET</string>
+     <string>FUEL_MFC2_SP</string>
+     <string>FUEL_FLOW2_STATUS</string>
+    </stringlist>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_10" >
+   <property name="geometry" >
+    <rect>
+     <x>390</x>
+     <y>276</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_MFC1_SP</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_11" >
+   <property name="geometry" >
+    <rect>
+     <x>389</x>
+     <y>374</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_MFC2_SP</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_26" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>500</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV5</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_27" >
+   <property name="geometry" >
+    <rect>
+     <x>583</x>
+     <y>496</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV6</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_34" >
+   <property name="geometry" >
+    <rect>
+     <x>123</x>
+     <y>561</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::Alarm</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_H2_ON_IND_2</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_35" >
+   <property name="geometry" >
+    <rect>
+     <x>904</x>
+     <y>446</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV5_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_36" >
+   <property name="geometry" >
+    <rect>
+     <x>933</x>
+     <y>446</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV5_CL_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_37" >
+   <property name="geometry" >
+    <rect>
+     <x>909</x>
+     <y>450</y>
+     <width>36</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>42</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HGValve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_GV5_OP_IND</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_38" >
+   <property name="geometry" >
+    <rect>
+     <x>630</x>
+     <y>497</y>
+     <width>44</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>44</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::VP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV6_LED</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>216</x>
+     <y>730</y>
+     <width>92</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>92</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>92</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_DP_ON</string>
+   </property>
+   <property name="truelabel" >
+    <string>ON</string>
+   </property>
+   <property name="falselabel" >
+    <string>OFF</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_4" >
+   <property name="geometry" >
+    <rect>
+     <x>447</x>
+     <y>775</y>
+     <width>92</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>92</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>92</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_TMP_ON</string>
+   </property>
+   <property name="truelabel" >
+    <string>ON</string>
+   </property>
+   <property name="falselabel" >
+    <string>OFF</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_12" >
+   <property name="geometry" >
+    <rect>
+     <x>528</x>
+     <y>31</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>80</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="statusTip" >
+    <string>PVname : FUEL_VG3_BA1</string>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_VG3_BA1</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="CABoButton_12" >
+   <property name="geometry" >
+    <rect>
+     <x>765</x>
+     <y>55</y>
+     <width>46</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>46</width>
+     <height>36</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Row</enum>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV7</string>
+   </property>
+   <property name="truelabel" >
+    <string>OPEN</string>
+   </property>
+   <property name="falselabel" >
+    <string>CLOSE</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="unselColor" >
+    <color>
+     <red>220</red>
+     <green>220</green>
+     <blue>220</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_24" >
+   <property name="geometry" >
+    <rect>
+     <x>771</x>
+     <y>6</y>
+     <width>36</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>36</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::HP2Valve</enum>
+   </property>
+   <property name="lineColor" stdset="0" >
+    <color>
+     <red>66</red>
+     <green>79</green>
+     <blue>121</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>2</number>
+   </property>
+   <property name="pvname" >
+    <string>FUEL_PV7_LED</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../fuel.qrc" />
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,32 @@
+record(ai, "$(PV)_MAX")
+{
+	field(DESC, "$(PV) max")
+	field(SCAN, "Passive")
+	field(INP, "0")
+	field(PINI, "YES")
+	field(EGU, "K")
+        field(HIHI, "338")
+        field(HIGH, "308")
+        field(LOW,  "288")
+        field(LOLO, "258")
+        field(HHSV, "MAJOR")
+        field(HSV, "MINOR")
+        field(LSV, "MINOR")
+        field(LLSV, "MAJOR")
+        field(MDEL, "0.01")
+        field(ADEL, "0.05")
+  	field(PREC, "2")
+}
+record(stringin, "$(PV)_MAX_PV")
+{
+	field(VAL, "")
+	field(DESC, "$(PV) max pv")
+}
+record(ao, "$(SETPV)")
+{
+        field(DESC, "$(SETPV) Set Value")
+        field(SCAN, "Passive")
+        field(VAL, "$(SETVAL)")
+  	field(PREC, "2")
+        field(EGU, "$(UNIT)")
+}

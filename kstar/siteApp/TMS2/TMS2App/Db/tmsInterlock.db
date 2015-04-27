@@ -1,0 +1,102 @@
+record(ai, "TMS_IOC2_INTERLOCK")
+{
+        field(DESC, "TMS_IOC2_INTERLOCK")
+        field(SCAN, "Passive")
+        field(LINR, "LINEAR")
+        field(INP, "1")
+        field(LOPR, "0")
+        field(HOPR, "65535")
+        field(EGUL, "0")
+        field(EGUF, "65535")
+}
+record(bo, "TMS_IOC2_HEART_BEAT")
+{
+    	field(DESC, "TMS_IOC2_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(DOL, "TMS_IOC1_HEART_BEAT CPP")
+	field(OMSL, "closed_loop")
+	field(OUT, "TMS_INTERLOCK_HEART_BEAT PP")
+}
+record(bo, "TMS_INTERLOCK_USE")
+{
+    	field(DESC, "TMS_INTERLOCK_USE")
+	field(SCAN, "Passive")
+	field(VAL, "0")
+	field(OMSL, "supervisory")
+	field(OUT, "TMS_INTERLOCK_RUN PP")
+}
+record(bo, "TMS_TEMP_INTERLOCK_ACTIVE")
+{
+    	field(DESC, "TMS_TEMP_INTERLOCK_USE")
+	field(SCAN, "Passive")
+	field(VAL, "0")
+    	field(ZNAM, "0")
+    	field(ONAM, "1")
+}
+record(bo, "TMS_STRAIN_INTERLOCK_ACTIVE")
+{
+    	field(DESC, "TMS_STRAIN_INTERLOCK_USE")
+	field(SCAN, "Passive")
+	field(VAL, "0")
+    	field(ZNAM, "0")
+    	field(ONAM, "1")
+}
+record(bo, "TMS_DISP_INTERLOCK_ACTIVE")
+{
+    	field(DESC, "TMS_DISP_INTERLOCK_USE")
+	field(SCAN, "Passive")
+	field(VAL, "0")
+    	field(ZNAM, "0")
+    	field(ONAM, "1")
+}
+record(bi, "TMS_NIDAQ1_WATCHDOG_STATUS")
+{
+       field(DESC, "TMS_NIDAQ1_WATCHDOG")
+       field(SCAN, "Passive")
+       field(PINI, "YES")
+       field(ZNAM, "Normal")
+       field(ONAM, "NIDAQ1-STOPPED")
+       field(ZSV, "NO_ALARM")
+       field(OSV, "MAJOR")
+}
+record(bi, "TMS_NIDAQ2_WATCHDOG_STATUS")
+{
+       field(DESC, "TMS_NIDAQ2_WATCHDOG")
+       field(SCAN, "Passive")
+       field(PINI, "YES")
+       field(ZNAM, "Normal")
+       field(ONAM, "NIDAQ2-STOPPED")
+       field(ZSV, "NO_ALARM")
+       field(OSV, "MAJOR")
+}
+record(bi, "TMS_CFP1_WATCHDOG_STATUS")
+{
+       field(DESC, "TMS_CFP1_WATCHDOG")
+       field(SCAN, "Passive")
+       field(PINI, "YES")
+       field(ZNAM, "Normal")
+       field(ONAM, "CFP1-STOPPED")
+       field(ZSV, "NO_ALARM")
+       field(OSV, "MAJOR")
+}
+record(bi, "TMS_CFP2_WATCHDOG_STATUS")
+{
+       field(DESC, "TMS_CFP2_WATCHDOG")
+       field(SCAN, "Passive")
+       field(PINI, "YES")
+       field(ZNAM, "Normal")
+       field(ONAM, "CFP2-STOPPED")
+       field(ZSV, "NO_ALARM")
+       field(OSV, "MAJOR")
+}
+record(calc, TMS_NIDAQ_ALL_WATCHDOG) {
+  field(SCAN, "1 second")
+  field(CALC, "A|B|C|D")
+  field(INPA, "TMS_NIDAQ1_WATCHDOG_STATUS.VAL NPP MS")
+  field(INPB, "TMS_NIDAQ2_WATCHDOG_STATUS.VAL NPP MS")
+  field(INPC, "TMS_CFP1_WATCHDOG_STATUS.VAL NPP MS")
+  field(INPD, "TMS_CFP2_WATCHDOG_STATUS.VAL NPP MS")
+  field(MDEL, "0.0")
+  field(ADEL, "0.0")
+}
+

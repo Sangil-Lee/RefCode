@@ -1,0 +1,11 @@
+record (bi, "$(PV_NAME)") {
+  field (DTYP, "S7plc")
+  field (INP,  "@HCS_PLC/$(BYTE) B=$(BIT)")
+  field (SCAN, "I/O Intr")
+#  field (SCAN, "Passive")
+  field (DESC, "$(DESC)")
+  field (ZSV,"$(ZSV)")
+  field (OSV,"$(OSV)")
+  field (ZNAM,"$(ZNAM)")
+  field (ONAM,"$(ONAM)")
+}

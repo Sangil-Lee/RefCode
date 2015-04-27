@@ -1,0 +1,184 @@
+program sncKstarTreeCreate
+option +r;
+option -c;
+%% /*  KSTAR MDSplus Tree Create Sequence Process !! 20090830. edit by TG.Lee   */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+%% #include <epicsThread.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% /*   #define MDS_SERVER   "172.17.100.202:8000"   */
+%% /*   #define RTREE_NAME	"rdata"              */
+%% /*   #define ATREE_NAME	"adata"              */
+%% /*   #define XTREE_NAME	"xdata"              */
+
+%% #define MDS_SERVER   "172.17.100.202:8000" 
+%% /* #define MDS_SERVER   "172.18.54.116:8000"   */
+%% #define KSTAR_NAME	        "kstar"
+%% #define ELECTRON_NAME	"electron"
+%% #define R_ELECTRON_NAME	"r_electron"
+%% #define HEATING_NAME 	"heating"
+%% #define MAGNETIC_NAME	"magnetic"
+%% #define R_MAGNETIC_NAME	"r_magnetic"
+%% #define OPERATION_NAME	"operation"
+%% #define PROCESSED_NAME	"processed"
+%% #define SPECTRO_NAME 	"spectro"
+%% #define R_SPECTRO_NAME 	"r_spectro"
+%% #define VIS_FILTER_NAME	"vis_filter"
+%% #define R_VIS_FILTER_NAME	"r_vis_filter"
+%% #define ION_NAME		"ion"
+%% #define R_ION_NAME		"r_ion"
+%% #define IMAGE_NAME		"image"
+%% #define R_IMAGE_NAME		"r_image"
+
+%% int dtypeFloat = DTYPE_FLOAT;
+%% int dtypeLong = DTYPE_LONG;
+
+%% char kstarTree[][20]={"electron","r_electron","heating","magnetic","r_magnetic","operation","processed","spectro","r_spectro","vis_filter","r_vis_filter","ion","r_ion","image","r_image"};
+
+
+int serverDone;
+int kstarDone;
+int adataDone;
+int xdataDone;
+
+unsigned int shotNumber;
+%% /*  unsigned int oldShotNu = 0; "Over Writted Protection Function" */
+int createShot;
+int createShotDone;
+int createStatus;
+int heartBeat;
+
+
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% int len;
+%% char buf2[128];
+%% int socket;
+%% /* int idesc = descr(&dtypeLong, &tstat, &null); */
+%% int idesc;
+%% int i;
+
+assign shotNumber to "MDS_SHOT_NUMBER";
+assign createShot to "MDS_SHOT_CREATE";
+assign createShotDone to "MDS_SHOT_CREATE_DONE";
+assign createStatus to "MDS_SNL_SHOT_CREATE_STATUS";
+assign heartBeat to "MDS_SNL_SHOT_CREATE_HEARTBEAT";
+
+monitor shotNumber;
+monitor createShot;
+monitor createShotDone;
+monitor createStatus;
+monitor heartBeat;
+
+ss createMdsShot {
+	state init {
+		when(TRUE){
+        	%%      for(i=0; i<15; i++){
+        	%%         printf("\n KSTAR Tree Name counts : %d -  %s \n",i,kstarTree[i]);		
+		%%	}
+		} state create_pulse_kstar
+	}
+	state create_pulse_kstar {
+        	when (createShot==1) {
+		%% int idesc = descr(&dtypeLong, &tstat, &null);
+                %% socket = MdsConnect(MDS_SERVER);
+                %% if ( socket == -1 ){
+                %%      printf("Error connecting to mdsip server(%s).\n", MDS_SERVER);
+	        	serverDone=0;
+			createStatus=0;
+			pvPut(createStatus,SYNC);
+                %%      }
+		%% else {
+			serverDone = 1;
+                        createStatus=1;
+                        pvPut(createStatus,SYNC);
+                %%      printf("\nMDSplus >>> MdsConnect(\"%s\")... OK\n", MDS_SERVER);
+                %%      status = MdsOpen(KSTAR_NAME, &pVar->shotNumber);
+                %%      if (!statusOk(status) ) {
+                %%              printf("KSTAR Tree create pulse shot: %d.\n",pVar->shotNumber);
+                %%              sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", KSTAR_NAME);
+                %%              status = MdsValue(buf2, &idesc, &null, &len);
+                %%              if ( !statusOk(status) ){
+                %%                      printf("Error TCL command: %s.\n",MdsGetMsg(status));
+                %%              }
+                %%              else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+                %%              status = MdsValue(buf2, &idesc, &null, &len);
+                %%              if ( !statusOk(status) ){
+                %%                      printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+                %%              }
+                %%              else {
+		%%			sprintf(buf2, "TCL(\"close\")");
+                %%              	sprintf(buf2, "TCL(\"set current %s %d\")",KSTAR_NAME,pVar->shotNumber);
+                %%              	status = MdsValue(buf2, &idesc, &null, &len);
+                %%              	printf("MDSplus KSTAR Current Status : %d\n",status);
+                %%              	if ( !statusOk(status) ){
+                %%                      	printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                %%              	}
+                %%              	else printf("\nMDSplus >>> Create new tree(KSTAR \"%d\")... OK\n", pVar->shotNumber);
+                %%      	}
+		%%	}
+                %%      else printf("\n>>> Already Created KSTAR : %d. Shot !! So, Do not Create KSTAR - OK\n", pVar->shotNumber);
+		%% }
+		} state create_pulse_subtree
+        	when (createShot!=1) {
+			%% epicsThreadSleep(1.0);
+		} state create_pulse_kstar
+	}
+	state create_pulse_subtree{
+        	when (createShot==1 && serverDone == 1) {
+		%% epicsThreadSleep(1.0);
+		%% int idesc = descr(&dtypeLong, &tstat, &null);
+		%% for(i=0; i<15; i++){
+		%%	sprintf(buf2, "TCL(\"set current %s %d\")",kstarTree[i],pVar->shotNumber);
+     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		%%	if ( !statusOk(status) ){
+        	%%		printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+                %%      }
+                %%      else {
+                %% /*             printf("\n Create %s : %d Tree Complated OK\n",kstarTree[i],pVar->shotNumber);  */
+                                createStatus=2;
+                                pvPut(createStatus,SYNC);
+                %%      }
+		%% }
+                %% printf("\n Create %s : %d Tree Complated OK\n",kstarTree[i],pVar->shotNumber);
+		} state create_pulse_complate
+        	when (createShot==1 && serverDone == 0) {
+			createShot=2;
+			pvPut(createShot);
+                        printf("Error KSTAR Tree Create Sequence.\n");
+		} state create_pulse_kstar
+	}
+	state create_pulse_complate {
+        	when (createShot==1) {
+			createShot=0;
+			createShotDone=1;
+			pvPut(createShot);
+			pvPut(createShotDone);
+                        printf("Complated KSTAR Tree Create Sequence.\n");
+		} state create_pulse_kstar
+        	when (createShot!=1) {
+                        printf("Aborted KSTAR Tree Create Sequence.\n");
+		} state create_pulse_kstar
+	}
+}
+ss snlCreateTreeHeartBeat {
+        state snlCreateHeartBeat {
+                when (delay(1.)) {
+                                if(heartBeat == 0){
+                                        heartBeat = 1;
+                                        pvPut(heartBeat);
+                                } else {
+                                        heartBeat = 0;
+                                        pvPut(heartBeat);
+                                }
+                } state snlCreateHeartBeat
+        }
+}
+

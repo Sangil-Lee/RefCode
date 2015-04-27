@@ -1,0 +1,15 @@
+record(bi, "$(P)_HeartBeat")
+{
+    field(DESC, "Heart")
+    field(SCAN, "1 second")
+    field(INP, "$(P)_HeartBeat_C.VAL")
+    field(OSV, "NO_ALARM")
+    field(ZSV, "MAJOR")
+}
+record(calc, "$(P)_HeartBeat_C")
+{
+    field(DESC, "Heart")
+    field(SCAN, "1 second")
+    field(CALC, "A>0?0:1")
+    field(INPA, "$(P)_HeartBeat.VAL")
+}

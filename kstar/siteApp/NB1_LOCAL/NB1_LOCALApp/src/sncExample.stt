@@ -1,0 +1,230 @@
+program sncExample
+
+int tc_ov01;
+assign tc_ov01 to "NB1_TC_OVER_C01";
+monitor tc_ov01;
+
+int tc_ov02;
+assign tc_ov02 to "NB1_TC_OVER_C02";
+monitor tc_ov02;
+
+int tc_ov03;
+assign tc_ov03 to "NB1_TC_OVER_C03";
+monitor tc_ov03;
+
+int tc_ov04;
+assign tc_ov04 to "NB1_TC_OVER_C04";
+monitor tc_ov04;
+
+int tc_ov05;
+assign tc_ov05 to "NB1_TC_OVER_C05";
+monitor tc_ov05;
+
+int tc_ov06;
+assign tc_ov06 to "NB1_TC_OVER_C06";
+monitor tc_ov06;
+
+int tc_ov07;
+assign tc_ov07 to "NB1_TC_OVER_C07";
+monitor tc_ov07;
+
+int tc_ov08;
+assign tc_ov08 to "NB1_TC_OVER_C08";
+monitor tc_ov08;
+
+int tc_ov09;
+assign tc_ov09 to "NB1_TC_OVER_C09";
+monitor tc_ov09;
+
+int tc_ov10;
+assign tc_ov10 to "NB1_TC_OVER_C10";
+monitor tc_ov10;
+
+int tc_ov11;
+assign tc_ov11 to "NB1_TC_OVER_C11";
+monitor tc_ov11;
+
+int tc_ov12;
+assign tc_ov12 to "NB1_TC_OVER_C12";
+monitor tc_ov12;
+
+int tc_ov13;
+assign tc_ov13 to "NB1_TC_OVER_C13";
+monitor tc_ov13;
+
+int tc_ov14;
+assign tc_ov14 to "NB1_TC_OVER_C14";
+monitor tc_ov14;
+
+int tc_ov15;
+assign tc_ov15 to "NB1_TC_OVER_C15";
+monitor tc_ov15;
+
+int tc_ov16;
+assign tc_ov16 to "NB1_TC_OVER_C16";
+monitor tc_ov16;
+
+int tc_ov17;
+assign tc_ov17 to "NB1_TC_OVER_C17";
+monitor tc_ov17;
+
+int tc_ov18;
+assign tc_ov18 to "NB1_TC_OVER_C18";
+monitor tc_ov18;
+
+int tc_ov19;
+assign tc_ov19 to "NB1_TC_OVER_C19";
+monitor tc_ov19;
+
+int tc_ov20;
+assign tc_ov20 to "NB1_TC_OVER_C20";
+monitor tc_ov20;
+
+int tc_ov21;
+assign tc_ov21 to "NB1_TC_OVER_C21";
+monitor tc_ov21;
+
+int tc_ov22;
+assign tc_ov22 to "NB1_TC_OVER_C22";
+monitor tc_ov22;
+
+int tc_ov23;
+assign tc_ov23 to "NB1_TC_OVER_C23";
+monitor tc_ov23;
+
+int tc_ov24;
+assign tc_ov24 to "NB1_TC_OVER_C24";
+monitor tc_ov24;
+
+int tc_ov25;
+assign tc_ov25 to "NB1_TC_OVER_C25";
+monitor tc_ov25;
+
+int tc_ov26;
+assign tc_ov26 to "NB1_TC_OVER_C26";
+monitor tc_ov26;
+
+int tc_ov27;
+assign tc_ov27 to "NB1_TC_OVER_C27";
+monitor tc_ov27;
+
+int tc_ov28;
+assign tc_ov28 to "NB1_TC_OVER_C28";
+monitor tc_ov28;
+
+int tc_ov29;
+assign tc_ov29 to "NB1_TC_OVER_C29";
+monitor tc_ov29;
+
+int tc_ov30;
+assign tc_ov30 to "NB1_TC_OVER_C30";
+monitor tc_ov30;
+
+int tc_ov31;
+assign tc_ov31 to "NB1_TC_OVER_C31";
+monitor tc_ov31;
+
+int tc_ov32;
+assign tc_ov32 to "NB1_TC_OVER_C32";
+monitor tc_ov32;
+
+int tc_ov33;
+assign tc_ov33 to "NB1_TC_OVER_C33";
+monitor tc_ov33;
+
+int tc_ov34;
+assign tc_ov34 to "NB1_TC_OVER_C34";
+monitor tc_ov34;
+
+int tc_ov35;
+assign tc_ov35 to "NB1_TC_OVER_C35";
+monitor tc_ov35;
+
+int tc_ov36;
+assign tc_ov36 to "NB1_TC_OVER_C36";
+monitor tc_ov36;
+
+int tc_ov37;
+assign tc_ov37 to "NB1_TC_OVER_C37";
+monitor tc_ov37;
+
+int tc_ov38;
+assign tc_ov38 to "NB1_TC_OVER_C38";
+monitor tc_ov38;
+
+int tc_ov39;
+assign tc_ov39 to "NB1_TC_OVER_C39";
+monitor tc_ov39;
+
+int tc_ov40;
+assign tc_ov40 to "NB1_TC_OVER_C40";
+monitor tc_ov40;
+
+int tc_ov41;
+assign tc_ov41 to "NB1_TC_OVER_C41";
+monitor tc_ov41;
+
+int tc_ov42;
+assign tc_ov42 to "NB1_TC_OVER_C42";
+monitor tc_ov42;
+
+int nb1_emg;
+assign nb1_emg to "NB1_P1PLC_ECMD_EMG";
+
+int tc_ovInt;
+assign tc_ovInt to "NB1_TC_OVER_INTC";
+
+ss ss1
+{
+	state low
+	{
+	    when(delay(.5))
+	    {
+                if(tc_ov01==1 || tc_ov02==1 || tc_ov03==1 || tc_ov04==1 || tc_ov05==1 || tc_ov06==1 || tc_ov07==1 || tc_ov08==1 || tc_ov09==1 || tc_ov10==1)
+                {
+                    printf("--- TC Over Temp. ---\n");
+                    nb1_emg = 1;
+                    pvPut(nb1_emg);
+                    tc_ovInt = 1;
+                    pvPut(tc_ovInt);
+                }
+                else if(tc_ov11==1 || tc_ov12==1 || tc_ov13==1 || tc_ov14==1 || tc_ov15==1 || tc_ov16==1 || tc_ov17==1 || tc_ov18==1 || tc_ov19==1 || tc_ov20==1)
+                {
+                    printf("--- TC Over Temp. ---\n");
+                    nb1_emg = 1;
+                    pvPut(nb1_emg);
+                    tc_ovInt = 1;
+                    pvPut(tc_ovInt);
+                }
+                else if(tc_ov21==1 || tc_ov22==1 || tc_ov23==1 || tc_ov24==1 || tc_ov25==1 || tc_ov26==1 || tc_ov27==1 || tc_ov28==1 || tc_ov29==1 || tc_ov30==1)
+                {
+                    printf("--- TC Over Temp. ---\n");
+                    nb1_emg = 1;
+                    pvPut(nb1_emg);
+                    tc_ovInt = 1;
+                    pvPut(tc_ovInt);
+                }
+                else if(tc_ov31==1 || tc_ov32==1 || tc_ov33==1 || tc_ov34==1 || tc_ov35==1 || tc_ov36==1 || tc_ov37==1 || tc_ov38==1 || tc_ov39==1 || tc_ov40==1)
+                {
+                    printf("--- TC Over Temp. ---\n");
+                    nb1_emg = 1;
+                    pvPut(nb1_emg);
+                    tc_ovInt = 1;
+                    pvPut(tc_ovInt);
+                }
+                else if(tc_ov41==1 || tc_ov42==1)
+                {
+                    printf("--- TC Over Temp. ---\n");
+                    nb1_emg = 1;
+                    pvPut(nb1_emg);
+                    tc_ovInt = 1;
+                    pvPut(tc_ovInt);
+                }
+                else
+                {
+                    tc_ovInt = 0;
+                    pvPut(tc_ovInt);
+                }
+	    } state low 
+	}
+}

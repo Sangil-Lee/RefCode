@@ -1,0 +1,67 @@
+record(bi, "NB1_BM1_VOLT_FLT")
+{
+    field(DESC, "BM Volt Fault")
+    field(ZNAM, "OK")
+    field(ONAM, "Error")
+}
+
+record(calcout, "NB1_BM1_VOLT_FLT_C")
+{
+    field(DESC, "BM Fault")
+    field(SCAN, "1 second")
+    field(CALC, "A<1||B?1:0")
+    field(INPA, "NB1_BM1_VOUT_AI.VAL NPP NMS")
+    field(INPB, "NB1_P1VME_FINT_BMUV.VAL NPP NMS")
+    field(OUT, "NB1_BM1_VOLT_FLT")
+}
+
+record(bi, "NB1_BM1_CURR_FLT")
+{
+    field(DESC, "BM Curr Fault")
+    field(ZNAM, "OK")
+    field(ONAM, "Error")
+}
+
+record(calcout, "NB1_BM1_CURR_FLT_C")
+{
+    field(DESC, "BM Fault")
+    field(SCAN, "1 second")
+    field(CALC, "A<1||B?1:0")
+    field(INPA, "NB1_BM1_IOUT_AI.VAL NPP NMS")
+    field(INPB, "NB1_P1VME_FINT_BMUC.VAL NPP NMS")
+    field(OUT, "NB1_BM1_CURR_FLT")
+}
+
+record(bi, "NB1_BM2_VOLT_FLT")
+{
+    field(DESC, "BM2 Volt Fault")
+    field(ZNAM, "OK")
+    field(ONAM, "Error")
+}
+
+record(calcout, "NB1_BM2_VOLT_FLT_C")
+{
+    field(DESC, "BM2 Fault")
+    field(SCAN, "1 second")
+    field(CALC, "A<1||B?1:0")
+    field(INPA, "NB1_BM2_VOUT_AI.VAL NPP NMS")
+    field(INPB, "NB1_P2VME_STA_BMUV.VAL NPP NMS")
+    field(OUT, "NB1_BM2_VOLT_FLT")
+}
+
+record(bi, "NB1_BM2_CURR_FLT")
+{
+    field(DESC, "BM2 Curr Fault")
+    field(ZNAM, "OK")
+    field(ONAM, "Error")
+}
+
+record(calcout, "NB1_BM2_CURR_FLT_C")
+{
+    field(DESC, "BM2 Fault")
+    field(SCAN, "1 second")
+    field(CALC, "A<1||B?1:0")
+    field(INPA, "NB1_BM2_IOUT_AI.VAL NPP NMS")
+    field(INPB, "NB1_P2VME_STA_BMUC.VAL NPP NMS")
+    field(OUT, "NB1_BM2_CURR_FLT")
+}

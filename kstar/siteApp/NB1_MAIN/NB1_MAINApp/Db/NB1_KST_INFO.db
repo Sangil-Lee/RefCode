@@ -1,0 +1,85 @@
+record(ao, "NB1_KST_PS_POW")
+{
+    field(DESC, "Power")
+}
+record(bi, "NB1_KST_INT_RDY")
+{
+    field(DESC, "KSTAR RDY")
+    field(SCAN, ".1 second")
+    field(INP, "NB1_KST_INT_RDY_C.VAL NPP NMS")
+    field(ZNAM, "NOT RDY")
+    field(ONAM, "RDY")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+}
+record(calc, "NB1_KST_INT_RDY_C")
+{
+    field(DESC, "KSTAR RDY")
+    field(SCAN, ".1 second")
+    field(CALC, "A&B&C&D&E&F?1:0")
+    field(INPA, "NB1_BEAM_INJECT_KSTAR NPP NMS")
+    field(INPB, "NB1_P1VME_RTN_HVON NPP NMS")
+    field(INPC, "NB1_P1BI_RTN_RDY NPP NMS")
+    field(INPD, "NB1_P1VME_RTN_FILPSDIS NPP NMS")
+    field(INPE, "NB1_P1VME_RTN_ARCPSDIS NPP NMS")
+    field(INPF, "NB1_P1G3_RTN_RDY NPP NMS")
+    field(FLNK, "NB1_KST_INT_RDY")
+}
+#record(calc, "NB1_P1VME_ECMD_ARCR")
+#{
+#    field(DESC, "KSTAR PULSE")
+#    field(SCAN, "1 second")
+#    field(CALC, "(B-A)*1000")
+#    field(INPA, "NBI1A_LTU_mT0_sec1 NPP NMS")
+#    field(INPB, "NBI1A_LTU_mT1_sec1 NPP NMS")
+#}
+record(bi, "NB1_KST_INT_EN")
+{
+    field(DESC, "INT. Enabled")
+    field(SCAN, "1 second")
+    field(INP, "NB1_KST_INT_EN_C.VAL NPP NMS")
+    field(ZNAM, "EN")
+    field(ONAM, "DIS")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+}
+record(calc, "NB1_KST_INT_EN_C")
+{
+    field(DESC, "KSTAR RDY")
+    field(SCAN, "1 second")
+    field(CALC, "A|B?1:0")
+    field(INPA, "NB1_KST_INT_EN1_C NPP NMS")
+    field(INPB, "NB1_KST_INT_EN2_C NPP NMS")
+    field(FLNK, "NB1_KST_INT_EN")
+}
+record(calc, "NB1_KST_INT_EN1_C")
+{
+    field(DESC, "KSTAR RDY")
+    field(SCAN, "1 second")
+    field(CALC, "A|B|C|D|E|F|G|H|I|J|K?1:0")
+    field(INPA, "NB1_P1VME_RTN_HVSDIS NPP NMS")
+    field(INPB, "NB1_P1VME_RTN_UVDIS NPP NMS")
+    field(INPC, "NB1_P1VME_RTN_BMUVDIS NPP NMS")
+    field(INPD, "NB1_P1VME_RTN_BMUCDIS NPP NMS")
+    field(INPE, "NB1_P1VME_RTN_BMDIS NPP NMS")
+    field(INPF, "NB1_P1VME_RTN_VACDIS NPP NMS")
+    field(INPG, "NB1_P1VME_RTN_TILEDIS NPP NMS")
+    field(INPH, "NB1_P1VME_RTN_BCVACDIS NPP NMS")
+    field(INPI, "NB1_P1VME_RTN_WATERDIS NPP NMS")
+    field(INPJ, "NB1_P1VME_RTN_BCTEMPDIS NPP NMS")
+    field(INPK, "NB1_P1VME_RTN_MARCDIS NPP NMS")
+}
+record(calc, "NB1_KST_INT_EN2_C")
+{
+    field(DESC, "KSTAR RDY")
+    field(SCAN, "1 second")
+    field(CALC, "A|B|C|D|E|F|G|H?1:0")
+    field(INPA, "NB1_P1VME_RTN_G3DIS NPP NMS")
+    field(INPB, "NB1_P1VME_RTN_ARCDIS NPP NMS")
+    field(INPC, "NB1_P1VME_RTN_FILADIS NPP NMS")
+    field(INPD, "NB1_P1VME_RTN_UBDIS NPP NMS")
+    field(INPE, "NB1_P1VME_RTN_KEMGDIS NPP NMS")
+    field(INPF, "NB1_P1PLC_CMD_BIEN NPP NMS")
+    field(INPG, "NB1_P1VME_RTN_BIUVDIS NPP NMS")
+    field(INPH, "NB1_P1VME_RTN_BIUIDIS NPP NMS")
+}

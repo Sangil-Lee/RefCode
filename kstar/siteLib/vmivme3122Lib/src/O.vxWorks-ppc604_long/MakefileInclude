@@ -1,0 +1,121 @@
+#Do not modify this file.
+#This file is created during the build.
+
+ifneq ($(strip $(vmivme3122_SRCS_$(OS_CLASS))),)
+vmivme3122_SRCS+=$(subst -nil-,,$(vmivme3122_SRCS_$(OS_CLASS)))
+else
+ifdef vmivme3122_SRCS_DEFAULT
+vmivme3122_SRCS+=$(vmivme3122_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_RCS_$(OS_CLASS))),)
+vmivme3122_RCS+=$(subst -nil-,,$(vmivme3122_RCS_$(OS_CLASS)))
+else
+ifdef vmivme3122_RCS_DEFAULT
+vmivme3122_RCS+=$(vmivme3122_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_OBJS_$(OS_CLASS))),)
+vmivme3122_OBJS+=$(subst -nil-,,$(vmivme3122_OBJS_$(OS_CLASS)))
+else
+ifdef vmivme3122_OBJS_DEFAULT
+vmivme3122_OBJS+=$(vmivme3122_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_LDFLAGS_$(OS_CLASS))),)
+vmivme3122_LDFLAGS+=$(subst -nil-,,$(vmivme3122_LDFLAGS_$(OS_CLASS)))
+else
+ifdef vmivme3122_LDFLAGS_DEFAULT
+vmivme3122_LDFLAGS+=$(vmivme3122_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_OBJLIBS_$(OS_CLASS))),)
+vmivme3122_OBJLIBS+=$(subst -nil-,,$(vmivme3122_OBJLIBS_$(OS_CLASS)))
+else
+ifdef vmivme3122_OBJLIBS_DEFAULT
+vmivme3122_OBJLIBS+=$(vmivme3122_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_LDOBJS_$(OS_CLASS))),)
+vmivme3122_LDOBJS+=$(subst -nil-,,$(vmivme3122_LDOBJS_$(OS_CLASS)))
+else
+ifdef vmivme3122_LDOBJS_DEFAULT
+vmivme3122_LDOBJS+=$(vmivme3122_LDOBJS_DEFAULT)
+endif
+endif
+vmivme3122_LDLIBS+=$(vmivme3122_LIBS)
+ifneq ($(strip $(vmivme3122_LIBS_$(OS_CLASS))),)
+vmivme3122_LDLIBS+=$(subst -nil-,,$(vmivme3122_LIBS_$(OS_CLASS)))
+else
+ifdef vmivme3122_LIBS_DEFAULT
+vmivme3122_LDLIBS+=$(vmivme3122_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(vmivme3122_SYS_LIBS_$(OS_CLASS))),)
+vmivme3122_SYS_LIBS+=$(subst -nil-,,$(vmivme3122_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef vmivme3122_SYS_LIBS_DEFAULT
+vmivme3122_SYS_LIBS+=$(vmivme3122_SYS_LIBS_DEFAULT)
+endif
+endif
+vmivme3122_OBJS+=$(addsuffix $(OBJ),$(basename $(vmivme3122_SRCS)))
+
+ifeq ($(filter vmivme3122,$(TESTPROD) $(PROD)),vmivme3122)
+ifeq (,$(strip $(vmivme3122_OBJS) $(PRODUCT_OBJS)))
+vmivme3122_OBJS+=vmivme3122$(OBJ)
+endif
+vmivme3122_RESS+=$(addsuffix $(RES),$(basename $(vmivme3122_RCS)))
+vmivme3122_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(vmivme3122_OBJS)))
+vmivme3122_DEPLIBS=$(foreach lib, $(vmivme3122_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+vmivme3122$(EXE): $(vmivme3122_OBJSNAME) $(vmivme3122_RESS) $(vmivme3122_DEPLIBS)
+endif
+
+ifeq ($(filter vmivme3122,$(LIBRARY)),vmivme3122)
+ifneq ($(filter vmivme3122,$(LOADABLE_LIBRARY)),vmivme3122)
+ifneq (,$(strip $(vmivme3122_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += vmivme3122
+endif
+vmivme3122_RESS+=$(addsuffix $(RES),$(basename $(vmivme3122_RCS)))
+vmivme3122_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(vmivme3122_OBJS)))
+vmivme3122_DEPLIBS=$(foreach lib, $(vmivme3122_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+vmivme3122_DLL_DEPLIBS=$(foreach lib, $(vmivme3122_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)vmivme3122$(LIB_SUFFIX):$(vmivme3122_OBJSNAME) $(vmivme3122_RESS)
+$(LIB_PREFIX)vmivme3122$(LIB_SUFFIX):$(vmivme3122_DEPLIBS)
+$(LIB_PREFIX)vmivme3122$(SHRLIB_SUFFIX):$(vmivme3122_OBJSNAME) $(vmivme3122_RESS)
+$(LIB_PREFIX)vmivme3122$(SHRLIB_SUFFIX):$(vmivme3122_DEPLIBS)
+$(LIB_PREFIX)vmivme3122$(SHRLIB_SUFFIX):$(vmivme3122_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter vmivme3122,$(LOADABLE_LIBRARY)),vmivme3122)
+ifneq (,$(strip $(vmivme3122_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += vmivme3122
+endif
+vmivme3122_RESS+=$(addsuffix $(RES),$(basename $(vmivme3122_RCS)))
+vmivme3122_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(vmivme3122_OBJS)))
+vmivme3122_DEPLIBS=$(foreach lib, $(vmivme3122_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+vmivme3122_DLL_DEPLIBS=$(foreach lib, $(vmivme3122_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)vmivme3122$(LOADABLE_SHRLIB_SUFFIX):$(vmivme3122_OBJSNAME) $(vmivme3122_RESS)
+$(LOADABLE_SHRLIB_PREFIX)vmivme3122$(LOADABLE_SHRLIB_SUFFIX):$(vmivme3122_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)vmivme3122$(LOADABLE_SHRLIB_SUFFIX):$(vmivme3122_DLL_DEPLIBS)
+endif
+

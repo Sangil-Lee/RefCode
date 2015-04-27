@@ -1,0 +1,22 @@
+#!/bin/sh
+
+module="intLTU"
+device="intLTU"
+
+#intLTU_ROOT=/dev/intLTU
+intLTU_ROOT=/dev
+
+#echo
+#echo Remove intLTU Device Driver Kernel Module
+
+# Remove kernel module
+echo rmmod $module
+/sbin/rmmod $module || exit 1
+
+# echo rm $intLTU_ROOT/${device}
+
+# Remove intLTU from /dev
+rm -rf $intLTU_ROOT/${device}.*
+
+#echo
+

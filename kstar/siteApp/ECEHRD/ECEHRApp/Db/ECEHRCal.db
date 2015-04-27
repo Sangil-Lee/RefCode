@@ -1,0 +1,23 @@
+record(bo, "ECEHR_CAL_MODE_START")
+{
+	field(DESC, "ECE HR CAL Start")
+	field(SCAN, "Passive")
+  	field(ZNAM, "STOP")
+  	field(ONAM, "START")
+}
+record(ao, "ECEHR_CAL_START_NUMBER")
+{
+	field(DESC, "ECEHR_CAL_START_NUMBER")
+	field(SCAN, "Passive")
+}
+record(ao, "ECEHR_CAL_STOP_NUMBER")
+{
+	field(DESC, "ECEHR_CAL_STOP_NUMBER")
+	field(SCAN, "Passive")
+}
+record(ao, "ECEHR_MPS_TF_CURRENT") {
+  field(DESC, "MPS TF Current forward")
+  field(DTYP, "ACQ196 AoControl")
+  field(OUT, "@tf_current")
+}
+

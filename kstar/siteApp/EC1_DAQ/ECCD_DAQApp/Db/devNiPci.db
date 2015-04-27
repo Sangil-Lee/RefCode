@@ -1,0 +1,123 @@
+record(bo, "$(P)_START")
+{
+    field(DESC, "DAQ RUN CMD")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @0")
+}
+record(bo, "$(P)_STOP")
+{
+    field(DESC, "DAQ STOP CMD")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @1")
+}
+record(bo, "$(P)_ABORT")
+{
+    field(DESC, "DAQ STOP CMD")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @2")
+}
+record(bo, "$(P)_APPLY")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @3")
+}
+record(bo, "$(P)_SAMPCLK")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @4")
+    field(ZNAM, "Int.")
+    field(ONAM, "Ext.")
+}
+record(bo, "$(P)_OPRMODE")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "BO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @5")
+    field(ZNAM, "LOCAL")
+    field(ONAM, "KSTAR")
+}
+record(ao, "$(P)_T0")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @0")
+    field(PREC, "1")
+}
+record(ao, "$(P)_T1")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @1")
+    field(PREC, "1")
+}
+record(ao, "$(P)_BLIP")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @2")
+    field(PREC, "1")
+}
+record(ao, "$(P)_RATE")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+record(ao, "$(P)_LOCALSHOT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_NiPci")
+    field(OUT, "#$(PORT) A$(A) @4")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_T0")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @0")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_T1")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @1")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_BLIP")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @2")
+    field(PREC, "1")
+}
+record(ai, "$(P)_RD_RATE")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @3")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_LOCALSHOT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @4")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_SAMPCNT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_NiPci")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @5")
+    field(PREC, "0")
+}

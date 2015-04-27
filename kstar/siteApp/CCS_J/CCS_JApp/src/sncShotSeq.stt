@@ -1,0 +1,1249 @@
+program sncShotSeq
+
+option +r;
+option -c;
+
+%{
+#include      <string.h>
+
+#define       SHOTSEQ_STATUS_NOTDEF       0
+#define       SHOTSEQ_STATUS_SETTSS       1
+#define       SHOTSEQ_STATUS_MPSSTANDBY   2
+#define       SHOTSEQ_STATUS_PCSSTANDBY   3
+#define       SHOTSEQ_STATUS_MPSRUN       4
+#define       SHOTSEQ_STATUS_SHOTSTART    5
+#define       SHOTSEQ_STATUS_DURINGSHOT   6
+#define       SHOTSEQ_STATUS_ENDOFSHOT    7
+#define       SHOTSEQ_STATUS_MPSSTOP      8
+#define       SHOTSEQ_STATUS_TERMINATION  9
+
+#define       PCS_STANDBY_IDLE      0
+#define       PCS_STANDBY_UNLOCK    1
+#define       PCS_STANDBY_FIRSTLOCK 2
+#define       PCS_STANDBY_FINALLOCK 3
+#define       PCS_STANDBY_ABORTSHOT 4
+#define       PCS_STANDBY_RELOCK    5
+#define       PCS_STANDBY_SHUTDOWN  6
+
+#define       PCS_LS_STATUS_NOTDEF  0
+#define       PCS_LS_STATUS_IDLE    1
+#define       PCS_LS_STATUS_FIRSTLOCK 2
+#define       PCS_LS_STATUS_FINALLOCK 3
+#define       PCS_LS_STATUS_UNLOCK    4
+#define       PCS_LS_STATUS_DURINGSHOT 5
+#define       PCS_LS_STATUS_ABORT      6
+#define       PCS_LS_STATUS_WRITINGFILE 7
+
+#define       PCS_WATCHDOG_START      1
+#define       PCS_WATCHDOG_STOP       0
+
+#define       MPS_WATCHDOG_START      1
+#define       MPS_WATCHDOG_STOP       0
+
+#define       PCS_FORCE_ABORT         1
+#define       PCS_FORCE_ABORT_RELEASE 0
+
+#define       START_SHOT              1
+#define       START_SHOT_RELEASE      0
+
+#define       START_TEST              1
+#define       START_TEST_RELEASE      0
+
+#define       PF_OPERATION_PERMIT     1
+#define       PF_OPERATION_PERMIT_GONE 0
+#define       PF_NORMAL_MODE_SET      1
+#define       PF_NORMAL_MODE_RELEASE  0
+#define       PF_BLIP_ENABLE         1
+#define       PF_BLIP_DISABLE        0
+#define       PF_VCB_ON              1
+#define       PF_VCB_OFF             0
+
+#define       PF_CONFIRM             1
+#define       PF_NO_CONFIRM          0
+
+
+#define       PF_RUN                 1
+#define       PF_STOP                0
+
+#define       TIMEOUT_MPSREADY       20.
+
+#define       TEST_START             1
+#define       TEST_STOP              0
+
+#define       STATE_SET              1
+#define       STATE_UNSET            0
+
+
+/*  modified by woong.	************************/
+
+/* 2009. 09. 21 by woong: request from Dr. SHHan */
+#define	WAIT_TIME_PCS_FIRSTLOCK_FINALLOCK      (20.)
+
+ 
+}%
+
+/***********************************************
+    Shot Number
+***********************************************/
+
+int           shot_number;
+assign        shot_number to "CCS_SHOT_NUMBER";
+monitor       shot_number;
+
+/* do not use anywhere. 2013. 11. 07 */
+/*
+int           tss_shot_number;
+assign        tss_shot_number to "TSS_CTU_CCS_SHOTNUMBER";
+*/
+/************************************************
+  Plasma Control System
+*************************************************/
+
+int           pcs_lockserver_status;
+assign        pcs_lockserver_status to "PCS_LS_STATUS";
+monitor       pcs_lockserver_status;
+
+int           pcs_standby;
+assign        pcs_standby to "PCS_STANDBY";
+monitor       pcs_standby;
+
+int        pcs_opst_interlock;
+assign     pcs_opst_interlock to "CCS_INTL_PCSOPST";
+
+int         clear_pcsFault;
+assign      clear_pcsFault    to "CCS_CLEAR_PCS_FAULT_CODE";
+int         clear_pcsFastIntl;
+assign      clear_pcsFastIntl    to "CCS_CLEAR_PCS_FAST_INTL";
+int         clear_forceAbort;
+assign      clear_forceAbort    to "CCS_CLEAR_PCS_FORCE_ABORT";
+int         clear_pfcFault;
+assign      clear_pfcFault    to "CCS_CLEAR_PCS_PFC_FAULT";
+
+
+/*************************************************
+  Watchdog control and Status
+**************************************************/
+/*
+int           pcs_watchdog_status;
+assign        pcs_watchdog_status to "CCS_PCS_RT_VIOLATION";
+monitor       pcs_watchdog_status;
+*/
+
+int           pcs_watchdog_control;
+assign        pcs_watchdog_control to "CCS_WATCHDOG_PCS";
+monitor       pcs_watchdog_control;
+
+/*
+int           mps_watchdog_status;
+assign        mps_watchdog_status to "CCS_MPS_RT_VIOLATION";
+monitor       mps_watchdog_status;
+*/
+
+int           mps_watchdog_control;
+assign        mps_watchdog_control to "CCS_WATCHDOG_MPS";
+monitor       mps_watchdog_control;
+
+/***************************************************
+  MPS Operation and Status
+***************************************************/
+
+int          TF_operation_permit_control;
+assign       TF_operation_permit_control to "MPS_TF_re_permit_mmi";
+monitor      TF_operation_permit_control;
+
+int          PF1_confirm_control;
+assign       PF1_confirm_control to "MPS_PF1_re_confirm";
+monitor      PF1_confirm_control;
+
+int          PF2_confirm_control;
+assign       PF2_confirm_control to "MPS_PF2_re_confirm";
+monitor      PF2_confirm_control;
+
+int          PF3U_confirm_control;
+assign       PF3U_confirm_control to "MPS_PF3U_re_confirm";
+monitor      PF3U_confirm_control;
+
+int          PF4U_confirm_control;
+assign       PF4U_confirm_control to "MPS_PF4U_re_confirm";
+monitor      PF4U_confirm_control;
+
+int          PF5U_confirm_control;
+assign       PF5U_confirm_control to "MPS_PF5U_re_confirm";
+monitor      PF5U_confirm_control;
+
+int          PF6U_confirm_control;
+assign       PF6U_confirm_control to "MPS_PF6U_re_confirm";
+monitor      PF6U_confirm_control;
+
+int          PF3L_confirm_control;
+assign       PF3L_confirm_control to "MPS_PF3L_re_confirm";
+monitor      PF3L_confirm_control;
+
+int          PF4L_confirm_control;
+assign       PF4L_confirm_control to "MPS_PF4L_re_confirm";
+monitor      PF4L_confirm_control;
+
+int          PF5L_confirm_control;
+assign       PF5L_confirm_control to "MPS_PF5L_re_confirm";
+monitor      PF5L_confirm_control;
+
+int          PF6L_confirm_control;
+assign       PF6L_confirm_control to "MPS_PF6L_re_confirm";
+monitor      PF6L_confirm_control;
+
+
+int          PF7_confirm_control;
+assign       PF7_confirm_control to "MPS_PF7_re_confirm";
+monitor      PF7_confirm_control;
+
+/*
+#####################################################
+*/
+
+int          PF_normal_mode_set;
+assign       PF_normal_mode_set to "MPS_PF_re_normal_mode_mmi";
+monitor      PF_normal_mode_set;
+
+int          PF_vcb_control;
+assign       PF_vcb_control to "MPS_PF_re_vcb_on_off_mmi";
+monitor      PF_vcb_control;
+
+int          PF_run_control;
+assign       PF_run_control to "MPS_PF_re_run_stop_mmi";
+monitor      PF_run_control;
+
+int          IVC_run_control;
+assign       IVC_run_control to "IVC_re_run_stop_mmi";
+monitor      IVC_run_control;
+
+/*
+#####################################################
+*/
+
+int          PF1_operation_permit_control;
+assign       PF1_operation_permit_control to "MPS_PF1_re_permit_mmi";
+monitor      PF1_operation_permit_control;
+
+int          PF2_operation_permit_control;
+assign       PF2_operation_permit_control to "MPS_PF2_re_permit_mmi";
+monitor      PF2_operation_permit_control;
+
+int          PF3U_operation_permit_control;
+assign       PF3U_operation_permit_control to "MPS_PF3U_re_permit_mmi";
+monitor      PF3U_operation_permit_control;
+
+int          PF4U_operation_permit_control;
+assign       PF4U_operation_permit_control to "MPS_PF4U_re_permit_mmi";
+monitor      PF4U_operation_permit_control;
+
+int          PF5U_operation_permit_control;
+assign       PF5U_operation_permit_control to "MPS_PF5U_re_permit_mmi";
+monitor      PF5U_operation_permit_control;
+
+int          PF6U_operation_permit_control;
+assign       PF6U_operation_permit_control to "MPS_PF6U_re_permit_mmi";
+monitor      PF6U_operation_permit_control;
+
+int          PF3L_operation_permit_control;
+assign       PF3L_operation_permit_control to "MPS_PF3L_re_permit_mmi";
+monitor      PF3L_operation_permit_control;
+
+int          PF4L_operation_permit_control;
+assign       PF4L_operation_permit_control to "MPS_PF4L_re_permit_mmi";
+monitor      PF4L_operation_permit_control;
+
+int          PF5L_operation_permit_control;
+assign       PF5L_operation_permit_control to "MPS_PF5L_re_permit_mmi";
+monitor      PF5L_operation_permit_control;
+
+int          PF6L_operation_permit_control;
+assign       PF6L_operation_permit_control to "MPS_PF6L_re_permit_mmi";
+monitor      PF6L_operation_permit_control;
+
+int          PF7_operation_permit_control;
+assign       PF7_operation_permit_control to "MPS_PF7_re_permit_mmi";
+monitor      PF7_operation_permit_control;
+
+/*
+#####################################################
+*/
+
+int          PF1_blip_mode_control;
+assign       PF1_blip_mode_control to "MPS_PF1_re_blip_enable_disable_mmi";
+monitor      PF1_blip_mode_control;
+
+int          PF2_blip_mode_control;
+assign       PF2_blip_mode_control to "MPS_PF2_re_blip_enable_disable_mmi";
+monitor      PF2_blip_mode_control;
+
+int          PF3U_blip_mode_control;
+assign       PF3U_blip_mode_control to "MPS_PF3U_re_blip_enable_disable_mmi";
+monitor      PF3U_blip_mode_control;
+
+int          PF4U_blip_mode_control;
+assign       PF4U_blip_mode_control to "MPS_PF4U_re_blip_enable_disable_mmi";
+monitor      PF4U_blip_mode_control;
+
+int          PF5U_blip_mode_control;
+assign       PF5U_blip_mode_control to "MPS_PF5U_re_blip_enable_disable_mmi";
+monitor      PF5U_blip_mode_control;
+
+int          PF6U_blip_mode_control;
+assign       PF6U_blip_mode_control to "MPS_PF6U_re_blip_enable_disable_mmi";
+monitor      PF6U_blip_mode_control;
+
+int          PF3L_blip_mode_control;
+assign       PF3L_blip_mode_control to "MPS_PF3L_re_blip_enable_disable_mmi";
+monitor      PF3L_blip_mode_control;
+
+int          PF4L_blip_mode_control;
+assign       PF4L_blip_mode_control to "MPS_PF4L_re_blip_enable_disable_mmi";
+monitor      PF4L_blip_mode_control;
+
+int          PF5L_blip_mode_control;
+assign       PF5L_blip_mode_control to "MPS_PF5L_re_blip_enable_disable_mmi";
+monitor      PF5L_blip_mode_control;
+
+int          PF6L_blip_mode_control;
+assign       PF6L_blip_mode_control to "MPS_PF6L_re_blip_enable_disable_mmi";
+monitor      PF6L_blip_mode_control;
+
+int          PF7_blip_mode_control;
+assign       PF7_blip_mode_control to "MPS_PF7_re_blip_enable_disable_mmi";
+monitor      PF7_blip_mode_control;
+
+/*
+#####################################################
+*/
+/*
+int          PF1_normal_mode_ack;
+assign       PF1_normal_mode_ack to "MPS_PF1_BI1_08";
+monitor      PF1_normal_mode_ack;
+
+int          PF2_normal_mode_ack;
+assign       PF2_normal_mode_ack to "MPS_PF2_BI1_08";
+monitor      PF2_normal_mode_ack;
+
+int          PF3U_normal_mode_ack;
+assign       PF3U_normal_mode_ack to "MPS_PF3U_BI1_08";
+monitor      PF3U_normal_mode_ack;
+
+int          PF4U_normal_mode_ack;
+assign       PF4U_normal_mode_ack to "MPS_PF4U_BI1_08";
+monitor      PF4U_normal_mode_ack;
+
+int          PF5U_normal_mode_ack;
+assign       PF5U_normal_mode_ack to "MPS_PF5U_BI1_08";
+monitor      PF5U_normal_mode_ack;
+
+int          PF6U_normal_mode_ack;
+assign       PF6U_normal_mode_ack to "MPS_PF6U_BI1_08";
+monitor      PF6U_normal_mode_ack;
+
+int          PF3L_normal_mode_ack;
+assign       PF3L_normal_mode_ack to "MPS_PF3L_BI1_08";
+monitor      PF3L_normal_mode_ack;
+
+int          PF4L_normal_mode_ack;
+assign       PF4L_normal_mode_ack to "MPS_PF4L_BI1_08";
+monitor      PF4L_normal_mode_ack;
+
+int          PF5L_normal_mode_ack;
+assign       PF5L_normal_mode_ack to "MPS_PF5L_BI1_08";
+monitor      PF5L_normal_mode_ack;
+
+int          PF6L_normal_mode_ack;
+assign       PF6L_normal_mode_ack to "MPS_PF6L_BI1_08";
+monitor      PF6L_normal_mode_ack;
+
+int          PF7_normal_mode_ack;
+assign       PF7_normal_mode_ack to "MPS_PF7_BI1_08";
+monitor      PF7_normal_mode_ack;
+*/
+/*
+#####################################################
+*/
+/*
+int          PF1_vcb_ack;
+assign       PF1_vcb_ack to "MPS_PF1_BI0_01";
+monitor      PF1_vcb_ack;
+
+int          PF2_vcb_ack;
+assign       PF2_vcb_ack to "MPS_PF2_BI0_01";
+monitor      PF2_vcb_ack;
+
+int          PF3U_vcb_ack;
+assign       PF3U_vcb_ack to "MPS_PF3U_BI0_01";
+monitor      PF3U_vcb_ack;
+
+int          PF4U_vcb_ack;
+assign       PF4U_vcb_ack to "MPS_PF4U_BI0_01";
+monitor      PF4U_vcb_ack;
+
+int          PF5U_vcb_ack;
+assign       PF5U_vcb_ack to "MPS_PF5U_BI0_01";
+monitor      PF5U_vcb_ack;
+
+int          PF6U_vcb_ack;
+assign       PF6U_vcb_ack to "MPS_PF6U_BI0_01";
+monitor      PF6U_vcb_ack;
+
+int          PF3L_vcb_ack;
+assign       PF3L_vcb_ack to "MPS_PF3L_BI0_01";
+monitor      PF3L_vcb_ack;
+
+int          PF4L_vcb_ack;
+assign       PF4L_vcb_ack to "MPS_PF4L_BI0_01";
+monitor      PF4L_vcb_ack;
+
+int          PF5L_vcb_ack;
+assign       PF5L_vcb_ack to "MPS_PF5L_BI0_01";
+monitor      PF5L_vcb_ack;
+
+int          PF6L_vcb_ack;
+assign       PF6L_vcb_ack to "MPS_PF6L_BI0_01";
+monitor      PF6L_vcb_ack;
+
+int          PF7_vcb_ack;
+assign       PF7_vcb_ack to "MPS_PF7_BI0_01";
+monitor      PF7_vcb_ack;
+*/
+/*
+#####################################################
+*/
+/*
+int          PF1_ready;
+assign       PF1_ready to "MPS_PF1_BI0_00";
+monitor      PF1_ready;
+
+int          PF2_ready;
+assign       PF2_ready to "MPS_PF2_BI0_00";
+monitor      PF2_ready;
+
+int          PF3U_ready;
+assign       PF3U_ready to "MPS_PF3U_BI0_00";
+monitor      PF3U_ready;
+
+int          PF4U_ready;
+assign       PF4U_ready to "MPS_PF4U_BI0_00";
+monitor      PF4U_ready;
+
+int          PF5U_ready;
+assign       PF5U_ready to "MPS_PF5U_BI0_00";
+monitor      PF5U_ready;
+
+int          PF6U_ready;
+assign       PF6U_ready to "MPS_PF6U_BI0_00";
+monitor      PF6U_ready;
+
+int          PF3L_ready;
+assign       PF3L_ready to "MPS_PF3L_BI0_00";
+monitor      PF3L_ready;
+
+int          PF4L_ready;
+assign       PF4L_ready to "MPS_PF4L_BI0_00";
+monitor      PF4L_ready;
+
+int          PF5L_ready;
+assign       PF5L_ready to "MPS_PF5L_BI0_00";
+monitor      PF5L_ready;
+
+int          PF6L_ready;
+assign       PF6L_ready to "MPS_PF6L_BI0_00";
+monitor      PF6L_ready;
+
+int          PF7_ready;
+assign       PF7_ready to "MPS_PF7_BI0_00";
+monitor      PF7_ready;
+*/
+/*
+#####################################################
+*/
+/*
+int          PF1_run_ack;
+assign       PF1_run_ack to "MPS_PF1_BI0_02";
+monitor      PF1_run_ack;
+
+int          PF2_run_ack;
+assign       PF2_run_ack to "MPS_PF2_BI0_02";
+monitor      PF2_run_ack;
+
+int          PF3U_run_ack;
+assign       PF3U_run_ack to "MPS_PF3U_BI0_02";
+monitor      PF3U_run_ack;
+
+int          PF4U_run_ack;
+assign       PF4U_run_ack to "MPS_PF4U_BI0_02";
+monitor      PF4U_run_ack;
+
+int          PF5U_run_ack;
+assign       PF5U_run_ack to "MPS_PF5U_BI0_02";
+monitor      PF5U_run_ack;
+
+int          PF6U_run_ack;
+assign       PF6U_run_ack to "MPS_PF6U_BI0_02";
+monitor      PF6U_run_ack;
+
+int          PF3L_run_ack;
+assign       PF3L_run_ack to "MPS_PF3L_BI0_02";
+monitor      PF3L_run_ack;
+
+int          PF4L_run_ack;
+assign       PF4L_run_ack to "MPS_PF4L_BI0_02";
+monitor      PF4L_run_ack;
+
+int          PF5L_run_ack;
+assign       PF5L_run_ack to "MPS_PF5L_BI0_02";
+monitor      PF5L_run_ack;
+
+int          PF6L_run_ack;
+assign       PF6L_run_ack to "MPS_PF6L_BI0_02";
+monitor      PF6L_run_ack;
+
+int          PF7_run_ack;
+assign       PF7_run_ack to "MPS_PF7_BI0_02";
+monitor      PF7_run_ack;
+*/
+
+/********************************************************
+  TSS: CTU
+*********************************************************/
+
+int         shot_start;
+/*assign      shot_start to "CCS_CTU_shotStart"; */
+assign      shot_start to "TSS_CTU_shotStart";
+monitor     shot_start;
+
+evflag      ef_shot_start;
+sync        shot_start       ef_shot_start;
+
+/* 2013. 3. 27  */
+/* we don't need IRIG-B control   
+int         tss_irigB_enable;
+assign      tss_irigB_enable to "TSS_CTU_IRIGB_ENABLE";
+*/
+
+int         shot_end_tss;
+assign      shot_end_tss to "TSS_CTU_SHOT_END";
+
+int         tss_ctu_calib_mode;
+assign      tss_ctu_calib_mode to "TSS_CTU_RUN_CALIBRATION";
+monitor  tss_ctu_calib_mode;
+
+/********************************************************
+  Misc. PVs
+*********************************************************/
+
+int         psi_confirm;
+assign      psi_confirm to "CCS_LCSINTL_PSI";
+monitor     psi_confirm;
+
+
+int         tss_confirm;
+assign      tss_confirm to "CCS_TSS_CONFIRM";
+monitor     tss_confirm;
+
+int         test_start;
+assign      test_start to "CCS_SHOTSEQ_START";
+monitor     test_start;
+
+int         test_cancel;
+assign      test_cancel to "CCS_SHOTSEQ_CANCEL";
+monitor     test_cancel;
+
+int         test_st_status_num;
+assign      test_st_status_num    to "CCS_SHOTSEQ_STAGE";
+monitor     test_st_status_num;
+
+int         test_st_setTSS;
+assign      test_st_setTSS to "CCS_SHOTSEQ_ST_SETTSS";
+monitor     test_st_setTSS;
+
+int         test_st_MPSStandby;
+assign      test_st_MPSStandby to "CCS_SHOTSEQ_ST_MPSSTANDBY";
+monitor     test_st_MPSStandby;
+
+int         test_st_PCSStandby;
+assign      test_st_PCSStandby to "CCS_SHOTSEQ_ST_PCSSTANDBY";
+monitor     test_st_PCSStandby;
+
+int         test_st_MPSRun;
+assign      test_st_MPSRun to "CCS_SHOTSEQ_ST_MPSRUN";
+monitor     test_st_MPSRun;
+
+int         test_st_ShotStart;
+assign      test_st_ShotStart to "CCS_SHOTSEQ_ST_SHOTSTART";
+monitor     test_st_ShotStart;
+
+int         test_st_DuringShot;
+assign      test_st_DuringShot to "CCS_SHOTSEQ_ST_DURINGSHOT";
+monitor     test_st_DuringShot;
+
+int         test_st_EndofShot;
+assign      test_st_EndofShot to "CCS_SHOTSEQ_ST_ENDOFSHOT";
+monitor     test_st_EndofShot;
+
+int         test_st_MPSStop;
+assign      test_st_MPSStop to "CCS_SHOTSEQ_ST_MPSSTOP";
+monitor     test_st_MPSStop;
+
+int         test_st_Termination;
+assign      test_st_Termination to "CCS_SHOTSEQ_ST_TERMINATION";
+monitor     test_st_Termination;
+
+/*********************
+ Measure TF Elasped Time
+***********************/
+
+int         tf_start_stop;
+assign      tf_start_stop to "MPS_TF_re_run_stop_mmi";
+monitor     tf_start_stop;
+
+int       TF_vcb;
+assign    TF_vcb              to "MPS_TF_re_vcb_on_off_mmi";
+monitor   TF_vcb;
+
+string      tf_start_string;
+assign      tf_start_string to "CCS_TF_START_TIME";
+string      tf_end_string;
+assign      tf_end_string to "CCS_TF_END_TIME";
+string      tf_elapsed_string;
+assign      tf_elapsed_string to "CCS_TF_ELAPSED_TIME";
+string      tf_discharge_string;
+assign      tf_discharge_string to "CCS_TF_DISCH_TIME";
+
+evflag      ef_tf_discharge;
+
+double      tf_start_double;
+assign      tf_start_double   to "CCS_TF_START_TIME_DOUBLE";
+double      tf_end_double;
+assign      tf_end_double     to "CCS_TF_END_TIME_DOUBLE";
+double      tf_elapsed_double;
+assign      tf_elapsed_double to "CCS_TF_ELAPSED_TIME_DOUBLE";
+double      tf_discharge_double;
+assign      tf_discharge_double to "CCS_TF_DISCH_TIME_DOUBLE";
+
+/************
+*************/
+
+string      shot_start_time;
+assign      shot_start_time    to "CCS_SHOT_START_TIME";
+string      shot_trigg_time;
+assign      shot_trigg_time    to "CCS_SHOT_TRIG_TIME";
+string      shot_elapsed_time;
+assign      shot_elapsed_time    to "CCS_SHOT_ELAPSED_TIME";
+string      shot_end_time;
+assign      shot_end_time      to "CCS_SHOT_END_TIME";
+
+evflag      ef_trigg;
+
+
+double      shot_start_time_double;
+assign      shot_start_time_double        to     "CCS_SHOT_START_TIME_DOUBLE";
+double      shot_trigg_time_double;
+assign      shot_trigg_time_double        to     "CCS_SHOT_TRIG_TIME_DOUBLE";
+double      shot_elapsed_time_double;
+assign      shot_elapsed_time_double        to     "CCS_SHOT_ELAPSED_TIME_DOUBLE";
+double      shot_end_time_double;
+assign      shot_end_time_double          to     "CCS_SHOT_END_TIME_DOUBLE";
+
+/*++leesi*/
+string		gaweb_shot_status;
+assign		gaweb_shot_status	to "CCS_GAWEB_SHOTSTATUS";
+monitor		gaweb_shot_status;
+
+int			icsefitst;
+assign		icsefitst		to	"ICS_EFITST";	
+monitor		icsefitst;
+
+int			icsefitdt;
+assign		icsefitdt		to	"ICS_EFITDT";	
+monitor		icsefitdt;
+
+int			icsefitnt;
+assign		icsefitnt		to	"ICS_EFITNT";	
+monitor		icsefitnt;
+
+int			icsshottype;
+assign		icsshottype	to	"ICS_SHOTTYPE";
+monitor		icsshottype;
+
+string        strRCom;
+assign        strRCom to "DATA_ANAL_RCOMMANDER";
+monitor       strRCom;
+
+
+/*--leesi*/
+
+%{
+epicsTimeStamp s_time;
+epicsTimeStamp e_time;
+epicsTimeStamp lap_time;
+
+epicsTimeStamp  ctu_start_time;
+
+static void runEfit(char *runefit, const int shotnum, const int st, const int dt, const int nt)
+{
+	char	efitcmd[40];
+	sprintf(efitcmd,"RUNEFIT,%d,%d,%d,%d",shotnum, st, dt, nt);
+	strcpy(runefit, efitcmd);
+}
+}%
+
+
+
+ss PF1Test
+{
+    state SetTSS
+    {
+        entry {
+            test_st_setTSS = STATE_SET; pvPut(test_st_setTSS);    /* Indicator for State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_SETTSS; pvPut(test_st_status_num);
+            epicsThreadSleep(.1);
+
+             
+
+            /* clear & reset operation parameters */
+
+            pcs_watchdog_control =  PCS_WATCHDOG_STOP;  pvPut(pcs_watchdog_control); 
+            epicsThreadSleep(.1);
+            mps_watchdog_control =  MPS_WATCHDOG_STOP;  pvPut(mps_watchdog_control); 
+            epicsThreadSleep(.1);
+            pcs_standby          =  PCS_STANDBY_IDLE;   pvPut(pcs_standby);          
+            epicsThreadSleep(.1);
+            pcs_opst_interlock = 0;                         pvPut(pcs_opst_interlock); /* unconditional clear 2010. 10. 14*/
+            epicsThreadSleep(.1);
+            PF_run_control       =  PF_STOP;            pvPut(PF_run_control);
+            epicsThreadSleep(.1);
+            IVC_run_control       =  PF_STOP;            pvPut(IVC_run_control);
+            epicsThreadSleep(.1);            
+            
+
+
+            PF_normal_mode_set   =  PF_NORMAL_MODE_RELEASE; pvPut(PF_normal_mode_set);   
+            epicsThreadSleep(.1);
+            
+            if(PF1_operation_permit_control == PF_OPERATION_PERMIT) { PF1_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF1_blip_mode_control); }
+            if(PF2_operation_permit_control == PF_OPERATION_PERMIT) { PF2_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF2_blip_mode_control); }
+            if(PF3U_operation_permit_control == PF_OPERATION_PERMIT) { PF3U_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF3U_blip_mode_control); }
+            if(PF4U_operation_permit_control == PF_OPERATION_PERMIT) { PF4U_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF4U_blip_mode_control); }
+            if(PF5U_operation_permit_control == PF_OPERATION_PERMIT) { PF5U_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF5U_blip_mode_control); }
+            if(PF6U_operation_permit_control == PF_OPERATION_PERMIT) { PF6U_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF6U_blip_mode_control); }
+            if(PF3L_operation_permit_control == PF_OPERATION_PERMIT) { PF3L_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF3L_blip_mode_control); }
+            if(PF4L_operation_permit_control == PF_OPERATION_PERMIT) { PF4L_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF4L_blip_mode_control); }
+            if(PF5L_operation_permit_control == PF_OPERATION_PERMIT) { PF5L_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF5L_blip_mode_control); }
+            if(PF6L_operation_permit_control == PF_OPERATION_PERMIT) { PF6L_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF6L_blip_mode_control); }
+            if(PF7_operation_permit_control == PF_OPERATION_PERMIT) { PF7_blip_mode_control = PF_BLIP_DISABLE; pvPut(PF7_blip_mode_control); }
+            epicsThreadSleep(.1);
+
+            if(PF1_operation_permit_control == PF_OPERATION_PERMIT) { PF1_confirm_control = PF_CONFIRM; pvPut(PF1_confirm_control); }
+            if(PF2_operation_permit_control == PF_OPERATION_PERMIT) { PF2_confirm_control = PF_CONFIRM; pvPut(PF2_confirm_control); }
+            if(PF3U_operation_permit_control == PF_OPERATION_PERMIT) { PF3U_confirm_control = PF_CONFIRM; pvPut(PF3U_confirm_control); }
+            if(PF4U_operation_permit_control == PF_OPERATION_PERMIT) { PF4U_confirm_control = PF_CONFIRM; pvPut(PF4U_confirm_control); }
+            if(PF5U_operation_permit_control == PF_OPERATION_PERMIT) { PF5U_confirm_control = PF_CONFIRM; pvPut(PF5U_confirm_control); }
+            if(PF6U_operation_permit_control == PF_OPERATION_PERMIT) { PF6U_confirm_control = PF_CONFIRM; pvPut(PF6U_confirm_control); }
+            if(PF3L_operation_permit_control == PF_OPERATION_PERMIT) { PF3L_confirm_control = PF_CONFIRM; pvPut(PF3L_confirm_control); }
+            if(PF4L_operation_permit_control == PF_OPERATION_PERMIT) { PF4L_confirm_control = PF_CONFIRM; pvPut(PF4L_confirm_control); }
+            if(PF5L_operation_permit_control == PF_OPERATION_PERMIT) { PF5L_confirm_control = PF_CONFIRM; pvPut(PF5L_confirm_control); }
+            if(PF6L_operation_permit_control == PF_OPERATION_PERMIT) { PF6L_confirm_control = PF_CONFIRM; pvPut(PF6L_confirm_control); }
+            if(PF7_operation_permit_control == PF_OPERATION_PERMIT) { PF7_confirm_control = PF_CONFIRM; pvPut(PF7_confirm_control); }
+
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "PREPARE_SHOT");
+            pvPut(gaweb_shot_status);
+
+           efClear(ef_shot_start);
+           efClear(ef_trigg);
+        }
+
+        when(test_start && tss_confirm && (tss_ctu_calib_mode==0) && ( psi_confirm == 0 || psi_confirm == 5) ) { 
+/*        when(test_start && tss_confirm && (tss_ctu_calib_mode==0)  ) {  */
+       	 /* 2009. 10. 06 by woong: request from MKKIM */
+       	 /* 2010. 6. 25 by woong: again for abnormal shot start. */
+	        efClear(ef_shot_start);
+	        efClear(ef_trigg);
+/****************** move to shot Start time 2013. 7. 29 */
+/*  recovered. 2013. 11. 06 */
+	        shot_end_tss = shot_end_tss ? 0 : 1;
+	        pvPut(shot_end_tss);
+
+		clear_pcsFault = 1; pvPut(clear_pcsFault); epicsThreadSleep(.1);
+		clear_pcsFastIntl=1; pvPut(clear_pcsFastIntl); epicsThreadSleep(.1);
+		clear_forceAbort = 1; pvPut(clear_forceAbort); epicsThreadSleep(.1);
+		clear_pfcFault = 1; pvPut(clear_pfcFault); epicsThreadSleep(.1);
+		
+        } state MPSReady
+    }
+
+    state MPSReady
+    {
+        entry {
+
+           test_st_MPSStandby = STATE_SET; pvPut(test_st_MPSStandby);  /* indicator for State Transition */
+           test_st_status_num = SHOTSEQ_STATUS_MPSSTANDBY; pvPut(test_st_status_num);
+           PF_normal_mode_set = PF_NORMAL_MODE_SET; pvPut(PF_normal_mode_set);      epicsThreadSleep(.1);
+
+
+           if(PF1_operation_permit_control == PF_OPERATION_PERMIT) { PF1_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF1_blip_mode_control); }  
+           if(PF2_operation_permit_control == PF_OPERATION_PERMIT) { PF2_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF2_blip_mode_control); }
+           if(PF3U_operation_permit_control == PF_OPERATION_PERMIT) { PF3U_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF3U_blip_mode_control); }
+           if(PF4U_operation_permit_control == PF_OPERATION_PERMIT) { PF4U_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF4U_blip_mode_control); }
+           if(PF5U_operation_permit_control == PF_OPERATION_PERMIT) { PF5U_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF5U_blip_mode_control); }
+           if(PF6U_operation_permit_control == PF_OPERATION_PERMIT) { PF6U_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF6U_blip_mode_control); }
+           if(PF3L_operation_permit_control == PF_OPERATION_PERMIT) { PF3L_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF3L_blip_mode_control); }
+           if(PF4L_operation_permit_control == PF_OPERATION_PERMIT) { PF4L_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF4L_blip_mode_control); }
+           if(PF5L_operation_permit_control == PF_OPERATION_PERMIT) { PF5L_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF5L_blip_mode_control); }
+           if(PF6L_operation_permit_control == PF_OPERATION_PERMIT) { PF6L_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF6L_blip_mode_control); }
+           if(PF7_operation_permit_control == PF_OPERATION_PERMIT) { PF7_blip_mode_control = PF_BLIP_ENABLE; pvPut(PF7_blip_mode_control); }
+           epicsThreadSleep(.1);
+
+           if(PF1_operation_permit_control == PF_OPERATION_PERMIT) { PF1_confirm_control = PF_CONFIRM; pvPut(PF1_confirm_control); }
+           if(PF2_operation_permit_control == PF_OPERATION_PERMIT) { PF2_confirm_control = PF_CONFIRM; pvPut(PF2_confirm_control); }
+           if(PF3U_operation_permit_control == PF_OPERATION_PERMIT) { PF3U_confirm_control = PF_CONFIRM; pvPut(PF3U_confirm_control); }
+           if(PF4U_operation_permit_control == PF_OPERATION_PERMIT) { PF4U_confirm_control = PF_CONFIRM; pvPut(PF4U_confirm_control); }
+           if(PF5U_operation_permit_control == PF_OPERATION_PERMIT) { PF5U_confirm_control = PF_CONFIRM; pvPut(PF5U_confirm_control); }
+           if(PF6U_operation_permit_control == PF_OPERATION_PERMIT) { PF6U_confirm_control = PF_CONFIRM; pvPut(PF6U_confirm_control); }
+           if(PF3L_operation_permit_control == PF_OPERATION_PERMIT) { PF3L_confirm_control = PF_CONFIRM; pvPut(PF3L_confirm_control); }
+           if(PF4L_operation_permit_control == PF_OPERATION_PERMIT) { PF4L_confirm_control = PF_CONFIRM; pvPut(PF4L_confirm_control); }
+           if(PF5L_operation_permit_control == PF_OPERATION_PERMIT) { PF5L_confirm_control = PF_CONFIRM; pvPut(PF5L_confirm_control); }
+           if(PF6L_operation_permit_control == PF_OPERATION_PERMIT) { PF6L_confirm_control = PF_CONFIRM; pvPut(PF6L_confirm_control); }
+           if(PF7_operation_permit_control == PF_OPERATION_PERMIT) { PF7_confirm_control = PF_CONFIRM; pvPut(PF7_confirm_control); }
+           epicsThreadSleep(.1);
+
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "SHOT_SEQ_START_MPS_READY");
+            pvPut(gaweb_shot_status);
+
+        }
+
+        when(/* PF1_vcb_ack &&  PF1_ready */ delay (3.)) {   /* check Ack for VCB and PF1 readness */ 
+        } state PCSStandby
+
+       
+        when(test_cancel) {} state Termination
+
+
+
+    }
+
+    state PCSStandby
+    {
+        entry {
+
+            test_st_PCSStandby = STATE_SET; pvPut(test_st_PCSStandby);   /* indicator for State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_PCSSTANDBY; pvPut(test_st_status_num);
+            epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "PCS_STANDBY");
+            pvPut(gaweb_shot_status);
+        }
+        
+        /* test cancel  need to precede 2013. 1. 4 */
+        /* so when iterate, we can escape from this state to termation state */
+        when(test_cancel) {} state Termination 
+
+        when(pcs_lockserver_status == PCS_LS_STATUS_IDLE) {
+            pcs_standby = PCS_STANDBY_FIRSTLOCK; pvPut(pcs_standby); epicsThreadSleep(.1);
+        } state PCSStandby
+
+        when(pcs_lockserver_status == PCS_LS_STATUS_FIRSTLOCK) {
+            epicsThreadSleep(WAIT_TIME_PCS_FIRSTLOCK_FINALLOCK);	/* 2009. 09. 21 by woong: request from Dr. SHHan */
+            pcs_standby = PCS_STANDBY_FINALLOCK; pvPut(pcs_standby); epicsThreadSleep(.1);
+        } state PCSStandby
+
+        when(pcs_lockserver_status == PCS_LS_STATUS_DURINGSHOT) {
+            pcs_watchdog_control = PCS_WATCHDOG_START; pvPut(pcs_watchdog_control);
+            epicsThreadSleep(.1);
+        } state MPSRun
+
+    }
+    
+/*
+    state PCSphase2
+    {
+    	 when(test_cancel) {} state Termination 
+    	
+        when(pcs_lockserver_status == PCS_LS_STATUS_FINALLOCK) {
+		epicsThreadSleep(.1);
+        } state PCSphase2
+
+        when(pcs_lockserver_status == PCS_LS_STATUS_DURINGSHOT) {
+            pcs_watchdog_control = PCS_WATCHDOG_START; pvPut(pcs_watchdog_control);
+            epicsThreadSleep(.1);
+        } state MPSRun
+
+    }
+*/
+
+    state MPSRun
+    {
+        entry {
+
+            test_st_MPSRun = STATE_SET; pvPut(test_st_MPSRun);   /* indicator for State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_MPSRUN; pvPut(test_st_status_num);
+/*****************************
+            tss_irigB_enable = 0;
+	     pvPut(tss_irigB_enable);
+*******************************/
+            epicsThreadSleep(.1);
+
+            PF_run_control = PF_RUN; pvPut(PF_run_control);  epicsThreadSleep(.1);
+            IVC_run_control = PF_RUN; pvPut(IVC_run_control);  epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "MPS_RUN");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(/* PF1_run_ack == PF_RUN */ delay(5.)) {
+            mps_watchdog_control = MPS_WATCHDOG_START; pvPut(mps_watchdog_control); epicsThreadSleep(.1);
+        } state ShotStart
+
+        when(test_cancel) {} state Termination 
+    }
+
+
+    state ShotStart
+    {
+        entry {
+            test_st_ShotStart = STATE_SET; pvPut(test_st_ShotStart);   /* indicator of Sate Transition */
+            test_st_status_num = SHOTSEQ_STATUS_SHOTSTART; pvPut(test_st_status_num);
+            
+            epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "SHOT_START");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(efTestAndClear(ef_shot_start)) 
+        { 
+                efSet(ef_trigg);
+                
+        } state DuringShot
+
+        when(test_cancel) {} state Termination
+    }
+
+    state DuringShot
+    {
+        entry {
+
+            test_st_DuringShot = STATE_SET; pvPut(test_st_DuringShot);  /* indicator of State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_DURINGSHOT; pvPut(test_st_status_num);
+            epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "DURING_SHOT");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(pcs_watchdog_control == PCS_WATCHDOG_STOP) {  /* 0 */
+        } state EndofShot
+
+       when(test_cancel) {} state Termination
+    }
+
+    state EndofShot
+    {
+        entry {
+
+            test_st_EndofShot = STATE_SET; pvPut(test_st_EndofShot);   /* indicator of State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_ENDOFSHOT; pvPut(test_st_status_num);
+            epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "END_OF_SHOT");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(pcs_lockserver_status == PCS_LS_STATUS_WRITINGFILE) {
+        } state MPSStop
+
+
+        when(test_cancel) {} state Termination
+    }
+
+    state MPSStop
+    {
+
+        entry {
+            test_st_MPSStop = STATE_SET; pvPut(test_st_MPSStop);       /* indicator of State Transition */
+            test_st_status_num = SHOTSEQ_STATUS_MPSSTOP; pvPut(test_st_status_num);
+            epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "MPS_STOP");
+            pvPut(gaweb_shot_status);
+        }
+
+        when(mps_watchdog_control == MPS_WATCHDOG_START) {
+            mps_watchdog_control = MPS_WATCHDOG_STOP; pvPut(mps_watchdog_control);  epicsThreadSleep(.1);
+        } state MPSStop
+
+        when(PF_run_control == PF_RUN) {
+            PF_run_control = PF_STOP; pvPut(PF_run_control);   epicsThreadSleep(.1);
+            IVC_run_control = PF_STOP; pvPut(IVC_run_control);   epicsThreadSleep(.1);
+        } state MPSStop
+
+/*
+        when( PF1_vcb_ack == PF_VCB_OFF &&
+              PF2_vcb_ack == PF_VCB_OFF &&
+              PF3U_vcb_ack == PF_VCB_OFF &&
+              PF4U_vcb_ack == PF_VCB_OFF &&
+              PF5U_vcb_ack == PF_VCB_OFF &&
+              PF6U_vcb_ack == PF_VCB_OFF &&
+              PF7_vcb_ack == PF_VCB_OFF ) {
+        } state Termination
+*/
+	when(  (PF_run_control == PF_STOP) && (IVC_run_control == PF_STOP) ) {} state Termination
+	
+
+        when(test_cancel) {} state Termination
+    }
+
+   state  Termination
+   {
+
+      entry {
+          test_st_Termination = STATE_SET; pvPut(test_st_Termination);     /* indicator of State Transition */
+          test_st_status_num = SHOTSEQ_STATUS_TERMINATION; pvPut(test_st_status_num);
+          epicsThreadSleep(.1);
+			/*++leesi*/
+			%%strcpy(pVar->gaweb_shot_status, "SHOT_TERMINATION");
+            pvPut(gaweb_shot_status);
+            test_cancel = 0;
+            pvPut(test_cancel);
+      }
+        
+        when(!test_start) {
+
+            test_st_setTSS         = STATE_UNSET; pvPut(test_st_setTSS);          epicsThreadSleep(.1);
+            test_st_MPSStandby     = STATE_UNSET; pvPut(test_st_MPSStandby);      epicsThreadSleep(.1);
+            test_st_PCSStandby     = STATE_UNSET; pvPut(test_st_PCSStandby);      epicsThreadSleep(.1);
+            test_st_MPSRun         = STATE_UNSET; pvPut(test_st_MPSRun);          epicsThreadSleep(.1);
+            test_st_ShotStart      = STATE_UNSET; pvPut(test_st_ShotStart);       epicsThreadSleep(.1);
+            test_st_DuringShot     = STATE_UNSET; pvPut(test_st_DuringShot);      epicsThreadSleep(.1);
+            test_st_EndofShot      = STATE_UNSET; pvPut(test_st_EndofShot);       epicsThreadSleep(.1);
+            test_st_MPSStop        = STATE_UNSET; pvPut(test_st_MPSStop);         epicsThreadSleep(.1);
+            test_st_Termination    = STATE_UNSET; pvPut(test_st_Termination);     epicsThreadSleep(.1);
+
+            /* PF1_operation_permit_control = PF_OPERATION_PERMIT_GONE; pvPut(PF1_operation_permit_control);
+                                                                                  epicsThreadSleep(.1); */
+
+            shot_number++; 
+            pvPut(shot_number);
+/*            tss_shot_number = shot_number;
+            pvPut(tss_shot_number); */
+
+        } state SetTSS
+
+   }
+}
+
+ss TF_Elapse_Time
+{
+    state init {
+        entry {
+            %% strcpy(pVar->tf_start_string, "");
+            %% strcpy(pVar->tf_end_string, "");
+            %% strcpy(pVar->tf_elapsed_string, "");
+            %% pVar->tf_start_double = -1.;
+            %% pVar->tf_end_double   = -1.;
+            %% pVar->tf_elapsed_double = 0.;
+            pvPut(tf_start_string); pvPut(tf_end_string); pvPut(tf_elapsed_string);
+            pvPut(tf_start_double); pvPut(tf_end_double); pvPut(tf_elapsed_double);
+         }
+        when(tf_start_stop>0) {
+            %% epicsTimeGetCurrent(&s_time);
+            %% epicsTimeToStrftime(pVar->tf_start_string, 22, "%Y/%m/%d %H:%M:%S", &s_time);
+            %% pVar->tf_start_double = (double) s_time.secPastEpoch + (double) s_time.nsec * 1.E-9;
+            pvPut(tf_start_string);
+            pvPut(tf_start_double);
+        } state start
+    }
+
+    state start {
+        when(tf_start_stop<1) {
+            %% epicsTimeGetCurrent(&e_time);
+            %% epicsTimeToStrftime(pVar->tf_end_string, 22, "%Y/%m/%d %H:%M:%S", &e_time);
+            %% pVar->tf_end_double = (double) s_time.secPastEpoch + (double) s_time.nsec * 1.E-9;
+            pvPut(tf_end_string);
+            pvPut(tf_end_double);
+            efSet(ef_tf_discharge); /* send event to calculate tf discharge  elapsed time 2010. 6. 30 */
+        } state stop
+        when(delay(1.)) {
+           %% unsigned counter;
+           %% epicsTimeGetCurrent(&lap_time);
+           %% counter = lap_time.secPastEpoch - s_time.secPastEpoch;
+           %% sprintf(pVar->tf_elapsed_string, "%dh %dm %ds", (int)(counter/3600), (int)((counter%3600)/60), (int)(counter%60));
+           %% pVar->tf_elapsed_double = (double) counter;
+           pvPut(tf_elapsed_string);
+           pvPut(tf_elapsed_double);
+        } state start
+    }
+
+    state stop {
+       when(tf_start_stop>0) {
+       } state init
+    }
+}
+
+ss TF_discharge_Time
+{
+    state init {
+        entry {
+            %% strcpy(pVar->tf_discharge_string, "");
+            %% pVar->tf_discharge_double = -1.;
+            pvPut(tf_discharge_string);
+            pvPut(tf_discharge_double);
+        }
+
+        when(TRUE) {} state monit
+    }
+
+    state monit_vcb_on 
+    {
+        when(TF_vcb) {
+            %% strcpy(pVar->tf_discharge_string, "0");
+            %% pVar->tf_discharge_double = 0;
+            pvPut(tf_discharge_string);
+            pvPut(tf_discharge_double);
+        } state monit
+    }
+
+    state monit {
+        when(efTestAndClear(ef_tf_discharge)) { } state monit_after_TFstop
+    }
+
+    state monit_after_TFstop {
+     
+        when(!TF_vcb) {} state monit_vcb_on
+        
+        when(delay(1.0)) {
+            %% unsigned int mycounter;
+            %% epicsTimeStamp  cur_time;
+            %% epicsTimeGetCurrent(&cur_time);
+            %% mycounter = cur_time.secPastEpoch - e_time.secPastEpoch;
+            %% sprintf(pVar->tf_discharge_string, "%dH:%dM:%dS", (int)(mycounter/3600), (int)((mycounter%3600)/60), (int)(mycounter%60));
+            %% pVar->tf_discharge_double = (double) mycounter;
+            pvPut(tf_discharge_string);
+            pvPut(tf_discharge_double);
+        } state monit_after_TFstop
+    }
+}
+
+
+ss Shot_Time
+{
+    state init {
+        entry {
+            %% strcpy(pVar->shot_start_time, "");
+            %% strcpy(pVar->shot_end_time,   "");
+            %% pVar->shot_start_time_double = -1.;
+            %% pVar->shot_end_time_double   = -1.;
+
+            pvPut(shot_start_time);
+            pvPut(shot_end_time);
+            pvPut(shot_start_time_double);
+            pvPut(shot_end_time_double);
+
+        }
+
+        when(test_start) {} state start
+    }
+
+    state start {
+        entry {
+            %% epicsTimeStamp epics_time;
+            %% epicsTimeGetCurrent(&epics_time);
+            %% epicsTimeToStrftime(pVar->shot_start_time, 40, "%Y/%m/%d %H:%M:%S", &epics_time);
+            %% pVar->shot_start_time_double = (double) epics_time.secPastEpoch + (double) epics_time.nsec * 1.E-9;
+            pvPut(shot_start_time);
+            pvPut(shot_start_time_double);
+        }
+        when(!test_start) {} state stop
+    }
+
+    state stop {
+        entry {
+            %% epicsTimeStamp epics_time;
+            %% epicsTimeGetCurrent(&epics_time);
+            %% epicsTimeToStrftime(pVar->shot_end_time, 40, "%Y/%m/%d %H:%M:%S", &epics_time);
+            %% pVar->shot_end_time_double = (double) epics_time.secPastEpoch + (double) epics_time.nsec * 1.E-9;
+            pvPut(shot_end_time);
+            pvPut(shot_end_time_double);
+        }
+        when(test_start) {} state start
+    }
+}
+
+
+
+ss Trigg_Time
+{
+    state init {
+        entry {
+            %% strcpy(pVar->shot_trigg_time, "");
+            %% pVar->shot_trigg_time_double = -1.;
+            %% strcpy(pVar->shot_elapsed_time, "");
+            %% pVar->shot_elapsed_time_double = -1.;
+            pvPut(shot_trigg_time);
+            pvPut(shot_trigg_time_double);
+            pvPut(shot_elapsed_time);
+            pvPut(shot_elapsed_time_double);
+        }
+
+        when(TRUE) {} state monit
+    }
+
+    state monit {
+        when(efTestAndClear(ef_trigg)) {
+            %% epicsTimeGetCurrent(&ctu_start_time);
+            %% epicsTimeToStrftime(pVar->shot_trigg_time, 40, "%Y/%m/%d %H:%M:%S", &ctu_start_time);
+            %% pVar->shot_trigg_time_double = (double) ctu_start_time.secPastEpoch + (double) ctu_start_time.nsec * 1.E-9;
+            pvPut(shot_trigg_time);
+            pvPut(shot_trigg_time_double);
+        } state monit_after_shot
+    }
+
+     state monit_after_shot {
+     
+        when(!test_start) {} state monit
+        
+        when(delay(1.0)) {
+            %% unsigned int mycounter;
+            %% epicsTimeStamp  cur_time;
+            %% epicsTimeGetCurrent(&cur_time);
+            %% mycounter = cur_time.secPastEpoch - ctu_start_time.secPastEpoch;
+            %% sprintf(pVar->shot_elapsed_time, "%dH:%dM:%dS", (int)(mycounter/3600), (int)((mycounter%3600)/60), (int)(mycounter%60));
+            %% pVar->shot_elapsed_time_double = (double) mycounter;
+            pvPut(shot_elapsed_time);
+            pvPut(shot_elapsed_time_double);
+        } state monit_after_shot
+    }
+  
+}
+
+ss RunEFIT
+{
+	state init{
+		when(TRUE) {
+		} state waitefit
+	}
+
+	state runefit {
+        when(pcs_lockserver_status == PCS_LS_STATUS_IDLE) 
+		{
+			pvGet(shot_number);
+			pvGet(icsefitnt); pvGet(icsefitdt); pvGet(icsefitst);
+			pvGet(icsshottype);
+			%%if(pVar->icsshottype == 0 || pVar->icsshottype == 2 || pVar->icsshottype == 4) 
+			%%{
+				%%runEfit(pVar->strRCom, pVar->shot_number, pVar->icsefitst, pVar->icsefitdt, pVar->icsefitnt);
+				pvPut(strRCom);
+			%%}
+
+		}state waitefit
+	} 
+	state waitefit {
+        when(pcs_lockserver_status == PCS_LS_STATUS_WRITINGFILE) {
+        } state runefit
+	}
+}
+

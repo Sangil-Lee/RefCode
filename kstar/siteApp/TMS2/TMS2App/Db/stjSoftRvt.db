@@ -1,0 +1,54 @@
+record(ao, "$(REC)")
+{
+    field(DESC, "$(DESC)")
+    field(SCAN, "Passive")
+		field(VAL, "0.0")
+		field(PINI, "YES")
+		field(MDEL, "$(MD)")
+		field(ADEL, "$(AD)")
+		field(PREC, "4")
+		field(EGU, "$(UNIT)")
+}
+record(ao, "STJ_PF_VPS_001")
+{
+    field(DESC, "Output voltage of a PS")
+    field(SCAN, "Passive")
+		field(VAL, "0.0")
+		field(PINI, "YES")
+		field(PREC, "4")
+		field(EGU, "Volt")
+}
+record(ao, "STJ_TF_VPS_001")
+{
+    field(DESC, "Output voltage of a PS")
+    field(SCAN, "Passive")
+		field(VAL, "0.0")
+		field(PINI, "YES")
+		field(PREC, "4")
+		field(EGU, "Volt")
+}
+record(ao, "STJ_PF_IPS_001")
+{
+    field(DESC, "Output current of a PS")
+    field(SCAN, "Passive")
+		field(VAL, "0.0")
+		field(PINI, "YES")
+		field(PREC, "4")
+		field(EGU, "A(current)")
+}
+record(ao, "STJ_TF_IPS_001")
+{
+    field(DESC, "Output current of a PS")
+    field(SCAN, "Passive")
+		field(VAL, "0.0")
+		field(PINI, "YES")
+		field(PREC, "4")
+		field(EGU, "A(current)")
+}
+record(bo, "STJ_IOC_HEART_BEAT")
+{
+	field(DESC, "STJ_SYSTEM_HEART_BEAT")
+	field(SCAN, "Passive")
+	field(ZNAM, "0")
+	field(ONAM, "1")
+}

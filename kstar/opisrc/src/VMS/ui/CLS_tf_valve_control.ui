@@ -1,0 +1,5411 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../vms.qrc" >:/images/CLS_tf_valve_control.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+   <property name="pvname" stdset="0" >
+    <string>CLS_REMOTE</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>82</x>
+     <y>32</y>
+     <width>976</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>0</number>
+    </property>
+    <property name="leftMargin" >
+     <number>0</number>
+    </property>
+    <property name="topMargin" >
+     <number>0</number>
+    </property>
+    <property name="rightMargin" >
+     <number>0</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_152" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealOne</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCV_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>mm</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_142" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Temperature</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVMA_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>mm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_143" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVMA_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_153" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVMA_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_154" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFLCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_144" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_155" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFLCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_145" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_61" >
+        <property name="minimumSize" >
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>80</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVMA_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_142" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCVSL_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_13" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>mm</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_134" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_SC_LEVEL</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>mm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_135" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVSL_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_143" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVSL_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_42" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_144" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFLCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_147" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_145" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFLCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_148" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFLCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_57" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_LCVSL_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>130</y>
+     <width>974</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>0</number>
+    </property>
+    <property name="leftMargin" >
+     <number>0</number>
+    </property>
+    <property name="topMargin" >
+     <number>0</number>
+    </property>
+    <property name="rightMargin" >
+     <number>0</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_107" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCV_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_14" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>bar</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_117" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVMA_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>bar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_118" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVMA_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_108" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVMA_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_44" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_109" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_150" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_110" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_151" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_43" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVMA_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_147" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCVSL_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_15" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>bar</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_131" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVSL_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>bar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_132" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVSL_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_148" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVSL_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_45" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_149" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_153" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCVSL_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_150" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_154" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPCVSL_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_59" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PCVSL_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>230</y>
+     <width>974</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>0</number>
+    </property>
+    <property name="leftMargin" >
+     <number>0</number>
+    </property>
+    <property name="topMargin" >
+     <number>0</number>
+    </property>
+    <property name="rightMargin" >
+     <number>0</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_112" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPRV_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_16" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>bar</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_119" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PRV_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>bar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_120" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PRV_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_113" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PRV_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_46" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_114" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPRV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPRV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_156" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPRV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_115" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFPRV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPRV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_157" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFPRV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_45" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_PRV_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_117" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFOPV_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_17" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>bar</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_121" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_OPV_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>bar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_122" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_OPV_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_118" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_OPV_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_47" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_119" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFOPV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFOPV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_159" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFOPV_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_120" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TFOPV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFOPV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_160" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TFOPV_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_47" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_OPV_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>330</y>
+     <width>974</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>0</number>
+    </property>
+    <property name="leftMargin" >
+     <number>0</number>
+    </property>
+    <property name="topMargin" >
+     <number>0</number>
+    </property>
+    <property name="rightMargin" >
+     <number>0</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_92" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1P_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_18" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>g/s</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_111" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV01_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>g/s</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_113" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV01_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_93" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV01_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_48" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_94" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF1P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_162" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_95" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF1P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_163" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_37" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV01_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_97" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2P_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_19" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>g/s</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_114" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV02_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>g/s</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_116" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV02_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_98" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV02_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_49" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_99" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF2P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_165" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2P_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_100" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF2P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_166" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2P_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_39" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV02_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>430</y>
+     <width>974</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <property name="spacing" >
+     <number>0</number>
+    </property>
+    <property name="leftMargin" >
+     <number>0</number>
+    </property>
+    <property name="topMargin" >
+     <number>0</number>
+    </property>
+    <property name="rightMargin" >
+     <number>0</number>
+    </property>
+    <property name="bottomMargin" >
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_30" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1N_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_20" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>g/s</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_59" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV03_PVR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>g/s</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_101" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV03_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_31" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV03_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_50" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_74" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF1N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_177" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_75" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF1N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_176" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF1N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_29" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV03_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="spacing" >
+       <number>1</number>
+      </property>
+      <property name="leftMargin" >
+       <number>0</number>
+      </property>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
+      </property>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>65</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_77" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight</set>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CALineEdit::RealTwo</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2N_GAS_POS_ECMD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_21" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>g/s</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_102" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="nuformat" stdset="0" >
+         <enum>CADisplayer::Flowrate</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_2N_MF</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>g/s</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_104" >
+        <property name="minimumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>65</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV04_OUTR</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>130</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_78" >
+        <property name="minimumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>60</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV04_OUTW</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_51" >
+        <property name="minimumSize" >
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>115</red>
+              <green>115</green>
+              <blue>115</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>%</string>
+        </property>
+        <property name="indent" >
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_79" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF2N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_172" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2N_GAS_HILIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CALineEdit" name="CALineEdit_80" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text" >
+         <string>CLS_TF2N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CADisplayer" name="CADisplayer_173" >
+        <property name="minimumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>50</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF2N_GAS_LOLIM_ECMD</string>
+        </property>
+        <property name="lineWidth" stdset="0" >
+         <number>1</number>
+        </property>
+        <property name="framecol" stdset="0" >
+         <color>
+          <red>200</red>
+          <green>200</green>
+          <blue>200</blue>
+         </color>
+        </property>
+        <property name="unit" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="CABoButton" name="CABoButton_31" >
+        <property name="font" >
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="align" stdset="0" >
+         <enum>CABoButton::Column</enum>
+        </property>
+        <property name="pvname" >
+         <string>CLS_TF_CV04_MANUW</string>
+        </property>
+        <property name="control" >
+         <bool>true</bool>
+        </property>
+        <property name="truelabel" >
+         <string>Man</string>
+        </property>
+        <property name="falselabel" >
+         <string>Auto</string>
+        </property>
+        <property name="selColor" >
+         <color>
+          <red>255</red>
+          <green>101</green>
+          <blue>99</blue>
+         </color>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>84</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../vms.qrc" />
+ </resources>
+ <connections/>
+</ui>

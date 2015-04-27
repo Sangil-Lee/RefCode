@@ -1,0 +1,2027 @@
+<ui version="4.0" >
+ <class>ECCDTRANSLINE_4</class>
+ <widget class="QWidget" name="ECCDTRANSLINE_4" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>690</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_18" >
+   <property name="geometry" >
+    <rect>
+     <x>1290</x>
+     <y>60</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Error code</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CAMultiplot" name="camp_1" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>921</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>EC1_TL_TC_01</string>
+   </property>
+   <property name="pvname1" >
+    <string>EC1_TL_TC_02</string>
+   </property>
+   <property name="pvname2" >
+    <string>EC1_TL_TC_03</string>
+   </property>
+   <property name="pvname3" >
+    <string>EC1_TL_TC_04</string>
+   </property>
+   <property name="pvname4" >
+    <string>EC1_TL_TC_05</string>
+   </property>
+   <property name="pvname5" >
+    <string>EC1_TL_TC_06</string>
+   </property>
+   <property name="pvname6" >
+    <string>EC1_TL_TC_07</string>
+   </property>
+   <property name="pvname7" >
+    <string>EC1_TL_TC_08</string>
+   </property>
+   <property name="pvname8" >
+    <string>EC1_TL_TC_09</string>
+   </property>
+   <property name="periodicdata" stdset="0" >
+    <enum>CAMultiplot::PointOne</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbdRTD_9" >
+   <property name="geometry" >
+    <rect>
+     <x>380</x>
+     <y>20</y>
+     <width>240</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Transmission Line TC</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_17" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>920</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_151" >
+    <property name="geometry" >
+     <rect>
+      <x>154</x>
+      <y>40</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_152" >
+    <property name="geometry" >
+     <rect>
+      <x>154</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_154" >
+    <property name="geometry" >
+     <rect>
+      <x>444</x>
+      <y>40</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_157" >
+    <property name="geometry" >
+     <rect>
+      <x>154</x>
+      <y>100</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_158" >
+    <property name="geometry" >
+     <rect>
+      <x>444</x>
+      <y>100</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_164" >
+    <property name="geometry" >
+     <rect>
+      <x>444</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_57" >
+    <property name="geometry" >
+     <rect>
+      <x>480</x>
+      <y>70</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>237</red>
+          <green>233</green>
+          <blue>227</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Ok</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT05</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>85</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_58" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>40</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Fault</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT01</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_59" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Fault</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT02</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_60" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>100</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Fault</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT03</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_61" >
+    <property name="geometry" >
+     <rect>
+      <x>480</x>
+      <y>40</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Fault</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT04</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_62" >
+    <property name="geometry" >
+     <rect>
+      <x>480</x>
+      <y>100</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>237</red>
+          <green>233</green>
+          <blue>227</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Ok</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT06</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>85</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbTOC_13" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>154</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Transmission Line TC</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_7" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_01</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_8" >
+    <property name="geometry" >
+     <rect>
+      <x>380</x>
+      <y>100</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_06</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_9" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_02</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_10" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>100</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_03</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_11" >
+    <property name="geometry" >
+     <rect>
+      <x>380</x>
+      <y>40</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_04</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_12" >
+    <property name="geometry" >
+     <rect>
+      <x>380</x>
+      <y>70</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_05</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_6" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>100</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:magenta;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 6 </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_2" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:green;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 2.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_1" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet" >
+     <string>color:blue;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_5" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>70</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 5 </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_4" >
+    <property name="geometry" >
+     <rect>
+      <x>320</x>
+      <y>40</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:darkRed;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 4 </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_3" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:red;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 3</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_6" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>103</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:magenta;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 6</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_1" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>41</y>
+      <width>20</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:blue;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 1</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_2" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>71</y>
+      <width>20</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:green;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 2</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_5" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>73</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 5</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_4" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>41</y>
+      <width>20</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:darkRed;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 4</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_3" >
+    <property name="geometry" >
+     <rect>
+      <x>70</x>
+      <y>101</y>
+      <width>20</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:red;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 3</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_63" >
+    <property name="geometry" >
+     <rect>
+      <x>776</x>
+      <y>40</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Fault</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT07</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_155" >
+    <property name="geometry" >
+     <rect>
+      <x>740</x>
+      <y>40</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_7" >
+    <property name="geometry" >
+     <rect>
+      <x>616</x>
+      <y>70</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:orange;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 8 </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_8" >
+    <property name="geometry" >
+     <rect>
+      <x>616</x>
+      <y>40</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:purple;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 7 </string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_7" >
+    <property name="geometry" >
+     <rect>
+      <x>656</x>
+      <y>41</y>
+      <width>20</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:purple;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_165" >
+    <property name="geometry" >
+     <rect>
+      <x>740</x>
+      <y>70</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_9" >
+    <property name="geometry" >
+     <rect>
+      <x>656</x>
+      <y>103</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:darkgreen;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 9</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_13" >
+    <property name="geometry" >
+     <rect>
+      <x>676</x>
+      <y>40</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_07</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_14" >
+    <property name="geometry" >
+     <rect>
+      <x>676</x>
+      <y>100</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="statusTip" >
+     <string>PVname : EC1_TL_TC_09</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_09</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_159" >
+    <property name="geometry" >
+     <rect>
+      <x>740</x>
+      <y>100</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>˚C</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="cachRTD_8" >
+    <property name="geometry" >
+     <rect>
+      <x>656</x>
+      <y>73</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="layoutDirection" >
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet" >
+     <string>color:orange;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 8</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="cadpTOC_15" >
+    <property name="geometry" >
+     <rect>
+      <x>676</x>
+      <y>70</y>
+      <width>60</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealOne</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_08</string>
+    </property>
+    <property name="lineWidth" stdset="0" >
+     <number>1</number>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbdRTD_10" >
+    <property name="geometry" >
+     <rect>
+      <x>616</x>
+      <y>100</y>
+      <width>40</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:darkgreen;
+</string>
+    </property>
+    <property name="text" >
+     <string>Ch. 9 </string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_64" >
+    <property name="geometry" >
+     <rect>
+      <x>776</x>
+      <y>70</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>237</red>
+          <green>233</green>
+          <blue>227</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Ok</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT08</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>85</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="calbTOC_65" >
+    <property name="geometry" >
+     <rect>
+      <x>776</x>
+      <y>100</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette" >
+     <palette>
+      <active>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>85</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Window" >
+        <brush brushstyle="SolidPattern" >
+         <color alpha="255" >
+          <red>237</red>
+          <green>233</green>
+          <blue>227</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>true</bool>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text" >
+     <string>Ok</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_STAT09</string>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="fillcol" stdset="0" >
+     <color>
+      <red>85</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="truelabel" >
+     <string>Fault</string>
+    </property>
+    <property name="falselabel" >
+     <string>OK</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_18" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>620</y>
+     <width>341</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="CALineEdit" name="caleTC_1" >
+    <property name="geometry" >
+     <rect>
+      <x>195</x>
+      <y>10</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1_TL_TC_CMP</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_CMP</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbTC_1" >
+    <property name="geometry" >
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Enable</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1_TL_TC_EN</string>
+    </property>
+    <property name="truelabel" >
+     <string>Disable</string>
+    </property>
+    <property name="falselabel" >
+     <string>Enable</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_98" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>53</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Int. level</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>cachRTD_1</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>582</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>cachRTD_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>612</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>cachRTD_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>89</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>cachRTD_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>379</x>
+     <y>582</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>cachRTD_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>379</x>
+     <y>612</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>cachRTD_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>379</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>cachRTD_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>675</x>
+     <y>582</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>cachRTD_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>675</x>
+     <y>612</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>camp_1</sender>
+   <signal>legendLabel8(QString,QString)</signal>
+   <receiver>cachRTD_9</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>675</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_1</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>89</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>89</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>89</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>379</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>379</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>379</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>675</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>675</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cachRTD_9</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>camp_1</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>675</x>
+     <y>642</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>480</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

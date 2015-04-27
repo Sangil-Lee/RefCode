@@ -1,0 +1,421 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>188</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>Air Motor Panel</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>416</width>
+      <height>166</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string/>
+    </property>
+    <property name="pixmap" >
+     <pixmap resource="../ech.qrc" >:/images/ECH_AMotor_Popup.png</pixmap>
+    </property>
+    <property name="scaledContents" >
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca12" >
+    <property name="geometry" >
+     <rect>
+      <x>248</x>
+      <y>86</y>
+      <width>52</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>3</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>53</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::RoundRectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Empty</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>3</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TL_POL_DWLIMIT</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca02" >
+    <property name="geometry" >
+     <rect>
+      <x>50</x>
+      <y>86</y>
+      <width>40</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>3</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>40</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::RoundRectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Empty</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>3</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TL_TOR_CCWLIMIT</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca11" >
+    <property name="geometry" >
+     <rect>
+      <x>212</x>
+      <y>86</y>
+      <width>34</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>3</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>40</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::RoundRectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Empty</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>3</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TL_POL_UPLIMIT</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="ca01" >
+    <property name="geometry" >
+     <rect>
+      <x>6</x>
+      <y>86</y>
+      <width>40</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="minimumSize" >
+     <size>
+      <width>3</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="maximumSize" >
+     <size>
+      <width>40</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::RoundRectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Empty</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="lineWidth" >
+     <number>3</number>
+    </property>
+    <property name="fillDisplayMode" >
+     <enum>CAGraphic::Static</enum>
+    </property>
+    <property name="lineDisplayMode" >
+     <enum>CAGraphic::Alarm</enum>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TL_TOR_CWLIMIT</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel" >
+    <property name="geometry" >
+     <rect>
+      <x>105</x>
+      <y>90</y>
+      <width>40</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TOR_SP_RTN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_2" >
+    <property name="geometry" >
+     <rect>
+      <x>315</x>
+      <y>90</y>
+      <width>40</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ECH_POL_SP_RTN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>90</y>
+      <width>50</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ECH_TOR_SP_EVAL</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_2" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>90</y>
+      <width>50</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ECH_POL_SP_EVAL</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ech.qrc" />
+ </resources>
+ <connections/>
+</ui>

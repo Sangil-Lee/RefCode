@@ -1,0 +1,27 @@
+record(ai, "$(REC)_RVAL")
+{
+       	      field(DESC, "$(DESC)")
+	      field(DTYP, "PXISCXI Raw Reading")
+              field(INP, "@$(TASK) $(CHAN)")
+              field(SCAN, "I/O Intr")
+	      field(FLNK, "$(REC)")
+              field(PREC, "6")
+              field(EGU, "mV")
+}
+record(calc, "$(REC)")
+{
+	      field(DESC, "$(DESC)")
+	      field(SCAN, "Passive")
+	      field(CALC, "(A*2.E+6/(6.5*$(SLOPE))-$(INITIAL))")
+	      field(INPA, "$(REC)_RVAL NPP NMS")
+	      field(EGU, "mm")
+	      field(HIHI, "7")
+              field(HIGH, "6")
+              field(LOW,  "4")
+              field(LOLO, "3")
+              field(HHSV, "MAJOR")
+              field(HSV, "MINOR")
+              field(LSV, "MINOR")
+              field(LLSV, "MAJOR")
+	      field(PREC, "4")
+}

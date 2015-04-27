@@ -1,0 +1,314 @@
+program sncMPSWatchdog
+
+option +r;
+option -c;
+
+%{
+
+#include "rfmAddrMap.h"
+
+#define  MPS_INTERLOCK_NORMAL            0
+#define  MPS_INTERLOCK_FAULT             1
+
+#define  TF_STOP                            0
+#define  TF_RUN                             1
+#define  TF_VCB_OFF                         0
+#define  TF_VCB_ON                          1
+#define  TF_NO_EVENT                        0
+#define  TF_DISCHARGE_START                 1
+#define  TF_NO_CHARGE                       0
+#define  TF_CHARGE_UP                       1
+#define  TF_PRECHARGE_NO_CHARGE             0
+#define  TF_PRECHARGE_CHARGEUP              1
+
+#define  PF_NO_CHARGE                       0
+#define  PF_CHARGE_UP                       1
+#define  PF_STOP                            0
+#define  PF_RUN                             1
+
+}%
+
+int       mps_interlock;
+assign    mps_interlock      to "CCS_INTL_PF_FAULT";
+monitor   mps_interlock;
+
+int       mps_rt_violation;
+assign    mps_rt_violation    to "CCS_MPS_RT_VIOLATION";
+monitor   mps_rt_violation;
+
+int       pf1_rt_violation;
+assign    pf1_rt_violation    to "CCS_PF1_RT_VIOLATION";
+monitor   pf1_rt_violation;
+
+int       pf2_rt_violation;
+assign    pf2_rt_violation    to "CCS_PF2_RT_VIOLATION";
+monitor   pf2_rt_violation;
+
+int       pf3u_rt_violation;
+assign    pf3u_rt_violation    to "CCS_PF3U_RT_VIOLATION";
+monitor   pf3u_rt_violation;
+
+int       pf3l_rt_violation;
+assign    pf3l_rt_violation    to "CCS_PF3L_RT_VIOLATION";
+monitor   pf3l_rt_violation;
+
+
+int       pf4u_rt_violation;
+assign    pf4u_rt_violation    to "CCS_PF4U_RT_VIOLATION";
+monitor   pf4u_rt_violation;
+
+int       pf4l_rt_violation;
+assign    pf4l_rt_violation    to "CCS_PF4L_RT_VIOLATION";
+monitor   pf4l_rt_violation;
+
+
+int       pf5u_rt_violation;
+assign    pf5u_rt_violation    to "CCS_PF5U_RT_VIOLATION";
+monitor   pf5u_rt_violation;
+
+int       pf5l_rt_violation;
+assign    pf5l_rt_violation    to "CCS_PF5L_RT_VIOLATION";
+monitor   pf5l_rt_violation;
+
+
+int       pf6u_rt_violation;
+assign    pf6u_rt_violation    to "CCS_PF6U_RT_VIOLATION";
+monitor   pf6u_rt_violation;
+
+int       pf6l_rt_violation;
+assign    pf6l_rt_violation    to "CCS_PF6L_RT_VIOLATION";
+monitor   pf6l_rt_violation;
+
+
+int       pf7_rt_violation;
+assign    pf7_rt_violation    to "CCS_PF7_RT_VIOLATION";
+monitor   pf7_rt_violation;
+
+
+evflag    heartbeat;
+int       ccs_heartbeat;
+assign    ccs_heartbeat       to "CCS_HEARTBEAT";
+monitor   ccs_heartbeat;
+sync      ccs_heartbeat  heartbeat;
+
+int       tf_communication;
+assign    tf_communication    to "MPS_TF_ccs_comm";
+int       pf1_communication;
+assign    pf1_communication   to "MPS_PF1_ccs_comm";
+int       pf2_communication;
+assign    pf2_communication   to "MPS_PF2_ccs_comm";
+
+int       pf3u_communication;
+assign    pf3u_communication   to "MPS_PF3U_ccs_comm";
+int       pf3l_communication;
+assign    pf3l_communication   to "MPS_PF3L_ccs_comm";
+
+int       pf4u_communication;
+assign    pf4u_communication   to "MPS_PF4U_ccs_comm";
+int       pf4l_communication;
+assign    pf4l_communication   to "MPS_PF4L_ccs_comm";
+
+int       pf5u_communication;
+assign    pf5u_communication   to "MPS_PF5U_ccs_comm";
+int       pf5l_communication;
+assign    pf5l_communication   to "MPS_PF5L_ccs_comm";
+
+int       pf6u_communication;
+assign    pf6u_communication   to "MPS_PF6U_ccs_comm";
+int       pf6l_communication;
+assign    pf6l_communication   to "MPS_PF6L_ccs_comm";
+
+int       pf7_communication;
+assign    pf7_communication   to "MPS_PF7_ccs_comm";
+
+int       ivc_communication;
+assign    ivc_communication   to "IVC_ccs_comm";
+
+
+int       tf_discharge_start;
+assign    tf_discharge_start  to "CCS_INTL_TF_DISCHARGE_START";
+int       tf_chargeup;
+assign    tf_chargeup         to "CCS_INTL_TF_CHARGEUP";
+int       tf_vcb;
+assign    tf_vcb              to "MPS_TF_re_vcb_on_off_mmi";
+monitor   tf_vcb;
+int       tf_run;
+assign    tf_run              to "MPS_TF_re_run_stop_mmi";
+monitor   tf_run;
+int       tf_pre_charge;
+assign    tf_pre_charge       to "MPS_TF_BI0_02";
+monitor   tf_pre_charge;
+
+int       pf_chargeup;
+assign    pf_chargeup         to "CCS_INTL_PF_CHARGEUP";
+int       pf_run;
+assign    pf_run              to "MPS_PF_re_run_stop_mmi";
+monitor   pf_run;
+int       pf_local_run;
+assign    pf_local_run        to "MPS_PF_lo_run_stop_mmi";
+monitor   pf_local_run;
+
+
+
+ss mps_interlock
+{
+      state normal
+      {
+            when(mps_rt_violation == RT_ABNORMAL) {
+                  mps_interlock = MPS_INTERLOCK_FAULT;
+                  pvPut(mps_interlock);
+            } state fault
+          
+      }
+
+
+      state fault
+      {
+            when(mps_rt_violation == RT_NORMAL) {
+                  mps_interlock = MPS_INTERLOCK_NORMAL;
+                  pvPut(mps_interlock);
+            } state normal
+
+      }
+}
+
+
+ss mps_rt_violation
+{
+      state normal
+      {
+            when( pf1_rt_violation ||
+                  pf2_rt_violation ||
+                  pf3u_rt_violation ||
+                  pf3l_rt_violation ||
+                  pf4u_rt_violation ||
+                  pf4l_rt_violation ||
+                  pf5u_rt_violation ||
+                  pf5l_rt_violation ||
+                  pf6u_rt_violation ||
+                  pf6l_rt_violation ||
+                  pf7_rt_violation ) {
+                    mps_rt_violation = RT_ABNORMAL;
+                    pvPut(mps_rt_violation);
+             } state fault
+      }
+
+      state fault
+      {
+            when( !pf1_rt_violation &&
+                  !pf2_rt_violation &&
+                  !pf3u_rt_violation &&
+                  !pf3l_rt_violation &&
+                  !pf4u_rt_violation &&
+                  !pf4l_rt_violation &&
+                  !pf5u_rt_violation &&
+                  !pf5l_rt_violation &&
+                  !pf6u_rt_violation &&
+                  !pf6l_rt_violation &&
+                  !pf7_rt_violation ) {
+                     mps_rt_violation = RT_NORMAL;
+                     pvPut(mps_rt_violation);
+             } state normal
+
+      }
+}
+
+
+ss mps_heartbeat_broadcasting
+{
+    state broadcasting
+    {
+        when(efTestAndClear(heartbeat)) {
+            tf_communication  = ccs_heartbeat;    pvPut(tf_communication);
+            pf1_communication = ccs_heartbeat;    pvPut(pf1_communication);
+            pf2_communication = ccs_heartbeat;    pvPut(pf2_communication);
+            pf3u_communication = ccs_heartbeat;    pvPut(pf3u_communication);
+            pf3l_communication = ccs_heartbeat;    pvPut(pf3l_communication);
+            pf4u_communication = ccs_heartbeat;    pvPut(pf4u_communication);
+            pf4l_communication = ccs_heartbeat;    pvPut(pf4l_communication);
+            pf5u_communication = ccs_heartbeat;    pvPut(pf5u_communication);
+            pf5l_communication = ccs_heartbeat;    pvPut(pf5l_communication);
+            pf6u_communication = ccs_heartbeat;    pvPut(pf6u_communication);
+            pf6l_communication = ccs_heartbeat;    pvPut(pf6l_communication);
+            pf7_communication = ccs_heartbeat;    pvPut(pf7_communication);
+            ivc_communication = ccs_heartbeat;    pvPut(ivc_communication);
+        } state broadcasting
+    }
+}
+
+ss tf_discharge_monitor
+{
+    state noEvent
+    {
+        option -e;     /* perform entry function everytime */
+        entry {
+            tf_discharge_start = TF_NO_EVENT; pvPut(tf_discharge_start);
+        }
+
+        when(tf_run == TF_STOP) {} state dischargeStart
+
+    }
+
+    state dischargeStart
+    {
+        option -e;     /* perfrom entry function everytime */
+        entry {
+            tf_discharge_start = TF_DISCHARGE_START; pvPut(tf_discharge_start);
+        }
+        
+        when(tf_run == TF_RUN) {} state noEvent 
+    }
+}
+
+
+ss tf_chargeup_monitor
+{
+    state noCharge
+    {
+        option -e;     /* perform entry function everytime */
+
+        entry {
+            tf_chargeup = TF_NO_CHARGE; pvPut(tf_chargeup);
+        }
+
+        when(tf_pre_charge == TF_PRECHARGE_CHARGEUP /*tf_vcb == TF_VCB_ON*/) {} state chargeUp
+    }
+
+    state chargeUp
+    {
+        option -e;     /* perform entry function everytime */
+
+        entry {
+            tf_chargeup = TF_CHARGE_UP; pvPut(tf_chargeup);
+        }
+
+        when(tf_pre_charge == TF_PRECHARGE_NO_CHARGE /*tf_vcb == TF_VCB_OFF*/) {} state noCharge
+
+    }
+}
+
+ss pf_chargeup_monitor
+{
+    state noCharge
+    {
+        option -e;
+
+        entry {
+            pf_chargeup = PF_NO_CHARGE; pvPut(pf_chargeup);
+        }
+
+        when (pf_run == PF_RUN || pf_local_run == PF_RUN) {} state chargeUp
+    }
+
+    state chargeUp
+    {
+
+        option -e;
+
+        entry {
+            pf_chargeup = PF_CHARGE_UP; pvPut(pf_chargeup);
+        }
+
+        when(pf_run == PF_STOP && pf_local_run == PF_STOP) {} state noCharge
+    }
+}

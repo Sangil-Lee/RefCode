@@ -1,0 +1,57 @@
+record(ai, "$(REC)_T")
+{
+        field(DESC, "$(DESC)")
+        field(DTYP, "PXISCXI Cernox Channel")
+        field(INP, "@$(TASK) $(CHAN) $(SERIAL)")
+        field(SCAN, "I/O Intr")
+        field(PREC, "2")
+        field(EGU, "K")
+        field(MDEL, "0.05")
+        field(ADEL, "0.05")
+}
+##### DT1 is Temperature difference (D-B) or (D-C) for Cool-down stages #######
+record(calc, $(REC)_DT1) {
+  field(SCAN, "Passive")
+  field(CALC, "A<4?(D-B):(D-C)")
+  field(INPA, "CCS_OPST_CONTROL CPP NMS")
+  field(INPB, "$(IN1) CPP NMS")
+  field(INPC, "$(IN2) CPP NMS")
+  field(INPD, "$(REC)_T.VAL CPP NMS")
+  field(HIHI, "$(HIHI1)")
+  field(LOLO, "$(LOLO1)")
+  field(HIGH, "$(HIGH1)")
+  field(LOW, "$(LOW1)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "K")
+}
+##### DT2 is Temperature difference (D-C) for Experiment stages #######
+record(calc, $(REC)_DT2) {
+  field(SCAN, "Passive")
+  field(CALC, "A>4?(D-C):0")
+  field(INPA, "CCS_OPST_CONTROL CPP NMS")
+  field(INPB, "$(IN1) CPP NMS")
+  field(INPC, "$(IN2) CPP NMS")
+  field(INPD, "$(REC)_T.VAL CPP NMS")
+  field(HIHI, "$(HIHI2)")
+  field(LOLO, "$(LOLO2)")
+  field(HIGH, "$(HIGH2)")
+  field(LOW, "$(LOW2)")
+  field(HHSV, "MAJOR")
+  field(LLSV, "MAJOR")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "K")
+}
+record(calc, $(REC)) {
+  field(SCAN, "Passive")
+  field(CALC, "A")
+  field(INPA, "$(REC)_T.VAL CPP NMS")
+  field(INPB, "$(REC)_DT1.VAL CPP MS")
+  field(INPC, "$(REC)_DT2.VAL CPP MS")
+  field(EGU, "K")
+}
+
+

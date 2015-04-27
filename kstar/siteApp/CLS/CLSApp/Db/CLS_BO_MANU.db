@@ -1,0 +1,25 @@
+record(calcout, "$(PV_NAME)_IN") {
+  field(CALC, "A?1:0")
+  field(INPA, "$(PV_NAME)_R CPP")
+  field(INPB, "CLS_REMOTE CPP")
+  field(OUT, "$(PV_NAME)")
+  field(FLNK, "$(PV_NAME)")
+}
+
+
+record(bi, "$(PV_NAME)_R") {
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  field(PINI, "YES")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@plc1 $(TAG) S 1")
+}
+
+record(ao, "$(PV_NAME)") {
+  field(DTYP, "EtherIP")
+  field(OMSL, "closed_loop")
+  field(OUT, "@plc1 $(TAG) S 1")
+}

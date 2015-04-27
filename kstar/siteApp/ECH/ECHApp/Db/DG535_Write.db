@@ -1,0 +1,155 @@
+record(bo,"ECH_DG535_WRITE_TZ_4") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @22")
+       field(ZNAM,"50 Ohm Load")
+       field(ONAM,"High-Z")
+	   field(FLNK,"ECH_DG535_READ_TZ_4")
+}
+record(bo,"ECH_DG535_WRITE_TZ_7") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @23")
+       field(ZNAM,"50 Ohm Load")
+       field(ONAM,"High-Z")
+       field(FLNK,"ECH_DG535_READ_TZ_7")
+}
+record(mbbo,"ECH_DG535_WRITE_OM_4") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @24")
+       field(FLNK,"ECH_DG535_READ_OM_4")
+}
+record(mbbo,"ECH_DG535_WRITE_OM_7") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @25")
+       field(FLNK,"ECH_DG535_READ_OM_7")
+} 
+record(bo,"ECH_DG535_WRITE_OP_4") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @26")
+       field(ZNAM,"Inverted")
+	   field(ONAM,"Normal")
+	   field(FLNK,"ECH_DG535_READ_OP_4")
+} 
+record(bo,"ECH_DG535_WRITE_OP_7") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @27")
+       field(ZNAM,"Inverted")
+       field(ONAM,"Normal")
+       field(FLNK,"ECH_DG535_READ_OP_7")
+}  
+record(mbbo,"ECH_DG535_WRITE_TM") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @28")
+       field(FLNK,"ECH_DG535_READ_TM")
+}
+record(ao,"ECH_DG535_WRITE_TR_0") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @29")
+       field(FLNK,"ECH_DG535_READ_TR_0")
+}
+record(ao,"ECH_DG535_WRITE_TR_1") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @30")
+       field(FLNK,"ECH_DG535_READ_TR_1")
+}
+record(ao,"ECH_DG535_WRITE_DT_1_OUT") { 
+       field(DTYP,"DG535") 
+       field(OMSL, "closed_loop")
+       field(DOL, "ECH_DG535_WRITE_DT_1_CALC.VAL")
+       field(OUT,"#$(PORT) A$(A) @31")
+}
+record(ao,"ECH_DG535_WRITE_DT_1") {
+       field(EGU, "sec")
+       field(FLNK,"ECH_DG535_WRITE_DT_1_CALC")
+}
+record(calc,"ECH_DG535_WRITE_DT_1_CALC") {
+       field(CALC,"A*1E-6")
+       field(INPA,"ECH_DG535_WRITE_DT_1")
+       field(FLNK,"ECH_DG535_WRITE_DT_1_OUT")
+}
+
+
+record(ao,"ECH_DG535_WRITE_DT_2_OUT") {
+       field(DTYP,"DG535")
+       field(OMSL, "closed_loop")
+       field(DOL, "ECH_DG535_WRITE_DT_2_CALC.VAL")
+       field(OUT,"#$(PORT) A$(A) @32")
+       field(FLNK,"ECH_DG535_READ_DT_2")
+}
+record(ao,"ECH_DG535_WRITE_DT_2") {
+       field(EGU, "usec")
+       field(FLNK,"ECH_DG535_WRITE_DT_2_CALC")
+}
+record(calc,"ECH_DG535_WRITE_DT_2_CALC") {
+       field(CALC,"A*1E-6")
+       field(INPA,"ECH_DG535_WRITE_DT_2")
+       field(FLNK,"ECH_DG535_WRITE_DT_2_OUT")
+}
+
+
+record(ao,"ECH_DG535_WRITE_DT_3_OUT") { 
+       field(DTYP,"DG535") 
+       field(OMSL, "closed_loop") 
+       field(DOL, "ECH_DG535_WRITE_DT_3_CALC.VAL")
+       field(OUT,"#$(PORT) A$(A) @33") 
+       field(FLNK,"ECH_DG535_READ_DT_3") 
+} 
+record(ao,"ECH_DG535_WRITE_DT_3") { 
+       field(EGU, "usec")
+       field(FLNK,"ECH_DG535_WRITE_DT_3_CALC")
+} 
+record(calc,"ECH_DG535_WRITE_DT_3_CALC") { 
+       field(CALC,"A*1E-6") 
+       field(INPA,"ECH_DG535_WRITE_DT_3") 
+       field(FLNK,"ECH_DG535_WRITE_DT_3_OUT")
+} 
+
+
+record(ao,"ECH_DG535_WRITE_DT_5_OUT") {
+       field(DTYP,"DG535")  
+       field(OMSL, "closed_loop")
+       field(DOL, "ECH_DG535_WRITE_DT_5_CALC.VAL")
+       field(OUT,"#$(PORT) A$(A) @34")  
+       field(FLNK,"ECH_DG535_READ_DT_5")
+}  
+record(ao,"ECH_DG535_WRITE_DT_5") {  
+       field(EGU, "usec") 
+       field(FLNK,"ECH_DG535_WRITE_DT_5_CALC")
+}  
+record(calc,"ECH_DG535_WRITE_DT_5_CALC") {
+       field(CALC,"A*1E-6")  
+       field(INPA,"ECH_DG535_WRITE_DT_5")
+       field(FLNK,"ECH_DG535_WRITE_DT_5_OUT")
+} 
+
+
+record(ao,"ECH_DG535_WRITE_DT_6_OUT") {
+       field(DTYP,"DG535")   
+       field(OMSL, "closed_loop")
+       field(DOL, "ECH_DG535_WRITE_DT_6_CALC.VAL")
+       field(OUT,"#$(PORT) A$(A) @35")  
+       field(FLNK,"ECH_DG535_READ_DT_6")
+}   
+record(ao,"ECH_DG535_WRITE_DT_6") {   
+       field(EGU, "usec")  
+       field(FLNK,"ECH_DG535_WRITE_DT_6_CALC")
+}   
+record(calc,"ECH_DG535_WRITE_DT_6_CALC") {
+       field(CALC,"A*1E-6")   
+       field(INPA,"ECH_DG535_WRITE_DT_6")
+       field(FLNK,"ECH_DG535_WRITE_DT_6_OUT")
+}  
+
+record(bo,"ECH_DG535_WRITE_SS") {
+       field(DTYP,"DG535") 
+       field(OUT,"#$(PORT) A$(A) @36")
+}
+record(bo,"ECH_DG535_WRITE_CL") {
+       field(DTYP,"DG535")
+       field(OUT,"#$(PORT) A$(A) @37")
+       field(FLNK,"ECH_DG535_READ_ES_0")
+}
+record(stringout,"ECH_DG535_WRITE") {
+       field(DTYP,"DG535")     
+       field(OUT,"#$(PORT) A$(A) @38")
+	   field(FLNK,"ECH_DG535_READ_DL")
+}     

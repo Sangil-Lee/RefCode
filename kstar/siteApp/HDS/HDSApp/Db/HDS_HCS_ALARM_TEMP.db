@@ -1,0 +1,32 @@
+record(calcout, "$(PV_NAME)_HIHI") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(HIHI_CD) CPP")
+  field(INPC, "$(HIHI_SB) CPP")
+  field(OUT, "$(PV_NAME).HIHI CA")
+}
+
+
+record(calcout, "$(PV_NAME)_HIGH") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(HIGH_CD) CPP")
+  field(INPC, "$(HIGH_SB) CPP")
+  field(OUT, "$(PV_NAME).HIGH CA")
+}
+
+record(calcout, "$(PV_NAME)_LOW") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(LOW_CD) CPP")
+  field(INPC, "$(LOW_SB) CPP")
+  field(OUT, "$(PV_NAME).LOW CA")
+}
+
+record(calcout, "$(PV_NAME)_LOLO") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(LOLO_CD) CPP")
+  field(INPC, "$(LOLO_SB) CPP")
+  field(OUT, "$(PV_NAME).LOLO CA")
+}

@@ -1,0 +1,73 @@
+# For a KUPA Sample IOC
+
+# ------------------------------------------------
+# Set debug level to display on standard output
+# ------------------------------------------------
+#  -> 0(OFF)  1(FATAL) 2(ERROR) 3(WARN) 4(MON)
+#  -> 5(INFO) 6(DEBUG) 7(TRACE) 8(DATA) 9(ALL)
+# ------------------------------------------------
+
+#kuSetPrintLevel (9)
+cd ${TOP}/iocBoot/${IOC}
+
+kuSetLogLevel (0)
+kuSetLogFile("/usr/local/epics/siteApp/ECH_DAQ/iocBoot/iocECH_DAQ/LOG_CA_KU.log")
+
+cd ${TOP}
+# dbLoadRecords ("db/kupa.db")
+
+# ------------------------------------------------------------------------------
+# Name, Shot# PV, OpMode PV, Run PV, SamplingRate(Hz), StartTime, Duration, Delay(s)
+# ------------------------------------------------------------------------------
+# - If there is no PV, archiving will be handled by user's application
+# - OpMode PV : Remote(1)
+# ------------------------------------------------------------------------------
+
+#kupaInitManager ("KUPA", "KUPA_SHOT_NUM", "KUPA_OP_MODE", "KUPA_SYS_RUN", 1, 0, 1, 2)
+kupaInitManager ("ECH_PA", "", "ECH_OP_MODE", "", 1, 0, 1, 2)
+#kupaInitManager ("KUPA", "KUPA_SHOT_NUM", "KUPA_OP_MODE", "KUPA_SYS_RUN", 1, -1.5, 5.5, 5.0)
+
+# ------------------------------------------------------------------------------
+# Export Type (CSV, MDS, FILE), arg1, arg2, arg3, arg4, arg5, arg6
+# ------------------------------------------------------------------------------
+
+# CSV, FileName, Path, ValueOrder(V : Vertical, H : Horizontal), Format(UNIX, DOS), New/Append,
+#kupaAddExport ("CSV", "KUPA1", "/tmp", "H", "UNIX", "New", "")
+
+# MDS, TreeName, MdsAddr(IP:Port), EventName, EventAddr(IP:Port), OpMode(ALL,REMOTE,LOCAL)
+#kupaAddExport ("MDS", "LOCAL"     , "127.0.0.1:8000"     , ""     , ""                   , "LOCAL", "")
+#kupaAddExport ("MDS", "REMOTE"    , "172.17.100.202:8000", "EVENT", "172.17.100.200:8300", "REMOTE", "")
+#kupaAddExport ("MDS", "my_tree"   , "127.0.0.1:8000"     , "EVENT", "127.0.0.1:8000"     , "ALL", "")
+#kupaAddExport ("MDS", "my_tree"   , "127.0.0.1:8000"     , "EVENT", "127.0.0.1:8000"     , "LOCAL", "")
+kupaAddExport ("MDS", "heating"   , "172.17.121.87:8000"  , "", "" , "LOCAL", "")
+
+# ------------------------------------------------------------------------------
+# PV Name, Tag Name, CA Type(0:DB, 1:CA, 2:Event), Description, Unit
+# ------------------------------------------------------------------------------
+#kupaAddPV (""  , "MYNODE" , 0, "calc2", "A")
+#kupaAddPV (""  , "SIGNAL1", 1, "calc2", "A")
+#kupaAddPV ("", ""       , 0, "calc1", "V")
+
+#kupaAddPV ("ECH_READ_DATA_CH0", "\ECH_ANT_POL"   , 1, "poloidal crank angle of ECH antenna", "degree")
+#kupaAddPV ("ECH_READ_DATA_CH1", "\ECH_ANT_TOR"   , 1, "toroidal crank angle of ECH antenna", "degree")
+#kupaAddPV ("ECH_READ_DATA_CH2", "\ECH_ENC_POL"      , 1, "poloidal encoder count of ECH antenna Cp", "count")
+#kupaAddPV ("ECH_READ_DATA_CH3", "\ECH_ENC_TOR"      , 1, "toroidal encoder count of ECH antenna Ct", "count")
+
+kupaAddPV ("ECH_POL_ANGLE_RTN", "\ECH_ANT_POL"   , 1, "poloidal crank angle of ECH antenna", "degree")
+kupaAddPV ("ECH_TOR_ANGLE_RTN", "\ECH_ANT_TOR"   , 1, "toroidal crank angle of ECH antenna", "degree")
+kupaAddPV ("ECH_ESP300_1TP", "\ECH_POL_PH1"      , 1, "mirror angle of polarization rotator M/B 1", "degree")
+kupaAddPV ("ECH_ESP300_2TP", "\ECH_POL_PH2"      , 1, "mirror angle of polarization rotator M/B 2", "degree")
+kupaAddPV ("ECH_TL_POL_ENC", "\ECH_ENC_POL"      , 1, "poloidal encoder count of ECH antenna Cp", "count")
+kupaAddPV ("ECH_TL_TOR_ENC", "\ECH_ENC_TOR"      , 1, "toroidal encoder count of ECH antenna Ct", "count")
+
+# ------------------------------------------------------------------------------
+# Register a post action to be executed after exporting
+# ------------------------------------------------------------------------------
+
+#kupaAddPostAct ("/usr/local/epics/siteApp/testKupa/iocBoot/iocKupa/autoput.sh ipaddr userid passwd /tmp /root KUPA1-*.csv")
+#kupaAddPostAct ("kupa-autoput.sh")
+# ------------------------------------------------------------------------------
+# Starts PV archive manager
+# ------------------------------------------------------------------------------
+kupaRunManager ()
+

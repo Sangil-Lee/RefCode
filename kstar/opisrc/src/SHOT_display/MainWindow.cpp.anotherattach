@@ -1,0 +1,151 @@
+#include "MainWindow.h"
+
+MainWindow::MainWindow()
+{
+	init();
+}
+
+MainWindow::~MainWindow()
+{
+	qDebug("~MainWindow is called");
+}
+
+void
+MainWindow::init()
+{
+	makeUI();
+	createActions();
+	createConnects();
+	createToolbars();
+	//setStatusBar(statusBar());
+	attachWidget();
+}
+
+void
+MainWindow::makeUI()
+{
+	setWindowTitle(QApplication::translate("KWT test", "KWT", 0, QApplication::UnicodeUTF8));
+	centralwidget = new QWidget(this);
+	centralwidget->setObjectName (QString::fromUtf8("centralwidget"));
+	centralwidget->setWindowTitle(QApplication::translate("KWT test", "Central", 0, QApplication::UnicodeUTF8));
+
+}
+
+void
+MainWindow::createActions()
+{
+	expAction = new QAction(tr("&Experiment"), this);
+    diagAction = new QAction(tr("&Diagnostic"), this);
+    macAction = new QAction(tr("&Machine"), this);
+
+    connect(expAction, SIGNAL(triggered()), this, SLOT(expCA()));
+    connect(diagAction, SIGNAL(triggered()), this, SLOT(diagCA()));
+    connect(macAction, SIGNAL(triggered()), this, SLOT(macCA()));
+}
+
+void
+MainWindow::createConnects()
+{
+}
+
+void
+MainWindow::createToolbars()
+{
+	ToolBar = addToolBar(tr("&ToolBar"));
+    ToolBar->addAction(expAction);
+    ToolBar->addAction(diagAction);
+    ToolBar->addAction(macAction);
+}
+
+void
+MainWindow::expCA()
+{
+    qDebug("expCA\n");
+
+	if(pattach1->GetWidget()) 
+	{
+		qDebug("pattach1 exists.");
+	} else
+	{
+		pattach1 = new AttachChannelAccess("/usr/local/opi/ui/ExperimentsStatus_backup.ui",1);
+		qDebug("pattach1 not exists.\n");
+	}
+	if(pattach1->GetWidget())
+	{
+		centralwidget = pattach1->GetWidget();
+		centralwidget->setWindowTitle(QApplication::translate("ExperimentsStatus", "ExperimentsStatus", 0, QApplication::UnicodeUTF8));
+		qDebug("pattach1 set\n");
+	}
+
+	setCentralWidget(centralwidget);
+}
+
+void
+MainWindow::diagCA()
+{
+    qDebug("diagCA\n");
+	#if 0
+	if(pattach2->GetWidget()) 
+	{
+		qDebug("pattach2 exists. (1)");
+	}
+	else
+	{
+		pattach2 = new AttachChannelAccess("/usr/local/opi/ui/DiagnosticsOperationStatus.ui",1);
+	}
+	#endif
+
+	pattach2 = new AttachChannelAccess("/usr/local/opi/ui/DiagnosticsOperationStatus.ui",1);
+		qDebug("pattach2 exists. (2)");
+
+	if(pattach2->GetWidget())
+	{
+		centralwidget = pattach2->GetWidget();
+		centralwidget->setWindowTitle(QApplication::translate("DiagnosticsOperationStatus", "DiagnosticsOperationStatus", 0, QApplication::UnicodeUTF8));
+	}
+
+		qDebug("pattach2 exists. (3)");
+	setCentralWidget(centralwidget);
+		qDebug("pattach2 exists. (4)");
+}
+
+void
+MainWindow::macCA()
+{
+    qDebug("macCA\n");
+	pattach3 = new AttachChannelAccess("/usr/local/opi/ui/MachineStatus.ui",1);
+
+	if(pattach3->GetWidget())
+	{
+		centralwidget = pattach3->GetWidget();
+		centralwidget->setWindowTitle(QApplication::translate("MachinesStatus", "MachinesStatus", 0, QApplication::UnicodeUTF8));
+	}
+	setCentralWidget(centralwidget);
+}
+
+void
+MainWindow::attachWidget()
+{
+	pattach1 = new AttachChannelAccess("/usr/local/opi/ui/ExperimentsStatus.ui",1);
+	if(pattach1->GetWidget())
+	{
+		centralwidget = pattach1->GetWidget();
+		centralwidget->setWindowTitle(QApplication::translate("ExperimentsStatus", "ExperimentsStatus", 0, QApplication::UnicodeUTF8));
+		qDebug("pattach1 set\n");
+	}
+	centralwidget->setGeometry(QRect(0,0,1024,768));
+	centralwidget->setMinimumSize(QSize(1024,768));
+	centralwidget->setMaximumSize(QSize(1920,1080));
+
+	setCentralWidget(centralwidget);
+}
+
+/*
+ * It's very important that 
+ * this application should kill process itself to protext segmentation fault.
+ */
+void 
+MainWindow::closeEvent(QCloseEvent *)
+{
+	kill(getpid(), SIGTERM);
+}

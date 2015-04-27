@@ -1,0 +1,121 @@
+#Do not modify this file.
+#This file is created during the build.
+
+ifneq ($(strip $(caSysProc_SRCS_$(OS_CLASS))),)
+caSysProc_SRCS+=$(subst -nil-,,$(caSysProc_SRCS_$(OS_CLASS)))
+else
+ifdef caSysProc_SRCS_DEFAULT
+caSysProc_SRCS+=$(caSysProc_SRCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_RCS_$(OS_CLASS))),)
+caSysProc_RCS+=$(subst -nil-,,$(caSysProc_RCS_$(OS_CLASS)))
+else
+ifdef caSysProc_RCS_DEFAULT
+caSysProc_RCS+=$(caSysProc_RCS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_OBJS_$(OS_CLASS))),)
+caSysProc_OBJS+=$(subst -nil-,,$(caSysProc_OBJS_$(OS_CLASS)))
+else
+ifdef caSysProc_OBJS_DEFAULT
+caSysProc_OBJS+=$(caSysProc_OBJS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_LDFLAGS_$(OS_CLASS))),)
+caSysProc_LDFLAGS+=$(subst -nil-,,$(caSysProc_LDFLAGS_$(OS_CLASS)))
+else
+ifdef caSysProc_LDFLAGS_DEFAULT
+caSysProc_LDFLAGS+=$(caSysProc_LDFLAGS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_OBJLIBS_$(OS_CLASS))),)
+caSysProc_OBJLIBS+=$(subst -nil-,,$(caSysProc_OBJLIBS_$(OS_CLASS)))
+else
+ifdef caSysProc_OBJLIBS_DEFAULT
+caSysProc_OBJLIBS+=$(caSysProc_OBJLIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_LDOBJS_$(OS_CLASS))),)
+caSysProc_LDOBJS+=$(subst -nil-,,$(caSysProc_LDOBJS_$(OS_CLASS)))
+else
+ifdef caSysProc_LDOBJS_DEFAULT
+caSysProc_LDOBJS+=$(caSysProc_LDOBJS_DEFAULT)
+endif
+endif
+caSysProc_LDLIBS+=$(caSysProc_LIBS)
+ifneq ($(strip $(caSysProc_LIBS_$(OS_CLASS))),)
+caSysProc_LDLIBS+=$(subst -nil-,,$(caSysProc_LIBS_$(OS_CLASS)))
+else
+ifdef caSysProc_LIBS_DEFAULT
+caSysProc_LDLIBS+=$(caSysProc_LIBS_DEFAULT)
+endif
+endif
+ifneq ($(strip $(caSysProc_SYS_LIBS_$(OS_CLASS))),)
+caSysProc_SYS_LIBS+=$(subst -nil-,,$(caSysProc_SYS_LIBS_$(OS_CLASS)))
+else
+ifdef caSysProc_SYS_LIBS_DEFAULT
+caSysProc_SYS_LIBS+=$(caSysProc_SYS_LIBS_DEFAULT)
+endif
+endif
+caSysProc_OBJS+=$(addsuffix $(OBJ),$(basename $(caSysProc_SRCS)))
+
+ifeq ($(filter caSysProc,$(TESTPROD) $(PROD)),caSysProc)
+ifeq (,$(strip $(caSysProc_OBJS) $(PRODUCT_OBJS)))
+caSysProc_OBJS+=caSysProc$(OBJ)
+endif
+caSysProc_RESS+=$(addsuffix $(RES),$(basename $(caSysProc_RCS)))
+caSysProc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(caSysProc_OBJS)))
+caSysProc_DEPLIBS=$(foreach lib, $(caSysProc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+caSysProc$(EXE): $(caSysProc_OBJSNAME) $(caSysProc_RESS) $(caSysProc_DEPLIBS)
+endif
+
+ifeq ($(filter caSysProc,$(LIBRARY)),caSysProc)
+ifneq ($(filter caSysProc,$(LOADABLE_LIBRARY)),caSysProc)
+ifneq (,$(strip $(caSysProc_OBJS) $(LIBRARY_OBJS)))
+BUILD_LIBRARY += caSysProc
+endif
+caSysProc_RESS+=$(addsuffix $(RES),$(basename $(caSysProc_RCS)))
+caSysProc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(caSysProc_OBJS)))
+caSysProc_DEPLIBS=$(foreach lib, $(caSysProc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+caSysProc_DLL_DEPLIBS=$(foreach lib, $(caSysProc_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LIB_PREFIX)caSysProc$(LIB_SUFFIX):$(caSysProc_OBJSNAME) $(caSysProc_RESS)
+$(LIB_PREFIX)caSysProc$(LIB_SUFFIX):$(caSysProc_DEPLIBS)
+$(LIB_PREFIX)caSysProc$(SHRLIB_SUFFIX):$(caSysProc_OBJSNAME) $(caSysProc_RESS)
+$(LIB_PREFIX)caSysProc$(SHRLIB_SUFFIX):$(caSysProc_DEPLIBS)
+$(LIB_PREFIX)caSysProc$(SHRLIB_SUFFIX):$(caSysProc_DLL_DEPLIBS)
+endif
+endif
+ifeq ($(filter caSysProc,$(LOADABLE_LIBRARY)),caSysProc)
+ifneq (,$(strip $(caSysProc_OBJS) $(LIBRARY_OBJS)))
+LOADABLE_BUILD_LIBRARY += caSysProc
+endif
+caSysProc_RESS+=$(addsuffix $(RES),$(basename $(caSysProc_RCS)))
+caSysProc_OBJSNAME+=$(addsuffix $(OBJ),$(basename $(caSysProc_OBJS)))
+caSysProc_DEPLIBS=$(foreach lib, $(caSysProc_LDLIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+caSysProc_DLL_DEPLIBS=$(foreach lib, $(caSysProc_DLL_LIBS),\
+ $(firstword $(wildcard $(addsuffix /$(LIB_PREFIX)$(lib).*,\
+ $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS)))\
+ $(addsuffix /$(LIB_PREFIX)$(lib)$(LIB_SUFFIX),\
+ $(firstword $($(lib)_DIR) $(SHRLIB_SEARCH_DIRS))/)))
+$(LOADABLE_SHRLIB_PREFIX)caSysProc$(LOADABLE_SHRLIB_SUFFIX):$(caSysProc_OBJSNAME) $(caSysProc_RESS)
+$(LOADABLE_SHRLIB_PREFIX)caSysProc$(LOADABLE_SHRLIB_SUFFIX):$(caSysProc_DEPLIBS)
+$(LOADABLE_SHRLIB_PREFIX)caSysProc$(LOADABLE_SHRLIB_SUFFIX):$(caSysProc_DLL_DEPLIBS)
+endif
+

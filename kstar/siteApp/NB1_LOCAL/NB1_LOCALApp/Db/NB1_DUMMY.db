@@ -1,0 +1,304 @@
+### HV ON Status
+record(calcout, "NB1_PS_HVON_STATUS")
+{
+	field(DESC, "HV ON")
+	field(SCAN, "1 second")
+	field(CALC, "A|B?1:0")
+    field(OUT, "NB1_PS_HVON_ST.VAL NMP PP")
+	field(INPA, "NB1_P1VME_RTN_HVON.VAL CPP")
+	field(INPB, "NB1_P2G1_STA_HVON.VAL CPP")
+}
+### B/L Fault
+record(calc, "NB1_PLC_BL_FLT_C")
+{
+	field(DESC, "Beamline fault")
+	field(SCAN, "Passive")
+	field(CALC, "A|B|C?0:1")
+	field(INPA, "NB1_P1VME_FINT_VACUUM.VAL CPP")
+	field(INPB, "NB1_P1VME_FINT_TILE.VAL CPP")
+	field(INPC, "0")
+	field(INPD, "")
+	field(INPE, "")
+}
+record(bi, "NB1_PLC_BL_FLT")
+{
+    field(DESC, "Beamline PLC")
+	field(INP, "NB1_PLC_BL_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+}
+### WC Fault
+record(calc, "NB1_PLC_WC_FLT_C")
+{
+	field(DESC, "Beamline fault")
+	field(SCAN, "Passive")
+	field(CALC, "A&B?1:0")
+	field(INPA, "NB1_WAT_FLW_INTC.VAL CPP")
+	field(INPB, "NB1_WAT_TEMP_INTC.VAL CPP")
+	field(INPC, "")
+	field(INPD, "")
+	field(INPE, "")
+}
+record(bi, "NB1_PLC_WC_FLT")
+{
+    field(DESC, "Beamline PLC")
+	field(INP, "NB1_PLC_WC_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+}
+### GAS Fault
+record(bo, "NB1_PLC_GAS1_DIS")
+{
+	field(DESC, "NBI INT. Dis")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+}
+record(bo, "NB1_PLC_GAS2_DIS")
+{
+	field(DESC, "NBI INT. Dis")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+}
+record(calc, "NB1_PLC_GAS1_FLT_C")
+{
+    field(DESC, "GAS fault")
+	field(SCAN, "Passive")
+	field(CALC, "(A||B)&C?0:1")
+	field(INPA, "NB1_GAS_SOL_C01.VAL CPP")
+	field(INPB, "NB1_GAS_SOL_C02.VAL CPP")
+	field(INPC, "NB1_PLC_GAS1_DIS.VAL CPP")
+	field(INPD, "")
+	field(PINI, "YES")
+}
+record(bi, "NB1_PLC_GAS1_FLT")
+{
+    field(DESC, "GAS Status")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_GAS1_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+record(calc, "NB1_PLC_GAS2_FLT_C")
+{
+    field(DESC, "GAS fault")
+	field(SCAN, "Passive")
+	field(CALC, "(A||B)&C?0:1")
+	field(INPA, "NB1_GAS_SOL_C05.VAL CPP")
+	field(INPB, "NB1_GAS_SOL_C06.VAL CPP")
+	field(INPC, "NB1_PLC_GAS2_DIS.VAL CPP")
+	field(INPD, "")
+}
+record(bi, "NB1_PLC_GAS2_FLT")
+{
+    field(DESC, "GAS Status")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_GAS2_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+### B/M Fault
+record(calc, "NB1_PLC_BM1_FLT_C")
+{
+    field(DESC, "BM fault")
+	field(SCAN, "Passive")
+	field(CALC, "A&B&C&D&E?1:0")
+	field(INPA, "NB1_BM1_RUN_STATUS.B0 CPP")
+	field(INPB, "NB1_BM1_RUN_STATUS.B1 CPP")
+	field(INPC, "NB1_BM1_RUN_STATUS.B2 CPP")
+	field(INPD, "NB1_BM1_RUN_STATUS.B5 CPP")
+	field(INPE, "NB1_BM1_RUN_STATUS.B6 CPP")
+}
+record(bi, "NB1_PLC_BM1_FLT")
+{
+    field(DESC, "BM PLC")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_BM1_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+record(calc, "NB1_PLC_BM2_FLT_C")
+{
+    field(DESC, "BM fault")
+	field(SCAN, "Passive")
+	field(CALC, "A&B&C&D&E?1:0")
+	field(INPA, "NB1_BM2_RUN_STATUS.B0 CPP")
+	field(INPB, "NB1_BM2_RUN_STATUS.B1 CPP")
+	field(INPC, "NB1_BM2_RUN_STATUS.B2 CPP")
+	field(INPD, "NB1_BM2_RUN_STATUS.B5 CPP")
+	field(INPE, "NB1_BM2_RUN_STATUS.B6 CPP")
+}
+record(bi, "NB1_PLC_BM2_FLT")
+{
+    field(DESC, "BM PLC")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_BM2_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+### CRY Fault
+record(calc, "NB1_PLC_CRY_FLT_C")
+{
+    field(DESC, "CRY fault")
+	field(SCAN, "Passive")
+	field(CALC, "A?1:0")
+	field(INPA, "NB1_CRY_ALL_RUN.VAL CPP")
+	field(INPB, "")
+	field(INPC, "")
+	field(INPD, "")
+}
+record(bi, "NB1_PLC_CRY_FLT")
+{
+    field(DESC, "CRY Status")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_CRY_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+### P/S Fault
+record(calc, "NB1_PLC_PS1_FLT_C")
+{
+    field(DESC, "PS fault")
+	field(SCAN, "Passive")
+	field(CALC, "(A+B+C+D+E+F)<1?1:0")
+	field(INPA, "NB1_P1G1_AO_FLT.VAL CPP")
+	field(INPB, "NB1_P1G3_AO_FLT.VAL CPP")
+	field(INPC, "NB1_P1ARC_AO_FLT.VAL CPP")
+	field(INPD, "NB1_P1FIL_AO_TFLT.VAL CPP")
+	field(INPE, "NB1_P1BI_AO_FLT.VAL CPP")
+	field(INPF, "NB1_P1VME_AO_FLT.VAL CPP")
+}
+record(bi, "NB1_PLC_PS1_FLT")
+{
+    field(DESC, "Beamline PLC")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_PS1_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+record(calcout, "NB1_PS1_GAS_INTC1")
+{
+    field(DESC, "PS1 GAS")
+	field(SCAN, "Passive")
+	field(CALC, "A?0:1")
+	field(INPA, "NB1_PLC_PS1_FLT.VAL CPP")
+	field(OUT, "NB1_PV0_S01_OFF_DO.VAL NMP PP")
+}
+record(calcout, "NB1_PS1_GAS_INTC2")
+{
+    field(DESC, "PS1 GAS")
+	field(SCAN, "Passive")
+	field(CALC, "A?0:1")
+	field(INPA, "NB1_PLC_PS1_FLT.VAL CPP")
+	field(OUT, "NB1_PV0_S02_OFF_DO.VAL NMP PP")
+}
+#record(bo, "NB1_PS1_GAS1_RESET")
+#{
+#    field(DESC, "GAS RESET")
+#	field(SCAN, "Passive")
+#	field(OUT, "NB1_PV0_S01_OFF_DO.VAL NMP PP")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}
+#record(bo, "NB1_PS1_GAS2_RESET")
+#{
+#    field(DESC, "GAS RESET")
+#	field(SCAN, "Passive")
+#	field(OUT, "NB1_PV0_S02_OFF_DO.VAL NMP PP")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}
+record(calc, "NB1_PLC_PS2_FLT_C")
+{
+    field(DESC, "PS fault")
+	field(SCAN, "Passive")
+	field(CALC, "(A+B+C+D+E+F)<1?1:0")
+	field(INPA, "NB1_P2G1_STA_FLT.VAL CPP")
+	field(INPB, "NB1_P2G3_STA_FLT.VAL CPP")
+	field(INPC, "NB1_P2ARC_STA_FLT.VAL CPP")
+	field(INPD, "NB1_P2FILA1_STA_FLT.VAL CPP")
+	field(INPE, "NB1_P2BIAS_STA_FLT.VAL CPP")
+	field(INPF, "NB1_P2VME_STA_FLT.VAL CPP")
+}
+record(bi, "NB1_PLC_PS2_FLT")
+{
+    field(DESC, "Beamline PLC")
+	field(SCAN, "Passive")
+	field(INP, "NB1_PLC_PS2_FLT_C.VAL CPP")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(ZSV, "MAJOR")
+	field(OSV, "NO_ALARM")
+	field(PINI, "YES")
+}
+record(calcout, "NB1_PS2_GAS_INTC1")
+{
+    field(DESC, "PS2 GAS")
+	field(SCAN, "Passive")
+	field(CALC, "A?0:1")
+	field(INPA, "NB1_PLC_PS2_FLT.VAL CPP")
+	field(OUT, "NB1_PV0_S05_OFF_DO.VAL NMP PP")
+}
+record(calcout, "NB1_PS2_GAS_INTC2")
+{
+    field(DESC, "PS2 GAS")
+	field(SCAN, "Passive")
+	field(CALC, "A?0:1")
+	field(INPA, "NB1_PLC_PS2_FLT.VAL CPP")
+	field(OUT, "NB1_PV0_S06_OFF_DO.VAL NMP PP")
+}
+#record(bo, "NB1_PS2_GAS1_RESET")
+#{
+#    field(DESC, "GAS RESET")
+#	field(SCAN, "Passive")
+#	field(OUT, "NB1_PV0_S05_OFF_DO.VAL NMP PP")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}
+#record(bo, "NB1_PS2_GAS2_RESET")
+#{
+#    field(DESC, "GAS RESET")
+#	field(SCAN, "Passive")
+#	field(OUT, "NB1_PV0_S06_OFF_DO.VAL NMP PP")
+#	field(ZNAM, "OFF")
+#	field(ONAM, "ON")
+#}
+record(calcout, "NB1_FG31_INTC_OK_C")
+{
+	field(DESC, "FG31 INTC")
+	field(SCAN, "Passive")
+	field(CALC, "(A-10)<(B)?1:0")
+	field(INPA, "NB1_MFC_ION_SET.VAL CPP")
+	field(INPB, "NB1_GAS_ION_RF.VAL CPP")
+	field(OUT, "NB1_MFC1_FLOW_OK.VAL NMP PP")
+}
+record(calcout, "NB1_FG32_INTC_OK_C")
+{
+	field(DESC, "FG32 INTC")
+	field(SCAN, "Passive")
+	field(CALC, "(A-10)<(B)?1:0")
+	field(INPA, "NB1_MFC_ION2_SET.VAL CPP")
+	field(INPB, "NB1_GAS_ION2_RF.VAL CPP")
+	field(OUT, "NB1_MFC2_FLOW_OK.VAL NMP PP")
+}

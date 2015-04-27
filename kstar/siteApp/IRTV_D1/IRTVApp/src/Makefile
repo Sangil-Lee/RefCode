@@ -1,0 +1,118 @@
+TOP=../..
+
+include $(TOP)/configure/CONFIG
+#----------------------------------------
+#  ADD MACRO DEFINITIONS AFTER THIS LINE
+
+ifeq ($(OS_CLASS),WIN32)
+	USR_INCLUDES    += -I$(EPICS_PATH)/mdsplus/include
+	USR_LDFLAGS     += /LIBPATH:$(EPICS_PATH)/mdsplus/lib
+	USR_LDFLAGS     += TreeShr.lib TdiShr.lib MdsLib.lib MdsShr.lib
+	USR_LDFLAGS     += /LIBPATH:$(EPICS_PATH)/siteLib/lib/$(T_A) 
+	USR_LDFLAGS     += sfwLib.lib
+	
+	#USR_INCLUDES	+= -I$(EPICS_PATH)/siteLib/include
+	USR_INCLUDES	+= -I$(EPICS_PATH)/siteLib/sfwLib/src
+	USR_DBDFLAGS	+= -I$(EPICS_PATH)/siteLib/dbd
+	USR_INCLUDES	+= -IC:\epics\siteApp\IRTV\vendor\PT1000-IDG\Includes
+	USR_LDFLAGS     += /LIBPATH:C:\epics\siteApp\IRTV\vendor\PT1000-IDG\Libraries
+	USR_LDFLAGS     += CyCamIndigo.lib CyCamLib.lib CyComLib.lib CyDispExLib.lib CyEngineLib.lib CyImgLib.lib CyMediumLib.lib CyUtilsLib.lib
+	USR_INCLUDES	+= -IC:\epics\siteApp\IRTV\vendor\SC6000SDK\include
+	USR_LDFLAGS     += /LIBPATH:C:\epics\siteApp\IRTV\vendor\SC6000SDK\lib
+	USR_LDFLAGS     += libtiff.lib
+	USR_INCLUDES	+= -IC:\epics\siteApp\IRTV\vendor\AccessoriesSDK\include
+	USR_LDFLAGS     += /LIBPATH:C:\epics\siteApp\IRTV\vendor\AccessoriesSDK\lib
+	USR_LDFLAGS     += ISC_Camera.lib
+
+	USR_INCLUDES	+= -IC:\epics\siteApp\IRTV\vendor\BHPSDK\include
+	USR_LDFLAGS     += /LIBPATH:C:\epics\siteApp\IRTV\vendor\BHPSDK\lib
+	#USR_LDFLAGS     += CyCamIndigo.lib CyCamLib.lib CyComLib.lib CyDispExLib.lib CyEngineLib.lib CyImgLib.lib CyMediumLib.lib CyUtilsLib.lib
+
+	USR_CFLAGS		+= -DWIN32 
+	USR_CXXFLAGS	+= -DWIN32
+	
+	USR_CXXFLAGS	+= -D_AFXDLL
+	USR_CXXFLAGS	+= -I"$(VC90_HOME)\atlmfc\include"
+	USR_LDFLAGS		+= /LIBPATH:"$(VC90_HOME)\atlmfc\lib"
+	
+	# to avoid the stack overflow when AccessorySDK is called
+	USR_LDFLAGS     += /STACK:1000000,1000000
+	# for SysFreeString()
+	USR_LDFLAGS     += oleaut32.lib
+	
+endif
+
+#=============================
+# Build the IOC support library
+
+LIBRARY_IOC += IRTVSupport
+
+# Link locally-provided code into the support library,
+# rather than directly into the IOC application.
+IRTVSupport_SRCS += initTrace.c
+
+IRTVSupport_SRCS += devIRTV.c
+IRTVSupport_SRCS += drvIRTV.c
+
+IRTVSupport_SRCS += irtvLog.c
+IRTVSupport_SRCS += irtvCommon.c
+IRTVSupport_SRCS += irtvTiff.cpp
+IRTVSupport_SRCS += irtvBMP.cpp
+IRTVSupport_SRCS += irtvCommand.cpp
+IRTVSupport_SRCS += irtvGrabThr.cpp
+IRTVSupport_SRCS += irtvGrabFrame.cpp
+IRTVSupport_SRCS += irtvDataServer.cpp
+IRTVSupport_SRCS += irtvFileSeq.cpp
+IRTVSupport_SRCS += irtvCamStatus.cpp
+
+IRTVSupport_SRCS += dbSubNet.cpp
+IRTVSupport_SRCS += devSysMon.cpp
+IRTVSupport_SRCS += subHealthState.cpp
+IRTVSupport_SRCS += winPerfmon.cpp
+
+IRTVSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+#=============================
+# Build the IOC application
+
+PROD_IOC = IRTV
+# IRTV.dbd will be created and installed
+DBD += IRTV.dbd
+
+# IRTV.dbd will be made up from these files:
+IRTV_DBD += base.dbd
+IRTV_DBD += initTrace.dbd
+IRTV_DBD += irtvCommon.dbd
+IRTV_DBD += devIRTV.dbd
+IRTV_DBD += drvIRTV.dbd
+
+IRTV_DBD += sfwDBD.dbd
+IRTV_DBD += dbSubNet.dbd
+IRTV_DBD += devSysMon.dbd
+IRTV_DBD += subHealthState.dbd
+IRTV_DBD += pvCrawler.dbd
+
+# IRTV_registerRecordDeviceDriver.cpp derives from IRTV.dbd
+IRTV_SRCS += IRTV_registerRecordDeviceDriver.cpp
+
+# Build the main IOC entry point on workstation OSs.
+IRTV_SRCS_DEFAULT += IRTVMain.cpp
+IRTV_SRCS_vxWorks += -nil-
+
+# Add support from base/src/vxWorks if needed
+#IRTV_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+
+# Link in the code from the support library
+IRTV_LIBS += IRTVSupport
+
+# NOTE: To build SNL programs, SNCSEQ must be defined
+# in the <top>/configure/RELEASE file
+
+# Finally link to the EPICS Base libraries
+IRTV_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+#=============================
+
+include $(TOP)/configure/RULES
+#----------------------------------------
+#  ADD RULES AFTER THIS LINE

@@ -1,0 +1,13 @@
+file db/MC_DAQ_BO.db {
+            pattern {PV_NAME,          		  DSR,		               TASK,	   	  STR }
+                    {"MCWIN_MDS_CREATE_TREE",      "MCWIN_MDS_CREATE_TREE",       "VXI0::88::INSTR",  "create_tree"}
+                    {"MCWIN_SLOT1_DISCON_CLOSE",   "MCWIN_SLOT1_DISCON_CLOSE",    "VXI0::88::INSTR",  "mds_disClose"}
+                    {"MCWIN_SLOT1_CONNECT_OPEN",   "MCWIN_SLOT1_CONNECT_OPEN",    "VXI0::88::INSTR",  "mds_conOpen"}
+                    {"MCWIN_SLOT1_EX_TRIG_REMOTE", "MCWIN_SLOT1_EXTRIG_REMOTE",   "VXI0::88::INSTR",  "task_trigger"}
+                    {"MCWIN_SLOT1_TASK_CALLBACK",  "MCWIN_SLOT1_TASK_CALLBACK" ,  "VXI0::88::INSTR",  "task_call"}
+                    {"MCWIN_SLOT1_TASK_START",     "MCWIN_SLOT1_TASK_START" ,     "VXI0::88::INSTR",  "task_start"}
+                    {"MCWIN_SLOT1_TASK_STOP",      "MCWIN_SLOT1_TASK_STOP" ,      "VXI0::88::INSTR",  "task_stop"}
+                    {"MCWIN_SLOT1_TASK_ABORT",     "MCWIN_SLOT1_TASK_ABORT" ,     "VXI0::88::INSTR",  "task_abort"}
+                    {"MCWIN_SLOT1_TASK_REG_UPDATE","MCWIN_SLOT1_TASK_REGUPDATE",  "VXI0::88::INSTR",  "task_regupdate"}
+                    {"MCWIN_SLOT1_REMOTE_LOCAL",   "MCWIN_SLOT1_REMOTE_LOCAL" ,   "VXI0::88::INSTR",  "operation_mode"}
+}

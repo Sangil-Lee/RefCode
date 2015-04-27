@@ -1,0 +1,94 @@
+record(ao, "$(P)_AO_LOCALSHOT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @0")
+    field(PREC, "0")
+    field(PINI, "YES")
+}
+record(ao, "$(P)_AO_KSTARSHOT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @1")
+    field(PREC, "0")
+    field(PINI, "YES")
+}
+record(calcout, "$(P)_AO_KSTARSHOT_C")
+{
+    field(DESC, "KSTAR Shot")
+    field(SCAN, "1 second")
+    field(CALC, "A")
+    field(INPA, "CCS_SHOT_NUMBER CPP")
+    field(OUT, "$(P)_AO_KSTARSHOT CPP")
+}
+record(ai, "$(P)_RD_LOCALSHOT")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_Mdsplus")
+    field(SCAN, "1 second")
+    field(INP, "#$(PORT) A$(A) @0")
+    field(PREC, "0")
+}
+record(ai, "$(P)_RD_STATUS")
+{
+    field(DESC, "DAQ Config")
+    field(DTYP, "AI_Mdsplus")
+    field(SCAN, ".1 second")
+    field(INP, "#$(PORT) A$(A) @1")
+    field(PREC, "0")
+}
+record(bo, "$(P)_CMD_START")
+{
+    field(DESC, "DAQ RUN CMD")
+    field(DTYP, "BO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @0")
+}
+record(bo, "$(P)_CMD_STOP")
+{
+    field(DESC, "DAQ STOP CMD")
+    field(DTYP, "BO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @1")
+}
+record(bo, "$(P)_CMD_ABORT")
+{
+    field(DESC, "DAQ STOP CMD")
+    field(DTYP, "BO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @2")
+}
+record(bo, "$(P)_CMD_KSTARMODE")
+{
+    field(DESC, "DAQ KSTAR")
+    field(DTYP, "BO_Mdsplus")
+    field(OUT, "#$(PORT) A$(A) @3")
+    field(ZNAM, "DUMMY")
+    field(ONAM, "KSTAR")
+    field(PINI, "YES")
+}
+record(calcout, "$(P)_CMD_KSTARMODE_C")
+{
+    field(DESC, "KSTAR Shot")
+    field(SCAN, "1 second")
+    field(CALC, "A")
+    field(INPA, "EC1_PSPLC_STAT_KSTAR CPP")
+    field(OUT, "$(P)_CMD_KSTARMODE CPP")
+}
+record(bi, "$(P)_HeartBeat")
+{
+    field(DESC, "Heart")
+    field(SCAN, "1 second")
+    field(INP, "$(P)_HeartBeat_C.VAL")
+    field(OSV, "NO_ALARM")
+    field(ZSV, "MAJOR")
+}
+record(calc, "$(P)_HeartBeat_C")
+{
+    field(DESC, "Heart")
+    field(SCAN, "1 second")
+    field(CALC, "A>0?0:1")
+    field(INPA, "$(P)_HeartBeat.VAL")
+}
+record(bo, "$(P)_TEST_BO")
+{
+    field(DESC, "TEST")
+}

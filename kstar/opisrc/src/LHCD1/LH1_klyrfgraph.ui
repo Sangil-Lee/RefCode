@@ -1,0 +1,157 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>944</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Klystron RF</string>
+  </property>
+  <widget class="CAMultiplot" name="caMultiplot" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>880</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>LH1_RFK_FWD_POW</string>
+   </property>
+   <property name="pvname1" >
+    <string/>
+   </property>
+   <property name="pvname2" >
+    <string/>
+   </property>
+   <property name="pvname3" >
+    <string/>
+   </property>
+   <property name="plotTitle" stdset="0" >
+    <string>KLYSTRON RF CONTROLLER</string>
+   </property>
+   <property name="logScale" stdset="0" >
+    <bool>false</bool>
+   </property>
+   <property name="periodicdata" stdset="0" >
+    <enum>CAMultiplot::OneSec</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>131</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>LH1_RFK_FWD_POW</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>190</y>
+     <width>131</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>LH1_RFK_REV_POW</string>
+   </property>
+  </widget>
+  <widget class="CAMultiplot" name="caMultiplot_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>880</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>LH1_RFK_REV_POW</string>
+   </property>
+   <property name="pvname1" >
+    <string/>
+   </property>
+   <property name="pvname2" >
+    <string/>
+   </property>
+   <property name="pvname3" >
+    <string/>
+   </property>
+   <property name="plotTitle" stdset="0" >
+    <string>KLYSTRON RF CONTROLLER</string>
+   </property>
+   <property name="logScale" stdset="0" >
+    <bool>false</bool>
+   </property>
+   <property name="periodicdata" stdset="0" >
+    <enum>CAMultiplot::OneSec</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>131</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>LH1_RFK_VSWR_CAL</string>
+   </property>
+  </widget>
+  <widget class="CAMultiplot" name="caMultiplot_3" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>400</y>
+     <width>880</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>LH1_RFK_VSWR_CAL</string>
+   </property>
+   <property name="pvname1" >
+    <string/>
+   </property>
+   <property name="pvname2" >
+    <string/>
+   </property>
+   <property name="pvname3" >
+    <string/>
+   </property>
+   <property name="plotTitle" stdset="0" >
+    <string>KLYSTRON RF CONTROLLER</string>
+   </property>
+   <property name="logScale" stdset="0" >
+    <bool>false</bool>
+   </property>
+   <property name="periodicdata" stdset="0" >
+    <enum>CAMultiplot::OneSec</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QFrame</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

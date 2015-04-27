@@ -1,0 +1,155 @@
+program sncMdsCreate
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% #define MDS_SERVER   "172.17.100.202:8000"
+%% #define RTREE_NAME	"rdata"
+%% #define ATREE_NAME	"adata"
+%% #define XTREE_NAME	"xdata"
+
+%% int dtypeFloat = DTYPE_FLOAT;
+%% int dtypeLong = DTYPE_LONG;
+int rdataDone;
+int adataDone;
+int xdataDone;
+unsigned int shotNumber;
+%% /*  unsigned int oldShotNu = 0; "Over Writted Protection Function" */
+int createShot;
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% int len;
+%% char buf2[128];
+%% int socket;
+%% /* int idesc = descr(&dtypeLong, &tstat, &null); */
+%% int idesc;
+
+assign shotNumber to "MDS_SHOT_NUMBER";
+assign createShot to "MDS_SHOT_CREATE";
+
+monitor shotNumber;
+monitor createShot;
+
+ss createMdsShot {
+	state create_pulse_rdata{
+        	when (createShot==1) {
+				%%  int idesc = descr(&dtypeLong, &tstat, &null);
+				  rdataDone = 0;
+				%% socket = MdsConnect(MDS_SERVER);
+     		     		%% if ( socket == -1 ){
+             	     		%%		printf("Error connecting to mdsip server(%s).\n", MDS_SERVER);
+             	     		%%	}
+     		     		%% if ( socket != -1){
+				%%	printf("\nMDSplus >>> MdsConnect(\"%s\")... OK\n", MDS_SERVER);
+				%%	status = MdsOpen(RTREE_NAME, &pVar->shotNumber);
+				%%	if (!statusOk(status) ) {
+     		     		%%		sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", RTREE_NAME);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%% 		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 		}
+     		     		%%		else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"close\")");
+				%%		  status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"set current %s %d\")",RTREE_NAME,pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+				%%		printf("MDSplus RDATA Current Status : %d\n",status); 
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+        	     		%%		}
+    		     		%%		printf("\nMDSplus >>> Create new tree(RData \"%d\")... OK\n", pVar->shotNumber);
+				%%	}
+    		     		%%	else printf("\nMDSplus >>>  Fail. Already Created (RData \"%d\") Shot !!... OK\n", pVar->shotNumber);
+				%%	status = MdsClose(RTREE_NAME, &pVar->shotNumber);
+				      rdataDone = 1;
+		     		%% }
+		} state create_pulse_adata
+	}
+	state create_pulse_adata {
+        	when (createShot==1 && rdataDone == 1) {
+				  adataDone = 0;
+				%%      int idesc = descr(&dtypeLong, &tstat, &null);
+				%%	status = MdsOpen(ATREE_NAME, &pVar->shotNumber);
+				%%	if (!statusOk(status) ) {
+     		     		%%		sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", ATREE_NAME);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%% 		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 		}
+     		     		%%		else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"close\")");
+				%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"set current %s %d\")",ATREE_NAME,pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+				%%		printf("MDSplus ADATA Current Status : %d\n",status); 
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%		printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+        	     		%%		}
+    		     		%%		printf("\nMDSplus >>> Create new tree(AData \"%d\")... OK\n", pVar->shotNumber);
+				%%	}
+    		     		%%	else printf("\nMDSplus >>> Fail. Already Created(AData \"%d\") Shot !!... OK\n", pVar->shotNumber);
+				%%	status = MdsClose(ATREE_NAME, &pVar->shotNumber);
+				      adataDone = 1;
+		} state create_pulse_xdata
+	}
+	state create_pulse_xdata {
+        	when (createShot==1 && rdataDone == 1) {
+				%%      int idesc = descr(&dtypeLong, &tstat, &null);
+				%%	status = MdsOpen(XTREE_NAME, &pVar->shotNumber);
+				%%	printf("MDSplus MDSopen Status : %d\n",status); 
+				%%	if (!statusOk(status) ) {
+     		     		%%		sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", XTREE_NAME);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+				%%      	printf("MDSplus MDS Set Tree -1 Status : %d\n",status); 
+     		     		%% 		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 		}
+     		     		%%		else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+				%%      	printf("MDSplus MDS Create Pulse Status : %d\n",status); 
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"close\")");
+				%% 		status = MdsValue(buf2, &idesc, &null, &len);
+				%%      	printf("MDSplus MDS Tree Close Status : %d\n",status); 
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%		}
+				%%		else sprintf(buf2, "TCL(\"set current %s %d\")",XTREE_NAME,pVar->shotNumber);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+				%%		printf("MDSplus XDATA Current Status : %d\n",status); 
+     		     		%%		if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: set current : %s.\n",MdsGetMsg(status));
+        	     		%%		}
+    		     		%%		else printf("\nMDSplus >>> Create new tree(XData \"%d\")... OK\n", pVar->shotNumber);
+				%%	}
+    		     		%%	printf("\nMDSplus >>> Fail. Already Created(XData \"%d\") Shot !!... OK\n", pVar->shotNumber);
+				%%	status = MdsClose(XTREE_NAME, &pVar->shotNumber);
+			createShot=0;
+			pvPut(createShot);
+		} state create_pulse_rdata
+	}
+}

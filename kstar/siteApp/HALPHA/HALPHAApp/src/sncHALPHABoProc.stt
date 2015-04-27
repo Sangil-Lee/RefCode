@@ -1,0 +1,143 @@
+program sncHALPHABoProc
+option -c;
+%% /* HALPHA BO Record Value is Only One. SO, Record Value Zero Change at Process Completed Sign   */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+
+int localSave;
+int remoteSave;
+int trigInter;
+int trigExter;
+int clockInter;
+int clockExter;
+int adcStart;
+int adcStop;
+int daqStart;
+int daqStop;
+
+int localSaveSt;
+int remoteSaveSt;
+int trigInterSt;
+int trigExterSt;
+int clockInterSt;
+int clockExterSt;
+int adcStartSt;
+int adcStopSt;
+int daqStartSt;
+int daqStopSt;
+
+assign localSave to "HALPHA_LocalSave";
+assign remoteSave to "HALPHA_RemoteSave";
+assign trigInter to "HALPHA_setTrigInternal";
+assign trigExter to "HALPHA_setTrigExternal";
+assign clockInter to "HALPHA_setInternal";
+assign clockExter to "HALPHA_setExternal";
+assign adcStart to "HALPHA_ADCstart";
+assign adcStop to "HALPHA_ADCstop";
+assign daqStart to "HALPHA_DAQstart";
+assign daqStop to "HALPHA_DAQstop";
+
+assign localSaveSt to "HALPHA_LocalSave_STATE";
+assign remoteSaveSt to "HALPHA_RemoteSave_STATE";
+assign trigInterSt to "HALPHA_setTrigInternal_STATE";
+assign trigExterSt to "HALPHA_setTrigExternal_STATE";
+assign clockInterSt to "HALPHA_setInternal_STATE";
+assign clockExterSt to "HALPHA_setExternal_STATE";
+assign adcStartSt to "HALPHA_ADCstart_STATE";
+assign adcStopSt to "HALPHA_ADCstop_STATE";
+assign daqStartSt to "HALPHA_DAQstart_STATE";
+assign daqStopSt to "HALPHA_DAQstop_STATE";
+
+monitor localSave;
+monitor remoteSave;
+monitor trigInter;
+monitor trigExter;
+monitor clockInter;
+monitor clockExter;
+monitor adcStart;
+monitor adcStop;
+monitor daqStart;
+monitor daqStop;
+
+monitor localSaveSt;
+monitor remoteSaveSt;
+monitor trigInterSt;
+monitor trigExterSt;
+monitor clockInterSt;
+monitor clockExterSt;
+monitor adcStartSt;
+monitor adcStopSt;
+monitor daqStartSt;
+monitor daqStopSt;
+
+ss boRecordPut {
+   state boReturn_put {
+        	when (localSave !=0){
+			localSave=0;
+			pvPut(localSave);
+			localSaveSt=0;
+			pvPut(localSaveSt);
+		}state boZero_put
+        	when (remoteSave !=0){
+			remoteSave=0;
+			pvPut(remoteSave);
+			remoteSaveSt=0;
+			pvPut(remoteSaveSt);
+		}state boZero_put
+        	when (trigInter !=0){
+			trigInter=0;
+			pvPut(trigInter);
+			trigInterSt=0;
+			pvPut(trigInterSt);
+		}state boZero_put
+        	when (trigExter !=0){
+			trigExter=0;
+			pvPut(trigExter);
+			trigExterSt=0;
+			pvPut(trigExterSt);
+		}state boZero_put
+        	when (clockInter !=0){
+			clockInter=0;
+			pvPut(clockInter);
+			clockInterSt=0;
+			pvPut(clockInterSt);
+		}state boZero_put
+        	when (clockExter !=0){
+			clockExter=0;
+			pvPut(clockExter);
+			clockExterSt=0;
+			pvPut(clockExterSt);
+		}state boZero_put
+        	when (adcStart !=0){
+			adcStart=0;
+			pvPut(adcStart);
+			adcStartSt=0;
+			pvPut(adcStartSt);
+		}state boZero_put
+        	when (adcStop !=0){
+			adcStop=0;
+			pvPut(adcStop);
+			adcStopSt=0;
+			pvPut(adcStopSt);
+		}state boZero_put
+        	when (daqStart !=0){
+			daqStart=0;
+			pvPut(daqStart);
+			daqStartSt=0;
+			pvPut(daqStartSt);
+		}state boZero_put
+        	when (daqStop !=0){
+			daqStop=0;
+			pvPut(daqStop);
+			daqStopSt=0;
+			pvPut(daqStopSt);
+		}state boZero_put
+	}
+   state boZero_put {
+        	when (delay(0.5)) {
+			 
+		} state boReturn_put
+	}
+}
+

@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>270</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IS 1 WC Temp.</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="CAMultiplot" name="caMultiplot">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>380</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="pvname">
+     <string>NB1_WAT_RTD_R29</string>
+    </property>
+    <property name="pvname1">
+     <string>NB1_WAT_RTD_R28</string>
+    </property>
+    <property name="pvname2">
+     <string>NB1_WAT_RTD_R27</string>
+    </property>
+    <property name="pvname3">
+     <string>NB1_WAT_RTD_R30</string>
+    </property>
+    <property name="pvname4">
+     <string>NB1_WAT_RTD_R31</string>
+    </property>
+    <property name="pvname5">
+     <string/>
+    </property>
+    <property name="periodicdata" stdset="0">
+     <enum>CAMultiplot::OneSec</enum>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="tristate">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_3">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_5">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>212</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:blue;</string>
+    </property>
+    <property name="text">
+     <string>ARC - 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>210</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:green;</string>
+    </property>
+    <property name="text">
+     <string>ARC - 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>210</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red;</string>
+    </property>
+    <property name="text">
+     <string>ARC - 3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:darkred;</string>
+    </property>
+    <property name="text">
+     <string>FIL - 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:black;</string>
+    </property>
+    <property name="text">
+     <string>FIL - 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:black;</string>
+    </property>
+    <property name="text">
+     <string>Grid 3-1</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_6">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="tristate">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>210</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:green;</string>
+    </property>
+    <property name="text">
+     <string>Grid 1-2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>210</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:darkred;</string>
+    </property>
+    <property name="text">
+     <string>Grid 2-2</string>
+    </property>
+   </widget>
+   <widget class="CAMultiplot" name="caMultiplot_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>380</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="pvname">
+     <string>NB1_WAT_RTD_R19</string>
+    </property>
+    <property name="pvname1">
+     <string>NB1_WAT_RTD_R20</string>
+    </property>
+    <property name="pvname2">
+     <string>NB1_WAT_RTD_R21</string>
+    </property>
+    <property name="pvname3">
+     <string>NB1_WAT_RTD_R22</string>
+    </property>
+    <property name="pvname4">
+     <string>NB1_WAT_RTD_R23</string>
+    </property>
+    <property name="pvname5">
+     <string>NB1_WAT_RTD_R24</string>
+    </property>
+    <property name="pvname6">
+     <string>NB1_WAT_RTD_R25</string>
+    </property>
+    <property name="pvname7">
+     <string>NB1_WAT_RTD_R26</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_7">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_8">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_9">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>210</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red;</string>
+    </property>
+    <property name="text">
+     <string>Grid 2-1</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_10">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>210</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>212</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:blue;</string>
+    </property>
+    <property name="text">
+     <string>Grid 1-1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:magenta;</string>
+    </property>
+    <property name="text">
+     <string>Grid 3-2</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_11">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:darkMagenta;</string>
+    </property>
+    <property name="text">
+     <string>Grid 4-1</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_12">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>230</y>
+      <width>60</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:yellow;</string>
+    </property>
+    <property name="text">
+     <string>Grid 4-2</string>
+    </property>
+   </widget>
+   <widget class="CAColorCheckBox" name="caColorCheckBox_13">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>230</y>
+      <width>18</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CAMultiplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiplot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAColorCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caColorcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>caColorCheckBox</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>367</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>44</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>caColorCheckBox</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_2</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>363</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>68</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>caColorCheckBox_2</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>337</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>caColorCheckBox_3</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>334</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>353</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_3</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>355</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>caColorCheckBox_4</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>331</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_4</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>caColorCheckBox_5</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_5</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>327</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel(QString,QString)</signal>
+   <receiver>caColorCheckBox_6</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>752</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>797</x>
+     <y>24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel1(QString,QString)</signal>
+   <receiver>caColorCheckBox_8</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel2(QString,QString)</signal>
+   <receiver>caColorCheckBox_9</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>764</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>794</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel3(QString,QString)</signal>
+   <receiver>caColorCheckBox_10</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>759</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>800</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel4(QString,QString)</signal>
+   <receiver>caColorCheckBox_7</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>728</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>798</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel5(QString,QString)</signal>
+   <receiver>caColorCheckBox_11</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>806</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel6(QString,QString)</signal>
+   <receiver>caColorCheckBox_12</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>759</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>803</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caMultiplot_2</sender>
+   <signal>legendLabel7(QString,QString)</signal>
+   <receiver>caColorCheckBox_13</receiver>
+   <slot>changeColorLabel(QString,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>758</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>800</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_6</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>793</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>757</x>
+     <y>31</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_8</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>792</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_9</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>796</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>747</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_10</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>797</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>741</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_7</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>806</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>753</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_11</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>798</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_12</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>740</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>caColorCheckBox_13</sender>
+   <signal>showLabel(bool,QString)</signal>
+   <receiver>caMultiplot_2</receiver>
+   <slot>displayCurve(bool,QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>794</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

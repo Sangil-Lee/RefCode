@@ -1,0 +1,35 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC}
+{NB1_P1BI_RTN_AMP    NB1_P1BI_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_RTN_OVR    NB1_P1BI_RTN_OVR    "V"    plc1    "Output Over Voltage Ref."    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_RTN_OCR    NB1_P1BI_RTN_OCR    "A"    plc1    "Output Over Current Ref."    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_RTN_VOLT    NB1_P1BI_RTN_VOLT    "V"    plc1    "CMD Return Volt"    1000000    0    1000000    1000000    0    0    0}
+#{NB1_P1BI_RTN_ICMD    NB1_P1BI_RTN_ICMD    "I"    plc1    "CMD Return Volt"    1000000    0    1000000    1000000    0    0    0}
+{NB1_P1BI_AO_VOUT    NB1_P1BI_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_AO_IOUT    NB1_P1BI_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_AO_VDC    NB1_P1BI_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1BI_AO_FLT    NB1_P1BI_AO_FLT    "Num"    plc1    "Fault Display"    1    -1    1    1    -1    -1    0}
+
+# PS2 2012.07.03
+{NB1_P2BIAS_RTN_VCMD	NB1_P2BIAS_RTN_VCMD	"V"    plc2    "Voltage Command"   100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_RTN_ICMD	NB1_P2BIAS_RTN_ICMD	"V"    plc2    "Current Command"   100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_RTN_OVR		NB1_P2BIAS_RTN_OVR	"V"    plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_RTN_OCR		NB1_P2BIAS_RTN_OCR	"V"    plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_VOUT	NB1_P2BIAS_STA_VOUT	"V"    plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_IOUT	NB1_P2BIAS_STA_IOUT	"V"    plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_VDC		NB1_P2BIAS_STA_VDC	"V"    plc2    "DC-Link Voltage"   100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_FLT		NB1_P2BIAS_STA_FLT	"V"    plc2    "FLT Code"			 1    -1    1    1    -1    -1    0}
+
+#PS 2012.08.08
+{NB1_P1BIAS_STA_UVINT	NB1_P1BIAS_STA_UVINT	"V"    plc1    "UV Read"   100000    0    100000    100000    0    0    3}
+{NB1_P1BIAS_STA_UCINT	NB1_P1BIAS_STA_UCINT	"V"    plc1    "UC Read"   100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_UVINT	NB1_P2BIAS_STA_UVINT	"V"    plc2    "UV Read"   100000    0    100000    100000    0    0    3}
+{NB1_P2BIAS_STA_UCINT	NB1_P2BIAS_STA_UCINT	"V"    plc2    "UC Read"   100000    0    100000    100000    0    0    3}
+
+
+}

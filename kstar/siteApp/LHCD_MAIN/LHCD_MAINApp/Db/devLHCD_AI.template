@@ -1,0 +1,33 @@
+file ./db/devLHCD_AI.db
+{
+pattern
+{PV_NAME    TAG DESC    UNIT   PREC		HOPR    LOPR    HIHI    HIGH    LOW     LOLO  }
+{LH1_INT_VME_STAT       LH1_INT_VME_STAT        "VME Fault Code"  num  0	1    -1    1    1    -1    -1}
+{LH1_HEATER_V           HEATER_V                "HEATER Power Voltage"  V  1	100000    0    100000    100000    0    0}
+{LH1_HEATER_V_PV        HEATER_V_PV             "HEATER Power V. Preset"  V  1	100000    0    100000    100000    0    0}
+{LH1_PULSE_T            PULSE_T                 "Pulse time"  ms  0		100000    0    100000    100000    0    0}
+{LH1_P_TIME             P_TIME                  "Pulse time"  ms  0		100000    0    100000    100000    0    0}
+{LH1_PS_TAOF_RTN        LH1_PS_TAOF_EAI         "ANODE OFF Delay"  ms  0	100000    0    100000    100000    0    0}
+{LH1_PS_TAON_RTN        LH1_PS_TAON_EAI         "ANODE ON Delay"  ms  0		100000    0    100000    100000    0    0}
+{LH1_PS_VAK_RTN         LH1_PS_VAK_EAI          "ANODE Voltage"  Kv  1		100000    0    100000    100000    0    0}
+{LH1_PS_VK_RTN          LH1_PS_VK_EAI           "CATHODE Voltage"  Kv  1		100000    0    100000    100000    0    0}
+{LH1_PS_MFRQ_RTN        LH1_PS_MFRQ_EAI         "MOD Freq."  Kv  0		100000    0    100000    100000    0    0}
+{LH1_PS_MTOF_RTN        LH1_PS_MTOF_EAI         "MOD OFF Delay"  ms  0		100000    0    100000    100000    0    0}
+{LH1_PS_MTON_RTN        LH1_PS_MTON_EAI         "MOD ON Delay"  ms  0		100000    0    100000    100000    0    0}
+{LH1_PS_MVAK_RTN        LH1_PS_MVAK_EAI         "MOD Voltage"  Kv  1		100000    0    100000    100000    0    0}
+{LH1_VME_P_L            LH1_PS_PLEN_RTN         "VME Pulse Length"  ms	1	100000    0    100000    100000    0    0}
+
+{LH1_KL_VF_AO        LH1_KL_VF_AO         "HPS Vout"  Kv  1		100000    0    100000    100000    0    0}
+{LH1_KL_IF_AO        LH1_KL_IF_AO         "HPS Iout"  A  1		100000    0    100000    100000    0    0}
+{LH1_PS_VME_AO       LH1_PS_VME_AO        "High Volt. Out"  Kv  1		100000    0    100000    100000    0    0}
+
+{LH1_DI1             DI1		"Digital"  num   0		1000000000    0    1000000000    1000000000    0    0}
+
+# 2012.08.16
+{LH1_KLY_HPSVO_STAT     LH1_KL_VF_AO		"HPS Vout"	V   1	100000    0    100000    100000    0    0}
+{LH1_KLY_HPSIO_STAT     LH1_KL_IF_AO		"HPS Vout"	A   2	100000    0    100000    100000    0    0}
+
+{LH1_SF6_AIN_AMP     LH1_SF6_AIN_AMP		"Gas Pressure"	bar   2	100000    0    100000    100000    0    0}
+
+
+}

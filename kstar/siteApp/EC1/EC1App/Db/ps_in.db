@@ -1,0 +1,1849 @@
+record(ai, "EC1_PCPS_RTN_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET RETURN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_RTN_VOLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "60")
+   field(LOW, "-0.1")
+   field(HIGH, "55")
+   field(LOLO, "-0.1") 
+   field(HIHI, "60")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PCPS_RTN_PWS") {
+   field(DESC, "PULSE LENGTH PRESET RETURN V")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_RTN_PWS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "10")
+   field(LOW, "-0.1")
+   field(HIGH, "10")
+   field(LOLO, "-0.1") 
+   field(HIHI, "10")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PCPS_RTN_TSTEPS") {
+   field(DESC, "STEP TIME PRESET RETURN VALU")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_RTN_TSTEPS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+   field(LOW, "1")
+   field(HIGH, "1000")
+   field(LOLO, "1") 
+   field(HIHI, "1000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PCPS_STAT_FLT") {
+   field(DESC, "P/S STATUS : FAULT CODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_MOD") {
+   field(DESC, "P/S STATUS : LOCAL/ REMOTE(0")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_MOD S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "REMOTE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_STBY") {
+   field(DESC, "P/S STATUS : 0=INITIAL, 1= S")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_STBY S 1")
+   field(ZNAM, "Stanby Off")
+   field(ONAM, "Stanby On")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_HVON") {
+   field(DESC, "P/S STATUS : HV ON/OFF(0=OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_HVON S 1")
+   field(ZNAM, "HV OFF")
+   field(ONAM, "HV ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_PON") {
+   field(DESC, "P/S STATUS : SHOT ON/OFF(0=O")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_PON S 1")
+   field(ZNAM, "RUN OFF")
+   field(ONAM, "RUN ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_MVCBON") {
+   field(DESC, "P/S STATUS : MAIN VCB ON/OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_MVCBON S 1")
+   field(ZNAM, "VCB On")
+   field(ONAM, "VCB Off")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_MVCBREM") {
+   field(DESC, "P/S STATUS : MAIN VCB LOCAL/")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_MVCBREM S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "REMOTE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_P01ON") {
+   field(DESC, "P/S STATUS : VCB-P01 ON/OFF(")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_P01ON S 1")
+   field(ZNAM, "VCB-P01 On")
+   field(ONAM, "VCB-P01 Off")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_P01REM") {
+   field(DESC, "P/S STATUS : VCB-P01 LOCAL/R")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_P01REM S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "REMOTE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_VCS01ON") {
+   field(DESC, "P/S STATUS : VCS-01 ON/OFF(0")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_VCS01ON S 1")
+   field(ZNAM, "VCS On")
+   field(ONAM, "VCS Off")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_VCS01REM") {
+   field(DESC, "P/S STATUS : VCS-01 LOCAL/RE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_VCS01REM S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "REMOTE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_VCS02ON") {
+   field(DESC, "P/S STATUS : VCS-02 ON/OFF(0")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_VCS02ON S 1")
+   field(ZNAM, "VCS On")
+   field(ONAM, "VCS Off")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PCPS_STAT_VCS02REM") {
+   field(DESC, "P/S STATUS : VCS-02 LOCAL/RE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_VCS02REM S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "REMOTE")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+
+record(ai, "EC1_PCPS_STAT_AMP") {
+   field(DESC, "P/S STATUS : CURRENT OUTPUT")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PCPS_STAT_AMP S 1")
+   field(LOPR, "0")
+   field(HOPR, "5000")
+   field(LOW, "0")
+   field(HIGH, "5000")
+   field(LOLO, "0") 
+   field(HIHI, "5000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET RETURN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_VOLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "55")
+   field(LOW, "-0.1")
+   field(HIGH, "50")
+   field(LOLO, "-0.1") 
+   field(HIHI, "55")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_PWS") {
+   field(DESC, "PULSE LENGTH PRESET RETURN V")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_PWS S 1")
+   field(LOPR, "0")
+   field(HOPR, "10")
+   field(LOW, "0")
+   field(HIGH, "10")
+   field(LOLO, "0") 
+   field(HIHI, "10")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_TSDS") {
+   field(DESC, "APS START DELAY PRESET RETUR")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_TSDS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "10")
+   field(LOW, "-0.1")
+   field(HIGH, "10")
+   field(LOLO, "-0.1") 
+   field(HIHI, "10")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_TEDS") {
+   field(DESC, "APS END DELAY PRESET RETURN ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_TEDS S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "10")
+   field(LOW, "-0.1")
+   field(HIGH, "10")
+   field(LOLO, "-0.1") 
+   field(HIHI, "10")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_MFREQ") {
+   field(DESC, "MODULATION FREQUENCY PRESET ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_MFREQ S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "5001")
+   field(LOW, "-0.1")
+   field(HIGH, "5001")
+   field(LOLO, "-0.1") 
+   field(HIHI, "5001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_MVOLT") {
+   field(DESC, "MODULATION VOLTAGE PRESET RE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_MVOLT S 1")
+   field(LOPR, "-50")
+   field(HOPR, "-0.2")
+   field(LOW, "-50")
+   field(HIGH, "-0.2")
+   field(LOLO, "-50") 
+   field(HIHI, "-0.2")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_MTSDS") {
+   field(DESC, "MODULATION START TIME DELAY ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_MTSDS S 1")
+} 
+
+record(ai, "EC1_PAPS_RTN_MTEDS") {
+   field(DESC, "MODULATION END TIME DELAY PR")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_MTEDS S 1")
+} 
+
+record(ai, "EC1_PAPS_RTN_OCTSDS") {
+   field(DESC, "I-ANODE OVER CURRENT START T")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_OCTSDS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+   field(LOW, "1")
+   field(HIGH, "1000")
+   field(LOLO, "1") 
+   field(HIHI, "1000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_OCTEDS") {
+   field(DESC, "I-ANODE OVER CURRENT END TIM")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_OCTEDS S 1")
+   field(LOPR, "1")
+   field(HOPR, "1000")
+   field(LOW, "1")
+   field(HIGH, "1000")
+   field(LOLO, "1") 
+   field(HIHI, "1000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_RTN_OCTDT") {
+   field(DESC, "I-ANODE OVER CURRENT DETECTI")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_OCTDT S 1")
+   field(LOPR, "1")
+   field(HOPR, "32767")
+   field(LOW, "1")
+   field(HIGH, "32767")
+   field(LOLO, "1") 
+   field(HIHI, "32767")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PAPS_STAT_FLT") {
+   field(DESC, "P/S STATUS : FAULT CODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_STAT_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_PAPS_STAT_STBY") {
+   field(DESC, "P/S STATUS : 0=INITIAL, 1= S")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_STAT_STBY S 1")
+   field(ZNAM, "Stanby Off")
+   field(ONAM, "Stanby On")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PAPS_STAT_HVON") {
+   field(DESC, "P/S STATUS : HV ON/OFF(0=OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_STAT_HVON S 1")
+   field(ZNAM, "HV OFF")
+   field(ONAM, "HV ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PAPS_STAT_PON") {
+   field(DESC, "P/S STATUS : SHOT ON/OFF(0=O")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_STAT_PON S 1")
+   field(ZNAM, "RUN OFF")
+   field(ONAM, "RUN ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+
+
+
+
+record(ai, "EC1_PBPS_RTN_VOLT") {
+   field(DESC, "OUTPUT VOLTAGE PRESET RETURN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_VOLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "50")
+   field(LOW, "-0.1")
+   field(HIGH, "31")
+   field(LOLO, "-0.1") 
+   field(HIHI, "50")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PBPS_RTN_TSDS") {
+   field(DESC, "APS START DELAY PRESET RETUR")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_TSDS S 1")
+} 
+
+record(ai, "EC1_PBPS_RTN_TEDS") {
+   field(DESC, "APS END DELAY PRESET RETURN ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_TEDS S 1")
+} 
+
+record(ai, "EC1_PBPS_RTN_MTSDS") {
+   field(DESC, "MODULATION START TIME DELAY ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_MTSDS S 1")
+} 
+
+record(ai, "EC1_PBPS_RTN_MTEDS") {
+   field(DESC, "MODULATION END TIME DELAY PR")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_MTEDS S 1")
+} 
+
+record(ai, "EC1_PBPS_RTN_OCTSDS") {
+   field(DESC, "I-BODY OVER CURRENT START TI")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_OCTSDS S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "1")
+   field(HIGH, "1000")
+   field(LOLO, "1") 
+   field(HIHI, "1000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PBPS_RTN_OCTEDS") {
+   field(DESC, "I-BODY OVER CURRENT END TIME")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_OCTEDS S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "1")
+   field(HIGH, "1000")
+   field(LOLO, "1") 
+   field(HIHI, "1000")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PBPS_RTN_OCTDT") {
+   field(DESC, "I-BODY OVER CURRENT DETECTIN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_RTN_OCTDT S 1")
+   field(LOPR, "")
+   field(HOPR, "")
+   field(LOW, "1")
+   field(HIGH, "32767")
+   field(LOLO, "1") 
+   field(HIHI, "32767")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PBPS_STAT_FLT") {
+   field(DESC, "P/S STATUS : FAULT CODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_PBPS_STAT_STBY") {
+   field(DESC, "P/S STATUS : 0=INITIAL, 1= S")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_STBY S 1")
+   field(ZNAM, "Stanby Off")
+   field(ONAM, "Stanby On")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PBPS_STAT_HVON") {
+   field(DESC, "P/S STATUS : HV ON/OFF(0=OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_HVON S 1")
+   field(ZNAM, "HV OFF")
+   field(ONAM, "HV ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PBPS_STAT_PON") {
+   field(DESC, "P/S STATUS : SHOT ON/OFF(0=O")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_PON S 1")
+   field(ZNAM, "RUN OFF")
+   field(ONAM, "RUN ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+record(ai, "EC1_PLCS_STAT_FLT") {
+   field(DESC, "P/S STATUS : FAULT CODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_FLT S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_KEMG") {
+   field(DESC, "P/S STATUS : KSTAR_EMG FAST ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_KEMG S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_RFFWD") {
+   field(DESC, "P/S STATUS : RF_FORWARD FAST")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_RFFWD S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_RFREF") {
+   field(DESC, "P/S STATUS : RF_REFLECTION F")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_RFREF S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_WARC1") {
+   field(DESC, "P/S STATUS : WIN_ARC1 FAST I")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_WARC1 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_WARC2") {
+   field(DESC, "P/S STATUS : WIN_ARC2 FAST I")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_WARC2 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_MARC11") {
+   field(DESC, "P/S STATUS : MB_ARC1-1 FAST ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_MARC11 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_MARC12") {
+   field(DESC, "P/S STATUS : MB_ARC1-2 FAST ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_MARC12 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_MARC21") {
+   field(DESC, "P/S STATUS : MB_ARC2-1 FAST ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_MARC21 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_MARC22") {
+   field(DESC, "P/S STATUS : MB_ARC2-2 FAST ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_MARC22 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_VION1") {
+   field(DESC, "P/S STATUS : VACION1 FAST IN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_VION1 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_VION2") {
+   field(DESC, "P/S STATUS : VACION2 FAST IN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_VION2 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_VION3") {
+   field(DESC, "P/S STATUS : VACION3 FAST IN")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_VION3 S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_IKOC") {
+   field(DESC, "P/S STATUS : Cathode OC FAST")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_IKOC S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_IAOC") {
+   field(DESC, "P/S STATUS : K-A ARC Ianode ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_IAOC S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_IBOC") {
+   field(DESC, "P/S STATUS : K-B ARC Ibody O")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_IBOC S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+
+
+
+record(bi, "EC1_PSPLC_STAT_EMOD") {
+   field(DESC, "ECCD1 P/S PLC$NSTATUS : EPIC")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_EMOD S 1")
+   field(ZNAM, "EPICS Off")
+   field(ONAM, "EPICS On")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L1") {
+   field(DESC, "KSTAR INTERLOCK 1")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L1 S 1")
+   field(ZNAM, "")
+   field(ONAM, "")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L2") {
+   field(DESC, "KSTAR INTERLOCK 2")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L2 S 1")
+   field(ZNAM, "")
+   field(ONAM, "")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L3") {
+   field(DESC, "KSTAR INTERLOCK 3")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L3 S 1")
+   field(ZNAM, "")
+   field(ONAM, "")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L4") {
+   field(DESC, "KSTAR INTERLOCK 4")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L4 S 1")
+   field(ZNAM, "")
+   field(ONAM, "")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L1DIS") {
+   field(DESC, "KSTAR INTERLOCK 1 EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L1DIS S 1")
+   field(ZNAM, "DIS")
+   field(ONAM, "EN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L2DIS") {
+   field(DESC, "KSTAR INTERLOCK 2 EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L2DIS S 1")
+   field(ZNAM, "DIS")
+   field(ONAM, "EN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L3DIS") {
+   field(DESC, "KSTAR INTERLOCK 3 EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L3DIS S 1")
+   field(ZNAM, "DIS")
+   field(ONAM, "EN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_L4DIS") {
+   field(DESC, "KSTAR INTERLOCK 4 EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_L4DIS S 1")
+   field(ZNAM, "DIS")
+   field(ONAM, "EN")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+ 
+record(bi, "EC1_PSPLC_STAT_PMOD") {
+   field(DESC, "ECCD1 P/S PLC$NSTATUS : PLC ")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_PMOD S 1")
+   field(ZNAM, "PLC Off")
+   field(ONAM, "PLC On")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+
+
+record(ai, "EC1_PAPS_RTN_MDUTY") {
+   field(DESC, "MODULATION DUTY PRESET")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PAPS_RTN_MDUTY S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "80")
+   field(LOW, "-0.1")
+   field(HIGH, "80")
+   field(LOLO, "-0.1") 
+   field(HIHI, "80")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+record(bi, "EC1_PLCS_FINT_IAOCDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_IAOCDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_IAPSDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_IAPSDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_IBOCDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_IBOCDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_IBPSDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_IBPSDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_ICPSDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_ICPSDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_IKOCDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_IKOCDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_KSTARDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_KSTARDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_MARC11DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_MARC11DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_MARC12DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_MARC12DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_MARC21DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_MARC21DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_MARC22DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_MARC22DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_RFFWDDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_RFFWDDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_RFREFDIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_RFREFDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_VION1DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_VION1DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_VION2DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_VION2DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_VION3DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_VION3DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_WARC1DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_WARC1DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_FINT_WARC2DIS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_FINT_WARC2DIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "Dis")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+record(bi, "EC1_PLCS_STAT_ICPS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_ICPS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_IAPS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_IAPS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_IBPS") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_IBPS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+record(bi, "EC1_PSTRIG_MODE_LOCAL") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSTRIG_MODE_LOCAL S 1")
+   field(ZNAM, "LOCAL")
+   field(ONAM, "LOCAL")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSTRIG_MODE_KSTAR") {
+   field(DESC, "")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSTRIG_MODE_KSTAR S 1")
+   field(ZNAM, "KSTAR")
+   field(ONAM, "KSTAR")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_GROUND") {
+   field(DESC, "High Voltage Grounded")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_GROUND S 1")
+   field(ZNAM, "HV Grounded")
+   field(ONAM, "HV Grounded")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PLCS_STAT_UNGROUND") {
+   field(DESC, "High Voltage Ungrounded")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_UNGROUND S 1")
+   field(ZNAM, "HV Ungrounded")
+   field(ONAM, "HV Ungrounded")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_SAFETY") {
+   field(DESC, "SAFETY INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_SAFETY S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+record(bi, "EC1_PSPLC_STAT_GYRO") {
+   field(DESC, "GYROTRON INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_GYRO S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_FLOW") {
+   field(DESC, "WATER FLOW INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_FLOW S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_TEMP") {
+   field(DESC, "WATER TEMPERATURE INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_TEMP S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_TC") {
+   field(DESC, "TC INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_TC S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_VAC") {
+   field(DESC, "VAC INTERLOCK")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_VAC S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_SAFETYDIS") {
+   field(DESC, "SAFETY INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_SAFETYDIS S 1")
+   field(ZNAM, "OK")
+   field(ONAM, "FAULT")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+
+record(bi, "EC1_PSPLC_STAT_GYRODIS") {
+   field(DESC, "GYROTRON INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_GYRODIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "DIS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_FLOWDIS") {
+   field(DESC, "WATER FLOW INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_FLOWDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "DIS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_TEMPDIS") {
+   field(DESC, "WATER TEMPERATURE INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_TEMPDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "DIS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_TCDIS") {
+   field(DESC, "TC INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_TCDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "DIS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_VACDIS") {
+   field(DESC, "VAC INTERLOCK EN/DIS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_VACDIS S 1")
+   field(ZNAM, "EN")
+   field(ONAM, "DIS")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+} 
+
+record(bi, "EC1_PSPLC_STAT_ESTOP") {
+   field(DESC, "ECCD1 P/S PLC$NSTATUS : E-ST")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_ESTOP S 1")
+   field(ZNAM, "")
+   field(ONAM, "")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(ai, "EC1_PLCS_RTN_REFSD") {
+   field(DESC, "REFLECTION START DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_REFED") {
+   field(DESC, "REFLECTION END DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFED S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDSD") {
+   field(DESC, "FORWARD START DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDED") {
+   field(DESC, "FORWARD END DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDED S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+}
+
+record(ai, "EC1_PLCS_RTN_APSSD") {
+   field(DESC, "APS START DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_APSSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_APSED") {
+   field(DESC, "APS END DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_APSED S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_BPSSD") {
+   field(DESC, "BPS START DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_BPSSD S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(ai, "EC1_PLCS_RTN_BPSED") {
+   field(DESC, "BPS END DELAY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_BPSED S 1")
+   field(LOPR, "0")
+   field(HOPR, "80")
+   field(LOW, "0")
+   field(HIGH, "80")
+   field(LOLO, "0") 
+   field(HIHI, "80")
+} 
+
+record(bi, "EC1_PSPLC_STAT_KSTAR") {
+   field(DESC, "OPERATION MODE KSTAR")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_KSTAR S 1")
+   field(ZNAM, "DUMMY")
+   field(ONAM, "KSTAR")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_PSPLC_STAT_DUMMY") {
+   field(DESC, "OPERATION MODE DUMMY")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_STAT_DUMMY S 1")
+   field(ZNAM, "DUMMY")
+   field(ONAM, "DUMMY")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_PLCS_STAT_HVON") {
+   field(DESC, "P/S STATUS : HV ON/OFF(0=OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_HVON S 1")
+   field(ZNAM, "HV OFF")
+   field(ONAM, "HV ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_PLCS_STAT_RFON") {
+   field(DESC, "P/S STATUS : HV RUN(0=OFF")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_STAT_RFON S 1")
+   field(ZNAM, "HV OFF")
+   field(ONAM, "HV ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "PLC_TRIGGER_MODE") {
+   field(DESC, "SHOT TRIGGER STATUS")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) PLC_TRIGGER_MODE S 1")
+   field(ZNAM, "OFF")
+   field(ONAM, "ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+record(bi, "EC1_MAIN_HeartBeat"){
+   field(DESC, "HeartBeat")
+   field(SCAN, "1 second")
+   field(INP, "EC1_MAIN_HeartBeat_C.VAL")
+   field(ZSV, "MAJOR")
+   field(OSV, "NO_ALARM")
+}
+
+record(calc, "EC1_MAIN_HeartBeat_C"){
+   field(DESC, "HeartBeat")
+   field(SCAN, "1 second")
+   field(CALC, "A>0?0:1")
+   field(INPA, "EC1_MAIN_HeartBeat.VAL")
+}
+
+record(ai, "EC1_PSPLC_SLOW_LIST") {
+   field(DESC, "SLOW STATUS:FAULT CODE")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PSPLC_SLOW_LIST S 1")
+   field(LOPR, "-0.1")
+   field(HOPR, "0.5")
+   field(LOW, "-0.1")
+   field(HIGH, "0.5")
+   field(LOLO, "-0.1") 
+   field(HIHI, "0.5")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+
+
+
+record(ai, "EC1_PLCS_RTN_IAOCSB") {
+   field(DESC, "I-ANODE OC START BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IAOCSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IAOCEB") {
+   field(DESC, "I-ANODE OC END BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IAOCEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IAOCMB") {
+   field(DESC, "I-ANODE OC MOD BLANK:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IAOCMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IAOCKEEP") {
+   field(DESC, "I-ANODE OC KEEP TIME:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IAOCKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IBOCSB") {
+   field(DESC, "I-BODY OC START BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IBOCSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IBOCEB") {
+   field(DESC, "I-BODY OC END BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IBOCEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IBOCMB") {
+   field(DESC, "I-BODY OC MOD BLANK:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IBOCMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_IBOCKEEP") {
+   field(DESC, "I-BODY OC KEEP TIME:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_IBOCKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+
+
+
+
+record(ai, "EC1_PLCS_RTN_REFSB") {
+   field(DESC, "RF_REF OC START BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_REFEB") {
+   field(DESC, "RF_REF OC END BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_REFMB") {
+   field(DESC, "RF_REF OC MOD BLANK:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_REFKEEP") {
+   field(DESC, "RF_REF OC KEEP TIME:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_REFKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDSB") {
+   field(DESC, "RF_FWD OC START BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDSB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDEB") {
+   field(DESC, "RF_FWD OC END BLANK:msec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDEB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDMB") {
+   field(DESC, "RF_FWD OC MOD BLANK:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDMB S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(ai, "EC1_PLCS_RTN_FWDKEEP") {
+   field(DESC, "RF_FWD OC KEEP TIME:usec")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PLCS_RTN_FWDKEEP S 1")
+   field(LOPR, "0")
+   field(HOPR, "1001")
+   field(LOW, "0")
+   field(HIGH, "1001")
+   field(LOLO, "0") 
+   field(HIHI, "1001")
+   field(HHSV, "MAJOR")
+   field(HSV, "MINOR")
+   field(LSV, "MINOR")
+   field(LLSV, "MAJOR")
+} 
+
+record(bi, "EC1_PBPS_STAT_HVSMOD") {
+   field(DESC, "HVSMOD")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_HVSMOD S 1")
+   field(ZNAM, "HVSMOD OFF")
+   field(ONAM, "HVSMOD ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}
+
+
+record(bi, "EC1_PBPS_STAT_DISMOD") {
+   field(DESC, "HVS DISMOD")
+   field(SCAN, "I/O Intr")
+   field(DTYP, "EtherIP")
+   field(INP, "@$(PLC) EC1_PBPS_STAT_DISMOD S 1")
+   field(ZNAM, "DISMOD OFF")
+   field(ONAM, "DISMOD ON")
+   field(ZSV, "NO_ALARM")
+   field(OSV, "MAJOR")
+}

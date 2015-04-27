@@ -1,0 +1,18 @@
+device(ai,        GPIB_IO, devAiCRP,    "CRP")
+device(ao,        GPIB_IO, devAoCRP,    "CRP")
+device(bi,        GPIB_IO, devBiCRP,    "CRP")
+device(bo,        GPIB_IO, devBoCRP,    "CRP")
+device(event,     GPIB_IO, devEvCRP,    "CRP")
+device(longin,    GPIB_IO, devLiCRP,    "CRP")
+device(longout,   GPIB_IO, devLoCRP,    "CRP")
+device(mbbi,      GPIB_IO, devMbbiCRP , "CRP")
+device(mbbiDirect,GPIB_IO, devMbbidCRP, "CRP")
+device(mbbo,      GPIB_IO, devMbboCRP,  "CRP")
+device(mbboDirect,GPIB_IO, devMbbodCRP, "CRP")
+device(stringin,  GPIB_IO, devSiCRP,    "CRP")
+device(stringout, GPIB_IO, devSoCRP,    "CRP")
+device(waveform,  GPIB_IO, devWfCRP,    "CRP")
+
+variable(devPumpCRPDebug)
+
+include "asyn.dbd"

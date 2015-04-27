@@ -1,0 +1,552 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>992</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="6" colspan="7" >
+    <widget class="QLabel" name="label" >
+     <property name="font" >
+      <font>
+       <family>Luxi Serif</family>
+       <pointsize>26</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Fault List Summary</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2" >
+    <widget class="QComboBox" name="cbSubSystem" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="editable" >
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text" >
+       <string>SubSystem</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>GEP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>CWF</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>HRS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>HDS_VPS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>HDS_HCS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>TMS_TEMP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>TMS_STRT</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>VMS_VV</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>VMS_CR</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>TF</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PF7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>ECH</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>ICRH</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>DDS1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>DDS2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>MD</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>ECE_HR</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>MMW_I</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>HAM</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>FS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>VSS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Diag_TV</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>SIS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PSI</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>RMS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>CCS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>PCS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>ICS</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2" >
+    <widget class="QComboBox" name="cbFaultType" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="editable" >
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text" >
+       <string>FaultType</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>HW</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>SW</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>OP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>ETC</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="4" >
+    <widget class="QComboBox" name="cbLevel" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="editable" >
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text" >
+       <string>Level</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>L1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>L2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>L3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>L4</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="5" >
+    <widget class="QComboBox" name="cbDescType" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="editable" >
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text" >
+       <string>Description</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Fault</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Recovery</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Interlock</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="6" colspan="3" >
+    <widget class="QLineEdit" name="leDesc" >
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="9" colspan="2" >
+    <widget class="QComboBox" name="cbDateType" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="editable" >
+      <bool>false</bool>
+     </property>
+     <item>
+      <property name="text" >
+       <string>DateType</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Fault</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Recovery</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="11" colspan="3" >
+    <widget class="QDateTimeEdit" name="dtStart" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="displayFormat" >
+      <string>yyyy-MM-dd hh:mm:ss</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="14" colspan="2" >
+    <widget class="QDateTimeEdit" name="dtEnd" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="displayFormat" >
+      <string>yyyy-MM-dd hh:mm:ss</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="16" colspan="2" >
+    <widget class="QCheckBox" name="ckDesc" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Desc</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="18" colspan="2" >
+    <widget class="QPushButton" name="pbQueryReset" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>QueryReset</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="20" >
+    <widget class="QPushButton" name="pbSearch" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Search</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="21" >
+    <widget class="QTableWidget" name="tableWidget" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QPushButton" name="pbPrint" >
+     <property name="text" >
+      <string>Print</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2" >
+    <widget class="QPushButton" name="pbSavePDF" >
+     <property name="text" >
+      <string>Save File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3" >
+    <widget class="QPushButton" name="pbResult" >
+     <property name="text" >
+      <string>Report</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4" colspan="3" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>249</width>
+       <height>29</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="7" >
+    <widget class="QLabel" name="label_2" >
+     <property name="text" >
+      <string>Page:</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="8" colspan="2" >
+    <widget class="QSpinBox" name="spinBox" />
+   </item>
+   <item row="3" column="10" colspan="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>81</width>
+       <height>27</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="12" >
+    <widget class="QPushButton" name="pbAdd" >
+     <property name="text" >
+      <string>Add</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="13" colspan="2" >
+    <widget class="QPushButton" name="pbCopy" >
+     <property name="text" >
+      <string>Copy</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="15" colspan="2" >
+    <widget class="QPushButton" name="pbModify" >
+     <property name="text" >
+      <string>Modify</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="17" colspan="2" >
+    <widget class="QPushButton" name="pbDelete" >
+     <property name="text" >
+      <string>Delete</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="19" colspan="2" >
+    <widget class="QPushButton" name="pbClose" >
+     <property name="text" >
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

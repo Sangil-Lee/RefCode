@@ -1,0 +1,170 @@
+program sncECEIProctect
+option +r;
+option -c;
+%% #include <string.h>
+%% #include "epicsThread.h"
+int i;
+
+%% /* shutter valve state     */
+%% /* Val = 0 - shutter Close */
+%% /* Val = 1 - shutter Open  */ 
+
+%% /* ECEI & ECI2 Requirement : ECEI shutter close 1.1sec before the ECH RF Power Run */ 
+unsigned int eceiShut;
+assign eceiShut to "DLS_ECEI_H_SHUT";
+monitor eceiShut;
+
+int eceiShutStat;
+assign eceiShutStat to "DLS_ECEI_H_SHUT_STATUS";
+monitor eceiShutStat;
+
+unsigned int ecei2Shut;
+assign ecei2Shut to "DLS_ECEI2_G_SHUT";
+monitor ecei2Shut;
+
+int ecei2ShutStat;
+assign ecei2ShutStat to "DLS_ECEI2_G_SHUT_STATUS";
+monitor ecei2ShutStat;
+
+unsigned int echMode;
+assign echMode to "ECH_OPR_MODE_KSTAR";
+monitor echMode;
+
+unsigned int echHVON;
+assign echHVON to "ECH_VME_HVON_RTN";
+monitor echHVON;
+
+int ccsCTUstart;
+assign ccsCTUstart to "CCS_CTU_shotStart";
+monitor ccsCTUstart;
+evflag fctuStar;
+sync ccsCTUstart fctuStar;
+
+int ccsSEQstart;
+assign ccsSEQstart to "CCS_SHOTSEQ_START";
+monitor ccsSEQstart;
+evflag fccsSEQstart;
+sync ccsSEQstart fccsSEQstart;
+
+float echHVdelay;
+assign echHVdelay to "ECH_ECMD_VME_TTOTAL";
+monitor echHVdelay;
+
+float secHVdelay;
+
+float echRUNTrig;
+assign echRUNTrig to "ECH_LTU_mT0_sec0";
+monitor echRUNTrig;
+
+int echAuto;
+assign echAuto to "DLS_ECH_AUTO_CTRL";
+monitor echAuto;
+evflag fechAuto;
+sync echAuto fechAuto;
+
+float openECEI;
+float openECEI2;
+
+%% unsigned long long int oneSecDuring;
+%% unsigned long long int startTime,stopTime, processTime;
+%% /* double    processTime; */
+%% unsigned long long int current_time(void)
+%% {
+%%      unsigned long long int x;
+%%          __asm__ volatile(".byte 0x0f, 0x31": "=A"(x));
+%%              return x;
+%% }
+%% double startStop_intervalUSec(unsigned long long int start, unsigned long long int stop)
+%% {
+%%      return 1.E+6 * (double)(stop-start)/(double)(oneSecDuring);
+%% }
+
+
+
+ss eceiProtect{
+	state init{
+		when (TRUE){
+		}state ecei_close	
+	}
+	state ecei_close{
+		when (efTestAndClear(fctuStar) && echMode==1 && echAuto==1){
+			if(echMode==1 && echHVON==1 && echAuto==1){
+				%% startTime=current_time();
+				openECEI = (echHVdelay / 1000.) + echRUNTrig;
+				%% epicsThreadSleep(pVar->openECEI);
+				%% stopTime=current_time();
+				%% processTime = startStop_intervalUSec(startTime,stopTime);
+				%% printf("Current Time(echRun) after CTU start event msec :%lf msec \n", 1.E-3 * (double)processTime);
+				%% startTime=current_time();
+				eceiShut = 1;
+				pvPut(eceiShut,SYNC);
+				%% stopTime=current_time();
+			%% processTime = startStop_intervalUSec(startTime,stopTime);
+			%% printf("Current Time(echShutter) after close command event msec :%lf msec \n", 1.E-3 * (double)processTime);
+
+			}
+		} state ecei_close
+	}
+}
+ss eceiClose{
+	state init{
+		when (TRUE){
+		}state eceiEventClose	
+	}
+	state eceiEventClose{
+		when (efTestAndClear(fccsSEQstart) || efTestAndClear(fechAuto)){
+			if(echMode==1 && echAuto==1){
+				eceiShut = 0;
+				pvPut(eceiShut,SYNC);
+			}
+			if( echAuto==1){
+				eceiShut = 0;
+				pvPut(eceiShut,SYNC);
+			}
+		} state eceiEventClose 
+	}
+}
+
+ss ecei2Protect{
+	state init{
+		when (TRUE){
+		}state ecei2_close	
+	}
+	state ecei2_close{
+		when (efTestAndClear(fctuStar) && echMode==1 && echAuto==1){
+			if(echMode==1 && echHVON==1 && echAuto==1){
+				%% startTime=current_time();
+				openECEI2 = (echHVdelay / 1000.) + echRUNTrig;
+				%% epicsThreadSleep(pVar->openECEI2);
+				%% stopTime=current_time();
+				%% processTime = startStop_intervalUSec(startTime,stopTime);
+				%% printf("Current Time(echRun) after CTU start event msec :%lf msec \n", 1.E-3 * (double)processTime);
+				%% startTime=current_time();
+				ecei2Shut = 1;
+				pvPut(ecei2Shut,SYNC);
+				%% stopTime=current_time();
+			%% processTime = startStop_intervalUSec(startTime,stopTime);
+			%% printf("Current Time(echShutter) after close command event msec :%lf msec \n", 1.E-3 * (double)processTime);
+
+			}
+		} state ecei2_close
+	}
+}
+ss ecei2Close{
+	state init{
+		when (TRUE){
+		}state ecei2EventClose	
+	}
+	state ecei2EventClose{
+		when (efTestAndClear(fccsSEQstart) || efTestAndClear(fechAuto)){
+			if(echMode==1 && echAuto==1){
+				ecei2Shut = 0;
+				pvPut(ecei2Shut,SYNC);
+			}
+			if( echAuto==1){
+				ecei2Shut = 0;
+				pvPut(ecei2Shut,SYNC);
+			}
+		} state ecei2EventClose 
+	}
+}

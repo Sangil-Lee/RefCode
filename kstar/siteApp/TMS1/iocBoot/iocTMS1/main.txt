@@ -1,0 +1,1418 @@
+#!../../bin/linux-x86/pxi
+## You may have to change pxi to something else
+## everywhere it appears in this file
+< envPaths
+epicsEnvSet(ARCH,"linux-x86")
+epicsEnvSet(IOC,"iocpxi")
+epicsEnvSet(TOP,"/home/kstar/epics/pxiApp")
+epicsEnvSet(SNCSEQ,"/usr/local/epics/siteLib")
+epicsEnvSet(EPICS_BASE,"/usr/local/epics/base")
+cd /home/kstar/epics/pxiApp
+## Register all support components
+dbLoadDatabase("dbd/pxi.dbd")
+pxi_registerRecordDeviceDriver(pdbbase)
+## Compact Field Point init
+drvGenericSerialConfigure "nicFP20x0Ctrl1" "172.17.101.22:6341" 0 0
+drvcFP20x0_init "nicFP20x0Ctrl1" 3. 3. 5. 2000
+epicsThreadSleep(5.)
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+< initDriverPXIDev1.cmd
+createPXITask("Dev1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai7")
+< initDriverPXIDev2.cmd
+createPXITask("Dev2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai7")
+< initDriverPXIDev3.cmd
+createPXITask("Dev3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod3/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod7/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod9/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod11/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai4")
+task launching: Dev1_ctrl thread for Dev1 task
+task launching: Dev2_ctrl thread for Dev2 task
+createPXICernoxChannel("Dev3", "SC3Mod12/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai7")
+< initDriverPXIDev4.cmd
+createPXITask("Dev4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai7")
+< initDriverPXIDev5.cmd
+createPXITask("Dev5")
+createPXIHallChannel("Dev5", "SC5Mod1/ai0")
+createPXIHallChannel("Dev5", "SC5Mod1/ai1")
+createPXIHallChannel("Dev5", "SC5Mod1/ai2")
+createPXIHallChannel("Dev5", "SC5Mod1/ai3")
+createPXIHallChannel("Dev5", "SC5Mod1/ai4")
+createPXIHallChannel("Dev5", "SC5Mod2/ai0")
+createPXIHallChannel("Dev5", "SC5Mod2/ai1")
+createPXIHallChannel("Dev5", "SC5Mod2/ai2")
+createPXIHallChannel("Dev5", "SC5Mod2/ai3")
+createPXIHallChannel("Dev5", "SC5Mod2/ai4")
+epicsThreadSleep(5.)
+task launching: Dev3_ctrl thread for Dev3 task
+task launching: Dev4_ctrl thread for Dev4 task
+task launching: Dev5_ctrl thread for Dev5 task
+cd /home/kstar/epics/pxiApp
+## Load record instances
+#dbLoadRecords("db/dbExample1.db","user=khkimHost")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=1,scan=1 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=2,scan=2 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=3,scan=5 second")
+#dbLoadRecords("db/dbSubExample.db","user=khkimHost")
+#dbLoadRecords("db/dbPXISCXICernox.db")
+dbLoadTemplate("db/dbPXISCXICernox.template")
+dbLoadRecords("db/dbFanout.db")
+dbLoadRecords("db/tmsInterlock.db")
+dbLoadRecords("db/tmsTimeStamp.db","IOCNAME=IOC1")
+#dbLoadTemplate("db/tmsCSStruct.template")
+#dbLoadTemplate("db/tmsPFBusLine.template")
+#dbLoadTemplate("db/tmsPFCccs.template")
+#dbLoadTemplate("db/tmsPFStruct.template")
+dbLoadTemplate("db/tmsCernoxAll.template")
+dbLoadTemplate("db/tmsCernoxAllRaw.template")
+#dbLoadRecords("db/tmsMainValue.db")
+#dbLoadRecords("db/tmsPT100.db")
+dbLoadTemplate("db/tmsMainCDCTLevel.template")
+dbLoadTemplate("db/tmsMaxValue.template")
+dbLoadTemplate("db/tmsMainMaxValue.template")
+dbLoadTemplate("db/tmsHall.template")
+dbLoadTemplate("db/tmsPT100.template")
+## Set this to see messages from mySub
+#var mySubDebug 1
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+loadCernoxList cernoxList
+cernoxData 3 are read
+#cd ${TOP}/cernoxData/TFStructure
+#loadCernoxList("TFStructure.txt")
+#cd ${TOP}/cernoxData/HeLine
+#loadCernoxList("HeLine.txt")
+#cd ${TOP}/cernoxData/AddSensor
+#loadCernoxList("AddSensor.txt")
+#cd ${TOP}/cernoxData/AllSensor_20070423
+#loadCernoxList("AllCernoxSensor.txt")
+cd /home/kstar/epics/pxiApp/cernoxData/AllSensor_20070530
+loadCernoxList("AllCernoxSensor.txt")
+cernoxData 398 are read
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+iocInit()
+Starting iocInit
+############################################################################
+###  EPICS IOC CORE built on Jan 13 2007
+###  EPICS R3.14.8.2 $R3-14-8-2$ $2006/01/06 15:55:13$
+############################################################################
+Ignoring 721 extra characters from 172.17.101.22:6341.
+drvcFP20x0 (check module): AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) AI(8) 
+Ignoring 721 extra characters from 172.17.101.22:6341.
+Ignoring 721 extra characters from 172.17.101.22:6341.
+Ignoring 721 extra characters from 172.17.101.22:6341.
+Ignoring 721 extra characters from 172.17.101.22:6341.
+drvPXISCXI: measured clock speed 1.9981 GHz
+iocInit: All initialization complete
+## Start any sequence programs
+#seq sncExample,"user=khkimHost"
+seq sncTmsMain, "FNAME=tmsMainTFC_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8cccac0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ce7a18: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFB_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8cf2948: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainTFBUS_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d00938: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainTFBUS_THR.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d0b868: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainTFBUS_TINT_THR.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d16798: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC01_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d216c8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC02_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d2c5f8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC03_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d37528: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC04_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d42458: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC05_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d4a2e8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC06_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d55218: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC07_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d60148: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC15_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d6b078: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainPFC67_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d75fa8: "sncTmsMain"
+seq sncTmsMainLevel, "FNAME=tmsMainCoilTmaxLevel.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMainLevel", thread 0x8d7dbd0: "sncTmsMainLevel"
+seq sncTmsMain, "FNAME=tmsMainTFCPFC_TIN.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+error in fopen
+threadID : 8cccac0
+error in fopen
+threadID : 8ce7a18
+error in fopen
+threadID : 8cf2948
+error in fopen
+threadID : 8d00938
+error in fopen
+threadID : 8d0b868
+error in fopen
+threadID : 8d16798
+error in fopen
+threadID : 8d216c8
+error in fopen
+threadID : 8d2c5f8
+error in fopen
+threadID : 8d37528
+error in fopen
+threadID : 8d42458
+Spawning state program "sncTmsMain", thread 0x8d88af8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainTFPFCS_ST.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d93ba0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainTFSHL_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8d9ead0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMainMaxMax.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8da9ac0: "sncTmsMain"
+seq sncTmsMainCon
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMainCon", thread 0x8daa8b0: "sncTmsMainCon"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC0116_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8db5860: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC0104_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8dc07a8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC0508_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8dd7a20: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC0912_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8de2968: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC1316_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ded8b0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFC0116_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8df87f8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFB1316_TICB.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e03740: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFB_THRICB.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e0e670: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0104_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect TMS_CDSTATUS_1ST
+connect TMS_CDSTATUS_2ND
+connect TMS_CDSTATUS_3RD
+connect 0 TMS_TFC_TOUT_MAX
+connect 1 TMS_TFBUS_TINT_MAX
+connect 2 TMS_PFC_TOUT_MAX
+connect 3 TMS_PFB_TOUT_MAX
+Data count number is 4
+error in fopen
+threadID : 8d4a2e8
+error in fopen
+threadID : 8d55218
+error in fopen
+threadID : 8d60148
+error in fopen
+threadID : 8d6b078
+error in fopen
+threadID : 8d75fa8
+error in fopen
+threadID : 8d88af8
+error in fopen
+threadID : 8d93ba0
+error in fopen
+threadID : 8d9ead0
+error in fopen
+threadID : 8da9ac0
+connect TMS_M_TFC0116_TINT_MAX
+connect TMS_M_TFC0116_TINT_MAX_PV
+connect TMS_M_TFC0116_TINT_MIN
+connect TMS_M_TFC0116_TINT_MIN_PV
+connect TMS_M_TFC0116_TINT_AVR
+connect 0 TMS_TFC01_MHL_TCUS00A
+connect 1 TMS_TFC02_MHL_TCUS00A
+connect 2 TMS_TFC03_MHL_TCUS00A
+connect 3 TMS_TFC04_MHL_TCUS00A
+Data count number is 4
+connect TMS_M_TFC0104_TOUT_MAX
+connect TMS_M_TFC0104_TOUT_MAX_PV
+connect TMS_M_TFC0104_TOUT_MIN
+connect TMS_M_TFC0104_TOUT_MIN_PV
+connect TMS_M_TFC0104_TOUT_AVR
+connect 0 TMS_TFC01_MHL_TCUR01
+connect 1 TMS_TFC01_MHL_TCUR02
+connect 2 TMS_TFC02_MHL_TCUR01
+connect 3 TMS_TFC02_MHL_TCUR02
+connect 4 TMS_TFC03_MHL_TCUR01
+connect 5 TMS_TFC03_MHL_TCUR02
+connect 6 TMS_TFC04_MHL_TCUR01
+connect 7 TMS_TFC04_MHL_TCUR02
+Data count number is 8
+connect TMS_M_TFC0508_TOUT_MAX
+connect TMS_M_TFC0508_TOUT_MAX_PV
+connect TMS_M_TFC0508_TOUT_MIN
+connect TMS_M_TFC0508_TOUT_MIN_PV
+connect TMS_M_TFC0508_TOUT_AVR
+connect 0 TMS_TFC05_MHL_TCUR01
+connect 1 TMS_TFC05_MHL_TCUR02
+connect 2 TMS_TFC06_MHL_TCUR01
+connect 3 TMS_TFC06_MHL_TCUR02
+connect 4 TMS_TFC07_MHL_TCUR01
+connect 5 TMS_TFC07_MHL_TCUR02
+connect 6 TMS_TFC08_MHL_TCUR01
+connect 7 TMS_TFC08_MHL_TCUR02
+Data count number is 8
+connect TMS_M_TFC0912_TOUT_MAX
+connect TMS_M_TFC0912_TOUT_MAX_PV
+connect TMS_M_TFC0912_TOUT_MIN
+connect TMS_M_TFC0912_TOUT_MIN_PV
+connect TMS_M_TFC0912_TOUT_AVR
+connect 0 TMS_TFC09_MHL_TCUR01
+connect 1 TMS_TFC09_MHL_TCUR02
+connect 2 TMS_TFC10_MHL_TCUR01
+connect 3 TMS_TFC10_MHL_TCUR02
+connect 4 TMS_TFC11_MHL_TCUR01
+connect 5 TMS_TFC11_MHL_TCUR02
+connect 6 TMS_TFC12_MHL_TCUR01
+connect 7 TMS_TFC12_MHL_TCUR02
+Data count number is 8
+connect TMS_M_TFC1316_TOUT_MAX
+connect TMS_M_TFC1316_TOUT_MAX_PV
+connect TMS_M_TFC1316_TOUT_MIN
+connect TMS_M_TFC1316_TOUT_MIN_PV
+connect TMS_M_TFC1316_TOUT_AVR
+connect 0 TMS_TFC13_MHL_TCUR01
+connect 1 TMS_TFC13_MHL_TCUR02
+connect 2 TMS_TFC14_MHL_TCUR01
+connect 3 TMS_TFC14_MHL_TCUR02
+connect 4 TMS_TFC15_MHL_TCUR01
+connect 5 TMS_TFC15_MHL_TCUR02
+connect 6 TMS_TFC16_MHL_TCUR01
+connect 7 TMS_TFC16_MHL_TCUR02
+Data count number is 8
+connect TMS_M_TFC0116_TOUT_MAX
+connect TMS_M_TFC0116_TOUT_MAX_PV
+connect TMS_M_TFC0116_TOUT_MIN
+connect TMS_M_TFC0116_TOUT_MIN_PV
+connect TMS_M_TFC0116_TOUT_AVR
+connect 0 TMS_TFC01_MHL_TCUR01
+connect 1 TMS_TFC01_MHL_TCUR02
+connect 2 TMS_TFC02_MHL_TCUR01
+connect 3 TMS_TFC02_MHL_TCUR02
+connect 4 TMS_TFC03_MHL_TCUR01
+connect 5 TMS_TFC03_MHL_TCUR02
+connect 6 TMS_TFC04_MHL_TCUR01
+connect 7 TMS_TFC04_MHL_TCUR02
+connect 8 TMS_TFC05_MHL_TCUR01
+connect 9 TMS_TFC05_MHL_TCUR02
+connect 10 TMS_TFC06_MHL_TCUR01
+connect 11 TMS_TFC06_MHL_TCUR02
+connect 12 TMS_TFC07_MHL_TCUR01
+connect 13 TMS_TFC07_MHL_TCUR02
+connect 14 TMS_TFC08_MHL_TCUR01
+connect 15 TMS_TFC08_MHL_TCUR02
+connect 16 TMS_TFC09_MHL_TCUR01
+connect 17 TMS_TFC09_MHL_TCUR02
+connect 18 TMS_TFC10_MHL_TCUR01
+connect 19 TMS_TFC10_MHL_TCUR02
+connect 20 TMS_TFC11_MHL_TCUR01
+connect 21 TMS_TFC11_MHL_TCUR02
+connect 22 TMS_TFC12_MHL_TCUR01
+connect 23 TMS_TFC12_MHL_TCUR02
+connect 24 TMS_TFC13_MHL_TCUR01
+connect 25 TMS_TFC13_MHL_TCUR02
+connect 26 TMS_TFC14_MHL_TCUR01
+connect 27 TMS_TFC14_MHL_TCUR02
+connect 28 TMS_TFC15_MHL_TCUR01
+connect 29 TMS_TFC15_MHL_TCUR02
+connect 30 TMS_TFC16_MHL_TCUR01
+connect 31 TMS_TFC16_MHL_TCUR02
+Data count number is 32
+Spawning state program "sncTmsMain", thread 0x8e195b8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0508_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e458d0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0912_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e50818: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS1316_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e5b760: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0116_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e666a8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0104_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e715f0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0508_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8e7c538: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0912_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect TMS_M_TFB1316_TICB_MAX_MAX
+connect TMS_M_TFB1316_TICB_MAX_MAX_PV
+connect TMS_M_TFB1316_TICB_MAX_MIN
+connect TMS_M_TFB1316_TICB_MAX_MIN_PV
+connect TMS_M_TFB1316_TICB_MAX_AVR
+connect 0 TMS_TFB00_BHL_TCUR01
+connect 1 TMS_TFB00_BHL_TCUR02
+connect 2 TMS_TFB00_BHL_TCUR03
+connect 3 TMS_TFB00_BHL_TCUR04
+Data count number is 4
+connect TMS_M_TFS0508_TOUT_MAX
+connect TMS_M_TFS0508_TOUT_MAX_PV
+connect TMS_M_TFS0508_TOUT_MIN
+connect TMS_M_TFS0508_TOUT_MIN_PV
+connect TMS_M_TFS0508_TOUT_AVR
+connect 0 TMS_TFS00_SHL_TCUR05
+connect 1 TMS_TFS00_SHL_TCUR06
+connect 2 TMS_TFS00_SHL_TCUR07
+connect 3 TMS_TFS00_SHL_TCUR08
+Data count number is 4
+connect TMS_M_TFS0912_TOUT_MAX
+connect TMS_M_TFS0912_TOUT_MAX_PV
+connect TMS_M_TFS0912_TOUT_MIN
+connect TMS_M_TFS0912_TOUT_MIN_PV
+connect TMS_M_TFS0912_TOUT_AVR
+connect 0 TMS_TFS00_SHL_TCUR09
+connect 1 TMS_TFS00_SHL_TCUR10
+connect 2 TMS_TFS00_SHL_TCUR11
+connect 3 TMS_TFS00_SHL_TCUR12
+Data count number is 4
+connect TMS_M_TFB_THRICB_MAX
+connect TMS_M_TFB_THRICB_MAX_PV
+connect TMS_M_TFB_THRICB_MIN
+connect TMS_M_TFB_THRICB_MIN_PV
+connect TMS_M_TFB_THRICB_AVR
+connect 0 TMS_TFBHR_BHL_TCUR01
+connect 1 TMS_TFB00_BHL_TCUR01
+connect 2 TMS_TFB00_BHL_TCUR02
+connect 3 TMS_TFB00_BHL_TCUR03
+connect 4 TMS_TFB00_BHL_TCUR04
+Data count number is 5
+connect TMS_M_TFS0104_TOUT_MAX
+connect TMS_M_TFS0104_TOUT_MAX_PV
+connect TMS_M_TFS0104_TOUT_MIN
+connect TMS_M_TFS0104_TOUT_MIN_PV
+connect TMS_M_TFS0104_TOUT_AVR
+connect 0 TMS_TFS00_SHL_TCUR01
+connect 1 TMS_TFS00_SHL_TCUR02
+connect 2 TMS_TFS00_SHL_TCUR03
+connect 3 TMS_TFS00_SHL_TCUR04
+Data count number is 4
+connect TMS_M_TFS1316_TOUT_MAX
+connect TMS_M_TFS1316_TOUT_MAX_PV
+connect TMS_M_TFS1316_TOUT_MIN
+connect TMS_M_TFS1316_TOUT_MIN_PV
+connect TMS_M_TFS1316_TOUT_AVR
+connect 0 TMS_TFS00_SHL_TCUR13
+connect 1 TMS_TFS00_SHL_TCUR14
+connect 2 TMS_TFS00_SHL_TCUR15
+connect 3 TMS_TFS00_SHL_TCUR16
+Data count number is 4
+connect TMS_M_TFS0116_TOUT_MAX
+connect TMS_M_TFS0116_TOUT_MAX_PV
+connect TMS_M_TFS0116_TOUT_MIN
+connect TMS_M_TFS0116_TOUT_MIN_PV
+connect TMS_M_TFS0116_TOUT_AVR
+connect 0 TMS_TFS00_SHL_TCUR01
+connect 1 TMS_TFS00_SHL_TCUR02
+connect 2 TMS_TFS00_SHL_TCUR03
+connect 3 TMS_TFS00_SHL_TCUR04
+connect 4 TMS_TFS00_SHL_TCUR05
+connect 5 TMS_TFS00_SHL_TCUR06
+connect 6 TMS_TFS00_SHL_TCUR07
+connect 7 TMS_TFS00_SHL_TCUR08
+connect 8 TMS_TFS00_SHL_TCUR09
+connect 9 TMS_TFS00_SHL_TCUR10
+connect 10 TMS_TFS00_SHL_TCUR11
+connect 11 TMS_TFS00_SHL_TCUR12
+connect 12 TMS_TFS00_SHL_TCUR13
+connect 13 TMS_TFS00_SHL_TCUR14
+connect 14 TMS_TFS00_SHL_TCUR15
+connect 15 TMS_TFS00_SHL_TCUR16
+Data count number is 16
+connect TMS_M_TFS0104_TSURF_MAX
+connect TMS_M_TFS0104_TSURF_MAX_PV
+connect TMS_M_TFS0104_TSURF_MIN
+connect TMS_M_TFS0104_TSURF_MIN_PV
+connect TMS_M_TFS0104_TSURF_AVR
+connect 0 TMS_TFS03_CAS_TCU008
+connect 1 TMS_TFS03_CAS_TCU009
+connect 2 TMS_TFS03_CAS_TCU010
+connect 3 TMS_TFS03_CAS_TCU011
+connect 4 TMS_TFS03_IIS_TCU001
+connect 5 TMS_TFS03_IIS_TCU004
+connect 6 TMS_TFS03_OIS_TCU001
+connect 7 TMS_TFS03_OIS_TCU004
+connect 8 TMS_TFS03_BAS_TCU001
+connect 9 TMS_TFS03_BAS_TCU002
+Data count number is 10
+connect TMS_M_TFS0508_TSURF_MAX
+connect TMS_M_TFS0508_TSURF_MAX_PV
+connect TMS_M_TFS0508_TSURF_MIN
+connect TMS_M_TFS0508_TSURF_MIN_PV
+connect TMS_M_TFS0508_TSURF_AVR
+connect 0 TMS_TFS07_CAS_TCU008
+connect 1 TMS_TFS07_CAS_TCU009
+connect 2 TMS_TFS07_CAS_TCU010
+connect 3 TMS_TFS07_CAS_TCU011
+connect 4 TMS_TFS07_IIS_TCU001
+connect 5 TMS_TFS07_IIS_TCU004
+connect 6 TMS_TFS07_OIS_TCU001
+connect 7 TMS_TFS07_OIS_TCU004
+connect 8 TMS_TFS07_BAS_TCU001
+connect 9 TMS_TFS07_BAS_TCU002
+Data count number is 10
+connect TMS_M_TFS0912_TSURF_MAX
+connect TMS_M_TFS0912_TSURF_MAX_PV
+connect TMS_M_TFS0912_TSURF_MIN
+connect TMS_M_TFS0912_TSURF_MIN_PV
+connect TMS_M_TFS0912_TSURF_AVR
+connect 0 TMS_TFS09_CAS_TCU010
+connect 1 TMS_TFS09_CAS_TCU011
+connect 2 TMS_TFS11_IIS_TCU001
+connect 3 TMS_TFS11_IIS_TCU004
+connect 4 TMS_TFS11_OIS_TCU001
+connect 5 TMS_TFS11_OIS_TCU004
+connect 6 TMS_TFS11_BAS_TCU001
+Spawning state program "sncTmsMain", thread 0x8e87480: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS1316_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ed68f8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_TFS0116_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ee1840: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC1_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8eec750: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC2_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ef7680: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC3_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f025b0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC4_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f0d4e0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC5_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect 7 TMS_TFS11_BAS_TCU002
+Data count number is 8
+connect TMS_M_TFS1316_TSURF_MAX
+connect TMS_M_TFS1316_TSURF_MAX_PV
+connect TMS_M_TFS1316_TSURF_MIN
+connect TMS_M_TFS1316_TSURF_MIN_PV
+connect TMS_M_TFS1316_TSURF_AVR
+connect 0 TMS_TFS15_CAS_TCU008
+connect 1 TMS_TFS15_CAS_TCU009
+connect 2 TMS_TFS15_CAS_TCU010
+connect 3 TMS_TFS15_CAS_TCU011
+connect 4 TMS_TFS15_IIS_TCU001
+connect 5 TMS_TFS15_IIS_TCU004
+connect 6 TMS_TFS15_OIS_TCU001
+connect 7 TMS_TFS15_OIS_TCU004
+connect 8 TMS_TFS15_BAS_TCU001
+connect 9 TMS_TFS15_BAS_TCU002
+Data count number is 10
+connect TMS_M_TFS0116_TSURF_MAX
+connect TMS_M_TFS0116_TSURF_MAX_PV
+connect TMS_M_TFS0116_TSURF_MIN
+connect TMS_M_TFS0116_TSURF_MIN_PV
+connect TMS_M_TFS0116_TSURF_AVR
+connect 0 TMS_TFS03_CAS_TCU008
+connect 1 TMS_TFS03_CAS_TCU009
+connect 2 TMS_TFS03_CAS_TCU010
+connect 3 TMS_TFS03_CAS_TCU011
+connect 4 TMS_TFS03_IIS_TCU001
+connect 5 TMS_TFS03_IIS_TCU004
+connect 6 TMS_TFS03_OIS_TCU001
+connect 7 TMS_TFS03_OIS_TCU004
+connect 8 TMS_TFS03_BAS_TCU001
+connect 9 TMS_TFS03_BAS_TCU002
+connect 10 TMS_TFS07_CAS_TCU008
+connect 11 TMS_TFS07_CAS_TCU009
+connect 12 TMS_TFS07_CAS_TCU010
+connect 13 TMS_TFS07_CAS_TCU011
+connect 14 TMS_TFS07_IIS_TCU001
+connect 15 TMS_TFS07_IIS_TCU004
+connect 16 TMS_TFS07_OIS_TCU001
+connect 17 TMS_TFS07_OIS_TCU004
+connect 18 TMS_TFS07_BAS_TCU001
+connect 19 TMS_TFS07_BAS_TCU002
+connect 20 TMS_TFS09_CAS_TCU010
+connect 21 TMS_TFS09_CAS_TCU011
+connect 22 TMS_TFS11_IIS_TCU001
+connect 23 TMS_TFS11_IIS_TCU004
+connect 24 TMS_TFS11_OIS_TCU001
+connect 25 TMS_TFS11_OIS_TCU004
+connect 26 TMS_TFS11_BAS_TCU001
+connect 27 TMS_TFS11_BAS_TCU002
+connect 28 TMS_TFS15_CAS_TCU008
+connect 29 TMS_TFS15_CAS_TCU009
+connect 30 TMS_TFS15_CAS_TCU010
+connect 31 TMS_TFS15_CAS_TCU011
+connect 32 TMS_TFS15_IIS_TCU001
+connect 33 TMS_TFS15_IIS_TCU004
+connect 34 TMS_TFS15_OIS_TCU001
+connect 35 TMS_TFS15_OIS_TCU004
+connect 36 TMS_TFS15_BAS_TCU001
+connect 37 TMS_TFS15_BAS_TCU002
+Data count number is 38
+connect TMS_M_PFC1_TINT_MAX
+connect TMS_M_PFC1_TINT_MAX_PV
+connect TMS_M_PFC1_TINT_MIN
+connect TMS_M_PFC1_TINT_MIN_PV
+connect TMS_M_PFC1_TINT_AVR
+connect 0 TMS_PFCU1_MHL_TCUS00
+connect 1 TMS_PFCL1_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC2_TINT_MAX
+connect TMS_M_PFC2_TINT_MAX_PV
+connect TMS_M_PFC2_TINT_MIN
+connect TMS_M_PFC2_TINT_MIN_PV
+connect TMS_M_PFC2_TINT_AVR
+connect 0 TMS_PFCU2_MHL_TCUS00
+connect 1 TMS_PFCL2_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC3_TINT_MAX
+connect TMS_M_PFC3_TINT_MAX_PV
+connect TMS_M_PFC3_TINT_MIN
+connect TMS_M_PFC3_TINT_MIN_PV
+connect TMS_M_PFC3_TINT_AVR
+connect 0 TMS_PFCU3_MHL_TCUS00
+connect 1 TMS_PFCL3_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC4_TINT_MAX
+connect TMS_M_PFC4_TINT_MAX_PV
+connect TMS_M_PFC4_TINT_MIN
+connect TMS_M_PFC4_TINT_MIN_PV
+connect TMS_M_PFC4_TINT_AVR
+connect 0 TMS_PFCU4_MHL_TCUS00
+connect 1 TMS_PFCL4_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC5_TINT_MAX
+connect TMS_M_PFC5_TINT_MAX_PV
+connect TMS_M_PFC5_TINT_MIN
+connect TMS_M_PFC5_TINT_MIN_PV
+connect TMS_M_PFC5_TINT_AVR
+connect 0 TMS_PFCU5_MHL_TCUS00
+connect 1 TMS_PFCL5MHL_TCUS00
+Data count number is 2
+Spawning state program "sncTmsMain", thread 0x8f18410: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC6_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f34018: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC7_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f3ef48: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC17_TINT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f49ea8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC1_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f54db8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC2_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f5fce8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC3_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f6ac18: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC4_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect TMS_M_PFC6_TINT_MAX
+connect TMS_M_PFC6_TINT_MAX_PV
+connect TMS_M_PFC6_TINT_MIN
+connect TMS_M_PFC6_TINT_MIN_PV
+connect TMS_M_PFC6_TINT_AVR
+connect 0 TMS_PFCU6_MHL_TCUS00
+connect 1 TMS_PFCL6_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC7_TINT_MAX
+connect TMS_M_PFC7_TINT_MAX_PV
+connect TMS_M_PFC7_TINT_MIN
+connect TMS_M_PFC7_TINT_MIN_PV
+connect TMS_M_PFC7_TINT_AVR
+connect 0 TMS_PFCU7_MHL_TCUS00
+connect 1 TMS_PFCL7_MHL_TCUS00
+Data count number is 2
+connect TMS_M_PFC17_TINT_MAX
+connect TMS_M_PFC17_TINT_MAX_PV
+connect TMS_M_PFC17_TINT_MIN
+connect TMS_M_PFC17_TINT_MIN_PV
+connect TMS_M_PFC17_TINT_AVR
+connect 0 TMS_PFCU1_MHL_TCUS00
+connect 1 TMS_PFCL1_MHL_TCUS00
+connect 2 TMS_PFCU2_MHL_TCUS00
+connect 3 TMS_PFCL2_MHL_TCUS00
+connect 4 TMS_PFCU3_MHL_TCUS00
+connect 5 TMS_PFCL3_MHL_TCUS00
+connect 6 TMS_PFCU4_MHL_TCUS00
+connect 7 TMS_PFCL4_MHL_TCUS00
+connect 8 TMS_PFCU5_MHL_TCUS00
+connect 9 TMS_PFCL5MHL_TCUS00
+connect 10 TMS_PFCU6_MHL_TCUS00
+connect 11 TMS_PFCL6_MHL_TCUS00
+connect 12 TMS_PFCU7_MHL_TCUS00
+connect 13 TMS_PFCL7_MHL_TCUS00
+Data count number is 14
+connect TMS_M_PFC1_TOUT_MAX
+connect TMS_M_PFC1_TOUT_MAX_PV
+connect TMS_M_PFC1_TOUT_MIN
+connect TMS_M_PFC1_TOUT_MIN_PV
+connect TMS_M_PFC1_TOUT_AVR
+connect 0 TMS_PFCU1_MHL_TCUR01
+connect 1 TMS_PFCU1_MHL_TCUR02
+connect 2 TMS_PFCU1_MHL_TCUR03
+connect 3 TMS_PFCU1_MHL_TCUR04
+connect 4 TMS_PFCU1_MHL_TCUR05
+connect 5 TMS_PFCU1_MHL_TCUR06
+connect 6 TMS_PFCL1_MHL_TCUR01
+connect 7 TMS_PFCL1_MHL_TCUR02
+connect 8 TMS_PFCL1_MHL_TCUR03
+connect 9 TMS_PFCL1_MHL_TCUR04
+connect 10 TMS_PFCL1_MHL_TCUR05
+connect 11 TMS_PFCL1_MHL_TCUR06
+Data count number is 12
+connect TMS_M_PFC2_TOUT_MAX
+connect TMS_M_PFC2_TOUT_MAX_PV
+connect TMS_M_PFC2_TOUT_MIN
+connect TMS_M_PFC2_TOUT_MIN_PV
+connect TMS_M_PFC2_TOUT_AVR
+connect 0 TMS_PFCU2_MHL_TCUR01
+connect 1 TMS_PFCU2_MHL_TCUR02
+connect 2 TMS_PFCU2_MHL_TCUR03
+connect 3 TMS_PFCU2_MHL_TCUR04
+connect 4 TMS_PFCU2_MHL_TCUR05
+connect 5 TMS_PFCL2_MHL_TCUR01
+connect 6 TMS_PFCL2_MHL_TCUR02
+connect 7 TMS_PFCL2_MHL_TCUR03
+connect 8 TMS_PFCL2_MHL_TCUR04
+connect 9 TMS_PFCL2_MHL_TCUR05
+Data count number is 10
+connect TMS_M_PFC3_TOUT_MAX
+connect TMS_M_PFC3_TOUT_MAX_PV
+connect TMS_M_PFC3_TOUT_MIN
+connect TMS_M_PFC3_TOUT_MIN_PV
+connect TMS_M_PFC3_TOUT_AVR
+connect 0 TMS_PFCU3_MHL_TCUR01
+connect 1 TMS_PFCU3_MHL_TCUR02
+connect 2 TMS_PFCU3_MHL_TCUR03
+connect 3 TMS_PFCL3_MHL_TCUR01
+connect 4 TMS_PFCL3_MHL_TCUR02
+connect 5 TMS_PFCL3_MHL_TCUR03
+Data count number is 6
+connect TMS_M_PFC4_TOUT_MAX
+connect TMS_M_PFC4_TOUT_MAX_PV
+connect TMS_M_PFC4_TOUT_MIN
+connect TMS_M_PFC4_TOUT_MIN_PV
+connect TMS_M_PFC4_TOUT_AVR
+connect 0 TMS_PFCU4_MHL_TCUR01
+connect 1 TMS_PFCU4_MHL_TCUR02
+connect 2 TMS_PFCU4_MHL_TCUR03
+connect 3 TMS_PFCU4_MHL_TCUR04
+connect 4 TMS_PFCL4_MHL_TCUR01
+connect 5 TMS_PFCL4_MHL_TCUR02
+connect 6 TMS_PFCL4_MHL_TCUR03
+connect 7 TMS_PFCL4_MHL_TCUR04
+Data count number is 8
+Spawning state program "sncTmsMain", thread 0x8f75b48: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC5_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f8b0d8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC6_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8f96008: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC7_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8fa0f38: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFC17_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8fabe98: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB1_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8fb6da8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB2_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8fc1cd8: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB3_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect TMS_M_PFC5_TOUT_MAX
+connect TMS_M_PFC5_TOUT_MAX_PV
+connect TMS_M_PFC5_TOUT_MIN
+connect TMS_M_PFC5_TOUT_MIN_PV
+connect TMS_M_PFC5_TOUT_AVR
+connect 0 TMS_PFCU5_MHL_TCUR01
+connect 1 TMS_PFCU5_MHL_TCUR02
+connect 2 TMS_PFCU5_MHL_TCUR03
+connect 3 TMS_PFCU5_MHL_TCUR04
+connect 4 TMS_PFCU5_MHL_TCUR05
+connect 5 TMS_PFCL5_MHL_TCUR01
+connect 6 TMS_PFCL5_MHL_TCUR02
+connect 7 TMS_PFCL5_MHL_TCUR03
+connect 8 TMS_PFCL5_MHL_TCUR04
+connect 9 TMS_PFCL5_MHL_TCUR05
+Data count number is 10
+connect TMS_M_PFC6_TOUT_MAX
+connect TMS_M_PFC6_TOUT_MAX_PV
+connect TMS_M_PFC6_TOUT_MIN
+connect TMS_M_PFC6_TOUT_MIN_PV
+connect TMS_M_PFC6_TOUT_AVR
+connect 0 TMS_PFCU6_MHL_TCUR01
+connect 1 TMS_PFCU6_MHL_TCUR02
+connect 2 TMS_PFCU6_MHL_TCUR03
+connect 3 TMS_PFCU6_MHL_TCUR04
+connect 4 TMS_PFCU6_MHL_TCUR05
+connect 5 TMS_PFCU6_MHL_TCUR06
+connect 6 TMS_PFCL6_MHL_TCUR01
+connect 7 TMS_PFCL6_MHL_TCUR02
+connect 8 TMS_PFCL6_MHL_TCUR03
+connect 9 TMS_PFCL6_MHL_TCUR04
+connect 10 TMS_PFCL6_MHL_TCUR05
+connect 11 TMS_PFCL6_MHL_TCUR06
+Data count number is 12
+connect TMS_M_PFC7_TOUT_MAX
+connect TMS_M_PFC7_TOUT_MAX_PV
+connect TMS_M_PFC7_TOUT_MIN
+connect TMS_M_PFC7_TOUT_MIN_PV
+connect TMS_M_PFC7_TOUT_AVR
+connect 0 TMS_PFCU7_MHL_TCUR01
+connect 1 TMS_PFCU7_MHL_TCUR02
+connect 2 TMS_PFCU7_MHL_TCUR03
+connect 3 TMS_PFCU7_MHL_TCUR04
+connect 4 TMS_PFCL7_MHL_TCUR01
+connect 5 TMS_PFCL7_MHL_TCUR02
+connect 6 TMS_PFCL7_MHL_TCUR03
+connect 7 TMS_PFCL7_MHL_TCUR04
+Data count number is 8
+connect TMS_M_PFC17_TOUT_MAX
+connect TMS_M_PFC17_TOUT_MAX_PV
+connect TMS_M_PFC17_TOUT_MIN
+connect TMS_M_PFC17_TOUT_MIN_PV
+connect TMS_M_PFC17_TOUT_AVR
+connect 0 TMS_PFCU1_MHL_TCUR01
+connect 1 TMS_PFCU1_MHL_TCUR02
+connect 2 TMS_PFCU1_MHL_TCUR03
+connect 3 TMS_PFCU1_MHL_TCUR04
+connect 4 TMS_PFCU1_MHL_TCUR05
+connect 5 TMS_PFCU1_MHL_TCUR06
+connect 6 TMS_PFCL1_MHL_TCUR01
+connect 7 TMS_PFCL1_MHL_TCUR02
+connect 8 TMS_PFCL1_MHL_TCUR03
+connect 9 TMS_PFCL1_MHL_TCUR04
+connect 10 TMS_PFCL1_MHL_TCUR05
+connect 11 TMS_PFCL1_MHL_TCUR06
+connect 12 TMS_PFCU2_MHL_TCUR01
+connect 13 TMS_PFCU2_MHL_TCUR02
+connect 14 TMS_PFCU2_MHL_TCUR03
+connect 15 TMS_PFCU2_MHL_TCUR04
+connect 16 TMS_PFCU2_MHL_TCUR05
+connect 17 TMS_PFCL2_MHL_TCUR01
+connect 18 TMS_PFCL2_MHL_TCUR02
+connect 19 TMS_PFCL2_MHL_TCUR03
+connect 20 TMS_PFCL2_MHL_TCUR04
+connect 21 TMS_PFCL2_MHL_TCUR05
+connect 22 TMS_PFCU3_MHL_TCUR01
+connect 23 TMS_PFCU3_MHL_TCUR02
+connect 24 TMS_PFCU3_MHL_TCUR03
+connect 25 TMS_PFCL3_MHL_TCUR01
+connect 26 TMS_PFCL3_MHL_TCUR02
+connect 27 TMS_PFCL3_MHL_TCUR03
+connect 28 TMS_PFCU4_MHL_TCUR01
+connect 29 TMS_PFCU4_MHL_TCUR02
+connect 30 TMS_PFCU4_MHL_TCUR03
+connect 31 TMS_PFCU4_MHL_TCUR04
+connect 32 TMS_PFCL4_MHL_TCUR01
+connect 33 TMS_PFCL4_MHL_TCUR02
+connect 34 TMS_PFCL4_MHL_TCUR03
+connect 35 TMS_PFCL4_MHL_TCUR04
+connect 36 TMS_PFCU5_MHL_TCUR01
+connect 37 TMS_PFCU5_MHL_TCUR02
+connect 38 TMS_PFCU5_MHL_TCUR03
+connect 39 TMS_PFCU5_MHL_TCUR04
+connect 40 TMS_PFCU5_MHL_TCUR05
+connect 41 TMS_PFCL5_MHL_TCUR01
+connect 42 TMS_PFCL5_MHL_TCUR02
+connect 43 TMS_PFCL5_MHL_TCUR03
+connect 44 TMS_PFCL5_MHL_TCUR04
+connect 45 TMS_PFCL5_MHL_TCUR05
+connect 46 TMS_PFCU6_MHL_TCUR01
+connect 47 TMS_PFCU6_MHL_TCUR02
+connect 48 TMS_PFCU6_MHL_TCUR03
+connect 49 TMS_PFCU6_MHL_TCUR04
+connect 50 TMS_PFCU6_MHL_TCUR05
+connect 51 TMS_PFCU6_MHL_TCUR06
+connect 52 TMS_PFCL6_MHL_TCUR01
+connect 53 TMS_PFCL6_MHL_TCUR02
+connect 54 TMS_PFCL6_MHL_TCUR03
+connect 55 TMS_PFCL6_MHL_TCUR04
+connect 56 TMS_PFCL6_MHL_TCUR05
+connect 57 TMS_PFCL6_MHL_TCUR06
+connect 58 TMS_PFCU7_MHL_TCUR01
+connect 59 TMS_PFCU7_MHL_TCUR02
+connect 60 TMS_PFCU7_MHL_TCUR03
+connect 61 TMS_PFCU7_MHL_TCUR04
+connect 62 TMS_PFCL7_MHL_TCUR01
+connect 63 TMS_PFCL7_MHL_TCUR02
+connect 64 TMS_PFCL7_MHL_TCUR03
+connect 65 TMS_PFCL7_MHL_TCUR04
+Data count number is 66
+connect TMS_M_PFB1_TOUT_MAX
+connect TMS_M_PFB1_TOUT_MAX_PV
+connect TMS_M_PFB1_TOUT_MIN
+connect TMS_M_PFB1_TOUT_MIN_PV
+connect TMS_M_PFB1_TOUT_AVR
+connect 0 TMS_PFB01_BHL_TCUR01
+connect 1 TMS_PFB01_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB2_TOUT_MAX
+connect TMS_M_PFB2_TOUT_MAX_PV
+connect TMS_M_PFB2_TOUT_MIN
+connect TMS_M_PFB2_TOUT_MIN_PV
+connect TMS_M_PFB2_TOUT_AVR
+connect TMS_M_PFB3_TOUT_MAX
+connect TMS_M_PFB3_TOUT_MAX_PV
+connect TMS_M_PFB3_TOUT_MIN
+connect TMS_M_PFB3_TOUT_MIN_PV
+connect TMS_M_PFB3_TOUT_AVR
+connect 0 TMS_PFB03_BHL_TCUR01
+connect 1 TMS_PFB03_BHL_TCUR02
+Data count number is 2
+Spawning state program "sncTmsMain", thread 0x8fccc08: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB4_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ff2350: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB5_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x8ffd280: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB6_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x90081b0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB7_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x90130e0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFB17_TOUT.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x901e040: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFS14_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x9028f70: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFS5_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+connect 0 TMS_PFB02_BHL_TCUR01
+connect 1 TMS_PFB02_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB4_TOUT_MAX
+connect TMS_M_PFB4_TOUT_MAX_PV
+connect TMS_M_PFB4_TOUT_MIN
+connect TMS_M_PFB4_TOUT_MIN_PV
+connect TMS_M_PFB4_TOUT_AVR
+connect 0 TMS_PFB04_BHL_TCUR01
+connect 1 TMS_PFB04_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB5_TOUT_MAX
+connect TMS_M_PFB5_TOUT_MAX_PV
+connect TMS_M_PFB5_TOUT_MIN
+connect TMS_M_PFB5_TOUT_MIN_PV
+connect TMS_M_PFB5_TOUT_AVR
+connect 0 TMS_PFB05_BHL_TCUR01
+connect 1 TMS_PFB05_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB6_TOUT_MAX
+connect TMS_M_PFB6_TOUT_MAX_PV
+connect TMS_M_PFB6_TOUT_MIN
+connect TMS_M_PFB6_TOUT_MIN_PV
+connect TMS_M_PFB6_TOUT_AVR
+connect 0 TMS_PFB06_BHL_TCUR01
+connect 1 TMS_PFB06_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB7_TOUT_MAX
+connect TMS_M_PFB7_TOUT_MAX_PV
+connect TMS_M_PFB7_TOUT_MIN
+connect TMS_M_PFB7_TOUT_MIN_PV
+connect TMS_M_PFB7_TOUT_AVR
+connect 0 TMS_PFB07_BHL_TCUR01
+connect 1 TMS_PFB07_BHL_TCUR02
+Data count number is 2
+connect TMS_M_PFB17_TOUT_MAX
+connect TMS_M_PFB17_TOUT_MAX_PV
+connect TMS_M_PFB17_TOUT_MIN
+connect TMS_M_PFB17_TOUT_MIN_PV
+connect TMS_M_PFB17_TOUT_AVR
+connect 0 TMS_PFB01_BHL_TCUR01
+connect 1 TMS_PFB01_BHL_TCUR02
+connect 2 TMS_PFB02_BHL_TCUR01
+connect 3 TMS_PFB02_BHL_TCUR02
+connect 4 TMS_PFB03_BHL_TCUR01
+connect 5 TMS_PFB03_BHL_TCUR02
+connect 6 TMS_PFB04_BHL_TCUR01
+connect 7 TMS_PFB04_BHL_TCUR02
+connect 8 TMS_PFB05_BHL_TCUR01
+connect 9 TMS_PFB05_BHL_TCUR02
+connect 10 TMS_PFB06_BHL_TCUR01
+connect 11 TMS_PFB06_BHL_TCUR02
+connect 12 TMS_PFB07_BHL_TCUR01
+connect 13 TMS_PFB07_BHL_TCUR02
+Data count number is 14
+connect TMS_M_PFS14_TSURF_MAX
+connect TMS_M_PFS14_TSURF_MAX_PV
+connect TMS_M_PFS14_TSURF_MIN
+connect TMS_M_PFS14_TSURF_MIN_PV
+connect TMS_M_PFS14_TSURF_AVR
+connect 0 TMS_CSS02_ISL_TCU001
+connect 1 TMS_CSS02_OSL_TCU001
+connect 2 TMS_CSS04_ISL_TCU001
+connect 3 TMS_CSS04_OSL_TCU001
+connect 4 TMS_CSS06_ISL_TCU001
+connect 5 TMS_CSS06_OSL_TCU001
+connect 6 TMS_CSS06_ISL_TCU002
+connect 7 TMS_CSS06_OSL_TCU002
+connect 8 TMS_CSS08_ISL_TCU001
+connect 9 TMS_CSS08_OSL_TCU001
+Data count number is 10
+Spawning state program "sncTmsMain", thread 0x9033ea0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFS6_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x9043270: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFS7_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x904e1f0: "sncTmsMain"
+seq sncTmsMain, "FNAME=tmsMain_Max_PFS17_TSURF.tms"
+SEQ Version seq-2.0.7: Sat Apr  7 00:44:57 2007
+Spawning state program "sncTmsMain", thread 0x9059170: "sncTmsMain"
+connect TMS_M_PFS5_TSURF_MAX
+connect TMS_M_PFS5_TSURF_MAX_PV
+connect TMS_M_PFS5_TSURF_MIN
+connect TMS_M_PFS5_TSURF_MIN_PV
+connect TMS_M_PFS5_TSURF_AVR
+connect 0 TMS_PFSU5_S02_TCU001
+connect 1 TMS_PFSL5_S02_TCU001
+connect 2 TMS_PFSU5_S06_TCU001
+connect 3 TMS_PFSL5_S06_TCU001
+Data count number is 4
+connect TMS_M_PFS6_TSURF_MAX
+connect TMS_M_PFS6_TSURF_MAX_PV
+connect TMS_M_PFS6_TSURF_MIN
+connect TMS_M_PFS6_TSURF_MIN_PV
+connect TMS_M_PFS6_TSURF_AVR
+connect 0 TMS_PFSU6_S03_TCU001
+connect 1 TMS_PFSL6_S03_TCU001
+connect 2 TMS_PFSU6_S11_TCU001
+connect 3 TMS_PFSL6_S11_TCU001
+Data count number is 4
+connect TMS_M_PFS7_TSURF_MAX
+connect TMS_M_PFS7_TSURF_MAX_PV
+connect TMS_M_PFS7_TSURF_MIN
+connect TMS_M_PFS7_TSURF_MIN_PV
+connect TMS_M_PFS7_TSURF_AVR
+connect 0 TMS_PFSU7_S03_TCU001
+connect 1 TMS_PFSL7_S03_TCU001
+connect 2 TMS_PFSU7_S11_TCU001
+connect 3 TMS_PFSL7_S11_TCU001
+Data count number is 4
+connect TMS_M_PFS17_TSURF_MAX
+connect TMS_M_PFS17_TSURF_MAX_PV
+connect TMS_M_PFS17_TSURF_MIN
+connect TMS_M_PFS17_TSURF_MIN_PV
+connect TMS_M_PFS17_TSURF_AVR
+connect 0 TMS_CSS02_ISL_TCU001
+connect 1 TMS_CSS02_OSL_TCU001
+connect 2 TMS_CSS04_ISL_TCU001
+connect 3 TMS_CSS04_OSL_TCU001
+connect 4 TMS_CSS06_ISL_TCU001
+connect 5 TMS_CSS06_OSL_TCU001
+connect 6 TMS_CSS06_ISL_TCU002
+connect 7 TMS_CSS06_OSL_TCU002
+connect 8 TMS_CSS08_ISL_TCU001
+connect 9 TMS_CSS08_OSL_TCU001
+connect 10 TMS_PFSU5_S02_TCU001
+connect 11 TMS_PFSL5_S02_TCU001
+connect 12 TMS_PFSU5_S06_TCU001
+connect 13 TMS_PFSL5_S06_TCU001
+connect 14 TMS_PFSU6_S03_TCU001
+connect 15 TMS_PFSL6_S03_TCU001
+connect 16 TMS_PFSU6_S11_TCU001
+connect 17 TMS_PFSL6_S11_TCU001
+connect 18 TMS_PFSU7_S03_TCU001
+connect 19 TMS_PFSL7_S03_TCU001
+connect 20 TMS_PFSU7_S11_TCU001
+connect 21 TMS_PFSL7_S11_TCU001
+Data count number is 22
+epics> Timeout waiting for thread 0x8cccac0 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8ce7a18 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8cf2948 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d00938 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d0b868 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d16798 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d216c8 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d2c5f8 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d42458 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d37528 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d4a2e8 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d55218 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d60148 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d6b078 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d75fa8 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d88af8 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d93ba0 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8d9ead0 ("tmsTempValue") death phase 1 (ignored)
+Timeout waiting for thread 0x8da9ac0 ("tmsTempValue") death phase 1 (ignored)

@@ -1,0 +1,1165 @@
+program sncPCSWatchdog
+
+option +r;
+option -c;
+
+%{
+
+/* RFM Memory Map for PCS command area */
+
+typedef struct
+{
+    volatile int    id;
+    volatile int    control_method;
+    volatile int    current_direction;
+    volatile unsigned int    comm_counter;
+    volatile int    rt_mode;
+    volatile int    pf_command[14]; /*  11 -> 14   2010.6.14 woong */
+    volatile int    testvar;
+    volatile int    pf_current_traj[14]; /*  new   2010.6.14 woong */
+} pcs_command;
+
+#define PCS_S_V_NCPUS      10
+#define PCS_S_V_RINGSIZE   1000
+#define PCS_S_V_NSIGNALS   50
+#define PCS_S_SIGNAMLEN    16
+
+typedef struct 
+{
+    volatile int     id;
+    volatile int     status;
+    volatile int     cput_status[PCS_S_V_NCPUS];
+    volatile int     shotnumber;
+    volatile int     scope_buffer_index;
+    volatile int     last_update_time;
+    volatile int     update_frequency;
+    volatile char    scope_sig_names[PCS_S_V_NSIGNALS][PCS_S_SIGNAMLEN];
+    volatile float   scope_y_spans[PCS_S_V_NSIGNALS][2];
+    volatile int     scope_buffer_time[PCS_S_V_RINGSIZE];
+    volatile float   scope_buffer_data[PCS_S_V_RINGSIZE][PCS_S_V_NSIGNALS];
+} pcs_rtscope;
+
+
+typedef struct
+{
+    volatile int         id;
+    volatile unsigned    pcs_current_time;
+    volatile int         pcs_fault_code;
+    volatile int         dummy; /* removed 2013. 7. 12 */
+    volatile int         force_fast_interlock; /* 2012. 8. 1 request by shhan */
+} ccs_share;
+
+typedef struct
+{
+	volatile int         force_pcs_abort; /* used as the  External fault for NB armor interlock  */
+	volatile int         pcs_pfc_fault; /* 2013. 6. 20 request by hshan */    
+} ccs_toPcs;
+
+
+#include "epicsTime.h"
+#include "rfmAddrMap.h"
+
+
+#define PCS_FAULT_IP_MINIMUM       (0x00000001<<0)
+#define PCS_FAULT_NE_ERROR         (0x00000001<<1)
+#define PCS_FAULT_PF_ERROR         (0x00000001<<2)
+#define PCS_FAULT_PF_OVERCURRENT   (0x00000001<<3)
+#define PCS_FAULT_PF_VOLTAGE_ERROR (0x00000001<<4) /* new 2010.07.28 */
+#define PCS_FAULT_PF_OVERVOLTAGE   (0x00000001<<5)  /* new 2010.07.28 */
+#define PCS_FAULT_EXT_FAULT        (0x00000001<<6)
+#define PCS_FAULT_PS_FAULT         (0x00000001<<7)
+#define PCS_FAULT_IP_ERROR         (0x00000001<<8)  /* new 2010.07.28 */
+#define PCS_FAULT_IC_OVERCURRENT   (0x00000001<<9)  /* new 2010.07.28 */
+#define PCS_FAULT_RTEFIT           (0x00000001<<10)  /* new 2013.08.27 */
+#define PCS_FAULT_TOTAL_MVA        (0x00000001<<11)  /* new 2013.08.27 */
+#define PCS_FAULT_DISRUPTION       (0x00000001<<12)  /* new 2013.08.27 */
+#define PCS_FAULT_SOFT_LANDING     (0x00000001<<13)  /* new 2013.08.27 */
+
+#define PCS_FAULT 1
+#define PCS_NO_FAULT 0
+/*
+#define PCS_CONT           0
+#define PCS_ABORT          1
+*/
+
+/*
+	There is no PCS fault, even if pcs occured 7 fault!.   requested from jshong. 2011. 6. 17 
+*/
+#define PCS_OPST_READY     0
+#define PCS_OPST_FAULT     1
+/*
+#define PCS_OPST_READY     0
+#define PCS_OPST_TEST      1
+#define PCS_OPST_FAULT     2
+#define PCS_OPST_NOTREADY  3
+*/
+
+#define INTERLOCK_ACTIVATE   0
+#define INTERLOCK_DEACTIVATE 1
+
+
+
+#define CURRENT_DIRECTION_NEGATIVE   1
+#define CURRENT_DIRECTION_POSITIVE   0
+
+#define PF1_CURRENT_DIRECTION_MASK    (0x000001<<0)
+#define PF1_DUMMY_DIRECTION_MASK      (0x000001<<1)
+#define PF2_CURRENT_DIRECTION_MASK    (0x000001<<2)
+#define PF2_DUMMY_DIRECTION_MASK      (0x000001<<3)
+#define PF3U_CURRENT_DIRECTION_MASK   (0x000001<<4)
+#define PF3L_CURRENT_DIRECTION_MASK   (0x000001<<5)
+#define PF4U_CURRENT_DIRECTION_MASK   (0x000001<<6)
+#define PF4L_CURRENT_DIRECTION_MASK   (0x000001<<7)
+#define PF5U_CURRENT_DIRECTION_MASK   (0x000001<<8)
+#define PF5L_CURRENT_DIRECTION_MASK   (0x000001<<9)
+#define PF6U_CURRENT_DIRECTION_MASK   (0x000001<<10)
+#define PF6L_CURRENT_DIRECTION_MASK   (0x000001<<11)
+#define PF7_CURRENT_DIRECTION_MASK    (0x000001<<12)
+#define PF7_DUMMY_DIRECTION_MASK      (0x000001<<13)
+
+/*   7-> 11     2010. 6. 14 woong */
+/*   11-> 14     2010. 7. 20 woong */
+#define NUM_PF_MPS                    14  
+
+
+# define EIEIO       __asm__ volatile ("eieio")
+# define EIEIO_SYNC  __asm__ volatile ("eieio;sync")
+# define SYNC         __asm__ volatile ("sync")
+
+
+}%
+
+int        watchdog_status;
+assign     watchdog_status to "CCS_PCS_RT_VIOLATION";
+monitor    watchdog_status;
+
+int        pcs_watchdog_control;
+assign     pcs_watchdog_control to "CCS_WATCHDOG_PCS";
+monitor    pcs_watchdog_control;
+
+evflag     watchdog_event;
+
+
+int        force_abort;
+assign     force_abort to "CCS_SET_PCS_FORCE_ABORT";
+monitor    force_abort;
+
+/* 2013. 6. 3 */
+int        force_pfc_fault;
+assign     force_pfc_fault to "CCS_SET_PCS_PFC_FAULT";
+monitor    force_pfc_fault;
+
+/*  deleted, not used.   2013. 7. 15 **********************
+int        force_ext_fault;
+assign     force_ext_fault to "PCS_SET_EXT_FAULT";
+monitor    force_ext_fault;
+********************************/
+
+/* add for checking blip event.. 2013. 8. 19 ********************/
+/*  pcs fault checking will be start after blip */
+int         test_start;
+assign      test_start to "CCS_SHOTSEQ_START";
+monitor     test_start;
+
+int         soft_start;
+assign      soft_start to "TSS_CTU_SOFT_START";
+monitor     soft_start;
+
+float       pcs_check_time;
+assign      pcs_check_time to "CCS_PCS_CHECK_TIME";
+monitor     pcs_check_time;
+
+/*********************************************/
+
+int        shotnumber;
+assign     shotnumber to  "CCS_SHOT_NUMBER";
+monitor    shotnumber;
+evflag     ef_shotnumber;
+sync       shotnumber     ef_shotnumber;     
+
+
+int        pcs_fault_ip_minimum;
+assign     pcs_fault_ip_minimum to "CCS_PCS_FAULT_IP_MINIMUM";
+monitor    pcs_fault_ip_minimum;
+
+int        pcs_fault_ne_error;
+assign     pcs_fault_ne_error to "CCS_PCS_FAULT_NE_ERROR";
+monitor    pcs_fault_ne_error;
+
+int        pcs_fault_pf_error;
+assign     pcs_fault_pf_error to "CCS_PCS_FAULT_PF_ERROR";
+monitor    pcs_fault_pf_error;
+
+int        pcs_fault_pf_overcurrent;
+assign     pcs_fault_pf_overcurrent to "CCS_PCS_FAULT_PF_OVERCURRENT";
+monitor    pcs_fault_pf_overcurrent;
+
+int        pcs_fault_pf_voltage_error;
+assign     pcs_fault_pf_voltage_error to "CCS_PCS_FAULT_PF_VOLTAGE_ERROR";
+monitor    pcs_fault_pf_voltage_error;
+
+int        pcs_fault_pf_overvoltage;
+assign     pcs_fault_pf_overvoltage to "CCS_PCS_FAULT_PF_OVERVOLTAGE";
+monitor    pcs_fault_pf_overvoltage;
+
+int        pcs_fault_ext_fault;
+assign     pcs_fault_ext_fault to "CCS_PCS_FAULT_EXT_FAULT";
+monitor    pcs_fault_ext_fault;
+
+int        pcs_fault_ps_fault;
+assign     pcs_fault_ps_fault to "CCS_PCS_FAULT_PS_FAULT";
+monitor    pcs_fault_ps_fault;
+
+int        pcs_fault_ip_error;
+assign     pcs_fault_ip_error to "CCS_PCS_FAULT_IP_ERROR";
+monitor    pcs_fault_ip_error;
+
+int        pcs_fault_ic_overcurrent;
+assign     pcs_fault_ic_overcurrent to "CCS_PCS_FAULT_IC_OVERCURRENT";
+monitor    pcs_fault_ic_overcurrent;
+
+int        pcs_fault_rtefit;
+assign     pcs_fault_rtefit to "CCS_PCS_FAULT_RTEFIT";
+monitor    pcs_fault_rtefit;
+int        pcs_fault_total_mva;
+assign     pcs_fault_total_mva to "CCS_PCS_FAULT_TOTAL_MVA";
+monitor    pcs_fault_total_mva;
+int        pcs_fault_disruption;
+assign     pcs_fault_disruption to "CCS_PCS_FAULT_DISRUPTION";
+monitor    pcs_fault_disruption;
+int        pcs_fault_soft_landing;
+assign     pcs_fault_soft_landing to "CCS_PCS_FAULT_SOFT_LANDING";
+monitor    pcs_fault_soft_landing;
+
+
+int        pcs_fault_fast_interlock;
+assign     pcs_fault_fast_interlock to "CCS_PCS_FAULT_FAST_INTL";
+monitor    pcs_fault_fast_interlock;
+
+
+
+int        pcs_fault_ip_minimum_latch;
+int        pcs_fault_ne_error_latch;
+int        pcs_fault_pf_error_latch;
+int        pcs_fault_pf_overcurrent_latch;
+int        pcs_fault_pf_voltage_error_latch;
+int        pcs_fault_pf_overvoltage_latch;
+int        pcs_fault_ext_fault_latch;
+int        pcs_fault_ps_fault_latch;
+int        pcs_fault_ip_error_latch;
+int        pcs_fault_ic_overcurrent_latch;
+int        pcs_fault_rtefit_latch;		/* 2013. 8. 27 */
+int        pcs_fault_total_mva_latch;		/* 2013. 8. 27 */
+int        pcs_fault_disruption_latch;		/* 2013. 8. 27 */
+int        pcs_fault_soft_landing_latch;	/* 2013. 8. 27 */
+
+int        pcs_fault_fast_interlock_latch;	/* 2012. 8. 9 */
+unsigned int   pcs_fault_code;
+unsigned int   fault_fast_interlock;
+evflag     pcs_fault_event;
+
+
+/* back to origin 2010. 8. 2 woong */
+int        pcs_opst_interlock;
+assign     pcs_opst_interlock to "CCS_INTL_PCSOPST";
+monitor    pcs_opst_interlock;
+
+
+unsigned int   current_direction; 
+char       pf1_current_direction;
+assign     pf1_current_direction to "PCS_PF1_CURRENT_DIRECTION";
+char       pf2_current_direction;
+assign     pf2_current_direction to "PCS_PF2_CURRENT_DIRECTION";
+char       pf3u_current_direction;
+assign     pf3u_current_direction to "PCS_PF3U_CURRENT_DIRECTION";
+char       pf3l_current_direction;
+assign     pf3l_current_direction to "PCS_PF3L_CURRENT_DIRECTION";
+char       pf4u_current_direction;
+assign     pf4u_current_direction to "PCS_PF4U_CURRENT_DIRECTION";
+char       pf4l_current_direction;
+assign     pf4l_current_direction to "PCS_PF4L_CURRENT_DIRECTION";
+char       pf5u_current_direction;
+assign     pf5u_current_direction to "PCS_PF5U_CURRENT_DIRECTION";
+char       pf5l_current_direction;
+assign     pf5l_current_direction to "PCS_PF5L_CURRENT_DIRECTION";
+char       pf6u_current_direction;
+assign     pf6u_current_direction to "PCS_PF6U_CURRENT_DIRECTION";
+char       pf6l_current_direction;
+assign     pf6l_current_direction to "PCS_PF6L_CURRENT_DIRECTION";
+char       pf7_current_direction;
+assign     pf7_current_direction to "PCS_PF7_CURRENT_DIRECTION";
+
+char       pf1_current_direction_latch;
+char       pf2_current_direction_latch;
+char       pf3u_current_direction_latch;
+char       pf3l_current_direction_latch;
+char       pf4u_current_direction_latch;
+char       pf4l_current_direction_latch;
+char       pf5u_current_direction_latch;
+char       pf5l_current_direction_latch;
+char       pf6u_current_direction_latch;
+char       pf6l_current_direction_latch;
+char       pf7_current_direction_latch;
+evflag     pcs_current_direction_monitor_event;
+
+int        interlock_level1;
+assign     interlock_level1     to "CCS_INTL_LEVEL1";
+monitor    interlock_level1;
+int        interlock_level2;
+assign     interlock_level2     to "CCS_INTL_LEVEL2";
+monitor    interlock_level2;
+int        interlock_level3;
+assign     interlock_level3     to "CCS_INTL_LEVEL3";
+monitor    interlock_level3;
+int        interlock_level4;
+assign     interlock_level4     to "CCS_INTL_LEVEL4";
+monitor    interlock_level4;
+int        interlock_warning;
+assign     interlock_warning    to "CCS_INTL_WARNING";
+monitor    interlock_warning;
+
+float       vpf_command[14];
+assign      vpf_command to {  "CCS_VPF1_COMMAND_RAW",
+                              "CCS_VPF1_DUMMY_RAW",
+                              "CCS_VPF2_COMMAND_RAW",
+                              "CCS_VPF2_DUMMY_RAW",
+                              "CCS_VPF3U_COMMAND_RAW",
+                              "CCS_VPF3L_COMMAND_RAW",
+                              "CCS_VPF4U_COMMAND_RAW",
+                              "CCS_VPF4L_COMMAND_RAW",
+                              "CCS_VPF5U_COMMAND_RAW",
+                              "CCS_VPF5L_COMMAND_RAW",
+                              "CCS_VPF6U_COMMAND_RAW",
+                              "CCS_VPF6L_COMMAND_RAW",
+                              "CCS_VPF7_COMMAND_RAW",
+                              "CCS_VPF7_DUMMY_RAW" };
+float       ipf_command[14];
+assign      ipf_command to {  "CCS_IPF1_COMMAND_RAW",
+                              "CCS_IPF1_DUMMY_RAW",
+                              "CCS_IPF2_COMMAND_RAW",
+                              "CCS_IPF2_DUMMY_RAW",
+                              "CCS_IPF3U_COMMAND_RAW",
+                              "CCS_IPF3L_COMMAND_RAW",
+                              "CCS_IPF4U_COMMAND_RAW",
+                              "CCS_IPF4L_COMMAND_RAW",
+                              "CCS_IPF5U_COMMAND_RAW",
+                              "CCS_IPF5L_COMMAND_RAW",
+                              "CCS_IPF6U_COMMAND_RAW",
+                              "CCS_IPF6L_COMMAND_RAW",
+                              "CCS_IPF7_COMMAND_RAW",
+                              "CCS_IPF7_DUMMY_RAW"  };
+evflag      ev_posting;
+
+
+int         clear_pcsFault;
+assign      clear_pcsFault       to   "CCS_CLEAR_PCS_FAULT_CODE";
+monitor     clear_pcsFault;
+int         clear_pcsFastIntl;
+assign      clear_pcsFastIntl    to   "CCS_CLEAR_PCS_FAST_INTL";
+monitor     clear_pcsFastIntl;
+int         clear_forceAbort;
+assign      clear_forceAbort     to   "CCS_CLEAR_PCS_FORCE_ABORT";
+monitor     clear_forceAbort;
+int         clear_pfcFault;
+assign      clear_pfcFault       to   "CCS_CLEAR_PCS_PFC_FAULT";
+monitor     clear_pfcFault;
+/************************ 2013. 8. 25 */
+
+int         control_method;
+int         pcs_RTMode_Latch;
+
+int         pcs_RTMode;
+assign      pcs_RTMode to "CCS_PCS_RT_MODE";
+monitor     pcs_RTMode;
+
+
+evflag      ef_heating_stop;
+
+int         ech_stop;
+assign      ech_stop    to "CCS_INTL_ECH_STOP";
+int         icrh_stop;
+assign      icrh_stop   to "CCS_INTL_ICRH_STOP";
+int         intl_fault_notify;
+assign      intl_fault_notify    to "CCS_EIP_NOTIFY_FAULT";
+
+int         nbi1_stop;
+assign      nbi1_stop    to "CCS_INTL_NBI1_STOP";
+
+/* 2011. 6. 10 add by woong */
+int         eccd_stop;
+assign      eccd_stop    to "CCS_INTL_ECCD_STOP";
+
+/* 2012. 9. 4 add by woong */
+int         lhcd_stop;
+assign      lhcd_stop    to "CCS_INTL_LHCD_STOP";
+/* directly linking to CCS_PCS_FAULT_FAST_INTL  2012.09.04*/
+/* delete linking to CCS_PCS_FAULT_FAST_INTL  2012.09.05*/
+
+int         intl_heating_stop;
+assign      intl_heating_stop    to "CCS_INTL_HEATING_STOP";
+
+int         intl_heating_reset;
+assign      intl_heating_reset    to "CCS_INTL_HEATING_RESET";
+
+
+int         shot_start;
+assign      shot_start to "CCS_CTU_shotStart";
+monitor     shot_start;
+
+evflag      ef_shot_start;
+sync        shot_start       ef_shot_start;
+
+evflag      ef_trigg;
+
+
+%% static volatile pcs_command  *pPCS_command = (pcs_command*) (RFM_BASE_ADDR+RFM_PCS_TO_PF);
+%% static volatile pcs_rtscope  *pPCS_rtscope = (pcs_rtscope*) (RFM_BASE_ADDR+RFM_PCS_RTSCOPE);
+%% static volatile ccs_share    *pCCS_share   = (ccs_share*)   (RFM_BASE_ADDR+RFM_CCS_SHARE);
+%% static volatile ccs_toPcs    *pCCS_to_PCS  = (ccs_toPcs*)   (RFM_BASE_ADDR+RFM_CCS_TO_PCS);
+
+
+%% static epicsTimeStamp time_stamp1, time_stamp2;
+%% static unsigned char first_flag;
+
+%% epicsTimeStamp time_debug;
+%% char buf_debug[40];
+
+unsigned int comm_counter;
+
+%{
+static int evaluation (unsigned int comm_counter)
+{
+    int val;
+    double time1, time2;
+
+    epicsTimeGetCurrent(&time_stamp2);
+
+    EIEIO_SYNC;
+    val = (comm_counter == pPCS_command->comm_counter);
+    EIEIO_SYNC;
+
+    if(!val) {
+        time1 = (double) time_stamp1.secPastEpoch + (double) time_stamp1.nsec * 1.E-9; 
+        time2 = (double) time_stamp2.secPastEpoch + (double) time_stamp2.nsec * 1.E-9;
+        if((time2-time1)< 5.E-3) {
+            val = 0;
+            printf("___PCS_Watchdog_fail___\n");
+        }
+    }
+
+    return val;
+}
+
+static int check_run(void)
+{
+
+    static unsigned int counter;
+
+    if(first_flag) {
+        first_flag = 0;
+        EIEIO_SYNC;
+        counter = pPCS_command->comm_counter;
+        EIEIO_SYNC;
+
+        return FALSE;
+    }
+
+
+    EIEIO_SYNC;
+    if(counter != pPCS_command->comm_counter) return TRUE;
+
+    counter = pPCS_command->comm_counter;
+    EIEIO_SYNC;
+
+    return FALSE;
+}
+
+static int is_it_rt(void)
+{
+    int rt_mode;
+
+    EIEIO_SYNC;
+    rt_mode = pPCS_command->rt_mode;
+    EIEIO_SYNC;
+
+    return rt_mode;
+}
+
+}%
+
+ss watchdog_RT_mode_check
+{
+    state stop {
+       when(pcs_watchdog_control) {
+            %% first_flag = 1;
+            efClear(ef_shot_start);
+            efClear(ef_trigg);
+       } state check_run
+    }
+
+      state check_run {
+         when(efTestAndClear(ef_shot_start)) 
+         {
+         	efSet(ef_trigg);
+		epicsThreadSleep(20.);
+/*		%%printf("PCS RT mode check start!\n"); */
+         } state run
+       }
+
+    state run {
+        when(!pcs_watchdog_control) {
+        } state stop
+
+        when(!is_it_rt()) {
+            pcs_watchdog_control = 0; pvPut(pcs_watchdog_control);  /* at this time, CCS_J DuringShot stop */
+/*            %%printf("PCS RT mode stop!\n"); */
+        } state stop
+
+        when(delay(WATCHDOG_INTV)) {   /* 100Hz*/
+        } state run
+
+    }
+}
+
+ss watchdog_engine
+{
+
+     state check_run {
+	
+        when(efTestAndClear(ef_trigg)) 
+        {
+		epicsThreadSleep(3.);
+/*		%%printf("PCS counter check start!%d\n", pVar->shotnumber);  */
+        } state run
+
+    }
+
+    state run {
+        when(!pcs_watchdog_control) {
+        } state check_run
+
+        when(delay(WATCHDOG_INTV_10HZ)) {  /* 2010.10.9  100Hz --> 10Hz, 100ms*/
+            efSet(watchdog_event);
+        } state run
+    }
+}
+
+ss watchdog
+{
+	state normal {
+		entry {
+			watchdog_status = RT_NORMAL; 
+			pvPut(watchdog_status);  /* put 0 */
+		}
+                when(efTestAndClear(watchdog_event)) {
+                } state evaluate
+        }
+
+        state fail {
+		entry {
+			watchdog_status = RT_ABNORMAL;
+			pvPut(watchdog_status);   /* put 1 */
+/*			%%printf("watchdog_fail\n"); */
+		}
+		when(!pcs_watchdog_control) {
+		} state normal
+        }
+
+        state evaluate {
+                when(evaluation(comm_counter)) {
+                } state fail
+                when(TRUE) {
+                        %% EIEIO_SYNC;
+                        %% pVar->comm_counter = pPCS_command->comm_counter;
+                        %% EIEIO_SYNC;
+                        %% epicsTimeGetCurrent(&time_stamp1);
+                } state normal
+        }
+
+}
+
+ss force_abort
+{
+	state cont {
+		entry {
+			%% pCCS_to_PCS->force_pcs_abort = 0x0;
+		}
+
+		when(force_abort) {
+			efSet(ef_heating_stop); 
+		} state abort
+	}
+
+	state abort {
+		entry {
+/*			%% pCCS_to_PCS->force_pcs_abort = PCS_ABORT;*/ /* put 1*/
+			%% pCCS_to_PCS->force_pcs_abort = 0xf1; /* 241,   2013.8.21*/			
+		}
+
+		when(!force_abort) {
+		} state cont
+	}
+}
+
+
+/* 2013. 6. 3  for PFC fault notify */
+/* 2013. 6. 20  address defined */
+ss set_pfc_fault
+{
+	state cont {
+		entry {
+			%% pCCS_to_PCS->pcs_pfc_fault = 0x0; 
+		}
+
+		when(force_pfc_fault) {
+		} state abort
+	}
+
+	state abort {
+		entry {
+/*			%% pCCS_to_PCS->pcs_pfc_fault = PCS_ABORT; */ 
+			%% pCCS_to_PCS->pcs_pfc_fault = 0xf1;  /* 2013. 8. 23 */
+		}
+
+		when(!force_pfc_fault) {
+		} state cont
+	}
+}
+
+ss shotnumber
+{
+       state update {
+
+           when(efTestAndClear(ef_shotnumber)) {
+                 %% EIEIO_SYNC;
+                 %% pPCS_rtscope->shotnumber = pVar->shotnumber;
+                 %% EIEIO_SYNC;
+           } state update
+       }
+}
+
+
+ss heating_stop
+{
+    state monitoring
+    {
+        when(efTestAndClear(ef_heating_stop)) {
+            ech_stop = 0;
+            pvPut(ech_stop);
+
+            icrh_stop = 0;
+            pvPut(icrh_stop);
+
+            nbi1_stop = 0;
+            pvPut(nbi1_stop);
+
+            eccd_stop = 0;
+            pvPut(eccd_stop);
+
+            lhcd_stop = 0;	/* 2012. 9. 4 */
+            pvPut(lhcd_stop);
+
+            intl_heating_stop = 0;
+            pvPut(intl_heating_stop);
+            
+            intl_fault_notify = pcs_fault_code;
+            pvPut(intl_fault_notify);
+            
+        } state fault
+    }
+
+    state fault
+    {
+        when(delay(.5)) {
+            ech_stop = 1;
+            pvPut(ech_stop);
+
+            icrh_stop = 1;
+            pvPut(icrh_stop);
+
+             nbi1_stop = 1;
+            pvPut(nbi1_stop);
+
+            eccd_stop = 1;
+            pvPut(eccd_stop);
+
+            lhcd_stop = 1;
+            pvPut(lhcd_stop);
+            
+        } state clear_fault
+    }
+
+    state clear_fault
+    {
+        when( !pcs_fault_ip_minimum && 
+              !pcs_fault_pf_error &&
+              !pcs_fault_pf_overcurrent &&
+/*            !pcs_fault_ext_fault && */
+              !pcs_fault_ps_fault &&
+              !pcs_fault_ip_error &&
+              !pcs_fault_ic_overcurrent &&
+               pcs_fault_fast_interlock &&
+               !force_abort )
+              {
+                    intl_fault_notify = 0;
+                    pvPut(intl_fault_notify);
+
+                     intl_heating_stop = 1;
+			pvPut(intl_heating_stop);
+
+                    intl_heating_reset = 1;
+                    pvPut(intl_heating_reset);
+                    %%epicsThreadSleep(1.);
+			intl_heating_reset = 0;
+                    pvPut(intl_heating_reset);
+
+                    efClear(ef_heating_stop); /* 2013. 8. 22 */
+                    
+              } state monitoring
+    }
+}
+
+
+ss pcs_fault
+{
+	state ready_to_check {
+		entry {
+			pcs_fault_ip_minimum_latch  = pcs_fault_ip_minimum = PCS_NO_FAULT;  pvPut(pcs_fault_ip_minimum);
+			pcs_fault_ne_error_latch  = pcs_fault_ne_error = PCS_NO_FAULT;  pvPut(pcs_fault_ne_error);
+			pcs_fault_pf_error_latch  = pcs_fault_pf_error = PCS_NO_FAULT;  pvPut(pcs_fault_pf_error);
+			pcs_fault_pf_overcurrent_latch
+			                    = pcs_fault_pf_overcurrent = PCS_NO_FAULT;  pvPut(pcs_fault_pf_overcurrent);
+			pcs_fault_pf_voltage_error_latch
+			                    = pcs_fault_pf_voltage_error = PCS_NO_FAULT;  pvPut(pcs_fault_pf_voltage_error);
+			pcs_fault_pf_overvoltage_latch
+			                    = pcs_fault_pf_overvoltage = PCS_NO_FAULT;  pvPut(pcs_fault_pf_overvoltage);
+			pcs_fault_ext_fault_latch = pcs_fault_ext_fault = PCS_NO_FAULT; pvPut(pcs_fault_ext_fault);
+			pcs_fault_ps_fault_latch  = pcs_fault_ps_fault = PCS_NO_FAULT;  pvPut(pcs_fault_ps_fault);
+			pcs_fault_ip_error_latch  = pcs_fault_ip_error = PCS_NO_FAULT;  pvPut(pcs_fault_ip_error);
+			pcs_fault_ic_overcurrent_latch  = pcs_fault_ic_overcurrent = PCS_NO_FAULT;  pvPut(pcs_fault_ic_overcurrent);
+
+			pcs_fault_rtefit_latch  = pcs_fault_rtefit = PCS_NO_FAULT;  pvPut(pcs_fault_rtefit);
+			pcs_fault_total_mva_latch  = pcs_fault_total_mva = PCS_NO_FAULT;  pvPut(pcs_fault_total_mva);
+			pcs_fault_disruption_latch  = pcs_fault_disruption = PCS_NO_FAULT;  pvPut(pcs_fault_disruption);
+			pcs_fault_soft_landing_latch  = pcs_fault_soft_landing = PCS_NO_FAULT;  pvPut(pcs_fault_soft_landing);
+			
+			pcs_fault_fast_interlock_latch = pcs_fault_fast_interlock = 1; pvPut(pcs_fault_fast_interlock);
+
+		}
+		when( test_start && soft_start  ) { 
+			%%epicsTimeGetCurrent(&time_debug);
+			%%epicsTimeToStrftime(buf_debug, sizeof(buf_debug), "%Y/%m/%d %H:%M:%S.%f", &time_debug);
+			%%printf("CCS sleep(%f). %s, %d\n", pVar->pcs_check_time, buf_debug, pVar->shotnumber);
+			
+			epicsThreadSleep(pcs_check_time);
+
+			%%epicsTimeGetCurrent(&time_debug);
+			%%epicsTimeToStrftime(buf_debug, sizeof(buf_debug), "%H:%M:%S.%f", &time_debug);
+			%%printf("Fault detection enabled. %s\n", buf_debug );
+			
+		} state fault_detection
+	}
+
+      state fault_detection {
+/*
+          option +e;    // execute entry block when the previous state was not the same as the current state 
+                          // ie. execute entry block once at the first time 
+          entry {
+			%%epicsTimeGetCurrent(&time_debug);
+			%%epicsTimeToStrftime(buf_debug, sizeof(buf_debug), "%H:%M:%S", &time_debug);
+			%%printf("Start monitoring. %s\n", buf_debug );
+          }
+*/
+          when(!test_start) {} state ready_to_check 
+
+          when(delay(WATCHDOG_INTV_FAST)) {  /* 500Hz */
+
+              %% EIEIO_SYNC;
+              %% pVar->pcs_fault_code = pCCS_share->pcs_fault_code; 
+              %% pVar->fault_fast_interlock = pCCS_share->force_fast_interlock; 
+              %% EIEIO_SYNC;
+              %% pVar->pcs_fault_ip_minimum_latch = (pVar->pcs_fault_code & PCS_FAULT_IP_MINIMUM) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_ne_error_latch = (pVar->pcs_fault_code & PCS_FAULT_NE_ERROR) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_pf_error_latch = (pVar->pcs_fault_code & PCS_FAULT_PF_ERROR) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_pf_overcurrent_latch
+              %%                                = (pVar->pcs_fault_code & PCS_FAULT_PF_OVERCURRENT) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_pf_voltage_error_latch
+              %%                                = (pVar->pcs_fault_code & PCS_FAULT_PF_VOLTAGE_ERROR) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_pf_overvoltage_latch
+              %%                                = (pVar->pcs_fault_code & PCS_FAULT_PF_OVERVOLTAGE) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_ext_fault_latch = (pVar->pcs_fault_code & PCS_FAULT_EXT_FAULT) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_ps_fault_latch = (pVar->pcs_fault_code & PCS_FAULT_PS_FAULT) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_ip_error_latch = (pVar->pcs_fault_code & PCS_FAULT_IP_ERROR) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_ic_overcurrent_latch = (pVar->pcs_fault_code & PCS_FAULT_IP_ERROR) ? PCS_FAULT:PCS_NO_FAULT;
+
+              %% pVar->pcs_fault_rtefit_latch = (pVar->pcs_fault_code & PCS_FAULT_RTEFIT) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_total_mva_latch = (pVar->pcs_fault_code & PCS_FAULT_TOTAL_MVA) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_disruption_latch = (pVar->pcs_fault_code & PCS_FAULT_DISRUPTION) ? PCS_FAULT:PCS_NO_FAULT;
+              %% pVar->pcs_fault_soft_landing_latch = (pVar->pcs_fault_code & PCS_FAULT_SOFT_LANDING) ? PCS_FAULT:PCS_NO_FAULT;
+              
+              %% pVar->pcs_fault_fast_interlock_latch = pVar->fault_fast_interlock;
+
+              if( pcs_fault_ip_minimum_latch || 
+                  pcs_fault_pf_error_latch ||
+                  pcs_fault_pf_overcurrent_latch ||
+/*                pcs_fault_ext_fault_latch || */ /* 2012.4.4 request from shhan */
+                  pcs_fault_ps_fault_latch ||
+                  pcs_fault_ip_error_latch ||
+                  pcs_fault_ic_overcurrent_latch ||
+                  !pcs_fault_fast_interlock_latch ) { efSet(ef_heating_stop); } 
+
+              /* heating stop just available in case of ip fault   2010.07.21 */
+              /* heating stop logic changed    2010.07.28 */
+              
+              efSet(pcs_fault_event);
+          } state fault_detection
+      }
+
+     	
+}
+
+ss pcs_fault_notification
+{
+      state fault_notification {
+          when(efTestAndClear(pcs_fault_event)) {
+
+              if(pcs_fault_ip_minimum_latch != pcs_fault_ip_minimum) {
+                  pcs_fault_ip_minimum = pcs_fault_ip_minimum_latch;  pvPut(pcs_fault_ip_minimum);
+              }
+              if(pcs_fault_ne_error_latch != pcs_fault_ne_error) {
+                  pcs_fault_ne_error = pcs_fault_ne_error_latch;  pvPut(pcs_fault_ne_error);
+              }
+              if(pcs_fault_pf_error_latch != pcs_fault_pf_error) {
+                  pcs_fault_pf_error = pcs_fault_pf_error_latch;  pvPut(pcs_fault_pf_error);
+              }
+              if(pcs_fault_pf_overcurrent_latch != pcs_fault_pf_overcurrent) {
+                  pcs_fault_pf_overcurrent = pcs_fault_pf_overcurrent_latch; pvPut(pcs_fault_pf_overcurrent);
+              }
+              if(pcs_fault_pf_voltage_error_latch != pcs_fault_pf_voltage_error) {
+                  pcs_fault_pf_voltage_error = pcs_fault_pf_voltage_error_latch; pvPut(pcs_fault_pf_voltage_error);
+              }
+              if(pcs_fault_pf_overvoltage_latch != pcs_fault_pf_overvoltage) {
+                  pcs_fault_pf_overvoltage = pcs_fault_pf_overvoltage_latch; pvPut(pcs_fault_pf_overvoltage);
+              }
+              if(pcs_fault_ext_fault_latch != pcs_fault_ext_fault) {
+                  pcs_fault_ext_fault = pcs_fault_ext_fault_latch;   pvPut(pcs_fault_ext_fault);
+              }
+              if(pcs_fault_ps_fault_latch != pcs_fault_ps_fault) {
+                  pcs_fault_ps_fault = pcs_fault_ps_fault_latch;  pvPut(pcs_fault_ps_fault);
+              }
+              if(pcs_fault_ip_error_latch != pcs_fault_ip_error) {
+                  pcs_fault_ip_error = pcs_fault_ip_error_latch;  pvPut(pcs_fault_ip_error);
+              }
+              if(pcs_fault_ic_overcurrent_latch != pcs_fault_ic_overcurrent) {
+                  pcs_fault_ic_overcurrent = pcs_fault_ic_overcurrent_latch;  pvPut(pcs_fault_ic_overcurrent);
+              }
+
+               if(pcs_fault_rtefit_latch != pcs_fault_rtefit) {
+                  pcs_fault_rtefit = pcs_fault_rtefit_latch;  pvPut(pcs_fault_rtefit);
+              }
+               if(pcs_fault_total_mva_latch != pcs_fault_total_mva) {
+                  pcs_fault_total_mva = pcs_fault_total_mva_latch;  pvPut(pcs_fault_total_mva);
+              }
+               if(pcs_fault_disruption_latch != pcs_fault_disruption) {
+                  pcs_fault_disruption = pcs_fault_disruption_latch;  pvPut(pcs_fault_disruption);
+              }
+               if(pcs_fault_soft_landing_latch != pcs_fault_soft_landing) {
+                  pcs_fault_soft_landing = pcs_fault_soft_landing_latch;  pvPut(pcs_fault_soft_landing);
+              }
+              
+              if(pcs_fault_fast_interlock_latch != pcs_fault_fast_interlock) {
+                  pcs_fault_fast_interlock = pcs_fault_fast_interlock_latch;  pvPut(pcs_fault_fast_interlock);
+              }
+
+              
+              
+          } state fault_notification
+      }
+}
+
+/*********************************/
+/* this is SOFT interlock not hardwired. */
+/* changed to hard-wired line....   2010.08.06 by woong */
+ss pcs_fault_to_interlock
+{
+    state pcs_normal {
+        option -e;       /* perfrom entry function every time */
+        entry {
+			%%epicsThreadSleep(.1);
+            pcs_opst_interlock = PCS_OPST_READY; pvPut(pcs_opst_interlock); /* put 0 */
+        }
+
+        when(watchdog_status)
+        {
+           efSet(ef_heating_stop);
+
+            %%printf("PCS rt violation.\n");
+            
+        } state pcs_fault
+
+        when( 
+	      pcs_fault_ip_minimum ||		
+              pcs_fault_pf_error || 
+              pcs_fault_pf_overcurrent ||
+/*            pcs_fault_ext_fault ||      */
+              pcs_fault_ps_fault ||
+              pcs_fault_ip_error ||
+              pcs_fault_ic_overcurrent ||
+              !pcs_fault_fast_interlock )
+        {  
+/*           %%printf("PCS 6 or fast fault. \n"); */
+        } state pcs_fault
+
+    }
+
+    state pcs_fault {
+        option -e;      /* perform entry fucntion every time */
+        entry {
+		pcs_opst_interlock = PCS_OPST_FAULT; pvPut(pcs_opst_interlock); /* put 1 */
+
+		%%epicsTimeGetCurrent(&time_debug);
+		%%epicsTimeToStrftime(buf_debug, sizeof(buf_debug), "%H:%M:%S", &time_debug);
+		%%printf("Fault sent to interlock. %s\n", buf_debug);
+        }
+
+        when(pcs_opst_interlock == PCS_OPST_READY) {  /* if 0 */
+              %% EIEIO_SYNC;
+              %% pCCS_share->pcs_fault_code = 0;
+              %% EIEIO_SYNC;
+        } state pcs_normal
+    }
+}
+
+ss pcs_current_direction
+{
+    state current_direction_monitor {
+        option +e;     /* execute entry block when the previous state was not same as the current state */
+                       /* ie, execute entry block once at the first time */
+        entry {
+            pf1_current_direction_latch = pf1_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf1_current_direction);
+            pf2_current_direction_latch = pf2_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf2_current_direction);
+            pf3u_current_direction_latch = pf3u_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf3u_current_direction);
+            pf3l_current_direction_latch = pf3l_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf3l_current_direction);
+            pf4u_current_direction_latch = pf4u_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf4u_current_direction);
+            pf4l_current_direction_latch = pf4l_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf4l_current_direction);
+            pf5u_current_direction_latch = pf5u_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf5u_current_direction);
+            pf5l_current_direction_latch = pf5l_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf5l_current_direction);
+            pf6u_current_direction_latch = pf6u_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf6u_current_direction);
+            pf6l_current_direction_latch = pf6l_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf6l_current_direction);
+            pf7_current_direction_latch = pf7_current_direction = CURRENT_DIRECTION_NEGATIVE; pvPut(pf7_current_direction);
+        }
+
+        when(delay(MONITOR_INTV)) {  /* 5Hz */
+            
+            %% EIEIO_SYNC;
+            %% pVar->current_direction = pPCS_command->current_direction;
+            %% EIEIO_SYNC;
+
+            %% pVar->pf1_current_direction_latch = (pVar->current_direction & PF1_CURRENT_DIRECTION_MASK) 
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            %% pVar->pf2_current_direction_latch = (pVar->current_direction & PF2_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+
+            %% pVar->pf3u_current_direction_latch = (pVar->current_direction & PF3U_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            %% pVar->pf3l_current_direction_latch = (pVar->current_direction & PF3L_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+
+            %% pVar->pf4u_current_direction_latch = (pVar->current_direction & PF4U_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            %% pVar->pf4l_current_direction_latch = (pVar->current_direction & PF4L_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            
+            %% pVar->pf5u_current_direction_latch = (pVar->current_direction & PF5U_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            %% pVar->pf5l_current_direction_latch = (pVar->current_direction & PF5L_CURRENT_DIRECTION_MASK)            
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            
+            %% pVar->pf6u_current_direction_latch = (pVar->current_direction & PF6U_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            %% pVar->pf6l_current_direction_latch = (pVar->current_direction & PF6L_CURRENT_DIRECTION_MASK)            
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;
+            
+            %% pVar->pf7_current_direction_latch = (pVar->current_direction & PF7_CURRENT_DIRECTION_MASK)
+            %%                                                    ? CURRENT_DIRECTION_NEGATIVE: CURRENT_DIRECTION_POSITIVE;	
+
+            efSet(pcs_current_direction_monitor_event);
+        } state current_direction_monitor
+    }
+}
+
+ss pcs_current_direction_notification
+{
+    state current_direction_notification {
+        when(efTestAndClear(pcs_current_direction_monitor_event)) {
+
+            if(pf1_current_direction_latch != pf1_current_direction) {
+                pf1_current_direction = pf1_current_direction_latch; pvPut(pf1_current_direction);
+            }
+            if(pf2_current_direction_latch != pf2_current_direction) {
+                pf2_current_direction = pf2_current_direction_latch; pvPut(pf2_current_direction);
+            }
+            if(pf3u_current_direction_latch != pf3u_current_direction) {
+                pf3u_current_direction = pf3u_current_direction_latch; pvPut(pf3u_current_direction);
+            }
+            if(pf3l_current_direction_latch != pf3l_current_direction) {
+                pf3l_current_direction = pf3l_current_direction_latch; pvPut(pf3l_current_direction);
+            }
+            if(pf4u_current_direction_latch != pf4u_current_direction) {
+                pf4u_current_direction = pf4u_current_direction_latch; pvPut(pf4u_current_direction);
+            }
+            if(pf4l_current_direction_latch != pf4l_current_direction) {
+                pf4l_current_direction = pf4l_current_direction_latch; pvPut(pf4l_current_direction);
+            }
+            if(pf5u_current_direction_latch != pf5u_current_direction) {
+                pf5u_current_direction = pf5u_current_direction_latch; pvPut(pf5u_current_direction);
+            }
+            if(pf5l_current_direction_latch != pf5l_current_direction) {
+                pf5l_current_direction = pf5l_current_direction_latch; pvPut(pf5l_current_direction);
+            }
+            if(pf6u_current_direction_latch != pf6u_current_direction) {
+                pf6u_current_direction = pf6u_current_direction_latch; pvPut(pf6u_current_direction);
+            }
+            if(pf6l_current_direction_latch != pf6l_current_direction) {
+                pf6l_current_direction = pf6l_current_direction_latch; pvPut(pf6l_current_direction);
+            }
+            if(pf7_current_direction_latch != pf7_current_direction) {
+                pf7_current_direction = pf7_current_direction_latch; pvPut(pf7_current_direction);
+            }
+
+        } state current_direction_notification
+    }    
+}
+
+
+ss interlock_to_pcs_abort
+{
+    state pcs_operation
+    {
+        entry {
+            force_abort = 0x0;
+            pvPut(force_abort);
+        }
+        when(interlock_level1 == INTERLOCK_ACTIVATE ||
+             interlock_level2 == INTERLOCK_ACTIVATE ||
+             interlock_level3 == INTERLOCK_ACTIVATE    /* ||
+             interlock_level4 == INTERLOCK_ACTIVATE    */ ) {} state pcs_abort
+    }
+
+    state pcs_abort
+    {
+        entry {
+            force_abort = 0x1; /* put 1 */
+            pvPut(force_abort);
+        }
+        when(interlock_level1 == INTERLOCK_DEACTIVATE &&
+             interlock_level2 == INTERLOCK_DEACTIVATE &&
+             interlock_level3 == INTERLOCK_DEACTIVATE &&
+             interlock_level4 == INTERLOCK_DEACTIVATE ) {} state pcs_operation
+    }
+}
+
+
+ss measurement
+{
+    state measure {
+        when(delay(MEASUREMENT_INTV)) { /* 100Hz */
+             %{
+             
+             unsigned   shift_bit = 0x00000001;
+             unsigned   index;
+
+             EIEIO_SYNC;
+             pVar->control_method   = pPCS_command->control_method;
+             pVar->pcs_RTMode_Latch = pPCS_command->rt_mode;
+
+             for(index=0; index < NUM_PF_MPS; index++, shift_bit<<=1) {
+                 if(pVar->control_method & shift_bit) {
+                     pVar->vpf_command[index] = (float) pPCS_command->pf_command[index] * (float)(1000./32768.);
+                     pVar->ipf_command[index] = 0.;
+                 } else {
+                     pVar->ipf_command[index] = (float) pPCS_command->pf_command[index];
+                     pVar->vpf_command[index] = 0.;
+                 }
+             }
+             EIEIO_SYNC;
+
+             }%
+
+             efSet(ev_posting);
+        } state measure
+    }
+}
+
+
+ss posting
+{
+    state posting {
+        when(efTestAndClear(ev_posting)) {
+            %% int index;
+            %% for(index=0; index < NUM_PF_MPS; index ++) {
+                   pvPut(vpf_command[index]);
+                   pvPut(ipf_command[index]);
+            %% }
+            if(pcs_RTMode != pcs_RTMode_Latch) {
+                pcs_RTMode = pcs_RTMode_Latch;
+                pvPut(pcs_RTMode);
+            }
+        } state posting
+    }
+}
+
+ss clearPCSfault
+{
+    state clear_pcs_Fault {
+        when(clear_pcsFault) {
+/*            %%pPCS_command->rt_mode = 0; */
+            %% pCCS_share->pcs_fault_code = 0;
+            
+            epicsThreadSleep(1.);
+            clear_pcsFault = 0; pvPut(clear_pcsFault);
+        } state clear_pcs_Fault
+    }
+}
+ss clearPCSfastIntl
+{
+    state clear_pcs_Fst_intl {
+        when(clear_pcsFastIntl) {
+
+            %% pCCS_share->force_fast_interlock = 0x1; 
+            
+            epicsThreadSleep(1.);
+            clear_pcsFastIntl = 0; pvPut(clear_pcsFastIntl);
+        } state clear_pcs_Fst_intl
+    }
+}
+
+ss clearForceAbort
+{
+    state clear_force_Abort {
+        when(clear_forceAbort) {
+
+            %% pCCS_to_PCS->force_pcs_abort = 0x0;
+            
+            epicsThreadSleep(1.);
+            clear_forceAbort = 0; pvPut(clear_forceAbort);
+        } state clear_force_Abort
+    }
+}
+ss clearPFCfault
+{
+    state clear_pfc_Fault {
+        when(clear_pfcFault) {
+        
+            %% pCCS_to_PCS->pcs_pfc_fault = 0x0;
+            
+            epicsThreadSleep(1.);
+            clear_pfcFault = 0; pvPut(clear_pfcFault);
+        } state clear_pfc_Fault
+    }
+}
+
+
+
+
+

@@ -1,0 +1,497 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CAMultiwaveplot" name="CAMultiwaveplot" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>1231</width>
+     <height>811</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>CCS_IPF1_MEASURED_WF</string>
+   </property>
+   <property name="pvname1" >
+    <string>CCS_IPF2_MEASURED_WF</string>
+   </property>
+   <property name="pvname2" >
+    <string>CCS_IPF3U_MEASURED_WF</string>
+   </property>
+   <property name="pvname3" >
+    <string>CCS_IPF3L_MEASURED_WF</string>
+   </property>
+   <property name="pvname4" >
+    <string>CCS_IPF4U_MEASURED_WF</string>
+   </property>
+   <property name="pvname5" >
+    <string>CCS_IPF4L_MEASURED_WF</string>
+   </property>
+   <property name="pvname6" >
+    <string>CCS_IPF5U_MEASURED_WF</string>
+   </property>
+   <property name="pvname7" >
+    <string>CCS_IPF5L_MEASURED_WF</string>
+   </property>
+   <property name="pvname8" >
+    <string>CCS_IPF6U_MEASURED_WF</string>
+   </property>
+   <property name="pvname9" >
+    <string>CCS_IPF6L_MEASURED_WF</string>
+   </property>
+   <property name="pvname10" >
+    <string>CCS_IPF7_MEASURED_WF</string>
+   </property>
+   <property name="pvname11" >
+    <string>CCS_IIVC_MEASURED_WF</string>
+   </property>
+   <property name="reqElement" stdset="0" >
+    <number>2500</number>
+   </property>
+   <property name="updateTime" >
+    <number>100</number>
+   </property>
+   <property name="refreshTime" >
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>20</y>
+     <width>171</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Shot Number</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer" >
+   <property name="geometry" >
+    <rect>
+     <x>400</x>
+     <y>20</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>CCS_SHOT_NUMBER</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>710</x>
+     <y>20</y>
+     <width>151</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>TF Current</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_2" >
+   <property name="geometry" >
+    <rect>
+     <x>860</x>
+     <y>20</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>MPS_TF_current_fb</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_0" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>950</y>
+     <width>51</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF1</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_1" >
+   <property name="geometry" >
+    <rect>
+     <x>160</x>
+     <y>950</y>
+     <width>61</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF2</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_2" >
+   <property name="geometry" >
+    <rect>
+     <x>250</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF3U</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_3" >
+   <property name="geometry" >
+    <rect>
+     <x>340</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF3L</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_5" >
+   <property name="geometry" >
+    <rect>
+     <x>530</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF4L</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_4" >
+   <property name="geometry" >
+    <rect>
+     <x>440</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF4U</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_7" >
+   <property name="geometry" >
+    <rect>
+     <x>710</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF5L</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_6" >
+   <property name="geometry" >
+    <rect>
+     <x>620</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF5U</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_8" >
+   <property name="geometry" >
+    <rect>
+     <x>810</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF6U</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_9" >
+   <property name="geometry" >
+    <rect>
+     <x>900</x>
+     <y>950</y>
+     <width>71</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF6L</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_10" >
+   <property name="geometry" >
+    <rect>
+     <x>990</x>
+     <y>950</y>
+     <width>51</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>PF7</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_11" >
+   <property name="geometry" >
+    <rect>
+     <x>1060</x>
+     <y>950</y>
+     <width>51</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>IVC</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="indexLabel_12" >
+   <property name="geometry" >
+    <rect>
+     <x>1130</x>
+     <y>950</y>
+     <width>61</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>RMP</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton" >
+   <property name="geometry" >
+    <rect>
+     <x>1120</x>
+     <y>20</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Setup</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAMultiwaveplot</class>
+   <extends>QwtPlot</extends>
+   <header>caMultiwaveplot.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CAMultiwaveplot</receiver>
+   <slot>ShowProperty()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>1148</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1004</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

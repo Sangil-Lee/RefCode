@@ -1,0 +1,209 @@
+program sncTmsMax
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <sys/types.h>
+%% #include <sys/stat.h>
+%% #include <epicsThread.h>
+
+%% struct stat info;
+%% int statRe;
+int firstRTime;
+int currentRTime;
+
+int i;
+int pvmin;
+int pvmax;
+int oldpvmin;
+int oldpvmax;
+double max;
+assign max to "";
+double min;
+assign min to "";
+double sum;
+double avr;
+assign avr to "";
+
+double oldMax;
+double oldMin;
+double oldAvr;
+int dataCount;
+int udfCount;
+char *pfileName;
+string tmpStr1;
+string tmpStr2;
+string pvMinName;
+string pvMinName1;
+string pvMaxName;
+string pvMaxName1;
+assign pvMinName to "";
+assign pvMaxName to "";
+float data[104];
+float udf[104];
+string pvName1[104];
+
+assign udf to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor udf;
+
+
+assign data to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor data;
+
+ss tmsTempValue{
+	state init{
+		when (TRUE){
+                        pfileName = macValueGet("FNAME");
+			%% statRe = stat(pVar->pfileName, &info);
+			%% pVar->firstRTime = info.st_mtime;
+                        %% epicsThreadId threadId;
+                        %% FILE *pfile;
+                        %% pfile = fopen (pVar->pfileName, "r");
+                        %% if(!pfile) { 
+     			%%	printf("error in fopen TMS Max\n");
+			%% 	threadId = epicsThreadGetIdSelf();
+			%%	printf("threadID : %x\n",threadId);
+			%%	seqStop(threadId);
+			%% }
+                        %% fscanf(pfile, "%s", pVar->tmpStr1);
+                        %% sprintf(pVar->tmpStr2, "%s_MAX", pVar->tmpStr1);
+			%% sprintf(pVar->pvMaxName1, "%s_PV", pVar->tmpStr2);
+                        pvAssign(max, tmpStr2);
+			pvAssign(pvMaxName, pvMaxName1);
+			printf("connect %s\n", tmpStr2);
+			printf("connect %s\n", pvMaxName1);
+                        %% sprintf(pVar->tmpStr2, "%s_MIN", pVar->tmpStr1);
+			%% sprintf(pVar->pvMinName1, "%s_PV", pVar->tmpStr2);
+                        pvAssign(min, tmpStr2);
+			pvAssign(pvMinName,pvMinName1);
+ 			printf("connect %s\n", tmpStr2);
+			printf("connect %s\n", pvMinName1);
+			%% sprintf(pVar->tmpStr2, "%s_AVR", pVar->tmpStr1);
+			pvAssign(avr, tmpStr2);
+			printf("connect %s\n", tmpStr2);
+                        dataCount =0;
+                        %% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+                        	pvAssign (data[dataCount], tmpStr1);
+			%%	sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+				pvAssign (udf[dataCount], tmpStr2);
+				printf("connect %d %s\n", dataCount, tmpStr1);
+			%%	sprintf(pVar->pvName1[pVar->dataCount], "%s", pVar->tmpStr1);
+				dataCount++;
+                        %%}
+			%% fclose(pfile);
+			printf("Data count number is %d\n",dataCount);
+		}state tms_main_value	
+	}
+	state tms_main_value{
+        	when (delay(0.1)){
+			oldpvmin = -1; oldpvmax = -1;
+                	min=1.E+6; max=-1.E+6; sum=0; avr=0; 
+                	for (udfCount=0, i = 0; i < dataCount; i++){
+                        	if(udf[i]==0){
+					if(data[i]<min){
+                        			min=data[i];
+						pvmin=i;
+                        		}
+                        		if(data[i]>max){
+                        			max=data[i];
+						pvmax=i;
+                        		}
+                			sum+=data[i];
+					udfCount++;
+				}
+                	}
+              		avr=sum/udfCount;
+			if(oldpvmin !=pvmin){
+				%% strcpy(pVar->pvMinName, pVar->pvName1[pVar->pvmin]);
+				oldpvmin =pvmin;
+				pvPut(pvMinName);
+			}
+			if(oldpvmax !=pvmax){	
+				%% strcpy(pVar->pvMaxName, pVar->pvName1[pVar->pvmax]);
+				oldpvmax =pvmax;
+				pvPut(pvMaxName);
+			}
+                	if(oldMax !=max){
+                        	oldMax=max;
+				
+                        	pvPut(max);
+                	}
+                	if(oldMin !=min){
+                        	oldMin=min;
+                        	pvPut(min);
+                	}
+                	if(oldAvr !=avr){
+                        	oldAvr=avr;
+                        	pvPut(avr);
+                	}
+		} state tms_main_checkfile
+	}
+	state tms_main_checkfile{
+		when (TRUE) {
+			%% statRe = stat(pVar->pfileName, &info);
+			%% pVar->currentRTime = info.st_mtime;
+			if(currentRTime > firstRTime){
+				firstRTime = currentRTime;
+                        	%% FILE *pfile;
+				%% pfile = fopen (pVar->pfileName, "r");
+				%% if(!pfile) { 
+				%%	printf("error in fopen TMS Max1 : fileName: %s \n",pVar->pfileName);
+				%% } else {
+				%% fscanf(pfile, "%s", pVar->tmpStr1);
+				%% sprintf(pVar->tmpStr2, "%s_MAX", pVar->tmpStr1);
+				%% sprintf(pVar->pvMaxName1, "%s_PV", pVar->tmpStr2);
+				pvAssign(max, tmpStr2);
+				pvAssign(pvMaxName, pvMaxName1);
+				printf("connect %s\n", tmpStr2);
+				printf("connect %s\n", pvMaxName1);
+				%% sprintf(pVar->tmpStr2, "%s_MIN", pVar->tmpStr1);
+				%% sprintf(pVar->pvMinName1, "%s_PV", pVar->tmpStr2);
+				pvAssign(min, tmpStr2);
+				pvAssign(pvMinName,pvMinName1);
+				printf("connect %s\n", tmpStr2);
+				printf("connect %s\n", pvMinName1);
+				%% sprintf(pVar->tmpStr2, "%s_AVR", pVar->tmpStr1);
+				pvAssign(avr, tmpStr2);
+				printf("connect %s\n", tmpStr2);
+				dataCount =0;
+				%% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+					pvAssign (data[dataCount], tmpStr1);
+					%%	sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+					pvAssign (udf[dataCount], tmpStr2);
+					printf("connect %d %s\n", dataCount, tmpStr1);
+					%%	sprintf(pVar->pvName1[pVar->dataCount], "%s", pVar->tmpStr1);
+					dataCount++;
+				%%}
+				%% fclose(pfile);
+				printf("Data count number is %d\n",dataCount);
+				%%}
+				%% epicsThreadSleep(1.0);
+			}
+		} state tms_main_value
+	}	
+}
+

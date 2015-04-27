@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# seqVersion - create the sequencer version module
+#
+VERSION=$1
+DATE=`date`
+echo	'/* seqVersion.c - version & date */'
+echo	'/* Created by seqVersion */'
+echo	'char *seqVersion = "@(#)SEQ Version '${VERSION}': '${DATE}'";'
+

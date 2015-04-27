@@ -1,0 +1,38 @@
+record(ai, "$(PV)_MAX")
+{
+        field(DESC, "$(PV) max")
+        field(SCAN, "Passive")
+        field(INP, "0")
+        field(PINI, "YES")
+	field(PREC, "4")
+        field(EGU, "K")
+}
+record(stringin, "$(PV)_MAX_PV")
+{
+        field(VAL, "")
+        field(DESC, "$(PV) max pv")
+}
+record(ai, "$(PV)_MIN")
+{
+        field(DESC, "$(PV) min")
+        field(SCAN, "Passive")
+        field(INP, "0")
+        field(PINI, "YES")
+	field(PREC, "4")
+        field(EGU, "K")
+}
+record(stringin, "$(PV)_MIN_PV")
+{
+        field(VAL, "")
+        field(DESC, "$(PV) min pv")
+}
+record(ai, "$(PV)_AVR")
+{
+        field(DESC, "$(PV) average")
+        field(SCAN, "Passive")
+        field(INP, "0")
+        field(PINI, "YES")
+	field(PREC, "4")
+        field(EGU, "K")
+}
+

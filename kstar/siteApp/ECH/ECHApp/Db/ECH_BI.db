@@ -1,0 +1,12 @@
+record(bi, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@$(PLC) $(TAG) S 1")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+#  field(ZSV, "MAJOR")
+#  field(OSV, "NO_ALARM")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+}

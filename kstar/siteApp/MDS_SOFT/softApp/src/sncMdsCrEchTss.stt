@@ -1,0 +1,207 @@
+program sncMdsCrEchTss
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <mdslib.h>
+%% #include <mdsdescrip.h>
+%% #include <mdsshr.h>
+
+%% #define statusOk(status)    ((status) & 1)
+
+%% #define MDS_SERVER   "172.17.100.202:8000"
+%% #define RTREE_NAME	"rdata"
+%% #define ATREE_NAME	"adata"
+%% #define XTREE_NAME	"xdata"
+
+%% int dtypeFloat = DTYPE_FLOAT;
+%% int dtypeLong = DTYPE_LONG;
+int rdataDone;
+int adataDone;
+int xdataDone;
+unsigned int shotNumber;
+%% /*  unsigned int oldShotNu = 0; "Over Writted Protection Function" */
+int createShot;
+%% int status = 0;
+%% int tstat;
+%% int null = 0;
+%% int len;
+%% char buf2[128];
+%% int socket;
+%% /* int idesc = descr(&dtypeLong, &tstat, &null); */
+%% int idesc;
+
+%% /* ECH PUT The Data */
+%% int dataDesc;
+%% int timeDesc;
+int mdsPutStart;
+%% int i;
+%% int j;
+%% char buf[50];
+%% char buf1[50];
+float wfData[8][30000];
+float timeWf[30000];
+float trigTime;
+float nuData[5];
+%% int noBuf_temp;
+%% float samRate_temp;
+string treeSigNode[8];
+string treeNuNode[5];
+string errorMsg;
+
+assign wfData to {"ECH:NI:DAQ:AI00","ECH:NI:DAQ:AI01","ECH:NI:DAQ:AI02","ECH:NI:DAQ:AI03","ECH:NI:DAQ:AI04","ECH:NI:DAQ:AI05","ECH:NI:DAQ:AI06","ECH:NI:DAQ:AI07"};
+
+assign nuData to {"ECH_BSIZE","ECH_SRAT","ECH_WRE02_CALC","ECH_WRD16_CALC","ECH_WRE11"};
+
+assign treeSigNode to {"ECH_VC","ECH_VB","ECH_IB","ECH_IA","ECH_VFWD1","ECH_VREF1","ECH_VFWD2","ECH_VREF2"};
+assign treeNuNode to {"ECH_NO_BUF","ECH_SAM_RATE","ECH_TCPS","ECH_TRF","ECH_PRF"};
+
+assign mdsPutStart to "ECH_DATA_MDS_PUT";
+
+assign errorMsg to "ECH_ERROR_MSG";
+%% /* assign mdsIp to "ECH_MDS_IP";  	 */
+%% /* assign mdsTree to "ECH_MDS_TREE";  */
+
+assign trigTime to "ECH_LTU_T0_p0";
+
+monitor wfData;
+monitor nuData;
+monitor treeSigNode;
+monitor treeNuNode;
+monitor	mdsPutStart;
+monitor trigTime;
+%% /* END PUT The ECH Data  */
+
+assign shotNumber to "MDS_SHOT_NUMBER";
+assign createShot to "MDS_SHOT_CREATE";
+
+monitor shotNumber;
+monitor createShot;
+
+ss createMdsShot {
+	state create_pulse_rdata{
+        	when (createShot==1) {
+				%%  int idesc = descr(&dtypeLong, &tstat, &null);
+				  rdataDone = 0;
+				%% socket = MdsConnect(MDS_SERVER);
+     		     		%% if ( socket == -1 ){
+             	     		%%		printf("Error connecting to mdsip server(%s).\n", MDS_SERVER);
+             	     		%%	}
+     		     		%% if ( socket != -1){
+		     		%%		printf("\nMDSplus >>> MdsConnect(\"%s\")... OK\n", MDS_SERVER);
+     		     		%%		sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", RTREE_NAME);
+     		     		%%		status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%% 	if ( !statusOk(status) ){
+        	     		%%		printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 	}
+     		     		%%	else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%	if ( !statusOk(status) ){
+        	     		%%		printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%	}
+    		     		%%	else status = MdsValue("TCL(\"close\")", &idesc, &null, &len);
+    		     		%%	printf("\nMDSplus >>> Create new tree(XData \"%d\")... OK\n", pVar->shotNumber);
+				      rdataDone = 1;
+		     		%% }
+		} state create_pulse_adata
+	}
+	state create_pulse_adata {
+        	when (createShot==1 && rdataDone == 1) {
+				  adataDone = 0;
+				%%      int idesc = descr(&dtypeLong, &tstat, &null);
+     		     		%%	sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", ATREE_NAME);
+     		     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%% 	if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 	}
+     		     		%%	else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%	if ( !statusOk(status) ){
+        	     		%%		printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%	}
+    		     		%%	else status = MdsValue("TCL(\"close\")", &idesc, &null, &len);
+    		     		%%	printf("\nMDSplus >>> Create new tree(AData \"%d\")... OK\n", pVar->shotNumber);
+				      adataDone = 1;
+		} state create_pulse_xdata
+	}
+	state create_pulse_xdata {
+        	when (createShot==1 && rdataDone == 1) {
+				%%      int idesc = descr(&dtypeLong, &tstat, &null);
+     		     		%%	sprintf(buf2, "TCL(\"set tree %s/shot=-1\")", XTREE_NAME);
+     		     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%% 	if ( !statusOk(status) ){
+        	     		%%			printf("Error TCL command: %s.\n",MdsGetMsg(status));
+        	     		%% 	}
+     		     		%%	else sprintf(buf2, "TCL(\"create pulse %d\")", pVar->shotNumber);
+     		     		%%	status = MdsValue(buf2, &idesc, &null, &len);
+     		     		%%	if ( !statusOk(status) ){
+        	     		%%		printf("Error TCL command: create pulse: %s.\n",MdsGetMsg(status));
+        	     		%%	}
+    		     		%%	else status = MdsValue("TCL(\"close\")", &idesc, &null, &len);
+    		     		%%	printf("\nMDSplus >>> Create new tree(XData \"%d\")... OK\n", pVar->shotNumber);
+			createShot=0;
+			pvPut(createShot);
+		} state create_pulse_rdata
+	}
+}
+
+ss mdsECHDataPut {
+        state data_put {
+                when (mdsPutStart==1) {
+                        %% noBuf_temp =(int)pVar->nuData[0];
+                        /*  samRate_temp = pVar->nuData[1];  */
+                        %% idesc = descr(&dtypeLong, &tstat, &null);
+                        %% for(j =0; j< pVar->nuData[0] ; j++) {
+                        %%        pVar->timeWf[j] = (float)j/pVar->nuData[1] + pVar->trigTime;
+                        %% /*     printf("%f ", wfData[0][j]); */
+                        %%    }
+                        %% /*  printf("\n\n"); */
+                        %% printf("No Buff : %f  and Sam Rate : %f \n",pVar->nuData[0], pVar->nuData[1]);
+                    	%% socket = MdsConnect(MDS_SERVER);
+                	%% if (socket == -1 )
+            		%% {
+            		%%          fprintf(stderr,"Error connecting to mdsip server(%s).\n", MDS_SERVER);
+            		%% }
+                	%%      if (socket != -1)
+                    	%% {
+                    	%%          fprintf(stdout,"\nMDSplus >>> MdsConnect(\"%s\")... OK\n", MDS_SERVER);
+                    	%%          status = MdsOpen(ATREE_NAME, &pVar->shotNumber);
+                    	%%         fprintf(stdout,"MdsOpen Tree open\n");
+                	%%              if ( !statusOk(status) )
+                	%%              {
+                	%%                      fprintf(stderr,"Error TCL command: %s.\n",MdsGetMsg(status));
+                	%%               }
+/* Data Put loop Start */
+             		%%        timeDesc = descr(&dtypeFloat, (void*)pVar->timeWf, &noBuf_temp, &null);
+                        %%        for(i=0; i<8; i++) {
+                        %%            dataDesc = descr(&dtypeFloat, (void*)(pVar->wfData[i]), &noBuf_temp, &null);
+                    	%%            sprintf(buf, "\%s", pVar->treeSigNode[i]); printf("%s: %d\n", buf, noBuf_temp);
+             		%%            status = MdsPut(buf, "BUILD_SIGNAL($1,,$2)", &dataDesc, &timeDesc, &null);
+                 	%%            if ( !statusOk(status) )
+                 	%%            {
+                 	%%                             fprintf(stderr,"Error Mds Put 1 :  %s.\n",MdsGetMsg(status));
+                 	%%            }
+                 	%%            epicsThreadSleep(.50);
+                        %%            }
+                        %%         for(i=0; i<5; i++) {
+                     	%%         	sprintf(buf, "\%s", pVar->treeNuNode[i]); printf("%s: %d\n", buf, strlen(buf));
+                     	%%         	sprintf(buf1, "FS_FLOAT(%f)", pVar->nuData[i] );printf("%s: %f\n", buf1, pVar->nuData[i]);
+                     	%%              status = MdsPut(buf, buf1, &null);  /*  MdsPut  !!  */
+                 	%%              if ( !statusOk(status) )
+                 	%%              {
+                 	%%                             fprintf(stderr,"Error Mds Put 1 :  %s.\n",MdsGetMsg(status));
+                 	%%              }
+                 	%%              epicsThreadSleep(.50);
+                        %%             }
+                        %%             status = MdsClose(ATREE_NAME, &pVar->shotNumber);
+                 	%%             fprintf(stdout, "\nMDSplus >>> ECH Data Put at Shot (\"%d\")... OK\n", pVar->shotNumber);
+                 	%%             sprintf(buf, "ECH Data PUT(\"%d\").OK", pVar->shotNumber);
+                        %%               strcpy(pVar->errorMsg,buf);   /* Shot Error and Status Put at String PV */
+                                       pvPut(errorMsg);
+                     	%%         }
+                                mdsPutStart=0;
+                                pvPut(mdsPutStart);
+                } state data_put
+        }
+}

@@ -1,0 +1,57 @@
+/*
+ * --------------------------------------------------------------------------
+ * Generates output values to be stored to shared memory for interface with MARTe
+ * --------------------------------------------------------------------------
+ */
+
+program sncMarteShm
+
+/*
+option +r;
+*/
+option -c;
+
+%{
+#include <math.h>
+#include "MarteShmUtil.h"
+}%
+
+int		input_count = 0;
+assign	input_count to "MARTE_SHM_WR_01";
+
+float	input_sine;
+assign	input_sine to "MARTE_SHM_WR_02";
+
+float	write_period;
+assign	write_period to "MARTE_SHM_WR_PERIOD";
+monitor	write_period;
+
+float ta = 360.0;
+float period=1000;
+float pi=3.141592;
+float offset=50;
+float gain=50;
+float rd;
+
+ss UpdateData {
+    state init {
+		when (delay(3.0)) {
+			%% // wait some time during intialization of IOC
+		} state ProcessUpdate
+	}
+
+	state ProcessUpdate {
+		when (delay(write_period)) {
+			input_count++;
+
+			%% //rd			= ta / period;
+			rd			= ta * write_period;
+			input_sine	= sin(rd * input_count * pi / 180.0) * gain + offset;
+
+			pvPut (input_count);
+			pvPut (input_sine);
+
+		} state ProcessUpdate
+	}
+}
+

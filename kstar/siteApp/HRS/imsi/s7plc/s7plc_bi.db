@@ -1,0 +1,5 @@
+record(bi, "$(PVNAME)") {
+	field(DTYP, "S7plc")
+	field(INP, "@$(PLCNAME) /$(OFFSET) T=$(TYPE) B=$(BIT)")
+	field(SCAN, "I/O Intr")
+}

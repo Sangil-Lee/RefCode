@@ -1,0 +1,33 @@
+record(dfanout, "TMS_TASK1234_GAIN_PUT")
+{
+	field(FLNK,  "TMS_TASK1234_GAIN_APPLY")
+	field(OUTA, "TMS_Dev1_CERNOX_GAIN")
+	field(OUTB, "TMS_Dev2_CERNOX_GAIN")
+	field(OUTC, "TMS_Dev3_CERNOX_GAIN")
+	field(OUTD, "TMS_Dev4_CERNOX_GAIN")
+}
+record(fanout, "TMS_TASK1234_GAIN_APPLY")
+{
+	field(LNK1, "TMS_Dev1_CERNOX_GAIN")
+	field(LNK2, "TMS_Dev2_CERNOX_GAIN")
+	field(LNK3, "TMS_Dev3_CERNOX_GAIN")
+	field(LNK4, "TMS_Dev4_CERNOX_GAIN")
+}
+record(dfanout, "TMS_CERNOX_CURRENT_SOURCE")
+{
+	field(DESC,  "Init_cur_10.E-6_change")
+	field(FLNK,  "TMS_CERNOX_CURRENT_APPLY")
+	field(OUTA, "TMS_Dev1_CERNOX_CURRENT")
+	field(OUTB, "TMS_Dev2_CERNOX_CURRENT")
+	field(OUTC, "TMS_Dev3_CERNOX_CURRENT")
+	field(OUTD, "TMS_Dev4_CERNOX_CURRENT")
+	field(EGU,  "uA")
+}
+record(fanout, "TMS_CERNOX_CURRENT_APPLY")
+{
+	field(DESC,  "Init_cur_10.E-6_apply")
+	field(LNK1, "TMS_Dev1_CERNOX_CURRENT")
+	field(LNK2, "TMS_Dev2_CERNOX_CURRENT")
+	field(LNK3, "TMS_Dev3_CERNOX_CURRENT")
+	field(LNK4, "TMS_Dev4_CERNOX_CURRENT")
+}

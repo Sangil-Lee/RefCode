@@ -1,0 +1,52 @@
+#!../../bin/linux-x86/vacuumCRP
+
+## You may have to change vacuumCRP to something else
+## everywhere it appears in this file
+
+< envPaths
+< ../envCommonIPTables
+
+## prepare env variables and ports definitions
+cd ${TOP}/iocBoot/${IOC}
+< envPorts
+< envVars
+
+cd ${TOP}
+
+## Register all support components
+dbLoadDatabase("dbd/vacuumCRP.dbd")
+vacuumCRP_registerRecordDeviceDriver(pdbbase)
+
+## Set this to see messages from mySub
+#var mySubDebug 1
+
+#PLC Loading
+drvEtherIP_init()
+drvEtherIP_define_PLC("plc0", "172.17.101.11",0)
+EIP_verbosity(2)
+EIP_buffer_limit(494)
+
+# load record instance
+cd ${TOP}/iocBoot/${IOC}
+< dbLoads
+
+# initialize drivers
+cd ${TOP}/iocBoot/${IOC}
+< initDrivers
+
+# asSetFilename("accessSecurity")
+
+iocInit()
+
+epicsThreadSleep 2.
+
+
+## db list writes to below file ##
+#dbl > /root/dbl_vacuumCRP.txt
+
+## Start any sequence programs
+seq SRSRGA_ON 
+
+#< seqLoads
+
+

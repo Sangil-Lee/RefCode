@@ -1,0 +1,102 @@
+record(ao, "NB1_P1FIL_ECMD_TFT")
+{
+  field(DESC, "Length")
+  field(PREC, "1")
+}
+record(calcout, "NB1_P1FIL_ECMD_TF1_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P1FIL_ECMD_TFT")
+  field(INPB, "NB1_P1FIL_ECMD_TF1")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P1FIL_ECMD_TF1.VAL NMP PP")
+}
+record(calcout, "NB1_P1FIL_ECMD_TF2_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P1FIL_ECMD_TFT")
+  field(INPB, "NB1_P1FIL_ECMD_TF2")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P1FIL_ECMD_TF2.VAL NMP PP")
+}
+record(calcout, "NB1_P1FIL_ECMD_TF3_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P1FIL_ECMD_TFT")
+  field(INPB, "NB1_P1FIL_ECMD_TF3")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P1FIL_ECMD_TF3.VAL NMP PP")
+}
+record(calcout, "NB1_P1FIL_ECMD_TF4_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P1FIL_ECMD_TFT")
+  field(INPB, "NB1_P1FIL_ECMD_TF4")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P1FIL_ECMD_TF4.VAL NMP PP")
+}
+record(calc, "NB1_P1FIL_RTN_TFT")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P1FIL_RTN_TF1")
+  field(INPB, "NB1_P1FIL_RTN_TF2")
+  field(INPC, "NB1_P1FIL_RTN_TF3")
+  field(INPD, "NB1_P1FIL_RTN_TF4")
+  field(CALC, "(A=B)=(C=D) ? 1 : 0")
+}
+record(ao, "NB1_P2FIL_ECMD_TFT")
+{
+  field(DESC, "Length")
+  field(PREC, "1")
+}
+record(calcout, "NB1_P2FIL_ECMD_TF1_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P2FIL_ECMD_TFT")
+  field(INPB, "NB1_P2FIL_ECMD_TF1")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P2FIL_ECMD_TF1.VAL NMP PP")
+}
+record(calcout, "NB1_P2FIL_ECMD_TF2_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P2FIL_ECMD_TFT")
+  field(INPB, "NB1_P2FIL_ECMD_TF2")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P2FIL_ECMD_TF2.VAL NMP PP")
+}
+record(calcout, "NB1_P2FIL_ECMD_TF3_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P2FIL_ECMD_TFT")
+  field(INPB, "NB1_P2FIL_ECMD_TF3")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P2FIL_ECMD_TF3.VAL NMP PP")
+}
+record(calcout, "NB1_P2FIL_ECMD_TF4_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P2FIL_ECMD_TFT")
+  field(INPB, "NB1_P2FIL_ECMD_TF4")
+  field(CALC, "A#B ? A : B")
+  field(OUT, "NB1_P2FIL_ECMD_TF4.VAL NMP PP")
+}
+record(calc, "NB1_P2FIL_RTN_TFT")
+{
+  field(DESC, "PLC")
+  field(SCAN, "1 second")
+  field(INPA, "NB1_P2FIL_RTN_TF1")
+  field(INPB, "NB1_P2FIL_RTN_TF2")
+  field(INPC, "NB1_P2FIL_RTN_TF3")
+  field(INPD, "NB1_P2FIL_RTN_TF4")
+  field(CALC, "(A=B)=(C=D) ? 1 : 0")
+}

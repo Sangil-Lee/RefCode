@@ -1,0 +1,38 @@
+record(calc, "$(PV_NAME)") {
+  field(CALC, "A")
+  field(INPA, "$(PV_NAME_IN) CPP")
+  field(INPB, "$(PV_NAME)_T_HH_BIT NPP MS")
+  field(INPC, "$(PV_NAME)_T_H_BIT NPP MS")
+  field(INPD, "$(PV_NAME)_T_L_BIT NPP MS")
+  field(INPE, "$(PV_NAME)_T_LL_BIT NPP MS")
+  field(EGU, "$(UNIT)")
+  field(SCAN, "2 second")
+}
+
+record(calc, "$(PV_NAME)_T_HH_BIT") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(CD_HH) CPP MS")
+  field(INPC, "$(SB_HH) CPP MS")
+}
+
+record(calc, "$(PV_NAME)_T_H_BIT") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(CD_H) CPP MS")
+  field(INPC, "$(SB_H) CPP MS")
+}
+
+record(calc, "$(PV_NAME)_T_L_BIT") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(CD_L) CPP MS")
+  field(INPC, "$(SB_L) CPP MS")
+}
+
+record(calc, "$(PV_NAME)_T_LL_BIT") {
+  field(CALC, "A?C:B")
+  field(INPA, "HDS_HCS_R_MODE CPP")
+  field(INPB, "$(CD_LL) CPP MS")
+  field(INPC, "$(SB_LL) CPP MS")
+}

@@ -1,0 +1,112 @@
+program sncFaultCode
+
+int fault_code;
+assign fault_code to "LH1_INT_VME_STAT";
+monitor fault_code;
+
+string fault_msg;
+assign fault_msg to "LH1_VME_FLT_MSG";
+
+ss ss1
+{
+    state low
+	{
+        when(fault_code == 0)
+		{
+			sprintf(fault_msg, "OK");
+            pvPut(fault_msg, SYNC);
+		} state high
+		when(delay(1))
+		{
+		} state high
+	}
+	state high
+	{
+        when(fault_code != 0)
+		{
+            if(fault_code == 1)
+			{
+				sprintf(fault_msg,"EMC_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 2)
+			{
+			    sprintf(fault_msg, "Thy_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 3)
+			{
+			    sprintf(fault_msg, "FLEX_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 4)
+			{
+			    sprintf(fault_msg, "HVS_OK_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 5)
+			{
+			    sprintf(fault_msg, "RF_FORW_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 6)
+			{
+			    sprintf(fault_msg, "WAVEGUIDE_ARC_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 7)
+			{
+			    sprintf(fault_msg, "VAC_ION_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 8)
+			{
+			    sprintf(fault_msg, "Aux_INT_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 9)
+			{
+			    sprintf(fault_msg, "Klystron_RF_REF_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 10)
+			{
+			    sprintf(fault_msg, "Antena_RF_REF_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 11)
+			{
+			    sprintf(fault_msg, "IP_FAULT_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 12)
+			{
+			    sprintf(fault_msg, "I_ZENER_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 13)
+			{
+			    sprintf(fault_msg, "I_ANODE_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 14)
+			{
+			    sprintf(fault_msg, "Out_OC_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 15)
+			{
+			    sprintf(fault_msg, "RF_REF_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+			else if(fault_code == 16)
+			{
+			    sprintf(fault_msg, "Door_Fault");
+				pvPut(fault_msg, SYNC);
+			}
+		} state low
+		when(delay(1))
+		{
+		} state low
+	}
+}

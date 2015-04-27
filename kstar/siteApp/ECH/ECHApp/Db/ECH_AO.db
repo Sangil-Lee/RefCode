@@ -1,0 +1,9 @@
+record(ao, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(SCAN, "Passive")
+  field(DTYP, "EtherIP")
+  field(OUT, "@$(PLC) $(TAG) S 0.2")
+  field(EGU, "$(UNIT)")
+  field(HIGH, "$(HIGH)")
+  field(LOW, "$(LOW)")
+}

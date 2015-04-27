@@ -1,0 +1,996 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="windowModality" >
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>325</width>
+    <height>719</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="titleLabel" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>0</y>
+     <width>251</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="palette" >
+    <palette>
+     <active>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>170</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="100" >
+         <red>255</red>
+         <green>170</green>
+         <blue>127</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>170</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>170</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="100" >
+         <red>255</red>
+         <green>170</green>
+         <blue>127</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>170</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>127</red>
+         <green>125</green>
+         <blue>123</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Base" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="100" >
+         <red>255</red>
+         <green>170</green>
+         <blue>127</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="100" >
+         <red>255</red>
+         <green>170</green>
+         <blue>127</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow" >
+       <brush brushstyle="SolidPattern" >
+        <color alpha="255" >
+         <red>0</red>
+         <green>170</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text" >
+    <string>SERVER</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_52" >
+   <property name="geometry" >
+    <rect>
+     <x>136</x>
+     <y>646</y>
+     <width>155</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>680</y>
+     <width>166</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="standardButtons" >
+    <set>QDialogButtonBox::Close</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8" >
+   <property name="geometry" >
+    <rect>
+     <x>5</x>
+     <y>585</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Thermohygrostat 1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9" >
+   <property name="geometry" >
+    <rect>
+     <x>5</x>
+     <y>620</y>
+     <width>196</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Thermohygrostat 2</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic" >
+   <property name="geometry" >
+    <rect>
+     <x>245</x>
+     <y>595</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>true</bool>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="blink" >
+    <bool>true</bool>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>THERMOHYD1_STATE</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_2" >
+   <property name="geometry" >
+    <rect>
+     <x>245</x>
+     <y>625</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="blink" >
+    <bool>true</bool>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfNotZero</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>THERMOHYD2_STATE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10" >
+   <property name="geometry" >
+    <rect>
+     <x>5</x>
+     <y>650</y>
+     <width>206</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>HPC Hydrostat (Water Leak)</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="caGraphic_3" >
+   <property name="geometry" >
+    <rect>
+     <x>245</x>
+     <y>655</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="fillColor" stdset="0" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="blink" >
+    <bool>true</bool>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::IfZero</enum>
+   </property>
+   <property name="lineDisplayMode" >
+    <enum>CAGraphic::Static</enum>
+   </property>
+   <property name="pvname" >
+    <string>HPCWARTERLEAK_ALARM</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>334</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Super Computer 1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>380</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Super Computer 2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>430</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Super Computer 3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>475</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Super Computer 4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>525</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Super Computer 5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>330</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>385</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>430</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>480</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_28" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>530</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="" >
+   <property name="geometry" >
+    <rect>
+     <x>157</x>
+     <y>47</y>
+     <width>116</width>
+     <height>526</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" >
+    <item>
+     <widget class="CADisplayer" name="CADisplayer" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SERVER_RACK1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_2" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SERVER_RACK2</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_3" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_MAIN_STORAGE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_4" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_COMP_ROOM</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_5" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_KSTAR_BACKBONE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_6" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_NFRI_BACKBONE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_7" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SUPER_COM1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_8" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SUPER_COM2</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_9" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SUPER_COM3</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_10" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SUPER_COM4</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="CADisplayer" name="CADisplayer_11" >
+      <property name="font" >
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="nuformat" stdset="0" >
+       <enum>CADisplayer::RealTwo</enum>
+      </property>
+      <property name="pvname" >
+       <string>TMON_SUPER_COM5</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>48</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Server Rack #1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>94</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Server Rack #2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>285</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>NFRI Backbone</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>235</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>KSTAR Backbone</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>190</y>
+     <width>136</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Computer Room</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>140</y>
+     <width>136</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Main Storage Rack</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>47</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>95</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>145</y>
+     <width>41</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_21" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>190</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>240</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23" >
+   <property name="geometry" >
+    <rect>
+     <x>282</x>
+     <y>285</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Celsius</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>clicked(QAbstractButton*)</signal>
+   <receiver>Form</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>182</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>102</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <designerdata>
+  <property name="gridDeltaX" >
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY" >
+   <number>5</number>
+  </property>
+  <property name="gridSnapX" >
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY" >
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible" >
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

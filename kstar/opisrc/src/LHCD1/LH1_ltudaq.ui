@@ -1,0 +1,4332 @@
+<ui version="4.0" >
+ <class>panel_ltudaq</class>
+ <widget class="QWidget" name="panel_ltudaq" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1079</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>0</y>
+     <width>781</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0, 153, 255);
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CACheckBox" name="caCheckBox_8" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>215</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P7_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_12" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>65</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P1_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>165</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>6</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>65</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P1_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5" >
+    <property name="geometry" >
+     <rect>
+      <x>409</x>
+      <y>15</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Start</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_3" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>90</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P2</string>
+    </property>
+    <property name="truelabel" >
+     <string>RF ON</string>
+    </property>
+    <property name="falselabel" >
+     <string>RF ON</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_10" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P2_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_13" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>115</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P3_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P0</string>
+    </property>
+    <property name="truelabel" >
+     <string>HV ON</string>
+    </property>
+    <property name="falselabel" >
+     <string>HV ON</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_8" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>215</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P7</string>
+    </property>
+    <property name="truelabel" >
+     <string>CH8</string>
+    </property>
+    <property name="falselabel" >
+     <string>CH8</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P0_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_4" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>115</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P3</string>
+    </property>
+    <property name="truelabel" >
+     <string>RF feedback</string>
+    </property>
+    <property name="falselabel" >
+     <string>RF feedback</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>215</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>8</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>48</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px;font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>LTU</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_14" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>215</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P7_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3" >
+    <property name="geometry" >
+     <rect>
+      <x>170</x>
+      <y>15</y>
+      <width>110</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Device</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>65</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>2</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>115</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>4</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_5" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>140</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P4</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ-HV</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ-HV</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>15</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>CH</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_7" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>190</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P6</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ-RF</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ-RF</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_11" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>40</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P0_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_3" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>90</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P2_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_6" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>165</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P5</string>
+    </property>
+    <property name="truelabel" >
+     <string>DAQ-dRTD</string>
+    </property>
+    <property name="falselabel" >
+     <string>DAQ-dRTD</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_9" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>140</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P4_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_17" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>67</y>
+      <width>110</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::TrueButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_START</string>
+    </property>
+    <property name="truelabel" >
+     <string>Shot Start</string>
+    </property>
+    <property name="falselabel" >
+     <string>Shot Start</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>40</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>1</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>140</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>5</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>190</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>7</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9" >
+    <property name="geometry" >
+     <rect>
+      <x>110</x>
+      <y>90</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>3</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_7" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>190</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P6_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_5" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>140</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P4_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_15" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>165</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P5_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>15</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Stop</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_16" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>190</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P6_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_6" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>165</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P5_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caCheckBox_4" >
+    <property name="geometry" >
+     <rect>
+      <x>90</x>
+      <y>115</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P3_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4" >
+    <property name="geometry" >
+     <rect>
+      <x>310</x>
+      <y>15</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Pol</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_2" >
+    <property name="geometry" >
+     <rect>
+      <x>150</x>
+      <y>65</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SOFT_SETUP_P1</string>
+    </property>
+    <property name="truelabel" >
+     <string>HVS ON</string>
+    </property>
+    <property name="falselabel" >
+     <string>HVS ON</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_14" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>40</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P0_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P0_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_15" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>65</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P1_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P1_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_16" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>90</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P2_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P2_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_17" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>115</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P3_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P3_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_18" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>140</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P4_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P4_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_19" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>165</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P5_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P5_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_20" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>190</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P6_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P6_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_21" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>215</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P7_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P7_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_22" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>90</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P2_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P2_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_23" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>165</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P5_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P5_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_24" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>40</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P0_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P0_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_25" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>190</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P6_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P6_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_26" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>115</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P3_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P3_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_27" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>65</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P1_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P1_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_28" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>215</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P7_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P7_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_29" >
+    <property name="geometry" >
+     <rect>
+      <x>520</x>
+      <y>140</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>LHCD_LTU_P4_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_P4_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_20" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>15</y>
+      <width>110</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::ToggleButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LHCD_LTU_SET_FREE_RUN</string>
+    </property>
+    <property name="truelabel" >
+     <string>KSTAR</string>
+    </property>
+    <property name="falselabel" >
+     <string>LOCAL</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>1020</width>
+     <height>190</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0, 153, 255);
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CALabel" name="caLabel_25" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>77</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_RD_T1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_23" >
+    <property name="geometry" >
+     <rect>
+      <x>540</x>
+      <y>77</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_RD_RATE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_13" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>77</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6220_RATE</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_RATE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21" >
+    <property name="geometry" >
+     <rect>
+      <x>525</x>
+      <y>16</y>
+      <width>190</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Sample rate (Hz)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>60</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px;font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>DAQ</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_6" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>132</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_RFK_DAQDURA_CMD</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_DAQDURA_CMD</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_12" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>77</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6220_T1</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_T1</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_22" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>45</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_RD_T1</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_18" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>132</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_DAQDURA_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_11" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>77</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6220_T0</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_T0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20" >
+    <property name="geometry" >
+     <rect>
+      <x>359</x>
+      <y>16</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>T1 (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_9" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>45</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6254_T1</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>132</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Kly. RF controller</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>16</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>T0 (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_21" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>45</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_RD_T0</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_10" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>45</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6254_RATE</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_RATE</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_20" >
+    <property name="geometry" >
+     <rect>
+      <x>540</x>
+      <y>45</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_RD_RATE</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>77</y>
+      <width>140</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>dRTD (NI 6220)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_8" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>45</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_6254_T0</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6254_T0</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_24" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>77</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_6220_RD_T0</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>45</y>
+      <width>121</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>HV (NI 6254)</string>
+    </property>
+   </widget>
+   <widget class="CAComboBox" name="caComboBox" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>132</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="currentIndex" >
+     <number>0</number>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_DAQSAMP_CMD</string>
+    </property>
+    <item>
+     <property name="text" >
+      <string>1 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>2 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>5 kHz</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_22" >
+    <property name="geometry" >
+     <rect>
+      <x>726</x>
+      <y>16</y>
+      <width>278</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Ready status</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_18" >
+    <property name="geometry" >
+     <rect>
+      <x>856</x>
+      <y>130</y>
+      <width>70</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_READY_CMD</string>
+    </property>
+    <property name="truelabel" >
+     <string>READY</string>
+    </property>
+    <property name="falselabel" >
+     <string>READY</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_23" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>130</y>
+      <width>70</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_STOP_CMD</string>
+    </property>
+    <property name="truelabel" >
+     <string>ABORT</string>
+    </property>
+    <property name="falselabel" >
+     <string>ABORT</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_16" >
+    <property name="geometry" >
+     <rect>
+      <x>732</x>
+      <y>130</y>
+      <width>110</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>border: 1px solid black;</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFK_DAQRDY_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::TrueFalse</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="truelabel" >
+     <string>Ready</string>
+    </property>
+    <property name="falselabel" >
+     <string>Not Ready</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_19" >
+    <property name="geometry" >
+     <rect>
+      <x>856</x>
+      <y>50</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_CMD_START</string>
+    </property>
+    <property name="truelabel" >
+     <string>READY</string>
+    </property>
+    <property name="falselabel" >
+     <string>READY</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_24" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>50</y>
+      <width>70</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_CMD_ABORT</string>
+    </property>
+    <property name="truelabel" >
+     <string>ABORT</string>
+    </property>
+    <property name="falselabel" >
+     <string>ABORT</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_43" >
+    <property name="geometry" >
+     <rect>
+      <x>732</x>
+      <y>50</y>
+      <width>110</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>border: 1px solid black;</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RD_STATUS</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::TrueFalse</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="truelabel" >
+     <string>Ready</string>
+    </property>
+    <property name="falselabel" >
+     <string>Not Ready</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_52" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>162</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_RFANT_DAQ_DURA</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_DURA</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_25" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>160</y>
+      <width>70</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_STOP</string>
+    </property>
+    <property name="truelabel" >
+     <string>ABORT</string>
+    </property>
+    <property name="falselabel" >
+     <string>ABORT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_40" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>162</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Ant. RF controller</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_50" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>162</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQDURA_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Int</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_52" >
+    <property name="geometry" >
+     <rect>
+      <x>732</x>
+      <y>160</y>
+      <width>110</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>border: 1px solid black;</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQRDY_RTN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::TrueFalse</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Alarm</enum>
+    </property>
+    <property name="truelabel" >
+     <string>Ready</string>
+    </property>
+    <property name="falselabel" >
+     <string>Not Ready</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_21" >
+    <property name="geometry" >
+     <rect>
+      <x>856</x>
+      <y>160</y>
+      <width>70</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string/>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQ_READY</string>
+    </property>
+    <property name="truelabel" >
+     <string>READY</string>
+    </property>
+    <property name="falselabel" >
+     <string>READY</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_41" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>106</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Start</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_45" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>106</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Duration</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_53" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>130</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFK_AO_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFK_AO_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_54" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>160</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFANT_AO_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealThree</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFANT_AO_T0</string>
+    </property>
+   </widget>
+   <widget class="CAComboBox" name="caComboBox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>620</x>
+      <y>160</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="currentIndex" >
+     <number>0</number>
+    </property>
+    <property name="pvname" >
+     <string>LH1_RFANT_DAQSAMP_CMD</string>
+    </property>
+    <item>
+     <property name="text" >
+      <string>1 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>2 kHz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text" >
+      <string>5 kHz</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>1020</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="styleSheet" >
+    <string>QGroupBox {
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                   stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+ border: 2px solid rgb(0, 153, 255);
+ border-radius: 5px;
+ margin-top: 1ex; 
+}</string>
+   </property>
+   <property name="title" >
+    <string/>
+   </property>
+   <widget class="CALabel" name="caLabel_27" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>120</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VAPS_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_7" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>60</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VCPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VCPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_23" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet" >
+     <string>font-size:13px;font-weight:bold;</string>
+    </property>
+    <property name="text" >
+     <string>SCALING</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_31" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>60</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VCPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VCPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_32" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VAPS_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VAPS_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_29" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_ICOL_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_19" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>60</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VCPS_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_33" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VAPS_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VAPS_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_25" >
+    <property name="geometry" >
+     <rect>
+      <x>359</x>
+      <y>30</y>
+      <width>154</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Offset</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_30" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>60</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VCPS_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_34" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_ICOL_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_ICOL_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_26" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>V_cathode (kV)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_27" >
+    <property name="geometry" >
+     <rect>
+      <x>189</x>
+      <y>30</y>
+      <width>154</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Gain</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_31" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_ICOL_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_28" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>180</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>V_anode-cathode (kV)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_36" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_ICOL_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_ICOL_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_33" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>120</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VAPS_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_29" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>I_beam (A)</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_28" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>150</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IANODE_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_35" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_IANODE_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IANODE_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_37" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_IANODE_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IANODE_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_34" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>150</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IANODE_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_30" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>I_anode (mA)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_30" >
+    <property name="geometry" >
+     <rect>
+      <x>760</x>
+      <y>60</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_WINDOW_GAIN</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_WINDOW_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_32" >
+    <property name="geometry" >
+     <rect>
+      <x>530</x>
+      <y>60</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Window (deg.)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_35" >
+    <property name="geometry" >
+     <rect>
+      <x>680</x>
+      <y>60</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_WINDOW_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_41" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>60</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_WINDOW_OFFSET</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_WINDOW_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_33" >
+    <property name="geometry" >
+     <rect>
+      <x>849</x>
+      <y>30</y>
+      <width>154</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Offset</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_34" >
+    <property name="geometry" >
+     <rect>
+      <x>679</x>
+      <y>30</y>
+      <width>154</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+    </property>
+    <property name="text" >
+     <string>Gain</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_40" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>60</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_WINDOW_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_39" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_IZENER_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IZENER_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_36" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>180</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IZENER_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_32" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>180</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IZENER_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_31" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>I_zenor (mA)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_40" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>180</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_IZENER_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_IZENER_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_42" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFFWD_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFFWD_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_37" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>210</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFFWD_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_35" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>RF forward (V)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_43" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>210</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFFWD_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFFWD_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_38" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>210</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFFWD_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_44" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFREV_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFREV_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_39" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>240</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFREV_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_41" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>240</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFREV_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_36" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>RF reverse (V)</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_45" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>240</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFREV_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFREV_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_46" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_BODY_OFFSET</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_BODY_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_37" >
+    <property name="geometry" >
+     <rect>
+      <x>530</x>
+      <y>90</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Body (deg.)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_47" >
+    <property name="geometry" >
+     <rect>
+      <x>760</x>
+      <y>90</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_BODY_GAIN</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_BODY_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_42" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_BODY_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_44" >
+    <property name="geometry" >
+     <rect>
+      <x>680</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_BODY_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_48" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_DUMMY1_OFFSET</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY1_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_38" >
+    <property name="geometry" >
+     <rect>
+      <x>530</x>
+      <y>120</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Dummy1 (deg.)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_45" >
+    <property name="geometry" >
+     <rect>
+      <x>680</x>
+      <y>120</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY1_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_49" >
+    <property name="geometry" >
+     <rect>
+      <x>760</x>
+      <y>120</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_DUMMY1_GAIN</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY1_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_46" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>120</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY1_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_50" >
+    <property name="geometry" >
+     <rect>
+      <x>930</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_DUMMY2_OFFSET</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY2_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_39" >
+    <property name="geometry" >
+     <rect>
+      <x>530</x>
+      <y>150</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Dummy2 (deg.)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_47" >
+    <property name="geometry" >
+     <rect>
+      <x>680</x>
+      <y>150</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY2_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_48" >
+    <property name="geometry" >
+     <rect>
+      <x>850</x>
+      <y>150</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY2_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_51" >
+    <property name="geometry" >
+     <rect>
+      <x>760</x>
+      <y>150</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_DUMMY2_GAIN</string>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_DUMMY2_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_56" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFDRV_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFDRV_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_42" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>RF Driver</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_55" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>270</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFDRV_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_57" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>270</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFDRV_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_57" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>270</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_RFDRV_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_RFDRV_GAIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_43" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Vac-ion1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_58" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VACION1_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION1_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_59" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>300</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VACION1_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION1_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_58" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>300</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION1_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_59" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>300</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION1_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_60" >
+    <property name="geometry" >
+     <rect>
+      <x>440</x>
+      <y>330</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VACION2_OFFSET</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION2_OFFSET</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_44" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>140</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="text" >
+     <string>Vac-ion2</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_60" >
+    <property name="geometry" >
+     <rect>
+      <x>360</x>
+      <y>330</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION2_OFFSET</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit_61" >
+    <property name="geometry" >
+     <rect>
+      <x>270</x>
+      <y>330</y>
+      <width>74</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>color:black;</string>
+    </property>
+    <property name="text" >
+     <string>LH1_DAQ_VACION2_GAIN</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION2_GAIN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_61" >
+    <property name="geometry" >
+     <rect>
+      <x>190</x>
+      <y>330</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font/>
+    </property>
+    <property name="styleSheet" >
+     <string>QWidget { background-color: #009600; }</string>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname" >
+     <string>LH1_DAQ_VACION2_GAIN</string>
+    </property>
+    <property name="dmode" stdset="0" >
+     <enum>CALabel::Double</enum>
+    </property>
+    <property name="cmode" stdset="0" >
+     <enum>CALabel::Static</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_24" >
+   <property name="geometry" >
+    <rect>
+     <x>830</x>
+     <y>100</y>
+     <width>230</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>QLabel {
+ background-color: rgb(200,200,200);
+border: 2px solid rgb(200,200,200);
+
+ border-radius: 5px;
+}</string>
+   </property>
+   <property name="text" >
+    <string>LOCAL SHOT NUMBER</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_38" >
+   <property name="geometry" >
+    <rect>
+     <x>920</x>
+     <y>140</y>
+     <width>140</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font/>
+   </property>
+   <property name="styleSheet" >
+    <string>color:black;</string>
+   </property>
+   <property name="text" >
+    <string>LH1_DAQ_AO_LOCALSHOT</string>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>LH1_DAQ_AO_LOCALSHOT</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CACheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caCheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAComboBox</class>
+   <extends>QComboBox</extends>
+   <header>caComboBox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

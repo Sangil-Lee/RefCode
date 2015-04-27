@@ -1,0 +1,19 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+#If using the sequencer, point SNCSEQ at its top directory:
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE = /user/lcs/epics_31482/base
+SNCSEQ = /user/lcs/epics_31482/siteLib
+
+#Capfast users may need the following definitions
+#CAPFAST_TEMPLATES=
+#SCH2EDIF_PATH=

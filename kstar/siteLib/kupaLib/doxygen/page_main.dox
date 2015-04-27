@@ -1,0 +1,52 @@
+/**
+\mainpage KSTAR kupa Reference Manual
+
+\image html kstar.jpg
+
+\section Introduction 소개
+
+<b>KSTAR (Korea Superconducting Tokamak Advanced Research)</b> kupa 라이브러리는,
+EPICS 프레임워크 기반의 KSTAR 제어시스템에서 EPICS PV 값을 CSV 파일 및 MDSplus에 저장하기 위한 API를 제공한다.
+
+KSTAR 진단 장치로부터 취득되는 실험 데이터는 MDSplus에 저장되고 분석을 위해 사용된다. \n
+이와 달리, 여러 KSTAR 장치들의 감시 및 운전과 관련된 운전 데이터는 Archive Engine에 저장되고 있다. \n
+이에 따라, 보다 효과적인 연구를 위해 실험 데이터와 운전 데이터를 통합적으로 분석할 수 있는 방안이 요구되었고,
+그 일환으로 운전 데이터인 EPICS PV들의 값을 실험 데이터와 같이 MDSplus에 저장함으로써 같은 분석 도구를 이용하고자 하였다. \n
+ 
+
+이에 따라, KSTAR 제어시스템들에서 EPICS PV 값을 MDSplus에 저장하기 위한 공통 라이브러리인 kupa가 개발 되었다.
+
+\section Purpose 목적
+
+본 문서는, EPICS PV 값을 취득하여 CSV 파일 및 MDSplus에 대한 저장을 지원하는 kupa 라이브러리의 기능을 설명한다.
+
+\section Scope 범위
+
+본 문서에서는, kupa 라이브러리에서 제공하는 C/C++ 개발언어로 작성된 
+API 목록과 그 기능 그리고, 예제에 대해 기술한다.
+
+\section Limit 가정 및 제약 사항
+
+ 1. kupa 라이브러리는, EPICS와 MDSplus 라이브러리를 기반으로 작성 되었다.
+ 2. kutil 라이브러리를 사용한다.
+ 3. C와 C++ 개발언어를 지원한다.
+ 4. 공식적으로는, Linux 시스템만을 지원한다.
+ 5. 저장 형식으로는, CSV와 MDSplus를 지원한다.
+
+\section Reference 참고 문서
+
+ 1. KSTAR 제어시스템 개발 표준안
+ 2. KSTAR EPICS 제어시스템 개발 표준 점검표
+ 3. KSTAR kutil Reference Manual
+ 
+\section Writer 작성자
+
+NFRI 핵융합공학센터 토카막운전기술부 제어기술팀
+
+\section Copyright 저작권
+
+본 문서에 대한 저작권은 NFRI에 있습니다.
+
+*/
+ 
+/** \defgroup kupa  kupa API */

@@ -1,0 +1,114 @@
+program sncNIDAQbaseSeq 
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+int sampleRate;
+
+double startT0;
+double stopT1;
+double ltuT0;
+double ltuT1;
+double ltuClock;
+
+assign opMode to "FUEL_DAQ_OP_MODE";
+assign status to "FUEL_DAQ_STATUS";
+assign sysArming to "FUEL_DAQ_SYS_ARMING";
+assign autoRun to "FUEL_DAQ_AUTO_RUN";
+assign sampleRate to "FUEL_DAQ_SAMPLING_RATE";
+
+
+assign startT0 to "FUEL_DAQ_START_T0_SEC1";
+assign stopT1 to "FUEL_DAQ_STOP_T1_SEC1";
+assign ltuT0 to "FUEL_LTU_P6_SEC0_T0";
+assign ltuT1 to "FUEL_LTU_P6_SEC0_T1";
+assign ltuClock to "FUEL_LTU_P7_SEC0_CLOCK";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+monitor sampleRate;
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+monitor ltuT1;
+monitor ltuClock;
+
+
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+evflag ltuT0f;
+sync ltuT0 ltuT0f;
+
+evflag ltuT1f;
+sync ltuT1 ltuT1f;
+
+evflag ltuClockf;
+sync ltuClock ltuClockf;
+
+ss setT0Seq {
+	state setT0 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+				sampleRate = ltuClock;
+				pvPut(sampleRate,SYNC);
+				
+			}
+		}state setT0 
+	}
+}
+ss setT1Seq {
+	state setT1 {
+		 when (efTestAndClear(ltuT1f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT1 
+	}
+}
+ss setT11Seq {
+	state setT11 {
+		 when (efTestAndClear(ltuT0f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT11 
+	}
+}
+ss setTClock {
+	state setT1Clock {
+		 when (efTestAndClear(ltuClockf)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+				sampleRate = ltuClock;
+				pvPut(sampleRate,SYNC);
+			}
+		}state setT1Clock 
+	}
+}

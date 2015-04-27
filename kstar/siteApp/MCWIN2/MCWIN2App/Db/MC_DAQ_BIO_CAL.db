@@ -1,0 +1,52 @@
+#record(bo, MCWIN_DAQ_START) {
+#  field(DESC, "MCWIN_DAQ_START_FUNC")
+#  field(SCAN, "Passive")
+#  field(ZNAM, "MCWIN_DAQ_STOPPED")
+#  field(ONAM, "MCWIN_DAQ_STARTING")
+#}
+
+record(bi, MCWIN_HEARTBEAT) {
+  field(DESC, "MCWIN_HEARTBEAT")
+  field(SCAN, "Passive")
+  field(INP, "MCWIN_HEARTBEAT_CALC.VAL NPP NMS")
+  field(ZNAM, "0")
+  field(ONAM, "1")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+}
+
+record(calc, MCWIN_HEARTBEAT_CALC) {
+  field(DESC, "MCWIN_HEARTBEAT")
+  field(SCAN, "1 second")
+  field(INPA, "MCWIN_HEARTBEAT.VAL NPP NMS")
+  field(CALC, "A=0?1:0")
+  field(FLNK, "MCWIN_HEARTBEAT")
+}
+
+record(mbbi, "MCWIN_DAQ_STATUS"){
+  field(DESC, "MCWIN_DAQ_STATUS_FOR_CCS")
+  field(SCAN, "Passive")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "5")
+  field(SXVL, "6")
+  field(SVVL, "7")
+  field(ZRST, "Nothing")
+  field(ONST, "Ready to run")
+  field(TWST, "Arming")
+  field(THST, "Running")
+  field(FRST, "Post-processing")
+  field(FVST, "Data tranfer")
+  field(SXST, "Idle")
+  field(SVST, "Oops")
+}
+
+#record(calc, MCWIN_DAQ_AI00_EFA) {
+#  field(DESC, "MCWIN_DAQAI00_EFA")
+#  field(SCAN, "Passive")
+#  field(INPA, "MCWIN_DAQ_AI00_EFA NPP NMS")
+#  field(CALC, "A=0?1:0")
+#}

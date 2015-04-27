@@ -1,0 +1,44 @@
+program crpScan
+option +r;
+
+%% #define NUM_CHAN    8
+
+short index;
+short pvProc[8];
+assign pvProc to { 
+                   "{SYS}:{SUB}:{CTRL}:TEMP2ND.PROC",   /* index 0 */
+                   "{SYS}:{SUB}:{CTRL}:TEMP1ST.PROC",   /* index 1 */
+                   "{SYS}:{SUB}:{CTRL}:PIG.PROC",       /* index 2 */
+                   "{SYS}:{SUB}:{CTRL}:R00.PROC",       /* index 3 */
+                   "{SYS}:{SUB}:{CTRL}:R01.PROC",       /* index 4 */
+                   "{SYS}:{SUB}:{CTRL}:R02.PROC",       /* index 5 */
+                   "{SYS}:{SUB}:{CTRL}:R03.PROC",       /* index 6 */
+                   "{SYS}:{SUB}:{CTRL}:R04.PROC"        /* index 7 */
+                  };
+
+ss crpScan {
+    state init {
+        when(pvConnectCount() == pvAssignCount()) {
+            index = 0;
+        } state scan
+    }
+
+    state scan {
+        when(delay(.2) && index < NUM_CHAN) {
+            pvProc[index] = 1;
+            pvPut(pvProc[index], SYNC);
+            index++;
+        } state scan
+
+        when(index >= NUM_CHAN) {
+        } state reset
+    }
+
+    state reset {
+        when(delay(2.)) {
+            index = 0;
+        } state scan
+    }
+
+
+}

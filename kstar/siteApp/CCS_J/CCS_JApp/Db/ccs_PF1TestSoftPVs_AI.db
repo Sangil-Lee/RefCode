@@ -1,0 +1,51 @@
+record(ai, "MPS_PF1_heartbeat_1s_bit_A")
+{
+	field(PINI, "YES")
+	field(SCAN, "Passive")
+	field(INP, "MPS_PF1_heartbeat_1s_bit CPP NMS")
+}
+record(ai,"MPS_PF1_current_fb_A")
+{
+  	field(PINI, "YES")
+	field(SCAN, "Passive")
+	field(INP, "MPS_PF1_current_fb CPP NMS")
+}
+record(ai,"MPS_PF1_volt_fbk_A")
+{
+        field(PINI, "YES")
+        field(SCAN, "Passive")
+        field(INP, "MPS_PF1_volt_fbk CPP NMS")
+}
+record(ai,"MPS_TF_current_fb_A")
+{
+        field(PINI, "YES")
+        field(SCAN, "Passive")
+        field(INP, "MPS_TF_current_fb CPP NMS")
+}
+record(ai,"MPS_TF_volt_fbk_A")
+{
+        field(PINI, "YES")
+        field(SCAN, "Passive")
+        field(INP, "MPS_TF_volt_fbk CPP NMS")
+}
+
+record(longin, "CCS_SHOTSEQ_STAGE")
+{
+	field(PINI, "YES")
+	field(SCAN, "Passive")
+}
+
+record(ai, "CCS_SHOT_TRIG_TIME_MDS")
+{
+	field(PINI, "YES")
+	field(SCAN, "Passive")
+	field(PREC, "9")
+}
+
+#record(ai, "CCS_BLIP_TIME")
+#{
+#	field(PINI, "YES")
+#	field(PREC, "9")
+#}
+
+

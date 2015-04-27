@@ -1,0 +1,24 @@
+record(ao, "$(PV_NAME)_PUT") {
+  field(DESC, "$(DESC)")
+  field(SCAN, "Passive")
+  field(DTYP, "EtherIP")
+  field(OUT, "@$(PLC) $(TAG) S 0.1")
+  field(EGU, "$(UNIT)")
+  field(DOL, "$(PV_NAME)_BUF")
+  field(OMSL, "closed_loop")
+  field(HIGH, "$(HIGH)")
+  field(LOW, "$(LOW)")
+}
+record(ao, "$(PV_NAME)")
+{
+  field(PREC, "1")
+  field(HIGH, "$(HIGH)")
+  field(LOW, "$(LOW)")
+}
+record(calc, "$(PV_NAME)_BUF")
+{
+    field(SCAN, "1 second")
+    field(CALC, "A * 10")
+    field(INPA, "$(PV_NAME).VAL  NPP NMS")
+    field(FLNK, "$(PV_NAME)_PUT")
+}

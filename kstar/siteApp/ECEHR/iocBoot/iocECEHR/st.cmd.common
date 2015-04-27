@@ -1,0 +1,48 @@
+#!../../bin/linux-ppc/ECEHR
+
+## Register all support components
+dbLoadDatabase("../../dbd/ECEHR.dbd",0,0)
+ECEHR_registerRecordDeviceDriver(pdbbase) 
+
+epicsEnvSet(CLTU_IOC_DEBUG,"0")
+
+cd ${TOP}/iocBoot/${IOC}
+
+
+< initDriverDev1.cmd
+< initDriverDev2.cmd
+< initDriverDev3.cmd
+
+
+cd ${TOP}
+
+## Load record instances
+dbLoadRecords("db/ECEHR.db")
+dbLoadTemplate("db/ECEHR_AO.template")
+dbLoadTemplate("db/ECEHR_BO.template")
+dbLoadTemplate("db/ECEHR_BO_CHON.template")
+dbLoadTemplate("db/ECEHR_BO_ZCAL.template")
+dbLoadTemplate("db/ECEHR_String.template")
+dbLoadRecords("db/ECEHRTimeStamp.db")
+dbLoadRecords("db/ECEHR_BI.db", "SYS=ECEHR")
+dbLoadRecords("db/dbSysMon.db", "SYS=ECEHR")
+
+#dbLoadRecords("db/SYS_CLTU.db", "TYPE=LTU, SYS=ECEHR" )
+#createTaskCLTU("ECEHR", "/dev/tss/cltu.0")
+createTaskCLTU("ECEHR", "/dev/tss/cltu.0", "0", "0", "999")
+dbLoadRecords "db/SYS_CLTU.db", "TYPE=LTU, SYS=ECEHR"
+#dbLoadTemplate "db/ECEHR_CLTU_CFG.template"
+
+
+
+iocInit()
+
+# cd ${TOP}/iocBoot/${IOC}
+# dbl > pvlist
+
+## Start any sequence programs
+#seq sncExample,"user=snl"
+seq sncECEHRBoProc
+seq sncECEHRDaqSeq
+seq sncECEHRChSelect 
+

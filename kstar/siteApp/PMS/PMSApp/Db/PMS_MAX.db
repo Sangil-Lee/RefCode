@@ -1,0 +1,91 @@
+record(calc, "$(PV)_MAX_OPI") {
+  field(CALC, "A")
+  field(INPA, "$(PV)_MAX CPP")
+  field(INPB, "$(PV)_MAX_CALC CPP MS")
+  field(PREC, "3")
+  field(EGU, "deqC")
+#  field(HIHI, "500")
+#  field(HIGH, "250")
+#  field(HHSV, "MAJOR")
+#  field(HSV, "MINOR")
+}
+
+record(calc, "$(PV)_MAX_CALC") {
+  field(CALC, "A-B")
+  field(INPA, "CWF_WATER_TEMP CPP")
+  field(INPB, "$(PV)_MAX CPP")
+  field(PREC, "3")
+  field(HIHI, "100")
+  field(HIGH, "50")
+  field(HHSV, "MAJOR")
+  field(HSV, "MINOR")
+}
+
+record(calcout, "$(PV)_MAX_HIHI_TEMP") {
+  field(CALC, "A")
+  field(INPA, "PMS_TEMP_HIHI CPP")
+  field(OUT, "$(PV)_MAX_CALC.HIHI")
+}
+
+record(calcout, "$(PV)_MAX_HIGH_TEMP") {
+  field(CALC, "A")
+  field(INPA, "PMS_TEMP_HIGH CPP")
+  field(OUT, "$(PV)_MAX_CALC.HIGH")
+}
+record(calcout, "$(PV)_MAX_LOW_TEMP") {
+  field(CALC, "A")
+  field(INPA, "PMS_TEMP_LOW CPP")
+  field(OUT, "$(PV)_MAX_CALC.LOW")
+}
+
+record(calcout, "$(PV)_MAX_LOLO_TEMP") {
+  field(CALC, "A")
+  field(INPA, "PMS_TEMP_LOLO CPP")
+  field(OUT, "$(PV)_MAX_CALC.LOLO")
+}
+
+
+record(ai, "$(PV)_MAX")
+{
+	field(DESC, "$(PV) max")
+	field(SCAN, "Passive")
+	field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+	field(EGU,  "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+record(stringin, "$(PV)_MAX_PV")
+{
+	field(VAL, "")
+	field(DESC, "$(PV) max pv")
+}
+record(ai, "$(PV)_MIN")
+{
+        field(DESC, "$(PV) min")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+record(stringin, "$(PV)_MIN_PV")
+{
+        field(VAL, "")
+        field(DESC, "$(PV) min pv")
+}
+record(ai, "$(PV)_AVR")
+{
+        field(DESC, "$(PV) average")
+        field(SCAN, "Passive")
+        field(INP, "0")
+	field(PINI, "YES")
+  	field(PREC, "2")
+        field(EGU, "degC")
+        field(MDEL, "0")
+        field(ADEL, "0")
+}
+

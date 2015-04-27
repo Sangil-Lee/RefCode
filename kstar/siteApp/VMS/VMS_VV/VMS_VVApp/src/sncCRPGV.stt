@@ -1,0 +1,108 @@
+program CRPGV_ON
+option +r;
+
+int SEQ_START;
+int DAQ_STATUS;
+int CL_ENABLE;
+int OP_ENABLE;
+int CRP1_GV;
+int CRP2_GV;
+double CL_DELAY;
+double OP_DELAY;
+double CL_DELAY_MONITOR;
+double OP_DELAY_MONITOR;
+
+assign SEQ_START to "CCS_SHOTSEQ_START";
+monitor SEQ_START;
+evflag ef_SEQ_START;
+sync SEQ_START ef_SEQ_START;
+
+assign CRP1_GV to "VMS_VV_CRP1_FV_HO";
+monitor CRP1_GV;
+
+assign CRP2_GV to "VMS_VV_CRP2_FV_HO";
+monitor CRP2_GV;
+
+assign CL_ENABLE to "VMS_VV_CL_ENABLE";
+monitor CL_ENABLE;
+
+assign OP_ENABLE to "VMS_VV_OP_ENABLE";
+monitor OP_ENABLE;
+
+assign CL_DELAY to "VMS_VV_CL_DELAY";
+monitor CL_DELAY;
+
+assign OP_DELAY to "VMS_VV_OP_DELAY";
+monitor OP_DELAY;
+
+assign CL_DELAY_MONITOR to "VMS_VV_CL_DELAY_MONITOR";
+monitor CL_DELAY_MONITOR;
+
+assign OP_DELAY_MONITOR to "VMS_VV_OP_DELAY_MONITOR";
+monitor OP_DELAY_MONITOR;
+
+assign DAQ_STATUS to "FUEL_DAQ_STATUS";
+monitor DAQ_STATUS;
+
+
+ss CRP_GV_CL_SYNC {
+
+    state MAIN {
+        when(efTestAndClear (ef_SEQ_START ) && SEQ_START ==1 && CL_ENABLE == 1){
+            printf("Go to State CL_DELAY \n");
+            CL_DELAY_MONITOR = CL_DELAY;
+        } state CL_CHECK 
+    }
+
+   state CL_CHECK {
+        when( delay(1.0) && (CL_DELAY_MONITOR > 0) ){
+            CL_DELAY_MONITOR = CL_DELAY_MONITOR - 1 ;
+            pvPut(CL_DELAY_MONITOR);
+            printf("DELAY_MONITOR = %f \n",CL_DELAY_MONITOR);
+        } state CL_CHECK 
+
+        when( delay(1.0) && CL_ENABLE == 1 ){
+            CRP1_GV = 0;
+            CRP2_GV = 0;
+            pvPut(CRP1_GV);
+            pvPut(CRP2_GV);
+            printf("DELAY = %f \n",CL_DELAY);
+            printf("CRP_GV Closed!! \n");
+        } state MAIN
+
+        when( delay(1.0) ){
+            printf("Canceled!! \n");
+        } state MAIN 
+  
+  }
+}
+
+ss CRP_GV_OP_SYNC {
+
+     state MAIN {
+        when( DAQ_STATUS == 6 && OP_ENABLE == 1){
+            printf("Go to State OP_CHECK \n");
+            OP_DELAY_MONITOR = OP_DELAY;
+        } state OP_CHECK
+    } 
+
+    state OP_CHECK { 
+        when( delay(1.0) && (OP_DELAY_MONITOR > 0) ){
+            OP_DELAY_MONITOR = OP_DELAY_MONITOR - 1 ;
+            pvPut(OP_DELAY_MONITOR);
+            printf("DELAY_MONITOR = %f \n",OP_DELAY_MONITOR);
+        } state OP_CHECK
+ 
+        when( delay(1.0) && OP_ENABLE == 1){
+            CRP1_GV = 1;
+            CRP2_GV = 1;
+            pvPut(CRP1_GV);
+            pvPut(CRP2_GV);
+            printf("CRP_GV Open!! \n");   
+        } state MAIN 
+
+        when( delay(1.0) ){
+            printf("Canceled!! \n");
+        } state MAIN
+   }
+}

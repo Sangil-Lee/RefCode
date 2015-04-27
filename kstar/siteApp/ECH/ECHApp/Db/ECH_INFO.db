@@ -1,0 +1,31 @@
+record(ao, "ECH_POWER")
+{
+    field(DESC,"ECH POWER")
+    field(PREC, "2")
+}
+record(bo, "ECH_FREQUENCY")
+{
+    field(DESC,"ECH FREQUENCY")
+    field(ZNAM, "84")
+    field(ONAM, "110")
+}
+record(stringout,"ECH_TARGET")
+{
+    field(DESC, "ECH TARGET")
+}
+record(stringout, "ECH_MODE")
+{
+    field(DESC, "ECH_MODE")
+}
+record(longout, "ECH_INTERLOCK")
+{
+    field(DESC, "ECH INTERLOCK")
+}
+record(calc, "ECH_PULSE_WIDTH")
+{
+    field(DESC, "ECH PULSE WIDTH")
+    field(CALC, "A-(B+C)")
+    field(INPA, "ECH_WRE02_CALC")
+    field(INPB, "ECH_WRD10_CALC")
+    field(INPC, "ECH_WRD15_CALC")
+}

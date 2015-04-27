@@ -1,0 +1,161 @@
+program sncECHAOSeq 
+option +r;
+option -c;
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+%% #include <epicsThread.h>
+
+int opMode;
+int status;
+int sysArming;
+int autoRun;
+int sampleRate;
+
+double startT0;
+double stopT1;
+double ltuT0;
+double ltuT1;
+double ltuClock;
+
+double ltuT0_Temp;
+double deltaTime;
+double ao2Val;
+
+int	ctuStart;
+int aoMode;
+int doProgress;
+int daqStop;
+
+assign opMode to "ECH_AO_OP_MODE";
+assign status to "ECH_AO_STATUS";
+assign sysArming to "ECH_AO_SYS_ARMING";
+assign autoRun to "ECH_AO_AUTO_RUN";
+assign sampleRate to "ECH_AO_SAMPLING_RATE";
+
+assign ctuStart to "CCS_CTU_shotStart";
+assign aoMode to "ECH_AO_SELECT_AOMODE_DEV1";
+assign doProgress to "ECH_AO_DOING_PROGRESS_DEV1";
+assign ao2Val to "ECH_AO_OUTPUT_VALUE_CH2";
+assign daqStop to "ECH_AO_DAQ_STOP";
+
+assign startT0 to "ECH_AO_START_T0_SEC1";
+assign stopT1 to "ECH_AO_STOP_T1_SEC1";
+assign ltuT0 to "ECH_LTU_P6_SEC0_T0";
+assign ltuT1 to "ECH_LTU_P6_SEC0_T1";
+assign ltuClock to "ECH_LTU_P7_SEC0_CLOCK";
+
+monitor opMode;
+monitor status;
+monitor sysArming;
+monitor autoRun;
+monitor sampleRate;
+
+
+monitor startT0;
+monitor stopT1;
+monitor ltuT0;
+monitor ltuT1;
+monitor ltuClock;
+
+monitor ctuStart;
+monitor aoMode;
+monitor doProgress;
+monitor ao2Val;
+monitor daqStop;
+
+evflag ctuStartf;
+sync ctuStart ctuStartf;
+
+evflag autoRunf;
+sync autoRun autoRunf;
+
+evflag sysArmingf;
+sync sysArming sysArmingf;
+
+evflag ltuT0f;
+sync ltuT0 ltuT0f;
+
+evflag ltuT1f;
+sync ltuT1 ltuT1f;
+
+evflag ltuClockf;
+sync ltuClock ltuClockf;
+%{
+/*
+ss setAO2Seq {
+	state seqAO2 {
+		 when (efTestAndClear(ctuStartf)) {
+			if(autoRun == 1 && opMode == 1 && aoMode == 1){
+				ltuT0_Temp = ltuT0;
+				deltaTime = ltuT1 - ltuT0; 
+			%%  epicsThreadSleep(pVar->ltuT0_Temp);	
+				ao2Val = 5.0;
+				pvPut(ao2Val,SYNC);
+				doProgress = 1;
+				pvPut(doProgress);
+			%%  epicsThreadSleep(pVar->deltaTime);	
+				ao2Val = 0.0;
+				pvPut(ao2Val,SYNC);
+			%%  epicsThreadSleep(2.0);	
+				daqStop = 1;
+				pvPut(daqStop);
+			}
+		}state seqAO2 
+	}
+}
+*/
+}%
+ss setT0Seq {
+	state setT0 {
+		 when (efTestAndClear(autoRunf)) {
+			if(autoRun == 1 && opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+				sampleRate = ltuClock;
+				pvPut(sampleRate,SYNC);
+				
+			}
+		}state setT0 
+	}
+}
+ss setT1Seq {
+	state setT1 {
+		 when (efTestAndClear(ltuT1f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT1 
+	}
+}
+ss setT11Seq {
+	state setT11 {
+		 when (efTestAndClear(ltuT0f)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+			}
+		}state setT11 
+	}
+}
+ss setTClock {
+	state setT1Clock {
+		 when (efTestAndClear(ltuClockf)) {
+			if(opMode == 1 && status == 1){
+				startT0 = ltuT0;
+				pvPut(startT0,SYNC);
+				stopT1 = ltuT1;
+				pvPut(stopT1,SYNC);
+				sampleRate = ltuClock;
+				pvPut(sampleRate,SYNC);
+			}
+		}state setT1Clock 
+	}
+}

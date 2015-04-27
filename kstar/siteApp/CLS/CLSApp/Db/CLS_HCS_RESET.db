@@ -1,0 +1,25 @@
+record(ao, "CLS_HCS_W_EPICS_COMM_ERROR_OUT") {
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 EPICS_RESET S 1")
+  field(OMSL, "closed_loop")
+  field(DOL, "CLS_HCS_W_EPICS_COMM_ERROR")
+}
+
+record(bo, "CLS_HCS_W_EPICS_COMM_ERROR") {
+  field(SCAN, "Passive")
+  field(OMSL, "supervisory")
+  field(ZNAM, "OFF")
+  field(ONAM, "RESET")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+  field(FLNK, "CLS_HCS_W_EPICS_COMM_ERROR_OUT")
+}
+
+record(calcout, "CLS_HCS_W_EPICS_COMM_ERROR_IN") {
+  field(CALC, "0")
+#  field(SCAN, "5 second")
+  field(INPA, "CLS_HCS_W_EPICS_COMM_ERROR CPP")
+  field(OUT, "CLS_HCS_W_EPICS_COMM_ERROR")
+  field(FLNK, "CLS_HCS_W_EPICS_COMM_ERROR")
+}
+

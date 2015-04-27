@@ -1,0 +1,44 @@
+record(bi, "VSS_DATA_PUT")
+{
+	field(DESC, "Visible Spec Scope_PUT")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(ZNAM, "READY")
+	field(ONAM, "STORING")
+}
+record(bi, "VSS_PI_DATA_PUT")
+{
+        field(DESC, "Visible SS PI_PUT")
+        field(SCAN, "Passive")
+        field(PINI, "YES")
+        field(ZNAM, "READY")
+        field(ONAM, "STORING")
+}
+record(ai, "VSS_SHOT_NUMBER")
+{
+    field(DESC, "VisSpecScope_SHOT_NU")
+    field(SCAN, "Passive")
+    field(INP, "0")
+    field(PINI, "YES")
+}
+record(ai, "VSS_START_TIME")
+{
+    field(DESC, "VisSpecScope_DAQ_ST_TIME")
+    field(SCAN, "Passive")
+    field(INP, "10.5")
+    field(PINI, "YES")
+}
+record(ai, "VSS_PI_START_TIME")
+{
+    field(DESC, "VisSpec_PIDAQ_ST_TIME")
+    field(SCAN, "Passive")
+    field(INP, "10.5")
+    field(PINI, "YES")
+}
+record(ai, "VSS_BLIP_TIME")
+{
+    field(DESC, "VSS_KSTAT_BLIP_TIME")
+    field(SCAN, "Passive")
+    field(INP, "11.0")
+    field(PINI, "YES")
+}

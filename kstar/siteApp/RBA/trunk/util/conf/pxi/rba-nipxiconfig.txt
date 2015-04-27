@@ -1,0 +1,17 @@
+nipxiconfig --unidentify-all
+nipxiconfig -l
+
+nipxiconfig --list-identifiable-controllers
+nipxiconfig --identify-controller "National Instruments" "PXI-MXI-Express"
+
+nipxiconfig --list-identifiable-chassis
+nipxiconfig --identify-chassis 2 "National Instruments" "PXI-1042Q"
+nipxiconfig --identify-chassis 3 "National Instruments" "PXI-1042Q"
+
+nipxiconfig -l
+nipxiconfig --list-identifications all
+nipxiconfig --list-pxi-buses all
+nipxiconfig --list-triggers
+
+#nipxiconfig --reserve-trigger 3 2
+

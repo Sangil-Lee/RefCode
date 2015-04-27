@@ -1,0 +1,3072 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>1080</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../icrh.qrc" >:/images/ICRH_DAQ.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>1</x>
+     <y>9</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="timeset" stdset="0" >
+    <enum>CAUITime::Event</enum>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>61</y>
+     <width>239</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:mptree</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALineEdit::DBRGSTR</enum>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_2" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>94</y>
+     <width>239</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:mptree:i</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALineEdit::DBRGSTR</enum>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_3" >
+   <property name="geometry" >
+    <rect>
+     <x>365</x>
+     <y>61</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:shotidmp</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_4" >
+   <property name="geometry" >
+    <rect>
+     <x>365</x>
+     <y>94</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:pulseid</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02" >
+   <property name="geometry" >
+    <rect>
+     <x>517</x>
+     <y>61</y>
+     <width>199</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:save</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Save</string>
+   </property>
+   <property name="falselabel" >
+    <string>Discard</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_2" >
+   <property name="geometry" >
+    <rect>
+     <x>517</x>
+     <y>96</y>
+     <width>199</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:intsave</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Save</string>
+   </property>
+   <property name="falselabel" >
+    <string>Discard</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_36" >
+   <property name="geometry" >
+    <rect>
+     <x>772</x>
+     <y>58</y>
+     <width>50</width>
+     <height>68</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>68</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::ActInact</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:2mw:rfonr</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_37" >
+   <property name="geometry" >
+    <rect>
+     <x>847</x>
+     <y>58</y>
+     <width>50</width>
+     <height>68</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>68</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::ActInact</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:busy</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_38" >
+   <property name="geometry" >
+    <rect>
+     <x>922</x>
+     <y>58</y>
+     <width>50</width>
+     <height>68</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>50</width>
+     <height>68</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="fillDisplayMode" >
+    <enum>CAGraphic::ActInact</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:mp:active</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_5" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>174</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tok:start</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_6" >
+   <property name="geometry" >
+    <rect>
+     <x>641</x>
+     <y>175</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ovset</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_7" >
+   <property name="geometry" >
+    <rect>
+     <x>882</x>
+     <y>174</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:atten</string>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_12" >
+   <property name="geometry" >
+    <rect>
+     <x>896</x>
+     <y>217</y>
+     <width>99</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::TrueButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ovreset</string>
+   </property>
+   <property name="truelabel" >
+    <string>Reset</string>
+   </property>
+   <property name="falselabel" >
+    <string>Reset</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_8" >
+   <property name="geometry" >
+    <rect>
+     <x>131</x>
+     <y>340</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealFour</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:offt</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_9" >
+   <property name="geometry" >
+    <rect>
+     <x>131</x>
+     <y>374</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:tspan</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_10" >
+   <property name="geometry" >
+    <rect>
+     <x>372</x>
+     <y>340</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>icrf:daq:rfd:dt</string>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealThree</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:dt</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_11" >
+   <property name="geometry" >
+    <rect>
+     <x>373</x>
+     <y>374</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:elem</string>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_14" >
+   <property name="geometry" >
+    <rect>
+     <x>373</x>
+     <y>408</y>
+     <width>143</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::TrueButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:write</string>
+   </property>
+   <property name="truelabel" >
+    <string>Write</string>
+   </property>
+   <property name="falselabel" >
+    <string>Write</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_12" >
+   <property name="geometry" >
+    <rect>
+     <x>614</x>
+     <y>350</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:coef0</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_13" >
+   <property name="geometry" >
+    <rect>
+     <x>719</x>
+     <y>350</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:coef1</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_14" >
+   <property name="geometry" >
+    <rect>
+     <x>825</x>
+     <y>350</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:coef2</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_15" >
+   <property name="geometry" >
+    <rect>
+     <x>930</x>
+     <y>350</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:coef3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_16" >
+   <property name="geometry" >
+    <rect>
+     <x>614</x>
+     <y>377</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:a0</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_17" >
+   <property name="geometry" >
+    <rect>
+     <x>719</x>
+     <y>377</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:a1</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_18" >
+   <property name="geometry" >
+    <rect>
+     <x>824</x>
+     <y>377</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:a2</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_19" >
+   <property name="geometry" >
+    <rect>
+     <x>930</x>
+     <y>377</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:a3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_20" >
+   <property name="geometry" >
+    <rect>
+     <x>613</x>
+     <y>404</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:p0</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_21" >
+   <property name="geometry" >
+    <rect>
+     <x>719</x>
+     <y>404</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:p1</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_22" >
+   <property name="geometry" >
+    <rect>
+     <x>824</x>
+     <y>404</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:p2</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_23" >
+   <property name="geometry" >
+    <rect>
+     <x>930</x>
+     <y>404</y>
+     <width>101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:p3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_24" >
+   <property name="geometry" >
+    <rect>
+     <x>157</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv0</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_25" >
+   <property name="geometry" >
+    <rect>
+     <x>210</x>
+     <y>500</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv1</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_26" >
+   <property name="geometry" >
+    <rect>
+     <x>263</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv2</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_27" >
+   <property name="geometry" >
+    <rect>
+     <x>317</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_28" >
+   <property name="geometry" >
+    <rect>
+     <x>369</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv4</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_29" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv5</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_30" >
+   <property name="geometry" >
+    <rect>
+     <x>476</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv6</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_31" >
+   <property name="geometry" >
+    <rect>
+     <x>529</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv7</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_32" >
+   <property name="geometry" >
+    <rect>
+     <x>582</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv8</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_33" >
+   <property name="geometry" >
+    <rect>
+     <x>635</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv9</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_34" >
+   <property name="geometry" >
+    <rect>
+     <x>689</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv10</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_35" >
+   <property name="geometry" >
+    <rect>
+     <x>742</x>
+     <y>500</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv11</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_36" >
+   <property name="geometry" >
+    <rect>
+     <x>795</x>
+     <y>500</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv12</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_37" >
+   <property name="geometry" >
+    <rect>
+     <x>849</x>
+     <y>501</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv13</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_38" >
+   <property name="geometry" >
+    <rect>
+     <x>901</x>
+     <y>500</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkv14</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_39" >
+   <property name="geometry" >
+    <rect>
+     <x>263</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh2</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_40" >
+   <property name="geometry" >
+    <rect>
+     <x>476</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh6</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_41" >
+   <property name="geometry" >
+    <rect>
+     <x>582</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh8</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_42" >
+   <property name="geometry" >
+    <rect>
+     <x>529</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh7</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_43" >
+   <property name="geometry" >
+    <rect>
+     <x>317</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_44" >
+   <property name="geometry" >
+    <rect>
+     <x>901</x>
+     <y>527</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh14</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_45" >
+   <property name="geometry" >
+    <rect>
+     <x>742</x>
+     <y>527</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh11</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_46" >
+   <property name="geometry" >
+    <rect>
+     <x>157</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh0</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_47" >
+   <property name="geometry" >
+    <rect>
+     <x>369</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh4</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_48" >
+   <property name="geometry" >
+    <rect>
+     <x>210</x>
+     <y>527</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh1</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_49" >
+   <property name="geometry" >
+    <rect>
+     <x>423</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh5</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_50" >
+   <property name="geometry" >
+    <rect>
+     <x>635</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh9</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_51" >
+   <property name="geometry" >
+    <rect>
+     <x>689</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh10</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_52" >
+   <property name="geometry" >
+    <rect>
+     <x>795</x>
+     <y>527</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh12</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_53" >
+   <property name="geometry" >
+    <rect>
+     <x>849</x>
+     <y>528</y>
+     <width>50</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:bkh13</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_54" >
+   <property name="geometry" >
+    <rect>
+     <x>156</x>
+     <y>556</y>
+     <width>56</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:period</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_55" >
+   <property name="geometry" >
+    <rect>
+     <x>327</x>
+     <y>557</y>
+     <width>56</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:breakpoints</string>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_19" >
+   <property name="geometry" >
+    <rect>
+     <x>954</x>
+     <y>557</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::TrueButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:writewf</string>
+   </property>
+   <property name="truelabel" >
+    <string>Write</string>
+   </property>
+   <property name="falselabel" >
+    <string>Write</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_20" >
+   <property name="geometry" >
+    <rect>
+     <x>825</x>
+     <y>595</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::TrueButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:on</string>
+   </property>
+   <property name="truelabel" >
+    <string>RF On</string>
+   </property>
+   <property name="falselabel" >
+    <string>RF On</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_21" >
+   <property name="geometry" >
+    <rect>
+     <x>934</x>
+     <y>595</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::TrueButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:off</string>
+   </property>
+   <property name="truelabel" >
+    <string>RF Off</string>
+   </property>
+   <property name="falselabel" >
+    <string>RF Off</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_3" >
+   <property name="geometry" >
+    <rect>
+     <x>184</x>
+     <y>680</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:pwr</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>ON</string>
+   </property>
+   <property name="falselabel" >
+    <string>OFF</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_4" >
+   <property name="geometry" >
+    <rect>
+     <x>184</x>
+     <y>708</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:rem</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Remote</string>
+   </property>
+   <property name="falselabel" >
+    <string>Local</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_5" >
+   <property name="geometry" >
+    <rect>
+     <x>184</x>
+     <y>733</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:ready</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Ready</string>
+   </property>
+   <property name="falselabel" >
+    <string>Not ready</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_25" >
+   <property name="geometry" >
+    <rect>
+     <x>624</x>
+     <y>709</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoExclusive" >
+    <bool>true</bool>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::ToggleButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s1:up</string>
+   </property>
+   <property name="truelabel" >
+    <string>Up</string>
+   </property>
+   <property name="falselabel" >
+    <string>Up</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_26" >
+   <property name="geometry" >
+    <rect>
+     <x>624</x>
+     <y>735</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoExclusive" >
+    <bool>true</bool>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::ToggleButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s1:dn</string>
+   </property>
+   <property name="truelabel" >
+    <string>Down</string>
+   </property>
+   <property name="falselabel" >
+    <string>Down</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_28" >
+   <property name="geometry" >
+    <rect>
+     <x>709</x>
+     <y>735</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoExclusive" >
+    <bool>true</bool>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::ToggleButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s2:dn</string>
+   </property>
+   <property name="truelabel" >
+    <string>Down</string>
+   </property>
+   <property name="falselabel" >
+    <string>Down</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CAPushButton" name="CAPushButton_29" >
+   <property name="geometry" >
+    <rect>
+     <x>709</x>
+     <y>709</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="autoExclusive" >
+    <bool>true</bool>
+   </property>
+   <property name="buttonType" >
+    <enum>CAPushButton::ToggleButton</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s2:up</string>
+   </property>
+   <property name="truelabel" >
+    <string>Up</string>
+   </property>
+   <property name="falselabel" >
+    <string>Up</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_56" >
+   <property name="geometry" >
+    <rect>
+     <x>624</x>
+     <y>761</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s1:h</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_57" >
+   <property name="geometry" >
+    <rect>
+     <x>709</x>
+     <y>762</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>50</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::Integer</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s2:h</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_58" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>217</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tok:width</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_59" >
+   <property name="geometry" >
+    <rect>
+     <x>364</x>
+     <y>174</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tok:pwr</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_60" >
+   <property name="geometry" >
+    <rect>
+     <x>365</x>
+     <y>215</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealThree</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tok:freq</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_61" >
+   <property name="geometry" >
+    <rect>
+     <x>125</x>
+     <y>258</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealThree</enum>
+   </property>
+   <property name="pvname" >
+    <string>ICRH_LTU_T0_p1</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_39" >
+   <property name="geometry" >
+    <rect>
+     <x>643</x>
+     <y>218</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ov0</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_40" >
+   <property name="geometry" >
+    <rect>
+     <x>680</x>
+     <y>218</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ov1</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_41" >
+   <property name="geometry" >
+    <rect>
+     <x>717</x>
+     <y>218</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ov2</string>
+   </property>
+  </widget>
+  <widget class="CAGraphic" name="CAGraphic_42" >
+   <property name="geometry" >
+    <rect>
+     <x>755</x>
+     <y>218</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="geometryType" >
+    <enum>StaticGraphic::Rectangle</enum>
+   </property>
+   <property name="lineColor" >
+    <color>
+     <red>60</red>
+     <green>76</green>
+     <blue>100</blue>
+    </color>
+   </property>
+   <property name="lineWidth" >
+    <number>1</number>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tm:ov3</string>
+   </property>
+  </widget>
+  <widget class="CALineEdit" name="caLineEdit_62" >
+   <property name="geometry" >
+    <rect>
+     <x>366</x>
+     <y>256</y>
+     <width>143</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::RealThree</enum>
+   </property>
+   <property name="pvname" >
+    <string>ICRH_LTU_T0_p0</string>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_6" >
+   <property name="geometry" >
+    <rect>
+     <x>430</x>
+     <y>557</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>79</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:trgmode</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Ext</string>
+   </property>
+   <property name="falselabel" >
+    <string>Soft</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_7" >
+   <property name="geometry" >
+    <rect>
+     <x>516</x>
+     <y>557</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>79</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:runmode</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Train</string>
+   </property>
+   <property name="falselabel" >
+    <string>Sing</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_8" >
+   <property name="geometry" >
+    <rect>
+     <x>602</x>
+     <y>557</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>79</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:lowrf:control</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Volt</string>
+   </property>
+   <property name="falselabel" >
+    <string>Pow</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_9" >
+   <property name="geometry" >
+    <rect>
+     <x>624</x>
+     <y>682</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>79</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s1:spd</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>LS</string>
+   </property>
+   <property name="falselabel" >
+    <string>HS</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_10" >
+   <property name="geometry" >
+    <rect>
+     <x>710</x>
+     <y>682</y>
+     <width>79</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>79</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:tun:s2:spd</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>LS</string>
+   </property>
+   <property name="falselabel" >
+    <string>HS</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_11" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>596</y>
+     <width>163</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:cfg:finish</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Conf. Finish</string>
+   </property>
+   <property name="falselabel" >
+    <string>Not Finished</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_12" >
+   <property name="geometry" >
+    <rect>
+     <x>268</x>
+     <y>597</y>
+     <width>162</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:2mw:lowrf</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>RF Ready</string>
+   </property>
+   <property name="falselabel" >
+    <string>Not Ready</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_13" >
+   <property name="geometry" >
+    <rect>
+     <x>726</x>
+     <y>556</y>
+     <width>222</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:cfg:fsen</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Fast Sample On</string>
+   </property>
+   <property name="falselabel" >
+    <string>Fast Sample Off</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+  <widget class="CABoButton" name="ca02_14" >
+   <property name="geometry" >
+    <rect>
+     <x>131</x>
+     <y>408</y>
+     <width>216</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="align" stdset="0" >
+    <enum>CABoButton::Column</enum>
+   </property>
+   <property name="pvname" >
+    <string>icrf:daq:rfd:arren</string>
+   </property>
+   <property name="confirm" >
+    <bool>false</bool>
+   </property>
+   <property name="truelabel" >
+    <string>Fast Sample On</string>
+   </property>
+   <property name="falselabel" >
+    <string>Fast Sample Off</string>
+   </property>
+   <property name="selColor" >
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CABoButton</class>
+   <extends>QWidget</extends>
+   <header>caBobutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icrh.qrc" />
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX" >
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY" >
+   <number>10</number>
+  </property>
+  <property name="gridSnapX" >
+   <bool>false</bool>
+  </property>
+  <property name="gridSnapY" >
+   <bool>false</bool>
+  </property>
+  <property name="gridVisible" >
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

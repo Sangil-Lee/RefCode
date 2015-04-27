@@ -1,0 +1,10 @@
+record(ao, "ao$(PORT):$(PARAM):$(CH)") {
+  field(DTYP, "IcrfDM DSP AO 4 ch")
+  field(OMSL, "supervisory")
+#  field(OIF, "full")
+  field(DRVL, "0")
+  field(DRVH, "4095")
+  field(OUT, "@$(PORT) $(PARAM) $(CH)")
+  field(SCAN, "I/O Intr")
+}
+

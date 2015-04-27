@@ -1,0 +1,68 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CADisplayer" name="pv1" >
+   <property name="geometry" >
+    <rect>
+     <x>48</x>
+     <y>45</y>
+     <width>74</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="pv2" >
+   <property name="geometry" >
+    <rect>
+     <x>48</x>
+     <y>74</y>
+     <width>74</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="pvname" >
+    <string>test</string>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="pv3" >
+   <property name="geometry" >
+    <rect>
+     <x>48</x>
+     <y>103</y>
+     <width>74</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

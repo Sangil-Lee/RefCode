@@ -1,0 +1,6 @@
+createPXITask("Dev5_input")
+createPXIDIOChannel("Dev5_input",   "Dev5/port0", "DI8_CHANNEL")
+createPXIDIOChannel("Dev5_input",   "Dev5/port2", "DI8_CHANNEL")
+createPXITask("Dev5_output")
+createPXIDIOChannel("Dev5_output",   "Dev5/port4", "DO8_CHANNEL")
+createPXIDIOChannel("Dev5_output",   "Dev5/port6", "DO8_CHANNEL")

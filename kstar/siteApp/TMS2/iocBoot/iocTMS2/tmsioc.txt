@@ -1,0 +1,614 @@
+#!../../bin/linux-x86/pxi
+## You may have to change pxi to something else
+## everywhere it appears in this file
+< envPaths
+epicsEnvSet(ARCH,"linux-x86")
+epicsEnvSet(IOC,"iocpxi")
+epicsEnvSet(TOP,"/home/kstar/epics/pxiApp")
+epicsEnvSet(EPICS_BASE,"/usr/local/epics/base")
+cd /home/kstar/epics/pxiApp
+## Register all support components
+dbLoadDatabase("dbd/pxi.dbd")
+pxi_registerRecordDeviceDriver(pdbbase)
+## Compact Field Point init
+drvGenericSerialConfigure "nicFP20x0Ctrl1" "172.17.101.22:6341" 0 0
+drvcFP20x0_init "nicFP20x0Ctrl1" 3. 3. 5. 1000
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+< initDriverPXIDev1.cmd
+createPXITask("Dev1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod1/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod2/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod3/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod4/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod5/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod6/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod7/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod8/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod9/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod10/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod11/ai7")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai0")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai1")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai2")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai3")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai4")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai5")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai6")
+createPXICernoxChannel("Dev1", "SC1Mod12/ai7")
+< initDriverPXIDev2.cmd
+createPXITask("Dev2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod1/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod2/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod3/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod4/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod5/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod6/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod7/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod8/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod9/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod10/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod11/ai7")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai0")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai1")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai2")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai3")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai4")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai5")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai6")
+createPXICernoxChannel("Dev2", "SC2Mod12/ai7")
+< initDriverPXIDev3.cmd
+createPXITask("Dev3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod1/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod2/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod3/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod3/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod4/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod5/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod6/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod7/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod7/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod8/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod9/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod9/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod10/ai7")
+#missing
+createPXICernoxChannel("Dev3", "SC3Mod11/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod11/ai7")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai0")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai1")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai2")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai3")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai4")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai5")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai6")
+createPXICernoxChannel("Dev3", "SC3Mod12/ai7")
+< initDriverPXIDev4.cmd
+createPXITask("Dev4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod1/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod2/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod3/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod4/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod5/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod6/ai7")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai0")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai1")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai2")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai3")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai4")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai5")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai6")
+createPXICernoxChannel("Dev4", "SC4Mod7/ai7")
+cd /home/kstar/epics/pxiApp
+## Load record instances
+#dbLoadRecords("db/dbExample1.db","user=khkimHost")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=1,scan=1 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=2,scan=2 second")
+#dbLoadRecords("db/dbExample2.db","user=khkimHost,no=3,scan=5 second")
+#dbLoadRecords("db/dbSubExample.db","user=khkimHost")
+#dbLoadRecords("db/dbPXISCXICernox.db")
+dbLoadTemplate("db/dbPXISCXICernox.template")
+dbLoadRecords("db/dbFanout.db")
+dbLoadTemplate("db/tmsCSStruct.template")
+dbLoadTemplate("db/tmsPFBusLine.template")
+task launching: Dev1_ctrl thread for Dev1 task
+task launching: Dev2_ctrl thread for Dev2 task
+task launching: Dev3_ctrl thread for Dev3 task
+task launching: Dev4_ctrl thread for Dev4 task
+dbLoadTemplate("db/tmsPFCccs.template")
+dbLoadTemplate("db/tmsPFStruct.template")
+dbLoadRecords("db/tmsMainValue.db")
+#dbLoadRecords("db/tmsPT100.db")
+#dbLoadRecords("db/tmsHall.db")
+dbLoadTemplate("db/tmsHall.template")
+dbLoadTemplate("db/tmsPT100.template")
+filename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutStringfilename="../dbLexRoutines.c" line number=949
+Bad Field value dbPutString## Set this to see messages from mySub
+#var mySubDebug 1
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+loadCernoxList cernoxList
+cernoxData 3 are read
+cd /home/kstar/epics/pxiApp/cernoxData/TFStructure
+loadCernoxList("TFStructure.txt")
+cernoxData 83 are read
+cd /home/kstar/epics/pxiApp/cernoxData/HeLine
+loadCernoxList("HeLine.txt")
+cernoxData 294 are read
+cd /home/kstar/epics/pxiApp/iocBoot/iocpxi
+iocInit()
+Starting iocInit
+############################################################################
+###  EPICS IOC CORE built on Jan 13 2007
+###  EPICS R3.14.8.2 $R3-14-8-2$ $2006/01/06 15:55:13$
+############################################################################
+drvPXISCXI: measured clock speed 1.9981 GHz
+Illegal field value PV: CSS06_ISL_HCT_001_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: CSS06_ISL_HCT_002_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: CSS06_ISL_HCT_003_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: PFS05_S06_HCT_001_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: PFS06_S13_HCT_001_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: PFS07_S13_HCT_001_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: TFS13_CAS_HCT_001_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: TFS13_CAS_HCT_002_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: TFS13_CAS_HCT_003_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: TFS13_CAS_HCT_004_A_CVAL devAiPXISCXIRawRead (init_record) Illegal INP field: task name
+Illegal field value PV: TMS_PFBL4_BHL_TCUR02 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFBL4_BHL_TCUR02, task: Dev1, chan: SC1Mod2/ai1, cernox_serial X41322, serial not fund
+Illegal field value PV: TMS_PFBU3_BHL_TCUR01 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFBU3_BHL_TCUR01, task: Dev1, chan: SC1Mod2/ai6, cernox_serial X41249, serial not fund
+Illegal field value PV: TMS_PFBU3_BHL_TCUR02 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFBU3_BHL_TCUR02, task: Dev1, chan: SC1Mod2/ai7, cernox_serial X41248, serial not fund
+Illegal field value PV: TMS_PFCL4_MHL_TCUR01 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCL4_MHL_TCUR01, task: Dev1, chan: SC1Mod3/ai1, cernox_serial X41288, serial not fund
+Illegal field value PV: TMS_PFCL4_MHL_TCUR02 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCL4_MHL_TCUR02, task: Dev1, chan: SC1Mod3/ai2, cernox_serial X41287, serial not fund
+Illegal field value PV: TMS_PFCL5_MHL_TCUR02 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCL5_MHL_TCUR02, task: Dev1, chan: SC1Mod4/ai0, cernox_serial X41256, serial not fund
+Illegal field value PV: TMS_PFCL5_MHL_TCUR03 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCL5_MHL_TCUR03, task: Dev1, chan: SC1Mod4/ai1, cernox_serial X40954, serial not fund
+Illegal field value PV: TMS_PFCL5_MHL_TCUR05 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCL5_MHL_TCUR05, task: Dev1, chan: SC1Mod4/ai3, cernox_serial X40951, serial not fund
+Illegal field value PV: TMS_PFCU3_MHL_TCUR03 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCU3_MHL_TCUR03, task: Dev1, chan: SC1Mod8/ai2, cernox_serial X40912, serial not fund
+Illegal field value PV: TMS_PFCU5_MHL_TCUR00 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCU5_MHL_TCUR00, task: Dev1, chan: SC1Mod9/ai1, cernox_serial X41287, serial not fund
+Illegal field value PV: TMS_PFCU5_MHL_TCUS00 devAiPXISCXICernox (init_record) Illegal INP field: cernox_serial
+record: TMS_PFCU5_MHL_TCUS00, task: Dev1, chan: SC1Mod9/ai7, cernox_serial X41288, serial not fund
+PV: CSS06_ISL_HCT_001_A_CVAL scanAdd: I/O Intr not valid
+PV: CSS06_ISL_HCT_002_A_CVAL scanAdd: I/O Intr not valid
+PV: CSS06_ISL_HCT_003_A_CVAL scanAdd: I/O Intr not valid
+PV: PFS05_S06_HCT_001_A_CVAL scanAdd: I/O Intr not valid
+PV: PFS06_S13_HCT_001_A_CVAL scanAdd: I/O Intr not valid
+PV: PFS07_S13_HCT_001_A_CVAL scanAdd: I/O Intr not valid
+PV: TFS13_CAS_HCT_001_A_CVAL scanAdd: I/O Intr not valid
+PV: TFS13_CAS_HCT_002_A_CVAL scanAdd: I/O Intr not valid
+PV: TFS13_CAS_HCT_003_A_CVAL scanAdd: I/O Intr not valid
+PV: TFS13_CAS_HCT_004_A_CVAL scanAdd: I/O Intr not valid
+PV: TMS_CTS00_BAS_TPT_001_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS00_CYL_TPT_001_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS00_CYL_TPT_002_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS00_LID_TPT_001_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS01_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS02_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS03_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS04_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS05_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS06_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS07_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS08_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS09_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS10_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS11_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS12_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS13_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS14_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS15_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_CTS16_CTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP01_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP01_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP02_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP02_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP03_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP03_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP04_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP04_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP05_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP05_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP06_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP06_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP07_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP07_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP08_GSP_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_GSP08_GSP_TPT_002_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFBL4_BHL_TCUR02 scanAdd: I/O Intr not valid
+PV: TMS_PFBU3_BHL_TCUR01 scanAdd: I/O Intr not valid
+PV: TMS_PFBU3_BHL_TCUR02 scanAdd: I/O Intr not valid
+PV: TMS_PFCL4_MHL_TCUR01 scanAdd: I/O Intr not valid
+PV: TMS_PFCL4_MHL_TCUR02 scanAdd: I/O Intr not valid
+PV: TMS_PFCL5_MHL_TCUR02 scanAdd: I/O Intr not valid
+PV: TMS_PFCL5_MHL_TCUR03 scanAdd: I/O Intr not valid
+PV: TMS_PFCL5_MHL_TCUR05 scanAdd: I/O Intr not valid
+PV: TMS_PFCU3_MHL_TCUR03 scanAdd: I/O Intr not valid
+PV: TMS_PFCU5_MHL_TCUR00 scanAdd: I/O Intr not valid
+PV: TMS_PFCU5_MHL_TCUS00 scanAdd: I/O Intr not valid
+PV: TMS_PFOCB_OTS_TPT_001_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_002_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_003_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_004_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_005_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_006_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_007_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_PFOCB_OTS_TPT_008_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_TFOCB_OTS_TPT_001_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_TFOCB_OTS_TPT_002_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_TFOCB_OTS_TPT_003_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_TFOCB_OTS_TPT_004_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS01_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS02_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS03_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS04_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS05_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS06_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS07_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS08_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS09_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS10_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS11_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS12_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS13_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS14_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS15_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+PV: TMS_VTS16_VTS_TPT_001_A_CVAL scanAdd: I/O Intr not valid (no get_ioint_info)
+iocInit: All initialization complete
+## Start any sequence programs
+#seq sncExample,"user=khkimHost"
+seq sncTmsMainValue, "FNAME=tmsMainTFCTOUT.tms"
+seq sncTmsMainValue, "FNAME=tmsMainPFCTOUT.tms"
+seq sncTmsMainValue, "FNAME=tmsMainPFBTOUT.tms"
+seq sncTmsMainValue, "FNAME=tmsMainTFBUSTINT.tms"
+seq sncTmsMainValue, "FNAME=tmsMainTFBUSTHR.tms"
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 
+epics> 

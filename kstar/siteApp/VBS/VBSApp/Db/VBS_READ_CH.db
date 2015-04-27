@@ -1,0 +1,17 @@
+record(ai, "$(PVNAME)")
+{
+  field(DESC, "Volt Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6250 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) value")
+}
+
+record(ai, "$(PVNAME)_RAW")
+{
+  field(DESC, "Raw Value")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "NI6250 RawRead_ai")
+  field(INP, "@$(DEV) $(CHAN) raw_value")
+}
+
+

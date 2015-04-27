@@ -1,0 +1,73 @@
+record(bo, "$(SYS)_AMP_RESET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_reset")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_START") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_start")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_GAIN_GET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_gain_get")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_GAIN_SET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_gain_set")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_FLT_GET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_flt_get")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_FLT_SET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_flt_set")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(bo, "$(SYS)_AMP_T_GET") {
+  field(DTYP, "NI4882 BoControl")
+  field(OUT, "@amp_t_get")
+  field(ZNAM, "No")
+  field(ONAM, "Yes")
+}
+
+record(mbbo, "RBA_AMP_GAIN") {
+  field(DESC, "RBA Amplifier Gain")
+  field(DTYP, "NI4882 MbboControl")
+  field(OUT, "@main_gain")
+  field(ZRST, "20")
+  field(ONST, "50")
+  field(TWST, "100")
+  field(THST, "200")
+  field(FRST, "500")
+  field(FVST, "1000")
+  field(SXST, "2000")
+  field(SVST, "5000")
+}
+
+record(mbbo, "RBA_AMP_FLT") {
+  field(DESC, "RBA Amplifier Filter")
+  field(DTYP, "NI4882 MbboControl")
+  field(OUT, "@main_filter")
+  field(ZRST, "200")
+  field(ONST, "1000")
+  field(TWST, "2000")
+  field(THST, "4000")
+}
+

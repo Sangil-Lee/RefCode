@@ -1,0 +1,47 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AO.db
+{
+pattern
+{PV_NAME        TAG     PLC     DESC    HOPR    LOPR    DRVH    DRVL    PREC}
+{NB1_P1VME_ECMD_G1R_A    NB1_P1VME_ECMD_G1R    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_G3R_A    NB1_P1VME_ECMD_G3R    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_ARCR_A    NB1_P1VME_ECMD_ARCR    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_FILAR_A    NB1_P1VME_ECMD_FILAR    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+
+{NB1_P1VME_ECMD_G1S_A    NB1_P1VME_ECMD_G1S    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_G3S_A    NB1_P1VME_ECMD_G3S    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_ARCS_A    NB1_P1VME_ECMD_ARCS    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_FILAS_A    NB1_P1VME_ECMD_FILAS    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+
+{NB1_P1VME_ECMD_G1E_A    NB1_P1VME_ECMD_G1E    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_G3E_A    NB1_P1VME_ECMD_G3E    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_ARCE_A    NB1_P1VME_ECMD_ARCE    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+{NB1_P1VME_ECMD_FILAE_A    NB1_P1VME_ECMD_FILAE    plc1    "ARC Interrupt Time"    32767    0    32767    0    0}
+
+{NB1_P1G3_ECMD_UNDERV    NB1_P1G3_ECMD_UNDERV    plc1    "G3 Under Voltage"    32767    0    32767    0    0}
+{NB1_P1G3_RTN_UNDERV    NB1_P1G3_RTN_UNDERV    plc1    "G3 UV Return"    32767    0    32767    0    0}
+#{NB1_P1VME_RTN_G3UNDERV    NB1_P1VME_RTN_G3UNDERV    plc1    "G3 UV Interlock"    32767    0    32767    0    0}
+{NB1_P1VME_RTN_G2OC    NB1_P1VME_RTN_G2OC    plc1    "G2 Pos. Curr. Intc"    32767    0    32767    0    0}
+
+# PS2 2012.07.03
+{NB1_P2VME_ECMD_G1SEC		NB1_P2VME_ECMD_G1SEC		plc2    "G1 Pulse Length(sec)"     100000    0    100000    0    3}
+{NB1_P2VME_ECMD_G3SEC		NB1_P2VME_ECMD_G3SEC		plc2    "G3 Pulse Length(sec)"     100000    0    100000    0    3}
+{NB1_P2VME_ECMD_ARCSEC		NB1_P2VME_ECMD_ARCSEC		plc2    "ARC Pulse Length(sec)"    100000    0    100000    0    3}
+{NB1_P2VME_ECMD_FILASEC		NB1_P2VME_ECMD_FILASEC		plc2    "FILA Pulse Length(sec)"   100000    0    100000    0    3}
+{NB1_P2VME_ECMD_PARCTIME    NB1_P2VME_ECMD_PARCTIME		plc2    "Pre-ARC Time"			   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCDEL_A		NB1_P2VME_ECMD_ARCDEL		plc2    "Main-Arc Delay Time"	   100000    0    100000    0    0}
+#{NB1_P2VME_ECMD_ARCFREQ		NB1_P2VME_ECMD_ARCFREQ		plc2    "Main-Arc Mod Freq"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCFREQ_A		NB1_P2VME_ECMD_ARCFREQ		plc2    "Main-Arc Mod Freq"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCDUTY		NB1_P2VME_ECMD_ARCDUTY		plc2    "Main-Arc Mod Duty"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCMTIMES	NB1_P2VME_ECMD_ARCMTIMES		plc2    "Main-Arc Mod Time(sec)"   100000    0    100000    0    3}
+{NB1_P2VME_ECMD_G1S			NB1_P2VME_ECMD_G1S			plc2    "G1 Run Start Time"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_G1E			NB1_P2VME_ECMD_G1E			plc2    "G1 Run End Time"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_G3S			NB1_P2VME_ECMD_G3S			plc2    "G3 Run Start Time"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_G3E			NB1_P2VME_ECMD_G3E			plc2    "G3 Run End Time"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCS		NB1_P2VME_ECMD_ARCS			plc2    "ARC Run Start Time"	   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_ARCE		NB1_P2VME_ECMD_ARCE			plc2    "ARC Run End Time"		   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_FILAS		NB1_P2VME_ECMD_FILAS		plc2    "FILA Run Start Time"	   100000    0    100000    0    0}
+{NB1_P2VME_ECMD_FILAE		NB1_P2VME_ECMD_FILAE		plc2    "FILA Run End Time"		   100000    0    100000    0    0}
+}

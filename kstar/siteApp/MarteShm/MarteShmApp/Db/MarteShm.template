@@ -1,0 +1,25 @@
+###################################################################
+# Example for shared memory interface for MARTe
+# ----------------------------------------------------------------
+# LINK : Not used
+# ADDR : Index of MARTe signal in the MARTe configuration file
+# PARM : Data type of input & output.
+#        Only int32 and float are supported in this version
+###################################################################
+
+file db/MarteShm.db
+{   
+	pattern
+	#-----------------------------------------------------------------------------------------------------------------
+	{ RTYP, IO,  PV,              DESC,                    DTYP,     PREC, LINK, ADDR, PARM,    SCAN,       UNIT    }
+	#-----------------------------------------------------------------------------------------------------------------
+	{ ao,   OUT, MARTE_SHM_WR_01, "EPICS Counter"          , MarteShm, 0,  "L0", 0,    "int32", "Passive" , "count" }
+	{ ao,   OUT, MARTE_SHM_WR_02, "EPICS Sine Curve"       , MarteShm, 1,  "L0", 1,    "float", "Passive" , "sine"  }
+	#-----------------------------------------------------------------------------------------------------------------
+	{ ai,   INP, MARTE_SHM_RD_01, "Return of EPICS Counter", MarteShm, 0,  "L0", 0,    "int32", "I/O Intr", "count" }
+	{ ai,   INP, MARTE_SHM_RD_02, "Return of EPICS Sine"   , MarteShm, 2,  "L0", 1,    "float", "I/O Intr", "sine"  }
+	{ ai,   INP, MARTE_SHM_RD_03, "MARTe Counter"          , MarteShm, 0,  "L0", 2,    "int32", "I/O Intr", "count" }
+	{ ai,   INP, MARTE_SHM_RD_04, "MARTe CycleUsecTime"    , MarteShm, 4,  "L0", 3,    "float", "I/O Intr", "sec"   }
+	{ ai,   INP, MARTE_SHM_RD_05, "MARTe Sine Curve"       , MarteShm, 2,  "L0", 4,    "float", "I/O Intr", "sine"  }
+	#-----------------------------------------------------------------------------------------------------------------
+}

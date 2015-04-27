@@ -1,0 +1,20 @@
+record(ai, "$(REC)_V")
+{
+        field(DESC, "$(DESC)")
+        field(DTYP, "PXISCXI Raw Reading")
+        field(INP, "@$(TASK) $(CHAN)")
+        field(SCAN, "I/O Intr")
+        field(PREC, "2")
+        field(EGU, "Volt")
+	field(FLNK, "$(REC)_R")
+}
+record(calc, "$(REC)_R")
+{
+        field(DESC, "$(DESC)")
+        field(INPA, "$(REC)_V PP NMS")
+        field(SCAN, "Passive")
+	field(CALC, "A*100000")
+        field(PREC, "2")
+        field(EGU, "Ohm")
+}
+

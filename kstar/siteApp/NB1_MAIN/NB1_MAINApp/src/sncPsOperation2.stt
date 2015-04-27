@@ -1,0 +1,284 @@
+program sncPsOperation2
+
+int dummy_mode;
+assign dummy_mode to "NB1_BEAM_INJECT_DUMMY";
+monitor dummy_mode;
+
+int fila_cmd;
+assign fila_cmd to "NB1_OPER2_FILA_CMD";
+monitor fila_cmd;
+
+int arc_cmd;
+assign arc_cmd to "NB1_OPER2_ARC_CMD";
+monitor arc_cmd;
+
+int hipot_cmd;
+assign hipot_cmd to "NB1_OPER2_HIPOT_CMD";
+monitor hipot_cmd;
+
+int beam_cmd;
+assign beam_cmd to "NB1_OPER2_BEAM_CMD";
+monitor beam_cmd;
+
+int bias_st;
+assign bias_st to "NB1_P2VME_RTN_BIASDIS";
+monitor bias_st;
+
+int g1_off_cmd;
+assign g1_off_cmd to "NB1_P2VME_ECMD_G1DIS";
+
+int g1_on_cmd;
+assign g1_on_cmd to "NB1_P2VME_ECMD_G1EN";
+
+int g3_off_cmd;
+assign g3_off_cmd to "NB1_P2VME_ECMD_G3DIS";
+
+int g3_on_cmd;
+assign g3_on_cmd to "NB1_P2VME_ECMD_G3EN";
+
+int arc_off_cmd;
+assign arc_off_cmd to "NB1_P2VME_ECMD_ARCDIS";
+
+int arc_on_cmd;
+assign arc_on_cmd to "NB1_P2VME_ECMD_ARCEN";
+
+int fila_off_cmd;
+assign fila_off_cmd to "NB1_P2VME_ECMD_FILADIS";
+
+int fila_on_cmd;
+assign fila_on_cmd to "NB1_P2VME_ECMD_FILAEN";
+
+int gas1_off_cmd;
+assign gas1_off_cmd to "NB1_PV2_S04_OFF_DO";
+
+int gas1_on_cmd;
+assign gas1_on_cmd to "NB1_PV2_S04_ON_DO";
+
+int gas2_off_cmd;
+assign gas2_off_cmd to "NB1_PV2_S04_OFF_DO";
+
+int gas2_on_cmd;
+assign gas2_on_cmd to "NB1_PV2_S04_ON_DO";
+
+int g1_en_cmd;
+assign g1_en_cmd to "NB1_P2VME_ECMD_G1EN";
+
+int g1_dis_cmd;
+assign g1_dis_cmd to "NB1_P2VME_ECMD_G1DIS";
+
+int g3_en_cmd;
+assign g3_en_cmd to "NB1_P2VME_ECMD_G3EN";
+
+int g3_dis_cmd;
+assign g3_dis_cmd to "NB1_P2VME_ECMD_G3DIS";
+
+int oper_mode;
+assign oper_mode to "NB1_OPER2_MODE_STATUS";
+
+ss PsOperation2
+{
+	state low
+	{
+	    when(delay(1))
+	    {
+	        if(fila_cmd == 1) {
+	            printf("-- SEQ PS2 Operation Mode Test : FILA mode --\n");
+
+                g1_off_cmd = 1;
+				pvPut(g1_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g1_off_cmd = 0;
+				pvPut(g1_off_cmd, SYNC);
+
+	            g3_off_cmd = 1;
+				pvPut(g3_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g3_off_cmd = 0;
+				pvPut(g3_off_cmd, SYNC);
+
+				arc_off_cmd = 1;
+				pvPut(arc_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				arc_off_cmd = 0;
+				pvPut(arc_off_cmd, SYNC);
+
+	            gas2_off_cmd = 1;
+				pvPut(gas2_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				gas2_off_cmd = 0;
+				pvPut(gas2_off_cmd, SYNC);
+
+				fila_on_cmd = 1;
+				pvPut(fila_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				fila_on_cmd = 0;
+				pvPut(fila_on_cmd, SYNC);
+
+				g1_dis_cmd = 1;
+                pvPut(g1_dis_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g1_dis_cmd = 0;
+                pvPut(g1_dis_cmd, SYNC);
+
+                g3_dis_cmd = 1;
+                pvPut(g3_dis_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g3_dis_cmd = 0;
+                pvPut(g3_dis_cmd, SYNC);
+
+                oper_mode = 1;
+				pvPut(oper_mode, SYNC);
+			}
+			if(arc_cmd == 1) {
+	            printf("-- SEQ PS2 Operation Mode Test : ARC mode --\n");
+                g1_off_cmd = 1;
+				pvPut(g1_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g1_off_cmd = 0;
+				pvPut(g1_off_cmd, SYNC);
+
+	            g3_off_cmd = 1;
+				pvPut(g3_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g3_off_cmd = 0;
+				pvPut(g3_off_cmd, SYNC);
+
+				arc_on_cmd = 1;
+				pvPut(arc_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				arc_on_cmd = 0;
+				pvPut(arc_on_cmd, SYNC);
+
+	            gas2_on_cmd = 1;
+				pvPut(gas2_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				gas2_on_cmd = 0;
+				pvPut(gas2_on_cmd, SYNC);
+
+				fila_on_cmd = 1;
+				pvPut(fila_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				fila_on_cmd = 0;
+				pvPut(fila_on_cmd, SYNC);
+
+				g1_dis_cmd = 1;
+                pvPut(g1_dis_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g1_dis_cmd = 0;
+                pvPut(g1_dis_cmd, SYNC);
+
+                g3_dis_cmd = 1;
+                pvPut(g3_dis_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g3_dis_cmd = 0;
+                pvPut(g3_dis_cmd, SYNC);
+
+                oper_mode = 2;
+				pvPut(oper_mode, SYNC);
+			}
+			if(hipot_cmd == 1) {
+	            printf("-- SEQ PS2 Operation Mode Test : HIPOT mode --\n");
+                g1_on_cmd = 1;
+				pvPut(g1_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g1_on_cmd = 0;
+				pvPut(g1_on_cmd, SYNC);
+
+	            g3_on_cmd = 1;
+				pvPut(g3_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g3_on_cmd = 0;
+				pvPut(g3_on_cmd, SYNC);
+
+				arc_off_cmd = 1;
+				pvPut(arc_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				arc_off_cmd = 0;
+				pvPut(arc_off_cmd, SYNC);
+
+	            gas2_off_cmd = 1;
+				pvPut(gas2_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				gas2_off_cmd = 0;
+				pvPut(gas2_off_cmd, SYNC);
+
+				fila_off_cmd = 1;
+				pvPut(fila_off_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				fila_off_cmd = 0;
+				pvPut(fila_off_cmd, SYNC);
+
+				g1_en_cmd = 1;
+                pvPut(g1_en_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g1_en_cmd = 0;
+                pvPut(g1_en_cmd, SYNC);
+
+                g3_en_cmd = 1;
+                pvPut(g3_en_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g3_en_cmd = 0;
+                pvPut(g3_en_cmd, SYNC);
+
+                oper_mode = 3;
+				pvPut(oper_mode, SYNC);
+			}
+			if(beam_cmd == 1) {
+	            printf("-- SEQ PS2 Operation Mode Test : BEAM mode --\n");
+                g1_on_cmd = 1;
+				pvPut(g1_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g1_on_cmd = 0;
+				pvPut(g1_on_cmd, SYNC);
+
+	            g3_on_cmd = 1;
+				pvPut(g3_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				g3_on_cmd = 0;
+				pvPut(g3_on_cmd, SYNC);
+
+				arc_on_cmd = 1;
+				pvPut(arc_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				arc_on_cmd = 0;
+				pvPut(arc_on_cmd, SYNC);
+
+	            gas2_on_cmd = 1;
+				pvPut(gas2_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				gas2_on_cmd = 0;
+				pvPut(gas2_on_cmd, SYNC);
+
+				fila_on_cmd = 1;
+				pvPut(fila_on_cmd, SYNC);
+				epicsThreadSleep(0.1);
+				fila_on_cmd = 0;
+				pvPut(fila_on_cmd, SYNC);
+
+				g1_en_cmd = 1;
+                pvPut(g1_en_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g1_en_cmd = 0;
+                pvPut(g1_en_cmd, SYNC);
+
+                g3_en_cmd = 1;
+                pvPut(g3_en_cmd, SYNC);
+                epicsThreadSleep(0.1);
+                g3_en_cmd = 0;
+                pvPut(g3_en_cmd, SYNC);
+
+                oper_mode = 4;
+				pvPut(oper_mode, SYNC);
+			}
+	    } state high
+	    when(delay(1)) 
+	    {
+	    } state high
+	}
+	state high
+	{
+	    when(delay(1))
+	    {
+	    } state low
+	}
+}

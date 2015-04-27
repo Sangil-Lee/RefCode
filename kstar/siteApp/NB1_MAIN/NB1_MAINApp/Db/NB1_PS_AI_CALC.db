@@ -1,0 +1,22 @@
+record(calc, "NB1_TRIG_TIME_DISP")
+{
+    field(DESC, "Pulse Start")
+    field(SCAN, "1 second")
+    field(CALC, "A-16")
+    field(INPA, "NBI1A_LTU_mT0_sec1")
+}
+record(calc, "NB1_P1G2TK_PUMP_TEMP")
+{
+    field(DESC, "G2 Tank")
+	field(SCAN, "Passive")
+	#field(CALC, "A*0.1")
+	field(CALC, "A")
+	field(INPA, "NB1_P1G2TK_PUMP_TEMP_C CPP")
+}
+record(calc, "NB1_P2G2_STA_INTTEMP")
+{
+    field(DESC, "G2 Tank")
+	field(SCAN, "Passive")
+	field(CALC, "A*1")
+	field(INPA, "NB1_P2G2_STA_INTTEMP_C CPP")
+}

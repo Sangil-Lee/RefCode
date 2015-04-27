@@ -1,0 +1,26 @@
+# By HMT - 2009/06/12
+
+file ./db/ECH_AI.db
+{
+pattern
+{PV_NAME	TAG			PLC					DESC	UNIT}
+{ECH_TL_TOR_ENC			DCMOTOR[4]			plc1	"Toroidal ENC"	Count}
+{ECH_TL_POL_ENC			DCMOTOR[9]			plc1	"Poloidal ENC"	Count}
+{ECH_TOR_ANGLE_RTN		ECH_TOR_ANGLE_RTN	plc1	"Toroidal angle"	Deg}
+{ECH_POL_ANGLE_RTN		ECH_POL_ANGLE_RTN	plc1	"Poloidal angle"	Deg}
+{ECH_POL_EXT_SET		ECH_POL_EXT_SET		plc1	"Poloidal angle"	Deg}
+#{ECH_VME_FLT_RTN		ECH_VME_FLT_RTN		plc2	"VME Fault"	xx}
+#{ECH_APS_FLT_RTN		ECH_APS_FLT_RTN		plc2	"APS Fault"	xx}
+#{ECH_CPS_FLT_RTN		ECH_CPS_FLT_RTN		plc2	"CPS Fault"	xx}
+{ECH_APS_MODFREQ_RTN	ECH_APS_MODFREQ_RTN	plc2	"APS Modulation FREQ"	Hz}
+{ECH_APS_MODST_RTN		ECH_APS_MODST_RTN	plc2	"APS Modulation Start"	ms}
+{ECH_APS_MODED_RTN		ECH_APS_MODED_RTN	plc2	"APS Modulation End"	ms}
+{ECH_TL_TMP3_RPM		ECH_TL_TMP3_RPM		plc1   "TMP 2nd Dumy RPM"	rpm}
+{ECH_TL_TMP3_TEMP		ECH_TL_TMP3_TEMP	plc1   "TMP 2nd Dumy Temp"	V}
+{ECH_TL_TMP3_CURR		ECH_TL_TMP3_CURR	plc1   "TMP 2nd Dumy I"	mA}
+{ECH_TL_TMP4_RPM		ECH_TL_TMP4_RPM		plc1   "TMP TEE RPM"	rpm}
+{ECH_TL_TMP4_ERR		ECH_TL_TMP4_ERR		plc1   "TMP TEE Error code"	V}
+{ECH_TL_TMP4_TEMP		ECH_TL_TMP4_TEMP	plc1   "TMP TEE Temp."	I}
+{ECH_TOR_SP_RTN			ECH_TOR_SP_RTN		plc1	"Toroidal Sp"	Count}
+{ECH_POL_SP_RTN			ECH_POL_SP_RTN		plc1	"Toroidal Sp"	Count}
+}

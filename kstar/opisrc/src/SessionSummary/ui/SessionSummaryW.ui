@@ -1,0 +1,718 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1265</width>
+    <height>992</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>89</x>
+     <y>82</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Session Title:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDateTimeEdit" name="dtStart" >
+   <property name="geometry" >
+    <rect>
+     <x>707</x>
+     <y>162</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="displayFormat" >
+    <string>yyyy-MM-dd hh:mm:ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>13</x>
+     <y>147</y>
+     <width>190</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Chief Machine Operator:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDateTimeEdit" name="dtEnd" >
+   <property name="geometry" >
+    <rect>
+     <x>872</x>
+     <y>162</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="displayFormat" >
+    <string>yyyy-MM-dd hh:mm:ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>60</x>
+     <y>114</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Session Leader:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbClose" >
+   <property name="geometry" >
+    <rect>
+     <x>1170</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9" >
+   <property name="geometry" >
+    <rect>
+     <x>98</x>
+     <y>47</y>
+     <width>104</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Session No:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbRefresh" >
+   <property name="geometry" >
+    <rect>
+     <x>380</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Refresh</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>1023</x>
+     <y>88</y>
+     <width>61</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Date:</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbSearch" >
+   <property name="geometry" >
+    <rect>
+     <x>1032</x>
+     <y>162</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbDelete" >
+   <property name="geometry" >
+    <rect>
+     <x>990</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbModify" >
+   <property name="geometry" >
+    <rect>
+     <x>880</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Modify</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbPrint" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Print</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>540</x>
+     <y>2</y>
+     <width>256</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>26</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Session Summary</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbMakeSes" >
+   <property name="geometry" >
+    <rect>
+     <x>610</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Make Session</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbSort" >
+   <property name="geometry" >
+    <rect>
+     <x>576</x>
+     <y>162</y>
+     <width>125</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Shot Number</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>TF Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Plasma Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>E-Density</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>E-Temperature</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Air Pressure</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ECH Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ICRF Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>NBI Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ECCD Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>LHCD Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ip Pulse Width</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Type</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Date</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QSpinBox" name="sbShot" >
+   <property name="geometry" >
+    <rect>
+     <x>490</x>
+     <y>948</y>
+     <width>111</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="minimum" >
+    <number>1</number>
+   </property>
+   <property name="maximum" >
+    <number>9999999</number>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="ckToday" >
+   <property name="geometry" >
+    <rect>
+     <x>461</x>
+     <y>160</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Today</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="ckDesc" >
+   <property name="geometry" >
+    <rect>
+     <x>522</x>
+     <y>159</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Desc</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leStart" >
+   <property name="geometry" >
+    <rect>
+     <x>707</x>
+     <y>159</y>
+     <width>151</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leSescmo" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>149</y>
+     <width>161</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leSestitle" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>82</y>
+     <width>431</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbToday" >
+   <property name="geometry" >
+    <rect>
+     <x>1090</x>
+     <y>92</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leSesNo" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>47</y>
+     <width>161</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leSesleader" >
+   <property name="geometry" >
+    <rect>
+     <x>206</x>
+     <y>115</y>
+     <width>161</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbSavePDF" >
+   <property name="geometry" >
+    <rect>
+     <x>130</x>
+     <y>948</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Save PDF</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>202</y>
+     <width>1261</width>
+     <height>731</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leEnd" >
+   <property name="geometry" >
+    <rect>
+     <x>871</x>
+     <y>159</y>
+     <width>151</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbModify" >
+   <property name="geometry" >
+    <rect>
+     <x>730</x>
+     <y>948</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Remark</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Type</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>TF Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Plasma Current</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Ip Pulse Width</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>E-Density</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>E-Temperature</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Air Pressure</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ECH Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ICRF Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>NBI Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>ECCD Power</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>LHCD Power</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pbBest" >
+   <property name="geometry" >
+    <rect>
+     <x>1128</x>
+     <y>162</y>
+     <width>131</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Best Plasma Ip</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbSesSave" >
+   <property name="geometry" >
+    <rect>
+     <x>370</x>
+     <y>150</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbResult" >
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>950</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ShotResult</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

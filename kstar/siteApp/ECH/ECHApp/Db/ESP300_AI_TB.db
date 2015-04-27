@@ -1,0 +1,16 @@
+record(ai,"ESP300_TB"){
+field(DESC,"ESP300 Error Code")
+field(SCAN,"2 second")
+field(DTYP,"ESP300")
+field(INP,"#L0 A0 @30")
+field(FLNK,"ESP300_TB_MBBI")
+}
+record(mbbi,"ESP300_TB_MBBI"){
+field(INP,"ESP300_TB")
+field(ZRST,"No Error")
+field(ONST,"PCI Timeout")
+field(FRST,"E-Stop")
+field(SXST,"Comm not exist")
+field(SVST,"Para. OR")
+field(NIST,"Axis OR")
+}

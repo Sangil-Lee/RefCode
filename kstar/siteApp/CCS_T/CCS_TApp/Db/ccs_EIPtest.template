@@ -1,0 +1,41 @@
+file db/ccs_EtherIP_ai.db {
+pattern { NAME,                         PLC,          ADDR,     		PREC}
+	{"CCS_EIP_INTL_LEVEL_1", 	"INTL_PLC0", "Level_1_Out",     	"0" },
+        {"CCS_EIP_INTL_LEVEL_2",	"INTL_PLC0", "Level_2_Out",     	"0" },
+        {"CCS_EIP_INTL_LEVEL_3",	"INTL_PLC0", "Level_3_Out",     	"0" },
+        {"CCS_EIP_INTL_LEVEL_4",	"INTL_PLC0", "Level_4_Out",     	"0" },
+        {"CCS_EIP_INTL_WARN",   	"INTL_PLC0", "Warning_Out",     	"0" },
+#
+	{"CCS_EIP_INTL_MPS_LEVEL_1", 	"INTL_PLC0", "Level_1_MPS_Out",     	"0" },
+        {"CCS_EIP_INTL_MPS_LEVEL_2",	"INTL_PLC0", "Level_2_MPS_Out",     	"0" },
+        {"CCS_EIP_INTL_MPS_LEVEL_3",	"INTL_PLC0", "Level_3_MPS_Out",     	"0" },
+        {"CCS_EIP_INTL_MPS_LEVEL_4",	"INTL_PLC0", "Level_4_MPS_Out",     	"0" },
+        {"CCS_EIP_INTL_MPS_WARN",   	"INTL_PLC0", "Warning_MPS_Out",     	"0" },
+#
+        {"CCS_EIP_INTL_MPS_1",  	"INTL_PLC0", "CCS_MPS_1",       	"0" },
+        {"CCS_EIP_INTL_MPS_2", 	  	"INTL_PLC0", "CCS_MPS_2",       	"0" },
+        {"CCS_EIP_INTL_CWF",   		"INTL_PLC0", "CCS_CWF_DIS",     	"0" },
+        {"CCS_EIP_INTL_GEP",   	 	"INTL_PLC0", "CCS_GEP",         	"0" },
+#       {"CCS_EIP_INTL_229_VS",	  	"INTL_PLC0", "CCS_229_VS",      	"0" },
+#       {"CCS_EIP_INTL_154_VS",	  	"INTL_PLC0", "CCS_154_VS",      	"0" }
+
+        {"CCS_EIP_INTL_154_VS",  	"INTL_PLC0", "GEP_Voltage_Sag_154",	"0" },
+        {"CCS_EIP_INTL_229_VS",		"INTL_PLC0", "GEP_Voltage_Sag_229", 	"0" },
+        {"CCS_EIP_INTL_154_INTERRUPT",	"INTL_PLC0", "GEP_Blackout_154",	"0" },
+        {"CCS_EIP_INTL_229_INTERRUPT",	"INTL_PLC0", "GEP_Blackout_229",	"0" },
+        {"CCS_EIP_INTL_BORON_ST",       "INTL_PLC0", "Boronization_Valve_Open", "0" },
+        {"CCS_EIP_INTL_PSI_ST",         "INTL_PLC0", "PSI_Run", 		"0" }
+}
+
+
+file db/ccs_EtherIP_ao.db {
+pattern { NAME,                         PLC,          ADDR           }
+
+#  used in ICS for temperature check....
+	{"CCS_EIP_INTL_SERVER", 	"INTL_PLC0", "SERVER_STATUS" },
+# notify pcs faults to Interlock system.
+	{"CCS_EIP_NOTIFY_FAULT", 	"INTL_PLC0", "IPFault"       }
+}
+
+
+

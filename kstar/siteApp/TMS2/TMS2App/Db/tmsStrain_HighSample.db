@@ -1,0 +1,34 @@
+record(ai, "$(REC)_RVAL")
+{
+        field(DESC, "$(DESC)")
+        field(SCAN, "Passive")
+        field(PREC, "6")
+	field(EGU, "Micro Epsilon")
+}
+
+record(ao, "$(REC)_ZVAL")
+{
+        field(DESC, "Strain Zero Set")
+        field(SCAN, "Passive")
+        field(PREC, "6")
+	field(VAL, "0.0")
+	field(EGU, "Micro Epsilon")
+}
+record(calc, "$(REC)")
+{
+         field(DESC, "$(DESC)_ZERO_SET")
+         field(SCAN, "Passive")
+         field(CALC, "(A-B)")
+         field(INPA, "$(REC)_RVAL CPP NMS")
+         field(INPB, "$(REC)_ZVAL PP NMS")
+         field(HIHI, "$(HIHI1)")
+  	 field(LOLO, "$(LOLO1)")
+  	 field(HIGH, "$(HIGH1)")
+  	 field(LOW, "$(LOW1)")
+  	 field(HHSV, "MAJOR")
+  	 field(LLSV, "MAJOR")
+  	 field(HSV, "MINOR")
+  	 field(LSV, "MINOR")
+	 field(EGU, "Micro Epsilon")
+         field(PREC, "6")
+}

@@ -1,0 +1,6487 @@
+<ui version="4.0" >
+ <class>ECCDTIMINGDAQ_1</class>
+ <widget class="QWidget" name="ECCDTIMINGDAQ_1" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>690</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame_7" >
+   <property name="geometry" >
+    <rect>
+     <x>14</x>
+     <y>11</y>
+     <width>921</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbLTU_3" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>28</y>
+      <width>97</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>CH</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_4" >
+    <property name="geometry" >
+     <rect>
+      <x>108</x>
+      <y>28</y>
+      <width>34</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Pot.</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>4</y>
+      <width>381</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A LTU (ECCD Control Room)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_8" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>97</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#1(HV)</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P0</string>
+    </property>
+    <property name="truelabel" >
+     <string>#1(HV)</string>
+    </property>
+    <property name="falselabel" >
+     <string>#1(HV)</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_9" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>97</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_10" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>126</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_11" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>126</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#2(Run)</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P1</string>
+    </property>
+    <property name="truelabel" >
+     <string>#2(Run)</string>
+    </property>
+    <property name="falselabel" >
+     <string>#2(Run)</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_12" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>155</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#3(DAQ)</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P2</string>
+    </property>
+    <property name="truelabel" >
+     <string>#3(DAQ)</string>
+    </property>
+    <property name="falselabel" >
+     <string>#3(DAQ)</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_13" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>155</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_14" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>184</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#4(Launcher)</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P3</string>
+    </property>
+    <property name="truelabel" >
+     <string>#4(Launcher)</string>
+    </property>
+    <property name="falselabel" >
+     <string>#4(Launcher)</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_15" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>184</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_16" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>213</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_17" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>213</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#5 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P4</string>
+    </property>
+    <property name="truelabel" >
+     <string>#5 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#5 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_18" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>242</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_19" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>242</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#6 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P5</string>
+    </property>
+    <property name="truelabel" >
+     <string>#6 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#6 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_20" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>271</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_21" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>271</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#7 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P6</string>
+    </property>
+    <property name="truelabel" >
+     <string>#7 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#7 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_22" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>300</y>
+      <width>32</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_23" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>79</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#8 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_SETUP_P7</string>
+    </property>
+    <property name="truelabel" >
+     <string>#8 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#8 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_6" >
+    <property name="geometry" >
+     <rect>
+      <x>848</x>
+      <y>61</y>
+      <width>65</width>
+      <height>177</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Shot
+Start</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_START</string>
+    </property>
+    <property name="truelabel" >
+     <string>Shot Start</string>
+    </property>
+    <property name="falselabel" >
+     <string>Shot Start</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_24" >
+    <property name="geometry" >
+     <rect>
+      <x>848</x>
+      <y>237</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Shot
+End</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SOFT_END</string>
+    </property>
+    <property name="truelabel" >
+     <string>Shot End</string>
+    </property>
+    <property name="falselabel" >
+     <string>Shot End</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_25" >
+    <property name="geometry" >
+     <rect>
+      <x>848</x>
+      <y>27</y>
+      <width>65</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>LOCAL</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_SET_FREE_RUN</string>
+    </property>
+    <property name="truelabel" >
+     <string>KSTAR</string>
+    </property>
+    <property name="falselabel" >
+     <string>LOCAL</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>101</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_2" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>130</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_3" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>159</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_4" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>188</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_5" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>218</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_6" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>247</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_7" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>275</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_8" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>304</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_7" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_5" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>28</y>
+      <width>139</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 1</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_6" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="sizePolicy" >
+     <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_6" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_18" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_8" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>28</y>
+      <width>139</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 2</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_10" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_18" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_55" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_56" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_19" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>28</y>
+      <width>139</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 3</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_20" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_21" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_71" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_72" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_22" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>28</y>
+      <width>139</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 4</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_23" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_24" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_87" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_88" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_25" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>28</y>
+      <width>139</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 5</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_26" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_27" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>61</y>
+      <width>69</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_103" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_104" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>299</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P7_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P7_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_1" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_11" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_21" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_22" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_57" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_58" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_73" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_74" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_89" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_90" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>97</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P0_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P0_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_2" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_12" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_23" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_24" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_59" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_60" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_75" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_76" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_91" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_92" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>126</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P1_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P1_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_3" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_13" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_25" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_26" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_61" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_62" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_77" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_78" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_93" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_94" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>155</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P2_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P2_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_4" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_14" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_27" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_28" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_63" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_64" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_79" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_80" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_95" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_96" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>184</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P3_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P3_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_5" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_15" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_49" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_50" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_65" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_66" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_81" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_82" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_97" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_98" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>213</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P4_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P4_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_7" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_17" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_52" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_51" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_67" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_68" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_83" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_84" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_99" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_100" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>242</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P5_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P5_SEC4_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_8" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_16" >
+    <property name="geometry" >
+     <rect>
+      <x>211</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_53" >
+    <property name="geometry" >
+     <rect>
+      <x>283</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC1_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC1_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_54" >
+    <property name="geometry" >
+     <rect>
+      <x>353</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC1_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC1_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_69" >
+    <property name="geometry" >
+     <rect>
+      <x>425</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC2_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC2_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_70" >
+    <property name="geometry" >
+     <rect>
+      <x>495</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC2_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC2_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_85" >
+    <property name="geometry" >
+     <rect>
+      <x>567</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC3_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC3_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_86" >
+    <property name="geometry" >
+     <rect>
+      <x>637</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC3_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC3_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_101" >
+    <property name="geometry" >
+     <rect>
+      <x>709</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC4_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC4_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_102" >
+    <property name="geometry" >
+     <rect>
+      <x>779</x>
+      <y>271</y>
+      <width>69</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1A_LTU_P6_SEC4_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1A_LTU_P6_SEC4_T1</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame" >
+   <property name="geometry" >
+    <rect>
+     <x>484</x>
+     <y>351</y>
+     <width>451</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbDG645" >
+    <property name="geometry" >
+     <rect>
+      <x>14</x>
+      <y>3</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>DG645</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>29</y>
+      <width>431</width>
+      <height>124</height>
+     </rect>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lbDG645_1" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>6</y>
+       <width>91</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Trigger mode</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="capbDG645_1" >
+     <property name="geometry" >
+      <rect>
+       <x>110</x>
+       <y>6</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Internal</string>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+     <property name="default" >
+      <bool>true</bool>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_MOD_INT</string>
+     </property>
+     <property name="truelabel" >
+      <string>Internal</string>
+     </property>
+     <property name="falselabel" >
+      <string>Internal</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="selTColor" >
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="capbDG645_3" >
+     <property name="geometry" >
+      <rect>
+       <x>310</x>
+       <y>6</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Single_Shot</string>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+     <property name="default" >
+      <bool>true</bool>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_MOD_SNGL</string>
+     </property>
+     <property name="truelabel" >
+      <string>Single_Shot</string>
+     </property>
+     <property name="falselabel" >
+      <string>Single_Shot</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="selTColor" >
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32" >
+     <property name="geometry" >
+      <rect>
+       <x>390</x>
+       <y>70</y>
+       <width>21</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Hz</string>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDG645_1" >
+     <property name="geometry" >
+      <rect>
+       <x>230</x>
+       <y>70</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_REP_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="capbDG645_4" >
+     <property name="geometry" >
+      <rect>
+       <x>300</x>
+       <y>37</y>
+       <width>111</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>HV/Run</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_SNGL_SHOT</string>
+     </property>
+     <property name="truelabel" >
+      <string>HV/Run</string>
+     </property>
+     <property name="falselabel" >
+      <string>HV/Run</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="selTColor" >
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDG645_2" >
+     <property name="geometry" >
+      <rect>
+       <x>320</x>
+       <y>100</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_ERR_NO</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="capbDG645_2" >
+     <property name="geometry" >
+      <rect>
+       <x>210</x>
+       <y>6</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>External</string>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+     <property name="default" >
+      <bool>true</bool>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_MOD_EXT</string>
+     </property>
+     <property name="truelabel" >
+      <string>External</string>
+     </property>
+     <property name="falselabel" >
+      <string>External</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="selTColor" >
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDG645_3" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>101</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Repetition rate</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_31" >
+     <property name="geometry" >
+      <rect>
+       <x>300</x>
+       <y>70</y>
+       <width>21</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Hz</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDG645_4" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>101</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Error code</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDG645_1" >
+     <property name="geometry" >
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_REP_SET</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDG645_2" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>37</y>
+       <width>83</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Single-Shot</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>155</y>
+      <width>431</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lbDAQ1_1" >
+     <property name="geometry" >
+      <rect>
+       <x>132</x>
+       <y>11</y>
+       <width>91</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>t0</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_11" >
+     <property name="geometry" >
+      <rect>
+       <x>270</x>
+       <y>41</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTB_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_3" >
+     <property name="geometry" >
+      <rect>
+       <x>110</x>
+       <y>101</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTE_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDAQ1_2" >
+     <property name="geometry" >
+      <rect>
+       <x>292</x>
+       <y>11</y>
+       <width>91</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>t1</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="capbDG645_5" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>7</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Send</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_SET_NO</string>
+     </property>
+     <property name="truelabel" >
+      <string>Send</string>
+     </property>
+     <property name="falselabel" >
+      <string>Send</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_12" >
+     <property name="geometry" >
+      <rect>
+       <x>340</x>
+       <y>71</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTD_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTD_SET</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_11" >
+     <property name="geometry" >
+      <rect>
+       <x>340</x>
+       <y>41</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTB_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTB_SET</string>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_12" >
+     <property name="geometry" >
+      <rect>
+       <x>270</x>
+       <y>71</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTD_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_3" >
+     <property name="geometry" >
+      <rect>
+       <x>180</x>
+       <y>101</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTE_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTE_SET</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_2" >
+     <property name="geometry" >
+      <rect>
+       <x>180</x>
+       <y>71</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTC_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTC_SET</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_4" >
+     <property name="geometry" >
+      <rect>
+       <x>180</x>
+       <y>131</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTG_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTG_SET</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38" >
+     <property name="geometry" >
+      <rect>
+       <x>410</x>
+       <y>101</y>
+       <width>16</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDAQ1_4" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>71</y>
+       <width>81</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Ch. 2(Run)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37" >
+     <property name="geometry" >
+      <rect>
+       <x>410</x>
+       <y>41</y>
+       <width>16</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDAQ1_6" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>131</y>
+       <width>90</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Ch. 4(Steering 
+mirror trigger)</string>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_13" >
+     <property name="geometry" >
+      <rect>
+       <x>270</x>
+       <y>101</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTF_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDAQ1_5" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>101</y>
+       <width>81</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Ch. 3(DAQ)</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_1" >
+     <property name="geometry" >
+      <rect>
+       <x>180</x>
+       <y>41</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTA_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTA_SET</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDAQ1_3" >
+     <property name="geometry" >
+      <rect>
+       <x>10</x>
+       <y>41</y>
+       <width>81</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Ch. 1(HV)</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_14" >
+     <property name="geometry" >
+      <rect>
+       <x>340</x>
+       <y>131</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTH_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTH_SET</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_39" >
+     <property name="geometry" >
+      <rect>
+       <x>410</x>
+       <y>71</y>
+       <width>16</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="CALineEdit" name="caleDAQ1_13" >
+     <property name="geometry" >
+      <rect>
+       <x>340</x>
+       <y>101</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>EC1_DG_TSTF_SET</string>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTF_SET</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33" >
+     <property name="geometry" >
+      <rect>
+       <x>250</x>
+       <y>41</y>
+       <width>20</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_2" >
+     <property name="geometry" >
+      <rect>
+       <x>110</x>
+       <y>71</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTC_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_1" >
+     <property name="geometry" >
+      <rect>
+       <x>110</x>
+       <y>41</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTA_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_4" >
+     <property name="geometry" >
+      <rect>
+       <x>110</x>
+       <y>131</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTG_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_40" >
+     <property name="geometry" >
+      <rect>
+       <x>410</x>
+       <y>131</y>
+       <width>16</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_34" >
+     <property name="geometry" >
+      <rect>
+       <x>250</x>
+       <y>71</y>
+       <width>20</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="cadpDAQ_14" >
+     <property name="geometry" >
+      <rect>
+       <x>270</x>
+       <y>131</y>
+       <width>65</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>EC1_DG_TSTH_READ</string>
+     </property>
+     <property name="lineWidth" stdset="0" >
+      <number>1</number>
+     </property>
+     <property name="fillcol" stdset="0" >
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_35" >
+     <property name="geometry" >
+      <rect>
+       <x>250</x>
+       <y>101</y>
+       <width>20</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_36" >
+     <property name="geometry" >
+      <rect>
+       <x>250</x>
+       <y>131</y>
+       <width>20</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>s</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_8" >
+   <property name="geometry" >
+    <rect>
+     <x>14</x>
+     <y>351</y>
+     <width>461</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="frameShape" >
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow" >
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbLTU_9" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>57</y>
+      <width>71</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Start (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_11" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>27</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Section 1</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_12" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>57</y>
+      <width>71</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Freq (Hz)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_13" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>27</y>
+      <width>97</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>CH</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_14" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>57</y>
+      <width>71</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Stop (s)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_15" >
+    <property name="geometry" >
+     <rect>
+      <x>108</x>
+      <y>27</y>
+      <width>33</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>Pot.</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_9" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>87</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P0_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_19" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>87</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P0_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_29" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>87</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P0_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_30" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>116</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P1_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_20" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>116</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P1_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_10" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>116</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P1_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_31" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>146</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P2_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_32" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>146</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P2_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_33" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>146</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P2_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_34" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>176</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P3_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_35" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>176</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P3_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_36" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>176</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P3_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_37" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>206</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P4_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_38" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>206</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P4_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_39" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>206</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P4_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_17" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>4</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B LTU (ECCD D1)</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_40" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>296</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P7_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_41" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>266</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P6_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_42" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>296</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P7_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_43" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>236</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P5_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_44" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>266</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P6_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_45" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>236</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P5_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_46" >
+    <property name="geometry" >
+     <rect>
+      <x>313</x>
+      <y>236</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P5_SEC0_CLOCK</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_SEC0_CLOCK</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_47" >
+    <property name="geometry" >
+     <rect>
+      <x>173</x>
+      <y>266</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P6_SEC0_T0</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_SEC0_T0</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caleLTU_48" >
+    <property name="geometry" >
+     <rect>
+      <x>243</x>
+      <y>296</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>EC1B_LTU_P7_SEC0_T1</string>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::RealFour</enum>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_SEC0_T1</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_26" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>86</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#1(Pol)</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P0</string>
+    </property>
+    <property name="truelabel" >
+     <string>#1(Pol)</string>
+    </property>
+    <property name="falselabel" >
+     <string>#1(Pol)</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_27" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>86</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_28" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>116</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_29" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>116</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#2 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P1</string>
+    </property>
+    <property name="truelabel" >
+     <string>#2 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#2 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_30" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>146</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#3 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P2</string>
+    </property>
+    <property name="truelabel" >
+     <string>#3 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#3 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_31" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>146</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_32" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>176</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#4 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P3</string>
+    </property>
+    <property name="truelabel" >
+     <string>#4 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#4 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_33" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>176</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_34" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>206</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_35" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>206</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#5 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P4</string>
+    </property>
+    <property name="truelabel" >
+     <string>#5 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#5 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_36" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>236</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_37" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>236</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#6 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P5</string>
+    </property>
+    <property name="truelabel" >
+     <string>#6 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#6 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_38" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>266</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_39" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>266</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#7 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P6</string>
+    </property>
+    <property name="truelabel" >
+     <string>#7 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#7 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_40" >
+    <property name="geometry" >
+     <rect>
+      <x>109</x>
+      <y>296</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>F</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_ActiveLow</string>
+    </property>
+    <property name="truelabel" >
+     <string>R</string>
+    </property>
+    <property name="falselabel" >
+     <string>F</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_41" >
+    <property name="geometry" >
+     <rect>
+      <x>30</x>
+      <y>296</y>
+      <width>79</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>#8 Shot</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_SETUP_P7</string>
+    </property>
+    <property name="truelabel" >
+     <string>#8 Shot</string>
+    </property>
+    <property name="falselabel" >
+     <string>#8 Shot</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_7" >
+    <property name="geometry" >
+     <rect>
+      <x>383</x>
+      <y>57</y>
+      <width>65</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Shot
+Start</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_START</string>
+    </property>
+    <property name="truelabel" >
+     <string>Shot Start</string>
+    </property>
+    <property name="falselabel" >
+     <string>Shot Start</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_42" >
+    <property name="geometry" >
+     <rect>
+      <x>383</x>
+      <y>236</y>
+      <width>65</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Shot
+End</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SOFT_END</string>
+    </property>
+    <property name="truelabel" >
+     <string>Shot End</string>
+    </property>
+    <property name="falselabel" >
+     <string>Shot End</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_43" >
+    <property name="geometry" >
+     <rect>
+      <x>383</x>
+      <y>27</y>
+      <width>65</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>LOCAL</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_SET_FREE_RUN</string>
+    </property>
+    <property name="truelabel" >
+     <string>KSTAR</string>
+    </property>
+    <property name="falselabel" >
+     <string>LOCAL</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>170</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="unselColor" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="selTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="unselTColor" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_9" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>93</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_10" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>123</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_11" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>153</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_12" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>183</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_13" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>213</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_14" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>243</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_15" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>271</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="CACheckBox" name="caBoButton_16" >
+    <property name="geometry" >
+     <rect>
+      <x>12</x>
+      <y>300</y>
+      <width>19</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_ENABLE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLTU_28" >
+    <property name="geometry" >
+     <rect>
+      <x>140</x>
+      <y>27</y>
+      <width>34</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape" >
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow" >
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth" >
+     <number>1</number>
+    </property>
+    <property name="text" >
+     <string>C/T</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_46" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>236</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P5_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_45" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>146</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P2_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_44" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>176</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P3_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_50" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>206</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P4_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_49" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>116</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P1_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_47" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>86</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P0_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_51" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>296</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P7_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="capbDG645_48" >
+    <property name="geometry" >
+     <rect>
+      <x>141</x>
+      <y>266</y>
+      <width>32</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text" >
+     <string>T</string>
+    </property>
+    <property name="pvname" >
+     <string>EC1B_LTU_P6_MODE</string>
+    </property>
+    <property name="truelabel" >
+     <string>C</string>
+    </property>
+    <property name="falselabel" >
+     <string>T</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CACheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>caCheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

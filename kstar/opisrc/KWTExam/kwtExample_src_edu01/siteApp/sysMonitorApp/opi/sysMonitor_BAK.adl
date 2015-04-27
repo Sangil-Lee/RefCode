@@ -1,0 +1,5108 @@
+
+file {
+	name="/home/kstar/PF1Test/sysMonitor.adl"
+	version=030101
+}
+display {
+	object {
+		x=1308
+		y=75
+		width=1125
+		height=736
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=5
+		width=505
+		height=50
+	}
+	"basic attribute" {
+		clr=27
+	}
+}
+text {
+	object {
+		x=5
+		y=13
+		width=516
+		height=36
+	}
+	"basic attribute" {
+		clr=50
+	}
+	textix="sysMonitor"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=224
+		y=85
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_CCS_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=85
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CCS Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=85
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_CCS_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=108
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SIS_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=108
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SIS Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=108
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SIS_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=133
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_RMS_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=133
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RMS Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=133
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_RMS_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=156
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_PSI_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=156
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PSI Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=156
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_PSI_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=181
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_PCS_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=181
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PCS Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=181
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_PCS_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=205
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_DIAG_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=205
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DIAG Rack Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=205
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_DIAG_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=229
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_EXT.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=229
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Outside Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=229
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_EXT"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=85
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK1.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=85
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI Rack#1 Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=85
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK1"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=108
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK2.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=108
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI Rack#2 Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=108
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK2"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=133
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK3.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=133
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI Rack#3 Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=133
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK3"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=156
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK4.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=156
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI Rack#4 Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=156
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_OPI_RACK4"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=181
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_DLP.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=181
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DLP Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=181
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_DLP"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=205
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_AUDIO_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=205
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Audio Rack Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=205
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_AUDIO_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=229
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_VIDEO_RACK.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=229
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Video Rack Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=229
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_VIDEO_RACK"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+polyline {
+	object {
+		x=12
+		y=280
+		width=527
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="CCS_TMON_VIDEO_RACK.EGU"
+	}
+	points {
+		(12,280)
+		(539,280)
+	}
+}
+"text update" {
+	object {
+		x=224
+		y=252
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MCR_DEV.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=14
+		y=252
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MCR (Device) Temperature"
+}
+"text update" {
+	object {
+		x=169
+		y=252
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MCR_DEV"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=498
+		y=252
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MCS.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=288
+		y=252
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MCR (Operator) Temperature"
+}
+"text update" {
+	object {
+		x=443
+		y=252
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MCS"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=223
+		y=288
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SERVER_RRACK1.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=13
+		y=288
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Server Rack#1 Temperature"
+}
+"text update" {
+	object {
+		x=168
+		y=288
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SERVER_RRACK1"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=223
+		y=313
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MAIN_STORAGE.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=13
+		y=313
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Main Storage Temperature"
+}
+"text update" {
+	object {
+		x=168
+		y=313
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_MAIN_STORAGE"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=223
+		y=336
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_KSTAR_BACKBONE.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=13
+		y=336
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="KSTAR BackboneTemperature"
+}
+"text update" {
+	object {
+		x=168
+		y=336
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_KSTAR_BACKBONE"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=288
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SERVER_RACK2.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=287
+		y=288
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Server Rack#2 Temperature"
+}
+"text update" {
+	object {
+		x=442
+		y=288
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_SERVER_RACK2"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=313
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_COMP_ROOM.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=287
+		y=313
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Computer Room Temperature"
+}
+"text update" {
+	object {
+		x=442
+		y=313
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_COMP_ROOM"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=497
+		y=336
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_NFRI_BACKBONE.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=287
+		y=336
+		width=150
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="NFRI Backbone Temperature"
+}
+"text update" {
+	object {
+		x=442
+		y=336
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS_TMON_NFRI_BACKBONE"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+polyline {
+	object {
+		x=15
+		y=366
+		width=527
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="CCS_TMON_VIDEO_RACK.EGU"
+	}
+	points {
+		(15,366)
+		(542,366)
+	}
+}
+text {
+	object {
+		x=12
+		y=402
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CCS Console"
+}
+text {
+	object {
+		x=117
+		y=402
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=402
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCSCSL_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=402
+		width=25
+		height=18
+	}
+	monitor {
+		chan="CCSCSL_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=402
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=402
+		width=120
+		height=18
+	}
+	monitor {
+		chan="CCSCSL_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=425
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="VMS VV"
+}
+text {
+	object {
+		x=117
+		y=425
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=425
+		width=50
+		height=18
+	}
+	monitor {
+		chan="VMS_VV_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=425
+		width=25
+		height=18
+	}
+	monitor {
+		chan="VMS_VV_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=425
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=425
+		width=120
+		height=18
+	}
+	monitor {
+		chan="VMS_VV_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=448
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="VMS Cryo"
+}
+text {
+	object {
+		x=117
+		y=448
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=448
+		width=50
+		height=18
+	}
+	monitor {
+		chan="VMS_CR_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=448
+		width=25
+		height=18
+	}
+	monitor {
+		chan="VMS_CR_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=448
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=448
+		width=120
+		height=18
+	}
+	monitor {
+		chan="VMS_CR_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=471
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TMS IOC#1"
+}
+text {
+	object {
+		x=117
+		y=471
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=471
+		width=50
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC1_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=471
+		width=25
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC1_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=471
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=471
+		width=120
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC1_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=494
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TMS IOC#2"
+}
+text {
+	object {
+		x=117
+		y=494
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=494
+		width=50
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC2_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=494
+		width=25
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC2_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=494
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=494
+		width=120
+		height=18
+	}
+	monitor {
+		chan="TMS_IOC2_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=517
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="HRS"
+}
+text {
+	object {
+		x=117
+		y=517
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=517
+		width=50
+		height=18
+	}
+	monitor {
+		chan="HRS_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=517
+		width=25
+		height=18
+	}
+	monitor {
+		chan="HRS_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=517
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=517
+		width=120
+		height=18
+	}
+	monitor {
+		chan="HRS_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=563
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CLS"
+}
+text {
+	object {
+		x=117
+		y=563
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=563
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CLS_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=563
+		width=25
+		height=18
+	}
+	monitor {
+		chan="HRS_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=563
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=563
+		width=120
+		height=18
+	}
+	monitor {
+		chan="CLS_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=586
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FUEL"
+}
+text {
+	object {
+		x=117
+		y=586
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=586
+		width=50
+		height=18
+	}
+	monitor {
+		chan="FUEL_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=586
+		width=25
+		height=18
+	}
+	monitor {
+		chan="FUEL_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=586
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=586
+		width=120
+		height=18
+	}
+	monitor {
+		chan="FUEL_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=12
+		y=540
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DB#2"
+}
+text {
+	object {
+		x=117
+		y=540
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=540
+		width=50
+		height=18
+	}
+	monitor {
+		chan="SHDS_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=540
+		width=25
+		height=18
+	}
+	monitor {
+		chan="SHDS_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=540
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=540
+		width=120
+		height=18
+	}
+	monitor {
+		chan="SHDS_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=447
+		y=402
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=CCSCSL"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=425
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=VMS_VV"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=448
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=VMS_CR"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=471
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=TMS_IOC1"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=494
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=TMS_IOC2"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=517
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=HRS"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=540
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=SHDS"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=563
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=CLS"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=447
+		y=586
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=FUEL"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+polyline {
+	object {
+		x=10
+		y=709
+		width=527
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="CCS_TMON_VIDEO_RACK.EGU"
+	}
+	points {
+		(10,709)
+		(537,709)
+	}
+}
+text {
+	object {
+		x=569
+		y=82
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI01"
+}
+text {
+	object {
+		x=674
+		y=82
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=82
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI01_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=82
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI01_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=82
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=82
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI01_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=105
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI02"
+}
+text {
+	object {
+		x=674
+		y=105
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=105
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI02_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=105
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI02_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=105
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=105
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI02_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=128
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI03"
+}
+text {
+	object {
+		x=674
+		y=128
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=128
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI03_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=128
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI03_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=128
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=128
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI03_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=151
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI04"
+}
+text {
+	object {
+		x=674
+		y=151
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=151
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI04_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=151
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI04_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=151
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=151
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI04_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=174
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI05"
+}
+text {
+	object {
+		x=674
+		y=174
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=174
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI05_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=174
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI05_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=174
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=174
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI05_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=197
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI06"
+}
+text {
+	object {
+		x=674
+		y=197
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=197
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI06_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=197
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI06_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=197
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=197
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI06_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=243
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI08"
+}
+text {
+	object {
+		x=674
+		y=243
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=243
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI08_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=243
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI08_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=243
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=243
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI08_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=266
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI09"
+}
+text {
+	object {
+		x=674
+		y=266
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=266
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI09_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=266
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI09_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=266
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=266
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI09_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=220
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI07"
+}
+text {
+	object {
+		x=674
+		y=220
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=220
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI07_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=220
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI07_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=220
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=220
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI07_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1004
+		y=82
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI01"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=105
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI02"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=128
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI03"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=151
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI04"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=174
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI05"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=197
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI06"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=220
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI07"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=243
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI08"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=266
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI09"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=569
+		y=289
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI10"
+}
+text {
+	object {
+		x=674
+		y=289
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=289
+		width=50
+		height=18
+	}
+	monitor {
+		chan="OPI10_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=289
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI10_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=289
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=289
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI10_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1004
+		y=289
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI10"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=569
+		y=312
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI11"
+}
+text {
+	object {
+		x=674
+		y=312
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=312
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI11_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=312
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI11_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=312
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=312
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI11_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=335
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI12"
+}
+text {
+	object {
+		x=674
+		y=335
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=335
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI12_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=335
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI12_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=335
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=335
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI12_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=358
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI13"
+}
+text {
+	object {
+		x=674
+		y=358
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=358
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI13_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=358
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI13_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=358
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=358
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI13_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=381
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI14"
+}
+text {
+	object {
+		x=674
+		y=381
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=381
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI14_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=381
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI14_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=381
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=381
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI14_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=404
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI15"
+}
+text {
+	object {
+		x=674
+		y=404
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=404
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI15_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=404
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI15_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=404
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=404
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI15_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=427
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI16"
+}
+text {
+	object {
+		x=674
+		y=427
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=427
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI16_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=427
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI16_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=427
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=427
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI16_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=473
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI18"
+}
+text {
+	object {
+		x=674
+		y=473
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=473
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI18_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=473
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI18_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=473
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=473
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI18_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=496
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI19"
+}
+text {
+	object {
+		x=674
+		y=496
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=496
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI19_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=496
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI19_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=496
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=496
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI19_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+text {
+	object {
+		x=569
+		y=450
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI17"
+}
+text {
+	object {
+		x=674
+		y=450
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=450
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI17_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=450
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI17_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=450
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=450
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI17_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1004
+		y=312
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI11"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=335
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI12"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=358
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI13"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=381
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI14"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=404
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI15"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=427
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI16"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=450
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI17"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=473
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI18"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1004
+		y=496
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI19"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=569
+		y=519
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OPI20"
+}
+text {
+	object {
+		x=674
+		y=519
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=739
+		y=519
+		width=50
+		height=20
+	}
+	monitor {
+		chan="OPI20_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=794
+		y=519
+		width=25
+		height=18
+	}
+	monitor {
+		chan="OPI20_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=824
+		y=519
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=879
+		y=519
+		width=120
+		height=18
+	}
+	monitor {
+		chan="OPI20_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1004
+		y=519
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=OPI20"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=12
+		y=609
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PCS Host"
+}
+text {
+	object {
+		x=117
+		y=609
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=609
+		width=50
+		height=18
+	}
+	monitor {
+		chan="PCSHOST_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=609
+		width=25
+		height=18
+	}
+	monitor {
+		chan="PCSHOST_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=609
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=609
+		width=120
+		height=18
+	}
+	monitor {
+		chan="PCSHOST_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=447
+		y=609
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=PCSHOST"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=12
+		y=632
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PCS RT-CPU#3"
+}
+text {
+	object {
+		x=117
+		y=632
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=632
+		width=50
+		height=18
+	}
+	monitor {
+		chan="PCS_RT3_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=632
+		width=25
+		height=18
+	}
+	monitor {
+		chan="PCS_RT3_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=632
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=632
+		width=120
+		height=18
+	}
+	monitor {
+		chan="PCS_RT3_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=447
+		y=632
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=PCS_RT3"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+polyline {
+	object {
+		x=567
+		y=544
+		width=527
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="CCS_TMON_VIDEO_RACK.EGU"
+	}
+	points {
+		(567,544)
+		(1094,544)
+	}
+}
+text {
+	object {
+		x=568
+		y=552
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Data Analysis"
+}
+text {
+	object {
+		x=673
+		y=552
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=740
+		y=552
+		width=50
+		height=18
+	}
+	monitor {
+		chan="DATA_ANAL_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=795
+		y=552
+		width=25
+		height=18
+	}
+	monitor {
+		chan="DATA_ANAL_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=825
+		y=552
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=880
+		y=552
+		width=120
+		height=18
+	}
+	monitor {
+		chan="DATA_ANAL_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1005
+		y=552
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=DATA_ANAL"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=568
+		y=598
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel Archiver"
+}
+text {
+	object {
+		x=673
+		y=598
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=738
+		y=598
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CHARCH_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=793
+		y=598
+		width=25
+		height=18
+	}
+	monitor {
+		chan="CHARCH_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=823
+		y=598
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=878
+		y=598
+		width=120
+		height=18
+	}
+	monitor {
+		chan="CHARCH_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1003
+		y=598
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=CHARCH"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=568
+		y=621
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MDSPlus"
+}
+text {
+	object {
+		x=673
+		y=621
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=738
+		y=621
+		width=50
+		height=18
+	}
+	monitor {
+		chan="MDSPLUS_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=793
+		y=621
+		width=25
+		height=18
+	}
+	monitor {
+		chan="MDSPLUS_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=823
+		y=621
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=878
+		y=621
+		width=120
+		height=18
+	}
+	monitor {
+		chan="MDSPLUS_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1003
+		y=621
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=MDSPLUS"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=568
+		y=644
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Backup Server"
+}
+text {
+	object {
+		x=673
+		y=644
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=738
+		y=644
+		width=50
+		height=18
+	}
+	monitor {
+		chan="BACKUP_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=793
+		y=644
+		width=25
+		height=18
+	}
+	monitor {
+		chan="BACKUP_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=823
+		y=644
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=878
+		y=644
+		width=120
+		height=18
+	}
+	monitor {
+		chan="BACKUP_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1003
+		y=644
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=BACKUP"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=568
+		y=667
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Web OPI Server"
+}
+text {
+	object {
+		x=673
+		y=667
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=738
+		y=667
+		width=50
+		height=18
+	}
+	monitor {
+		chan="WEBOPI_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=793
+		y=667
+		width=25
+		height=18
+	}
+	monitor {
+		chan="WEBOPI_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=823
+		y=667
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=878
+		y=667
+		width=120
+		height=18
+	}
+	monitor {
+		chan="WEBOPI_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1003
+		y=667
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=WEBOPI"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=568
+		y=575
+		width=100
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CA gateway"
+}
+text {
+	object {
+		x=673
+		y=575
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=740
+		y=575
+		width=50
+		height=16
+	}
+	monitor {
+		chan="CAGATEWAY_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=795
+		y=575
+		width=25
+		height=16
+	}
+	monitor {
+		chan="CAGATEWAY_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=825
+		y=575
+		width=50
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=880
+		y=575
+		width=120
+		height=16
+	}
+	monitor {
+		chan="CAGATEWAY_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=1005
+		y=575
+		width=44
+		height=16
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=CAGATEWAY"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+"related display" {
+	object {
+		x=1056
+		y=575
+		width=44
+		height=16
+	}
+	display[0] {
+		label="Detail"
+		name="gwStats.adl"
+		args="PREFIX=cagateway"
+	}
+	clr=14
+	bclr=2
+	label="Gateway"
+}
+text {
+	object {
+		x=12
+		y=678
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DDS#1"
+}
+text {
+	object {
+		x=117
+		y=678
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=678
+		width=50
+		height=18
+	}
+	monitor {
+		chan="DDS1_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=678
+		width=25
+		height=18
+	}
+	monitor {
+		chan="DDS1_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=678
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=678
+		width=120
+		height=18
+	}
+	monitor {
+		chan="DDS1_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=447
+		y=678
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=DDS1"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=12
+		y=655
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DLS"
+}
+text {
+	object {
+		x=117
+		y=655
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=182
+		y=655
+		width=50
+		height=18
+	}
+	monitor {
+		chan="DLS_LOAD"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=237
+		y=655
+		width=25
+		height=18
+	}
+	monitor {
+		chan="DLS_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=267
+		y=655
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=322
+		y=655
+		width=120
+		height=18
+	}
+	monitor {
+		chan="DLS_UPTIME"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=447
+		y=655
+		width=88
+		height=18
+	}
+	display[0] {
+		label="Detail"
+		name="sysMon.adl"
+		args="SYS=PCS_RT3"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}
+text {
+	object {
+		x=11
+		y=380
+		width=100
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CCS"
+}
+text {
+	object {
+		x=116
+		y=380
+		width=60
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CPU Load"
+}
+"text update" {
+	object {
+		x=181
+		y=380
+		width=50
+		height=18
+	}
+	monitor {
+		chan="CCS:Load"
+		clr=29
+		bclr=1
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=236
+		y=380
+		width=25
+		height=18
+	}
+	monitor {
+		chan="CCSCSL_LOAD.EGU"
+		clr=14
+		bclr=2
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=266
+		y=380
+		width=50
+		height=18
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UP Time"
+}
+"text update" {
+	object {
+		x=321
+		y=380
+		width=120
+		height=18
+	}
+	monitor {
+		chan="CCS:BootTime"
+		clr=14
+		bclr=3
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=448
+		y=379
+		width=88
+		height=18
+	}
+	command[0] {
+		label="Detail"
+		name="edm"
+		args="-m P=CCS -x IOC_Status.edl &"
+	}
+	clr=14
+	bclr=2
+	label="Detail"
+}

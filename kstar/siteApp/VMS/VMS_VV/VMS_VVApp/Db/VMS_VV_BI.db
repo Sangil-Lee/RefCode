@@ -1,0 +1,15 @@
+record(bi, "$(PV_NAME)") {
+  field(DESC, "$(DESC)")
+  field(SCAN, ".2 second")
+  field(DTYP, "EtherIP")
+#####################################
+#  field(FLNK, "VMS_VV_TMP1_FV_IND")
+#####################################
+# field(FLNK, "$(PV_NAME)_IND")
+  field(INP, "@plc0 $(TAG) S 0.2")
+  field(ZNAM, "$(ZNAM)")
+  field(ONAM, "$(ONAM)")
+  field(ZSV, "$(ZSV)")
+  field(OSV, "$(OSV)")
+  field(PINI, "YES")
+  }

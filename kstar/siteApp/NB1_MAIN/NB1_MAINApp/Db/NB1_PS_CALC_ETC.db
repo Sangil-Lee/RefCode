@@ -1,0 +1,777 @@
+record(bi, "NB1_PSPLC_STA_TESTOP")
+{
+	field(DESC,	"Total EMG")
+	field(SCAN, "Passive")
+    field(INP, "NB1_PSPLC_STA_TESTOP_C.VAL CPP")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+    #field(ONAM, "RUN")
+    #field(ZNAM, "STOP")
+}
+record(calc, "NB1_PSPLC_STA_TESTOP_C")
+{
+   field(DESC, "Total EMG")
+    field(SCAN, "Passive")
+    field(CALC, "A|B?1:0")
+    field(INPA, "NB1_P1PLC_RTN_EMG.VAL CPP")
+    field(INPB, "NB1_P2VME_STA_ESTOP.VAL CPP")
+}
+
+record(bi, "NB1_PSPLC_STA_TSAFETY")
+{
+	field(DESC,	"Total SAFETY")
+	field(SCAN, "Passive")
+    field(INP, "NB1_PSPLC_STA_TSAFETY_C.VAL CPP")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+    #field(ONAM, "RUN")
+    #field(ZNAM, "STOP")
+
+}
+record(calc, "NB1_PSPLC_STA_TSAFETY_C")
+{
+   field(DESC, "Total SAFETY")
+    field(SCAN, "Passive")
+    field(CALC, "A|B?1:0")
+    field(INPA, "NB1_P1PLC_INT_DOOR.VAL CPP")
+    field(INPB, "NB1_P2PLC_STA_MASTERKEY.VAL CPP")
+}
+
+record(calc, "NB1_P1PLC_STA_TFLT")
+{
+	field(DESC, "PS1 TOTAL FLT")
+    field(SCAN, "1 second")
+    field(CALC, "A+B+C+D+E+F")
+    field(INPA, "NB1_P1G1_AO_FLT.VAL CPP")
+    field(INPB, "NB1_P1G3_AO_FLT.VAL CPP")
+	field(INPC, "NB1_P1ARC_AO_FLT.VAL CPP")
+	field(INPD, "NB1_P1FIL_AO_TFLT.VAL CPP")
+	field(INPE, "NB1_P1BI_AO_FLT.VAL CPP")
+	field(INPF, "NB1_P1VME_AO_FLT.VAL CPP")
+}
+
+record(calc, "NB1_P2PLC_STA_TFLT")
+{
+	field(DESC, "PS1 TOTAL FLT")
+    field(SCAN, "1 second")
+    field(CALC, "A+B+C+D+E+F")
+    field(INPA, "NB1_P2G1_STA_FLT.VAL CPP")
+    field(INPB, "NB1_P2G3_STA_FLT.VAL CPP")
+	field(INPC, "NB1_P2ARC_STA_FLT.VAL CPP")
+	field(INPD, "NB1_P2FILA1_STA_FLT.VAL CPP")
+	field(INPE, "NB1_P2BIAS_STA_FLT.VAL CPP")
+	field(INPF, "NB1_P2VME_STA_FLT.VAL CPP")
+}
+
+record(calc, "NB1_BEAMON_OP1_RUN")
+{
+	field(DESC, "NBI1 BEAM OP1")
+	field(SCAN, "1 second")
+	field(CALC, "A&B?1:0")
+	field(INPA, "NB1_OPER1_BEAM_MODE_C.VAL CPP")
+	#field(INPB, "NB1_PS1_STA_HVON.VAL CPP")
+	field(INPB, "NB1_P1ARC_RTN_RUN.VAL CPP")
+}
+
+record(calc, "NB1_BEAMON_OP1_RUN_COUNT")
+{
+	field(DESC,	"NBI1 BEAMON CALC COUNT")
+	field(SCAN, "1 second")
+	field(CALC, "(A>0)?B+C:D")
+	field(INPA,	"NB1_BEAMON_OP1_RUN.VAL NPP NMS")
+	field(INPB,	"NB1_BEAMON_OP1_RUN_COUNT.VAL CPP")
+	field(INPC,	"1")
+	field(INPD,	"0")
+}
+
+record(calc, "NB1_BEAMON_OP2_RUN")
+{
+	field(DESC, "NBI1 BEAM OP2")
+	field(SCAN, "1 second")
+	field(CALC, "A&B?1:0")
+	field(INPA, "NB1_OPER2_BEAM_MODE_C.VAL CPP")
+	#field(INPB, "NB1_PS2_STA_HVON.VAL CPP")
+	field(INPB, "NB1_P2ARC_STA_RUN.VAL CPP")
+}
+
+record(calc, "NB1_BEAMON_OP2_RUN_COUNT")
+{
+	field(DESC,	"NBI1 BEAMON CALC COUNT")
+	field(SCAN, "1 second")
+	field(CALC, "(A>0)?B+C:D")
+	field(INPA,	"NB1_BEAMON_OP2_RUN.VAL NPP NMS")
+	field(INPB,	"NB1_BEAMON_OP2_RUN_COUNT.VAL CPP")
+	field(INPC,	"1")
+	field(INPD,	"0")
+}
+record(calc, "NB1_BEAMON_OP1_STATUS")
+{
+	field(DESC, "NBI1 BEAM ON")
+    field(SCAN, "1 second")
+    #field(CALC, "A>6?1:0")
+    field(CALC, "A>2?1:0")
+    field(INPA, "NB1_BEAMON_OP1_RUN_COUNT.VAL CPP")
+}
+record(calc, "NB1_BEAMON_OP2_STATUS")
+{
+	field(DESC, "NBI1 BEAM ON")
+    field(SCAN, "1 second")
+    #field(CALC, "A>6?1:0")
+    field(CALC, "A>2?1:0")
+    field(INPA, "NB1_BEAMON_OP2_RUN_COUNT.VAL CPP")
+}
+
+#record(calc, "NB1_BEAMON_OP_STATUS")
+#{
+#    field(DESC, "NBI1 BEAM ON")
+#    field(SCAN, "1 second")
+#    field(CALC, "(A&C)||(B&D)?1:0")
+#    field(INPA, "NB1_OPER1_BEAM_MODE_C.VAL CPP")
+#	field(INPB, "NB1_OPER2_BEAM_MODE_C.VAL CPP")
+#	field(INPC, "NB1_PS1_STA_HVON.VAL CPP")
+#	field(INPD, "NB1_PS2_STA_HVON.VAL CPP")
+#}
+#record(calc, "NB1_HVON_OP_STATUS")
+#{
+#    field(DESC, "NBI1 HV ON")
+#    field(SCAN, "1 second")
+#    field(CALC, "A||B?1:0")
+#    field(INPA, "NB1_PS1_STA_HVON.VAL CPP")
+#    field(INPB, "NB1_PS2_STA_HVON.VAL CPP")
+#}
+
+record(calcout, "NB1_P1G1_ECMD_VOLT_C")
+{
+    field(DESC, "P1G3 VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "A>=80?3000:(A*1000)*(3/80)")
+    field(INPA, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+    field(OUT,  "NB1_P1G3_ECMD_VOLT.VAL NMP PP")
+}
+
+record(calcout, "NB1_P2G1_ECMD_VCMD_C")
+{
+	 field(DESC, "P2G3 VOLT OUT")
+     field(SCAN, "Passive")
+     field(CALC, "(A*1000)/25")
+     field(INPA, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+     field(OUT,  "NB1_P2G3_ECMD_VCMD.VAL NMP PP")
+}
+
+record(ai, "NB1_P2ARC_RTN_PCMD")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+	field(SCAN, "Passive")
+}
+record(calcout, "NB1_P2ARC_RTN_PCMD_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2ARC_RTN_PCMD_A.VAL CPP NMP")
+    field(CALC, "A/10")
+    field(OUT, "NB1_P2ARC_RTN_PCMD.VAL NMP PP")
+}
+
+record(ao, "NB1_P2ARC_ECMD_PCMD")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+}
+
+record(calcout, "NB1_P2ARC_ECMD_PCMD_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2ARC_ECMD_PCMD.VAL CPP NMP")
+    field(CALC, "A*10")
+    field(OUT, "NB1_P2ARC_ECMD_PCMD_A.VAL NMP PP")
+}
+
+# 2012.10.08 YUNSW Begin
+record(ai, "NB1_P1ARC_RTN_MFREQ")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+	field(SCAN, "Passive")
+}
+record(calcout, "NB1_P1ARC_RTN_MFREQ_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P1ARC_RTN_MFREQ_A.VAL CPP NMP")
+    field(CALC, "A/10")
+    field(OUT, "NB1_P1ARC_RTN_MFREQ.VAL NMP PP")
+}
+
+record(ai, "NB1_P1ARC_RTN_MFREQ2")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+	field(SCAN, "Passive")
+}
+record(calcout, "NB1_P1ARC_RTN_MFREQ2_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P1ARC_RTN_MFREQ2_A.VAL CPP NMP")
+    field(CALC, "A/10")
+    field(OUT, "NB1_P1ARC_RTN_MFREQ2.VAL NMP PP")
+}
+
+record(ao, "NB1_P1ARC_ECMD_MFREQ")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+}
+record(calcout, "NB1_P1ARC_ECMD_MFREQ_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P1ARC_ECMD_MFREQ.VAL CPP NMP")
+    field(CALC, "A*10")
+    field(OUT, "NB1_P1ARC_ECMD_MFREQ_A.VAL NMP PP")
+}
+record(ao, "NB1_P1ARC_ECMD_MFREQ2")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+}
+record(calcout, "NB1_P1ARC_ECMD_MFREQ2_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P1ARC_ECMD_MFREQ2.VAL CPP NMP")
+    field(CALC, "A*10")
+    field(OUT, "NB1_P1ARC_ECMD_MFREQ2_A.VAL NMP PP")
+}
+
+record(ai, "NB1_P2VME_RTN_ARCFREQ")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+	field(SCAN, "Passive")
+}
+record(calcout, "NB1_P2VME_RTN_ARCFREQ_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2VME_RTN_ARCFREQ_A.VAL CPP NMP")
+    field(CALC, "A/10")
+    field(OUT, "NB1_P2VME_RTN_ARCFREQ.VAL NMP PP")
+}
+
+record(ao, "NB1_P2VME_ECMD_ARCFREQ")
+{
+    field(DESC, "Length")
+    field(PREC, "1")
+}
+record(calcout, "NB1_P2VME_ECMD_ARCFREQ_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2VME_ECMD_ARCFREQ.VAL CPP NMP")
+    field(CALC, "A*10")
+    field(OUT, "NB1_P2VME_ECMD_ARCFREQ_A.VAL NMP PP")
+}
+# 2012.10.08 YUNSW End
+
+#record(ai, "NB1_P1ARC_RTN_MSDT")
+#{
+#    field(DESC, "Length")
+#    field(PREC, "2")
+#    field(SCAN, "Passive")
+#}
+#record(calcout, "NB1_P1ARC_RTN_MSDT_C")
+#{
+#    field(DESC, "PLC")
+#    field(SCAN, "Passive")
+#    field(INPA, "NB1_P1ARC_RTN_MSDT_A.VAL CPP NMP")
+#    field(CALC, "A/1000")
+#    field(OUT, "NB1_P1ARC_RTN_MSDT.VAL NMP PP")
+#}
+
+#record(ao, "NB1_P1ARC_ECMD_MSDT")
+#{
+#    field(DESC, "Length")
+#    field(PREC, "2")
+#}
+
+#record(calcout, "NB1_P1ARC_ECMD_MSDT_C")
+#{
+#    field(DESC, "PLC")
+#    field(SCAN, "Passive")
+#    field(INPA, "NB1_P1ARC_ECMD_MSDT.VAL CPP NMP")
+#    field(CALC, "A*1000")
+#    field(OUT, "NB1_P1ARC_ECMD_MSDT_A.VAL NMP PP")
+#}
+
+record(ai, "NB1_P2VME_RTN_ARCDEL")
+{
+    field(DESC, "Length")
+    field(PREC, "2")
+    field(SCAN, "Passive")
+}
+record(calcout, "NB1_P2VME_RTN_ARCDEL_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2VME_RTN_ARCDEL_A.VAL CPP NMP")
+    field(CALC, "A/1000")
+    field(OUT, "NB1_P2VME_RTN_ARCDEL.VAL NMP PP")
+}
+
+record(ao, "NB1_P2VME_ECMD_ARCDEL")
+{
+    field(DESC, "Length")
+    field(PREC, "2")
+}
+
+record(calcout, "NB1_P2VME_ECMD_ARCDEL_C")
+{
+    field(DESC, "PLC")
+    field(SCAN, "Passive")
+    field(INPA, "NB1_P2VME_ECMD_ARCDEL.VAL CPP NMP")
+    field(CALC, "A*1000")
+    field(OUT, "NB1_P2VME_ECMD_ARCDEL_A.VAL NMP PP")
+}
+
+#record(bi, "NB1_PS1_RTN_OK")
+#{
+#    field(DESC, "Return Check")
+#    field(SCAN, "Passive")
+#	field(ZSV, "MAJOR")
+#    field(OSV, "NO_ALARM")
+##    field(ZNAM, "NOT_READY")
+##    field(ONAM, "READY")
+#}
+
+#record(bi, "NB1_PS2_RTN_OK")
+#{
+#    field(DESC, "Return Check")
+#    field(SCAN, "Passive")
+#	field(ZSV, "MAJOR")
+#    field(OSV, "NO_ALARM")
+##    field(ZNAM, "NOT_READY")
+##    field(ONAM, "READY")
+#}
+
+#record(calc, "NB1_P1RDY_G1G3ARC_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)?1:0")
+#    field(INPA, "NB1_P1G1_RTN_VOLT.VAL CPP")
+#    field(INPB, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+#	field(INPC, "NB1_P1G3_RTN_VOLT.VAL CPP")
+#	field(INPD, "NB1_P1G3_ECMD_VOLT.VAL CPP")
+#	field(INPE, "NB1_P1ARC_RTN_VOLT.VAL CPP")
+#	field(INPF, "NB1_P1ARC_ECMD_VOLT.VAL CPP")
+#	field(INPG, "NB1_P1ARC_RTN_POW.VAL CPP")
+#	field(INPH, "NB1_P1ARC_ECMD_POW.VAL CPP")
+#}
+
+#record(calc, "NB1_P1RDY_FILABIAS_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)?1:0")
+#    field(INPA, "NB1_P1FIL_RTN_VCMD1.VAL CPP")
+#    field(INPB, "NB1_P1FIL_ECMD_TVCMD.VAL CPP")
+#	field(INPC, "NB1_P1BI_RTN_VOLT.VAL CPP")
+#	field(INPD, "NB1_P1BI_ECMD_VOLT.VAL CPP")
+#	field(INPE, "NB1_P1BI_RTN_AMP.VAL CPP")
+#	field(INPF, "NB1_P1BI_ECMD_ICMD.VAL CPP")
+#}
+
+#record(calc, "NB1_P1RDY_MOD_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)?1:0")
+#    field(INPA, "NB1_P1ARC_RTN_MSDT.VAL CPP")
+#    field(INPB, "NB1_P1ARC_ECMD_MSDT.VAL CPP")
+#	field(INPC, "NB1_P1ARC_RTN_MEDT.VAL CPP")
+#	field(INPD, "NB1_P1ARC_ECMD_MEDT.VAL CPP")
+#	field(INPE, "NB1_P1ARC_RTN_MFREQ.VAL CPP")
+#	field(INPF, "NB1_P1ARC_ECMD_MFREQ.VAL CPP")
+#	field(INPG, "NB1_P1ARC_RTN_MDUTY.VAL CPP")
+#	field(INPH, "NB1_P1ARC_ECMD_MDUTY.VAL CPP")
+#}
+
+#record(calc, "NB1_P1RDY_TIMING_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)&&(I=J)?1:0")
+#    field(INPA, "NB1_P1VME_RTN_FILAR.VAL CPP")
+#    field(INPB, "NB1_P1VME_ECMD_FILAR.VAL CPP")
+#	field(INPC, "NB1_P1VME_RTN_G1R.VAL CPP")
+#	field(INPD, "NB1_P1VME_ECMD_G1R.VAL CPP")
+#	field(INPE, "NB1_P1VME_RTN_G3R.VAL CPP")
+#	field(INPF, "NB1_P1VME_ECMD_G3R.VAL CPP")
+#	field(INPG, "NB1_P1ARC_RTN_PAPL.VAL CPP")
+#	field(INPH, "NB1_P1ARC_ECMD_PAPL.VAL CPP")
+#	field(INPI, "NB1_P1VME_RTN_ARCR.VAL CPP")
+#	field(INPJ, "NB1_P1VME_ECMD_ARCR.VAL CPP")
+#}
+#record(calcout, "NB1_PS1_RTN_CALC")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "A&B&C&D")
+#    field(INPA, "NB1_P1RDY_G1G3ARC_CHECK.VAL CPP")
+#    field(INPB, "NB1_P1RDY_FILABIAS_CHECK.VAL CPP")
+#	field(INPC, "NB1_P1RDY_MOD_CHECK.VAL CPP")
+#	field(INPD, "NB1_P1RDY_TIMING_CHECK.VAL CPP")
+#	field(OUT,	"NB1_PS1_RTN_OK.VAL NMP PP")
+#}
+
+#record(calc, "NB1_P2RDY_G1G3ARC_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)?1:0")
+#    field(INPA, "NB1_P2G1_RTN_VCMD.VAL CPP")
+#    field(INPB, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+#	field(INPC, "NB1_P2G3_RTN_VCMD.VAL CPP")
+#	field(INPD, "NB1_P2G3_ECMD_VCMD.VAL CPP")
+#	field(INPE, "NB1_P2ARC_RTN_VCMD.VAL CPP")
+#	field(INPF, "NB1_P2ARC_ECMD_VCMD.VAL CPP")
+#	field(INPG, "NB1_P2ARC_RTN_PCMD.VAL CPP")
+#	field(INPH, "NB1_P2ARC_ECMD_PCMD.VAL CPP")
+#}
+
+#record(calc, "NB1_P2RDY_FILABIAS_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)?1:0")
+#    field(INPA, "NB1_P2FILA1_RTN_VCMD1.VAL CPP")
+#    field(INPB, "NB1_P2FILA_ECMD_TVCMD.VAL CPP")
+#	field(INPC, "NB1_P2BIAS_RTN_VCMD.VAL CPP")
+#	field(INPD, "NB1_P2BIAS_ECMD_VCMD.VAL CPP")
+#	field(INPE, "NB1_P2BIAS_RTN_ICMD.VAL CPP")
+#	field(INPF, "NB1_P2BIAS_ECMD_ICMD.VAL CPP")
+#}
+
+#record(calc, "NB1_P2RDY_MOD_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)?1:0")
+#    field(INPA, "NB1_P2VME_RTN_ARCDEL.VAL CPP")
+#    field(INPB, "NB1_P2VME_ECMD_ARCDEL.VAL CPP")
+#	field(INPC, "NB1_P2VME_RTN_ARCMTIMES.VAL CPP")
+#	field(INPD, "NB1_P2VME_ECMD_ARCMTIMES.VAL CPP")
+#	field(INPE, "NB1_P2VME_RTN_ARCFREQ.VAL CPP")
+#	field(INPF, "NB1_P2VME_ECMD_ARCFREQ.VAL CPP")
+#	field(INPG, "NB1_P2VME_RTN_ARCDUTY.VAL CPP")
+#	field(INPH, "NB1_P2VME_ECMD_ARCDUTY.VAL CPP")
+#}
+
+#record(calc, "NB1_P2RDY_TIMING_CHECK")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "(A=B)&&(C=D)&&(E=F)&&(G=H)&&(I=J)?1:0")
+#    field(INPA, "NB1_P2VME_RTN_FILASEC.VAL CPP")
+#    field(INPB, "NB1_P2VME_ECMD_FILASEC.VAL CPP")
+#	field(INPC, "NB1_P2VME_RTN_G1SEC.VAL CPP")
+#	field(INPD, "NB1_P2VME_ECMD_G1SEC.VAL CPP")
+#	field(INPE, "NB1_P2VME_RTN_G3SEC.VAL CPP")
+#	field(INPF, "NB1_P2VME_ECMD_G3SEC.VAL CPP")
+#	field(INPG, "NB1_P2VME_RTN_PARCTIME.VAL CPP")
+#	field(INPH, "NB1_P2VME_ECMD_PARCTIME.VAL CPP")
+#	field(INPI, "NB1_P2VME_RTN_ARCSEC.VAL CPP")
+#	field(INPJ, "NB1_P2VME_ECMD_ARCSEC.VAL CPP")
+#}
+#record(calcout, "NB1_PS2_RTN_CALC")
+#{
+#	field(DESC, "READY CHECK")
+#    field(SCAN, "Passive")
+#    field(CALC, "A&B&C&D")
+#    field(INPA, "NB1_P2RDY_G1G3ARC_CHECK.VAL CPP")
+#    field(INPB, "NB1_P2RDY_FILABIAS_CHECK.VAL CPP")
+#	field(INPC, "NB1_P2RDY_MOD_CHECK.VAL CPP")
+#	field(INPD, "NB1_P2RDY_TIMING_CHECK.VAL CPP")
+#	field(OUT,	"NB1_PS2_RTN_OK.VAL NMP PP")
+#}
+
+record(calc, "NB1_P1ARC_ECMD_POW_C1")
+{
+    field(DESC, "P1ARC VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=60?17:B=70?22:B=80?28:0")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL")
+    field(INPB, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+#	field(INPC,	"NB1_P1ARC_ECMD_POW.VAL")
+}
+record(calc, "NB1_P1ARC_ECMD_POW_C2")
+{
+    field(DESC, "P1ARC VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=90?35:B=95?36:0")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL")
+    field(INPB, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+#	field(INPC,	"NB1_P1ARC_ECMD_POW.VAL")
+}
+record(calcout,	"NB1_P1ARC_ECMD_POW_OUT")
+{
+	field(DESC,	"P1ARC VOLT OUT")
+	field(SCAN,	"Passive")
+	field(CALC, "A&&(B>0)?B:A&&(C>0)?C:E")
+	#field(CALC,"A&&(B!=0)?B:A&&(C!=0)?C:E")
+	#field(CALC,	"A&&(B!=0)?B:E")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_P1ARC_ECMD_POW_C1.VAL CPP")
+	field(INPC,	"NB1_P1ARC_ECMD_POW_C2.VAL CPP")
+	field(INPD,	"NB1_P1G1_ECMD_VOLT.VAL")
+	field(INPE,	"NB1_P1ARC_ECMD_POW.VAL")
+	field(OUT,	"NB1_P1ARC_ECMD_POW.VAL NMP PP")
+}
+record(calcout, "NB1_P1FIL_ECMD_TVCMD_C")
+{
+    field(DESC, "P1FIL TVCMD OUT")
+    field(SCAN, "Passive")
+    field(CALC, "(A?12:B)")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_P1FIL_ECMD_TVCMD.VAL")
+    field(OUT,  "NB1_P1FIL_ECMD_TVCMD.VAL NMP PP")
+}
+record(calc,	"NB1_MFC_ION_SET_CALC_C1")
+{
+	field(DESC,	"P1GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=60?300:A=70?350:A=80?400:B")
+	field(INPA,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPB,	"NB1_MFC_ION_SET.VAL")
+}
+record(calc,	"NB1_MFC_ION_SET_CALC_C2")
+{
+	field(DESC,	"P1GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=90?450:A=95?480:B")
+	field(INPA,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPB,	"NB1_MFC_ION_SET.VAL")
+}
+record(calcout,	"NB1_MFC_ION_SET_OUT")
+{
+	field(DESC,	"P1GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A&&(D<90)?B:A&&(D>=90)?C:E")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_MFC_ION_SET_CALC_C1.VAL CPP")
+	field(INPC,	"NB1_MFC_ION_SET_CALC_C2.VAL CPP")
+	field(INPD,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPE,	"NB1_MFC_ION_SET.VAL")
+	field(OUT,	"NB1_MFC_ION_SET.VAL NMP PP")
+}
+record(calc,	"NB1_MFC_NEU_SET_CALC_C1")
+{
+	field(DESC,	"P1GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=60?250:A=70?250:A=80?300:B")
+	field(INPA,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU_SET.VAL")
+}
+record(calc,	"NB1_MFC_NEU_SET_CALC_C2")
+{
+	field(DESC,	"P1GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=90?390:A=95?550:B")
+	field(INPA,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU_SET.VAL")
+}
+record(calcout,	"NB1_MFC_NEU_SET_OUT")
+{
+	field(DESC,	"P1GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A&&(D<90)?B:A&&(D>=90)?C:E")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU_SET_CALC_C1.VAL CPP")
+	field(INPC,	"NB1_MFC_NEU_SET_CALC_C2.VAL CPP")
+	field(INPD,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPE,	"NB1_MFC_NEU_SET.VAL")
+	field(OUT,	"NB1_MFC_NEU_SET.VAL NMP PP")
+}
+###################################################3
+record(calc, "NB1_P2ARC_ECMD_POW_C1")
+{
+    field(DESC, "P2ARC VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=60?12:B=70?15:B=80?19.5:C")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL")
+    field(INPB, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPC,	"NB1_P2ARC_ECMD_PCMD.VAL")
+}
+record(calc, "NB1_P2ARC_ECMD_POW_C2")
+{
+    field(DESC, "P2ARC VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=90?24:B=95?24:C")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL")
+    field(INPB, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPC,	"NB1_P2ARC_ECMD_PCMD.VAL")
+}
+record(calcout, "NB1_P2ARC_ECMD_POW_OUT")
+{
+    field(DESC, "P2ARC VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "A&&(D<90)?B:A&&(D>=90)?C:E")
+    field(INPA, "NB1_OPER2_BEAM_MODE.VAL CPP")
+    field(INPB, "NB1_P2ARC_ECMD_POW_C1.VAL CPP")
+    field(INPC, "NB1_P2ARC_ECMD_POW_C2.VAL CPP")
+    field(INPD, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPE,	"NB1_P2ARC_ECMD_PCMD.VAL")
+    field(OUT,  "NB1_P2ARC_ECMD_PCMD.VAL NMP PP")
+}
+
+record(calcout, "NB1_P2FILA_ECMD_TVCMD_C")
+{
+    field(DESC, "P2FIL TVCMD OUT")
+    field(SCAN, "Passive")
+    field(CALC, "(A?11.5:B)")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_P2FILA_ECMD_TVCMD.VAL")
+    field(OUT,  "NB1_P2FILA_ECMD_TVCMD.VAL NMP PP")
+}
+record(calc,	"NB1_MFC_ION2_SET_CALC_C1")
+{
+	field(DESC,	"P2GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=60?350:A=70?430:A=80?440:B")
+	field(INPA,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPB,	"NB1_MFC_ION2_SET.VAL")
+}
+record(calc,	"NB1_MFC_ION2_SET_CALC_C2")
+{
+	field(DESC,	"P2GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=90?470:A=95?550:B")
+	field(INPA,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPB,	"NB1_MFC_ION2_SET.VAL")
+}
+record(calcout,	"NB1_MFC_ION2_SET_OUT")
+{
+	field(DESC,	"P2GAS IS OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A&&(D<90)?B:A&&(D>=90)?C:E")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_MFC_ION2_SET_CALC_C1.VAL CPP")
+	field(INPC,	"NB1_MFC_ION2_SET_CALC_C2.VAL CPP")
+	field(INPD,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPE,	"NB1_MFC_ION2_SET.VAL")
+	field(OUT,	"NB1_MFC_ION2_SET.VAL NMP PP")
+}
+record(calc,	"NB1_MFC_NEU2_SET_CALC_C1")
+{
+	field(DESC,	"P2GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=60?250:A=70?250:A=80?300:B")
+	field(INPA,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU2_SET.VAL")
+}
+record(calc,	"NB1_MFC_NEU2_SET_CALC_C2")
+{
+	field(DESC,	"P2GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A=90?390:A=95?550:B")
+	field(INPA,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU2_SET.VAL")
+}
+
+record(calcout,	"NB1_MFC_NEU2_SET_OUT")
+{
+	field(DESC,	"P2GAS NEU OUT")
+	field(SCAN,	"Passive")
+	field(CALC,	"A&&(D<90)?B:A&&(D>=90)?C:E")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_MFC_NEU2_SET_CALC_C1.VAL CPP")
+	field(INPC,	"NB1_MFC_NEU2_SET_CALC_C2.VAL CPP")
+	field(INPD,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPE,	"NB1_MFC_NEU2_SET.VAL")
+	field(OUT,	"NB1_MFC_NEU2_SET.VAL NMP PP")
+}
+
+
+record(calc, "NB1_BM1_SET_IOUT_AO_C1")
+{
+    field(DESC, "P1BENDING VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=60?344:B=70?372:B=80?398:C")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL")
+    field(INPB, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPC,	"NB1_BM1_SET_IOUT_AO.VAL")
+}
+record(calc, "NB1_BM1_SET_IOUT_AO_C2")
+{
+    field(DESC, "P1BENDING VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=90?423:B=95?434:C")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL")
+    field(INPB, "NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(INPC,	"NB1_BM1_SET_IOUT_AO.VAL")
+}
+
+record(calcout,	"NB1_BM1_SET_IOUT_AO_OUT")
+{
+	field(DESC,	"BM1SET IOUT")
+	field(SCAN,	"Passive")
+	field(CALC, "A&&(E<90)?B:A&&(E>=90)?C:D")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_BM1_SET_IOUT_AO_C1.VAL CPP")
+	field(INPC,	"NB1_BM1_SET_IOUT_AO_C2.VAL CPP")
+	field(INPD,	"NB1_BM1_SET_IOUT_AO.VAL")
+	field(INPE,	"NB1_P1G1_ECMD_VOLT.VAL CPP")
+	field(OUT,	"NB1_BM1_SET_IOUT_AO.VAL NMP PP")
+}
+record(calc, "NB1_BM2_SET_IOUT_AO_C1")
+{
+    field(DESC, "P2BENDING VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=60?344:B=70?372:B=80?398:C")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL")
+    field(INPB, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPC,	"NB1_BM2_SET_IOUT_AO.VAL")
+}
+record(calc, "NB1_BM2_SET_IOUT_AO_C2")
+{
+    field(DESC, "P2BENDING VOLT OUT")
+    field(SCAN, "Passive")
+    field(CALC, "B=90?423:B=95?434:C")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL")
+    field(INPB, "NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPC,	"NB1_BM2_SET_IOUT_AO.VAL")
+}
+record(calcout,	"NB1_BM2_SET_IOUT_AO_OUT")
+{
+	field(DESC,	"BM2SET IOUT")
+	field(SCAN,	"Passive")
+	field(CALC, "A&&(D<90)?B:A&&(D>=90)?C:E")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_BM2_SET_IOUT_AO_C1.VAL CPP")
+	field(INPC,	"NB1_BM2_SET_IOUT_AO_C2.VAL CPP")
+	field(INPD,	"NB1_P2G1_ECMD_VCMD.VAL CPP")
+	field(INPE,	"NB1_BM2_SET_IOUT_AO.VAL")
+	field(OUT,	"NB1_BM2_SET_IOUT_AO.VAL NMP PP")
+}
+
+record(calcout, "NB1_BM1_SET_VOUT_AO_C")
+{
+    field(DESC, "P1BENDING TVCMD OUT")
+    field(SCAN, "Passive")
+    field(CALC, "(A?20:B)")
+	field(INPA,	"NB1_OPER1_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_BM1_SET_VOUT_AO.VAL")
+    field(OUT,  "NB1_BM1_SET_VOUT_AO.VAL NMP PP")
+}
+record(calcout, "NB1_BM2_SET_VOUT_AO_C")
+{
+    field(DESC, "P2BENDING TVCMD OUT")
+    field(SCAN, "Passive")
+    field(CALC, "(A?20:B)")
+	field(INPA,	"NB1_OPER2_BEAM_MODE.VAL CPP")
+	field(INPB,	"NB1_BM2_SET_VOUT_AO.VAL")
+    field(OUT,  "NB1_BM2_SET_VOUT_AO.VAL NMP PP")
+}

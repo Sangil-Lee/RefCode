@@ -1,0 +1,19 @@
+#record(ao, "ECH_AO_PATTERN_POWER_$(PV_NAME)") {
+#  field(DESC, "$(DSR)")
+#  field(DTYP, "NIDAQmx AoControl")
+#  field(OUT, "@$(STR) $(TASK) $(CH) $(POS)")
+#  field(EGU, "kV")
+#  field(PINI, "YES")
+#  field(VAL, "$(VL)")
+#  field(FLNK, "ECH_AO_PATTERN_POWER_$(PV_NAME)_TOVAL")
+#}
+record(calcout, "ECH_AO_PATTERN_FWD_CH2_$(PV_NAME)") {
+  field(DESC, "$(DSR)")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_POWER_CH0_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_TIME_CH0_$(PV_TIME) CPP")
+  field(CALC, "(B>0)&&(A>0)?5:0")
+#  field(DOPT, "Use CALC")
+  field(OUT, "ECH_AO_PATTERN_VALUE_CH2_$(PV_NAME) PP")
+}

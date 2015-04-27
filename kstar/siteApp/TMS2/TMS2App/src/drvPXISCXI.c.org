@@ -1,0 +1,392 @@
+#define DEBUG
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <NIDAQmx.h>
+#define DAQmxErrChk(functionCall) if( DAQmxFailed(error=(functionCall)) ) goto Error; else
+
+#include <epicsMutex.h>
+#include <epicsThread.h>
+#include <ellLib.h>
+#include <callback.h>
+#include <iocsh.h>
+#include <taskwd.h>
+
+#include <drvSup.h>
+#include <devSup.h>
+#include <devLib.h>
+#include <dbScan.h>
+
+#include <epicsExport.h>
+
+
+#include "drvPXISCXI.h"
+
+
+LOCAL drvPXISCXIConfig		*pdrvPXISCXIConfig = NULL;
+
+static int make_drvConfig(void);
+static drvPXISCXI_cernoxTaskConfig* make_cernoxTaskConfig(char* taskName);
+static int make_cernoxChannel(char *fileName, drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig);
+static void start_cernoxTask(drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig);
+static void print_cernoxTask(drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig, int level);
+static int32 CVICALLBACK cernoxTaskCallback(TaskHandle taskHandle, int32 everyNsampleEventType, uInt32 nSamples, void *callbackData);
+
+
+LOCAL long drvPXISCXI_io_report(int level);
+LOCAL long drvPXISCXI_init_driver(void);
+
+struct {
+	long 		number;
+	DRVSUPFUN 	report;
+	DRVSUPFUN	init;
+} drvPXISCXI = {
+	2,
+	drvPXISCXI_io_report,
+	drvPXISCXI_init_driver
+};
+
+epicsExportAddress(drvet, drvPXISCXI);
+
+
+static void createCernoxTaskCallFunction(const iocshArgBuf *args);
+
+
+static const iocshArg destroyCernoxTaskArg0 = {"task name", iocshArgString};
+static const iocshArg createCernoxTaskArg0 = {"task name", iocshArgString};
+static const iocshArg createCernoxTaskArg1 = {"file name of channel list", iocshArgString};
+static const iocshArg* const createCernoxTaskArgs[] = { &createCernoxTaskArg0,
+                                                        &createCernoxTaskArg1 };
+static const iocshFuncDef createCernoxTaskFuncDef = {"createCernoxTask",
+	                                             2,
+						     createCernoxTaskArgs};
+
+static void epicsShareAPI drvPXISCXIRegistrar(void)
+{
+    static int firstTime =1;
+
+    if(firstTime) {
+        firstTime = 0;
+        iocshRegister(&createCernoxTaskFuncDef, createCernoxTaskCallFunction);
+    }
+}
+
+epicsExportRegistrar(drvPXISCXIRegistrar);
+
+
+
+static int  make_drvConfig (void)
+{
+	if(pdrvPXISCXIConfig) return 0;
+
+	pdrvPXISCXIConfig                  = (drvPXISCXIConfig*) malloc(sizeof(drvPXISCXIConfig));
+	if(!pdrvPXISCXIConfig) return 1;
+
+	pdrvPXISCXIConfig->pcernoxTaskList = (ELLLIST*) malloc(sizeof(ELLLIST));
+
+	if(!(pdrvPXISCXIConfig->pcernoxTaskList)) return 1;
+	else ellInit(pdrvPXISCXIConfig->pcernoxTaskList);
+
+	return 0;
+}
+
+static drvPXISCXI_cernoxTaskConfig* make_cernoxTaskConfig(char *taskName)
+{
+	int32       error=0;
+        char        errBuff[2048]={'\0'};
+
+	drvPXISCXI_cernoxTaskConfig  *pcernoxTaskConfig = NULL;
+
+	if(make_drvConfig()) return pcernoxTaskConfig;
+
+	pcernoxTaskConfig = (drvPXISCXI_cernoxTaskConfig*)malloc(sizeof(drvPXISCXI_cernoxTaskConfig));
+	if(!pcernoxTaskConfig) return pcernoxTaskConfig;
+
+	strcpy(pcernoxTaskConfig->taskName, taskName);
+	pcernoxTaskConfig->taskLock = epicsMutexCreate();
+	pcernoxTaskConfig->bufferLock = epicsMutexCreate();
+	scanIoInit(&pcernoxTaskConfig->ioScanPvt);
+	
+	pcernoxTaskConfig->cutoffFreq = INIT_CUTOFF_CERNOX;
+	pcernoxTaskConfig->gain       = INIT_GAIN_CERNOX;
+	pcernoxTaskConfig->samplingRate = INIT_SAMPLING_CERNOX;
+	pcernoxTaskConfig->minRange    = INIT_MINRANGE_CERNOX;
+	pcernoxTaskConfig->maxRange    = INIT_MAXRANGE_CERNOX;
+	pcernoxTaskConfig->excitationCurrent = INIT_EXCITATIONCURR_CERNOX;
+
+	pcernoxTaskConfig->cviCallback = NULL;
+
+	pcernoxTaskConfig->numChan     = 0;
+
+	pcernoxTaskConfig->pcernoxChannelList = (ELLLIST*) malloc(sizeof(ELLLIST));
+	if(!pcernoxTaskConfig->pcernoxChannelList) return NULL;
+	else ellInit(pcernoxTaskConfig->pcernoxChannelList);
+
+	pcernoxTaskConfig->pcernoxDataPoolList = (ELLLIST*) malloc(sizeof(ELLLIST));
+	if(!pcernoxTaskConfig->pcernoxDataPoolList) return NULL;
+	else ellInit(pcernoxTaskConfig->pcernoxDataPoolList);
+
+	DAQmxErrChk(DAQmxCreateTask(pcernoxTaskConfig->taskName,&(pcernoxTaskConfig->taskHandle)));
+
+	return pcernoxTaskConfig;
+
+Error:
+        if( DAQmxFailed(error) )
+                DAQmxGetExtendedErrorInfo(errBuff,2048);
+
+        if( pcernoxTaskConfig->taskHandle!=0 ) {
+               DAQmxStopTask(pcernoxTaskConfig->taskHandle);
+               DAQmxClearTask(pcernoxTaskConfig->taskHandle);
+	}
+        if( DAQmxFailed(error) )
+               epicsPrintf("DAQmx Error: %s\n",errBuff);
+
+	return NULL;
+}
+
+static int make_cernoxChannel(char *fileName, drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig)
+{
+	FILE *file;
+	char buff[2048];
+	int i = 0;
+	
+	drvPXISCXI_cernoxChannelConfig  *pcernoxChannelConfig;
+	drvPXISCXI_cernoxDataPoolConfig *pcernoxDataPoolConfig;
+	double                          *data;
+
+	file = fopen(fileName,"r");
+	if(!file) return 1;
+	
+	while(fscanf(file, "%s", buff) != EOF) {
+		pcernoxChannelConfig 
+			= (drvPXISCXI_cernoxChannelConfig*) malloc(sizeof(drvPXISCXI_cernoxChannelConfig));
+		if(!pcernoxChannelConfig) return 1;
+
+		pcernoxChannelConfig->pcernoxTaskConfig = pcernoxTaskConfig;
+	        pcernoxChannelConfig->chanIndex = i++;
+		strcpy(pcernoxChannelConfig->chanName, buff);	
+
+		ellAdd(pcernoxTaskConfig->pcernoxChannelList, &pcernoxChannelConfig->node);
+	}
+
+        pcernoxTaskConfig->numChan = ellCount(pcernoxTaskConfig->pcernoxChannelList);
+        fclose(file);
+
+        pcernoxDataPoolConfig
+		= (drvPXISCXI_cernoxDataPoolConfig*) malloc(sizeof(drvPXISCXI_cernoxDataPoolConfig)* INIT_DATAPOOLSIZE_CERNOX);
+	if(!pcernoxDataPoolConfig) return 1;
+
+	data = (double *) malloc(sizeof(double) * pcernoxTaskConfig->numChan * INIT_DATAPOOLSIZE_CERNOX);
+	if(!data) return 1;
+
+	for(i=0; i< INIT_DATAPOOLSIZE_CERNOX; i++) {
+		(pcernoxDataPoolConfig+i)->node_id = i;
+		(pcernoxDataPoolConfig+i)->data = (double *) (data +(i*pcernoxTaskConfig->numChan));
+		(pcernoxDataPoolConfig+i)->pcernoxTaskConfig = pcernoxTaskConfig;
+		ellAdd(pcernoxTaskConfig->pcernoxDataPoolList, &(pcernoxDataPoolConfig+i)->node);
+	}
+
+
+	return 0;
+}
+
+static void start_cernoxTask(drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig)
+{
+	drvPXISCXI_cernoxChannelConfig *pcernoxChannelConfig;
+	int32	error = 0;
+	char 	errBuff[2048] = { '\0' };
+
+	if(!ellCount(pcernoxTaskConfig->pcernoxChannelList)) return;
+	pcernoxChannelConfig = (drvPXISCXI_cernoxChannelConfig*) ellFirst(pcernoxTaskConfig->pcernoxChannelList);
+	while(pcernoxChannelConfig) {
+                DAQmxErrChk(DAQmxCreateAIResistanceChan(
+					pcernoxTaskConfig->taskHandle,
+					pcernoxChannelConfig->chanName,
+					NULL,
+					pcernoxTaskConfig->minRange,
+					pcernoxTaskConfig->maxRange,
+					DAQmx_Val_Ohms,
+					DAQmx_Val_2Wire,
+					DAQmx_Val_External,
+					pcernoxTaskConfig->excitationCurrent,
+					NULL));
+					
+		pcernoxChannelConfig = (drvPXISCXI_cernoxChannelConfig*) ellNext(&pcernoxChannelConfig->node);
+	}
+
+
+	DAQmxErrChk(DAQmxCfgSampClkTiming(pcernoxTaskConfig->taskHandle,
+				          NULL,
+					  pcernoxTaskConfig->samplingRate,
+					  DAQmx_Val_Rising,
+					  DAQmx_Val_ContSamps,
+					  pcernoxTaskConfig->numChan));
+
+	DAQmxErrChk(DAQmxRegisterEveryNSamplesEvent(pcernoxTaskConfig->taskHandle,
+				                    DAQmx_Val_Acquired_Into_Buffer,
+						    1,
+						    0,
+						    cernoxTaskCallback,
+						    (void*) pcernoxTaskConfig));
+
+
+
+	DAQmxErrChk(DAQmxSetAILowpassEnable(pcernoxTaskConfig->taskHandle, 
+				            "", 
+					    1));
+	DAQmxErrChk(DAQmxSetAILowpassCutoffFreq(pcernoxTaskConfig->taskHandle, 
+				                "",
+					        pcernoxTaskConfig->cutoffFreq));
+	DAQmxErrChk(DAQmxGetAILowpassCutoffFreq(pcernoxTaskConfig->taskHandle,
+				                "",
+						&pcernoxTaskConfig->cutoffFreq));
+	DAQmxErrChk(DAQmxSetAIGain(pcernoxTaskConfig->taskHandle,
+				 "",
+				 pcernoxTaskConfig->gain));
+	DAQmxErrChk(DAQmxGetAIGain(pcernoxTaskConfig->taskHandle,
+				 "",
+				 &pcernoxTaskConfig->gain));
+
+	DAQmxErrChk(DAQmxStartTask(pcernoxTaskConfig->taskHandle));
+
+
+	return;
+
+
+Error:
+        if( DAQmxFailed(error) )
+                DAQmxGetExtendedErrorInfo(errBuff,2048);
+
+        if( pcernoxTaskConfig->taskHandle!=0 ) {
+               DAQmxStopTask(pcernoxTaskConfig->taskHandle);
+               DAQmxClearTask(pcernoxTaskConfig->taskHandle);
+        }
+        if( DAQmxFailed(error) )
+               epicsPrintf("DAQmx Error: %s\n",errBuff);
+
+}
+
+static void print_cernoxTask(drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig, int level)
+{
+	epicsPrintf("\tCernox Task name: %s\n", pcernoxTaskConfig->taskName);
+	epicsPrintf("\ttask handle: 0x%x	\tconnected channels: %d\n",
+			(unsigned) pcernoxTaskConfig->taskHandle, pcernoxTaskConfig->numChan);
+	if(level < 1 ) return;
+
+
+	return;
+}
+
+static int32 CVICALLBACK cernoxTaskCallback(TaskHandle taskHandle, int32 everyNsampleEventType, uInt32 nSamples, void *callbackData)
+{
+
+	drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig = callbackData;
+	drvPXISCXI_cernoxDataPoolConfig *pcernoxDataPoolConfig;
+
+	int32 error = 0;
+	char errBuff[2048] = { '\0' };
+
+	epicsMutexLock(pcernoxTaskConfig->bufferLock);
+	pcernoxDataPoolConfig = (drvPXISCXI_cernoxDataPoolConfig*) ellFirst(pcernoxTaskConfig->pcernoxDataPoolList);
+	ellDelete(pcernoxTaskConfig->pcernoxDataPoolList, &pcernoxDataPoolConfig->node);
+	epicsMutexUnlock(pcernoxTaskConfig->bufferLock);
+
+
+	epicsMutexLock (pcernoxTaskConfig->taskLock);
+        DAQmxErrChk(DAQmxReadAnalogF64(pcernoxTaskConfig->taskHandle,
+				       1,
+				       DAQmx_Val_WaitInfinitely,
+				       DAQmx_Val_GroupByScanNumber,
+				       pcernoxDataPoolConfig->data,
+				       pcernoxTaskConfig->numChan,
+				       &pcernoxDataPoolConfig->readCount,
+				       NULL));
+	epicsMutexUnlock(pcernoxTaskConfig->taskLock);
+
+
+ 	scanIoRequest(pcernoxTaskConfig->ioScanPvt);	
+
+	epicsMutexLock(pcernoxTaskConfig->bufferLock);	
+	ellAdd(pcernoxTaskConfig->pcernoxDataPoolList, &pcernoxDataPoolConfig->node);
+	epicsMutexUnlock(pcernoxTaskConfig->bufferLock);
+
+	return 0;
+
+Error:
+	epicsMutexUnlock(pcernoxTaskConfig->taskLock);
+
+        if( DAQmxFailed(error) )
+       		DAQmxGetExtendedErrorInfo(errBuff,2048);
+        if( pcernoxTaskConfig->taskHandle!=0 ) {
+                DAQmxStopTask(pcernoxTaskConfig->taskHandle);
+                DAQmxClearTask(pcernoxTaskConfig->taskHandle);
+        }
+        if( DAQmxFailed(error) )
+	        epicsPrintf("DAQmx Error: %s\n",errBuff);
+
+	return 0;
+}
+
+
+LOCAL long drvPXISCXI_io_report(int level)
+{
+	drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig;
+
+	epicsPrintf("drvPXISCXI: cernoxTask %d\n", ellCount(pdrvPXISCXIConfig->pcernoxTaskList));
+	if(ellCount(pdrvPXISCXIConfig->pcernoxTaskList)) {
+		pcernoxTaskConfig = (drvPXISCXI_cernoxTaskConfig*)ellFirst(pdrvPXISCXIConfig->pcernoxTaskList);
+		while(pcernoxTaskConfig) {
+			print_cernoxTask(pcernoxTaskConfig, level);
+			pcernoxTaskConfig = (drvPXISCXI_cernoxTaskConfig*) ellNext(&pcernoxTaskConfig->node);
+		}
+	}
+
+	return 0;
+}
+
+LOCAL long drvPXISCXI_init_driver(void)
+{
+	drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig;
+
+	if(!pdrvPXISCXIConfig) return 0;
+
+	if(ellCount(pdrvPXISCXIConfig->pcernoxTaskList)>0) {
+		pcernoxTaskConfig = (drvPXISCXI_cernoxTaskConfig*) ellFirst(pdrvPXISCXIConfig->pcernoxTaskList);
+		while(pcernoxTaskConfig) {
+			epicsMutexLock(pcernoxTaskConfig->taskLock);
+  			start_cernoxTask(pcernoxTaskConfig);
+			epicsMutexUnlock(pcernoxTaskConfig->taskLock);
+
+			pcernoxTaskConfig = (drvPXISCXI_cernoxTaskConfig*) ellNext(&pcernoxTaskConfig->node);
+		}
+
+	}
+
+	return 0;
+}
+
+
+static void createCernoxTaskCallFunction(const iocshArgBuf *args)
+{
+	char task_name[60];
+	char file_name[100];
+
+
+	drvPXISCXI_cernoxTaskConfig *pcernoxTaskConfig = NULL;
+
+
+	if(args[0].sval) strcpy(task_name, args[0].sval);
+	if(args[0].sval) strcpy(file_name, args[1].sval); 
+
+	pcernoxTaskConfig = make_cernoxTaskConfig(task_name);
+	if(!pcernoxTaskConfig) return;
+
+        if(make_cernoxChannel(file_name, pcernoxTaskConfig)) return;
+	
+        ellAdd(pdrvPXISCXIConfig->pcernoxTaskList, &pcernoxTaskConfig->node);
+
+
+	return;
+}

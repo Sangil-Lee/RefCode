@@ -1,0 +1,23 @@
+echo ""
+echo "--------------------------------------"
+echo "caput NB1_LODAQ_OP_MODE 2"
+caput NB1_LODAQ_OP_MODE 2
+
+sleep 1
+echo "caput NB1_LODAQ_AUTO_RUN 1"
+caput NB1_LODAQ_AUTO_RUN 1
+
+while true
+do
+	sleep 1
+	echo "caput NB1_LODAQ_SYS_ARMING 1"
+	caput NB1_LODAQ_SYS_ARMING 1
+
+	sleep 1
+	echo "caput NB1_LODAQ_SYS_RUN 1"
+	caput NB1_LODAQ_SYS_RUN 1
+
+	echo -n "Enter any key to continue next shot!!! : "
+	read val
+done
+

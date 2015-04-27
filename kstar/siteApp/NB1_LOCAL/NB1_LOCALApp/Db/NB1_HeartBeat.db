@@ -1,0 +1,16 @@
+record(bi, "$(PVNAME)")
+{
+    field(DESC, "$(DESC)")
+    field(INP, "$(PVNAME)_TIMER.VAL  NPP NMS")
+    field(OSV, "NO_ALARM")
+    field(ZSV, "MAJOR")
+}
+record(calc, "$(PVNAME)_TIMER")
+{
+    field(DESC, "Calc Timer")
+    field(SCAN, ".5 second")
+    field(FLNK, "$(PVNAME)")
+    field(CALC, "A?0:1")
+    field(INPA, "$(PVNAME)")
+    
+}

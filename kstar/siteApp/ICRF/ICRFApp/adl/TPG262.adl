@@ -1,0 +1,416 @@
+
+file {
+	name="/data1/khkim/local/1-0alpha2/testGpibSerialApp/src/TPG262.adl"
+	version=030003
+}
+display {
+	object {
+		x=340
+		y=31
+		width=500
+		height=150
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=1
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=6
+		y=10
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PORT:"
+}
+text {
+	object {
+		x=50
+		y=10
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(PORT)"
+}
+text {
+	object {
+		x=19
+		y=59
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Gauge 0:"
+}
+text {
+	object {
+		x=113
+		y=10
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Firmware:"
+}
+"text update" {
+	object {
+		x=172
+		y=10
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):firmware:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=100
+		y=45
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Gauge ID"
+}
+text {
+	object {
+		x=200
+		y=45
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+}
+text {
+	object {
+		x=300
+		y=45
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pressure"
+}
+text {
+	object {
+		x=400
+		y=45
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit"
+}
+"text update" {
+	object {
+		x=100
+		y=70
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):gid:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=70
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):gst:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=300
+		y=70
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):prs:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=400
+		y=70
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):unit:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=20
+		y=108
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Gauge 1:"
+}
+text {
+	object {
+		x=101
+		y=94
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Gauge ID"
+}
+text {
+	object {
+		x=201
+		y=94
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+}
+text {
+	object {
+		x=301
+		y=94
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Pressure"
+}
+text {
+	object {
+		x=401
+		y=94
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit"
+}
+"text update" {
+	object {
+		x=101
+		y=119
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):gid:1"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=119
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):gst:1"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=301
+		y=119
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):prs:1"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=401
+		y=119
+		width=99
+		height=20
+	}
+	monitor {
+		chan="$(PORT):unit:0"
+		clr=14
+		bclr=4
+	}
+	limits {
+	}
+}
+polyline {
+	object {
+		x=4
+		y=87
+		width=496
+		height=0
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(PORT):unit:0"
+	}
+	points {
+		(4,87)
+		(500,87)
+	}
+}
+polyline {
+	object {
+		x=80
+		y=37
+		width=0
+		height=105
+	}
+	"basic attribute" {
+		clr=14
+	}
+	"dynamic attribute" {
+		chan="$(PORT):unit:0"
+	}
+	points {
+		(80,37)
+		(80,142)
+	}
+}

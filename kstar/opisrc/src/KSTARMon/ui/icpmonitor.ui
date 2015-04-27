@@ -1,0 +1,942 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>875</width>
+    <height>822</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle" >
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="CADisplayer" name="caDisplayer1" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>460</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CEN_RD_01</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_2" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>490</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CEN_RD_02</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_3" >
+    <property name="geometry" >
+     <rect>
+      <x>210</x>
+      <y>460</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CEN_RD_03</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_4" >
+    <property name="geometry" >
+     <rect>
+      <x>210</x>
+      <y>490</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CEN_RD_04</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_5" >
+    <property name="geometry" >
+     <rect>
+      <x>210</x>
+      <y>560</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_TC_RD_02</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_7" >
+    <property name="geometry" >
+     <rect>
+      <x>340</x>
+      <y>560</y>
+      <width>74</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="pvname" >
+     <string>ICP_TC_RD_01</string>
+    </property>
+    <property name="unit" >
+     <string>K</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_10" >
+    <property name="geometry" >
+     <rect>
+      <x>400</x>
+      <y>330</y>
+      <width>100</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_PRS_RET_AI</string>
+    </property>
+    <property name="unit" >
+     <string>bar</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_11" >
+    <property name="geometry" >
+     <rect>
+      <x>690</x>
+      <y>310</y>
+      <width>100</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_PRS_DEW_AI</string>
+    </property>
+    <property name="unit" >
+     <string>bar</string>
+    </property>
+   </widget>
+   <widget class="CALineEdit" name="caLineEdit" >
+    <property name="geometry" >
+     <rect>
+      <x>750</x>
+      <y>380</y>
+      <width>50</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CALineEdit::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CV_CMD_AO</string>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton" >
+    <property name="geometry" >
+     <rect>
+      <x>540</x>
+      <y>370</y>
+      <width>49</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_VAL_CMD_OPEN</string>
+    </property>
+    <property name="truelabel" >
+     <string>OPEN</string>
+    </property>
+    <property name="falselabel" >
+     <string>OPEN</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CAPushButton" name="caPushButton_2" >
+    <property name="geometry" >
+     <rect>
+      <x>540</x>
+      <y>390</y>
+      <width>49</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="buttonType" >
+     <enum>CAPushButton::PulseButton</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_VAL_CMD_CLOSE</string>
+    </property>
+    <property name="truelabel" >
+     <string>CLOSE</string>
+    </property>
+    <property name="falselabel" >
+     <string>CLOSE</string>
+    </property>
+    <property name="selColor" >
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_12" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>380</y>
+      <width>130</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Pressure</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_PRS_VAC_AI</string>
+    </property>
+    <property name="unit" >
+     <string>mbar</string>
+    </property>
+   </widget>
+   <widget class="StaticGraphic" name="staticGraphic" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>100</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox" >
+    <property name="geometry" >
+     <rect>
+      <x>375</x>
+      <y>150</y>
+      <width>180</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title" >
+     <string>Bend Heater</string>
+    </property>
+    <widget class="CAPushButton" name="caPushButton_3" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT_CMD_ON</string>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>RUN</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel" >
+     <property name="geometry" >
+      <rect>
+       <x>23</x>
+       <y>20</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT_ST_BI</string>
+     </property>
+     <property name="cmode" stdset="0" >
+      <enum>CALabel::Alarm</enum>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="caPushButton_4" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT_CMD_OFF</string>
+     </property>
+     <property name="truelabel" >
+      <string>STOP</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="caDisplayer1_6" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>74</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>ICP_TC_RD_03</string>
+     </property>
+     <property name="unit" >
+      <string>℃</string>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel_3" >
+     <property name="geometry" >
+      <rect>
+       <x>103</x>
+       <y>20</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT_ALM_BI</string>
+     </property>
+     <property name="cmode" stdset="0" >
+      <enum>CALabel::Alarm</enum>
+     </property>
+     <property name="truelabel" >
+      <string>Alarm</string>
+     </property>
+     <property name="falselabel" >
+      <string>OK</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="caPushButton_5" >
+     <property name="geometry" >
+      <rect>
+       <x>100</x>
+       <y>40</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT_CMD_RESET</string>
+     </property>
+     <property name="truelabel" >
+      <string>RESET</string>
+     </property>
+     <property name="falselabel" >
+      <string>RESET</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2" >
+    <property name="geometry" >
+     <rect>
+      <x>565</x>
+      <y>150</y>
+      <width>110</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title" >
+     <string>Heater</string>
+    </property>
+    <widget class="CAPushButton" name="caPushButton_6" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT2_CMD_ON</string>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>RUN</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel_2" >
+     <property name="geometry" >
+      <rect>
+       <x>24</x>
+       <y>20</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT2_ST_BI</string>
+     </property>
+     <property name="cmode" stdset="0" >
+      <enum>CALabel::Alarm</enum>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="caPushButton_7" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_HEAT2_CMD_OFF</string>
+     </property>
+     <property name="truelabel" >
+      <string>STOP</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CADisplayer" name="caDisplayer1_8" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>74</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="pvname" >
+      <string>ICP_TC_RD_04</string>
+     </property>
+     <property name="unit" >
+      <string>℃</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3" >
+    <property name="geometry" >
+     <rect>
+      <x>685</x>
+      <y>150</y>
+      <width>180</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="title" >
+     <string>Blower</string>
+    </property>
+    <widget class="CAPushButton" name="caPushButton_8" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_PAN_CMD_RUN</string>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>RUN</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel_4" >
+     <property name="geometry" >
+      <rect>
+       <x>24</x>
+       <y>20</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="pvname" >
+      <string>ICP_PAN_ST_BI</string>
+     </property>
+     <property name="cmode" stdset="0" >
+      <enum>CALabel::Alarm</enum>
+     </property>
+     <property name="truelabel" >
+      <string>RUN</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="caPushButton_9" >
+     <property name="geometry" >
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_PAN_CMD_STOP</string>
+     </property>
+     <property name="truelabel" >
+      <string>STOP</string>
+     </property>
+     <property name="falselabel" >
+      <string>STOP</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+    <widget class="CALabel" name="caLabel_5" >
+     <property name="geometry" >
+      <rect>
+       <x>105</x>
+       <y>20</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font" >
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="pvname" >
+      <string>ICP_PAN_ALM_BI</string>
+     </property>
+     <property name="cmode" stdset="0" >
+      <enum>CALabel::Alarm</enum>
+     </property>
+     <property name="truelabel" >
+      <string>Alarm</string>
+     </property>
+     <property name="falselabel" >
+      <string>OK</string>
+     </property>
+    </widget>
+    <widget class="CAPushButton" name="caPushButton_10" >
+     <property name="geometry" >
+      <rect>
+       <x>100</x>
+       <y>40</y>
+       <width>70</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="buttonType" >
+      <enum>CAPushButton::PulseButton</enum>
+     </property>
+     <property name="pvname" >
+      <string>ICP_PAN_CMD_RESET</string>
+     </property>
+     <property name="truelabel" >
+      <string>RESET</string>
+     </property>
+     <property name="falselabel" >
+      <string>RESET</string>
+     </property>
+     <property name="selColor" >
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </widget>
+   </widget>
+   <widget class="StaticGraphic" name="staticGraphic_2" >
+    <property name="geometry" >
+     <rect>
+      <x>474</x>
+      <y>366</y>
+      <width>60</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillMode" >
+     <enum>StaticGraphic::Solid</enum>
+    </property>
+    <property name="fillColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="lineColor" stdset="0" >
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic" >
+    <property name="geometry" >
+     <rect>
+      <x>479</x>
+      <y>366</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="geometryType" >
+     <enum>StaticGraphic::HPValve</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_VAL_ST_BI</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_13" >
+    <property name="geometry" >
+     <rect>
+      <x>750</x>
+      <y>405</y>
+      <width>50</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::Integer</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_CV_CMD_AO</string>
+    </property>
+   </widget>
+   <widget class="CADisplayer" name="caDisplayer1_9" >
+    <property name="geometry" >
+     <rect>
+      <x>400</x>
+      <y>300</y>
+      <width>100</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="nuformat" stdset="0" >
+     <enum>CADisplayer::RealTwo</enum>
+    </property>
+    <property name="pvname" >
+     <string>ICP_PRS_SUP_AI</string>
+    </property>
+    <property name="unit" >
+     <string>bar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>875</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAPushButton</class>
+   <extends>QPushButton</extends>
+   <header>caPushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>StaticGraphic</class>
+   <extends>QWidget</extends>
+   <header>staticGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../icp.qrc" />
+ </resources>
+ <connections/>
+</ui>

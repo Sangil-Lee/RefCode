@@ -1,0 +1,41 @@
+record(calc, "$(P)_P_TOTAL_C")
+{
+    field(DESC, "P TOTAL")
+    field(SCAN, "1 second")
+    field(CALC, "ABS(A)+ABS(B)")
+    field(INPA, "$(P)_DUMMY1_PW.VAL NPP NMS")
+    field(INPB, "$(P)_DUMMY2_PW.VAL NPP NMS")
+}
+record(calcout, "$(P)_SEQ_START_C1")
+{
+    field(DESC, "SEQ START")
+	field(SCAN, "Passive")
+	field(CALC, "(A==1)&&(B==1)?1:0")
+	field(INPA, "CCS_SHOTSEQ_START.VAL CPP")
+	field(INPB, "LH1_MODE_KSTAR.VAL CPP")
+	field(OUT, "LH1_DAQ_CMD_START.VAL NMP PP")
+}
+record(calcout, "$(P)_SEQ_START_C2")
+{
+    field(DESC, "SEQ START")
+	field(SCAN, "Passive")
+	field(CALC, "(A==1)&&(B==1)?1:0")
+	field(INPA, "CCS_SHOTSEQ_START.VAL CPP")
+	field(INPB, "LH1_MODE_KSTAR.VAL CPP")
+	field(OUT, "LH1_RFK_READY_CMD.VAL NMP PP")
+}
+record(calcout, "$(P)_SEQ_START_C3")
+{
+    field(DESC, "SEQ START")
+	field(SCAN, "Passive")
+	field(CALC, "(A==1)&&(B==1)?1:0")
+	field(INPA, "CCS_SHOTSEQ_START.VAL CPP")
+	field(INPB, "LH1_MODE_KSTAR.VAL CPP")
+	field(OUT, "LH1_RFANT_DAQ_READY.VAL NMP PP")
+}
+record(mbbiDirect, "$(P)_RFCTRL_FAULT_MBBI")
+{
+	field(DESC, "Fault code")
+	field(SCAN, "Passive")
+	field(INP, "LH1_RFK_ERROR_RTN.VAL CPP")
+}

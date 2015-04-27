@@ -1,0 +1,68 @@
+program sncMCDaqStatus
+option +r;
+option -c;
+%% #include <string.h>
+
+int tempStatus;
+int mcDAQStatus;
+int mcTask1Status;
+int mcTask2Status;
+assign mcDAQStatus to "MC_DAQ_STATUS";
+assign mcTask1Status to "MC_SLOT1_TASK_STATUS_READ";
+assign mcTask2Status to "MC_SLOT2_TASK_STATUS_READ";
+monitor mcDAQStatus;
+monitor mcTask1Status;
+monitor mcTask2Status;
+
+evflag taskStatusFlag;
+sync mcTask1Status taskStatusFlag;
+
+ss mcDAQstatus {
+	state init{
+		when (TRUE){
+			tempStatus = 0;
+		}state mc_daq_status	
+	}
+	state mc_daq_status{
+		when (efTestAndClear(taskStatusFlag)){
+			tempStatus = mcTask1Status;
+               		if (tempStatus == 0){
+				mcDAQStatus = 0;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 1){
+				mcDAQStatus = 1;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 2){
+				mcDAQStatus = 2;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 3){
+				mcDAQStatus = 3;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 4){
+				mcDAQStatus = 4;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 5){
+				mcDAQStatus = 5;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 6){
+				mcDAQStatus = 7;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+               		else if (tempStatus == 7){
+				mcDAQStatus = 7;
+				pvPut(mcDAQStatus,SYNC);
+	           	}
+			else {
+				mcDAQStatus = 7;
+                                pvPut(mcDAQStatus,SYNC);
+			}
+		}state mc_daq_status	
+	}
+}
+

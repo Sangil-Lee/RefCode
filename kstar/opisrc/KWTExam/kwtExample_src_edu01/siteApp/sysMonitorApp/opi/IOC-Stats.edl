@@ -1,0 +1,781 @@
+# MEDM filename = "/home/sns/prod/boot/apps/stats/adl/IOC-Stats.adl"
+# MEDM version = 020502
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 280
+y 68
+w 530
+h 427
+font "helvetica-bold-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 55
+textColor index 0
+ctlFgColor1 index 1
+ctlFgColor2 index 0
+ctlBgColor1 index 1
+ctlBgColor2 index 0
+topShadowColor index 1
+botShadowColor index 11
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 1
+y 45
+w 530
+h 0
+lineColor index 14
+fillColor index 14
+numPoints 2
+xPoints {
+  0 1
+  1 531
+}
+yPoints {
+  0 45
+  1 45
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 5
+h 5
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 52
+w 238
+h 84
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 5
+h 5
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 248
+y 52
+w 276
+h 83
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 5
+h 5
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 141
+w 238
+h 142
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 5
+h 5
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 248
+y 141
+w 276
+h 83
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 2
+w 5
+h 5
+font "helvetica-medium-r-18.0"
+fgColor index 0
+bgColor index 1
+useDisplayBg
+value {
+  "indicator"
+}
+autoSize
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 248
+y 229
+w 276
+h 83
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 248
+y 316
+w 276
+h 35
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 288
+w 238
+h 63
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 6
+y 355
+w 238
+h 63
+lineColor index 6
+fillColor index 6
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 187
+y 77
+w 50
+h 50
+controlPv "$(S)_Ctl:$(I):Load"
+fgColor index 15
+fgAlarm
+bgColor index 9
+fill
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 13
+y 55
+w 180
+h 15
+font "courier-bold-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CPU Load Average (%)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 433
+y 74
+w 85
+h 51
+controlPv "$(S)_Ctl:$(I):CAClnt"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 9
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 256
+y 55
+w 126
+h 15
+font "courier-bold-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CA Clients (#)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 12
+y 209
+w 220
+h 63
+controlPv "$(S)_Ctl:$(I):MemMax"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 9
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 13
+y 144
+w 198
+h 15
+font "courier-bold-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "Largest Free RAM Block"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 435
+y 163
+w 83
+h 51
+controlPv "$(S)_Ctl:$(I):CACnx"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 9
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 256
+y 144
+w 162
+h 15
+font "courier-bold-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "CA Connections (#)"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 437
+y 252
+w 81
+h 51
+controlPv "$(S)_Ctl:$(I):FDAv"
+displayMode "decimal"
+fgColor index 15
+fgAlarm
+bgColor index 9
+fill
+font "helvetica-bold-r-18.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 255
+y 234
+w 144
+h 15
+font "courier-bold-r-14.0"
+fgColor index 10
+bgColor index 9
+useDisplayBg
+value {
+  "Available FDs of"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 409
+y 231
+w 100
+h 19
+controlPv "$(S)_Ctl:$(I):FDMax"
+displayMode "decimal"
+fgColor index 14
+fgAlarm
+bgColor index 55
+fill
+font "helvetica-bold-r-14.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 258
+y 357
+w 251
+h 59
+fgColor index 0
+bgColor index 44
+topShadowColor index 1
+botShadowColor index 11
+font "courier-bold-r-42.0"
+buttonLabel "Reboot"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "IOC-Reboot.edl"
+}
+menuLabel {
+  0 "Control..."
+}
+symbols {
+  0 "S=$(S),I=$(I)"
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 378
+y 321
+w 108
+h 26
+controlPv "$(S)_Ctl:$(I):Access_Cmd"
+fgColor index 15
+fgAlarm
+bgColor index 10
+fill
+font "courier-bold-r-24.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 268
+y 321
+w 108
+h 23
+font "helvetica-bold-r-18.0"
+fgColor index 10
+bgColor index 10
+useDisplayBg
+value {
+  "Security:"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 11
+y 293
+w 108
+h 23
+font "helvetica-bold-r-18.0"
+fgColor index 10
+bgColor index 10
+useDisplayBg
+value {
+  "Time of Day:"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 12
+y 315
+w 226
+h 28
+controlPv "$(S)_Ctl:$(I):Time"
+fgColor index 15
+fgAlarm
+bgColor index 10
+fill
+font "courier-bold-r-24.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 11
+y 360
+w 108
+h 23
+font "helvetica-bold-r-18.0"
+fgColor index 10
+bgColor index 10
+useDisplayBg
+value {
+  "Last Booted:"
+}
+autoSize
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 12
+y 382
+w 226
+h 28
+controlPv "$(S)_Ctl:$(I):BootTime"
+fgColor index 15
+fgAlarm
+bgColor index 10
+fill
+font "courier-bold-r-24.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 300
+h 45
+lineColor index 57
+fill
+fillColor index 57
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 0
+w 294
+h 38
+font "helvetica-bold-r-18.0"
+fgColor index 0
+bgColor index 44
+useDisplayBg
+value {
+  "$(S) IOC $(I)"
+}
+autoSize
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 77
+w 172
+h 49
+indicatorColor index 15
+indicatorAlarm
+fgColor index 112
+bgColor index 6
+indicatorPv "$(S)_Ctl:$(I):Load"
+showScale
+font "courier-bold-r-14.0"
+labelTicks "5"
+majorTicks "0"
+minorTicks "0"
+border
+limitsFromDb
+precision "0"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 12
+y 163
+w 222
+h 38
+indicatorColor index 15
+indicatorAlarm
+fgColor index 112
+bgColor index 6
+indicatorPv "$(S)_Ctl:$(I):MemMax"
+font "courier-bold-r-14.0"
+labelTicks "5"
+majorTicks "0"
+minorTicks "0"
+border
+precision "0"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 253
+y 86
+w 174
+h 28
+indicatorColor index 15
+indicatorAlarm
+fgColor index 112
+bgColor index 6
+indicatorPv "$(S)_Ctl:$(I):CAClnt"
+font "courier-bold-r-14.0"
+labelTicks "5"
+majorTicks "0"
+minorTicks "0"
+border
+limitsFromDb
+precision "0"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 254
+y 176
+w 175
+h 27
+indicatorColor index 15
+indicatorAlarm
+fgColor index 112
+bgColor index 6
+indicatorPv "$(S)_Ctl:$(I):CACnx"
+font "courier-bold-r-14.0"
+labelTicks "5"
+majorTicks "0"
+minorTicks "0"
+border
+limitsFromDb
+precision "0"
+scaleFormat "FFloat"
+endObjectProperties
+
+# (Bar)
+object activeBarClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 253
+y 264
+w 178
+h 28
+indicatorColor index 15
+indicatorAlarm
+fgColor index 112
+bgColor index 6
+indicatorPv "$(S)_Ctl:$(I):FDAv"
+font "courier-bold-r-14.0"
+labelTicks "5"
+majorTicks "0"
+minorTicks "0"
+border
+limitsFromDb
+precision "0"
+scaleFormat "FFloat"
+endObjectProperties
+

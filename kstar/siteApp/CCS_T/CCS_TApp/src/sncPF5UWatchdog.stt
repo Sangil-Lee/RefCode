@@ -1,0 +1,238 @@
+program sncPF5UWatchdog
+
+option +r;
+option -c;
+
+%{
+
+/* RFM Memory Map for MPS command area */
+
+#include "rfmAddrMap.h"
+
+typedef struct
+{
+    volatile int       id;
+    volatile int       vpf_measured;   /* scale 1000:32767 */
+    volatile int       ipf_measured;   /* scale 1000:32767 */
+    volatile unsigned int  comm_counter;
+/*    volatile int       control_mode_ack; */
+/*    volatile int       mps_ready; */
+    volatile int       ipf_delta_measured;  /* new 2010.6.23 */
+    volatile int       ipf_wye_measured;  /* new 2010.6.23 */
+    volatile int       ipf_limit_flag;
+/*    volatile int       zero_cross_flag; */
+	volatile int       alpha_delta_measured;  /* scale 1/100 */  /* name changed (alpha_measured) */
+    volatile int       alpha_wye_measured;       /* new 2010.6.23 */
+    volatile int       vqp_measured;   /* scale 1:1 */
+    volatile int       vbris_measured; /* scale 1:1 */
+    volatile int       vpf_delta_measured;   /* new 2010.6.23 */
+    volatile int       vpf_wye_measured;    /* new 2010.6.23 */
+} mps_command;
+
+
+
+/* PowerPC Only */
+#define  EIEIO               __asm__ volatile ("eieio")
+#define  EIEIO_SYNC          __asm__ volatile ("eieio;sync")
+#define  SYNC                __asm__ volatile ("sync")
+
+}%
+
+int            watchdog_status;
+assign         watchdog_status to "CCS_PF5U_RT_VIOLATION";
+
+int            watchdog;
+assign         watchdog to "CCS_WATCHDOG_MPS";
+monitor        watchdog;
+
+evflag         watchdog_event;
+
+float          ipf_measured;
+assign         ipf_measured to "CCS_IPF5U_MEASURED_RAW";
+float          vpf_measured;
+assign         vpf_measured to "CCS_VPF5U_MEASURED_RAW";
+float          alpha_wye_measured;
+assign         alpha_wye_measured to "CCS_APF5U_MEASURED_RAW";
+float          vqp_measured;
+assign         vqp_measured   to "CCS_VQP_PF5U_MEASURED_RAW";
+float          vbris_measured;
+assign         vbris_measured to "CCS_VBRIS_PF5U_MEASURED_RAW";
+
+
+%% static volatile mps_command     *pMPS_command = (mps_command*) (RFM_BASE_ADDR+RFM_ID_PF5U);
+/* %% static epicsTimeStamp           time_stamp1, time_stamp2;  */
+%% static unsigned char            first_flag;
+
+%% static unsigned short errorCnt;
+
+
+unsigned int comm_counter;
+
+
+%{
+static int evaluation (unsigned int comm_counter)
+{
+    int val;
+/*   double  time1, time2; */
+    
+
+/*    epicsTimeGetCurrent(&time_stamp2); */
+
+    EIEIO_SYNC;
+    val = (comm_counter == pMPS_command->comm_counter);
+    EIEIO_SYNC;
+
+    if( val ) 
+    {
+	    errorCnt++;
+	    printf("_PF5U_Watchdog_errorCnt: %d\n", errorCnt);
+	    if( errorCnt < RT_CRASH_CNT ) {
+               val =0;
+	     } 
+    } else {
+       if( errorCnt > 0 )
+       {
+          printf("_PF5U_Watchdog_errorCnt set 0 \n");
+          errorCnt = 0;
+       }
+    }
+    
+/*
+    if(!val) {
+        time1 = (double) time_stamp1.secPastEpoch + (double) time_stamp1.nsec * 1.E-9;
+        time2 = (double) time_stamp2.secPastEpoch + (double) time_stamp2.nsec * 1.E-9;
+        if((time2-time1) < 5.E-3) {
+            val = 0;
+            printf("___PF1_Watchdog_fail___\n");
+        }
+    }
+*/
+
+    return val;
+}
+
+
+
+static int check_run(void)
+{
+
+    static unsigned int counter;
+
+    if(first_flag) {
+        first_flag = 0;
+        errorCnt = 0;
+        EIEIO_SYNC;
+        counter = pMPS_command->comm_counter;
+        EIEIO_SYNC;
+
+/*        printf("check_run()..... first call\n"); */
+    
+        return FALSE;
+    }
+
+    EIEIO_SYNC;
+    if(counter != pMPS_command->comm_counter) {
+	EIEIO_SYNC;
+    	return TRUE;
+    }
+
+    counter = pMPS_command->comm_counter;
+    EIEIO_SYNC;
+
+    return FALSE;
+}
+
+}%
+
+
+ss watchdog_engine
+{
+
+    state stop {
+        when(watchdog) {
+            %% first_flag = 1;
+        } state check_run
+    }
+
+    state check_run {
+        when(!watchdog) {
+        } state stop
+
+        when(check_run()) {
+        } state run
+
+        when(delay(WATCHDOG_INTV)) {   /* 100Hz */
+        } state check_run
+    }
+
+    state run {
+       when(!watchdog) {
+       } state stop
+
+       when(delay(WATCHDOG_INTV)) {   /* 100Hz */
+           efSet(watchdog_event);
+       } state run
+    }  
+}
+
+ss watchdog
+{
+
+    state normal {
+        entry {
+            watchdog_status = RT_NORMAL;
+            pvPut(watchdog_status);
+        }
+
+        when(efTestAndClear(watchdog_event)) {
+        } state evaluate
+    }
+
+    state fail {
+        entry {
+            watchdog_status = RT_ABNORMAL;
+            pvPut(watchdog_status);
+        }
+
+        when(!watchdog) {
+        } state normal
+    }
+
+    state evaluate {
+        when(evaluation(comm_counter)) {
+          printf("PF5U RFM evaluation... failed!\n");
+          %%errorCnt = 0;
+        } state fail
+
+        when(TRUE) {
+            %% EIEIO_SYNC;
+            %% pVar->comm_counter = pMPS_command->comm_counter;
+            %% EIEIO_SYNC;
+/*            %% epicsTimeGetCurrent(&time_stamp1); */
+        } state normal
+    }
+}
+
+
+ss measurement
+{
+    state measure {
+        when(delay(MEASUREMENT_INTV)) {   /* 100Hz */
+            %% EIEIO_SYNC;
+            %% pVar->ipf_measured = (float)(pMPS_command->ipf_measured);
+            %% pVar->vpf_measured = ((float)(pMPS_command->vpf_measured))*(4000./32767.);
+            %% pVar->alpha_wye_measured = ((float)(pMPS_command->alpha_wye_measured))*0.01 ;
+            %% pVar->vqp_measured   = (float)(pMPS_command->vqp_measured);
+            %% pVar->vbris_measured = (float)(pMPS_command->vbris_measured);
+            %% EIEIO_SYNC;
+
+            pvPut(ipf_measured);
+            pvPut(vpf_measured);
+            pvPut(alpha_wye_measured);
+            pvPut(vqp_measured);
+            pvPut(vbris_measured);
+        } state measure
+    }
+
+}
+

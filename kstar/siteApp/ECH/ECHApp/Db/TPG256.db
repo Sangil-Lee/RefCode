@@ -1,0 +1,17 @@
+record(ai,"$(PV_NAME)") {
+       field(DTYP,"TPG256")
+       field(INP,"#$(PORT) A0 @$(NUM1)")
+	   field(SCAN,"2 second")
+}
+record(mbbi,"$(PV_NAME)_STS") {
+       field(DTYP,"TPG256")
+       field(INP,"#$(PORT) A0 @$(NUM2)")
+       field(ZRST,"Data OK")
+       field(ONST,"Underrange")
+       field(TWST,"Overrange")
+       field(THST,"Sensor Error")
+	   field(FRST,"Sensor Off")
+	   field(FVST,"No Sensor")
+	   field(SXST,"ID Error")
+	   field(PINI,"YES")
+}

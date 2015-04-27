@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NBI-1 OP. STATUS</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="CAGraphic" name="caGraphic_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>410</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_BEAMON_OP1_STATUS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-10</y>
+      <width>930</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>55</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>NBI-1 OP. STATUS</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>950</width>
+      <height>530</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/resources.qrc">:/new/prefix1/images/background.png</pixmap>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>340</y>
+      <width>230</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_PS1_STA_HVON</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>170</y>
+      <width>380</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_BEAMON_OP1_STATUS</string>
+    </property>
+    <property name="truelabel">
+     <string>Beam ON</string>
+    </property>
+    <property name="falselabel">
+     <string>Beam OFF</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>350</y>
+      <width>190</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_PS1_STA_HVON</string>
+    </property>
+    <property name="truelabel">
+     <string>HV ON</string>
+    </property>
+    <property name="falselabel">
+     <string>HV OFF</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_3">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>350</y>
+      <width>110</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P1G1_AO_DCLINK</string>
+    </property>
+    <property name="dmode" stdset="0">
+     <enum>CALabel::RealOne</enum>
+    </property>
+    <property name="cmode" stdset="0">
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_4">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>350</y>
+      <width>190</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_PS2_STA_HVON</string>
+    </property>
+    <property name="truelabel">
+     <string>HV ON</string>
+    </property>
+    <property name="falselabel">
+     <string>HV OFF</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_4">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>340</y>
+      <width>230</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_PS2_STA_HVON</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>410</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>50</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>IS 1</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>90</y>
+      <width>410</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>50</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>IS 2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_5">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>350</y>
+      <width>110</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P2G1_STA_VDC</string>
+    </property>
+    <property name="dmode" stdset="0">
+     <enum>CALabel::RealOne</enum>
+    </property>
+    <property name="cmode" stdset="0">
+     <enum>CALabel::Alarm</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>875</x>
+      <y>360</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>kV</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>365</x>
+      <y>360</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string>kV</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_6">
+    <property name="geometry">
+     <rect>
+      <x>535</x>
+      <y>170</y>
+      <width>380</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_BEAMON_OP2_STATUS</string>
+    </property>
+    <property name="truelabel">
+     <string>Beam ON</string>
+    </property>
+    <property name="falselabel">
+     <string>Beam OFF</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_5">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>160</y>
+      <width>410</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::Blink</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_BEAMON_OP2_STATUS</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>410</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_P1ARC_RTN_RUN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_7">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>267</y>
+      <width>360</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P1ARC_RTN_RUN</string>
+    </property>
+    <property name="truelabel">
+     <string>ARC Dischg.</string>
+    </property>
+    <property name="falselabel">
+     <string>ARC Dischg.</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_8">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>267</y>
+      <width>360</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P2ARC_STA_RUN</string>
+    </property>
+    <property name="truelabel">
+     <string>ARC Dischg.</string>
+    </property>
+    <property name="falselabel">
+     <string>ARC Dischg.</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_7">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>260</y>
+      <width>410</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_P2ARC_STA_RUN</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_9">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>437</y>
+      <width>360</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P2FILA_STA_TRUN</string>
+    </property>
+    <property name="truelabel">
+     <string>Filament</string>
+    </property>
+    <property name="falselabel">
+     <string>Filament</string>
+    </property>
+   </widget>
+   <widget class="CALabel" name="caLabel_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>437</y>
+      <width>360</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="pvname">
+     <string>NB1_P1FIL_RTN_TSTOP</string>
+    </property>
+    <property name="truelabel">
+     <string>Filament</string>
+    </property>
+    <property name="falselabel">
+     <string>Filament</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_8">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>430</y>
+      <width>410</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_P2FILA_STA_TRUN</string>
+    </property>
+   </widget>
+   <widget class="CAGraphic" name="caGraphic_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>410</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="geometryType">
+     <enum>StaticGraphic::Rectangle</enum>
+    </property>
+    <property name="fillColor" stdset="0">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillDisplayMode">
+     <enum>CAGraphic::IfNotZero</enum>
+    </property>
+    <property name="pvname">
+     <string>NB1_P1FIL_RTN_TSTOP</string>
+    </property>
+   </widget>
+   <zorder>label_9</zorder>
+   <zorder>caGraphic_7</zorder>
+   <zorder>caGraphic_5</zorder>
+   <zorder>caGraphic_4</zorder>
+   <zorder>caGraphic_8</zorder>
+   <zorder>caGraphic_6</zorder>
+   <zorder>caGraphic_9</zorder>
+   <zorder>caGraphic_3</zorder>
+   <zorder>caGraphic_2</zorder>
+   <zorder>label</zorder>
+   <zorder>caLabel</zorder>
+   <zorder>caLabel_2</zorder>
+   <zorder>caLabel_3</zorder>
+   <zorder>caLabel_4</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>caLabel_5</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>caLabel_6</zorder>
+   <zorder>caLabel_7</zorder>
+   <zorder>caLabel_8</zorder>
+   <zorder>caLabel_9</zorder>
+   <zorder>caLabel_10</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CALabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAGraphic</class>
+   <extends>StaticGraphic</extends>
+   <header>caGraphic.h</header>
+  </customwidget>
+  <customwidget>
+   <class>StaticGraphic</class>
+   <extends>QWidget</extends>
+   <header>staticGraphic.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

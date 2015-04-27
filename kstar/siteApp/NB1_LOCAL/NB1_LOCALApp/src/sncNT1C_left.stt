@@ -1,0 +1,69 @@
+program sncNT1C_left
+
+float left_l1;
+assign left_l1 to "NB1_NT1C_TTC_L01";
+monitor left_l1;
+
+float left_l2;
+assign left_l2 to "NB1_NT1C_TTC_L02";
+monitor left_l2;
+
+float left_l3;
+assign left_l3 to "NB1_NT1C_TTC_L03";
+monitor left_l3;
+
+float left_l4;
+assign left_l4 to "NB1_NT1C_TTC_L04";
+monitor left_l4;
+
+float left_l5;
+assign left_l5 to "NB1_NT1C_TTC_L05";
+monitor left_l5;
+
+float left_l6;
+assign left_l6 to "NB1_NT1C_TTC_L06";
+monitor left_l6;
+
+float left_l7;
+assign left_l7 to "NB1_NT1C_TTC_L07";
+monitor left_l7;
+
+float left_l8;
+assign left_l8 to "NB1_NT1C_TTC_L08";
+monitor left_l8;
+
+float left_l9;
+assign left_l9 to "NB1_NT1C_TTC_L09";
+monitor left_l9;
+
+float left_max;
+assign left_max to "NB1_NT1C_TTC_LMAX";
+
+ss ss1
+{
+	state low
+	{
+	    when(delay(.5))
+	    {
+                left_max = left_l1;
+                if(left_max < left_l2)
+                    left_max = left_l2;
+                if(left_max < left_l3)
+                    left_max = left_l3;
+                if(left_max < left_l4)
+                    left_max = left_l4;
+                if(left_max < left_l5)
+                    left_max = left_l5;
+                if(left_max < left_l6)
+                    left_max = left_l6;
+                if(left_max < left_l7)
+                    left_max = left_l7;
+                if(left_max < left_l8)
+                    left_max = left_l8;
+                if(left_max < left_l9)
+                    left_max = left_l9;
+
+                pvPut(left_max);
+	    } state low 
+	}
+}

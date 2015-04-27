@@ -1,0 +1,1300 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="windowModality" >
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>674</width>
+    <height>775</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="lbTitle" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>0</y>
+     <width>341</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>21</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Add Fault List</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>631</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>System</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignHCenter</set>
+   </property>
+   <widget class="QSplitter" name="splitter" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>601</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="orientation" >
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QWidget" name="layoutWidget" >
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QLabel" name="label_10" >
+        <property name="font" >
+         <font>
+          <family>Luxi Serif</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Name</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cbSubsystem" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="editable" >
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text" >
+          <string>Select</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>CCS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>CLS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>CLS_HCS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>CLS_VPS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>CWF</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DDS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DDS1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DDS2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>DTV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>ECER</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>ECH</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>FS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>GEP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>HAM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>HDS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>HDS_VPS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>HDS_HCS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>HRS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>ICRH</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>ICS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MD</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MMW_I</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_PF7</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>MPS_TF</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>PCS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>PSI</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>QDS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>RMS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>SIS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>TMS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>TMS_STRT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>TMS_TEMP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>VMS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>VMS_CR</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>VMS_VV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>VSS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text" >
+          <string>ETC</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget" >
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QLabel" name="label_9" >
+        <property name="font" >
+         <font>
+          <family>Luxi Serif</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Compnent</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leCompo" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget" >
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QLabel" name="label_11" >
+        <property name="font" >
+         <font>
+          <family>Luxi Serif</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Function</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leFunc" >
+        <property name="font" >
+         <font>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>631</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>Failure</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignHCenter</set>
+   </property>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_2" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Date:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateTimeEdit" name="dtFDate" >
+       <property name="font" >
+        <font>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="displayFormat" >
+        <string>yyyy-MM-dd hh:mm:ss</string>
+       </property>
+       <property name="calendarPopup" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>115</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_13" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Class</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cbFType" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="editable" >
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text" >
+         <string>Select</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>HW</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>SW</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>HW&amp;SW</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Operator</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Operator&amp;SW</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Sequence</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>E-Sag</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>E-Int</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Utility</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Installation</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>U&amp;C</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Experiment</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Unknown</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Non-Classified</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Secondary</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>ETC</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>106</x>
+      <y>60</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_14" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Name</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leFName" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>212</x>
+      <y>60</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_16" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Cause</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leFCause" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>388</x>
+      <y>60</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_17" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Effects</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leFEffect" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>368</x>
+      <y>20</y>
+      <width>111</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_15" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Severity</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbFSeverity" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="minimum" >
+        <number>1</number>
+       </property>
+       <property name="maximum" >
+        <number>10</number>
+       </property>
+       <property name="value" >
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>280</y>
+     <width>631</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>Recovery</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignHCenter</set>
+   </property>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_8" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Date:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateTimeEdit" name="dtRDate" >
+       <property name="font" >
+        <font>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="displayFormat" >
+        <string>yyyy-MM-dd hh:mm:ss</string>
+       </property>
+       <property name="calendarPopup" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTextEdit" name="teRDesc" >
+    <property name="geometry" >
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>521</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Luxi Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Description:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>351</x>
+      <y>30</y>
+      <width>171</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_18" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Duration:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leRDuration" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>430</y>
+     <width>631</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Luxi Serif</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="title" >
+    <string>Interlock</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignHCenter</set>
+   </property>
+   <widget class="QLabel" name="label_20" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Luxi Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Description:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="teIDesc" >
+    <property name="geometry" >
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>521</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>191</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_12" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Level:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cbILevel" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="editable" >
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text" >
+         <string>Select</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>L1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>L2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>L3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>L4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>WARNNING</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>NONE</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_5" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>580</y>
+     <width>631</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Baekmuk Gulim</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title" >
+    <string>기타</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignHCenter</set>
+   </property>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>181</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_22" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>Ref-Shot:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbRefShotNo" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="maximum" >
+        <number>99999999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_21" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Luxi Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text" >
+     <string>Comment:</string>
+    </property>
+    <property name="alignment" >
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="teComment" >
+    <property name="geometry" >
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>521</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <family>Luxi Serif</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_3" >
+    <property name="geometry" >
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>152</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_23" >
+       <property name="font" >
+        <font>
+         <family>Luxi Serif</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text" >
+        <string>MTBF:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="sbMTBF" >
+       <property name="font" >
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="maximum" >
+        <number>99999999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>414</x>
+     <y>30</y>
+     <width>221</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" >
+    <item>
+     <widget class="QLabel" name="label_6" >
+      <property name="font" >
+       <font>
+        <family>Luxi Serif</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text" >
+       <string>작성자:</string>
+      </property>
+      <property name="alignment" >
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="leWriter" >
+      <property name="font" >
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>340</x>
+     <y>740</y>
+     <width>311</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" >
+    <item>
+     <widget class="QPushButton" name="pbAdd" >
+      <property name="text" >
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbReset" >
+      <property name="text" >
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbClose" >
+      <property name="text" >
+       <string>Close</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

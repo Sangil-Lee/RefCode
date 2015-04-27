@@ -1,0 +1,38 @@
+#assign port and port name
+epicsEnvSet(GP307CTRL0, "${IP_vacVVP_asynServer}:${PORT_GP307_CTRL0}")
+epicsEnvSet(GP307CTRL1, "${IP_vacVVP_asynServer}:${PORT_GP307_CTRL1}")
+
+epicsEnvSet(TPG262CTRL0, "${IP_vacVVP_asynServer}:${PORT_TPG262_CTRL0}")
+epicsEnvSet(TPG262CTRL1, "${IP_vacVVP_asynServer}:${PORT_TPG262_CTRL1}")
+epicsEnvSet(TPG262CTRL2, "${IP_vacVVP_asynServer}:${PORT_TPG262_CTRL2}")
+epicsEnvSet(TPG262CTRL3, "${IP_vacVVP_asynServer}:${PORT_TPG262_CTRL3}")
+epicsEnvSet(TC3213CTRL0, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL0}")
+epicsEnvSet(TC3213CTRL1, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL1}")
+epicsEnvSet(TC3213CTRL2, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL2}")
+epicsEnvSet(TC3213CTRL3, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL3}")
+epicsEnvSet(TC3213CTRL4, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL4}")
+epicsEnvSet(TC3213CTRL5, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL5}")
+epicsEnvSet(TC3213CTRL6, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL6}")
+epicsEnvSet(TC3213CTRL7, "${IP_vacVVP_asynServer}:${PORT_TC3213_CTRL7}")
+epicsEnvSet(U2CTRL,      "${IP_vacVVP_asynServer}:${PORT_U2_CTRL}")
+epicsEnvSet(ROUGHINGCTRL,  "${IP_vacRP_asynServer}:${PORT_ROUGHING_CTRL}")
+epicsEnvSet(BACKINGCTRL,   "${IP_vacRP_asynServer}:${PORT_BACKING_CTRL}")
+
+
+# driver param.
+epicsEnvSet(SCANINITV_GP307, "3.0")
+epicsEnvSet(SCANINITV_TPG262, "2.0")
+
+#########################################
+epicsEnvSet(TEST_SCANINITV_TPG262, "0.2")
+#########################################
+epicsEnvSet(DEVICE_TIMEOUT,   "5.")
+epicsEnvSet(CALLBACK_TIMEOUT, "5.")
+epicsEnvSet(UNIT_TPG262,      "mBar")
+
+#############
+# TEST TPG262
+#############
+epicsEnvSet(TEST_TPG262CTRL0, "${IP_vacTEST_asynServer}:${TEST_PORT_TPG262_CTRL0}")
+epicsEnvSet(TEST_TPG262CTRL1, "${IP_vacTEST_asynServer}:${TEST_PORT_TPG262_CTRL1}")
+epicsEnvSet(TEST_TPG262CTRL2, "${IP_vacTEST_asynServer}:${TEST_PORT_TPG262_CTRL2}")

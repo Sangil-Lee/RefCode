@@ -1,0 +1,11 @@
+
+record(ao, "$(PV_NAME_OUT)") {
+#  field(SCAN, "1 second")
+  field(PINI, "YES")
+  field(DTYP, "EtherIP")
+  field(OUT, "@plc1 $(TAG) S 1")
+  field(DOL, "$(PV_NAME) CPP")
+  field(OMSL, "closed_loop")
+  field(EGU, "K")
+}
+

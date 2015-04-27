@@ -1,0 +1,54 @@
+record(ao, "$(SYS)_FPA_INT_TIME$(PRESET)") {
+  field(DESC, "FPA integration time for preset $(PRESET)")
+  field(DTYP, "IRTV AoControl")
+  field(OUT, "@ao_preset_int_time $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_RATE$(PRESET)") {
+  field(DESC, "Frame rate for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_rate $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_GAIN$(PRESET)") {
+  field(DESC, "Gain for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_gain $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_WIN_X$(PRESET)") {
+  field(DESC, "X offset for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_win_x $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_WIN_Y$(PRESET)") {
+  field(DESC, "Y offset for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_win_y $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_WIN_WIDTH$(PRESET)") {
+  field(DESC, "Width for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_win_width $(PRESET)")
+}
+
+record(ai, "$(SYS)_FPA_WIN_HEIGHT$(PRESET)") {
+  field(DESC, "Height for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV AiRead")
+  field(INP, "@ai_preset_win_height $(PRESET)")
+}
+
+record(stringin, "$(SYS)_FPA_NUC_NAME$(PRESET)") {
+  field(DESC, "NUC name for Preset $(PRESET)")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IRTV SiRead")
+  field(INP, "@si_preset_nuc_name $(PRESET)")
+}

@@ -1,0 +1,108 @@
+program sncSoftLanding
+
+option +r;
+option -c;
+
+%{
+
+#define       SHOTSEQ_STATUS_NOTDEF       0
+#define       SHOTSEQ_STATUS_SETTSS       1
+#define       SHOTSEQ_STATUS_MPSSTANDBY   2
+#define       SHOTSEQ_STATUS_PCSSTANDBY   3
+#define       SHOTSEQ_STATUS_MPSRUN       4
+#define       SHOTSEQ_STATUS_SHOTSTART    5
+#define       SHOTSEQ_STATUS_DURINGSHOT   6
+#define       SHOTSEQ_STATUS_ENDOFSHOT    7
+#define       SHOTSEQ_STATUS_MPSSTOP      8
+#define       SHOTSEQ_STATUS_TERMINATION  9
+
+}%
+
+/*
+int         seq_start;
+assign      seq_start to "CCS_SHOTSEQ_START";
+monitor     seq_start;
+*/
+
+int         seq_st_status_num;
+assign      seq_st_status_num    to "CCS_SHOTSEQ_STAGE";
+monitor     seq_st_status_num;
+
+int     nb1_1_permit;
+assign  nb1_1_permit to "NB11_KSTAR_OPR_PER";
+monitor nb1_1_permit;
+
+int     nb1_2_permit;
+assign  nb1_2_permit to "NB12_KSTAR_OPR_PER";
+monitor nb1_2_permit;
+
+int     nb1_1_ready;
+assign  nb1_1_ready to "NB11_KSTAR_OPR_RDY_LAMP";
+monitor nb1_1_ready;
+
+int     nb1_2_ready;
+assign  nb1_2_ready to "NB12_KSTAR_OPR_RDY_LAMP";
+monitor nb1_2_ready;
+
+
+int     nb1_1_fault;
+assign  nb1_1_fault to "NB1_PLC_PS1_FLT";
+monitor nb1_1_fault;
+
+int     nb1_2_fault;
+assign  nb1_2_fault to "NB1_PLC_PS2_FLT";
+monitor nb1_2_fault;
+
+int     forced_abort;
+assign  forced_abort to "CCS_SET_PCS_FORCE_ABORT";
+monitor forced_abort;
+
+
+%% epicsTimeStamp time_debug;
+%% char buf_debug[32];
+
+ss softLanding_NBI
+{
+    state Normal
+    {
+        when(seq_st_status_num == SHOTSEQ_STATUS_MPSRUN ) { 
+        } state Check_NBI_PERMIT
+    }
+    
+    state Check_NBI_PERMIT
+    {
+    	when( (nb1_1_permit == 1 && nb1_1_ready == 1) && (nb1_2_permit == 1 && nb1_2_ready == 1) ) {} state Check_NBI_ERROR
+
+    	when( seq_st_status_num == SHOTSEQ_STATUS_DURINGSHOT ) {} state Normal
+    }
+
+    state Check_NBI_ERROR
+    {
+    	entry {
+			%%epicsTimeGetCurrent(&time_debug);
+			%%epicsTimeToStrftime(buf_debug, sizeof(buf_debug), "%Y/%m/%d %H:%M:%S", &time_debug);
+			%% printf("Enter error checking for soft-landing. %s\n", buf_debug );
+        }
+        
+	when( (nb1_1_fault == 0) || (nb1_2_fault == 0)  ) { } state Fault
+
+	when( seq_st_status_num == SHOTSEQ_STATUS_TERMINATION ) {} state Normal
+
+    }
+
+    state Fault
+    {
+    	  entry {
+            forced_abort = 1;
+             pvPut(forced_abort);
+             
+             %% printf("NBI error detected!(1:%d, 2:%d)\n", pVar->nb1_1_fault, pVar->nb1_2_fault );
+        }
+
+        when( forced_abort == 0 ) {} state Normal
+    }    
+    
+}
+
+
+

@@ -1,0 +1,27 @@
+record(calc, "$(PV_OPI)") {
+  field(CALC, "A")
+  field(INPA, "$(PV_TEMP) CPP")
+  field(INPB, "$(PV_CALC) CPP MS")
+  field(EGU, "$(UNIT)")
+  field(HIHI, "80")
+  field(HIGH, "70")
+}
+
+record(calc, "$(PV_CALC)") {
+  field(CALC, "B")
+  field(INPA, "CWF_WATER_TEMP CPP")
+  field(INPB, "$(PV_TEMP) CPP")
+  field(HIHI, "80")
+  field(HIGH, "70")
+  field(HHSV, "MAJOR")
+  field(HSV, "MINOR")
+}
+
+record(ai, "$(PV_TEMP)") {
+  field(SCAN, "I/O Intr")
+  field(DTYP, "EtherIP")
+  field(INP, "@$(PLC) $(TAG) S 1")
+  field(DESC, "$(DESC)")
+}
+
+

@@ -1,0 +1,199 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>900</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>1080</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <colorrole role="WindowText" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>50</red>
+        <green>50</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>150</red>
+        <green>150</green>
+        <blue>150</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>50</red>
+        <green>50</green>
+        <blue>50</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>150</red>
+        <green>150</green>
+        <blue>150</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>128</red>
+        <green>128</green>
+        <blue>128</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow" >
+      <brush brushstyle="SolidPattern" >
+       <color alpha="255" >
+        <red>150</red>
+        <green>150</green>
+        <blue>150</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="font" >
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="CALineEdit" name="caLineEdit_63" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>791</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>0</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Sans Serif</family>
+     <pointsize>42</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text" >
+    <string>CCS_SYS_TIME</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading</set>
+   </property>
+   <property name="readOnly" >
+    <bool>true</bool>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CALineEdit::String</enum>
+   </property>
+   <property name="control" >
+    <bool>false</bool>
+   </property>
+   <property name="pvname" >
+    <string>CCS_SYS_TIME</string>
+   </property>
+   <property name="dbrequest" stdset="0" >
+    <enum>CALineEdit::DBRGSTR</enum>
+   </property>
+  </widget>
+  <widget class="CAWclock" name="caWclock" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>441</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>CCS_SYS_TIME</string>
+   </property>
+  </widget>
+  <widget class="CAWclock" name="caWclock_2" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>260</y>
+     <width>441</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="pvname" >
+    <string>CCS_SYS_TIME</string>
+   </property>
+   <property name="tformat" >
+    <enum>CAWclock::Time</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CALineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAWclock</class>
+   <extends>QLabel</extends>
+   <header>caWclock.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../bin/application.qrc" />
+ </resources>
+ <connections/>
+</ui>

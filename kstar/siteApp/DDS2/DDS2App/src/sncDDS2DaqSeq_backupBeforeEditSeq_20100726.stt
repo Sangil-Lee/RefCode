@@ -1,0 +1,351 @@
+program sncDDS2DaqSeq
+option -c;
+%% /* DDS2 BO Record Value is Only One. SO, Record Value Zero Change at Process Completed Sign   */
+%% #include <string.h>
+%% #include <stdio.h>
+%% #include <stdlib.h>
+
+int ccsCtuStart;
+int ccsDAQReady;
+
+int opMode;
+int dds2_status;
+
+int remoteReady;
+
+int localSave;
+int localSaveSt;
+int remoteSave;
+int remoteSaveSt;
+int trigInter;
+int trigInterSt;
+int trigExter;
+int trigExterSt;
+int clockInter;
+int clockInterSt;
+int clockExter;
+int clockExterSt;
+int adcStart;
+int adcStartSt;
+int adcStop;
+int adcStopSt;
+int daqStart;
+int daqStartSt;
+int daqStop;
+int daqStopSt;
+
+int remoteReadyBtn;
+int localReadyBtn;
+int remoteStoreBtn;
+int daqAbortBtn;
+int remoteReadyBtnDisa;
+int localReadyBtnDisa;
+int ddsShotNumber;
+int ccsShotNumber;
+
+double ccsBlipTime;
+double ddsBlipTime;
+double setT0;
+double setT1;
+
+assign ccsCtuStart to "DDS2_CTU_SHOTSTART";
+assign ccsDAQReady to "DDS2_SOFT_REMOTE_READY";
+
+assign opMode to "DDS2_setOpMode";
+assign dds2_status to "DDS2_DAQ_STATUS";
+%% /* assign dds2_status to "DDS2_getState";  */
+assign remoteReady to "DDS2_SOFT_REMOTE_READY";
+
+assign localSave to "DDS2_LocalSave";
+assign remoteSave to "DDS2_RemoteSave";
+assign trigInter to "DDS2_setTrigInternal";
+assign trigExter to "DDS2_setTrigExternal";
+assign clockInter to "DDS2_setInternal";
+assign clockExter to "DDS2_setExternal";
+assign adcStart to "DDS2_ADCstart";
+assign adcStop to "DDS2_ADCstop";
+assign daqStart to "DDS2_DAQstart";
+assign daqStop to "DDS2_DAQstop";
+
+assign localSaveSt to "DDS2_LocalSave_STATE";
+assign remoteSaveSt to "DDS2_RemoteSave_STATE";
+assign trigInterSt to "DDS2_setTrigInternal_STATE";
+assign trigExterSt to "DDS2_setTrigExternal_STATE";
+assign clockInterSt to "DDS2_setInternal_STATE";
+assign clockExterSt to "DDS2_setExternal_STATE";
+assign adcStartSt to "DDS2_ADCstart_STATE";
+assign adcStopSt to "DDS2_ADCstop_STATE";
+assign daqStartSt to "DDS2_DAQstart_STATE";
+assign daqStopSt to "DDS2_DAQstop_STATE";
+
+assign remoteReadyBtn to "DDS2_REMOTE_READY_BTN";
+assign localReadyBtn to "DDS2_LOCAL_READY_BTN";
+assign remoteStoreBtn to "DDS2_REMOTE_STORE_BTN";
+assign daqAbortBtn to "DDS2_DAQ_ABORT_BTN";
+assign remoteReadyBtnDisa to "DDS2_REMOTE_READY_BTN.DISA";
+assign localReadyBtnDisa to "DDS2_LOCAL_READY_BTN.DISA";
+
+assign setT0 to "DDS2_setT0";
+assign setT1 to "DDS2_setT1";
+assign ccsBlipTime to "CCS_BLIP_TIME";
+assign ddsBlipTime to "DDS2_blipTime";
+assign ddsShotNumber to "DDS2_shotNumber";
+assign ccsShotNumber to "CCS_SHOT_NUMBER";
+
+monitor ccsCtuStart;
+monitor ccsDAQReady;
+
+monitor opMode;
+monitor dds2_status;
+monitor remoteReady;
+
+monitor localSave;
+monitor remoteSave;
+monitor trigInter;
+monitor trigExter;
+monitor clockInter;
+monitor clockExter;
+monitor adcStart;
+monitor adcStop;
+monitor daqStart;
+monitor daqStop;
+
+/* Device Action Status PV */
+monitor localSaveSt;
+monitor remoteSaveSt;
+monitor trigInterSt;
+monitor trigExterSt;
+monitor clockInterSt;
+monitor clockExterSt;
+monitor adcStartSt;
+monitor adcStopSt;
+monitor daqStartSt;
+monitor daqStopSt;
+
+monitor remoteReadyBtn;  /* DDS OPI Button Action PV */
+monitor localReadyBtn;   /* DDS OPI Button Action PV */
+monitor remoteStoreBtn;  /* DDS OPI Button Action PV */
+monitor daqAbortBtn;   /* DDS OPI Button Action PV */
+
+monitor remoteReadyBtnDisa;  /* DDS OPI Button Action PV */
+monitor localReadyBtnDisa;   /* DDS OPI Button Action PV */
+
+monitor setT0;
+monitor setT1;
+monitor ccsBlipTime;
+monitor ddsBlipTime;
+monitor ddsShotNumber;
+monitor ccsShotNumber;
+
+evflag ccsTStart;
+sync ccsCtuStart ccsTStart;
+
+ss ddsDaqLocalSeq {
+	state init {
+		when (TRUE) {
+			adcStart=1;
+			pvPut(adcStart,SYNC);
+			daqStart=1;
+			pvPut(daqStart,SYNC);
+			daqStop=1;
+			pvPut(daqStop,SYNC);
+			adcStop=1;
+			pvPut(adcStop,SYNC);
+		} state localSeq
+	}
+	state localSeq {
+        	when (localReadyBtn ==1 && opMode != 1){
+			localReadyBtnDisa=1;
+			adcStart=1;
+			adcStartSt=1;
+			pvPut(localReadyBtnDisa,SYNC);
+			pvPut(adcStart,SYNC);
+			pvPut(adcStartSt,SYNC);
+		}state daqstart
+		when (remoteStoreBtn == 1){
+			remoteSave=1;
+			remoteSaveSt=1;
+			remoteStoreBtn=0;
+			pvPut(remoteSave,SYNC);
+			pvPut(remoteSaveSt,SYNC);
+			pvPut(remoteStoreBtn,SYNC);
+		}state localSeq
+		when (daqAbortBtn==1){
+		}state daqabort
+		
+	} 	
+	state daqstart {
+		when (delay(setT0)) {
+			daqStart=1;
+			daqStartSt=1;
+			pvPut(daqStart,SYNC);
+			pvPut(daqStartSt,SYNC);
+		}state daqstop
+		when (daqAbortBtn==1){
+		}state daqabort
+	}
+	state daqstop {
+		when (delay(setT1 - setT0)) {
+			daqStop=1;
+			daqStopSt=1;
+			pvPut(daqStop,SYNC);
+			pvPut(daqStopSt,SYNC);
+		}state adcstop
+	}
+	state adcstop {
+		when (delay(1.5)){
+			adcStop=1;
+			adcStopSt=1;
+			pvPut(adcStop,SYNC);
+			pvPut(adcStopSt,SYNC);
+		}state localsave
+	}
+	state localsave {
+		when(delay(1.5)) {
+			localSave=1;
+			localSaveSt=1;
+			pvPut(localSave,SYNC);
+			pvPut(localSaveSt,SYNC);
+		}state donelocalsave
+	}
+	state donelocalsave {
+		when(dds2_status==1) {
+			localReadyBtnDisa=0;
+			localReadyBtn=0;
+			pvPut(localReadyBtnDisa,SYNC);
+			pvPut(localReadyBtn,SYNC);
+		}state localSeq 
+	}
+	state daqabort {
+		when(daqAbortBtn==1){
+			daqStop=1;
+                        daqStopSt=1;
+                        pvPut(daqStop,SYNC);
+                        pvPut(daqStopSt,SYNC);
+		}state adcstopAbort
+	}
+	state adcstopAbort {
+                when (delay(1.5)){
+                        adcStop=1;
+                        adcStopSt=1;
+			daqAbortBtn=0;
+			localReadyBtnDisa=0;
+			localReadyBtn=0;
+                        pvPut(adcStop,SYNC);
+                        pvPut(adcStopSt,SYNC);
+			pvPut(daqAbortBtn,SYNC);
+			pvPut(localReadyBtnDisa,SYNC);
+			pvPut(localReadyBtn,SYNC);
+                }state localSeq
+        }
+}
+ss ddsDaqRemoteSeq {
+	state init {
+		when (TRUE) {
+			efClear(ccsTStart);
+		} state remoteSeq
+	}
+	state remoteSeq {
+		when (ccsDAQReady==1 && remoteReadyBtn ==1 && opMode == 1) {
+			remoteReadyBtnDisa=1;
+			adcStart=1;
+                        adcStartSt=1;
+			ddsBlipTime=ccsBlipTime;
+			ddsShotNumber=ccsShotNumber;
+			efClear(ccsTStart);
+                        pvPut(ddsBlipTime,SYNC);
+                        pvPut(ddsShotNumber,SYNC);
+			pvPut(remoteReadyBtnDisa,SYNC);
+                        pvPut(adcStart,SYNC);
+                        pvPut(adcStartSt,SYNC);	
+		}state daqstartR 
+		when (daqAbortBtn==1 && opMode ==1){
+		}state daqRabort
+	} 	
+	state daqstartR {
+		when (delay(1.0)) {
+			daqStart=1;
+			daqStartSt=1;
+			remoteReady=1;
+			pvPut(daqStart,SYNC);
+			pvPut(daqStartSt,SYNC);
+			pvPut(remoteReady,SYNC);
+		}state daqstartT0R
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state daqstartT0R {
+		when (efTestAndClear(ccsTStart) && opMode== 1) {
+			printf("***************remote DAQ Start T0 event \n");
+		}state daqstopR
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state daqstopR {
+		when (delay(setT1 + 2.)) {
+			printf("****************remote DAQ Start after T1+2 Time\n");
+			daqStop=1;
+			daqStopSt=1;
+			pvPut(daqStop,SYNC);
+			pvPut(daqStopSt,SYNC);
+		}state adcstopR
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state adcstopR {
+		when (delay(1.5)){
+			adcStop=1;
+			adcStopSt=1;
+			pvPut(adcStop,SYNC);
+			pvPut(adcStopSt,SYNC);
+		}state remotesave
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state remotesave {
+		when(delay(1.5)) {
+			remoteSave=1;
+			remoteSaveSt=1;
+			pvPut(remoteSave,SYNC);
+			pvPut(remoteSaveSt,SYNC);
+		}state doneremotesave 
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state doneremotesave {
+		when(dds2_status==1) {
+			remoteReadyBtnDisa=0;
+			ccsDAQReady=0;
+			pvPut(remoteReadyBtnDisa,SYNC);
+			pvPut(ccsDAQReady,SYNC);
+		}state remoteSeq 
+		when (daqAbortBtn==1 && opMode == 1){
+		}state daqRabort
+	}
+	state daqRabort {
+		when(daqAbortBtn==1){
+			daqStop=1;
+                        daqStopSt=1;
+			remoteReady=0;
+                        pvPut(daqStop,SYNC);
+                        pvPut(daqStopSt,SYNC);
+                        pvPut(remoteReady,SYNC);
+		}state adcRstopAbort
+	}
+	state adcRstopAbort {
+                when (delay(1.5)){
+                        adcStop=1;
+                        adcStopSt=1;
+			daqAbortBtn=0;
+			remoteReadyBtnDisa=0;
+			localReadyBtnDisa=0;
+			ccsDAQReady=0;
+                        pvPut(adcStop,SYNC);
+                        pvPut(adcStopSt,SYNC);
+			pvPut(daqAbortBtn,SYNC);
+			pvPut(localReadyBtnDisa,SYNC);
+			pvPut(remoteReadyBtnDisa,SYNC);
+			pvPut(ccsDAQReady,SYNC);
+                }state remoteSeq
+        }
+}

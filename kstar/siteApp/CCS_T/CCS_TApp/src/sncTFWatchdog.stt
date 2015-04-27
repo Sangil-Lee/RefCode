@@ -1,0 +1,84 @@
+program sncTFWatchdog
+
+option +r;
+option -c;
+
+%{
+
+/* RFM Memory Map for MPS command area */
+
+#include "rfmAddrMap.h"
+
+typedef struct
+{
+    volatile int       id;
+    volatile int       itf_measured;          /* scale 1:1 */
+    volatile int       vtf_measured;          /* scale 1:100 */
+    volatile int       vbris_measured;        /* scale 1:100 */  /* slow_discharge_volt */
+    volatile int       vqp_measured;          /* scale 1:1 */  /* fast_discharge_volt */
+} mps_command;
+
+
+
+/* PowerPC Only */
+#define  EIEIO               __asm__ volatile ("eieio")
+#define  EIEIO_SYNC          __asm__ volatile ("eieio;sync")
+#define  SYNC                __asm__ volatile ("sync")
+
+}%
+
+%% static volatile mps_command     *pMPS_command = (mps_command*) (RFM_BASE_ADDR+RFM_ID_TF);
+
+float    itf_measured;
+assign   itf_measured      to "CCS_ITF_MEASURED_RAW";
+float    vtf_measured;
+assign   vtf_measured      to "CCS_VTF_MEASURED_RAW";
+float    vbris_measured;
+assign   vbris_measured    to "CCS_VBRIS_TF_MEASURED_RAW";
+float    vqp_measured;
+assign   vqp_measured      to "CCS_VQP_TF_MEASURED_RAW";
+float    btf_calculated;
+assign   btf_calculated    to "CCS_BTF_CALC_RAW";
+
+
+ss measurement
+{
+    state measure {
+        when(delay(MEASUREMENT_INTV)) {
+        %{
+		int itf_measured_latch = 0;
+		EIEIO_SYNC;
+		pVar->itf_measured   = (float)(pMPS_command->itf_measured); 
+		itf_measured_latch = pMPS_command->itf_measured;
+		pVar->vtf_measured   = ((float)(pMPS_command->vtf_measured))*.01;
+		pVar->vbris_measured = ((float)(pMPS_command->vbris_measured))*.01;
+		pVar->vqp_measured   = (float)(pMPS_command->vqp_measured);
+		pVar->btf_calculated = pVar->itf_measured * .0001;
+		EIEIO_SYNC;
+/*  don't need anymore done in MPS   2010.6.3 woong  
+		if( itf_measured_latch & 0x8000 )
+			pVar->itf_measured =(float)( 0x8000 + (itf_measured_latch & 0x7FFF ) ) ;
+		else 
+			pVar->itf_measured  = (float)itf_measured_latch;
+*/ 
+            }%
+/*
+            %% EIEIO_SYNC;
+            %% pVar->itf_measured   = (float)(pMPS_command->itf_measured);
+            %% pVar->vtf_measured   = ((float)(pMPS_command->vtf_measured))*.01;
+            %% pVar->vbris_measured = ((float)(pMPS_command->vbris_measured))*.01;
+            %% pVar->vqp_measured   = (float)(pMPS_command->vqp_measured);
+            %% pVar->btf_calculated = pVar->itf_measured * .0001;
+            %% EIEIO_SYNC;
+*/
+
+            pvPut(itf_measured);
+            pvPut(vtf_measured);
+            pvPut(vbris_measured);
+            pvPut(vqp_measured);
+            pvPut(btf_calculated);
+        } state measure
+    }
+
+}
+

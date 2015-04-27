@@ -1,0 +1,65 @@
+program sncVMEPervInterlock2
+
+int beam_mode;
+assign beam_mode to "NB1_OPER2_BEAM_MODE";
+monitor beam_mode;
+
+int perv_en;
+assign perv_en to "NB1_P2VME_ECMD_PERVEN";
+
+int perv_dis;
+assign perv_dis to "NB1_P2VME_ECMD_PERVDIS";
+
+int onindex = 0;
+int offindex = 0;
+
+ss pervInterlock2
+{
+	state low
+	{
+	    when(beam_mode == 1)
+	    {
+
+                if(onindex == 0) {
+
+					perv_en = 1;
+					pvPut(perv_en, SYNC);
+                    epicsThreadSleep(1);
+					
+					perv_en = 0;
+					pvPut(perv_en, SYNC);
+					
+                    onindex = 1;
+                }
+
+				offindex = 0;
+
+	    } state high
+	    when(delay(1)) 
+	    {
+	    } state high 
+	}
+	state high
+	{
+	    when(beam_mode == 0)
+	    {
+			     if(offindex == 0) {
+
+					perv_dis = 1;
+					pvPut(perv_dis, SYNC);
+                    epicsThreadSleep(1);
+					
+					perv_dis = 0;
+					pvPut(perv_dis, SYNC);
+					
+                    offindex = 1;
+                }
+
+				onindex = 0;
+
+	    } state low
+	    when(delay(1))
+	    {
+	    } state low 
+	}
+}

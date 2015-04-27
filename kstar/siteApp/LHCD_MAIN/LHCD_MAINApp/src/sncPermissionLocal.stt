@@ -1,0 +1,43 @@
+program sncPermissionLocal
+
+int permission_stat;
+assign permission_stat to "LH1_KSTAR_OPR_PER";
+monitor permission_stat;
+
+int oper_mode;
+assign oper_mode to "LH1_MODE_KSTAR";
+monitor oper_mode;
+
+int ltu_mode;
+assign ltu_mode to "LHCD_LTU_SET_FREE_RUN";
+monitor ltu_mode;
+
+ss PermissionLocalApply
+{
+	state low
+	{
+		when(oper_mode == 1)
+		{
+			if(permission_stat == 0 && ltu_mode == 0)
+			{
+				ltu_mode = 1;
+				pvPut(ltu_mode,SYNC);
+			}
+			epicsThreadSleep(1);
+		} state high
+		when(delay(1))
+		{
+		}state high
+	}
+	state high
+	{
+		when(oper_mode == 0)
+		{
+			epicsThreadSleep(1);
+		}state low
+		when(delay(1))
+		{
+		} state low
+	}
+}
+

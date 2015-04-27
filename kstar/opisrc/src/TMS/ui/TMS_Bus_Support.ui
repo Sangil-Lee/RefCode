@@ -1,0 +1,1166 @@
+<ui version="4.0" >
+ <class>Form</class>
+ <widget class="QWidget" name="Form" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>1080</width>
+     <height>800</height>
+    </size>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../tms.qrc" >:/images/TMS_Bus_Support.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="CAUITime" name="CAUITime" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>770</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="periodicsecond" stdset="0" >
+    <enum>CAUITime::One</enum>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_22" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>158</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_CSBUS_SPT_SAD004</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_21" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>133</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_CSBUS_SPT_SAD003</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>225</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU001</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_3" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>274</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU003</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_4" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>299</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU004</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_5" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>323</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU005</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_6" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>348</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU006</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_7" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>373</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU007</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_8" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>396</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU008</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_9" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>421</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU009</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_10" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>446</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU010</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_19" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>85</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_CSBUS_SPT_SAD001</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_20" >
+   <property name="geometry" >
+    <rect>
+     <x>640</x>
+     <y>109</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_CSBUS_SPT_SAD002</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_29" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>85</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_TFBUS_SPT_SAD001</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_30" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>109</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_TFBUS_SPT_SAD002</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_16" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>300</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU016</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_15" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>275</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU015</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_13" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>225</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU013</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_14" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>250</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU014</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_26" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>84</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD004</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_28" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>134</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD006</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_27" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>109</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD005</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_12" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>250</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU012</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_11" >
+   <property name="geometry" >
+    <rect>
+     <x>870</x>
+     <y>224</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_TCU011</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_23" >
+   <property name="geometry" >
+    <rect>
+     <x>985</x>
+     <y>85</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD001</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_25" >
+   <property name="geometry" >
+    <rect>
+     <x>985</x>
+     <y>135</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD003</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_24" >
+   <property name="geometry" >
+    <rect>
+     <x>985</x>
+     <y>110</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Strain</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_PFBUS_SPT_SAD002</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_31" >
+   <property name="geometry" >
+    <rect>
+     <x>683</x>
+     <y>498</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU001</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_33" >
+   <property name="geometry" >
+    <rect>
+     <x>733</x>
+     <y>562</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU003</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_35" >
+   <property name="geometry" >
+    <rect>
+     <x>743</x>
+     <y>587</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU005</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_36" >
+   <property name="geometry" >
+    <rect>
+     <x>744</x>
+     <y>665</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU006</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_34" >
+   <property name="geometry" >
+    <rect>
+     <x>726</x>
+     <y>696</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU004</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_32" >
+   <property name="geometry" >
+    <rect>
+     <x>683</x>
+     <y>765</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::RealTwo</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_JTSPT_SPT_TCU002</string>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>K</string>
+   </property>
+  </widget>
+  <widget class="CADisplayer" name="CADisplayer_37" >
+   <property name="geometry" >
+    <rect>
+     <x>753</x>
+     <y>158</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="nuformat" stdset="0" >
+    <enum>CADisplayer::Displace</enum>
+   </property>
+   <property name="pvname" >
+    <string>TMS_BUSPT_SPT_DHS001</string>
+   </property>
+   <property name="lineWidth" stdset="0" >
+    <number>1</number>
+   </property>
+   <property name="framecol" stdset="0" >
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="unit" >
+    <string>mm</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CADisplayer</class>
+   <extends>QWidget</extends>
+   <header>caDisplayer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CAUITime</class>
+   <extends>QWidget</extends>
+   <header>caUitime.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../tms.qrc" />
+ </resources>
+ <connections/>
+</ui>

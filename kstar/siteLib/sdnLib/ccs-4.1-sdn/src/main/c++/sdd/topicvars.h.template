@@ -1,0 +1,26 @@
+/*   file ------------ topicvars.h ------------------------- */
+/* defines application topic variables */
+
+#include  "includetopics.h"
+
+#ifndef TOPICVARS_H
+#define TOPICVARS_H
+
+/* create publisher topic variables on which application is publishing  */
+
+//+P=====================================================================
+extern <topic-name>_metadata p_metadata_<topic-name>;
+extern <topic-name>_userdata p_userdata_<topic-name>;
+extern SdnPublisher<<topic-name>> publisher_<topic-name>;
+//-P=====================================================================
+
+
+/* create subscriber topic variables to  which application is subscribing */
+
+//+S=====================================================================
+extern <topic-name>_metadata s_metadata_<topic-name>;
+extern <topic-name>_userdata s_userdata_<topic-name>;
+extern SdnSubscriber<<topic-name>> subscriber_<topic-name>;
+//-S=====================================================================
+
+#endif 

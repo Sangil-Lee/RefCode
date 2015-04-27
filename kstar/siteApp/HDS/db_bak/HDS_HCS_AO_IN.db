@@ -1,0 +1,15 @@
+record(calc, "$(PV_NAME)_IN") {
+  field(FLNK, "$(PV_NAME)")
+  field(CALC, "A")
+  field(INPA, "$(PV_NAME_INP) CPP")
+  field(INPB, "HDS_HCS_R_REMOTE CPP")
+}
+
+
+record(ao, "$(PV_NAME)") {
+  field(DTYP, "S7plc")
+  field(OUT, "@HCS_PLC/$(BYTE) T=$(TYPE)")
+  field(DOL, "$(PV_NAME)_IN")
+  field(OMSL, "closed_loop")
+  field(DESC, "$(DESC)")
+}

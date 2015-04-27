@@ -1,0 +1,24 @@
+#caput NB1_LODAQ_OP_MODE 2
+# don't use trigger
+caput NB1_LODAQ_OP_MODE 3
+#caput NB1_LODAQ_OP_MODE 2
+caput NB1_LODAQ_SAMPLING_RATE 10
+caput NB1_LODAQ_START_T0_SEC1 0
+caput NB1_LODAQ_STOP_T1_SEC1 4
+caput NB1_LODAQ_BEAM_PULSE_T0 0
+caput NB1_LODAQ_BEAM_PULSE_T1 10
+
+while true
+do
+	echo ""
+	echo "--------------------------------------"
+	echo "Input NB1_LODAQ_SYS_ARMING"
+	read val
+	caput NB1_LODAQ_SYS_ARMING 1
+
+	echo ""
+	echo "Input NB1_LODAQ_SYS_RUN"
+	read val
+	caput NB1_LODAQ_SYS_RUN 1
+done
+

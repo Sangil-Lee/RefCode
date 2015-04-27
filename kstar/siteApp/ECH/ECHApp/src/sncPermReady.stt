@@ -1,0 +1,307 @@
+/*
+ * program for heating control in KSTAR mode
+*/
+program sncPermReady
+
+option +r;
+option -c;
+
+%{
+#include "kutil.h"
+#include <epicsThread.h>
+}%
+
+int		permission;
+assign	permission to	"{SYS}_KSTAR_OPR_PER";
+monitor	permission;
+
+int		ready;
+assign	ready to		"{SYS}_KSTAR_OPR_RDY";
+monitor	ready;
+
+int		ready_lamp;
+assign	ready_lamp to	"{SYS}_KSTAR_OPR_RDY_LAMP";
+monitor	ready_lamp;
+evflag	ef_ready_lamp;
+sync	ready_lamp	ef_ready_lamp;
+
+double	pulse_on;
+assign	pulse_on to		"{SYS}_KSTAR_OPR_PULSE";		/* TODO : For each system */
+monitor	pulse_on;
+
+int		kstar_mode;
+assign	kstar_mode to	"{SYS}_OPR_MODE_KSTAR";	
+monitor	kstar_mode;
+
+/* When Poloidal limit and NBI armor fault to HV off */
+int		ecmd_hvoff;
+assign	ecmd_hvoff to	"{SYS}_ECMD_VME_HV_OFF";
+monitor	ecmd_hvoff;
+
+double	ltu_p1_t0;
+assign	ltu_p1_t0 to	"{SYS}_LTU_P1_SEC0_T0";	
+monitor	ltu_p1_t0;
+double	ltu_p1_t1;
+assign	ltu_p1_t1 to	"{SYS}_LTU_P1_SEC0_T1";	
+monitor	ltu_p1_t1;
+int		ltu_setup_p1;
+assign	ltu_setup_p1 to	"{SYS}_LTU_SOFT_SETUP_P1";	
+monitor	ltu_setup_p1;
+
+
+double	ltu_p6_t0;
+assign	ltu_p6_t0 to	"{SYS}_LTU_P6_SEC0_T0";	
+monitor	ltu_p6_t0;
+double	ltu_p6_t1;
+assign	ltu_p6_t1 to	"{SYS}_LTU_P6_SEC0_T1";	
+monitor	ltu_p6_t1;
+int		ltu_setup_p6;
+assign	ltu_setup_p6 to	"{SYS}_LTU_SOFT_SETUP_P6";	
+monitor	ltu_setup_p6;
+
+double	ltu_p7_t0;
+assign	ltu_p7_t0 to	"{SYS}_LTU_P7_SEC0_T0";	
+monitor	ltu_p7_t0;
+double	ltu_p7_t1;
+assign	ltu_p7_t1 to	"{SYS}_LTU_P7_SEC0_T1";	
+monitor	ltu_p7_t1;
+int		ltu_p7_clock;
+assign	ltu_p7_clock to	"{SYS}_LTU_P7_SEC0_CLOCK";	
+monitor	ltu_p7_clock;
+int		ltu_setup_p7;
+assign	ltu_setup_p7 to	"{SYS}_LTU_SOFT_SETUP_P7";	
+monitor	ltu_setup_p7;
+
+double	pulse_start;
+assign	pulse_start to	"{SYS}_HV_PULSE_START";	
+monitor	pulse_start;
+evflag	ef_pulse_start;
+sync	pulse_start ef_pulse_start;
+
+double	pulse_length;
+assign	pulse_length to	"{SYS}_HV_PULSE_LENGTH";	
+monitor pulse_length;
+evflag  ef_pulse_length;
+sync 	pulse_length ef_pulse_length;
+
+double	waveform_t0;
+assign	waveform_t0 to	"{SYS}_WAVEFORM_NI_T0";	
+monitor waveform_t0;
+evflag	ef_waveform_t0;
+sync	waveform_t0	ef_waveform_t0;
+
+double	waveform_t1;
+assign	waveform_t1 to	"{SYS}_WAVEFORM_NI_T1";	
+monitor waveform_t1;
+evflag	ef_waveform_t1;
+sync	waveform_t1	ef_waveform_t1;
+
+double	daq_ao_t0;
+assign	daq_ao_t0 to	"{SYS}_AO_START_T0_SEC1";	
+monitor daq_ao_t0;
+
+double	daq_ao_t1;
+assign	daq_ao_t1 to	"{SYS}_AO_STOP_T1_SEC1";	
+monitor daq_ao_t1;
+
+int		daq_ao_sampleRate;
+assign	daq_ao_sampleRate to	"{SYS}_AO_NI6259_D1_SAMPLE_RATE_R";	
+monitor	daq_ao_sampleRate;
+
+ss sncWaveformTime {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPulseLength.init] ...\n");
+		} state waveformTime 
+	}
+	state waveformTime {
+		when (efTestAndClear (ef_waveform_t0)) {
+			ltu_p6_t0 = waveform_t0 + 16.0;
+			ltu_p7_t0 = waveform_t0 + 16.0;
+			pvPut (ltu_p6_t0);
+			pvPut (ltu_p7_t0);
+			daq_ao_t0 = ltu_p6_t0;
+			pvPut (daq_ao_t0);
+			if (daq_ao_sampleRate != ltu_p7_clock){
+				ltu_p7_clock = daq_ao_sampleRate;
+				pvPut(ltu_p7_clock);
+			}
+
+			ltu_setup_p6 = 1;
+			ltu_setup_p7 = 1;
+			pvPut (ltu_setup_p6);
+			pvPut (ltu_setup_p7);
+		%% 	epicsThreadSleep(0.5);
+			ltu_setup_p6 = 0;
+			ltu_setup_p7 = 0;
+			pvPut (ltu_setup_p6);
+			pvPut (ltu_setup_p7);
+		} state waveformTime 
+		when (efTestAndClear (ef_waveform_t1)) {
+			ltu_p6_t1 = waveform_t1 + 16.0;
+			ltu_p7_t1 = waveform_t1 + 16.01;
+			pvPut (ltu_p6_t1);
+			pvPut (ltu_p7_t1);
+			daq_ao_t1 = ltu_p6_t1;
+			pvPut (daq_ao_t1);
+			if (daq_ao_sampleRate != ltu_p7_clock){
+				ltu_p7_clock = daq_ao_sampleRate;
+				pvPut(ltu_p7_clock);
+			}
+
+			ltu_setup_p6 = 1;
+			ltu_setup_p7 = 1;
+			pvPut (ltu_setup_p6);
+			pvPut (ltu_setup_p7);
+		%% 	epicsThreadSleep(0.5);
+			ltu_setup_p6 = 0;
+			ltu_setup_p7 = 0;
+			pvPut (ltu_setup_p6);
+			pvPut (ltu_setup_p7);
+		} state waveformTime 
+	}
+}
+ss sncPulseStartLength {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPulseStartLength.init] ...\n");
+		} state pulseStartLength 
+	}
+	state pulseStartLength {
+		when (efTestAndClear (ef_pulse_start)) {
+			if (pulse_start != (ltu_p1_t0 - 16.0)) {
+				kuDebug (kuMON, "[pulseStart] pulseStart(%f) LTU_P1_T0(%f) : set to add blip + pulseStart = ltu-p1-t0\n", pulse_start, ltu_p1_t0);
+				ltu_p1_t0 = pulse_start + 16.0;
+				pvPut (ltu_p1_t0);
+				ltu_p1_t1 = pulse_start + pulse_length + 16.0;
+				pvPut (ltu_p1_t1);
+
+				ltu_setup_p1 = 1;
+				pvPut (ltu_setup_p1);
+		%% 		epicsThreadSleep(0.5);
+				ltu_setup_p1 = 0;
+				pvPut (ltu_setup_p1);
+			}
+
+		} state pulseStartLength 
+		when (efTestAndClear (ef_pulse_length)) {
+			if ((pulse_start + pulse_length) != (ltu_p1_t1 - 16.0)) {
+				kuDebug (kuMON, "[pulseLength] pulseLength(%f) LTU_P1_T1(%f) : set to add Blip + Start + Length = ltu-p1-t1\n", pulse_length, ltu_p1_t1);
+				ltu_p1_t0 = pulse_start + 16.0;
+				pvPut (ltu_p1_t0);
+				ltu_p1_t1 = pulse_start + pulse_length + 16.0;
+				pvPut (ltu_p1_t1);
+
+				ltu_setup_p1 = 1;
+				pvPut (ltu_setup_p1);
+		%% 		epicsThreadSleep(0.5);
+				ltu_setup_p1 = 0;
+				pvPut (ltu_setup_p1);
+			}
+		} state pulseStartLength
+	}
+}
+
+ss sncPermReadyProcess {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncPermReady.init] ...\n");
+
+			/* stores previous value */
+		} state run
+	}
+
+	state run {
+		when (delay(1.0)) {
+			kuDebug (kuMON, "[sncPermReady::sncPermReady.run] kmode(%d) ready(%d/%d) pulse(%.2f/%.2f) perm(%d) fault(%d)\n",
+							kstar_mode, ready, ready_lamp, pulse_on, pulse_start, permission, ecmd_hvoff);
+
+			if (1 == kstar_mode) {
+				/* Ready status for lamp */
+				if ( (1 == ready) && (pulse_on == pulse_start) ) {
+					if (1 != ready_lamp) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] set ready : kmode(%d) ready(%d) pulse(%.2f/%.2f)\n",
+							kstar_mode, ready, pulse_on, pulse_start);
+
+						ready_lamp = 1;
+						pvPut (ready_lamp);
+					}
+				}
+				else {
+					if (0 != ready_lamp) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] not ready : kmode(%d) ready(%d) pulse(%.2f/%.2f)\n",
+							kstar_mode, ready, pulse_on, pulse_start);
+
+						ready_lamp = 0;
+						pvPut (ready_lamp);
+					}
+				}
+			}
+		} state run
+	}
+}
+
+ss sncPermFault {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncPermReady.init] ...\n");
+
+			/* stores previous value */
+		} state runfault
+	}
+
+	state runfault {
+		when (efTestAndClear(ef_ready_lamp)) {
+			kuDebug (kuMON, "[sncPermReady::sncPermReady.run] kmode(%d) ready(%d/%d) pulse(%.2f/%.2f) perm(%d) fault(%d)\n",
+							kstar_mode, ready, ready_lamp, pulse_on, pulse_start, permission, ecmd_hvoff);
+
+			if (1 == kstar_mode) {
+				/* Permission : Fault processing */
+				if ( (1 != permission) || (1 != ready_lamp) ) {
+					if (1 != ecmd_hvoff) {
+						kuDebug (kuMON, "[sncPermReady::sncPermReady.run] set fault : kmode(%d) perm(%d) ready_lamp(%d)\n",
+							kstar_mode, permission, ready_lamp);
+
+						ecmd_hvoff = 1;
+						pvPut (ecmd_hvoff);
+				%% 		epicsThreadSleep(0.5);
+						ecmd_hvoff = 0;
+						pvPut (ecmd_hvoff);
+					
+					}
+				}
+			}
+		} state runfault
+	}
+}
+%{
+#if 0
+ss sncUploadProcess {
+    state init {
+		when (1) {
+			kuDebug (kuMON, "[sncPermReady::sncUpload.init] ...\n");
+
+			/* stores previous value */
+			upload_prev = upload;
+		} state run
+	}
+
+	state run {
+		when (efTestAndClear (ef_upload)) {
+			if (upload_prev != upload) {
+				kuDebug (kuMON, "[sncPermReady::sncUpload.run] upload(%d) : set to not ready \n", upload);
+
+				ready = 0;
+				pvPut (ready);
+
+				ready_lamp = 0;
+				pvPut (ready_lamp);
+			}
+
+			upload_prev = upload;
+		} state run
+	}
+}
+#endif
+}%
+

@@ -1,0 +1,17 @@
+record(ai, "$(PV_NAME)_A") {
+  field (SCAN, "I/O Intr")
+  field (DTYP, "S7plc")
+  field (INP,  "@HCS_PLC/$(BYTE) T=$(TYPE)")
+  field (FLNK, "$(PV_NAME)")
+}
+
+record(calc, "$(PV_NAME)") {
+  field (PINI, "YES")
+  field (CALC, "A*B")
+  field (INPA, "$(ASLO)")
+  field (INPB, "$(PV_NAME)_A")
+  field (EGU, "$(UNIT)")
+  field (DESC, "$(DESC)")
+
+}
+

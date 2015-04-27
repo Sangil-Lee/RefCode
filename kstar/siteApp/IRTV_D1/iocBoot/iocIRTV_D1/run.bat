@@ -1,0 +1,1 @@
+..\..\bin\win32-x86\IRTV_D1 st.cmd

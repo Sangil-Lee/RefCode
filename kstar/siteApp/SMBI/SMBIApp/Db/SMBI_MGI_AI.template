@@ -1,0 +1,22 @@
+#   By linupark - 2011/05/31
+
+file db/SMBI_MGI_AI.db
+{
+pattern
+{PV_NAME	TAG	DESC	UNIT	LOPR	HOPR}
+#Added by linupark for SMBI and MGI
+#{PV_NAME	TAG	DESC	UNIT	LOPR	HOPR}
+{SMBI_I_PG1       I_SMBI_PG1   "SMBI Pressure Gauge1" bar    0       20}
+{MGI_I_PG2       I_MGI_PG2   "MGI Pressure Gauge2" bar    0       20}
+{MGI_I_PG3       I_MGI_PG3   "MGI Pressure Gauge3" bar    0       20}
+{SMBI_I_VG1	I_SMBI_VG1	"SMBI Vacuum Gauge1"	mbar	0	2000}
+{SMBI_I_VG2	I_SMBI_VG2	"SMBI Vacuum Gauge2"	mbar	0	2000}
+{SMBI_I_TC1	I_SMBI_TC1	"I_SMBI_TC1"	degC	0	100}
+{SMBI_I_TC2	I_SMBI_TC2	"I_SMBI_TC2"	degC	0	100}
+#{SMBI_I_TC3	I_SMBI_TC3	"I_SMBI_TC3"	degC	0	100}
+#
+{SMBI_I_GR1       I_SMBI_GR1   "SMBI  Gas Regulator1" bar    0       20}
+#Added by linupark in 20120713[[
+{SMBI_I_GR4       I_SMBI_GR4   "SMBI  Gas Regulator4" bar    0       20}
+#]]
+}

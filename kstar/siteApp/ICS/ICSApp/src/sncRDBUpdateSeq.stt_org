@@ -1,0 +1,455 @@
+program sncRDBUpdateSeq
+option +r;
+option -c;
+
+%{
+/*Header declare*/
+#if HAVE_CONFIG_H
+#include <config.h>
+#endif /* HAVE_CONFIG_H */
+
+#include <stdarg.h>
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <libgen.h>
+#include <unistd.h>
+#include <string.h>
+#include <sqlfront.h>
+#include <sqldb.h>
+
+}%
+
+%{
+/*Source define*/
+static LOGINREC  *glogin = NULL;
+static DBPROCESS *gdbproc = NULL;
+static char gtablename[1024];
+
+static int RDBDebug  = 0;
+epicsExportAddress(int, RDBDebug);
+
+int syb_err_handler(DBPROCESS * dbproc, int severity, int dberr, int oserr, char *dberrstr, char *oserrstr)
+{
+	int *pexpected_dberr;
+	if (dberr == SYBESMSG) return INT_CANCEL;
+	if (dbproc != NULL) {
+		pexpected_dberr = (int *) dbgetuserdata(dbproc);
+		if (pexpected_dberr && *pexpected_dberr == dberr) {
+			fprintf(stdout, "OK: anticipated error %d (%s) arrived\n", dberr, dberrstr);
+			*pexpected_dberr = 0;
+			return INT_CANCEL;
+		}
+	}
+
+	fprintf(stderr,
+			"DB-LIBRARY error (severity %d, dberr %d, oserr %d, dberrstr %s, oserrstr %s):\n",
+			severity, dberr, oserr, dberrstr ? dberrstr : "(null)", oserrstr ? oserrstr : "(null)");
+	fflush(stderr);
+
+	if ((dbproc == NULL) || DBDEAD(dbproc)) {
+		if (dberr != SYBECOFL) {
+			/*exit(255);*/
+		}
+	}
+
+	/*assert(0); no unanticipated errors allowed in unit tests */
+	return INT_CANCEL;
+}
+
+int
+syb_msg_handler(DBPROCESS * dbproc, DBINT msgno, int msgstate, int severity, char *msgtext, char *srvname, char *procname, int line)
+{
+	char var_value[31];
+	int i;
+	char *c;
+	int *pexpected_msgno;
+	if (msgno == 5701 ||    /* database context change */
+			msgno == 5703 ||    /* language changed */
+			msgno == 5704) {    /* charset changed */
+
+		/* fprintf( stderr, "msgno = %d: %s\n", msgno, msgtext ) ; */
+
+		if (msgtext != NULL && (c = strchr(msgtext, '\'')) != NULL) {
+			i = 0;
+			for (++c; i <= 30 && *c != '\0' && *c != '\''; ++c)
+				var_value[i++] = *c;
+			var_value[i] = '\0';
+		}
+		return 0;
+	}
+
+	if (dbproc != NULL) {
+		pexpected_msgno = (int *) dbgetuserdata(dbproc);
+		if (pexpected_msgno && *pexpected_msgno == msgno) {
+			fprintf(stdout, "OK: anticipated message arrived: %d %s\n", msgno, msgtext);
+			*pexpected_msgno = 0;
+			return 0;
+		}
+	}
+	if (severity >= 0 || msgno == 0) {
+		if (msgno > 0 && severity > 0) {
+			fprintf(stderr, "Msg %d, Level %d, State %d\n", (int) msgno, (int) severity, (int) msgstate);
+			fprintf(stderr, "Server '%s'", srvname);
+			if (procname != NULL && *procname != '\0')
+				fprintf(stderr, ", Procedure '%s'", procname);
+			if (line > 0)
+				fprintf(stderr, ", Line %d", line);
+			fprintf(stderr, "\n");
+			fprintf(stderr, "%s\n", msgtext);
+			fflush(stderr);
+		} else {
+			fprintf(stdout, "%s\n", msgtext);
+			fflush(stdout);
+		}
+	}
+	/* assert(0); */ /*no unanticipated messages allowed in unit tests */
+	return 0;
+}
+
+void setTableName(const char *tablename)
+{
+	strcpy(gtablename, tablename);
+}
+
+int connectGADatabase()
+{
+	dbinit();
+	dberrhandle(syb_err_handler);
+	dbmsghandle(syb_msg_handler);
+
+	/*if(!glogin) return -1;*/
+
+printf("Here 1\n");
+	glogin = dblogin();
+	DBSETLPWD(glogin, "sWuCr25A");
+	DBSETLUSER(glogin, "app_epics");
+
+	gdbproc = dbopen(glogin, "172.17.100.212:1433");
+	/*if(FAIL==dbuse(gdbproc, "kstardb")) return -1;*/
+	dbuse(gdbproc, "kstardb");
+
+printf("Here 2\n");
+	dbloginfree(glogin);
+	return 0;
+}
+
+void closeGADatabase()
+{
+	dbclose(gdbproc);
+	dbexit();
+}
+int checkRUNID(const int shotnum)
+{
+	char cmd[1024];
+	char strBind[12];
+
+	/*sprintf(cmd, "select run from SHOTS where username='administrator' and run='%s' and shot='%d' ", strRunID, shotnum);*/
+	sprintf(cmd, "select run from SHOTS where username='administrator'and shot='%d' ", shotnum);
+	if(FAIL == dbcmd(gdbproc, cmd)) 
+	{
+		if(connectGADatabase()<0) return 1;
+		if(FAIL == dbcmd(gdbproc, cmd)) return 1;
+	}
+	if(FAIL == dbsqlexec(gdbproc)) 
+	{
+		if(connectGADatabase()<0) return 1;
+		if(FAIL == dbcmd(gdbproc, cmd)) return 1;
+		if(FAIL == dbsqlexec(gdbproc))  return 1;
+	}
+	if (dbresults(gdbproc) != SUCCEED)
+	{
+		return 1;
+	};
+	dbbind(gdbproc, 1, STRINGBIND, 0, (BYTE *)strBind);
+	dbclrbuf(gdbproc, 2);
+	int rc;
+	while ((rc = dbnextrow(gdbproc)) != NO_MORE_ROWS)
+	{
+		return 1;
+	};
+	return 0;
+}
+
+void insertDBShotNumber(const int shotnum)
+{
+#if 0
+	if ( shotnum >= 9000000 )
+	{
+		printf("shotnum>=9000000, Test Shot not insert DB\n");
+		return;
+	}
+#endif
+
+	setTableName("RUNS");
+	char cmd[1024];
+	char strRunID[1024];
+	/*sprintf(cmd, "select max(run) as maxr from %s\n", gtablename);*/
+	if(dbfcmd(gdbproc,  "select max(run) as maxr from %s\n", gtablename)==FAIL) return;
+	if(FAIL == dbcmd(gdbproc, cmd)) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+	};
+
+	if(dbsqlexec(gdbproc) == FAIL) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+		if(FAIL == dbsqlexec(gdbproc))  return;
+	};
+	if( dbresults(gdbproc) != SUCCEED )
+	{
+		fprintf(stderr, "Result Set Error!!\n");
+		return;
+	}
+	dbbind(gdbproc, 1, STRINGBIND, 0, (BYTE*)strRunID);
+	dbclrbuf(gdbproc, 10);
+	int i = 0;
+	int rc;
+	while( (rc=dbnextrow(gdbproc)) != NO_MORE_ROWS)
+	{
+		i++;
+		if( !(i%10))
+		{
+			i = 0;
+			dbclrbuf(gdbproc, 10);
+		}
+		if ( REG_ROW != rc )
+		{
+			fprintf(stderr, "Failed: Expected a row (%s:%d)\n", __FILE__, __LINE__);
+			if (rc == BUF_FULL)
+				fprintf(stderr, "Failed: dbnextrow returned BUF_FULL (%d).  Fix dbclrbuf.\n", rc);
+			return;
+		};
+	};
+
+	if(RDBDebug == 1)
+		fprintf(stdout, "RUN(%s) ShotNum(%d).\n",strRunID, shotnum);
+
+	if(checkRUNID(shotnum)) return;
+
+	sprintf(cmd, "insert into SHOTS (username, run, shot) VALUES('administrator','%s','%d') ", strRunID, shotnum);
+
+	printf("dbcmd execute -1 \n");
+	if(FAIL == dbcmd(gdbproc, cmd)) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+	};
+	printf("dbcmd execute +1 \n");
+	if(dbsqlexec(gdbproc) == FAIL) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+		if(FAIL == dbsqlexec(gdbproc))  return;
+	};
+	printf("dbsqlexec execute +1 \n");
+#if 0
+	while (dbresults(gdbproc) != NO_MORE_RESULTS) 
+	{
+		/* nop */
+	}
+#endif
+}
+
+void deleteDBShotNumber(const int shotnum)
+{
+	char cmd[1024];
+	sprintf(cmd, "delete from SHOTS where username='administrator' and shot='%d' ", shotnum);
+	if(FAIL == dbcmd(gdbproc, cmd)) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+	}
+	if(dbsqlexec(gdbproc) == FAIL) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+		if(FAIL == dbsqlexec(gdbproc))  return;
+	}
+	while (dbresults(gdbproc) != NO_MORE_RESULTS) 
+	{
+		/* nop */
+	}
+}
+
+void updateGADBTimeToShot(const char *strTimeToShot, const char *strShotStatus)
+{
+	if(RDBDebug == 1)
+		printf("(%s),(%s) \n", strTimeToShot, strShotStatus);
+	char cmd[1024];
+	sprintf(cmd, "update SHOT_COUNTDOWN set time='%s', sequence='%s'",strTimeToShot, strShotStatus);
+	if(FAIL == dbcmd(gdbproc, cmd)) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+	}
+	if(FAIL == dbsqlexec(gdbproc)) 
+	{
+		if(connectGADatabase()<0) return;
+		if(FAIL == dbcmd(gdbproc, cmd)) return;
+		if(FAIL == dbsqlexec(gdbproc))  return;
+	}
+	while (dbresults(gdbproc) != NO_MORE_RESULTS) 
+	{
+		/* nop */
+	}
+}
+
+}%
+
+string strICSTIMETOSHOT;
+assign strICSTIMETOSHOT to "ICS_SHOTINFO_TIMETOSHOT";
+
+string	strGAWebShot;
+assign	strGAWebShot to "CCS_GAWEB_SHOTSTATUS";
+/*monitor	strGAWebShot;*/
+
+int		nShotNumber;
+assign	nShotNumber to "CCS_SHOT_NUMBER";
+monitor	nShotNumber;
+
+evflag	efShotNum;
+sync	nShotNumber efShotNum;
+
+int		nTodayStart;
+assign	nTodayStart to "ICS_TODAY_START";
+monitor	nTodayStart;
+
+int  intSEQStart;
+assign  intSEQStart to "CCS_SHOTSEQ_START";
+monitor intSEQStart;
+
+int  intShotStart;
+assign  intShotStart to "CCS_CTU_SOFT_START";
+monitor intShotStart;
+evflag	efShotStart;
+sync	intShotStart efShotStart;
+
+string  strICSShotTime;
+assign  strICSShotTime to "ICS_SHOTINFO_SHOTTIME";
+monitor strICSShotTime;
+
+int		intDatastatus;
+assign	intDatastatus	to "CCS_LCSST_DATA";
+monitor intDatastatus;
+
+ss GADB_NextToShot
+{
+	state init
+	{
+		entry
+		{
+			%%connectGADatabase();
+		}
+		when(TRUE) {} state experimentTimeToShot
+	}
+	state gadbconn
+	{
+		option +e;
+		option +t;
+		entry
+		{
+			%%connectGADatabase();
+		}
+		when(TRUE) {} state experimentTimeToShot
+	}
+	state closeTimeToShot 
+	{
+		when(nTodayStart == 1)
+		{
+			/*starting session of a day, new connection with DB*/
+			%%connectGADatabase();
+
+			%%insertDBShotNumber(pVar->nShotNumber);
+		}state experimentTimeToShot
+	}
+	state experimentTimeToShot
+	{
+		when(delay(1.0) && nTodayStart == 1 && intDatastatus == 1)
+		{
+			pvGet(strICSTIMETOSHOT);
+			pvGet(strGAWebShot);
+
+			%%updateGADBTimeToShot(pVar->strICSTIMETOSHOT, pVar->strGAWebShot);
+		}state experimentTimeToShot
+
+		when(delay(1.0) && nTodayStart == 1 && intDatastatus == 0)
+		{
+			pvGet(strICSTIMETOSHOT);
+			%%updateGADBTimeToShot(pVar->strICSTIMETOSHOT, "DATA_STORING");
+		}state experimentTimeToShot
+
+		when(nTodayStart == 0)
+		{
+			%%updateGADBTimeToShot("00:00:00", "TODAY_SESSION_CLOSED");
+			%%deleteDBShotNumber(pVar->nShotNumber);
+
+			/*after closing session of a day, close DB connection*/
+			closeGADatabase();
+		}state closeTimeToShot
+	}
+}
+
+ss GADB_ShotNumber
+{
+	state init
+	{
+		when(delay(3.0)) {} state insertShotNumber
+	}
+	state insertShotNumber
+	{
+		when(efTestAndClear(efShotNum))
+		{
+			%%epicsThreadSleep(.5);
+			%%insertDBShotNumber(pVar->nShotNumber);
+		}state insertShotNumber
+	}
+}
+
+/*
+ss ICS_ReSetTimeShot
+{
+	state init
+	{
+		when(TRUE)
+		{
+		} state ShotStart
+	}
+	state ShotStart
+	{
+		when(efTestAndClear(efShotStart) && intShotStart == 1)
+		{
+			%%resetNextTimeShot(pVar->strICSShotTime);
+			pvPut(strICSShotTime);
+		} state ShotStart
+	}
+}
+
+ss ICS_SetNextTimeShot
+{
+	state init
+	{
+		when(TRUE)
+		{
+			intSEQStart = 0;
+			pvPut(intSEQStart);
+		} state ShotSEQStart
+	}
+	state ShotSEQStop
+	{
+		when(intSEQStart == 1)
+		{
+		} state ShotSEQStart
+	}
+	state ShotSEQStart
+	{
+		when(intSEQStart == 0)
+		{
+			%%setNextTimeShot(pVar->strICSShotTime);
+			pvPut(strICSShotTime);
+		} state ShotSEQStop
+	}
+}
+*/

@@ -1,0 +1,117 @@
+record(ao, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME)") {
+  field(DESC, "$(DSR)")
+  field(SCAN, "Passive")
+  field(EGU, "sec")
+}
+record(ao, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)") {
+  field(DESC, "$(DSR)")
+  field(SCAN, "Passive")
+  field(EGU, "sec")
+}
+record(ao, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME)") {
+  field(DESC, "$(DSR)")
+  field(SCAN, "Passive")
+  field(EGU, "sec")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET1_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A - 0.0002")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT1) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET2_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A - 0.0001")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT2) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET3_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT3) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET4_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A + B")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT4) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET5_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A + B + 0.0001")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT5) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_TIME_SET6_$(PV_NAME)") {
+  field(DESC, "$(DSR)toTIIME")
+  field(EGU, "V")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_START_$(PV_NAME) CPP")
+  field(INPB, "ECH_AO_PATTERN_PULSE_WIDTH_$(PV_NAME)")
+  field(CALC, "A<0.0002?0:A + B + 0.0002")
+  field(OUT, "ECH_AO_PATTERN_TIME_$(PORT6) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET1_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "0.0")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT1) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET2_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "0.0")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT2) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET3_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "A")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT3) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET4_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "A")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT4) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET5_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "0.0")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT5) PP")
+}
+record(calcout, "ECH_AO_PATTERN_PULSE_POWER_SET6_$(PV_NAME)") {
+  field(DESC, "$(DSR)toPWR")
+  field(EGU, "kV")
+  field(SCAN, "Passive")
+  field(INPA, "ECH_AO_PATTERN_PULSE_POWER_$(PV_NAME) CPP")
+  field(CALC, "0.0")
+  field(OUT, "ECH_AO_PATTERN_POWER_$(PORT6) PP")
+}

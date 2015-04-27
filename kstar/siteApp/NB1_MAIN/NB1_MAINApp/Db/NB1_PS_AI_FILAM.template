@@ -1,0 +1,447 @@
+# By HMT - 2010/05/19
+# NBI-1 PowerSupply
+
+file ./db/NB1_PS_AI.db
+{
+pattern
+{PV_NAME        TAG     EGU     PLC     DESC    HOPR    LOPR    HIHI    HIGH    LOW     LOLO    PREC}
+{NB1_P1FIL_AO_VAC    NB1_P1FIL_AO_VAC    "V"    plc1    "Input Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_AO_TFLT    NB1_P1FIL_AO_TFLT    "E"    plc1    "Fault"    1    -1    1    1    -1    -1    0}
+
+{NB1_P1FIL1_RTN_OVR    NB1_P1FIL1_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_OCR    NB1_P1FIL1_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_AMP    NB1_P1FIL1_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST1MS    NB1_P1FIL1_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST2MS    NB1_P1FIL1_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST3MS    NB1_P1FIL1_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST4MS    NB1_P1FIL1_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST1S    NB1_P1FIL1_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST2S    NB1_P1FIL1_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST3S    NB1_P1FIL1_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_ST4S    NB1_P1FIL1_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_VCMD1    NB1_P1FIL1_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_VCMD2    NB1_P1FIL1_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_VCMD3    NB1_P1FIL1_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_RTN_VCMD4    NB1_P1FIL1_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_AO_VOUT    NB1_P1FIL1_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_AO_IOUT    NB1_P1FIL1_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_AO_VDC    NB1_P1FIL1_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL1_AO_FLT    NB1_P1FIL1_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL2_RTN_OVR    NB1_P1FIL2_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_OCR    NB1_P1FIL2_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_AMP    NB1_P1FIL2_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST1MS    NB1_P1FIL2_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST2MS    NB1_P1FIL2_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST3MS    NB1_P1FIL2_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST4MS    NB1_P1FIL2_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST1S    NB1_P1FIL2_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST2S    NB1_P1FIL2_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST3S    NB1_P1FIL2_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_ST4S    NB1_P1FIL2_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_VCMD1    NB1_P1FIL2_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_VCMD2    NB1_P1FIL2_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_VCMD3    NB1_P1FIL2_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_RTN_VCMD4    NB1_P1FIL2_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_AO_VOUT    NB1_P1FIL2_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_AO_IOUT    NB1_P1FIL2_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_AO_VDC    NB1_P1FIL2_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL2_AO_FLT    NB1_P1FIL2_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL3_RTN_OVR    NB1_P1FIL3_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_OCR    NB1_P1FIL3_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_AMP    NB1_P1FIL3_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST1MS    NB1_P1FIL3_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST2MS    NB1_P1FIL3_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST3MS    NB1_P1FIL3_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST4MS    NB1_P1FIL3_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST1S    NB1_P1FIL3_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST2S    NB1_P1FIL3_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST3S    NB1_P1FIL3_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_ST4S    NB1_P1FIL3_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_VCMD1    NB1_P1FIL3_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_VCMD2    NB1_P1FIL3_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_VCMD3    NB1_P1FIL3_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_RTN_VCMD4    NB1_P1FIL3_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_AO_VOUT    NB1_P1FIL3_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_AO_IOUT    NB1_P1FIL3_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_AO_VDC    NB1_P1FIL3_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL3_AO_FLT    NB1_P1FIL3_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL4_RTN_OVR    NB1_P1FIL4_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_OCR    NB1_P1FIL4_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_AMP    NB1_P1FIL4_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST1MS    NB1_P1FIL4_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST2MS    NB1_P1FIL4_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST3MS    NB1_P1FIL4_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST4MS    NB1_P1FIL4_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST1S    NB1_P1FIL4_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST2S    NB1_P1FIL4_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST3S    NB1_P1FIL4_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_ST4S    NB1_P1FIL4_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_VCMD1    NB1_P1FIL4_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_VCMD2    NB1_P1FIL4_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_VCMD3    NB1_P1FIL4_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_RTN_VCMD4    NB1_P1FIL4_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_AO_VOUT    NB1_P1FIL4_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_AO_IOUT    NB1_P1FIL4_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_AO_VDC    NB1_P1FIL4_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL4_AO_FLT    NB1_P1FIL4_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL5_RTN_OVR    NB1_P1FIL5_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_OCR    NB1_P1FIL5_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_AMP    NB1_P1FIL5_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST1MS    NB1_P1FIL5_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST2MS    NB1_P1FIL5_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST3MS    NB1_P1FIL5_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST4MS    NB1_P1FIL5_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST1S    NB1_P1FIL5_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST2S    NB1_P1FIL5_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST3S    NB1_P1FIL5_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_ST4S    NB1_P1FIL5_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_VCMD1    NB1_P1FIL5_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_VCMD2    NB1_P1FIL5_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_VCMD3    NB1_P1FIL5_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_RTN_VCMD4    NB1_P1FIL5_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_AO_VOUT    NB1_P1FIL5_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_AO_IOUT    NB1_P1FIL5_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_AO_VDC    NB1_P1FIL5_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL5_AO_FLT    NB1_P1FIL5_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL6_RTN_OVR    NB1_P1FIL6_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_OCR    NB1_P1FIL6_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_AMP    NB1_P1FIL6_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST1MS    NB1_P1FIL6_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST2MS    NB1_P1FIL6_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST3MS    NB1_P1FIL6_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST4MS    NB1_P1FIL6_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST1S    NB1_P1FIL6_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST2S    NB1_P1FIL6_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST3S    NB1_P1FIL6_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_ST4S    NB1_P1FIL6_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_VCMD1    NB1_P1FIL6_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_VCMD2    NB1_P1FIL6_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_VCMD3    NB1_P1FIL6_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_RTN_VCMD4    NB1_P1FIL6_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_AO_VOUT    NB1_P1FIL6_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_AO_IOUT    NB1_P1FIL6_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_AO_VDC    NB1_P1FIL6_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL6_AO_FLT    NB1_P1FIL6_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL7_RTN_OVR    NB1_P1FIL7_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_OCR    NB1_P1FIL7_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_AMP    NB1_P1FIL7_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST1MS    NB1_P1FIL7_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST2MS    NB1_P1FIL7_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST3MS    NB1_P1FIL7_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST4MS    NB1_P1FIL7_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST1S    NB1_P1FIL7_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST2S    NB1_P1FIL7_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST3S    NB1_P1FIL7_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_ST4S    NB1_P1FIL7_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_VCMD1    NB1_P1FIL7_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_VCMD2    NB1_P1FIL7_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_VCMD3    NB1_P1FIL7_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_RTN_VCMD4    NB1_P1FIL7_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_AO_VOUT    NB1_P1FIL7_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_AO_IOUT    NB1_P1FIL7_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_AO_VDC    NB1_P1FIL7_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL7_AO_FLT    NB1_P1FIL7_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL8_RTN_OVR    NB1_P1FIL8_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_OCR    NB1_P1FIL8_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_AMP    NB1_P1FIL8_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST1MS    NB1_P1FIL8_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST2MS    NB1_P1FIL8_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST3MS    NB1_P1FIL8_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST4MS    NB1_P1FIL8_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST1S    NB1_P1FIL8_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST2S    NB1_P1FIL8_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST3S    NB1_P1FIL8_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_ST4S    NB1_P1FIL8_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_VCMD1    NB1_P1FIL8_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_VCMD2    NB1_P1FIL8_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_VCMD3    NB1_P1FIL8_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_RTN_VCMD4    NB1_P1FIL8_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_AO_VOUT    NB1_P1FIL8_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_AO_IOUT    NB1_P1FIL8_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_AO_VDC    NB1_P1FIL8_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL8_AO_FLT    NB1_P1FIL8_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL9_RTN_OVR    NB1_P1FIL9_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_OCR    NB1_P1FIL9_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_AMP    NB1_P1FIL9_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST1MS    NB1_P1FIL9_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST2MS    NB1_P1FIL9_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST3MS    NB1_P1FIL9_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST4MS    NB1_P1FIL9_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST1S    NB1_P1FIL9_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST2S    NB1_P1FIL9_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST3S    NB1_P1FIL9_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_ST4S    NB1_P1FIL9_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_VCMD1    NB1_P1FIL9_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_VCMD2    NB1_P1FIL9_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_VCMD3    NB1_P1FIL9_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_RTN_VCMD4    NB1_P1FIL9_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_AO_VOUT    NB1_P1FIL9_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_AO_IOUT    NB1_P1FIL9_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_AO_VDC    NB1_P1FIL9_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL9_AO_FLT    NB1_P1FIL9_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL10_RTN_OVR    NB1_P1FIL10_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_OCR    NB1_P1FIL10_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_AMP    NB1_P1FIL10_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST1MS    NB1_P1FIL10_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST2MS    NB1_P1FIL10_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST3MS    NB1_P1FIL10_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST4MS    NB1_P1FIL10_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST1S    NB1_P1FIL10_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST2S    NB1_P1FIL10_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST3S    NB1_P1FIL10_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_ST4S    NB1_P1FIL10_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_VCMD1    NB1_P1FIL10_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_VCMD2    NB1_P1FIL10_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_VCMD3    NB1_P1FIL10_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_RTN_VCMD4    NB1_P1FIL10_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_AO_VOUT    NB1_P1FIL10_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_AO_IOUT    NB1_P1FIL10_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_AO_VDC    NB1_P1FIL10_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL10_AO_FLT    NB1_P1FIL10_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL11_RTN_OVR    NB1_P1FIL11_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_OCR    NB1_P1FIL11_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_AMP    NB1_P1FIL11_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST1MS    NB1_P1FIL11_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST2MS    NB1_P1FIL11_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST3MS    NB1_P1FIL11_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST4MS    NB1_P1FIL11_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST1S    NB1_P1FIL11_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST2S    NB1_P1FIL11_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST3S    NB1_P1FIL11_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_ST4S    NB1_P1FIL11_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_VCMD1    NB1_P1FIL11_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_VCMD2    NB1_P1FIL11_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_VCMD3    NB1_P1FIL11_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_RTN_VCMD4    NB1_P1FIL11_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_AO_VOUT    NB1_P1FIL11_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_AO_IOUT    NB1_P1FIL11_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_AO_VDC    NB1_P1FIL11_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL11_AO_FLT    NB1_P1FIL11_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL12_RTN_OVR    NB1_P1FIL12_RTN_OVR    "V"    plc1    "Output Over Voltage Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_OCR    NB1_P1FIL12_RTN_OCR    "A"    plc1    "Output Over Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_AMP    NB1_P1FIL12_RTN_AMP    "A"    plc1    "Current Return"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST1MS    NB1_P1FIL12_RTN_ST1MS    "ms"    plc1    "ST1 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST2MS    NB1_P1FIL12_RTN_ST2MS    "ms"    plc1    "ST2 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST3MS    NB1_P1FIL12_RTN_ST3MS    "ms"    plc1    "ST3 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST4MS    NB1_P1FIL12_RTN_ST4MS    "ms"    plc1    "ST4 msec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST1S    NB1_P1FIL12_RTN_ST1S    "ms"    plc1    "ST1 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST2S    NB1_P1FIL12_RTN_ST2S    "ms"    plc1    "ST2 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST3S    NB1_P1FIL12_RTN_ST3S    "ms"    plc1    "ST3 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_ST4S    NB1_P1FIL12_RTN_ST4S    "ms"    plc1    "ST4 sec"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_VCMD1    NB1_P1FIL12_RTN_VCMD1    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_VCMD2    NB1_P1FIL12_RTN_VCMD2    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_VCMD3    NB1_P1FIL12_RTN_VCMD3    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_RTN_VCMD4    NB1_P1FIL12_RTN_VCMD4    "V"    plc1    "VCMD"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_AO_VOUT    NB1_P1FIL12_AO_VOUT    "V"    plc1    "Output Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_AO_IOUT    NB1_P1FIL12_AO_IOUT    "A"    plc1    "Output Current Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_AO_VDC    NB1_P1FIL12_AO_VDC    "V"    plc1    "DC Link Voltage Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL12_AO_FLT    NB1_P1FIL12_AO_FLT    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL_RTN_VCMD1    NB1_P1FIL_RTN_VCMD1    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_VCMD2    NB1_P1FIL_RTN_VCMD2    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_VCMD3    NB1_P1FIL_RTN_VCMD3    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_VCMD4    NB1_P1FIL_RTN_VCMD4    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL_RTN_TF1    NB1_P1FIL_RTN_TF1    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_TF2    NB1_P1FIL_RTN_TF2    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_TF3    NB1_P1FIL_RTN_TF3    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_TF4    NB1_P1FIL_RTN_TF4    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+{NB1_P1FIL_RTN_ICMD    NB1_P1FIL_RTN_ICMD    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_OCR    NB1_P1FIL_RTN_OCR    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+{NB1_P1FIL_RTN_OVR    NB1_P1FIL_RTN_OVR    "V"    plc1    "Fault Display"    100000    0    100000    100000    0    0    0}
+
+# PS2 2012.07.03
+{NB1_P2FILA1_RTN_VCMD1	NB1_P2FILA1_RTN_VCMD1	"V"     plc2    "Voltage Input #1"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_VCMD2	NB1_P2FILA1_RTN_VCMD2	"V"     plc2    "Voltage Input #2"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_VCMD3	NB1_P2FILA1_RTN_VCMD3	"V"     plc2    "Voltage Input #3"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_VCMD4	NB1_P2FILA1_RTN_VCMD4	"V"     plc2    "Voltage Input #4"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_ICMD	NB1_P2FILA1_RTN_ICMD	"V"     plc2    "Current Command"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_OVR	NB1_P2FILA1_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_OCR	NB1_P2FILA1_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_ST1	NB1_P2FILA1_RTN_ST1	"V"			plc2    "Step1 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_ST2	NB1_P2FILA1_RTN_ST2	"V"			plc2    "Step2 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_ST3	NB1_P2FILA1_RTN_ST3	"V"			plc2    "Step3 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_RTN_ST4	NB1_P2FILA1_RTN_ST4	"V"			plc2    "Step4 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_STA_VOUT	NB1_P2FILA1_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_STA_IOUT	NB1_P2FILA1_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA1_STA_FLT	NB1_P2FILA1_STA_FLT	"V"			plc2    "FLT Code"    	    1    -1    1    1    -1    -1    0}
+
+
+{NB1_P2FILA2_RTN_VCMD1	NB1_P2FILA2_RTN_VCMD1	"V"     plc2    "Voltage Input #1"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_VCMD2	NB1_P2FILA2_RTN_VCMD2	"V"     plc2    "Voltage Input #2"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_VCMD3	NB1_P2FILA2_RTN_VCMD3	"V"     plc2    "Voltage Input #3"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_VCMD4	NB1_P2FILA2_RTN_VCMD4	"V"     plc2    "Voltage Input #4"  100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_ICMD	NB1_P2FILA2_RTN_ICMD	"V"     plc2    "Current Command"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_OVR	NB1_P2FILA2_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_OCR	NB1_P2FILA2_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_ST1	NB1_P2FILA2_RTN_ST1	"V"			plc2    "Step1 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_ST2	NB1_P2FILA2_RTN_ST2	"V"			plc2    "Step2 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_ST3	NB1_P2FILA2_RTN_ST3	"V"			plc2    "Step3 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_RTN_ST4	NB1_P2FILA2_RTN_ST4	"V"			plc2    "Step4 Time(sec)"   100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_STA_VOUT	NB1_P2FILA2_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_STA_IOUT	NB1_P2FILA2_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA2_STA_FLT	NB1_P2FILA2_STA_FLT	"V"			plc2    "FLT Code"    	   100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA3_RTN_VCMD1	NB1_P2FILA3_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_VCMD2	NB1_P2FILA3_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_VCMD3	NB1_P2FILA3_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_VCMD4	NB1_P2FILA3_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_ICMD	NB1_P2FILA3_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_OVR	NB1_P2FILA3_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_OCR	NB1_P2FILA3_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_ST1	NB1_P2FILA3_RTN_ST1	"V"			plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_ST2	NB1_P2FILA3_RTN_ST2	"V"			plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_ST3	NB1_P2FILA3_RTN_ST3	"V"			plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_RTN_ST4	NB1_P2FILA3_RTN_ST4	"V"			plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_STA_VOUT	NB1_P2FILA3_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_STA_IOUT	NB1_P2FILA3_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA3_STA_FLT	NB1_P2FILA3_STA_FLT	"V"			plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA4_RTN_VCMD1	NB1_P2FILA4_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_VCMD2	NB1_P2FILA4_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_VCMD3	NB1_P2FILA4_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_VCMD4	NB1_P2FILA4_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_ICMD	NB1_P2FILA4_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_OVR	NB1_P2FILA4_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_OCR	NB1_P2FILA4_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_ST1	NB1_P2FILA4_RTN_ST1	"V"			plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_ST2	NB1_P2FILA4_RTN_ST2	"V"			plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_ST3	NB1_P2FILA4_RTN_ST3	"V"			plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_RTN_ST4	NB1_P2FILA4_RTN_ST4	"V"			plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_STA_VOUT	NB1_P2FILA4_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_STA_IOUT	NB1_P2FILA4_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA4_STA_FLT	NB1_P2FILA4_STA_FLT	"V"			plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA5_RTN_VCMD1	NB1_P2FILA5_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_VCMD2	NB1_P2FILA5_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_VCMD3	NB1_P2FILA5_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_VCMD4	NB1_P2FILA5_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_ICMD	NB1_P2FILA5_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_OVR	NB1_P2FILA5_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_OCR	NB1_P2FILA5_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_ST1	NB1_P2FILA5_RTN_ST1	"V"			plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_ST2	NB1_P2FILA5_RTN_ST2	"V"			plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_ST3	NB1_P2FILA5_RTN_ST3	"V"			plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_RTN_ST4	NB1_P2FILA5_RTN_ST4	"V"			plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_STA_VOUT	NB1_P2FILA5_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_STA_IOUT	NB1_P2FILA5_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA5_STA_FLT	NB1_P2FILA5_STA_FLT	"V"			plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA6_RTN_VCMD1	NB1_P2FILA6_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_VCMD2	NB1_P2FILA6_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_VCMD3	NB1_P2FILA6_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_VCMD4	NB1_P2FILA6_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_ICMD	NB1_P2FILA6_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_OVR	NB1_P2FILA6_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_OCR	NB1_P2FILA6_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_ST1	NB1_P2FILA6_RTN_ST1	"V"			plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_ST2	NB1_P2FILA6_RTN_ST2	"V"			plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_ST3	NB1_P2FILA6_RTN_ST3	"V"			plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_RTN_ST4	NB1_P2FILA6_RTN_ST4	"V"			plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_STA_VOUT	NB1_P2FILA6_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_STA_IOUT	NB1_P2FILA6_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA6_STA_FLT	NB1_P2FILA6_STA_FLT	"V"			plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA7_RTN_VCMD1	NB1_P2FILA7_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_VCMD2	NB1_P2FILA7_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_VCMD3	NB1_P2FILA7_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_VCMD4	NB1_P2FILA7_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_ICMD	NB1_P2FILA7_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_OVR	NB1_P2FILA7_RTN_OVR	"V"			plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_OCR	NB1_P2FILA7_RTN_OCR	"V"			plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_ST1	NB1_P2FILA7_RTN_ST1	"V"			plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_ST2	NB1_P2FILA7_RTN_ST2	"V"			plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_ST3	NB1_P2FILA7_RTN_ST3	"V"			plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_RTN_ST4	NB1_P2FILA7_RTN_ST4	"V"			plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_STA_VOUT	NB1_P2FILA7_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_STA_IOUT	NB1_P2FILA7_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA7_STA_FLT	NB1_P2FILA7_STA_FLT		"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA8_RTN_VCMD1	NB1_P2FILA8_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_VCMD2	NB1_P2FILA8_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_VCMD3	NB1_P2FILA8_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_VCMD4	NB1_P2FILA8_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_ICMD	NB1_P2FILA8_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_OVR	NB1_P2FILA8_RTN_OVR		"V"     plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_OCR	NB1_P2FILA8_RTN_OCR		"V"     plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_ST1	NB1_P2FILA8_RTN_ST1		"V"     plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_ST2	NB1_P2FILA8_RTN_ST2		"V"     plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_ST3	NB1_P2FILA8_RTN_ST3		"V"     plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_RTN_ST4	NB1_P2FILA8_RTN_ST4		"V"     plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_STA_VOUT	NB1_P2FILA8_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_STA_IOUT	NB1_P2FILA8_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA8_STA_FLT	NB1_P2FILA8_STA_FLT		"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA9_RTN_VCMD1	NB1_P2FILA9_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_VCMD2	NB1_P2FILA9_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_VCMD3	NB1_P2FILA9_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_VCMD4	NB1_P2FILA9_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_ICMD	NB1_P2FILA9_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_OVR	NB1_P2FILA9_RTN_OVR		"V"     plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_OCR	NB1_P2FILA9_RTN_OCR		"V"     plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_ST1	NB1_P2FILA9_RTN_ST1		"V"     plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_ST2	NB1_P2FILA9_RTN_ST2		"V"     plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_ST3	NB1_P2FILA9_RTN_ST3		"V"     plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_RTN_ST4	NB1_P2FILA9_RTN_ST4		"V"     plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_STA_VOUT	NB1_P2FILA9_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_STA_IOUT	NB1_P2FILA9_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA9_STA_FLT	NB1_P2FILA9_STA_FLT		"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA10_RTN_VCMD1	NB1_P2FILA10_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_VCMD2	NB1_P2FILA10_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_VCMD3	NB1_P2FILA10_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_VCMD4	NB1_P2FILA10_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_ICMD	NB1_P2FILA10_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_OVR	NB1_P2FILA10_RTN_OVR	"V"     plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_OCR	NB1_P2FILA10_RTN_OCR	"V"     plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_ST1	NB1_P2FILA10_RTN_ST1	"V"     plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_ST2	NB1_P2FILA10_RTN_ST2	"V"     plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_ST3	NB1_P2FILA10_RTN_ST3	"V"     plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_RTN_ST4	NB1_P2FILA10_RTN_ST4	"V"     plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_STA_VOUT	NB1_P2FILA10_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_STA_IOUT	NB1_P2FILA10_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA10_STA_FLT	NB1_P2FILA10_STA_FLT	"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA11_RTN_VCMD1	NB1_P2FILA11_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_VCMD2	NB1_P2FILA11_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_VCMD3	NB1_P2FILA11_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_VCMD4	NB1_P2FILA11_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_ICMD	NB1_P2FILA11_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_OVR	NB1_P2FILA11_RTN_OVR	"V"     plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_OCR	NB1_P2FILA11_RTN_OCR	"V"     plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_ST1	NB1_P2FILA11_RTN_ST1	"V"     plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_ST2	NB1_P2FILA11_RTN_ST2	"V"     plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_ST3	NB1_P2FILA11_RTN_ST3	"V"     plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_RTN_ST4	NB1_P2FILA11_RTN_ST4	"V"     plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_STA_VOUT	NB1_P2FILA11_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_STA_IOUT	NB1_P2FILA11_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA11_STA_FLT	NB1_P2FILA11_STA_FLT	"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+{NB1_P2FILA12_RTN_VCMD1	NB1_P2FILA12_RTN_VCMD1	"V"     plc2    "Voltage Input #1"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_VCMD2	NB1_P2FILA12_RTN_VCMD2	"V"     plc2    "Voltage Input #2"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_VCMD3	NB1_P2FILA12_RTN_VCMD3	"V"     plc2    "Voltage Input #3"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_VCMD4	NB1_P2FILA12_RTN_VCMD4	"V"     plc2    "Voltage Input #4"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_ICMD	NB1_P2FILA12_RTN_ICMD	"V"     plc2    "Current Command"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_OVR	NB1_P2FILA12_RTN_OVR	"V"     plc2    "Output OV Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_OCR	NB1_P2FILA12_RTN_OCR	"V"     plc2    "Output OC Ref."    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_ST1	NB1_P2FILA12_RTN_ST1	"V"     plc2    "Step1 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_ST2	NB1_P2FILA12_RTN_ST2	"V"     plc2    "Step2 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_ST3	NB1_P2FILA12_RTN_ST3	"V"     plc2    "Step3 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_RTN_ST4	NB1_P2FILA12_RTN_ST4	"V"     plc2    "Step4 Time(sec)"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_STA_VOUT	NB1_P2FILA12_STA_VOUT	"V"     plc2    "Output Voltage"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_STA_IOUT	NB1_P2FILA12_STA_IOUT	"V"     plc2    "Output Current"    100000    0    100000    100000    0    0    3}
+{NB1_P2FILA12_STA_FLT	NB1_P2FILA12_STA_FLT	"V"     plc2    "FLT Code"    100000    0    100000    100000    0    0    0}
+
+}

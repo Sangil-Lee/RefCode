@@ -1,0 +1,576 @@
+record(ao, "NB1_TC_OVER_VAL")
+{
+    field(DESC, "TC Over Val")
+}
+record(bo, "NB1_TC_OVER_INTC")
+{
+    field(DESC, "TC Over Int.")
+    field(ZNAM, "OK")
+    field(ONAM, "Fault")
+    field(OSV, "MAJOR")
+    field(ZSV, "NO_ALARM")
+}
+record(calc, "NB1_TC_OVER_C01")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT1C_TTC_L01.VAL NPP NMS")
+    field(INPB, "NB1_NT1C_TTC_L02.VAL NPP NMS")
+    field(INPC, "NB1_NT1C_TTC_L03.VAL NPP NMS")
+    field(INPD, "NB1_NT1C_TTC_L04.VAL NPP NMS")
+    field(INPE, "NB1_NT1C_TTC_L05.VAL NPP NMS")
+    field(INPF, "NB1_NT1C_TTC_L06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C02")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT1C_TTC_L07.VAL NPP NMS")
+    field(INPB, "NB1_NT1C_TTC_L08.VAL NPP NMS")
+    field(INPC, "NB1_NT1C_TTC_L09.VAL NPP NMS")
+    field(INPD, "NB1_NT1C_TTC_R01.VAL NPP NMS")
+    field(INPE, "NB1_NT1C_TTC_R02.VAL NPP NMS")
+    field(INPF, "NB1_NT1C_TTC_R03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C03")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT1C_TTC_R04.VAL NPP NMS")
+    field(INPB, "NB1_NT1C_TTC_R05.VAL NPP NMS")
+    field(INPC, "NB1_NT1C_TTC_R06.VAL NPP NMS")
+    field(INPD, "NB1_NT1C_TTC_R07.VAL NPP NMS")
+    field(INPE, "NB1_NT1C_TTC_R08.VAL NPP NMS")
+    field(INPF, "NB1_NT1C_TTC_R09.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C04")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT1C_TTC_T01.VAL NPP NMS")
+    field(INPB, "NB1_NT1C_TTC_T02.VAL NPP NMS")
+    field(INPC, "NB1_NT1C_TTC_T03.VAL NPP NMS")
+    field(INPD, "NB1_NT1C_TTC_B01.VAL NPP NMS")
+    field(INPE, "NB1_NT1C_TTC_B02.VAL NPP NMS")
+    field(INPF, "NB1_NT1C_TTC_B03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C05")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_L01.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_L02.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_L03.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_L04.VAL NPP NMS")
+    field(INPE, "NB1_NT2C_TTC_L05.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_L06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C06")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_L07.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_L11.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_L12.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_L13.VAL NPP NMS")
+    field(INPE, "NB1_NT2C_TTC_L14.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_L15.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C07")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_L16.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_L17.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_L18.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_R01.VAL NPP NMS")
+#    field(INPE, "NB1_NT2C_TTC_R02.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_R03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C08")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_R04.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_R05.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_R06.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_R07.VAL NPP NMS")
+    field(INPE, "NB1_NT2C_TTC_R08.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_R09.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C09")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_R13.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_R14.VAL NPP NMS")
+#    field(INPC, "NB1_NT2C_TTC_R15.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_R16.VAL NPP NMS")
+    field(INPE, "NB1_NT2C_TTC_R17.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_R18.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C10")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_T01.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_T02.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_T05.VAL NPP NMS")
+    field(INPD, "NB1_NT2C_TTC_T06.VAL NPP NMS")
+    field(INPE, "NB1_NT2C_TTC_B01.VAL NPP NMS")
+    field(INPF, "NB1_NT2C_TTC_B02.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C11")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_NT2C_TTC_B04.VAL NPP NMS")
+    field(INPB, "NB1_NT2C_TTC_B05.VAL NPP NMS")
+    field(INPC, "NB1_NT2C_TTC_B06.VAL NPP NMS")
+    field(INPD, "NB1_BMC_TTC_L01.VAL NPP NMS")
+    field(INPE, "NB1_BMC_TTC_L03.VAL NPP NMS")
+    field(INPF, "NB1_BMC_TTC_R01.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C12")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "B>I||C>I||D>I||E>I||F>I?1:0")
+#    field(INPA, "NB1_BMC_TTC_R03.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_T01.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_T02.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_T03.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_T04.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_T05.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C13")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_T06.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_T07.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_T08.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_T09.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_T10.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_T11.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C14")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_T12.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_T13.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_T14.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_T15.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_H01.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_H02.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C15")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_H03.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_H04.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_H05.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_H06.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_H07.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_H08.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C16")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_H09.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_H10.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_H11.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_H12.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_H13.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_H14.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C17")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_H15.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_F01.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_F03.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_F04.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_F05.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_F06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C18")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_F07.VAL NPP NMS")
+    field(INPB, "NB1_ID_TTC_F09.VAL NPP NMS")
+    field(INPC, "NB1_ID_TTC_F10.VAL NPP NMS")
+    field(INPD, "NB1_ID_TTC_F11.VAL NPP NMS")
+    field(INPE, "NB1_ID_TTC_F12.VAL NPP NMS")
+    field(INPF, "NB1_ID_TTC_F13.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C19")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_ID_TTC_F15.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_L01.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_L02.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_L04.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_L05.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_L06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C20")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_L07.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_L08.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_L09.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_L10.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_L11.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_L12.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C21")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I?1:0")
+    field(INPA, "NB1_CMC_TTC_L13.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_L14.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_L15.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_R02.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_R04.VAL NPP NMS")
+#    field(INPF, "NB1_CMC_TTC_R05.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C22")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_R06.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_R07.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_R09.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_R10.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_R11.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_R12.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C23")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_R13.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_R14.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_R15.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_T01.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_T02.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_T03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C24")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_B01.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_B02.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_B03.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_F01.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_F02.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_F03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C25")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I?1:0")
+    field(INPA, "NB1_CMC_TTC_F04.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_F05.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_F06.VAL NPP NMS")
+#    field(INPD, "NB1_CMC_TTC_F07.VAL NPP NMS")
+#    field(INPE, "NB1_CMC_TTC_F08.VAL NPP NMS")
+#    field(INPF, "NB1_CMC_TTC_F09.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C26")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_S01.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_S02.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_S03.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_S04.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_S05.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_S06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C27")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_S07.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_S08.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_S09.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_S11.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_S12.VAL NPP NMS")
+    field(INPF, "NB1_CMC_TTC_S13.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C28")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_CMC_TTC_S14.VAL NPP NMS")
+    field(INPB, "NB1_CMC_TTC_S15.VAL NPP NMS")
+    field(INPC, "NB1_CMC_TTC_S16.VAL NPP NMS")
+    field(INPD, "NB1_CMC_TTC_S17.VAL NPP NMS")
+    field(INPE, "NB1_CMC_TTC_S18.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_L02.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C29")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_L03.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_L04.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_L05.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_L06.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_L07.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_L08.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C30")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_L09.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_R01.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_R02.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_R03.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_R04.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_R05.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C31")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_R08.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_R09.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_T01.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_T02.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_T03.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_T04.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C32")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_T05.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_T06.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_T07.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_T08.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_T09.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_T10.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C33")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_T11.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_T12.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_T13.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_T15.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_B01.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_B02.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C34")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_B03.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_B04.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_B05.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_B06.VAL NPP NMS")
+    field(INPE, "NB1_BSC_TTC_B07.VAL NPP NMS")
+    field(INPF, "NB1_BSC_TTC_B08.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C35")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BSC_TTC_B09.VAL NPP NMS")
+    field(INPB, "NB1_BSC_TTC_B10.VAL NPP NMS")
+    field(INPC, "NB1_BSC_TTC_B11.VAL NPP NMS")
+    field(INPD, "NB1_BSC_TTC_B12.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_L02.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_L03.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C36")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_L04.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_L05.VAL NPP NMS")
+    field(INPC, "NB1_BD_TTC_L06.VAL NPP NMS")
+    field(INPD, "NB1_BD_TTC_L07.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_L08.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_L09.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C37")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_L11.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_R02.VAL NPP NMS")
+#    field(INPC, "NB1_BD_TTC_R03.VAL NPP NMS")
+#    field(INPD, "NB1_BD_TTC_R04.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_R05.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_R06.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C38")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_R07.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_R08.VAL NPP NMS")
+    field(INPC, "NB1_BD_TTC_R09.VAL NPP NMS")
+    field(INPD, "NB1_BD_TTC_R10.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_R11.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_R12.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C39")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_T01.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_T02.VAL NPP NMS")
+    field(INPC, "NB1_BD_TTC_T03.VAL NPP NMS")
+    field(INPD, "NB1_BD_TTC_T04.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_T05.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_T07.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C40")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_T09.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_T10.VAL NPP NMS")
+    field(INPC, "NB1_BD_TTC_T11.VAL NPP NMS")
+    field(INPD, "NB1_BD_TTC_T12.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_B01.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_B02.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C41")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I||C>I||D>I||E>I||F>I?1:0")
+    field(INPA, "NB1_BD_TTC_B03.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_B04.VAL NPP NMS")
+    field(INPC, "NB1_BD_TTC_B07.VAL NPP NMS")
+    field(INPD, "NB1_BD_TTC_B08.VAL NPP NMS")
+    field(INPE, "NB1_BD_TTC_B09.VAL NPP NMS")
+    field(INPF, "NB1_BD_TTC_B10.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(calc, "NB1_TC_OVER_C42")
+{
+    field(SCAN, ".5 second")
+    field(CALC, "A>I||B>I?1:0")
+    field(INPA, "NB1_BD_TTC_B11.VAL NPP NMS")
+    field(INPB, "NB1_BD_TTC_B12.VAL NPP NMS")
+    field(INPI, "NB1_TC_OVER_VAL.VAL NPP NMS")
+}
+record(ao, "NB1_TC_NEU11_INTC")
+{
+
+}
+record(ao, "NB1_TC_NEU12_INTC")
+{
+
+}
+record(ao, "NB1_TC_NEU21_INTC")
+{
+
+}
+record(ao, "NB1_TC_NEU22_INTC")
+{
+
+}
+record(ao, "NB1_TC_BM1_INTC")
+{
+
+}
+record(ao, "NB1_TC_BM2_INTC")
+{
+
+}
+record(ao, "NB1_TC_BMPC1_INTC")
+{
+
+}
+record(ao, "NB1_TC_BMPC2_INTC")
+{
+
+}
+record(ao, "NB1_TC_ID_INTC")
+{
+
+}
+record(ao, "NB1_TC_CAL1_INTC")
+{
+
+}
+record(ao, "NB1_TC_CAL2_INTC")
+{
+
+}
+record(ao, "NB1_TC_CAL3_INTC")
+{
+
+}
+record(ao, "NB1_TC_BLS_INTC")
+{
+
+}
+record(ao, "NB1_TC_BD_INTC")
+{
+
+}
+record(ao, "NB1_TC_TILE_INTC")
+{
+
+}
+record(ao, "NB1_TC_ARMOR_INTC")
+{
+
+}

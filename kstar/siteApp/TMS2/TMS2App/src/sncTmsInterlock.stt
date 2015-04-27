@@ -1,0 +1,166 @@
+program sncTmsInterlock
+option +r;
+option -c;
+%% #include <string.h>
+
+int i;
+int pvmax;
+int oldpvmax;
+double max;
+double min;
+assign max to "";
+
+unsigned long tmsIntLevel;
+assign tmsIntLevel to "";
+long setLimitVal;
+assign setLimitVal to "";
+monitor setLimitVal;
+
+unsigned long statusOther;
+assign statusOther to "";
+monitor statusOther;
+
+unsigned long statusOwn;
+assign statusOwn to "";
+monitor statusOwn;
+
+double oldMax;
+int dataCount;
+int udfCount;
+char *pfileName;
+string tmpStr1;
+string tmpStr2;
+string pvMaxName;
+string pvMaxName1;
+assign pvMaxName to "";
+float data[104];
+float udf[104];
+string pvName1[104];
+
+assign udf to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor udf;
+
+
+assign data to {"", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", "",
+                "", "", "", "", "", "", "", ""};
+monitor data;
+
+ss tmsInterlock{
+	state init{
+		when (TRUE){
+                        pfileName = macValueGet("FNAME");
+                        %% epicsThreadId threadId;
+                        %% FILE *pfile;
+                        %% pfile = fopen (pVar->pfileName, "r");
+                        %% if(!pfile) { 
+		     			%%printf("error in fopen\n");
+					%%threadId = epicsThreadGetIdSelf();
+					%%printf("threadID : %x\n",threadId);
+					%%seqStop(threadId);
+			%% }
+            	%% fscanf(pfile, "%s", pVar->tmpStr1);
+            	pvAssign(tmsIntLevel, tmpStr1);
+            	printf("connect %s\n", tmpStr1);
+            	%% fscanf(pfile, "%s", pVar->tmpStr1);
+            	pvAssign(setLimitVal, tmpStr1);
+            	printf("connect %s\n", tmpStr1);
+                %% fscanf(pfile, "%s", pVar->tmpStr1);
+                pvAssign(statusOther, tmpStr1);
+                printf("connect %s\n", tmpStr1);
+                %% fscanf(pfile, "%s", pVar->tmpStr1);
+                pvAssign(statusOwn, tmpStr1);
+                printf("connect %s\n", tmpStr1);
+	    	%% fscanf(pfile, "%s", pVar->tmpStr1);
+            	%% sprintf(pVar->tmpStr2, "%s_MAX", pVar->tmpStr1);
+	    	%% sprintf(pVar->pvMaxName1, "%s_PV", pVar->tmpStr2);
+            	pvAssign(max, tmpStr2);
+		pvAssign(pvMaxName, pvMaxName1);
+		printf("connect %s\n", tmpStr2);
+		printf("connect %s\n", pvMaxName1);
+            	dataCount =0;
+            	%% while (EOF != fscanf(pfile, "%s", pVar->tmpStr1)) {
+                       				pvAssign (data[dataCount], tmpStr1);
+						%%sprintf(pVar->tmpStr2, "%s.UDF", pVar->tmpStr1);
+						pvAssign (udf[dataCount], tmpStr2);
+						printf("connect %d %s\n", dataCount, tmpStr1);
+						%%sprintf(pVar->pvName1[pVar->dataCount], "%s", pVar->tmpStr1);
+						dataCount++;
+                    			%%}
+		%% fclose(pfile);
+		printf("Data count number is %d\n",dataCount);
+		}state tms_interlock_level	
+	}
+	state tms_interlock_level{
+        	when (delay(15.)){
+				oldpvmax = -1;
+				min=1.E+6; max=-1.E+6;
+				for (udfCount=0, i = 0; i < dataCount; i++){
+					if(udf[i]==0){
+						if(data[i]<min){
+							min=data[i];
+						}
+						if(data[i]>max){
+							max=data[i];
+							pvmax=i;
+						}
+						udfCount++;
+					}
+					else
+					return;
+				}
+				if(oldpvmax !=pvmax){	
+						%% strcpy(pVar->pvMaxName, pVar->pvName1[pVar->pvmax]);
+						oldpvmax =pvmax;
+						pvPut(pvMaxName);
+				}
+				if(oldMax !=max){
+						oldMax=max;
+					        pvPut(max);
+						if(max>setLimitVal){
+								tmsIntLevel=0;
+								statusOwn=0;
+								pvPut(tmsIntLevel);
+								pvPut(statusOwn);
+						}
+						if(max<=setLimitVal){
+							statusOwn=1;
+							pvPut(statusOwn);
+							if(statusOther==1){
+                                                        	tmsIntLevel=1;
+                                                        	pvPut(tmsIntLevel);
+                                                	}	
+							else tmsIntLevel=0;
+							pvPut(tmsIntLevel);
+						}
+						else tmsIntLevel=0;
+						pvPut(tmsIntLevel);
+				printf("Data Action Put Max:%f setLimitVal:%lu stautsOther :%lu statusOwn:%lu  TMSLevel:%lu\n",
+							max,setLimitVal,statusOther,statusOwn, tmsIntLevel);
+				}
+		} state tms_interlock_level
+	}
+}
+

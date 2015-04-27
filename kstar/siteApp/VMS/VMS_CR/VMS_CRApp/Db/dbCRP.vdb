@@ -1,0 +1,66 @@
+record(ai, "$(SYS)_$(SUB)_$(CTRL)_T2") {
+  field(DESC, "$(SUB) $(CTRL) 2nd Stage Temp.")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)5")
+  field(SCAN, "2 second")
+  field(PREC, "2")
+  field(EGU, "K")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_T1")
+}
+
+
+record(ai, "$(SYS)_$(SUB)_$(CTRL)_T1") {
+  field(DESC, "$(SUB) $(CTRL) 1st Stage Temp.")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)6")
+  field(EGU, "K")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_PIG")
+}
+
+
+record(ai, "$(SYS)_$(SUB)_$(CTRL)_PIG") {
+  field(DESC, "$(SUB) $(CTRL) Pressure")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)7")
+  field(PREC, "1")
+  field(EGU, "Pa")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_R00")
+}
+
+record(mbbiDirect, "$(SYS)_$(SUB)_$(CTRL)_R00") {
+  field(DESC, "$(SUB) $(CTRL) R00 Status")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_R01")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)0")
+}
+
+
+record(mbbiDirect, "$(SYS)_$(SUB)_$(CTRL)_R04") {
+  field(DESC, "$(SUB) $(CTRL) R04 Status")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)4")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_R03")
+}
+
+
+record(mbbiDirect, "$(SYS)_$(SUB)_$(CTRL)_R03") {
+  field(DESC, "$(SUB) $(CTRL) R03 Status")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)3")
+}
+
+
+record(mbbiDirect, "$(SYS)_$(SUB)_$(CTRL)_R02") {
+  field(DESC, "$(SUB) $(CTRL) R02 Status")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)2")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_R04")
+}
+
+
+record(mbbiDirect, "$(SYS)_$(SUB)_$(CTRL)_R01") {
+  field(DESC, "$(SUB) $(CTRL) R01 Status")
+  field(DTYP, "CRP")
+  field(INP, "#$(PORT) A$(A) @$(CTRL_NUM)1")
+  field(FLNK, "$(SYS)_$(SUB)_$(CTRL)_R02")
+}

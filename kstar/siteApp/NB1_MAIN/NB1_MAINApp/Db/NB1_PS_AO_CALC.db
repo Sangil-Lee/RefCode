@@ -1,0 +1,13 @@
+record(ao, "$(PV_NAME)")
+{
+  field(DESC, "Length")
+  field(PREC, "0")
+}
+record(calcout, "$(PV_NAME)_C")
+{
+  field(DESC, "PLC")
+  field(SCAN, "$(SCAN)")
+  field(INPA, "$(PV_NAME)")
+  field(CALC, "A/1")
+  field(OUT, "$(PV_NAME)_A.VAL NMP PP")
+}

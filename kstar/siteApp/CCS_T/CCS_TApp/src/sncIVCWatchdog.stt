@@ -1,0 +1,221 @@
+program sncIVCWatchdog
+
+option +r;
+option -c;
+
+%{
+
+/* RFM Memory Map for MPS command area */
+
+#include "rfmAddrMap.h"
+
+typedef struct
+{
+    volatile int       id;
+    volatile int       voltage_measured; 
+    volatile int       current_measured;
+    volatile int       vdclink_measured;
+    volatile unsigned int  comm_counter;    
+    volatile int       ivc_limit_flag;
+} ivc_command;
+
+
+
+/* PowerPC Only */
+#define  EIEIO               __asm__ volatile ("eieio")
+#define  EIEIO_SYNC          __asm__ volatile ("eieio;sync")
+#define  SYNC                __asm__ volatile ("sync")
+
+}%
+
+int            watchdog_status;
+assign         watchdog_status to "CCS_IVC_RT_VIOLATION";
+
+int            watchdog;
+assign         watchdog to "CCS_WATCHDOG_MPS";
+monitor        watchdog;
+
+evflag         watchdog_event;
+
+float          current_measured;
+assign         current_measured to "CCS_IIVC_MEASURED_RAW";
+float          voltage_measured;
+assign         voltage_measured to "CCS_VIVC_MEASURED_RAW";
+float          vdclink_measured;
+assign         vdclink_measured to "CCS_DCIVC_MEASURED_RAW";
+
+
+%% static volatile ivc_command     *pIVC_command = (ivc_command*) (RFM_BASE_ADDR+RFM_ID_IVC);
+/* %% static epicsTimeStamp           time_stamp1, time_stamp2;  */
+%% static unsigned char            first_flag;
+
+%% static unsigned short errorCnt;
+
+
+unsigned int comm_counter;
+
+
+%{
+static int evaluation (unsigned int comm_counter)
+{
+    int val;
+/*   double  time1, time2; */
+    
+
+/*    epicsTimeGetCurrent(&time_stamp2); */
+
+    EIEIO_SYNC;
+    val = (comm_counter == pIVC_command->comm_counter);
+    EIEIO_SYNC;
+
+    if( val ) 
+    {
+	    errorCnt++;
+	    printf("_IVC_Watchdog_errorCnt: %d\n", errorCnt);
+	    if( errorCnt < RT_CRASH_CNT ) {
+               val =0;
+	     } 
+    } else {
+       if( errorCnt > 0 )
+       {
+          printf("_IVC_Watchdog_errorCnt set 0 \n");
+          errorCnt = 0;
+       }
+    }
+    
+/*
+    if(!val) {
+        time1 = (double) time_stamp1.secPastEpoch + (double) time_stamp1.nsec * 1.E-9;
+        time2 = (double) time_stamp2.secPastEpoch + (double) time_stamp2.nsec * 1.E-9;
+        if((time2-time1) < 5.E-3) {
+            val = 0;
+            printf("___IVC_Watchdog_fail___\n");
+        }
+    }
+*/
+
+    return val;
+}
+
+
+
+static int check_run(void)
+{
+
+    static unsigned int counter;
+
+    if(first_flag) {
+        first_flag = 0;
+        errorCnt = 0;
+        EIEIO_SYNC;
+        counter = pIVC_command->comm_counter;
+        EIEIO_SYNC;
+
+/*        printf("check_run()..... first call\n"); */
+    
+        return FALSE;
+    }
+
+    EIEIO_SYNC;
+    if(counter != pIVC_command->comm_counter) {
+	EIEIO_SYNC;
+    	return TRUE;
+    }
+
+    counter = pIVC_command->comm_counter;
+    EIEIO_SYNC;
+
+    return FALSE;
+}
+
+}%
+
+
+ss watchdog_engine
+{
+
+    state stop {
+        when(watchdog) {
+            %% first_flag = 1;
+        } state check_run
+    }
+
+    state check_run {
+        when(!watchdog) {
+        } state stop
+
+        when(check_run()) {
+        } state run
+
+        when(delay(WATCHDOG_INTV)) {   /* 100Hz */
+        } state check_run
+    }
+
+    state run {
+       when(!watchdog) {
+       } state stop
+
+       when(delay(WATCHDOG_INTV)) {   /* 100Hz */
+           efSet(watchdog_event);
+       } state run
+    }  
+}
+
+ss watchdog
+{
+
+    state normal {
+        entry {
+            watchdog_status = RT_NORMAL;
+            pvPut(watchdog_status);
+        }
+
+        when(efTestAndClear(watchdog_event)) {
+        } state evaluate
+    }
+
+    state fail {
+        entry {
+            watchdog_status = RT_ABNORMAL;
+            pvPut(watchdog_status);
+        }
+
+        when(!watchdog) {
+        } state normal
+    }
+
+    state evaluate {
+        when(evaluation(comm_counter)) {
+          printf("IVC RFM evaluation... failed!\n");
+          %%errorCnt = 0;
+        } state fail
+
+        when(TRUE) {
+            %% EIEIO_SYNC;
+            %% pVar->comm_counter = pIVC_command->comm_counter;
+            %% EIEIO_SYNC;
+/*            %% epicsTimeGetCurrent(&time_stamp1); */
+        } state normal
+    }
+}
+
+
+ss measurement
+{
+    state measure {
+        when(delay(MEASUREMENT_INTV)) { 
+            %% EIEIO_SYNC;
+            %% pVar->current_measured = (float)(pIVC_command->current_measured);
+            %% pVar->voltage_measured = (float)(pIVC_command->voltage_measured);
+            %% pVar->vdclink_measured = (float)(pIVC_command->vdclink_measured);
+            %% EIEIO_SYNC;
+
+            pvPut(current_measured);
+            pvPut(voltage_measured);
+            pvPut(vdclink_measured);
+        } state measure
+    }
+
+}
+
+

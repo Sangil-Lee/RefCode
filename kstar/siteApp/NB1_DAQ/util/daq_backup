@@ -1,0 +1,43 @@
+#!/bin/sh
+
+####################################################
+## DAQ Server Data Backup
+####################################################
+
+echo "#### Data Backup ####"
+
+echo "" >> /root/daq_backup.log
+date >> /root/daq_backup.log
+
+mount /dev/sdb1 /media/Backup
+
+ok=`df | grep sdb1 | wc -l`
+
+if [ $ok -eq '1' ]
+then
+
+echo "DATA Backup processing... START" >> /root/daq_backup.log
+cd /media/Backup
+
+echo "Before Backup Data Moving..." >> /root/daq_backup.log
+mv mdsplus_backup.tar.gz mdsplus_backup_old.tar.gz
+#mv archive_backup.tar.gz archive_backup_old.tar.gz
+
+echo "MDSPlus Data Backup..." >> /root/daq_backup.log
+tar cvfz mdsplus_backup.tar.gz /usr/local/mdsplus/NBI1
+#echo "Archvie Data Backup..." >> /root/daq_backup.log
+#tar cvfz archive_backup.tar.gz /home/data/Archive/nb1
+
+cd /
+
+umount /media/Backup
+
+echo "DATA Backup processing... STOP" >> /root/daq_backup.log
+
+else
+	echo "/dev/sdb1 Mount Error..." >> /root/daq_backup.log
+	echo "USB Backup Device Reconnect..." >> /root/daq_backup.log
+
+	echo "/dev/sdb1 Mount Error..."
+	echo "USB Backup Device Reconnect..."
+fi
